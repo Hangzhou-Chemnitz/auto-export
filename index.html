@@ -56,13 +56,27 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .brand-card .in-stock{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font-size:0.75em;color:#16a34a;font-weight:600}
 .brand-card .in-stock .dot{width:6px;height:6px;background:#16a34a;border-radius:50%}
 
-.model-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:all .25s}
+.model-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:all .25s;cursor:pointer}
 .model-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.08);border-color:#ef4444}
 .model-card .card-img{height:140px;background:#e2e8f0 center/cover;position:relative}
 .model-card .card-img .badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.7em;font-weight:600;padding:3px 8px;border-radius:50px}
 .model-card .card-body{padding:14px 12px;text-align:center}
 .model-card h4{font-size:0.95em;font-weight:700;margin-bottom:2px}
 .model-card .info{font-size:0.75em;color:#94a3b8}
+
+/* Lightbox */
+.lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
+.lb-overlay.open{display:flex}
+.lb-close{position:absolute;top:20px;right:28px;color:#fff;font-size:32px;cursor:pointer;z-index:10;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.1);transition:background .2s}
+.lb-close:hover{background:rgba(255,255,255,0.2)}
+.lb-img{max-width:90vw;max-height:75vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.lb-title{color:#fff;font-size:1.1em;font-weight:600;margin-top:16px}
+.lb-counter{color:#94a3b8;font-size:0.85em;margin-top:4px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:40px;cursor:pointer;padding:12px 16px;border-radius:8px;background:rgba(255,255,255,0.08);transition:background .2s;user-select:none}
+.lb-nav:hover{background:rgba(255,255,255,0.2)}
+.lb-prev{left:20px}
+.lb-next{right:20px}
+@media(max-width:640px){.lb-nav{font-size:28px;padding:8px 12px}.lb-prev{left:8px}.lb-next{right:8px}}
 
 .contact-section{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#fff;text-align:center;padding:56px 24px}
 .contact-section h2{font-size:1.5em;font-weight:700;margin-bottom:8px}
@@ -115,19 +129,19 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="model-grid">
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/rav4/" data-prefix="rav4-" data-count="8" data-title="Toyota RAV4">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/rav4/rav4-1.jpg')"><span class="badge">SUV</span></div>
           <div class="card-body"><h4>RAV4</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
         </div>
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla/" data-prefix="" data-count="8" data-title="Toyota Corolla">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla/1.jpg')"><span class="badge">Sedan</span></div>
           <div class="card-body"><h4>Corolla</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
         </div>
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla-cross/" data-prefix="" data-count="8" data-title="Toyota Corolla Cross">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla-cross/1.jpg')"><span class="badge">SUV</span></div>
           <div class="card-body"><h4>Corolla Cross</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
         </div>
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/camry/" data-prefix="" data-count="8" data-title="Toyota Camry">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/camry/1.jpg')"><span class="badge">Sedan</span></div>
           <div class="card-body"><h4>Camry</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
         </div>
@@ -144,7 +158,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="model-grid">
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/tiguan-allspace/" data-prefix="" data-count="8" data-title="Volkswagen Tiguan Allspace">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/tiguan-allspace/1.jpg')"><span class="badge">SUV</span></div>
           <div class="card-body"><h4>Tiguan Allspace</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
         </div>
@@ -161,7 +175,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="model-grid">
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/geely/coolray/" data-prefix="" data-count="8" data-title="Geely Coolray">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/geely/coolray/1.jpg')"><span class="badge">SUV</span></div>
           <div class="card-body"><h4>Coolray</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
         </div>
@@ -178,7 +192,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="model-grid">
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/nissan/qashqai/" data-prefix="" data-count="8" data-title="Nissan Qashqai">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/nissan/qashqai/1.jpg')"><span class="badge">SUV</span></div>
           <div class="card-body"><h4>Qashqai</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
         </div>
@@ -195,7 +209,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="model-grid">
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/mazda/cx-5/" data-prefix="" data-count="7" data-title="Mazda CX-5">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/mazda/cx-5/1.jpg')"><span class="badge">SUV</span></div>
           <div class="card-body"><h4>CX-5</h4><div class="info">7 Photos · 7 Фото · ٧ صور</div></div>
         </div>
@@ -212,7 +226,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="model-grid">
-        <div class="model-card">
+        <div class="model-card" onclick="openGallery(this)" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/kia/seltos/" data-prefix="" data-count="8" data-title="Kia Seltos">
           <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/kia/seltos/1.jpg')"><span class="badge">SUV</span></div>
           <div class="card-body"><h4>Seltos</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
         </div>
@@ -243,6 +257,65 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <footer>
   &copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd.
 </footer>
+
+<!-- Lightbox -->
+<div class="lb-overlay" id="lb" onclick="closeGallery(event)">
+  <span class="lb-close" onclick="closeGallery()">&times;</span>
+  <span class="lb-nav lb-prev" onclick="navGallery(event,-1)">&#8249;</span>
+  <span class="lb-nav lb-next" onclick="navGallery(event,1)">&#8250;</span>
+  <img class="lb-img" id="lb-img" src="" alt="">
+  <div class="lb-title" id="lb-title"></div>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<script>
+let lbData = null, lbIdx = 0, lbUrls = [];
+
+function openGallery(el) {
+  const base = el.dataset.base;
+  const prefix = el.dataset.prefix || '';
+  const count = parseInt(el.dataset.count);
+  const title = el.dataset.title;
+  const ext = '.jpg';
+  lbUrls = [];
+  for (let i = 1; i <= count; i++) {
+    lbUrls.push(base + prefix + i + ext);
+  }
+  lbIdx = 0;
+  lbData = {title, count};
+  showImage();
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function showImage() {
+  document.getElementById('lb-img').src = lbUrls[lbIdx];
+  document.getElementById('lb-title').textContent = lbData.title;
+  document.getElementById('lb-counter').textContent = (lbIdx + 1) + ' / ' + lbData.count;
+}
+
+function navGallery(e, dir) {
+  e.stopPropagation();
+  lbIdx = (lbIdx + dir + lbUrls.length) % lbUrls.length;
+  showImage();
+}
+
+function closeGallery(e) {
+  if (e && e.target !== document.getElementById('lb') && e.target.tagName !== 'IMG') return;
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+  lbUrls = [];
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lb').classList.contains('open')) return;
+  if (e.key === 'Escape') closeGallery();
+  if (e.key === 'ArrowLeft') { e.preventDefault(); lbIdx = (lbIdx - 1 + lbUrls.length) % lbUrls.length; showImage(); }
+  if (e.key === 'ArrowRight') { e.preventDefault(); lbIdx = (lbIdx + 1) % lbUrls.length; showImage(); }
+});
+
+document.getElementById('lb-img').addEventListener('click', function(e) { e.stopPropagation(); });
+</script>
 
 </body>
 </html>
