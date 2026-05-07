@@ -71,6 +71,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .model-card .card-body{padding:14px 12px;text-align:center}
 .model-card h4{font-size:0.95em;font-weight:700;margin-bottom:2px}
 .model-card .info{font-size:0.75em;color:#94a3b8}
+.brochure-link{display:inline-block;margin-top:8px;font-size:0.72em;color:#0a66c2;text-decoration:none;font-weight:600;padding:4px 12px;border:1.5px solid #0a66c2;border-radius:6px;transition:all .2s}
+.brochure-link:hover{background:#0a66c2;color:#fff}
 
 /* Lightbox */
 .lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
@@ -397,8 +399,26 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   var lbCount = 0;
   var lbUrls = [];
 
-  // Bind click to all model cards
+  // Add brochure links to model cards
   var cards = document.querySelectorAll('.model-card');
+  for (var i = 0; i < cards.length; i++) {
+    var title = cards[i].getAttribute('data-title');
+    if (title) {
+      var body = cards[i].querySelector('.card-body');
+      if (body) {
+        var lnk = document.createElement('a');
+        lnk.href = 'https://autocatalogarchive.com/?s=' + encodeURIComponent(title);
+        lnk.target = '_blank';
+        lnk.rel = 'noopener';
+        lnk.className = 'brochure-link';
+        lnk.textContent = '📄 Brochure';
+        lnk.addEventListener('click', function(e) { e.stopPropagation(); });
+        body.appendChild(lnk);
+      }
+    }
+  }
+
+  // Bind click to all model cards
   for (var i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', function() {
       var base = this.getAttribute('data-base');
