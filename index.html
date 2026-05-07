@@ -3,227 +3,379 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hangzhou Chemnitz International Trade - Chinese Auto Export</title>
+<meta name="description" content="Hangzhou Chemnitz International Trade - Chinese Auto Export. FOB Horgos. Toyota, Volkswagen, Kia, Mazda, Jetour and more.">
+<title>Hangzhou Chemnitz — Chinese Auto Export</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
-.container{max-width:1200px;margin:0 auto;padding:20px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#fff;line-height:1.6}
 
-/* Hero */
-.hero{text-align:center;padding:60px 20px 40px;background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%)}
-.hero h1{font-size:2.2em;color:#f8fafc;margin-bottom:10px}
-.hero .sub{font-size:1.1em;color:#94a3b8;margin-bottom:8px}
-.hero .ru{font-size:0.95em;color:#64748b}
-.hero .whatsapp{display:inline-block;margin-top:24px;padding:14px 32px;background:#25d366;color:#fff;border-radius:8px;text-decoration:none;font-size:1.1em;font-weight:600;box-shadow:0 4px 14px rgba(37,211,102,0.35)}
-.hero .whatsapp:hover{background:#20bd5a;transform:translateY(-1px)}
+/* ── Hero ── */
+.hero{
+  background:linear-gradient(135deg,#0a1628 0%,#1a2744 50%,#0d2137 100%);
+  color:#fff;
+  padding:80px 24px 60px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(220,38,38,0.15) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:-30%;left:-10%;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(37,99,235,0.1) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+.hero .tag{
+  display:inline-block;
+  background:rgba(220,38,38,0.2);
+  border:1px solid rgba(220,38,38,0.3);
+  color:#f87171;
+  font-size:0.8em;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  padding:6px 16px;
+  border-radius:50px;
+  margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(2em,5vw,3.2em);
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:16px;
+  letter-spacing:-0.02em;
+}
+.hero h1 span{color:#ef4444}
+.hero .subtitle{font-size:1.15em;color:#94a3b8;margin-bottom:6px;font-weight:500}
+.hero .subtitle-sm{font-size:0.95em;color:#64748b;margin-bottom:4px}
+.hero .features{display:flex;gap:24px;flex-wrap:wrap;margin:28px 0 32px}
+.hero .feat{
+  display:flex;align-items:center;gap:8px;
+  font-size:0.9em;color:#cbd5e1;
+}
+.hero .feat .dot{width:6px;height:6px;background:#ef4444;border-radius:50%}
+.hero .cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25d366;
+  color:#fff;
+  padding:16px 36px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.05em;
+  transition:all .2s;
+  box-shadow:0 4px 20px rgba(37,211,102,0.3);
+}
+.hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
+.hero .cta-btn .icon{font-size:1.3em}
 
-/* Stats */
-.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:30px 20px;background:#1e293b;border-bottom:1px solid #334155}
-.stat{text-align:center}
-.stat .num{font-size:2em;font-weight:700;color:#38bdf8}
-.stat .label{font-size:0.85em;color:#94a3b8;margin-top:4px}
+/* ── Strip ── */
+.strip{
+  background:#f8fafc;
+  border-top:1px solid #e2e8f0;
+  border-bottom:1px solid #e2e8f0;
+  padding:32px 24px;
+  text-align:center;
+}
+.strip .nums{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.strip .num-block{text-align:center}
+.strip .num-block .big{font-size:2.4em;font-weight:800;color:#dc2626;line-height:1.1}
+.strip .num-block .big.blue{color:#2563eb}
+.strip .num-block .lbl{font-size:0.85em;color:#64748b;margin-top:4px;font-weight:500}
 
-/* Brands */
-.brands{padding:40px 20px}
-.brands h2{text-align:center;font-size:1.5em;color:#f8fafc;margin-bottom:30px}
-.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
-.brand-card{background:#1e293b;border-radius:10px;padding:20px;text-align:center;border:1px solid #334155;transition:border-color .2s}
-.brand-card:hover{border-color:#38bdf8}
-.brand-card .brand-icon{font-size:2em;margin-bottom:8px}
-.brand-card h3{font-size:1.1em;color:#f8fafc}
-.brand-card .cn{font-size:0.85em;color:#94a3b8;margin:4px 0}
-.brand-card .count{font-size:0.9em;color:#38bdf8;font-weight:600}
-.brand-card .stock{font-size:0.75em;color:#22c55e;margin-top:4px}
+/* ── Section ── */
+.section{padding:64px 24px}
+.section .inner{max-width:960px;margin:0 auto}
+.section h2{text-align:center;font-size:1.8em;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em}
+.section .lead{text-align:center;color:#64748b;font-size:1em;margin-bottom:40px}
 
-/* How to buy */
-.how{padding:40px 20px;background:#1e293b}
-.how h2{text-align:center;font-size:1.5em;color:#f8fafc;margin-bottom:30px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:900px;margin:0 auto}
-.step{text-align:center;padding:20px}
-.step .num{display:inline-block;width:40px;height:40px;line-height:40px;border-radius:50%;background:#38bdf8;color:#0f172a;font-weight:700;font-size:1.1em;margin-bottom:12px}
-.step h4{color:#f8fafc;margin-bottom:6px}
-.step p{color:#94a3b8;font-size:0.9em}
+/* ── Brands ── */
+.brand-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:16px;
+}
+.brand-card{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:24px 16px;
+  text-align:center;
+  transition:all .25s;
+  cursor:default;
+}
+.brand-card:hover{
+  border-color:#ef4444;
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,0.08);
+}
+.brand-card .logo{
+  width:56px;height:56px;
+  border-radius:14px;
+  margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:1.2em;color:#fff;
+}
+.brand-card h3{font-size:1em;font-weight:700;margin-bottom:2px}
+.brand-card .cn{font-size:0.8em;color:#94a3b8;margin-bottom:8px}
+.brand-card .count{font-size:0.85em;color:#ef4444;font-weight:600}
+.brand-card .arrow{font-size:0.7em;color:#94a3b8;margin-top:6px;opacity:0;transition:all .2s}
+.brand-card:hover .arrow{opacity:1}
 
-/* Contact */
-.contact{text-align:center;padding:50px 20px;background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%)}
-.contact h2{font-size:1.5em;color:#f8fafc;margin-bottom:16px}
-.contact p{color:#94a3b8;margin-bottom:10px}
-.contact .company{font-size:1.1em;color:#e2e8f0;margin-bottom:20px}
-.contact .cta{font-size:1.05em;color:#38bdf8;margin-bottom:20px}
+/* ── Steps ── */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+}
+.step{
+  text-align:center;
+  padding:32px 20px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  transition:all .2s;
+}
+.step:hover{border-color:#2563eb;box-shadow:0 8px 30px rgba(37,99,235,0.08)}
+.step .circle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;
+  border-radius:50%;
+  background:#2563eb;
+  color:#fff;
+  font-size:1.2em;
+  font-weight:700;
+  margin-bottom:16px;
+}
+.step h4{font-size:1em;font-weight:700;margin-bottom:6px}
+.step p{font-size:0.85em;color:#64748b;margin-bottom:4px}
 
-/* Footer */
-footer{text-align:center;padding:20px;color:#64748b;font-size:0.8em;border-top:1px solid #334155}
+/* ── Markets ── */
+.mk-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.mk-tag{
+  background:#f1f5f9;
+  border:1px solid #e2e8f0;
+  padding:10px 20px;
+  border-radius:50px;
+  font-size:0.9em;
+  font-weight:500;
+  color:#334155;
+  transition:all .2s;
+}
+.mk-tag:hover{background:#fef2f2;border-color:#fecaca}
 
-/* Section titles */
-.section-subtitle{text-align:center;color:#64748b;font-size:0.9em;margin:-20px 0 30px}
+/* ── Contact ── */
+.contact-section{
+  background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);
+  color:#fff;
+  text-align:center;
+  padding:64px 24px;
+}
+.contact-section h2{font-size:1.8em;font-weight:700;margin-bottom:8px}
+.contact-section .sub{color:#94a3b8;font-size:1em;margin-bottom:12px}
+.contact-section .name{font-size:1.15em;font-weight:600;margin-bottom:6px}
+.contact-section .name-cn{color:#94a3b8;font-size:1em;margin-bottom:24px}
+.contact-section .line{color:#64748b;font-size:0.9em;margin-bottom:28px}
+.contact-section .cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25d366;
+  color:#fff;
+  padding:16px 36px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.05em;
+  transition:all .2s;
+  box-shadow:0 4px 20px rgba(37,211,102,0.3);
+}
+.contact-section .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
+.contact-section .reply{color:#64748b;font-size:0.85em;margin-top:20px}
+
+/* ── Footer ── */
+footer{
+  text-align:center;padding:24px;color:#94a3b8;font-size:0.8em;
+  background:#f8fafc;border-top:1px solid #e2e8f0;
+}
+
+@media(max-width:640px){
+  .strip .nums{gap:24px}
+  .hero h1{font-size:1.6em}
+  .brand-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .brand-card{padding:16px 10px}
+}
 </style>
 </head>
 <body>
 
-<!-- Hero -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
-<div class="container">
-<h1>Hangzhou Chemnitz International Trade</h1>
-<div class="sub">杭州开姆尼茨国际贸易有限公司</div>
-<div class="ru">Экспорт китайских автомобилей · Китайский автоэкспорт</div>
-<div class="sub" style="font-size:0.95em;margin-top:8px">Chinese Auto Export · FOB Horgos / Alashankou · Direct from Factory</div>
-<a class="whatsapp" href="https://wa.me/8613826126147" target="_blank">
-  WhatsApp: Contact for Price List
-</a>
-</div>
+  <div class="hero-inner">
+    <div class="tag">China Auto Export</div>
+    <h1>Your Direct Source for<br><span>Chinese Vehicles</span></h1>
+    <div class="subtitle">杭州开姆尼茨国际贸易有限公司</div>
+    <div class="subtitle-sm">Hangzhou Chemnitz International Trade Co., Ltd.</div>
+    <div class="subtitle-sm" style="margin-top:4px">FOB Any Chinese Port · Любой порт Китая</div>
+    <div class="features">
+      <div class="feat"><span class="dot"></span>Factory-Direct Pricing</div>
+      <div class="feat"><span class="dot"></span>Full Export Documentation</div>
+      <div class="feat"><span class="dot"></span>Bulk Supply & Container Shipping</div>
+    </div>
+    <a class="cta-btn" href="https://wa.me/8613826126147" target="_blank">
+      <span class="icon">&#9993;</span> WhatsApp for Price List
+    </a>
+  </div>
 </section>
 
-<!-- Stats -->
-<section class="stats">
-<div class="stat"><div class="num">900+</div><div class="label">Vehicles in Stock</div></div>
-<div class="stat"><div class="num">9</div><div class="label">Chinese Brands</div></div>
-<div class="stat"><div class="num">30+</div><div class="label">Active Contracts</div></div>
-<div class="stat"><div class="num">霍尔果斯</div><div class="label">Port of Loading</div></div>
+<!-- ═══ NUMBERS ═══ -->
+<section class="strip">
+  <div class="nums">
+    <div class="num-block"><div class="big">900+</div><div class="lbl">Vehicles in Stock</div></div>
+    <div class="num-block"><div class="big blue">9</div><div class="lbl">Chinese Brands</div></div>
+    <div class="num-block"><div class="big">30+</div><div class="lbl">Active Contracts</div></div>
+    <div class="num-block"><div class="big blue">4</div><div class="lbl">Target Markets</div></div>
+  </div>
 </section>
 
-<!-- Brands -->
-<section class="brands">
-<div class="container">
-<h2>In-Stock Vehicles / 在售车型 / Авто в наличии</h2>
-<p class="section-subtitle">Click below for full VIN list — price quotes on WhatsApp</p>
-
-<div class="brand-grid">
-<div class="brand-card">
-    <div class="brand-icon">🚗</div>
-    <h3>Toyota</h3>
-    <div class="cn">丰田牌</div>
-    <div class="count">95 units</div>
-    <div class="stock">In Stock</div>
-</div>
-<div class="brand-card">
-    <div class="brand-icon">🚗</div>
-    <h3>Volkswagen</h3>
-    <div class="cn">大众汽车牌</div>
-    <div class="count">84 units</div>
-    <div class="stock">In Stock</div>
-</div>
-<div class="brand-card">
-    <div class="brand-icon">🚗</div>
-    <h3>Kia</h3>
-    <div class="cn">起亚牌</div>
-    <div class="count">19 units</div>
-    <div class="stock">In Stock</div>
-</div>
-<div class="brand-card">
-    <div class="brand-icon">🚗</div>
-    <h3>Mazda</h3>
-    <div class="cn">马自达牌</div>
-    <div class="count">14 units</div>
-    <div class="stock">In Stock</div>
-</div>
-<div class="brand-card">
-    <div class="brand-icon">🚙</div>
-    <h3>Jetour</h3>
-    <div class="cn">捷途牌</div>
-    <div class="count">10 units</div>
-    <div class="stock">In Stock</div>
-</div>
-<div class="brand-card">
-    <div class="brand-icon">🚙</div>
-    <h3>Trumpchi</h3>
-    <div class="cn">传祺牌</div>
-    <div class="count">8 units</div>
-    <div class="stock">In Stock</div>
-</div>
-<div class="brand-card">
-    <div class="brand-icon">🚗</div>
-    <h3>Nissan</h3>
-    <div class="cn">东风日产牌</div>
-    <div class="count">8 units</div>
-    <div class="stock">In Stock</div>
-</div>
-<div class="brand-card">
-    <div class="brand-icon">🚗</div>
-    <h3>Audi</h3>
-    <div class="cn">奥迪牌</div>
-    <div class="count">5 units</div>
-    <div class="stock">In Stock</div>
-</div>
-<div class="brand-card">
-    <div class="brand-icon">🚗</div>
-    <h3>Hyundai</h3>
-    <div class="cn">北京现代牌</div>
-    <div class="count">1 unit</div>
-    <div class="stock">In Stock</div>
-</div>
-</div>
-</div>
+<!-- ═══ BRANDS ═══ -->
+<section class="section" style="background:#fff">
+  <div class="inner">
+    <h2>In-Stock Vehicles</h2>
+    <p class="lead">В наличии · 在售车型 · Detailed stock list available on WhatsApp</p>
+    <div class="brand-grid">
+      <div class="brand-card">
+        <div class="logo" style="background:#dc2626">T</div>
+        <h3>Toyota</h3><div class="cn">丰田牌</div>
+        <div class="count">95 units in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+      <div class="brand-card">
+        <div class="logo" style="background:#2563eb">VW</div>
+        <h3>Volkswagen</h3><div class="cn">大众汽车牌</div>
+        <div class="count">84 units in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+      <div class="brand-card">
+        <div class="logo" style="background:#1a1a2e">K</div>
+        <h3>Kia</h3><div class="cn">起亚牌</div>
+        <div class="count">19 units in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+      <div class="brand-card">
+        <div class="logo" style="background:#4b5563">M</div>
+        <h3>Mazda</h3><div class="cn">马自达牌</div>
+        <div class="count">14 units in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+      <div class="brand-card">
+        <div class="logo" style="background:#059669">J</div>
+        <h3>Jetour</h3><div class="cn">捷途牌</div>
+        <div class="count">10 units in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+      <div class="brand-card">
+        <div class="logo" style="background:#b45309">G</div>
+        <h3>Trumpchi</h3><div class="cn">传祺牌</div>
+        <div class="count">8 units in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+      <div class="brand-card">
+        <div class="logo" style="background:#1e40af">N</div>
+        <h3>Nissan</h3><div class="cn">东风日产牌</div>
+        <div class="count">8 units in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+      <div class="brand-card">
+        <div class="logo" style="background:#111">A</div>
+        <h3>Audi</h3><div class="cn">奥迪牌</div>
+        <div class="count">5 units in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+      <div class="brand-card">
+        <div class="logo" style="background:#3b82f6">H</div>
+        <h3>Hyundai</h3><div class="cn">北京现代牌</div>
+        <div class="count">1 unit in stock</div>
+        <div class="arrow">&#8594; Inquire</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- How to Buy -->
-<section class="how">
-<div class="container">
-<h2>How We Work / 采购流程 / Как мы работаем</h2>
-<div class="steps">
-<div class="step">
-    <div class="num">1</div>
-    <h4>You Inquire</h4>
-    <p>Message us on WhatsApp with your target brand / model / budget</p>
-    <p style="color:#64748b;font-size:0.8em;margin-top:4px">WhatsApp告知车型/预算</p>
-</div>
-<div class="step">
-    <div class="num">2</div>
-    <h4>We Quote</h4>
-    <p>Get FOB price & availability within 24 hours</p>
-    <p style="color:#64748b;font-size:0.8em;margin-top:4px">24小时内报价</p>
-</div>
-<div class="step">
-    <div class="num">3</div>
-    <h4>Contract & Ship</h4>
-    <p>Sign contract, we handle export docs & ship from Horgos</p>
-    <p style="color:#64748b;font-size:0.8em;margin-top:4px">签约→出口报关→发运</p>
-</div>
-<div class="step">
-    <div class="num">4</div>
-    <h4>You Receive</h4>
-    <p>Vehicle arrives at your border/city. Ongoing supply available</p>
-    <p style="color:#64748b;font-size:0.8em;margin-top:4px">目的港/边境收货</p>
-</div>
-</div>
-</div>
+<!-- ═══ HOW WE WORK ═══ -->
+<section class="section" style="background:#f8fafc">
+  <div class="inner">
+    <h2>How We Work</h2>
+    <p class="lead">Как мы работаем · 采购流程</p>
+    <div class="steps">
+      <div class="step">
+        <div class="circle">1</div>
+        <h4>You Inquire</h4>
+        <p>Message us on WhatsApp with brand / model / budget</p>
+        <p style="color:#94a3b8;font-size:0.8em">WhatsApp告知车型和预算</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <h4>We Quote</h4>
+        <p>FOB price & availability within 24 hours</p>
+        <p style="color:#94a3b8;font-size:0.8em">24小时内报价</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <h4>Contract & Ship</h4>
+        <p>We handle export docs & ship from Horgos</p>
+        <p style="color:#94a3b8;font-size:0.8em">签约 → 出口报关 → 发运</p>
+      </div>
+      <div class="step">
+        <div class="circle">4</div>
+        <h4>You Receive</h4>
+        <p>Vehicle arrives at your port. Ongoing supply available</p>
+        <p style="color:#94a3b8;font-size:0.8em">目的港收货，持续供货</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Markets -->
-<section style="padding:40px 20px;text-align:center">
-<div class="container">
-<h2 style="font-size:1.3em;color:#f8fafc;margin-bottom:20px">Serving / 出口市场 / Рынки</h2>
-<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:16px;font-size:0.95em;color:#94a3b8">
-<span style="background:#1e293b;padding:8px 16px;border-radius:6px">🇰🇿 Kazakhstan</span>
-<span style="background:#1e293b;padding:8px 16px;border-radius:6px">🇰🇬 Kyrgyzstan</span>
-<span style="background:#1e293b;padding:8px 16px;border-radius:6px">🇷🇺 Russia</span>
-<span style="background:#1e293b;padding:8px 16px;border-radius:6px">🇦🇪 UAE / Middle East</span>
-<span style="background:#1e293b;padding:8px 16px;border-radius:6px">🇺🇿 Uzbekistan</span>
-<span style="background:#1e293b;padding:8px 16px;border-radius:6px">🇹🇯 Tajikistan</span>
-</div>
-</div>
+<!-- ═══ MARKETS ═══ -->
+<section class="section" style="background:#fff">
+  <div class="inner">
+    <h2>We Ship To</h2>
+    <p class="lead">Рынки сбыта · 出口市场</p>
+    <div class="mk-grid">
+      <span class="mk-tag">🇰🇿 Kazakhstan</span>
+      <span class="mk-tag">🇰🇬 Kyrgyzstan</span>
+      <span class="mk-tag">🇷🇺 Russia</span>
+      <span class="mk-tag">🇦🇪 UAE & Middle East</span>
+      <span class="mk-tag">🇺🇿 Uzbekistan</span>
+      <span class="mk-tag">🇹🇯 Tajikistan</span>
+    </div>
+  </div>
 </section>
 
-<!-- Contact -->
-<section class="contact">
-<div class="container">
-<h2>Get Price List & Stock / 获取报价单 / Получить прайс-лист</h2>
-<p class="company">Hangzhou Chemnitz International Trade Co., Ltd.</p>
-<p class="company">杭州开姆尼茨国际贸易有限公司</p>
-<div class="cta">
-    FOB Horgos, China &nbsp;|&nbsp; Full Export Documentation &nbsp;|&nbsp; Bulk Supply Available
-</div>
-<a class="whatsapp" href="https://wa.me/8613826126147" target="_blank">
-  WhatsApp: Request Price List
-</a>
-<p style="color:#64748b;margin-top:16px;font-size:0.85em">English · 中文 · Русский — we reply within hours</p>
-</div>
+<!-- ═══ CONTACT ═══ -->
+<section class="contact-section">
+  <h2>Get the Price List</h2>
+  <p class="sub">Получить прайс-лист · 获取报价单</p>
+  <p class="name">Hangzhou Chemnitz International Trade Co., Ltd.</p>
+  <p class="name-cn">杭州开姆尼茨国际贸易有限公司</p>
+  <p class="line">FOB Any Chinese Port &nbsp;·&nbsp; Full Export Documentation &nbsp;·&nbsp; Competitive Factory-Direct Pricing</p>
+  <a class="cta-btn" href="https://wa.me/8613826126147" target="_blank">
+    <span style="font-size:1.3em">&#9993;</span> WhatsApp +86 138 2612 6147
+  </a>
+  <p class="reply">English · 中文 · Русский — we reply within hours</p>
 </section>
 
 <footer>
-<div class="container">
-&copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. All rights reserved.<br>
-Products shown are subject to availability. FOB prices vary by model and volume.
-</div>
+  &copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd.
 </footer>
 
 </body>
