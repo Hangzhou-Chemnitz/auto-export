@@ -1,480 +1,445 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hangzhou Chemnitz International Trade — Chinese Auto Export to Algeria, Kazakhstan, Russia, UAE, Kyrgyzstan, Uzbekistan, Nigeria, Tajikistan. Toyota, Volkswagen, Geely, Nissan, Mazda, Kia, Hyundai, Audi, Jetour in stock. FOB Any Chinese Port.">
-<meta name="keywords" content="Chinese auto export, China car export, FOB China, Toyota export, Volkswagen export, автомобили из Китая, экспорт авто из Китая, استيراد سيارات من الصين, Kazakhstan auto import, Russia car import, UAE car import, Kyrgyzstan auto, Hangzhou Chemnitz">
+<meta name="description" content="Hangzhou Chemnitz International Trade — Chinese Auto Export. Toyota, Volkswagen, Geely, Nissan, Kia, Hyundai, Mazda, Audi, Jetour. FOB Any Chinese Port.">
 <meta property="og:title" content="Hangzhou Chemnitz — Chinese Auto Export">
-<meta property="og:description" content="Direct from factory. FOB Any Chinese Port. Serving Kazakhstan, Russia, UAE, Kyrgyzstan, all LHD markets.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hangzhou-chemnitz.github.io/auto-export/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hangzhou Chemnitz — Chinese Auto Export">
-<meta name="twitter:description" content="Direct Chinese auto export. FOB Any Chinese Port. All LHD markets.">
-<title>Hangzhou Chemnitz — Chinese Auto Export | Китайский автоэкспорт | استيراد سيارات الصين</title>
+<meta property="og:description" content="900+ vehicles in stock. FOB Any Chinese Port. Serving 30+ markets across Africa, Middle East, Central Asia.">
+<title>Hangzhou Chemnitz — Chinese Auto Export</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#fff;line-height:1.6}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#0f172a;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
 
-.hero{
-  position:relative;
-  background:linear-gradient(135deg,rgba(10,22,40,0.85) 0%,rgba(26,39,68,0.78) 100%);
-  color:#fff;padding:60px 24px 48px;overflow:hidden;text-align:center;
+/* === NAV === */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-weight:800;font-size:1.05em;color:#0f172a;text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:#dc2626}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{text-decoration:none;color:#475569;font-size:0.8em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .15s}
+.nav-links a:hover{color:#0f172a;background:#f1f5f9}
+.nav-links a.active{color:#dc2626;background:#fef2f2}
+.lang-badge{font-size:0.7em;font-weight:600;padding:3px 8px;border-radius:4px;background:#f1f5f9;color:#64748b;text-decoration:none;margin-left:4px;transition:all .15s}
+.lang-badge:hover{background:#e2e8f0;color:#0f172a}
+
+/* === HERO === */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;background:#0f172a}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.35}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,0.92) 0%,rgba(15,23,42,0.65) 50%,rgba(15,23,42,0.85) 100%)}
+.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:120px 24px 80px;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.3);color:#fca5a5;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:2px;padding:8px 20px;border-radius:50px;margin-bottom:28px}
+.hero-badge .dot{width:6px;height:6px;background:#ef4444;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:clamp(2.2em,6vw,4.5em);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:#fff;margin-bottom:16px}
+.hero h1 .red{color:#ef4444}
+.hero p{font-size:1.15em;color:#94a3b8;max-width:600px;margin-bottom:32px;line-height:1.6}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-weight:600;font-size:0.95em;text-decoration:none;transition:all .2s;cursor:pointer}
+.btn-primary{background:#dc2626;color:#fff;box-shadow:0 4px 24px rgba(220,38,38,0.35)}
+.btn-primary:hover{background:#b91c1c;transform:translateY(-2px);box-shadow:0 8px 32px rgba(220,38,38,0.45)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25)}
+.btn-outline:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.4)}
+.btn-wa{background:#25d366;color:#fff;box-shadow:0 4px 24px rgba(37,211,102,0.35)}
+.btn-wa:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,211,102,0.45)}
+.hero-stats{display:flex;gap:32px;margin-top:56px;flex-wrap:wrap}
+.hero-stat .num{font-size:2em;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.hero-stat .label{font-size:0.8em;color:#64748b;margin-top:2px}
+
+/* === SECTION === */
+.section{padding:80px 24px}
+.section-dark{background:#0f172a;color:#fff}
+.section-gray{background:#f8fafc}
+.section-inner{max-width:1280px;margin:0 auto}
+.section-label{display:inline-block;font-size:0.75em;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:#dc2626;margin-bottom:12px}
+.section h2{font-size:clamp(1.5em,3vw,2.2em);font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
+.section .lead{color:#64748b;font-size:0.95em;margin-bottom:48px;max-width:600px}
+
+/* === SPEC BAR === */
+.spec-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2e8f0;border-radius:16px;overflow:hidden}
+.spec-item{background:#fff;padding:32px 24px;text-align:center}
+.spec-item .val{font-size:1.8em;font-weight:800;color:#0f172a;letter-spacing:-0.02em}
+.spec-item .lbl{font-size:0.8em;color:#64748b;margin-top:4px}
+@media(max-width:768px){.spec-bar{grid-template-columns:repeat(2,1fr)}}
+
+/* === BRAND SECTION === */
+.brand-block{background:#fff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;margin-bottom:20px;transition:all .2s}
+.brand-block:hover{border-color:#cbd5e1;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
+.brand-header{display:flex;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;user-select:none}
+.brand-logo{width:48px;height:48px;border-radius:12px;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1em;flex-shrink:0}
+.brand-info h3{font-size:1.15em;font-weight:700}
+.brand-info .sub{font-size:0.8em;color:#64748b}
+.brand-arrow{margin-left:auto;color:#94a3b8;font-size:1.2em;transition:transform .2s}
+.brand-block.open .brand-arrow{transform:rotate(180deg)}
+.brand-models{display:none;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;padding:0 24px 24px}
+.brand-block.open .brand-models{display:grid}
+
+/* === MODEL CARD === */
+.model-card-new{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:all .25s;cursor:pointer;text-decoration:none;color:inherit;display:block}
+.model-card-new:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1);border-color:#cbd5e1}
+.model-card-new .img-wrap{position:relative;height:160px;background:#f1f5f9;overflow:hidden}
+.model-card-new .img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.model-card-new:hover .img-wrap img{transform:scale(1.05)}
+.model-card-new .badge{position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.7em;font-weight:600;padding:4px 10px;border-radius:50px}
+.model-card-new .info{padding:14px 16px}
+.model-card-new h4{font-size:0.95em;font-weight:700;margin-bottom:2px}
+.model-card-new .type{font-size:0.75em;color:#94a3b8}
+.model-card-new .spec-row{display:flex;gap:8px;margin-top:10px;font-size:0.7em;color:#64748b;flex-wrap:wrap}
+.model-card-new .spec-row span{background:#f1f5f9;padding:2px 8px;border-radius:4px}
+
+/* === FEATURE GRID === */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.feature-card{text-align:center;padding:32px 24px}
+.feature-card .icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4em;margin:0 auto 16px}
+.feature-card h3{font-size:1em;font-weight:700;margin-bottom:6px}
+.feature-card p{font-size:0.85em;color:#64748b;line-height:1.5}
+
+/* === MARKET TAGS === */
+.market-cloud{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.market-tag{background:rgba(255,255,255,0.08);color:#e2e8f0;padding:8px 18px;border-radius:50px;font-size:0.85em;font-weight:500;border:1px solid rgba(255,255,255,0.1);transition:all .15s}
+.market-tag:hover{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.25)}
+
+/* === CONTACT === */
+.contact-section{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;text-align:center;padding:80px 24px}
+.contact-section h2{font-size:2em;font-weight:800;margin-bottom:8px}
+.contact-section .sub{color:#94a3b8;font-size:0.95em;margin-bottom:28px}
+.contact-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact-section .reply{color:#64748b;font-size:0.85em;margin-top:20px}
+
+/* === FOOTER === */
+footer{text-align:center;padding:24px;color:#94a3b8;font-size:0.78em;background:#f8fafc;border-top:1px solid #e2e8f0}
+
+/* === RESPONSIVE === */
+@media(max-width:640px){
+  .hero-stats{gap:20px}
+  .hero-stat .num{font-size:1.4em}
+  .brand-models{grid-template-columns:repeat(2,1fr)}
+  .model-card-new .img-wrap{height:120px}
 }
-.hero .bg-img{
-  position:absolute;inset:0;
-  background:url('https://loremflickr.com/1400/600/shipping,port,container') center/cover;
-  z-index:-1;filter:brightness(0.3) saturate(0.4);
-}
-.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
-.hero .tag{display:inline-block;background:rgba(220,38,38,0.25);border:1px solid rgba(220,38,38,0.4);color:#f87171;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:3px;padding:6px 18px;border-radius:50px;margin-bottom:20px}
-.hero h1{font-size:clamp(1.8em,5vw,3em);font-weight:800;line-height:1.15;margin-bottom:12px;letter-spacing:-0.02em}
-.hero h1 span{color:#ef4444}
-.hero .subtitle{font-size:1.05em;color:#94a3b8;margin-bottom:4px;font-weight:500}
-.hero .subtitle-sm{font-size:0.9em;color:#64748b;margin-bottom:4px}
-.hero .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);margin-top:24px}
-.hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
-.wa-row{display:flex;justify-content:center;gap:10px;flex-wrap:nowrap;margin-top:24px}
-
-.section{padding:56px 24px}
-.section .inner{max-width:960px;margin:0 auto}
-.section h2{text-align:center;font-size:1.6em;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
-.section .lead{text-align:center;color:#64748b;font-size:0.95em;margin-bottom:40px}
-.section .lead .lang{display:block;font-size:0.9em;color:#94a3b8;margin-top:2px}
-
-.brand-group{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:32px}
-.brand-group .brand-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #e2e8f0}
-.brand-group .brand-header .brand-icon{width:44px;height:44px;border-radius:10px;background:#1a1a2e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85em}
-.brand-group .brand-header h3{font-size:1.3em;font-weight:700;color:#1a1a2e}
-.brand-group .brand-header .info{font-size:0.85em;color:#64748b}
-.brand-group .model-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
-
-.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-.brand-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;transition:all .25s}
-.brand-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.1);border-color:#ef4444}
-.brand-card .card-img{height:160px;background:#e2e8f0 center/cover;position:relative}
-.brand-card .card-img .badge{position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.75em;font-weight:600;padding:4px 10px;border-radius:50px}
-.brand-card .card-body{padding:18px 16px;text-align:center}
-.brand-card h3{font-size:1.1em;font-weight:700;margin-bottom:2px}
-.brand-card .info{font-size:0.8em;color:#94a3b8;margin-bottom:10px}
-.brand-card .count{font-size:0.85em;color:#ef4444;font-weight:600}
-.brand-card .in-stock{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font-size:0.75em;color:#16a34a;font-weight:600}
-.brand-card .in-stock .dot{width:6px;height:6px;background:#16a34a;border-radius:50%}
-
-.model-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:all .25s;cursor:pointer}
-.model-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.08);border-color:#ef4444}
-.model-card .card-img{height:140px;background:#e2e8f0 center/cover;position:relative}
-.model-card .card-img .badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.7em;font-weight:600;padding:3px 8px;border-radius:50px}
-.model-card .card-body{padding:14px 12px;text-align:center}
-.model-card h4{font-size:0.95em;font-weight:700;margin-bottom:2px}
-.model-card .info{font-size:0.75em;color:#94a3b8}
-.brochure-link{display:inline-block;margin-top:8px;font-size:0.72em;color:#0a66c2;text-decoration:none;font-weight:600;padding:4px 12px;border:1.5px solid #0a66c2;border-radius:6px;transition:all .2s}
-.brochure-link:hover{background:#0a66c2;color:#fff}
-
-/* Lightbox */
-.lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
-.lb-overlay.open{display:flex}
-.lb-close{position:absolute;top:20px;right:28px;color:#fff;font-size:32px;cursor:pointer;z-index:10;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.1);transition:background .2s}
-.lb-close:hover{background:rgba(255,255,255,0.2)}
-.lb-img{max-width:90vw;max-height:75vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-.lb-title{color:#fff;font-size:1.1em;font-weight:600;margin-top:16px}
-.lb-counter{color:#94a3b8;font-size:0.85em;margin-top:4px}
-.lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:40px;cursor:pointer;padding:12px 16px;border-radius:8px;background:rgba(255,255,255,0.08);transition:background .2s;user-select:none}
-.lb-nav:hover{background:rgba(255,255,255,0.2)}
-.lb-prev{left:20px}
-.lb-next{right:20px}
-@media(max-width:640px){.lb-nav{font-size:28px;padding:8px 12px}.lb-prev{left:8px}.lb-next{right:8px}}
-
-.contact-section{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#fff;text-align:center;padding:56px 24px}
-.contact-section h2{font-size:1.5em;font-weight:700;margin-bottom:8px}
-.contact-section .sub{color:#94a3b8;font-size:0.95em;margin-bottom:20px}
-.contact-section .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
-.contact-section .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
-.contact-section .reply{color:#64748b;font-size:0.85em;margin-top:16px}
-
-footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#f8fafc;border-top:1px solid #e2e8f0}
-
-.wa-row .cta-btn{padding:14px 22px;font-size:0.95em;white-space:nowrap;margin-top:0}
-@media(max-width:768px){.wa-row{flex-wrap:wrap}.wa-row .cta-btn{padding:12px 16px;font-size:0.85em}}
 </style>
 </head>
 <body>
 
-<div style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
-  <strong>EN</strong> |
-  <a href="ru.html" style="color:#1a1a2e;text-decoration:none;margin:0 6px;font-weight:600">RU</a> |
-  <a href="mailto:ljj2022513@gmail.com" style="color:#1a1a2e;text-decoration:none;margin:0 6px;font-weight:600">العربية</a> |
-  <a href="mailto:ljj2022513@gmail.com" style="color:#1a1a2e;text-decoration:none;margin:0 6px;font-weight:600">FR</a>
-</div>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Chemnitz<span>Auto</span></a>
+    <div class="nav-links">
+      <a href="#inventory">Inventory</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="ru.html" class="lang-badge">RU</a>
+      <a href="#" class="lang-badge">AR</a>
+      <a href="#" class="lang-badge">FR</a>
+    </div>
+  </div>
+</nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="bg-img"></div>
-  <div class="hero-inner">
-    <div class="tag">China Auto Export</div>
-    <h1>Your Direct Source for<br><span>Chinese Vehicles</span></h1>
-    <div class="subtitle">Hangzhou Chemnitz International Trade Co., Ltd.</div>
-    <div class="subtitle-sm">FOB Any Chinese Port</div>
-    <div class="wa-row">
-      <a class="cta-btn" href="https://wa.me/8613826126147" target="_blank">
-        &#9993; WhatsApp
-      </a>
-      <a class="cta-btn" href="https://wa.me/8613640033268" target="_blank">
-        &#9993; WhatsApp
-      </a>
-      <a class="cta-btn" href="https://wa.me/8613110005566" target="_blank">
-        &#9993; WhatsApp
-      </a>
+  <div class="hero-bg"><img src="https://loremflickr.com/1600/900/container,port,ship" alt="" loading="eager"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> China Auto Export · Since 2020</div>
+    <h1>Your Direct Pipeline<br>to <span class="red">Chinese Vehicles</span></h1>
+    <p>Hangzhou Chemnitz International Trade — 900+ brand-new vehicles in permanent stock. FOB any Chinese port. Serving 30+ LHD markets worldwide.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/8613826126147" class="btn btn-wa">WhatsApp · Get Price List</a>
+      <a href="#inventory" class="btn btn-outline">View Inventory ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">900<span style="color:#ef4444">+</span></div><div class="label">Vehicles in Stock</div></div>
+      <div class="hero-stat"><div class="num">9</div><div class="label">Brands</div></div>
+      <div class="hero-stat"><div class="num">18</div><div class="label">Models</div></div>
+      <div class="hero-stat"><div class="num">30<span style="color:#ef4444">+</span></div><div class="label">Markets Served</div></div>
     </div>
   </div>
 </section>
 
-<!-- Markets Strip -->
-<section style="background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;text-align:center;padding:32px 24px">
-  <div style="max-width:960px;margin:0 auto">
-    <p style="font-size:1.1em;font-weight:700;margin-bottom:4px">
-      All Left-Hand Drive Markets &nbsp;·&nbsp; Леворульные рынки &nbsp;·&nbsp; أسواق القيادة اليسرى
-    </p>
-    <p style="font-size:0.85em;color:#94a3b8;margin-bottom:16px">
-      Excluding EU &amp; US &nbsp;·&nbsp; FOB Any Chinese Port
-    </p>
-    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;font-size:0.85em">
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">Kazakhstan</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">Kyrgyzstan</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">Russia</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">UAE &amp; Middle East</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">Uzbekistan</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">Tajikistan</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#38bdf8">Algeria</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#22c55e">Serbia</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#38bdf8">Nigeria</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">Mongolia</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">SE Asia</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#e2e8f0">Latin America</span>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="inner">
+<!-- INVENTORY -->
+<section class="section section-gray" id="inventory">
+  <div class="section-inner">
+    <div class="section-label">Inventory</div>
     <h2>In-Stock Vehicles</h2>
-    <p class="lead">
-      Detailed stock list available on WhatsApp
-      <span class="lang">В наличии · المركبات المتوفرة</span>
-    </p>
+    <p class="lead">Every vehicle in our catalog is brand-new, factory-direct, ready for export. Click a model for full specifications.</p>
 
-    <!-- Toyota Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">T</div>
-        <div>
+    <!-- Toyota -->
+    <div class="brand-block open">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo">T</div>
+        <div class="brand-info">
           <h3>Toyota</h3>
-          <div class="info">95 units in stock · 95 ед. · ٩٥ وحدة</div>
+          <div class="sub">95 units · 6 models</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/rav4/" data-prefix="rav4-" data-count="8" data-title="Toyota RAV4">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/rav4/rav4-1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>RAV4</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla/" data-prefix="" data-count="8" data-title="Toyota Corolla">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla/1.jpg')"><span class="badge">Sedan</span></div>
-          <div class="card-body"><h4>Corolla</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla-cross/" data-prefix="" data-count="8" data-title="Toyota Corolla Cross">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla-cross/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Corolla Cross</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/camry/" data-prefix="" data-count="8" data-title="Toyota Camry">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/camry/1.jpg')"><span class="badge">Sedan</span></div>
-          <div class="card-body"><h4>Camry</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/highlander/" data-prefix="" data-count="8" data-title="Toyota Highlander">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/highlander/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Highlander</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/frontlander/" data-prefix="" data-count="8" data-title="Toyota Frontlander">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/toyota/frontlander/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Frontlander</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_toyota_rav4.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/rav4/rav4-1.jpg" alt="RAV4" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>RAV4</h4><div class="type">Compact SUV · Hybrid</div><div class="spec-row"><span>2.0L / 2.5L</span><span>AWD</span><span>5 seats</span></div></div>
+        </a>
+        <a href="model_toyota_corolla.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla/1.jpg" alt="Corolla" loading="lazy"><span class="badge">Sedan</span></div>
+          <div class="info"><h4>Corolla</h4><div class="type">Compact Sedan · Petrol/Hybrid</div><div class="spec-row"><span>1.8L / 2.0L</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
+        <a href="model_toyota_corolla_cross.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/corolla-cross/1.jpg" alt="Corolla Cross" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Corolla Cross</h4><div class="type">Compact SUV · Hybrid</div><div class="spec-row"><span>2.0L</span><span>FWD/AWD</span><span>5 seats</span></div></div>
+        </a>
+        <a href="model_toyota_camry.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/camry/1.jpg" alt="Camry" loading="lazy"><span class="badge">Sedan</span></div>
+          <div class="info"><h4>Camry</h4><div class="type">Mid-size Sedan · Hybrid</div><div class="spec-row"><span>2.0L / 2.5L</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
+        <a href="model_toyota_highlander.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/highlander/1.jpg" alt="Highlander" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Highlander</h4><div class="type">Mid-size SUV · Hybrid</div><div class="spec-row"><span>2.5L</span><span>AWD</span><span>7 seats</span></div></div>
+        </a>
+        <a href="model_toyota_frontlander.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/toyota/frontlander/1.jpg" alt="Frontlander" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Frontlander</h4><div class="type">Compact SUV · Petrol</div><div class="spec-row"><span>2.0L</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
       </div>
     </div>
 
-    <!-- Volkswagen Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">V</div>
-        <div>
+    <!-- Volkswagen -->
+    <div class="brand-block">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo">V</div>
+        <div class="brand-info">
           <h3>Volkswagen</h3>
-          <div class="info">84 units in stock · 84 ед. · ٨٤ وحدة</div>
+          <div class="sub">84 units · 3 models</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/tiguan-allspace/" data-prefix="" data-count="8" data-title="Volkswagen Tiguan Allspace">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/tiguan-allspace/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Tiguan Allspace</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/teramont/" data-prefix="" data-count="7" data-title="Volkswagen Teramont">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/teramont/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Teramont</h4><div class="info">7 Photos · 7 Фото · ٧ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/tharu/" data-prefix="" data-count="8" data-title="Volkswagen Tharu">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/tharu/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Tharu</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_vw_tiguan_allspace.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/tiguan-allspace/1.jpg" alt="Tiguan Allspace" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Tiguan Allspace</h4><div class="type">Mid-size SUV · 7-Seat</div><div class="spec-row"><span>2.0T</span><span>AWD</span><span>7 seats</span></div></div>
+        </a>
+        <a href="model_vw_teramont.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/teramont/1.jpg" alt="Teramont" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Teramont</h4><div class="type">Full-size SUV · 7-Seat</div><div class="spec-row"><span>2.0T / 2.5T</span><span>AWD</span><span>7 seats</span></div></div>
+        </a>
+        <a href="model_vw_tharu.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/volkswagen/tharu/1.jpg" alt="Tharu" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Tharu</h4><div class="type">Compact SUV · Petrol</div><div class="spec-row"><span>1.5T / 2.0T</span><span>FWD/AWD</span><span>5 seats</span></div></div>
+        </a>
       </div>
     </div>
 
-    <!-- Geely Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">G</div>
-        <div>
+    <!-- Geely -->
+    <div class="brand-block">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo" style="background:#1e40af">G</div>
+        <div class="brand-info">
           <h3>Geely</h3>
-          <div class="info">In Stock · В наличии · في المخزون</div>
+          <div class="sub">In Stock · 1 model</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/geely/coolray/" data-prefix="" data-count="8" data-title="Geely Coolray">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/geely/coolray/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Coolray</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_geely_coolray.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/geely/coolray/1.jpg" alt="Coolray" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Coolray</h4><div class="type">Compact SUV · Turbo</div><div class="spec-row"><span>1.5T</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
       </div>
     </div>
 
-    <!-- Jetour Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">J</div>
-        <div>
+    <!-- Jetour -->
+    <div class="brand-block">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo" style="background:#16a34a">J</div>
+        <div class="brand-info">
           <h3>Jetour</h3>
-          <div class="info">In Stock · В наличии · в наличии</div>
+          <div class="sub">In Stock · 1 model</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/jetour/dashing/" data-prefix="" data-count="8" data-title="Jetour Dashing">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/jetour/dashing/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Dashing</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_jetour_dashing.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/jetour/dashing/1.jpg" alt="Dashing" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Dashing</h4><div class="type">Compact SUV · Turbo</div><div class="spec-row"><span>1.5T / 1.6T</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
       </div>
     </div>
 
-    <!-- Nissan Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">N</div>
-        <div>
+    <!-- Nissan -->
+    <div class="brand-block">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo" style="background:#c2410c">N</div>
+        <div class="brand-info">
           <h3>Nissan</h3>
-          <div class="info">In Stock · В наличии · في المخزون</div>
+          <div class="sub">In Stock · 2 models</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/nissan/qashqai/" data-prefix="" data-count="8" data-title="Nissan Qashqai">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/nissan/qashqai/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Qashqai</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/nissan/x-trail/" data-prefix="" data-count="8" data-title="Nissan X-Trail">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/nissan/x-trail/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>X-Trail</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_nissan_qashqai.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/nissan/qashqai/1.jpg" alt="Qashqai" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Qashqai</h4><div class="type">Compact SUV · Mild Hybrid</div><div class="spec-row"><span>1.3T</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
+        <a href="model_nissan_xtrail.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/nissan/x-trail/1.jpg" alt="X-Trail" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>X-Trail</h4><div class="type">Mid-size SUV · e-POWER</div><div class="spec-row"><span>1.5T</span><span>AWD</span><span>5/7 seats</span></div></div>
+        </a>
       </div>
     </div>
 
-    <!-- Mazda Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">M</div>
-        <div>
+    <!-- Mazda -->
+    <div class="brand-block">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo" style="background:#0f172a">M</div>
+        <div class="brand-info">
           <h3>Mazda</h3>
-          <div class="info">In Stock · В наличии · في المخزون</div>
+          <div class="sub">In Stock · 1 model</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/mazda/cx-5/" data-prefix="" data-count="7" data-title="Mazda CX-5">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/mazda/cx-5/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>CX-5</h4><div class="info">7 Photos · 7 Фото · ٧ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_mazda_cx5.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/mazda/cx-5/1.jpg" alt="CX-5" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>CX-5</h4><div class="type">Compact SUV · Petrol</div><div class="spec-row"><span>2.0L / 2.5L</span><span>AWD</span><span>5 seats</span></div></div>
+        </a>
       </div>
     </div>
 
-    <!-- Kia Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">K</div>
-        <div>
+    <!-- Kia -->
+    <div class="brand-block">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo" style="background:#0f172a">K</div>
+        <div class="brand-info">
           <h3>Kia</h3>
-          <div class="info">19 units in stock · 19 ед. · ١٩ وحدة</div>
+          <div class="sub">19 units · 2 models</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/kia/seltos/" data-prefix="" data-count="8" data-title="Kia Seltos">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/kia/seltos/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Seltos</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/kia/kx1/" data-prefix="" data-count="8" data-title="Kia KX1">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/kia/kx1/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>KX1</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_kia_seltos.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/kia/seltos/1.jpg" alt="Seltos" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Seltos</h4><div class="type">Compact SUV · Petrol</div><div class="spec-row"><span>1.5L / 1.4T</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
+        <a href="model_kia_kx1.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/kia/kx1/1.jpg" alt="KX1" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>KX1</h4><div class="type">Subcompact SUV · Petrol</div><div class="spec-row"><span>1.4L</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
       </div>
     </div>
 
-    <!-- Hyundai Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">H</div>
-        <div>
+    <!-- Hyundai -->
+    <div class="brand-block">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo" style="background:#1e40af">H</div>
+        <div class="brand-info">
           <h3>Hyundai</h3>
-          <div class="info">In Stock · В наличии · في المخزون</div>
+          <div class="sub">In Stock · 1 model</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/hyundai/elantra/" data-prefix="" data-count="7" data-title="Hyundai Elantra">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/hyundai/elantra/1.jpg')"><span class="badge">Sedan</span></div>
-          <div class="card-body"><h4>Elantra</h4><div class="info">7 Photos · 7 Фото · ٧ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_hyundai_elantra.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/hyundai/elantra/1.jpg" alt="Elantra" loading="lazy"><span class="badge">Sedan</span></div>
+          <div class="info"><h4>Elantra</h4><div class="type">Compact Sedan · Petrol/Hybrid</div><div class="spec-row"><span>1.5L / 1.6L</span><span>FWD</span><span>5 seats</span></div></div>
+        </a>
       </div>
     </div>
 
-    <!-- Audi Brand Group -->
-    <div class="brand-group">
-      <div class="brand-header">
-        <div class="brand-icon">A</div>
-        <div>
+    <!-- Audi -->
+    <div class="brand-block">
+      <div class="brand-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="brand-logo" style="background:#0f172a">A</div>
+        <div class="brand-info">
           <h3>Audi</h3>
-          <div class="info">In Stock · В наличии · في المخزون</div>
+          <div class="sub">In Stock · 1 model</div>
         </div>
+        <span class="brand-arrow">▾</span>
       </div>
-      <div class="model-grid">
-        <div class="model-card" data-base="https://hangzhou-chemnitz.github.io/auto-export/images/audi/q5/" data-prefix="" data-count="8" data-title="Audi Q5">
-          <div class="card-img" style="background-image:url('https://hangzhou-chemnitz.github.io/auto-export/images/audi/q5/1.jpg')"><span class="badge">SUV</span></div>
-          <div class="card-body"><h4>Q5</h4><div class="info">8 Photos · 8 Фото · ٨ صور</div></div>
-        </div>
+      <div class="brand-models">
+        <a href="model_audi_q5.html" class="model-card-new">
+          <div class="img-wrap"><img src="https://hangzhou-chemnitz.github.io/auto-export/images/audi/q5/1.jpg" alt="Q5" loading="lazy"><span class="badge">SUV</span></div>
+          <div class="info"><h4>Q5</h4><div class="type">Mid-size Luxury SUV</div><div class="spec-row"><span>2.0T</span><span>quattro</span><span>5 seats</span></div></div>
+        </a>
       </div>
-    </div>
-
     </div>
   </div>
 </section>
 
-<section class="contact-section">
-  <h2>Get the Price List</h2>
-  <p class="sub">Получить прайс-лист · احصل على قائمة الأسعار</p>
-  <div class="wa-row">
-    <a class="cta-btn" href="https://wa.me/8613826126147" target="_blank">
-      &#9993; WhatsApp
-    </a>
-    <a class="cta-btn" href="https://wa.me/8613640033268" target="_blank">
-      &#9993; WhatsApp
-    </a>
-    <a class="cta-btn" href="https://wa.me/8613110005566" target="_blank">
-      &#9993; WhatsApp
-    </a>
+<!-- WHY US -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-label">Why Chemnitz</div>
+    <h2>Engineered for Export</h2>
+    <p class="lead">From factory floor to your dealership — a supply chain built for speed, transparency, and scale.</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon" style="background:#fef2f2;color:#dc2626">&#9673;</div>
+        <h3>900+ Permanent Stock</h3>
+        <p>Vehicles physically in our inventory — not dropshipped. Every unit photographed and documented before listing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon" style="background:#eff6ff;color:#2563eb">⚓</div>
+        <h3>FOB Any Chinese Port</h3>
+        <p>Container and RoRo shipping. Full export documentation: CO, invoice, packing list, BL — ready for your customs.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon" style="background:#f0fdf4;color:#16a34a">✓</div>
+        <h3>Factory-Direct Pricing</h3>
+        <p>No middlemen. Direct from manufacturer to your port. Competitive pricing with volume discounts available.</p>
+      </div>
+    </div>
   </div>
-  <p class="reply">English · Русский · العربية — we reply within hours</p>
+</section>
+
+<!-- MARKETS -->
+<section class="section section-dark">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-label" style="color:#f87171">Markets</div>
+    <h2 style="color:#fff">Serving 30+ LHD Markets</h2>
+    <p class="lead" style="color:#94a3b8;margin:0 auto 32px">Excluding EU & US. Focused on Africa, Middle East, Central Asia, SE Asia, Latin America.</p>
+    <div class="market-cloud">
+      <span class="market-tag">Kazakhstan</span>
+      <span class="market-tag">Kyrgyzstan</span>
+      <span class="market-tag">Russia</span>
+      <span class="market-tag">UAE & Middle East</span>
+      <span class="market-tag">Uzbekistan</span>
+      <span class="market-tag">Tajikistan</span>
+      <span class="market-tag">Algeria</span>
+      <span class="market-tag">Serbia</span>
+      <span class="market-tag">Nigeria</span>
+      <span class="market-tag">Mongolia</span>
+      <span class="market-tag">SE Asia</span>
+      <span class="market-tag">Latin America</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <h2>Ready to Source?</h2>
+  <p class="sub">English · Русский · العربية · Français — we reply within hours</p>
+  <div class="contact-row">
+    <a class="btn btn-wa" href="https://wa.me/8613826126147" target="_blank">WhatsApp +86 138 2612 6147</a>
+    <a class="btn btn-wa" href="https://wa.me/8613640033268" target="_blank">WhatsApp +86 136 4003 3268</a>
+    <a class="btn btn-wa" href="https://wa.me/8613110005566" target="_blank">WhatsApp +86 131 1000 5566</a>
+  </div>
+  <p class="reply">ljj2022513@gmail.com · Hangzhou Chemnitz International Trade Co., Ltd.</p>
 </section>
 
 <footer>
-  &copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd.
+  &copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. · FOB Any Chinese Port
 </footer>
 
-<!-- Lightbox -->
-<div class="lb-overlay" id="lb">
-  <span class="lb-close" id="lb-close">&times;</span>
-  <span class="lb-nav lb-prev" id="lb-prev">&#8249;</span>
-  <span class="lb-nav lb-next" id="lb-next">&#8250;</span>
-  <img class="lb-img" id="lb-img" src="" alt="">
-  <div class="lb-title" id="lb-title"></div>
-  <div class="lb-counter" id="lb-counter"></div>
-</div>
-
+<!-- Brand toggle + smooth scroll -->
 <script>
-(function() {
-  var lb = document.getElementById('lb');
-  var lbImg = document.getElementById('lb-img');
-  var lbTitle = document.getElementById('lb-title');
-  var lbCounter = document.getElementById('lb-counter');
-  var lbIdx = 0;
-  var lbCount = 0;
-  var lbUrls = [];
-
-  // Add brochure links to model cards
-  var cards = document.querySelectorAll('.model-card');
-  for (var i = 0; i < cards.length; i++) {
-    var title = cards[i].getAttribute('data-title');
-    if (title) {
-      var body = cards[i].querySelector('.card-body');
-      if (body) {
-        var lnk = document.createElement('a');
-        lnk.href = 'https://autocatalogarchive.com/?s=' + encodeURIComponent(title);
-        lnk.target = '_blank';
-        lnk.rel = 'noopener';
-        lnk.className = 'brochure-link';
-        lnk.textContent = '📄 Brochure';
-        lnk.addEventListener('click', function(e) { e.stopPropagation(); });
-        body.appendChild(lnk);
-      }
-    }
-  }
-
-  // Bind click to all model cards
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', function() {
-      var base = this.getAttribute('data-base');
-      var prefix = this.getAttribute('data-prefix') || '';
-      var count = parseInt(this.getAttribute('data-count'));
-      var title = this.getAttribute('data-title');
-      lbUrls = [];
-      for (var j = 1; j <= count; j++) {
-        lbUrls.push(base + prefix + j + '.jpg');
-      }
-      lbIdx = 0;
-      lbCount = count;
-      lbTitle.textContent = title;
-      show();
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-
-  function show() {
-    lbImg.src = lbUrls[lbIdx];
-    lbCounter.textContent = (lbIdx + 1) + ' / ' + lbCount;
-  }
-
-  document.getElementById('lb-prev').addEventListener('click', function(e) {
-    e.stopPropagation();
-    lbIdx = (lbIdx - 1 + lbUrls.length) % lbUrls.length;
-    show();
+document.querySelectorAll('.brand-header').forEach(h => {
+  h.addEventListener('click', function(e) {
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
   });
-
-  document.getElementById('lb-next').addEventListener('click', function(e) {
-    e.stopPropagation();
-    lbIdx = (lbIdx + 1) % lbUrls.length;
-    show();
-  });
-
-  document.getElementById('lb-close').addEventListener('click', function() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  });
-
-  lb.addEventListener('click', function(e) {
-    if (e.target === lb) {
-      lb.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); lbIdx = (lbIdx - 1 + lbUrls.length) % lbUrls.length; show(); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); lbIdx = (lbIdx + 1) % lbUrls.length; show(); }
-  });
-})();
+});
 </script>
-
 </body>
 </html>
