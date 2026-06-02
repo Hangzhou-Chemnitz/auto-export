@@ -921,16 +921,16 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     "BMW 3 Series": {
       trims: [
         {name: "320i 运动套装", price: "¥25.8万", stock: [
-          {warehouse: "霍尔果斯仓", qty: 5},
-          {warehouse: "喀什仓", qty: 5},
-          {warehouse: "南沙港", qty: 0},
-          {warehouse: "上海港", qty: 1}
+          {warehouse: "霍尔果斯仓", detail: "黑色×3 白色×2"},
+          {warehouse: "喀什仓", detail: "黑色×2 白色×3"},
+          {warehouse: "南沙港", detail: "无库存"},
+          {warehouse: "上海港", detail: "蓝色×1"}
         ]},
         {name: "330i M运动曜夜", price: "¥29.8万", stock: [
-          {warehouse: "霍尔果斯仓", qty: "-"},
-          {warehouse: "喀什仓", qty: "-"},
-          {warehouse: "南沙港", qty: "-"},
-          {warehouse: "上海港", qty: "-"}
+          {warehouse: "霍尔果斯仓", detail: "-"},
+          {warehouse: "喀什仓", detail: "-"},
+          {warehouse: "南沙港", detail: "-"},
+          {warehouse: "上海港", detail: "-"}
         ]}
       ]
     }
@@ -951,8 +951,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         h += '<div class="config-stock-grid">';
         for (var s = 0; s < data.trims[i].stock.length; s++) {
           var st = data.trims[i].stock[s];
-          var cls = st.qty === 0 || st.qty === "-" ? "config-stock-zero" : "config-stock-ok";
-          h += '<span class="' + cls + '">' + st.warehouse + ': ' + st.qty + '台</span>';
+          var cls = st.detail === '无库存' || st.detail === '-' ? 'config-stock-zero' : 'config-stock-ok';
+          h += '<span class="' + cls + '">' + st.warehouse + ': ' + st.detail + '</span>';
         }
         h += '</div>';
       }
