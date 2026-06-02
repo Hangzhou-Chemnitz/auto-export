@@ -82,26 +82,25 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 @media(max-width:640px){.lb-nav{font-size:28px;padding:8px 12px}.lb-prev{right:8px}.lb-next{left:8px}}
 
 /* Config Modal */
-.config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9998;align-items:center;justify-content:center}
+.config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:#fff;border-radius:16px;width:92vw;max-width:1100px;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative}
-.config-header{position:sticky;top:0;background:linear-gradient(135deg,#1a1a2e,#2d3a52);color:#fff;padding:24px 32px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center;z-index:1}
-.config-header h2{font-size:1.4em;font-weight:700;margin:0}
-.config-header .close-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.config-header .close-btn:hover{background:rgba(255,255,255,0.3)}
-.config-body{padding:24px 32px}
-.config-table{width:100%;border-collapse:collapse;font-size:0.9em}
-.config-table th{background:#f1f5f9;padding:14px 12px;text-align:center;font-weight:700;color:#1a1a2e;border-bottom:2px solid #e2e8f0;white-space:nowrap}
-.config-table th:first-child{text-align:left;border-radius:8px 0 0 0;min-width:100px}
-.config-table th:last-child{border-radius:0 8px 0 0}
-.config-table td{padding:12px;text-align:center;border-bottom:1px solid #f1f5f9;color:#334155;font-size:0.9em}
-.config-table td:first-child{text-align:left;font-weight:600;color:#1a1a2e;background:#fafbfc}
-.config-table tr:hover td{background:#f8fafc}
-.config-table tr:hover td:first-child{background:#f1f5f9}
-.config-price{font-size:1.2em;font-weight:800;color:#ef4444}
-.config-trim{font-weight:700;color:#1a1a2e;font-size:1em}
-.config-note{text-align:center;color:#94a3b8;font-size:0.85em;margin-top:16px;padding:12px;background:#f8fafc;border-radius:8px}
-@media(max-width:768px){.config-body{padding:12px}.config-table{font-size:0.75em}.config-table td,.config-table th{padding:8px 4px}.config-header{padding:16px}.config-header h2{font-size:1.1em}}
+.config-modal{background:rgb(247,248,252);border-radius:12px;width:95vw;max-width:850px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
+.config-body{padding:20px 24px}
+.config-card{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:12px;border:1px solid rgb(230,232,238);display:flex;align-items:flex-start;gap:12px}
+.config-card:last-child{margin-bottom:0}
+.config-card-left{flex:1;min-width:0}
+.config-card-model{font-size:0.95em;font-weight:600;color:#1a1a2e}
+.config-card-price{font-size:0.85em;font-weight:600;color:rgb(200,160,30);margin-bottom:4px;text-align:right}
+.config-card-stock{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:8px}
+.config-stock-item{font-size:0.85em;color:#475569;background:rgb(248,249,252);padding:3px 10px;border-radius:4px}
+.config-stock-zero{color:#94a3b8}
+.config-card-right{flex-shrink:0;text-align:right;min-width:80px}
+.config-order-btn{display:inline-block;background:rgb(200,160,30);color:#fff;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.82em;transition:all .2s;white-space:nowrap}
+.config-order-btn:hover{background:rgb(180,140,20)}
+.config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none;font-size:0.82em;padding:6px 14px}
+.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:12px}
+@media(max-width:640px){.config-card{flex-direction:column;align-items:stretch}.config-card-right{text-align:center}.config-body{padding:12px}}
+
 
 </style>
 </head>
@@ -647,77 +646,68 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <script>
 (function(){var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbTitle=document.getElementById('lb-title'),lbCounter=document.getElementById('lb-counter'),lbIdx=0,lbCount=0,lbUrls=[];var cards=document.querySelectorAll('.model-card');for(var i=0;i<cards.length;i++){var title=cards[i].getAttribute('data-title');if(title){var body=cards[i].querySelector('.card-body');if(body){var lnk=document.createElement('a');lnk.href='https://autocatalogarchive.com/?s='+encodeURIComponent(title);lnk.target='_blank';lnk.rel='noopener';lnk.className='brochure-link';lnk.textContent='🛒 طلب';lnk.addEventListener('click',function(e){e.stopPropagation();});body.appendChild(lnk);}}cards[i].addEventListener('click',function(){var base=this.getAttribute('data-base'),prefix=this.getAttribute('data-prefix')||'',count=parseInt(this.getAttribute('data-count'));lbUrls=[];for(var j=1;j<=count;j++)lbUrls.push(base+prefix+j+'.jpg');lbIdx=0;lbCount=count;lbTitle.textContent=this.getAttribute('data-title');show();lb.classList.add('open');document.body.style.overflow='hidden';});}function show(){lbImg.src=lbUrls[lbIdx];lbCounter.textContent=(lbIdx+1)+' / '+lbCount;}document.getElementById('lb-prev').addEventListener('click',function(e){e.stopPropagation();lbIdx=(lbIdx-1+lbUrls.length)%lbUrls.length;show();});document.getElementById('lb-next').addEventListener('click',function(e){e.stopPropagation();lbIdx=(lbIdx+1)%lbUrls.length;show();});document.getElementById('lb-close').addEventListener('click',function(){lb.classList.remove('open');document.body.style.overflow='';});lb.addEventListener('click',function(e){if(e.target===lb){lb.classList.remove('open');document.body.style.overflow='';}});document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape'){lb.classList.remove('open');document.body.style.overflow='';}if(e.key==='ArrowLeft'){e.preventDefault();lbIdx=(lbIdx-1+lbUrls.length)%lbUrls.length;show();}if(e.key==='ArrowRight'){e.preventDefault();lbIdx=(lbIdx+1)%lbUrls.length;show();}});})();
 
-  // ========== Config Modal (Brochure → Config) ==========
-  var configLinks = document.querySelectorAll('.brochure-link');
-  for (var cl = 0; cl < configLinks.length; cl++) {
-    configLinks[cl].addEventListener('click', function(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      var card = this.closest('.model-card');
-      var modelName = card ? card.getAttribute('data-title') : '';
-      showConfigModal(modelName);
-    });
-  }
-
+  // ========== Config Modal Data ==========
   var configData = {
     "BMW 3 Series": {
       trims: [
-        {name: "320i 运动套装", price: "¥25.8万", values: ["2.0T 184马力 L4", "8速手自一体", "后驱", "6.9L/100km", "●", "●", "○", "●", "●", "○", "4729×1827×1452"]},
-        {name: "330i M运动曜夜", price: "¥29.8万", values: ["2.0T 245马力 L4", "8速手自一体", "后驱", "7.2L/100km", "●", "●", "●", "●", "●", "●", "4729×1827×1452"]}
-      ],
-      specs: [
-        {label: "发动机"}, {label: "变速箱"}, {label: "驱动方式"}, {label: "综合油耗"},
-        {label: "LED大灯"}, {label: "电动座椅"}, {label: "HUD抬头显示"},
-        {label: "全景天窗"}, {label: "驾驶辅助"}, {label: "自适应悬挂"}, {label: "尺寸(mm)"}
+        {name: "320i 运动套装", price: "السعر الرسمي في الصين: 25.8万", stock: [
+          {warehouse: "霍尔果斯仓", detail: "黑色×3 白色×2"},
+          {warehouse: "喀什仓", detail: "黑色×2 白色×3"},
+          {warehouse: "南沙港", detail: "无库存"},
+          {warehouse: "上海港", detail: "蓝色×1"}
+        ]},
+        {name: "330i M运动曜夜", price: "السعر الرسمي في الصين: 29.8万", stock: [
+          {warehouse: "霍尔果斯仓", detail: "-"},
+          {warehouse: "喀什仓", detail: "-"},
+          {warehouse: "南沙港", detail: "-"},
+          {warehouse: "上海港", detail: "-"}
+        ]}
       ]
     }
   };
 
-  function showConfigModal(modelName) {
+  window.showConfigModal = function(modelName) {
     var overlay = document.getElementById('config-overlay');
     var data = configData[modelName];
-    
     if (!data) {
-      var msg = '配置数据暂未录入，请联系我们获取详细信息。';
-      msg += '\n\nWhatsApp: +86 138 2612 6147';
-      msg += '\nEmail: ljj2022513@gmail.com';
-      msg += '\n\nModel: ' + modelName;
-      alert(msg);
+      alert('No data。\n\nWhatsApp: +86 138 2612 6147\nEmail: ljj2022513@gmail.com');
       return;
     }
-
-    var h = '<div class="config-modal">';
-    h += '<div class="config-header">';
-    h += '<h2>' + modelName + ' — 预购信息</h2>';
-    h += '<span class="close-btn" onclick="document.getElementById('config-overlay').classList.remove('open')" style="cursor:pointer;font-size:24px">&times;</span>';
-    h += '</div><div class="config-body"><table class="config-table">';
-    
-    h += '<thead><tr><th>参数</th>';
+    var h = '<div class="config-modal"><div class="config-body">';
     for (var i = 0; i < data.trims.length; i++) {
-      h += '<th><div class="config-trim">' + data.trims[i].name + '</div>';
-      h += '<div class="config-price">' + data.trims[i].price + '</div></th>';
-    }
-    h += '</tr></thead><tbody>';
-    
-    for (var s = 0; s < data.specs.length; s++) {
-      h += '<tr><td>' + data.specs[s].label + '</td>';
-      for (var t = 0; t < data.trims.length; t++) {
-        h += '<td>' + (data.trims[t].values[s] || '-') + '</td>';
+      var trim = data.trims[i];
+      var hasStock = false;
+      var stockHtml = '';
+      if (trim.stock) {
+        for (var s = 0; s < trim.stock.length; s++) {
+          var st = trim.stock[s];
+          var isZero = st.detail === '无库存' || st.detail === '-';
+          if (!isZero) hasStock = true;
+          stockHtml += '<span class="config-stock-item' + (isZero ? ' config-stock-zero' : '') + '">' + st.warehouse + ': ' + st.detail + '</span>';
+        }
       }
-      h += '</tr>';
+      h += '<div class="config-card">';
+      h += '<div class="config-card-left">';
+      h += '<div class="config-card-model">' + trim.name + '</div>';
+      h += '<div class="config-card-stock">' + stockHtml + '</div>';
+      h += '</div>';
+      h += '<div class="config-card-right">';
+      h += '<div class="config-card-price">' + trim.price + '</div>';
+      if (hasStock) {
+        h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">طلب</a>';
+      } else {
+        h += '<span class="config-order-btn disabled">غير متوفر</span>';
+      }
+      h += '</div></div>';
     }
-    
-    h += '</tbody></table>';
-    h += '<div class="config-note">详细配置和报价请通过 WhatsApp 或邮件联系我们</div>';
-    h += '</div></div>';
-    
+    h += '<div class="config-note">واتساب: 138 2612 6147 86+</div></div></div>';
     overlay.innerHTML = h;
     overlay.classList.add('open');
-  }
+  };
 
-  document.getElementById('config-overlay').addEventListener('click', function(e) {
-      if (e.target === this) this.classList.remove('open');
-    });
+    document.getElementById('config-overlay').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
 
 </script>
 </body>
