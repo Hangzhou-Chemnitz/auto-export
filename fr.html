@@ -651,21 +651,22 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   var configData = {
     "BMW 3 Series": {
       trims: [
-        {name: "320i 运动套装", price: "Prix officiel en Chine: 25.8万", stock: [
-          {warehouse: "霍尔果斯仓", detail: "黑色×3 白色×2"},
-          {warehouse: "喀什仓", detail: "黑色×2 白色×3"},
-          {warehouse: "南沙港", detail: "Non disponible"},
-          {warehouse: "上海港", detail: "蓝色×1"}
+        {name: "320i Sport Line", price: "Prix officiel Chine: ¥258,000", stock: [
+          {warehouse: "Horgos", detail: "Noir ×3 Blanc ×2"},
+          {warehouse: "Kashgar", detail: "Noir ×2 Blanc ×3"},
+          {warehouse: "Port de Nansha", detail: "Non disponible"},
+          {warehouse: "Port de Shanghai", detail: "Bleu ×1"}
         ]},
-        {name: "330i M运动曜夜", price: "Prix officiel en Chine: 29.8万", stock: [
-          {warehouse: "霍尔果斯仓", detail: "-"},
-          {warehouse: "喀什仓", detail: "-"},
-          {warehouse: "南沙港", detail: "-"},
-          {warehouse: "上海港", detail: "-"}
+        {name: "330i M Sport Night", price: "Prix officiel Chine: ¥298,000", stock: [
+          {warehouse: "Horgos", detail: "-"},
+          {warehouse: "Kashgar", detail: "-"},
+          {warehouse: "Port de Nansha", detail: "-"},
+          {warehouse: "Port de Shanghai", detail: "-"}
         ]}
       ]
     }
   };
+
 
   window.showConfigModal = function(modelName) {
     var overlay = document.getElementById('config-overlay');
