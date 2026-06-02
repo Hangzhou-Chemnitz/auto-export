@@ -226,24 +226,23 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 /* Config Modal */
 .config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:#fff;border-radius:16px;width:92vw;max-width:1100px;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative}
-.config-header{position:sticky;top:0;background:linear-gradient(135deg,#1a1a2e,#2d3a52);color:#fff;padding:24px 32px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center;z-index:1}
-.config-header h2{font-size:1.4em;font-weight:700;margin:0}
-.config-header .close-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.config-modal{background:#fff;border-radius:12px;width:90vw;max-width:420px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.3);position:relative}
+.config-header{background:#1a1a2e;color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.config-header h2{font-size:1.1em;font-weight:700;margin:0}
+.config-header .close-btn{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .config-header .close-btn:hover{background:rgba(255,255,255,0.3)}
-.config-body{padding:24px 32px}
-.config-table{width:100%;border-collapse:collapse;font-size:0.9em}
-.config-table th{background:#f1f5f9;padding:14px 12px;text-align:center;font-weight:700;color:#1a1a2e;border-bottom:2px solid #e2e8f0;white-space:nowrap}
-.config-table th:first-child{text-align:left;border-radius:8px 0 0 0;min-width:100px}
-.config-table th:last-child{border-radius:0 8px 0 0}
-.config-table td{padding:12px;text-align:center;border-bottom:1px solid #f1f5f9;color:#334155;font-size:0.9em}
-.config-table td:first-child{text-align:left;font-weight:600;color:#1a1a2e;background:#fafbfc}
-.config-table tr:hover td{background:#f8fafc}
-.config-table tr:hover td:first-child{background:#f1f5f9}
-.config-price{font-size:1.2em;font-weight:800;color:#ef4444}
-.config-trim{font-weight:700;color:#1a1a2e;font-size:1em}
-.config-note{text-align:center;color:#94a3b8;font-size:0.85em;margin-top:16px;padding:12px;background:#f8fafc;border-radius:8px}
-@media(max-width:768px){.config-body{padding:12px}.config-table{font-size:0.75em}.config-table td,.config-table th{padding:8px 4px}.config-header{padding:16px}.config-header h2{font-size:1.1em}}
+.config-body{padding:16px 20px}
+.config-price-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f1f5f9}
+.config-price-row:last-child{border-bottom:none}
+.config-price-info{flex:1}
+.config-price-trim{font-size:0.9em;font-weight:600;color:#1a1a2e;margin-bottom:2px}
+.config-price-val{font-size:1.3em;font-weight:800;color:#ef4444}
+.config-order-btn{display:inline-block;background:#ef4444;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.9em;transition:all .2s;white-space:nowrap}
+.config-order-btn:hover{background:#dc2626;transform:translateY(-1px)}
+.config-stock-grid{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px}
+.config-stock-ok{font-size:0.75em;color:#16a34a;background:#f0fdf4;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.config-stock-zero{font-size:0.75em;color:#94a3b8;background:#f1f5f9;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:12px;padding:8px;background:#f8fafc;border-radius:6px}
 
 </style>
 </head>
@@ -921,13 +920,18 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   var configData = {
     "BMW 3 Series": {
       trims: [
-        {name: "320i 运动套装", price: "¥25.8万", values: ["2.0T 184马力 L4", "8速手自一体", "后驱", "6.9L/100km", "●", "●", "○", "●", "●", "○", "4729×1827×1452"]},
-        {name: "330i M运动曜夜", price: "¥29.8万", values: ["2.0T 245马力 L4", "8速手自一体", "后驱", "7.2L/100km", "●", "●", "●", "●", "●", "●", "4729×1827×1452"]}
-      ],
-      specs: [
-        {label: "发动机"}, {label: "变速箱"}, {label: "驱动方式"}, {label: "综合油耗"},
-        {label: "LED大灯"}, {label: "电动座椅"}, {label: "HUD抬头显示"},
-        {label: "全景天窗"}, {label: "驾驶辅助"}, {label: "自适应悬挂"}, {label: "尺寸(mm)"}
+        {name: "320i 运动套装", price: "¥25.8万", stock: [
+          {warehouse: "霍尔果斯仓", qty: 5},
+          {warehouse: "喀什仓", qty: 5},
+          {warehouse: "南沙港", qty: 0},
+          {warehouse: "上海港", qty: 1}
+        ]},
+        {name: "330i M运动曜夜", price: "¥29.8万", stock: [
+          {warehouse: "霍尔果斯仓", qty: "-"},
+          {warehouse: "喀什仓", qty: "-"},
+          {warehouse: "南沙港", qty: "-"},
+          {warehouse: "上海港", qty: "-"}
+        ]}
       ]
     }
   };
@@ -936,27 +940,30 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var overlay = document.getElementById('config-overlay');
     var data = configData[modelName];
     if (!data) {
-      alert('配置数据暂未录入。\n\nWhatsApp: +86 138 2612 6147\nEmail: ljj2022513@gmail.com');
+      alert('暂无预购信息。\n\nWhatsApp: +86 138 2612 6147\nEmail: ljj2022513@gmail.com');
       return;
     }
-    var h = '<div class="config-modal"><div class="config-header"><h2>' + modelName + ' — 预购信息</h2><span class="close-btn" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div><div class="config-body"><table class="config-table"><thead><tr><th>参数</th>';
+    var h = '<div class="config-modal"><div class="config-header"><h2>' + modelName + ' — 预购</h2><span class="close-btn" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div><div class="config-body">';
     for (var i = 0; i < data.trims.length; i++) {
-      h += '<th><div class="config-trim">' + data.trims[i].name + '</div><div class="config-price">' + data.trims[i].price + '</div></th>';
-    }
-    h += '</tr></thead><tbody>';
-    for (var s = 0; s < data.specs.length; s++) {
-      h += '<tr><td>' + data.specs[s].label + '</td>';
-      for (var t = 0; t < data.trims.length; t++) {
-        h += '<td>' + (data.trims[t].values[s] || '-') + '</td>';
+      h += '<div class="config-price-row"><div class="config-price-info"><div class="config-price-trim">' + data.trims[i].name + '</div><div class="config-price-val">' + data.trims[i].price + '</div>';
+      // Inventory grid
+      if (data.trims[i].stock) {
+        h += '<div class="config-stock-grid">';
+        for (var s = 0; s < data.trims[i].stock.length; s++) {
+          var st = data.trims[i].stock[s];
+          var cls = st.qty === 0 || st.qty === "-" ? "config-stock-zero" : "config-stock-ok";
+          h += '<span class="' + cls + '">' + st.warehouse + ': ' + st.qty + '台</span>';
+        }
+        h += '</div>';
       }
-      h += '</tr>';
+      h += '</div><a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">预购</a></div>';
     }
-    h += '</tbody></table><div class="config-note">详细预购信息请通过 WhatsApp 或邮件联系我们</div></div></div>';
+    h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div></div>';
     overlay.innerHTML = h;
     overlay.classList.add('open');
   };
 
-  document.getElementById('config-overlay').addEventListener('click', function(e) {
+    document.getElementById('config-overlay').addEventListener('click', function(e) {
     if (e.target === this) this.classList.remove('open');
   });
 </script>
