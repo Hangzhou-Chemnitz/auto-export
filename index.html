@@ -228,18 +228,18 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-overlay.open{display:flex}
 .config-modal{background:rgb(247,248,252);border-radius:12px;width:95vw;max-width:850px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
 .config-body{padding:20px 24px}
-.config-card{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:12px;border:1px solid rgb(230,232,238);display:flex;align-items:center;gap:16px}
+.config-card{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:12px;border:1px solid rgb(230,232,238);display:flex;align-items:flex-start;gap:12px}
 .config-card:last-child{margin-bottom:0}
 .config-card-left{flex:1;min-width:0}
-.config-card-model{font-size:0.95em;font-weight:600;color:#1a1a2e;margin-bottom:6px}
-.config-card-price{font-size:1.2em;font-weight:700;color:rgb(200,160,30);margin-bottom:8px}
-.config-card-stock{display:flex;flex-wrap:wrap;gap:6px 10px}
+.config-card-model{font-size:0.95em;font-weight:600;color:#1a1a2e}
+.config-card-price{font-size:1.1em;font-weight:700;color:rgb(200,160,30);margin-bottom:6px;text-align:right}
+.config-card-stock{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:8px}
 .config-stock-item{font-size:0.85em;color:#475569;background:rgb(248,249,252);padding:3px 10px;border-radius:4px}
 .config-stock-zero{color:#94a3b8}
-.config-card-right{flex-shrink:0}
-.config-order-btn{display:inline-block;background:rgb(200,160,30);color:#fff;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.9em;transition:all .2s;white-space:nowrap}
+.config-card-right{flex-shrink:0;text-align:right;min-width:80px}
+.config-order-btn{display:inline-block;background:rgb(200,160,30);color:#fff;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.82em;transition:all .2s;white-space:nowrap}
 .config-order-btn:hover{background:rgb(180,140,20)}
-.config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none}
+.config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none;font-size:0.82em;padding:6px 14px}
 .config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:12px}
 @media(max-width:640px){.config-card{flex-direction:column;align-items:stretch}.config-card-right{text-align:center}.config-body{padding:12px}}
 
@@ -958,10 +958,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       h += '<div class="config-card">';
       h += '<div class="config-card-left">';
       h += '<div class="config-card-model">' + trim.name + '</div>';
-      h += '<div class="config-card-price">' + trim.price + '</div>';
       h += '<div class="config-card-stock">' + stockHtml + '</div>';
       h += '</div>';
       h += '<div class="config-card-right">';
+      h += '<div class="config-card-price">' + trim.price + '</div>';
       if (hasStock) {
         h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">预购</a>';
       } else {
