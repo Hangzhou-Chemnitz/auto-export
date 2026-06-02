@@ -226,23 +226,27 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 /* Config Modal */
 .config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:#fff;border-radius:12px;width:90vw;max-width:420px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.3);position:relative}
+.config-modal{background:#fff;border-radius:12px;width:95vw;max-width:800px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.3);position:relative}
 .config-header{background:#1a1a2e;color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
 .config-header h2{font-size:1.1em;font-weight:700;margin:0}
 .config-header .close-btn{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .config-header .close-btn:hover{background:rgba(255,255,255,0.3)}
 .config-body{padding:16px 20px}
-.config-price-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f1f5f9}
-.config-price-row:last-child{border-bottom:none}
-.config-price-info{flex:1}
-.config-price-trim{font-size:0.9em;font-weight:600;color:#1a1a2e;margin-bottom:2px}
-.config-price-val{font-size:1.3em;font-weight:800;color:#ef4444}
-.config-order-btn{display:inline-block;background:#ef4444;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.9em;transition:all .2s;white-space:nowrap}
-.config-order-btn:hover{background:#dc2626;transform:translateY(-1px)}
-.config-stock-grid{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px}
-.config-stock-ok{font-size:0.75em;color:#16a34a;background:#f0fdf4;padding:2px 8px;border-radius:4px;white-space:nowrap}
-.config-stock-zero{font-size:0.75em;color:#94a3b8;background:#f1f5f9;padding:2px 8px;border-radius:4px;white-space:nowrap}
-.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:12px;padding:8px;background:#f8fafc;border-radius:6px}
+.config-table-wrap{width:100%;overflow-x:auto}
+.config-htable{width:100%;border-collapse:collapse;font-size:0.95em}
+.config-htable th{background:#1a1a2e;color:#fff;padding:10px 14px;text-align:center;font-weight:600;white-space:nowrap}
+.config-htable th:first-child{text-align:left;border-radius:8px 0 0 0}
+.config-htable th:last-child{border-radius:0 8px 0 0}
+.config-htable td{padding:10px 14px;text-align:center;border-bottom:1px solid #f1f5f9;font-size:0.95em;white-space:nowrap}
+.config-htable td:first-child{text-align:left;font-weight:600;color:#1a1a2e}
+.config-htable tr:hover td{background:#f8fafc}
+.config-price-val{font-weight:800;color:#ef4444}
+.config-stock-ok{color:#16a34a;font-weight:500}
+.config-stock-zero{color:#94a3b8}
+.config-order-btn{display:inline-block;background:#ef4444;color:#fff;padding:8px 18px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.9em;transition:all .2s}
+.config-order-btn:hover{background:#dc2626}
+.config-order-btn.disabled{background:#cbd5e1;color:#94a3b8;pointer-events:none}
+.config-note{text-align:center;color:#94a3b8;font-size:0.85em;margin-top:12px;padding:8px;background:#f8fafc;border-radius:6px}
 
 </style>
 </head>
@@ -943,22 +947,49 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       alert('暂无预购信息。\n\nWhatsApp: +86 138 2612 6147\nEmail: ljj2022513@gmail.com');
       return;
     }
-    var h = '<div class="config-modal"><div class="config-header"><h2>' + modelName + ' — 预购</h2><span class="close-btn" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div><div class="config-body">';
+    // Collect all warehouse names
+    var warehouses = [];
     for (var i = 0; i < data.trims.length; i++) {
-      h += '<div class="config-price-row"><div class="config-price-info"><div class="config-price-trim">' + data.trims[i].name + '</div><div class="config-price-val">' + data.trims[i].price + '</div>';
-      // Inventory grid
       if (data.trims[i].stock) {
-        h += '<div class="config-stock-grid">';
         for (var s = 0; s < data.trims[i].stock.length; s++) {
-          var st = data.trims[i].stock[s];
-          var cls = st.detail === '无库存' || st.detail === '-' ? 'config-stock-zero' : 'config-stock-ok';
-          h += '<span class="' + cls + '">' + st.warehouse + ': ' + st.detail + '</span>';
+          var w = data.trims[i].stock[s].warehouse;
+          if (warehouses.indexOf(w) < 0) warehouses.push(w);
         }
-        h += '</div>';
       }
-      h += '</div><a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">预购</a></div>';
     }
-    h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div></div>';
+    var h = '<div class="config-modal"><div class="config-header"><h2>' + modelName + ' — 预购</h2><span class="close-btn" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div><div class="config-body"><div class="config-table-wrap"><table class="config-htable"><thead><tr><th>版本</th><th>价格</th>';
+    for (var w = 0; w < warehouses.length; w++) {
+      h += '<th>' + warehouses[w] + '</th>';
+    }
+    h += '<th></th></tr></thead><tbody>';
+    for (var i = 0; i < data.trims.length; i++) {
+      var trim = data.trims[i];
+      h += '<tr><td>' + trim.name + '</td><td class="config-price-val">' + trim.price + '</td>';
+      var hasStock = false;
+      if (trim.stock) {
+        for (var s = 0; s < warehouses.length; s++) {
+          var found = null;
+          for (var k = 0; k < trim.stock.length; k++) {
+            if (trim.stock[k].warehouse === warehouses[s]) { found = trim.stock[k]; break; }
+          }
+          if (found) {
+            var isZero = found.detail === '无库存' || found.detail === '-';
+            if (!isZero) hasStock = true;
+            h += '<td class="' + (isZero ? 'config-stock-zero' : 'config-stock-ok') + '">' + found.detail + '</td>';
+          } else {
+            h += '<td class="config-stock-zero">-</td>';
+          }
+        }
+      }
+      h += '<td>';
+      if (hasStock) {
+        h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">预购</a>';
+      } else {
+        h += '<span class="config-order-btn disabled">暂无</span>';
+      }
+      h += '</td></tr>';
+    }
+    h += '</tbody></table></div><div class="config-note">WhatsApp: +86 138 2612 6147</div></div></div>';
     overlay.innerHTML = h;
     overlay.classList.add('open');
   };
