@@ -653,7 +653,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         {name: "320i 运动套装", price: "السعر الرسمي في الصين: 25.8万", stock: [
           {warehouse: "霍尔果斯仓", detail: "黑色×3 白色×2"},
           {warehouse: "喀什仓", detail: "黑色×2 白色×3"},
-          {warehouse: "南沙港", detail: "无库存"},
+          {warehouse: "南沙港", detail: "غير متوفر"},
           {warehouse: "上海港", detail: "蓝色×1"}
         ]},
         {name: "330i M运动曜夜", price: "السعر الرسمي في الصين: 29.8万", stock: [
@@ -681,7 +681,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       if (trim.stock) {
         for (var s = 0; s < trim.stock.length; s++) {
           var st = trim.stock[s];
-          var isZero = st.detail === '无库存' || st.detail === '-';
+          var isZero = st.detail === 'غير متوفر' || st.detail === '-';
           if (!isZero) hasStock = true;
           stockHtml += '<span class="config-stock-item' + (isZero ? ' config-stock-zero' : '') + '">' + st.warehouse + ': ' + st.detail + '</span>';
         }
