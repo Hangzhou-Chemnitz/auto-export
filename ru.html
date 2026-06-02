@@ -85,30 +85,22 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 /* Config Modal */
 .config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:#f5f6fa;border-radius:8px;width:95vw;max-width:750px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);position:relative;max-height:90vh;overflow-y:auto}
-.config-hd{background:#f5f6fa;padding:14px 20px;font-size:1.05em;font-weight:700;color:#222;border-bottom:1px solid #e8e8e8}
-.config-hd span{color:#999;font-weight:400;font-size:0.9em}
-.config-tabs{display:flex;gap:0;background:#fff;border-bottom:2px solid #e8e8e8;padding:0 20px}
-.config-tab{padding:10px 16px;font-size:0.88em;color:#666;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px}
-.config-tab.active{color:#222;font-weight:600;border-bottom-color:#333}
-.config-card{background:#fff;margin:10px 20px;border-radius:6px;padding:16px 20px;border:1px solid #eee}
-.config-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
-.config-card-name{font-size:1em;font-weight:600;color:#222}
-.config-card-pct{font-size:0.8em;color:#999;margin-top:2px}
-.config-card-actions{display:flex;gap:12px;font-size:0.82em;color:#666}
-.config-card-actions a{color:#3366cc;text-decoration:none}
-.config-card-actions a:hover{text-decoration:underline}
-.config-card-msrp{display:flex;align-items:center;gap:16px;margin:10px 0;padding:8px 0}
-.config-msrp-label{font-size:0.85em;color:#666}
-.config-msrp-price{font-size:1.15em;font-weight:700;color:#e4393c}
-.config-card-dealer{display:flex;align-items:center;gap:10px;font-size:0.85em;color:#666;margin-top:6px}
-.config-dealer-price{font-weight:700;color:#e4393c;font-size:1em}
-.config-dealer-btn{display:inline-block;background:#e4393c;color:#fff;padding:5px 14px;border-radius:4px;text-decoration:none;font-size:0.82em;font-weight:600;margin-left:8px}
-.config-dealer-btn.outline{background:#fff;color:#e4393c;border:1px solid #e4393c}
-.config-stock-mini{font-size:0.78em;color:#999;margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 12px}
-.config-stock-mini .ok{color:#16a34a}
-.config-stock-mini .zero{color:#ccc}
-@media(max-width:640px){.config-modal{max-width:100vw;border-radius:0}.config-card{margin:6px 10px;padding:12px}}
+.config-modal{background:rgb(247,248,252);border-radius:12px;width:95vw;max-width:850px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
+.config-body{padding:20px 24px}
+.config-card{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:12px;border:1px solid rgb(230,232,238);display:flex;align-items:flex-start;gap:12px}
+.config-card:last-child{margin-bottom:0}
+.config-card-left{flex:1;min-width:0}
+.config-card-model{font-size:0.95em;font-weight:600;color:#1a1a2e}
+.config-card-price{font-size:0.85em;font-weight:600;color:rgb(200,160,30);margin-bottom:4px;text-align:right}
+.config-card-stock{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:8px}
+.config-stock-item{font-size:0.85em;color:#475569;background:rgb(248,249,252);padding:3px 10px;border-radius:4px}
+.config-stock-zero{color:#94a3b8}
+.config-card-right{flex-shrink:0;text-align:right;min-width:80px}
+.config-order-btn{display:inline-block;background:rgb(200,160,30);color:#fff;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.82em;transition:all .2s;white-space:nowrap}
+.config-order-btn:hover{background:rgb(180,140,20)}
+.config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none;font-size:0.82em;padding:6px 14px}
+.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:12px}
+@media(max-width:640px){.config-card{flex-direction:column;align-items:stretch}.config-card-right{text-align:center}.config-body{padding:12px}}
 
 
 </style>
@@ -659,13 +651,13 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   var configData = {
     "BMW 3 Series": {
       trims: [
-        {name: "2026 325i M运动套装", pct: "35% интересуются", msrp: "25.80万", dealerPrice: "21.80万", stock: [
+        {name: "320i 运动套装", price: "Рекомендованная цена в Китае: 25.8万", stock: [
           {warehouse: "霍尔果斯仓", detail: "黑色×3 白色×2"},
           {warehouse: "喀什仓", detail: "黑色×2 白色×3"},
           {warehouse: "南沙港", detail: "无库存"},
           {warehouse: "上海港", detail: "蓝色×1"}
         ]},
-        {name: "2026 330i M运动曜夜套装", pct: "28% интересуются", msrp: "29.80万", dealerPrice: "25.40万", stock: [
+        {name: "330i M运动曜夜", price: "Рекомендованная цена в Китае: 29.8万", stock: [
           {warehouse: "霍尔果斯仓", detail: "-"},
           {warehouse: "喀什仓", detail: "-"},
           {warehouse: "南沙港", detail: "-"},
@@ -679,12 +671,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var overlay = document.getElementById('config-overlay');
     var data = configData[modelName];
     if (!data) {
-      alert('Нет данных。\n\nWhatsApp: +86 138 2612 6147');
+      alert('No data。\n\nWhatsApp: +86 138 2612 6147\nEmail: ljj2022513@gmail.com');
       return;
     }
-    var h = '<div class="config-modal">';
-    h += '<div class="config-hd">' + modelName + ' <span>• Список моделей</span></div>';
-    h += '<div class="config-tabs"><div class="config-tab active">В продаже</div><div class="config-tab">2026</div></div>';
+    var h = '<div class="config-modal"><div class="config-body">';
     for (var i = 0; i < data.trims.length; i++) {
       var trim = data.trims[i];
       var hasStock = false;
@@ -694,22 +684,24 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
           var st = trim.stock[s];
           var isZero = st.detail === '无库存' || st.detail === '-';
           if (!isZero) hasStock = true;
-          stockHtml += '<span class="' + (isZero ? 'zero' : 'ok') + '">' + st.warehouse + ': ' + st.detail + '</span>';
+          stockHtml += '<span class="config-stock-item' + (isZero ? ' config-stock-zero' : '') + '">' + st.warehouse + ': ' + st.detail + '</span>';
         }
       }
       h += '<div class="config-card">';
-      h += '<div class="config-card-top"><div><div class="config-card-name">' + trim.name + '</div><div class="config-card-pct">' + (trim.pct || '') + '</div></div>';
-      h += '<div class="config-card-actions"><a href="#">◎ Хар-ки</a><a href="#">Фото</a><a href="#">+Сравнить</a></div></div>';
-      h += '<div class="config-card-msrp"><span class="config-msrp-label">Цена</span><span class="config-msrp-price">' + trim.msrp + '</span></div>';
-      h += '<div class="config-card-dealer"><span>Дилер</span><span class="config-dealer-price">' + trim.dealerPrice + '</span>';
-      h += '<a class="config-dealer-btn" href="https://wa.me/8613826126147" target="_blank">Запрос</a>';
-      h += '<a class="config-dealer-btn outline" href="https://wa.me/8613826126147" target="_blank">Заказ</a></div>';
-      if (stockHtml) {
-        h += '<div class="config-stock-mini">' + stockHtml + '</div>';
-      }
+      h += '<div class="config-card-left">';
+      h += '<div class="config-card-model">' + trim.name + '</div>';
+      h += '<div class="config-card-stock">' + stockHtml + '</div>';
       h += '</div>';
+      h += '<div class="config-card-right">';
+      h += '<div class="config-card-price">' + trim.price + '</div>';
+      if (hasStock) {
+        h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">Заказ</a>';
+      } else {
+        h += '<span class="config-order-btn disabled">Нет в наличии</span>';
+      }
+      h += '</div></div>';
     }
-    h += '</div>';
+    h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div></div>';
     overlay.innerHTML = h;
     overlay.classList.add('open');
   };
