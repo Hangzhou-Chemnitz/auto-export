@@ -863,6 +863,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   <div class="lb-counter" id="lb-counter"></div>
 </div>
 
+<div class="config-overlay" id="config-overlay"></div>
 <script>
 (function() {
   var lb = document.getElementById('lb');
@@ -984,14 +985,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     overlay.classList.add('open');
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var ov = document.getElementById('config-overlay');
-    if (ov) ov.addEventListener('click', function(e) {
-      if (e.target === ov) ov.classList.remove('open');
-    });
-  });
-
+  document.getElementById('config-overlay').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
 </script>
-<div class="config-overlay" id="config-overlay"></div>
 </body>
 </html>

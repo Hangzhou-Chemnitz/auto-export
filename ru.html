@@ -644,10 +644,22 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 <div class="lb-overlay" id="lb"><span class="lb-close" id="lb-close">&times;</span><span class="lb-nav lb-prev" id="lb-prev">&#8249;</span><span class="lb-nav lb-next" id="lb-next">&#8250;</span><img class="lb-img" id="lb-img" src="" alt=""><div class="lb-title" id="lb-title"></div><div class="lb-counter" id="lb-counter"></div></div>
 
+<div class="config-overlay" id="config-overlay"></div>
 <script>
 (function(){var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbTitle=document.getElementById('lb-title'),lbCounter=document.getElementById('lb-counter'),lbIdx=0,lbCount=0,lbUrls=[];var cards=document.querySelectorAll('.model-card');for(var i=0;i<cards.length;i++){var title=cards[i].getAttribute('data-title');if(title){var body=cards[i].querySelector('.card-body');if(body){var lnk=document.createElement('a');lnk.href='https://autocatalogarchive.com/?s='+encodeURIComponent(title);lnk.target='_blank';lnk.rel='noopener';lnk.className='brochure-link';lnk.textContent='⚙️ Конфиг';lnk.addEventListener('click',function(e){e.stopPropagation();});body.appendChild(lnk);}}cards[i].addEventListener('click',function(){var base=this.getAttribute('data-base'),prefix=this.getAttribute('data-prefix')||'',count=parseInt(this.getAttribute('data-count'));lbUrls=[];for(var j=1;j<=count;j++)lbUrls.push(base+prefix+j+'.jpg');lbIdx=0;lbCount=count;lbTitle.textContent=this.getAttribute('data-title');show();lb.classList.add('open');document.body.style.overflow='hidden';});}function show(){lbImg.src=lbUrls[lbIdx];lbCounter.textContent=(lbIdx+1)+' / '+lbCount;}document.getElementById('lb-prev').addEventListener('click',function(e){e.stopPropagation();lbIdx=(lbIdx-1+lbUrls.length)%lbUrls.length;show();});document.getElementById('lb-next').addEventListener('click',function(e){e.stopPropagation();lbIdx=(lbIdx+1)%lbUrls.length;show();});document.getElementById('lb-close').addEventListener('click',function(){lb.classList.remove('open');document.body.style.overflow='';});lb.addEventListener('click',function(e){if(e.target===lb){lb.classList.remove('open');document.body.style.overflow='';}});document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape'){lb.classList.remove('open');document.body.style.overflow='';}if(e.key==='ArrowLeft'){e.preventDefault();lbIdx=(lbIdx-1+lbUrls.length)%lbUrls.length;show();}if(e.key==='ArrowRight'){e.preventDefault();lbIdx=(lbIdx+1)%lbUrls.length;show();}});})();
 
-  // ========== Config Modal Data & Logic ==========
+  // ========== Config Modal (Brochure → Config) ==========
+  var configLinks = document.querySelectorAll('.brochure-link');
+  for (var cl = 0; cl < configLinks.length; cl++) {
+    configLinks[cl].addEventListener('click', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var card = this.closest('.model-card');
+      var modelName = card ? card.getAttribute('data-title') : '';
+      showConfigModal(modelName);
+    });
+  }
+
   var configData = {
     "BMW 3 Series": {
       trims: [
@@ -662,50 +674,50 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     }
   };
 
-  (function(){
+  function showConfigModal(modelName) {
     var overlay = document.getElementById('config-overlay');
+    var data = configData[modelName];
+    
+    if (!data) {
+      var msg = '配置数据暂未录入，请联系我们获取详细信息。';
+      msg += '\n\nWhatsApp: +86 138 2612 6147';
+      msg += '\nEmail: ljj2022513@gmail.com';
+      msg += '\n\nModel: ' + modelName;
+      alert(msg);
+      return;
+    }
 
-    overlay.addEventListener('click', function(e){
-      if (e.target === overlay) overlay.classList.remove('open');
-    });
-
-    window.showConfig = function(modelName) {
-      var data = configData[modelName];
-      if (!data) {
-        alert('Configuration data not yet available. Please contact us.\nWhatsApp: +86 138 2612 6147\nEmail: ljj2022513@gmail.com');
-        return;
+    var h = '<div class="config-modal">';
+    h += '<div class="config-header">';
+    h += '<h2>' + modelName + ' — 配置参数</h2>';
+    h += '<span class="close-btn" onclick="document.getElementById('config-overlay').classList.remove('open')" style="cursor:pointer;font-size:24px">&times;</span>';
+    h += '</div><div class="config-body"><table class="config-table">';
+    
+    h += '<thead><tr><th>参数</th>';
+    for (var i = 0; i < data.trims.length; i++) {
+      h += '<th><div class="config-trim">' + data.trims[i].name + '</div>';
+      h += '<div class="config-price">' + data.trims[i].price + '</div></th>';
+    }
+    h += '</tr></thead><tbody>';
+    
+    for (var s = 0; s < data.specs.length; s++) {
+      h += '<tr><td>' + data.specs[s].label + '</td>';
+      for (var t = 0; t < data.trims.length; t++) {
+        h += '<td>' + (data.trims[t].values[s] || '-') + '</td>';
       }
+      h += '</tr>';
+    }
+    
+    h += '</tbody></table>';
+    h += '<div class="config-note">详细配置和报价请通过 WhatsApp 或邮件联系我们</div>';
+    h += '</div></div>';
+    
+    overlay.innerHTML = h;
+    overlay.classList.add('open');
+  }
 
-      var html = '<div class="config-modal">';
-      html += '<div class="config-header">';
-      html += '<h2>' + modelName + ' — Configuration</h2>';
-      html += '<button class="close-btn" onclick="document.getElementById(&quot;config-overlay&quot;).classList.remove(&quot;open&quot;)">&times;</button>';
-      html += '</div>';
-      html += '<div class="config-body">';
-      html += '<table class="config-table">';
-
-      html += '<thead><tr><th>Spec</th>';
-      for (var i = 0; i < data.trims.length; i++) {
-        html += '<th><div class="config-trim">' + data.trims[i].name + '</div>';
-        html += '<div class="config-price">' + data.trims[i].price + '</div></th>';
-      }
-      html += '</tr></thead><tbody>';
-
-      for (var s = 0; s < data.specs.length; s++) {
-        html += '<tr><td>' + data.specs[s].label + '</td>';
-        for (var t = 0; t < data.trims.length; t++) {
-          html += '<td>' + (data.trims[t].values[s] || '-') + '</td>';
-        }
-        html += '</tr>';
-      }
-
-      html += '</tbody></table>';
-      html += '<div class="config-note">Contact us on WhatsApp or email for detailed pricing and availability</div>';
-      html += '</div></div>';
-      overlay.innerHTML = html;
-      overlay.classList.add('open');
-    };
-  })();
+  document.getElementById('config-overlay').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
 
 </script>
 </body>
