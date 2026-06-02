@@ -951,7 +951,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       if (trim.stock) {
         for (var s = 0; s < trim.stock.length; s++) {
           var st = trim.stock[s];
-          var isZero = st.detail === '无库存' || st.detail === '-';
+          var isZero = st.detail === 'No stock' || st.detail === '-';
           if (!isZero) hasStock = true;
           stockHtml += '<span class="config-stock-item' + (isZero ? ' config-stock-zero' : '') + '">' + st.warehouse + ': ' + st.detail + '</span>';
         }
@@ -964,9 +964,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       h += '<div class="config-card-right">';
       h += '<div class="config-card-price">' + trim.price + '</div>';
       if (hasStock) {
-        h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">预购</a>';
+        h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">Pre-order</a>';
       } else {
-        h += '<span class="config-order-btn disabled">暂无库存</span>';
+        h += '<span class="config-order-btn disabled">暂No stock</span>';
       }
       h += '</div></div>';
     }
