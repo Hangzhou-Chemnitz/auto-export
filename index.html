@@ -235,11 +235,11 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-row1 .name{font-size:14px;font-weight:600;color:#222}
 .config-row1 .msrp{font-size:13px;color:#e8483c;font-weight:600}
 .config-row1 .msrp em{font-style:normal;font-size:11px;color:#999;margin-right:4px}
-.config-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #e8e8e8}
-.config-grid4>div{text-align:center;padding:6px 4px;font-size:12px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;line-height:1.6}
-.config-grid4>div:nth-child(4n){border-right:none}
-.config-grid4 .wh-name{background:#f5f5f5;font-weight:600;font-size:12px;color:#333;border-bottom:1px solid #e0e0e0}
-.config-grid4 .tag{color:#999;font-size:10px}
+.config-grid4{display:grid;grid-template-columns:50px repeat(4,1fr);gap:0;border:1px solid #e0e0e0}
+.config-grid4>div{text-align:center;padding:6px 4px;font-size:12px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;line-height:1.6;display:flex;align-items:center;justify-content:center}
+.config-grid4>div:nth-child(5n+1){border-right:1px solid #e0e0e0}
+.config-grid4 .wh-name{background:#f5f5f5;font-weight:600;font-size:12px;color:#333;border-bottom:1px solid #e0e0e0}.config-grid4 .wh-name:first-child{background:#f5f5f5;color:#999;font-size:11px;font-weight:400}
+.config-grid4 .sec-label{background:#fafafa;color:#666;font-size:11px;font-weight:600;text-align:center;border-right:1px solid #e0e0e0;display:flex;align-items:center;justify-content:center;writing-mode:horizontal-tb}.config-grid4 .tag{color:#999;font-size:10px}
 .config-grid4 .n{font-weight:600;color:#333}
 .config-grid4 .z{color:#ddd}
 .config-btn-row{text-align:right;margin-top:8px}
@@ -954,20 +954,33 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       h += '<div class="config-row1"><span class="name">' + t.name + '</span><span class="msrp"><em>指导价</em>' + (t.msrp||t.price||'').replace('Guide Price: ','').replace('指导价：','') + '</span></div>';
       if (t.stock) {
         h += '<div class="config-grid4">';
+
+        // Header row
+        h += '<div class="wh-name"></div>';
         for (var s = 0; s < t.stock.length; s++) {
           h += '<div class="wh-name">' + (t.stock[s].wh||t.stock[s].warehouse) + '</div>';
         }
-        var rows = [
-          ['在途','白','transitW'], ['','黑','transitB'],
-          ['已入库','白','inboundW'], ['','黑','inboundB']
-        ];
-        for (var r = 0; r < rows.length; r++) {
-          for (var s = 0; s < t.stock.length; s++) {
-            var v = t.stock[s][rows[r][2]] || 0;
-            if (v > 0) hs = true;
-            var tag = rows[r][0] ? '<span class="tag">' + rows[r][0] + '</span> ' : '';
-            h += '<div>' + tag + rows[r][1] + ' <span class="' + (v>0?'n':'z') + '">' + v + '</span></div>';
-          }
+        // 在途 section
+        h += '<div class="sec-label">在途</div>';
+        for (var s = 0; s < t.stock.length; s++) {
+          var v = t.stock[s].transitW || 0; if (v > 0) hs = true;
+          h += '<div>白 <span class="' + (v>0?'n':'z') + '">' + v + '</span></div>';
+        }
+        h += '<div class="sec-label"></div>';
+        for (var s = 0; s < t.stock.length; s++) {
+          var v = t.stock[s].transitB || 0; if (v > 0) hs = true;
+          h += '<div>黑 <span class="' + (v>0?'n':'z') + '">' + v + '</span></div>';
+        }
+        // 已入库 section
+        h += '<div class="sec-label">已入库</div>';
+        for (var s = 0; s < t.stock.length; s++) {
+          var v = t.stock[s].inboundW || 0; if (v > 0) hs = true;
+          h += '<div>白 <span class="' + (v>0?'n':'z') + '">' + v + '</span></div>';
+        }
+        h += '<div class="sec-label"></div>';
+        for (var s = 0; s < t.stock.length; s++) {
+          var v = t.stock[s].inboundB || 0; if (v > 0) hs = true;
+          h += '<div>黑 <span class="' + (v>0?'n':'z') + '">' + v + '</span></div>';
         }
         h += '</div>';
       }
