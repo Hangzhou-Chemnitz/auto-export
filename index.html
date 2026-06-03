@@ -228,18 +228,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-overlay.open{display:flex}
 .config-modal{background:rgb(247,248,252);border-radius:12px;width:95vw;max-width:850px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
 .config-body{padding:20px 24px}
-.config-card{background:#fff;border-radius:4px;padding:16px 20px;margin-bottom:12px;border:1px solid #eee}
-.config-card-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.config-card-name{font-size:15px;font-weight:600;color:#1a1a2e}
-.config-card-price{font-size:14px;color:#e8483c;font-weight:600}
-.config-card-ft{text-align:right;margin-top:8px}
-.config-stock-row{display:contents}
-.config-btn{display:inline-block;padding:6px 20px;background:#e8483c;color:#fff;border-radius:3px;font-size:13px;text-decoration:none;font-weight:500}
-.config-btn.disabled{background:#eee;color:#ccc;pointer-events:none}
-.config-note{text-align:center;color:#ccc;font-size:12px;margin-top:8px}
+.config-card{border-bottom:1px solid #e8e8e8;padding:16px 0}.config-card:last-child{border-bottom:none}
 
-.config-card{
-.config-card:last-child{margin-bottom:0}
 
 
 .config-card-price{font-size:0.85em;font-weight:600;color:rgb(200,160,30);margin-bottom:4px;text-align:right}
@@ -250,17 +240,22 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-order-btn{display:inline-block;background:rgb(200,160,30);color:#fff;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.82em;transition:all .2s;white-space:nowrap}
 .config-order-btn:hover{background:rgb(180,140,20)}
 .config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none;font-size:0.82em;padding:6px 14px}
-.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:12px}
+.config-card-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.config-card-name{font-size:15px;font-weight:600;color:#222}
+.config-card-price{font-size:14px;color:#e8483c;font-weight:600}
+.config-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #e8e8e8;border-radius:4px;overflow:hidden;margin-bottom:12px}
+.config-grid-hd{background:#f8f8f8;text-align:center;padding:8px 6px;font-size:13px;font-weight:600;color:#333;border-right:1px solid #e8e8e8}
+.config-grid-hd:last-child{border-right:none}
+.config-grid-cell{text-align:center;padding:6px 4px;font-size:12px;color:#555;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;line-height:1.6}
+.config-grid-cell .tag{font-size:11px;color:#999}
+.config-grid-cell .num{font-weight:600;color:#333}
+.config-grid-cell .zero{color:#ddd}
+.config-card-ft{text-align:right;margin-top:4px}
+.config-btn{display:inline-block;padding:6px 20px;background:#e8483c;color:#fff;border-radius:3px;font-size:13px;text-decoration:none;font-weight:500}
+.config-btn.disabled{background:#eee;color:#ccc;pointer-events:none}
+.config-note{text-align:center;color:#ccc;font-size:12px;margin-top:8px}
+
 @media(max-width:640px){.config-card{flex-direction:column;align-items:stretch}.config-card-right{text-align:center}.config-body{padding:12px}}
-
-
-.config-stock-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #e8e8e8;border-radius:4px;overflow:hidden;margin:12px 0}
-.config-stock-wh{background:#f8f8f8;text-align:center;padding:8px 6px;font-size:13px;font-weight:600;color:#333;border-right:1px solid #e8e8e8}
-.config-stock-wh:last-child{border-right:none}
-.config-stock-cell{text-align:center;padding:6px 4px;font-size:12px;color:#555;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;line-height:1.6}
-.config-stock-cell .num{font-weight:600;color:#333}
-.config-stock-cell .zero{color:#ddd}
-.config-stock-cell .tag{font-size:11px;color:#999}
 
 </style>
 </head>
@@ -951,4 +946,58 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
           {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
-    },>
+    }
+  };
+
+
+
+
+  window.showConfigModal = function(modelName) {
+    var overlay = document.getElementById('config-overlay');
+    var data = configData[modelName];
+    if (!data) {
+      alert('No pre-order data.\n\nWhatsApp: +86 138 2612 6147');
+      return;
+    }
+    var h = '<div class="config-modal">';
+    for (var i = 0; i < data.trims.length; i++) {
+      var trim = data.trims[i];
+      var hasStock = false;
+      h += '<div class="config-card">';
+      h += '<div class="config-card-hd"><span class="config-card-name">' + trim.name + '</span><span class="config-card-price">' + (trim.price||'') + '</span></div>';
+      if (trim.stock) {
+        h += '<div class="config-grid">';
+        for (var s = 0; s < trim.stock.length; s++) {
+          var st = trim.stock[s];
+          if (st.transitW||st.transitB||st.inboundW||st.inboundB) hasStock = true;
+          h += '<div class="config-grid-hd">' + (st.wh||st.warehouse) + '</div>';
+        }
+        var rows = [
+          ['在途','白','transitW'], ['','黑','transitB'],
+          ['已入库','白','inboundW'], ['','黑','inboundB']
+        ];
+        for (var r = 0; r < rows.length; r++) {
+          for (var s = 0; s < trim.stock.length; s++) {
+            var st = trim.stock[s];
+            var val = st[rows[r][2]] || 0;
+            var label = rows[r][0] ? '<span class="tag">' + rows[r][0] + '</span> ' : '';
+            h += '<div class="config-grid-cell">' + label + rows[r][1] + ' <span class="' + (val>0?'num':'zero') + '">' + val + '</span></div>';
+          }
+        }
+        h += '</div>';
+      }
+      h += '<div class="config-card-ft">';
+      h += hasStock ? '<a class="config-btn" href="https://wa.me/8613826126147" target="_blank">预购</a>' : '<span class="config-btn disabled">暂无库存</span>';
+      h += '</div></div>';
+    }
+    h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div>';
+    overlay.innerHTML = h;
+    overlay.classList.add('open');
+  };
+
+    document.getElementById('config-overlay').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+</script>
+</body>
+</html>
