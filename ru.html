@@ -85,22 +85,25 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 /* Config Modal */
 .config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:rgb(247,248,252);border-radius:12px;width:95vw;max-width:850px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
-.config-body{padding:20px 24px}
-.config-card{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:12px;border:1px solid rgb(230,232,238);display:flex;align-items:flex-start;gap:12px}
-.config-card:last-child{margin-bottom:0}
-.config-card-left{flex:1;min-width:0}
-.config-card-model{font-size:0.95em;font-weight:600;color:#1a1a2e}
-.config-card-price{font-size:0.85em;font-weight:600;color:rgb(200,160,30);margin-bottom:4px;text-align:right}
-.config-card-stock{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:8px}
-.config-stock-item{font-size:0.85em;color:#475569;background:rgb(248,249,252);padding:3px 10px;border-radius:4px}
-.config-stock-zero{color:#94a3b8}
-.config-card-right{flex-shrink:0;text-align:right;min-width:80px}
-.config-order-btn{display:inline-block;background:rgb(200,160,30);color:#fff;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.82em;transition:all .2s;white-space:nowrap}
-.config-order-btn:hover{background:rgb(180,140,20)}
-.config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none;font-size:0.82em;padding:6px 14px}
-.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:12px}
-@media(max-width:640px){.config-card{flex-direction:column;align-items:stretch}.config-card-right{text-align:center}.config-body{padding:12px}}
+.config-modal{background:#fff;max-width:830px;width:95vw;max-height:90vh;overflow-y:auto;font:13px/1.4 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#333}
+.config-bar{background:#222;color:#fff;padding:10px 16px;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.config-close{background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:0 4px}
+.config-card{border-bottom:1px solid #e0e0e0;padding:14px 16px}
+.config-card:last-child{border-bottom:none}
+.config-row1{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.config-row1 .name{font-size:14px;font-weight:600;color:#222}
+.config-row1 .msrp{font-size:13px;color:#e8483c;font-weight:600}
+.config-row1 .msrp em{font-style:normal;font-size:11px;color:#999;margin-right:4px}
+.config-grid4{display:grid;grid-template-columns:40px repeat(8,1fr);gap:0;border:1px solid #e0e0e0;font-size:11px}
+.config-grid4>div{text-align:center;padding:4px 3px;font-size:11px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;line-height:1.5;display:flex;align-items:center;justify-content:center}
+
+.config-grid4 .wh-name{background:#f5f5f5;font-weight:600;font-size:11px;color:#333;border-bottom:1px solid #e0e0e0;grid-column:span 2}.config-grid4 .wh-name:first-child{background:#f5f5f5;color:#999;font-size:10px;font-weight:400;grid-column:span 1}
+.config-grid4 .sec-label{background:#fafafa;color:#666;font-size:11px;font-weight:600;text-align:center;border-right:1px solid #e0e0e0;display:flex;align-items:center;justify-content:center}.config-grid4 .sec-label.span2{grid-row:span 2}.config-grid4 .color-name{color:#666}.config-grid4 .count-cell{font-weight:600}.config-grid4 .tag{color:#999;font-size:10px}
+.config-grid4 .n{font-weight:600;color:#333}
+.config-grid4 .z{color:#ddd}
+.config-btn-row{text-align:right;margin-top:8px}
+.config-btn{display:inline-block;padding:5px 18px;background:#e8483c;color:#fff;border-radius:3px;font-size:12px;text-decoration:none;font-weight:500}
+.config-btn.disabled{background:#eee;color:#ccc;pointer-events:none}
 
 
 </style>
@@ -651,687 +654,17 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   var configData = {
     "BMW 3 Series": {
       trims: [
-        {name: "320i Sport Line", price: "Цена: ¥258 000", stock: [
-          {warehouse: "Хоргос", detail: "Черный ×3 Белый ×2"},
-          {warehouse: "Кашгар", detail: "Черный ×2 Белый ×3"},
-          {warehouse: "Наньша", detail: "Нет в наличии"},
-          {warehouse: "Шанхай", detail: "Синий ×1"}
+        {name: "320i Sport Line", price: "指导价：258,000", stock: [
+          {wh: "果尔果斯", transitW: 3, transitB: 2, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 2, transitB: 3, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 1, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]},
-        {name: "330i M Sport Night", price: "Цена: ¥298 000", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota RAV4": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Corolla": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Corolla Cross": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Camry": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Highlander": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Frontlander": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Granvia": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota bZ3": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota bZ5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Bozhi 3X": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Levin": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Prado": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Sienna": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Wildlander": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Toyota Avalon": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen Teramont": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen Tharu": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen Tiguan Allspace": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen Tayron": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen T-Roc": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen Golf": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen Jetta VS5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen Jetta VS7": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Volkswagen Jetta VS8": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Geely Coolray": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Geely Boyue L": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Geely Xingyue L": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Geely Niuzai": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Geely Galaxy M9": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Jetour Dashing": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Jetour X70": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Jetour Traveler": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Jetour Free Rider": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Nissan Qashqai": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Nissan X-Trail": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Nissan NX8": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Nissan Sylphy": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Kia Seltos": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Kia KX1": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Kia K3": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Kia K5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Kia Sportage": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Kia Sonet": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Hyundai Elantra": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Hyundai Sonata": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Hyundai Tucson": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Mazda CX-5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Audi Q5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Audi Q3": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Audi A5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "BMW 5 Series": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "BMW X1": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "BMW X3": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "BMW X5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "BYD Seal": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "BYD Qin": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "BYD Song": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "BYD Yuan": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Honda CR-V": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Fangchengbao Bao 8": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Chery Tiggo 3X": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Chery Tiggo 5X": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Roewe i5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "MG MG5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Changan CS55": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Changan CS75": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
-        ]}
-      ]
-    },
-    "Changan X5": {
-      trims: [
-        {name: "Standard", price: "Цена: TBD", stock: [
-          {warehouse: "Хоргос", detail: "-"},
-          {warehouse: "Кашгар", detail: "-"},
-          {warehouse: "Наньша", detail: "-"},
-          {warehouse: "Шанхай", detail: "-"}
+        {name: "330i M Sport Night", price: "指导价：298,000", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     }
@@ -1340,42 +673,52 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 
 
-
   window.showConfigModal = function(modelName) {
     var overlay = document.getElementById('config-overlay');
     var data = configData[modelName];
-    if (!data) {
-      alert('Нет данных для предзаказа.\n\nWhatsApp: +86 138 2612 6147\nEmail: ljj2022513@gmail.com');
-      return;
-    }
-    var h = '<div class="config-modal"><div class="config-body">';
+    if (!data) { alert('No data'); return; }
+    var h = '<div class="config-modal">';
+    h += '<div class="config-bar">' + modelName + ' • Список моделей<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div>';
     for (var i = 0; i < data.trims.length; i++) {
-      var trim = data.trims[i];
-      var hasStock = false;
-      var stockHtml = '';
-      if (trim.stock) {
-        for (var s = 0; s < trim.stock.length; s++) {
-          var st = trim.stock[s];
-          var isZero = st.detail === 'Нет в наличии' || st.detail === '-';
-          if (!isZero) hasStock = true;
-          stockHtml += '<span class="config-stock-item' + (isZero ? ' config-stock-zero' : '') + '">' + st.warehouse + ': ' + st.detail + '</span>';
-        }
-      }
+      var t = data.trims[i];
+      var hs = false;
       h += '<div class="config-card">';
-      h += '<div class="config-card-left">';
-      h += '<div class="config-card-model">' + trim.name + '</div>';
-      h += '<div class="config-card-stock">' + stockHtml + '</div>';
-      h += '</div>';
-      h += '<div class="config-card-right">';
-      h += '<div class="config-card-price">' + trim.price + '</div>';
-      if (hasStock) {
-        h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">Заказать</a>';
-      } else {
-        h += '<span class="config-order-btn disabled">Нет в наличии</span>';
+      h += '<div class="config-row1"><span class="name">' + t.name + '</span><span class="msrp"><em>指导价</em>' + (t.msrp||t.price||'').replace('Guide Price: ','').replace('指导价：','') + '</span></div>';
+      if (t.stock) {
+        h += '<div class="config-grid4">';
+
+        // Header row
+        h += '<div class="wh-name"></div>';
+        for (var s = 0; s < t.stock.length; s++) {
+          h += '<div class="wh-name">' + (t.stock[s].wh||t.stock[s].warehouse) + '</div>';
+        }
+        // 在途 section (spans 2 rows)
+        h += '<div class="sec-label span2">在途</div>';
+        for (var s = 0; s < t.stock.length; s++) {
+          var v = t.stock[s].transitW || 0; if (v > 0) hs = true;
+          h += '<div class="color-name">白</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
+        }
+        for (var s = 0; s < t.stock.length; s++) {
+          var v = t.stock[s].transitB || 0; if (v > 0) hs = true;
+          h += '<div class="color-name">黑</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
+        }
+        // 已入库 section (spans 2 rows)
+        h += '<div class="sec-label span2">已入库</div>';
+        for (var s = 0; s < t.stock.length; s++) {
+          var v = t.stock[s].inboundW || 0; if (v > 0) hs = true;
+          h += '<div class="color-name">白</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
+        }
+        for (var s = 0; s < t.stock.length; s++) {
+          var v = t.stock[s].inboundB || 0; if (v > 0) hs = true;
+          h += '<div class="color-name">黑</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
+        }
+        h += '</div>';
       }
+      h += '<div class="config-btn-row">';
+      h += hs ? '<a class="config-btn" href="https://wa.me/8613826126147" target="_blank">预购</a>' : '<span class="config-btn disabled">暂无库存</span>';
       h += '</div></div>';
     }
-    h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div></div>';
+    h += '</div>';
     overlay.innerHTML = h;
     overlay.classList.add('open');
   };
