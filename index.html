@@ -887,7 +887,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         lnk.href = 'javascript:void(0)';
         
         lnk.className = 'brochure-link'; lnk.textContent = '🛒 Pre-order';
-        lnk.setAttribute('onclick', 'event.stopPropagation(); showConfigModal(\'' + title + '\'); return false;');
+        lnk.setAttribute("onclick", "event.stopPropagation();showConfigModal('"+title+"');return false;");
         body.appendChild(lnk);
       }
     }
