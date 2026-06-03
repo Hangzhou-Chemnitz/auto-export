@@ -1022,20 +1022,36 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       ['In Stock','White','inboundW',0],['','Black','inboundB',0],['','Grey','inboundG',0]
     ];
       var hasStock = false;
-      for (var r = 0; r < rows.length; r++) {
-        if (rows[r][3] === 1) {
-          // Separator row
+      var rr = 0;
+      while (rr < rows.length) {
+        if (rows[rr][3] === 1) {
           h += '<tr><td colspan="' + (1 + t.stock.length * 2) + '" style="padding:0;background:#e0e0e0;height:1px"></td></tr>';
+          rr++;
           continue;
         }
-        h += '<tr>';
-        h += '<td style="padding:8px 6px;background:#fafafa;font-weight:600;text-align:center;vertical-align:middle;font-size:11px;color:#666">' + (rows[r][0]||'') + '</td>';
-        for (var s = 0; s < t.stock.length; s++) {
-          var v = t.stock[s][rows[r][2]] || 0;
-          if (v > 0) hasStock = true;
-          h += '<td style="padding:4px 4px;text-align:center;border-left:1px solid #f0f0f0;font-size:11px">' + rows[r][1] + '</td><td style="padding:4px 4px;text-align:center;font-size:11px;color:' + (v>0?'#333':'#ddd') + ';font-weight:' + (v>0?'600':'400') + '">' + v + '</td>';
+        // Count how many consecutive rows have the same label
+        var label = rows[rr][0];
+        var spanCount = 0;
+        if (label) {
+          var j = rr;
+          while (j < rows.length && rows[j][3] !== 1 && (j === rr || !rows[j][0])) { spanCount++; j++; }
         }
-        h += '</tr>';
+        for (var k = 0; k < spanCount; k++) {
+          var r = rr + k;
+          h += '<tr>';
+          if (k === 0 && label) {
+            h += '<td rowspan="' + spanCount + '" style="padding:8px 6px;background:#fafafa;font-weight:600;text-align:center;vertical-align:middle;font-size:11px;color:#666">' + label + '</td>';
+          } else if (!label) {
+            h += '<td style="padding:8px 6px;background:#fafafa;text-align:center;font-size:11px;color:#666"></td>';
+          }
+          for (var s = 0; s < t.stock.length; s++) {
+            var v = t.stock[s][rows[r][2]] || 0;
+            if (v > 0) hasStock = true;
+            h += '<td style="padding:4px 4px;text-align:center;border-left:1px solid #f0f0f0;font-size:11px">' + rows[r][1] + '</td><td style="padding:4px 4px;text-align:center;font-size:11px;color:' + (v>0?'#333':'#ddd') + ';font-weight:' + (v>0?'600':'400') + '">' + v + '</td>';
+          }
+          h += '</tr>';
+        }
+        rr += spanCount;
       }
       h += '</tbody></table>';
       h += '<div style="text-align:right;margin-top:10px">';
