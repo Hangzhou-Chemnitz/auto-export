@@ -1620,7 +1620,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       var trim = data.trims[i];
       var hasStock = false;
       h += '<div class="config-card">';
-      h += '<div class="config-card-hd"><span class="config-card-name">' + trim.name + '</span><span class="config-card-price">指导价：' + trim.msrp.replace('.','') + '</span></div>';
+      var priceText = trim.msrp || trim.price || 'TBD';
+      h += '<div class="config-card-hd"><span class="config-card-name">' + trim.name + '</span><span class="config-card-price">指导价：' + priceText + '</span></div>';
       if (trim.stock) {
         h += '<div class="config-grid">';
         for (var s = 0; s < trim.stock.length; s++) {
