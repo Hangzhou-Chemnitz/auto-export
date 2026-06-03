@@ -226,39 +226,34 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 /* Config Modal */
 .config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:#f5f6fa;border-radius:4px;width:750px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 2px 12px rgba(0,0,0,0.12);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-.config-body{padding:0}
-.config-card{background:#fff;margin:0 0 1px 0;padding:20px 24px}
-.config-card:first-child{border-radius:4px 4px 0 0}
-.config-card:last-child{border-radius:0 0 4px 4px;margin-bottom:0}
-.config-card-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
-.config-card-title{font-size:15px;font-weight:600;color:#222;line-height:1.4}
-.config-card-title small{font-size:12px;color:#999;font-weight:400;display:block;margin-top:2px}
-.config-card-actions{display:flex;gap:16px;font-size:13px}
-.config-card-actions a{color:#2b6de8;text-decoration:none}
-.config-card-actions a:hover{color:#1a5bd4}
-.config-price-label{font-size:13px;color:#888;margin-bottom:4px}
-.config-price-val{font-size:18px;font-weight:700;color:#e8483c}
-.config-price-row{display:flex;align-items:center;gap:24px;margin-bottom:14px}
-.config-msrp-box{text-align:center}
-.config-msrp-box .label{font-size:12px;color:#888}
-.config-msrp-box .price{font-size:20px;font-weight:700;color:#e8483c}
-.config-actions-row{display:flex;gap:8px;margin-bottom:14px}
-.config-btn{display:inline-block;padding:7px 16px;border-radius:4px;font-size:13px;text-decoration:none;cursor:pointer;font-weight:500}
-.config-btn-red{background:#e8483c;color:#fff}
-.config-btn-red:hover{background:#d43c31}
-.config-btn-outline{background:#fff;color:#e8483c;border:1px solid #e8483c}
-.config-btn-outline:hover{background:#fef0ef}
-.config-btn-gray{background:#f5f5f5;color:#666;border:1px solid #ddd}
-.config-stock-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #e8e8e8;border-radius:4px;overflow:hidden}
-.config-stock-wh{background:#f8f8f8;text-align:center;padding:8px 6px;font-size:13px;font-weight:600;color:#333;border-right:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8}
-.config-stock-wh:last-child{border-right:none}
-.config-stock-row{display:contents}
-.config-stock-cell{background:#fff;text-align:center;padding:8px 6px;font-size:12px;color:#555;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;line-height:1.6}
-.config-stock-cell .count{font-weight:600;color:#333}
-.config-stock-cell .zero{color:#ccc}
-.config-note{text-align:center;color:#999;font-size:12px;padding:12px}
-@media(max-width:640px){.config-modal{width:100vw;border-radius:0}.config-card{padding:14px}.config-stock-grid{grid-template-columns:repeat(2,1fr)}}
+.config-modal{background:#f5f6fa;border-radius:4px;width:780px;max-width:96vw;max-height:90vh;overflow-y:auto;box-shadow:0 2px 16px rgba(0,0,0,0.15);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#333}
+.config-hd{background:#f5f6fa;padding:16px 20px 12px;font-size:18px;font-weight:700;color:#222;display:flex;align-items:baseline;gap:6px}
+.config-hd span{font-size:13px;color:#999;font-weight:400}
+.config-tabs{display:flex;gap:0;background:#f5f6fa;padding:0 20px;border-bottom:1px solid #e8e8e8;margin-bottom:0}
+.config-tab{padding:8px 16px;font-size:13px;color:#666;cursor:default}
+.config-tab.on{color:#222;font-weight:600;border-bottom:2px solid #333;margin-bottom:-1px}
+.config-body{padding:12px 20px 20px}
+.config-card{background:#fff;margin-bottom:12px;border-radius:4px;padding:20px 20px 16px;border:1px solid #eee}
+.config-card:last-child{margin-bottom:0}
+.config-card-row1{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.config-card-name{font-size:15px;font-weight:600;color:#222}
+.config-card-name small{display:block;font-size:12px;color:#999;font-weight:400;margin-top:2px}
+.config-card-links{display:flex;gap:16px;font-size:13px}
+.config-card-links a{color:#2b6de8;text-decoration:none;cursor:default}
+.config-card-row2{display:flex;align-items:center;gap:20px;margin-bottom:14px;padding:10px 0;border-top:1px solid #f5f5f5;border-bottom:1px solid #f5f5f5}
+.config-msrp-label{font-size:13px;color:#999}
+.config-msrp-price{font-size:22px;font-weight:700;color:#e8483c;margin:0 16px}
+.config-msrp-price small{font-size:14px;font-weight:400}
+.config-btn-sm{display:inline-block;padding:4px 12px;border-radius:3px;font-size:12px;text-decoration:none;cursor:default;border:1px solid #ddd;color:#666;background:#fff}
+.config-card-row3{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.config-dealer-label{font-size:13px;color:#999}
+.config-dealer-price{font-size:18px;font-weight:700;color:#e8483c}
+.config-btn-red-sm{display:inline-block;padding:5px 14px;background:#e8483c;color:#fff;border-radius:3px;font-size:12px;text-decoration:none;font-weight:500;cursor:default;margin-left:8px}
+.config-btn-outline-sm{display:inline-block;padding:5px 14px;background:#fff;color:#e8483c;border:1px solid #e8483c;border-radius:3px;font-size:12px;text-decoration:none;cursor:default}
+.config-stock-row4{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#888;margin-top:8px;padding-top:8px;border-top:1px solid #f5f5f5}
+.config-stock-item{background:#f8f9fb;padding:2px 8px;border-radius:3px}
+.config-stock-item .num{color:#333;font-weight:600}
+.config-note{text-align:center;color:#bbb;font-size:12px;padding:8px}
 
 </style>
 </head>
@@ -936,19 +931,20 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   var configData = {
     "BMW 3 Series": {
       trims: [
-        {name: "320i Sport Line", price: "指导价：258,000", stock: [
+        {name: "2026款 325i M运动套装", pct: "35%的人关注", msrp: "25.80万", dealerPrice: "21.80万", stock: [
           {wh: "果尔果斯", transitW: 3, transitB: 2, inboundW: 0, inboundB: 0},
           {wh: "喀什", transitW: 2, transitB: 3, inboundW: 0, inboundB: 0},
           {wh: "上海", transitW: 0, transitB: 1, inboundW: 0, inboundB: 0},
           {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]},
-        {name: "330i M Sport Night", price: "指导价：298,000", stock: [
+        {name: "2026款 330i M运动曜夜套装", pct: "28%的人关注", msrp: "29.80万", dealerPrice: "25.40万", stock: [
           {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
           {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
           {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
           {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
+    }
     },
     "Toyota RAV4": {
       trims: [
@@ -1634,61 +1630,49 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       alert('No pre-order data.\n\nWhatsApp: +86 138 2612 6147');
       return;
     }
-    var h = '<div class="config-modal"><div class="config-body">';
+    var h = '<div class="config-modal">';
+    // Header
+    h += '<div class="config-hd">' + modelName + ' <span>• 车型列表</span></div>';
+    // Tabs
+    h += '<div class="config-tabs"><span class="tab on">在售</span><span class="tab">2026款</span></div>';
+    h += '<div class="config-body">';
+
     for (var i = 0; i < data.trims.length; i++) {
       var trim = data.trims[i];
       var hasStock = false;
+      var stockHtml = '';
       if (trim.stock) {
         for (var s = 0; s < trim.stock.length; s++) {
           var st = trim.stock[s];
-          if (st.transitW > 0 || st.transitB > 0 || st.inboundW > 0 || st.inboundB > 0) hasStock = true;
+          var tw = st.transitW || 0, tb = st.transitB || 0;
+          var iw = st.inboundW || 0, ib = st.inboundB || 0;
+          if (tw > 0 || tb > 0 || iw > 0 || ib > 0) hasStock = true;
+          var parts = [];
+          if (tw > 0) parts.push('白<span class="num">' + tw + '</span>');
+          if (tb > 0) parts.push('黑<span class="num">' + tb + '</span>');
+          if (parts.length > 0) {
+            stockHtml += '<span class="config-stock-item">' + st.wh + ': ' + parts.join(' ') + '</span>';
+          }
         }
       }
+
       h += '<div class="config-card">';
-      // Title row
-      h += '<div class="config-card-hd"><div class="config-card-title">' + modelName + '<small>' + trim.name + '</small></div>';
-      h += '<div class="config-card-actions"><a href="#">◎ 参数</a><a href="#">图片</a><a href="#">+对比</a></div></div>';
-      // Price row
-      h += '<div class="config-price-row"><div class="config-msrp-box"><div class="label">指导价</div><div class="price">¥' + trim.price.replace(/[^0-9,]/g,'') + '</div></div>';
-      h += '<a class="config-btn config-btn-outline" href="https://wa.me/8613826126147" target="_blank">预购</a></div>';
-      // Stock grid
-      if (trim.stock) {
-        h += '<div class="config-stock-grid">';
-        for (var s = 0; s < trim.stock.length; s++) {
-          h += '<div class="config-stock-wh">' + trim.stock[s].wh + '</div>';
-        }
-        // 在途 white
-        h += '<div class="config-stock-row">';
-        for (var s = 0; s < trim.stock.length; s++) {
-          var w = trim.stock[s].transitW;
-          h += '<div class="config-stock-cell">在途<span class="' + (w > 0 ? 'count' : 'zero') + '"> 白' + w + '</span></div>';
-        }
-        h += '</div>';
-        // 在途 black
-        h += '<div class="config-stock-row">';
-        for (var s = 0; s < trim.stock.length; s++) {
-          var b = trim.stock[s].transitB;
-          h += '<div class="config-stock-cell"><span class="' + (b > 0 ? 'count' : 'zero') + '">黑' + b + '</span></div>';
-        }
-        h += '</div>';
-        // 已入库 white
-        h += '<div class="config-stock-row">';
-        for (var s = 0; s < trim.stock.length; s++) {
-          var w = trim.stock[s].inboundW;
-          h += '<div class="config-stock-cell">已入库<span class="' + (w > 0 ? 'count' : 'zero') + '"> 白' + w + '</span></div>';
-        }
-        h += '</div>';
-        // 已入库 black
-        h += '<div class="config-stock-row">';
-        for (var s = 0; s < trim.stock.length; s++) {
-          var b = trim.stock[s].inboundB;
-          h += '<div class="config-stock-cell"><span class="' + (b > 0 ? 'count' : 'zero') + '">黑' + b + '</span></div>';
-        }
-        h += '</div>';
-        h += '</div>';
+      // Row 1: name + links
+      h += '<div class="config-card-row1"><div class="config-card-name">' + trim.name + '<small>' + (trim.pct || '') + '</small></div>';
+      h += '<div class="config-card-links"><a>◎ 参数</a><a>图片</a><a>+对比</a></div></div>';
+      // Row 2: MSRP
+      h += '<div class="config-card-row2"><span class="config-msrp-label">指导价</span><span class="config-msrp-price">' + trim.msrp + '</span><span class="config-btn-sm">购车计算</span></div>';
+      // Row 3: dealer price
+      h += '<div class="config-card-row3"><span class="config-dealer-label">经销商报价</span><span class="config-dealer-price">' + trim.dealerPrice + '</span>';
+      h += '<a class="config-btn-red-sm" href="https://wa.me/8613826126147" target="_blank">询底价</a>';
+      h += '<a class="config-btn-outline-sm" href="https://wa.me/8613826126147" target="_blank">预购</a></div>';
+      // Row 4: stock
+      if (stockHtml) {
+        h += '<div class="config-stock-row4">' + stockHtml + '</div>';
       }
       h += '</div>';
     }
+
     h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div></div>';
     overlay.innerHTML = h;
     overlay.classList.add('open');
