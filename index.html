@@ -226,34 +226,22 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 /* Config Modal */
 .config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:#f5f6fa;border-radius:4px;width:780px;max-width:96vw;max-height:90vh;overflow-y:auto;box-shadow:0 2px 16px rgba(0,0,0,0.15);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#333}
-.config-hd{background:#f5f6fa;padding:16px 20px 12px;font-size:18px;font-weight:700;color:#222;display:flex;align-items:baseline;gap:6px}
-.config-hd span{font-size:13px;color:#999;font-weight:400}
-.config-tabs{display:flex;gap:0;background:#f5f6fa;padding:0 20px;border-bottom:1px solid #e8e8e8;margin-bottom:0}
-.config-tab{padding:8px 16px;font-size:13px;color:#666;cursor:default}
-.config-tab.on{color:#222;font-weight:600;border-bottom:2px solid #333;margin-bottom:-1px}
-.config-body{padding:12px 20px 20px}
-.config-card{background:#fff;margin-bottom:12px;border-radius:4px;padding:20px 20px 16px;border:1px solid #eee}
-.config-card:last-child{margin-bottom:0}
-.config-card-row1{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.config-modal{background:#fff;width:760px;max-width:96vw;max-height:90vh;overflow-y:auto;box-shadow:0 2px 12px rgba(0,0,0,0.15);font:14px/1.5 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#333;padding:20px 24px}
+.config-card{border-bottom:1px solid #e8e8e8;padding:16px 0}
+.config-card:last-child{border-bottom:none}
+.config-card-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .config-card-name{font-size:15px;font-weight:600;color:#222}
-.config-card-name small{display:block;font-size:12px;color:#999;font-weight:400;margin-top:2px}
-.config-card-links{display:flex;gap:16px;font-size:13px}
-.config-card-links a{color:#2b6de8;text-decoration:none;cursor:default}
-.config-card-row2{display:flex;align-items:center;gap:20px;margin-bottom:14px;padding:10px 0;border-top:1px solid #f5f5f5;border-bottom:1px solid #f5f5f5}
-.config-msrp-label{font-size:13px;color:#999}
-.config-msrp-price{font-size:22px;font-weight:700;color:#e8483c;margin:0 16px}
-.config-msrp-price small{font-size:14px;font-weight:400}
-.config-btn-sm{display:inline-block;padding:4px 12px;border-radius:3px;font-size:12px;text-decoration:none;cursor:default;border:1px solid #ddd;color:#666;background:#fff}
-.config-card-row3{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.config-dealer-label{font-size:13px;color:#999}
-.config-dealer-price{font-size:18px;font-weight:700;color:#e8483c}
-.config-btn-red-sm{display:inline-block;padding:5px 14px;background:#e8483c;color:#fff;border-radius:3px;font-size:12px;text-decoration:none;font-weight:500;cursor:default;margin-left:8px}
-.config-btn-outline-sm{display:inline-block;padding:5px 14px;background:#fff;color:#e8483c;border:1px solid #e8483c;border-radius:3px;font-size:12px;text-decoration:none;cursor:default}
-.config-stock-row4{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:#888;margin-top:8px;padding-top:8px;border-top:1px solid #f5f5f5}
-.config-stock-item{background:#f8f9fb;padding:2px 8px;border-radius:3px}
-.config-stock-item .num{color:#333;font-weight:600}
-.config-note{text-align:center;color:#bbb;font-size:12px;padding:8px}
+.config-card-price{font-size:14px;color:#e8483c;font-weight:600}
+.config-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:12px}
+.config-grid-col{text-align:center;font-size:12px;line-height:1.8}
+.config-grid-col .wh{font-weight:600;color:#333;font-size:13px;margin-bottom:2px}
+.config-grid-col .row-label{color:#999;font-size:11px}
+.config-grid-col .val{color:#333}
+.config-grid-col .zero{color:#ddd}
+.config-card-ft{text-align:right}
+.config-btn{display:inline-block;padding:6px 20px;background:#e8483c;color:#fff;border-radius:3px;font-size:13px;text-decoration:none;font-weight:500}
+.config-btn.disabled{background:#eee;color:#ccc;pointer-events:none}
+.config-note{text-align:center;color:#ccc;font-size:12px;margin-top:8px}
 
 </style>
 </head>
@@ -1626,54 +1614,32 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   window.showConfigModal = function(modelName) {
     var overlay = document.getElementById('config-overlay');
     var data = configData[modelName];
-    if (!data) {
-      alert('No pre-order data.\n\nWhatsApp: +86 138 2612 6147');
-      return;
-    }
+    if (!data) { alert('No data'); return; }
     var h = '<div class="config-modal">';
-    // Header
-    h += '<div class="config-hd">' + modelName + ' <span>• 车型列表</span></div>';
-    // Tabs
-    h += '<div class="config-tabs"><span class="tab on">在售</span><span class="tab">2026款</span></div>';
-    h += '<div class="config-body">';
-
     for (var i = 0; i < data.trims.length; i++) {
       var trim = data.trims[i];
       var hasStock = false;
-      var stockHtml = '';
+      h += '<div class="config-card">';
+      h += '<div class="config-card-hd"><span class="config-card-name">' + trim.name + '</span><span class="config-card-price">指导价：' + trim.msrp.replace('.','') + '</span></div>';
       if (trim.stock) {
+        h += '<div class="config-grid">';
         for (var s = 0; s < trim.stock.length; s++) {
           var st = trim.stock[s];
-          var tw = st.transitW || 0, tb = st.transitB || 0;
-          var iw = st.inboundW || 0, ib = st.inboundB || 0;
-          if (tw > 0 || tb > 0 || iw > 0 || ib > 0) hasStock = true;
-          var parts = [];
-          if (tw > 0) parts.push('白<span class="num">' + tw + '</span>');
-          if (tb > 0) parts.push('黑<span class="num">' + tb + '</span>');
-          if (parts.length > 0) {
-            stockHtml += '<span class="config-stock-item">' + st.wh + ': ' + parts.join(' ') + '</span>';
-          }
+          var tw = st.transitW||0, tb = st.transitB||0, iw = st.inboundW||0, ib = st.inboundB||0;
+          if (tw||tb||iw||ib) hasStock = true;
+          h += '<div class="config-grid-col"><div class="wh">' + st.wh + '</div>';
+          h += '<div class="row-label">在途</div><div class="' + (tw>0?'val':'zero') + '">白 ' + tw + '</div>';
+          h += '<div class="' + (tb>0?'val':'zero') + '">黑 ' + tb + '</div>';
+          h += '<div class="row-label">已入库</div><div class="' + (iw>0?'val':'zero') + '">白 ' + iw + '</div>';
+          h += '<div class="' + (ib>0?'val':'zero') + '">黑 ' + ib + '</div></div>';
         }
+        h += '</div>';
       }
-
-      h += '<div class="config-card">';
-      // Row 1: name + links
-      h += '<div class="config-card-row1"><div class="config-card-name">' + trim.name + '<small>' + (trim.pct || '') + '</small></div>';
-      h += '<div class="config-card-links"><a>◎ 参数</a><a>图片</a><a>+对比</a></div></div>';
-      // Row 2: MSRP
-      h += '<div class="config-card-row2"><span class="config-msrp-label">指导价</span><span class="config-msrp-price">' + trim.msrp + '</span><span class="config-btn-sm">购车计算</span></div>';
-      // Row 3: dealer price
-      h += '<div class="config-card-row3"><span class="config-dealer-label">经销商报价</span><span class="config-dealer-price">' + trim.dealerPrice + '</span>';
-      h += '<a class="config-btn-red-sm" href="https://wa.me/8613826126147" target="_blank">询底价</a>';
-      h += '<a class="config-btn-outline-sm" href="https://wa.me/8613826126147" target="_blank">预购</a></div>';
-      // Row 4: stock
-      if (stockHtml) {
-        h += '<div class="config-stock-row4">' + stockHtml + '</div>';
-      }
-      h += '</div>';
+      h += '<div class="config-card-ft">';
+      h += hasStock ? '<a class="config-btn" href="https://wa.me/8613826126147" target="_blank">预购</a>' : '<span class="config-btn disabled">暂无库存</span>';
+      h += '</div></div>';
     }
-
-    h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div></div>';
+    h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div>';
     overlay.innerHTML = h;
     overlay.classList.add('open');
   };
