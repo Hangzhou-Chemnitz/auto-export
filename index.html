@@ -226,22 +226,28 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 /* Config Modal */
 .config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:rgb(247,248,252);border-radius:12px;width:95vw;max-width:850px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.2);position:relative}
-.config-body{padding:20px 24px}
-.config-card{background:#fff;border-radius:10px;padding:16px 20px;margin-bottom:12px;border:1px solid rgb(230,232,238);display:flex;align-items:flex-start;gap:12px}
+.config-modal{background:#f5f6fa;border-radius:10px;width:95vw;max-width:780px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);position:relative;max-height:90vh;overflow-y:auto}
+.config-body{padding:16px 20px}
+.config-card{background:#fff;border-radius:8px;padding:16px 20px;margin-bottom:12px;border:1px solid #e8e8e8}
 .config-card:last-child{margin-bottom:0}
-.config-card-left{flex:1;min-width:0}
-.config-card-model{font-size:0.95em;font-weight:600;color:#1a1a2e}
-.config-card-price{font-size:0.85em;font-weight:600;color:rgb(200,160,30);margin-bottom:4px;text-align:right}
-.config-card-stock{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:8px}
-.config-stock-item{font-size:0.85em;color:#475569;background:rgb(248,249,252);padding:3px 10px;border-radius:4px}
-.config-stock-zero{color:#94a3b8}
-.config-card-right{flex-shrink:0;text-align:right;min-width:80px}
-.config-order-btn{display:inline-block;background:rgb(200,160,30);color:#fff;padding:6px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.82em;transition:all .2s;white-space:nowrap}
-.config-order-btn:hover{background:rgb(180,140,20)}
-.config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none;font-size:0.82em;padding:6px 14px}
-.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:12px}
-@media(max-width:640px){.config-card{flex-direction:column;align-items:stretch}.config-card-right{text-align:center}.config-body{padding:12px}}
+.config-card-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.config-card-name{font-size:1.05em;font-weight:700;color:#1a1a2e}
+.config-card-price{font-size:1em;font-weight:600;color:#e4393c}
+.config-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:6px;overflow:hidden}
+.config-wh-col{background:#fff}
+.config-wh-name{background:#1a1a2e;color:#fff;text-align:center;padding:8px 4px;font-size:0.85em;font-weight:600}
+.config-wh-row{display:grid;grid-template-columns:1fr 1fr;text-align:center;font-size:0.82em;border-bottom:1px solid #f1f5f9}
+.config-wh-row:last-child{border-bottom:none}
+.config-wh-label{background:#f8fafc;padding:6px 4px;font-weight:600;color:#64748b;font-size:0.78em}
+.config-wh-val{padding:6px 4px;color:#334155}
+.config-wh-val.has{color:#16a34a;font-weight:600}
+.config-wh-val.zero{color:#cbd5e1}
+.config-card-ft{display:flex;justify-content:flex-end;margin-top:12px}
+.config-order-btn{display:inline-block;background:#e4393c;color:#fff;padding:8px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.88em;transition:all .2s}
+.config-order-btn:hover{background:#dc2626}
+.config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none}
+.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:10px}
+@media(max-width:640px){.config-grid{grid-template-columns:repeat(2,1fr)}.config-body{padding:8px}.config-card{padding:10px}}
 
 </style>
 </head>
@@ -919,691 +925,692 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   var configData = {
     "BMW 3 Series": {
       trims: [
-        {name: "320i Sport Line", price: "Guide Price: ¥258,000", stock: [
-          {warehouse: "Horgos", detail: "Black ×3 White ×2"},
-          {warehouse: "Kashgar", detail: "Black ×2 White ×3"},
-          {warehouse: "Nansha Port", detail: "No stock"},
-          {warehouse: "Shanghai Port", detail: "Blue ×1"}
+        {name: "320i Sport Line", price: "指导价：258,000", stock: [
+          {wh: "果尔果斯", transitW: 3, transitB: 2, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 2, transitB: 3, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 1, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]},
-        {name: "330i M Sport Night", price: "Guide Price: ¥298,000", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "330i M Sport Night", price: "指导价：298,000", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota RAV4": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Corolla": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Corolla Cross": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Camry": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Highlander": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Frontlander": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Granvia": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota bZ3": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota bZ5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Bozhi 3X": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Levin": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Prado": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Sienna": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Wildlander": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Toyota Avalon": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen Teramont": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen Tharu": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen Tiguan Allspace": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen Tayron": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen T-Roc": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen Golf": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen Jetta VS5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen Jetta VS7": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Volkswagen Jetta VS8": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Geely Coolray": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Geely Boyue L": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Geely Xingyue L": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Geely Niuzai": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Geely Galaxy M9": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Jetour Dashing": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Jetour X70": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Jetour Traveler": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Jetour Free Rider": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Nissan Qashqai": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Nissan X-Trail": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Nissan NX8": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Nissan Sylphy": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Kia Seltos": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Kia KX1": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Kia K3": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Kia K5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Kia Sportage": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Kia Sonet": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Hyundai Elantra": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Hyundai Sonata": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Hyundai Tucson": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Mazda CX-5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Audi Q5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Audi Q3": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Audi A5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "BMW 5 Series": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "BMW X1": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "BMW X3": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "BMW X5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "BYD Seal": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "BYD Qin": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "BYD Song": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "BYD Yuan": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Honda CR-V": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Fangchengbao Bao 8": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Chery Tiggo 3X": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Chery Tiggo 5X": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Roewe i5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "MG MG5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Changan CS55": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Changan CS75": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     },
     "Changan X5": {
       trims: [
-        {name: "Standard", price: "Guide Price: TBD", stock: [
-          {warehouse: "Horgos", detail: "-"},
-          {warehouse: "Kashgar", detail: "-"},
-          {warehouse: "Nansha Port", detail: "-"},
-          {warehouse: "Shanghai Port", detail: "-"}
+        {name: "Standard", price: "指导价：TBD", stock: [
+          {wh: "果尔果斯", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "喀什", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "上海", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
+          {wh: "南沙", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
     }
   };
+
 
 
 
@@ -1620,22 +1627,30 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     for (var i = 0; i < data.trims.length; i++) {
       var trim = data.trims[i];
       var hasStock = false;
-      var stockHtml = '';
       if (trim.stock) {
         for (var s = 0; s < trim.stock.length; s++) {
           var st = trim.stock[s];
-          var isZero = st.detail === 'No stock' || st.detail === '-';
-          if (!isZero) hasStock = true;
-          stockHtml += '<span class="config-stock-item' + (isZero ? ' config-stock-zero' : '') + '">' + st.warehouse + ': ' + st.detail + '</span>';
+          if (st.transitW > 0 || st.transitB > 0 || st.inboundW > 0 || st.inboundB > 0) hasStock = true;
         }
       }
       h += '<div class="config-card">';
-      h += '<div class="config-card-left">';
-      h += '<div class="config-card-model">' + trim.name + '</div>';
-      h += '<div class="config-card-stock">' + stockHtml + '</div>';
-      h += '</div>';
-      h += '<div class="config-card-right">';
-      h += '<div class="config-card-price">' + trim.price + '</div>';
+      h += '<div class="config-card-hd"><span class="config-card-name">' + trim.name + '</span><span class="config-card-price">' + trim.price + '</span></div>';
+      if (trim.stock) {
+        h += '<div class="config-grid">';
+        for (var s = 0; s < trim.stock.length; s++) {
+          var st = trim.stock[s];
+          h += '<div class="config-wh-col"><div class="config-wh-name">' + st.wh + '</div>';
+          // 在途 row
+          h += '<div class="config-wh-row"><div class="config-wh-label">在途</div><div class="config-wh-val' + (st.transitW > 0 ? ' has' : ' zero') + '">白 ' + st.transitW + '</div></div>';
+          h += '<div class="config-wh-row"><div class="config-wh-label"></div><div class="config-wh-val' + (st.transitB > 0 ? ' has' : ' zero') + '">黑 ' + st.transitB + '</div></div>';
+          // 已入库 row
+          h += '<div class="config-wh-row"><div class="config-wh-label">已入库</div><div class="config-wh-val' + (st.inboundW > 0 ? ' has' : ' zero') + '">白 ' + st.inboundW + '</div></div>';
+          h += '<div class="config-wh-row"><div class="config-wh-label"></div><div class="config-wh-val' + (st.inboundB > 0 ? ' has' : ' zero') + '">黑 ' + st.inboundB + '</div></div>';
+          h += '</div>';
+        }
+        h += '</div>';
+      }
+      h += '<div class="config-card-ft">';
       if (hasStock) {
         h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">Pre-order</a>';
       } else {
