@@ -1016,11 +1016,20 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       h += '<thead><tr style="background:#f5f5f5"><th style="padding:6px;width:50px"></th>';
       for (var s = 0; s < t.stock.length; s++) h += '<th colspan="2" style="padding:6px;font-weight:600">' + (t.stock[s].wh||'') + '</th>';
       h += '</tr></thead><tbody>';
-      var rows = [['In Transit','White','transitW'],['','Black','transitB'],['','Grey','transitG'],['In Stock','White','inboundW'],['','Black','inboundB'],['','Grey','inboundG']];
+      var rows = [
+      ['In Transit','White','transitW',0],['','Black','transitB',0],['','Grey','transitG',0],
+      ['__SEP__','','',1],
+      ['In Stock','White','inboundW',0],['','Black','inboundB',0],['','Grey','inboundG',0]
+    ];
       var hasStock = false;
       for (var r = 0; r < rows.length; r++) {
+        if (rows[r][3] === 1) {
+          // Separator row
+          h += '<tr><td colspan="' + (1 + t.stock.length * 2) + '" style="padding:0;background:#e0e0e0;height:1px"></td></tr>';
+          continue;
+        }
         h += '<tr>';
-        h += '<td style="padding:6px;background:#fafafa;font-weight:600;text-align:center;font-size:11px;color:#666">' + (rows[r][0]||'') + '</td>';
+        h += '<td style="padding:8px 6px;background:#fafafa;font-weight:600;text-align:center;vertical-align:middle;font-size:11px;color:#666">' + (rows[r][0]||'') + '</td>';
         for (var s = 0; s < t.stock.length; s++) {
           var v = t.stock[s][rows[r][2]] || 0;
           if (v > 0) hasStock = true;
