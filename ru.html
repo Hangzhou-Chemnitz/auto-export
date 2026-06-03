@@ -1367,21 +1367,21 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         h += '<div class="sec-label span2">В пути</div>';
         for (var s = 0; s < t.stock.length; s++) {
           var v = t.stock[s].transitW || 0; if (v > 0) hs = true;
-          h += '<div class="color-name">白</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
+          h += '<div class="color-name">Бел</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
         }
         for (var s = 0; s < t.stock.length; s++) {
           var v = t.stock[s].transitB || 0; if (v > 0) hs = true;
-          h += '<div class="color-name">黑</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
+          h += '<div class="color-name">Черн</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
         }
         // На складе section (spans 2 rows)
         h += '<div class="sec-label span2">На складе</div>';
         for (var s = 0; s < t.stock.length; s++) {
           var v = t.stock[s].inboundW || 0; if (v > 0) hs = true;
-          h += '<div class="color-name">白</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
+          h += '<div class="color-name">Бел</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
         }
         for (var s = 0; s < t.stock.length; s++) {
           var v = t.stock[s].inboundB || 0; if (v > 0) hs = true;
-          h += '<div class="color-name">黑</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
+          h += '<div class="color-name">Черн</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
         }
         h += '</div>';
       }
