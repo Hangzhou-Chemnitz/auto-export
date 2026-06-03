@@ -226,28 +226,39 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 /* Config Modal */
 .config-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;align-items:center;justify-content:center}
 .config-overlay.open{display:flex}
-.config-modal{background:#f5f6fa;border-radius:10px;width:95vw;max-width:780px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);position:relative;max-height:90vh;overflow-y:auto}
-.config-body{padding:16px 20px}
-.config-card{background:#fff;border-radius:8px;padding:16px 20px;margin-bottom:12px;border:1px solid #e8e8e8}
-.config-card:last-child{margin-bottom:0}
-.config-card-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.config-card-name{font-size:1.05em;font-weight:700;color:#1a1a2e}
-.config-card-price{font-size:1em;font-weight:600;color:#e4393c}
-.config-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e8e8e8;border:1px solid #e8e8e8;border-radius:6px;overflow:hidden}
-.config-wh-col{background:#fff}
-.config-wh-name{background:#1a1a2e;color:#fff;text-align:center;padding:8px 4px;font-size:0.85em;font-weight:600}
-.config-wh-row{display:grid;grid-template-columns:1fr 1fr;text-align:center;font-size:0.82em;border-bottom:1px solid #f1f5f9}
-.config-wh-row:last-child{border-bottom:none}
-.config-wh-label{background:#f8fafc;padding:6px 4px;font-weight:600;color:#64748b;font-size:0.78em}
-.config-wh-val{padding:6px 4px;color:#334155}
-.config-wh-val.has{color:#16a34a;font-weight:600}
-.config-wh-val.zero{color:#cbd5e1}
-.config-card-ft{display:flex;justify-content:flex-end;margin-top:12px}
-.config-order-btn{display:inline-block;background:#e4393c;color:#fff;padding:8px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.88em;transition:all .2s}
-.config-order-btn:hover{background:#dc2626}
-.config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none}
-.config-note{text-align:center;color:#94a3b8;font-size:0.8em;margin-top:10px}
-@media(max-width:640px){.config-grid{grid-template-columns:repeat(2,1fr)}.config-body{padding:8px}.config-card{padding:10px}}
+.config-modal{background:#f5f6fa;border-radius:4px;width:750px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 2px 12px rgba(0,0,0,0.12);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.config-body{padding:0}
+.config-card{background:#fff;margin:0 0 1px 0;padding:20px 24px}
+.config-card:first-child{border-radius:4px 4px 0 0}
+.config-card:last-child{border-radius:0 0 4px 4px;margin-bottom:0}
+.config-card-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.config-card-title{font-size:15px;font-weight:600;color:#222;line-height:1.4}
+.config-card-title small{font-size:12px;color:#999;font-weight:400;display:block;margin-top:2px}
+.config-card-actions{display:flex;gap:16px;font-size:13px}
+.config-card-actions a{color:#2b6de8;text-decoration:none}
+.config-card-actions a:hover{color:#1a5bd4}
+.config-price-label{font-size:13px;color:#888;margin-bottom:4px}
+.config-price-val{font-size:18px;font-weight:700;color:#e8483c}
+.config-price-row{display:flex;align-items:center;gap:24px;margin-bottom:14px}
+.config-msrp-box{text-align:center}
+.config-msrp-box .label{font-size:12px;color:#888}
+.config-msrp-box .price{font-size:20px;font-weight:700;color:#e8483c}
+.config-actions-row{display:flex;gap:8px;margin-bottom:14px}
+.config-btn{display:inline-block;padding:7px 16px;border-radius:4px;font-size:13px;text-decoration:none;cursor:pointer;font-weight:500}
+.config-btn-red{background:#e8483c;color:#fff}
+.config-btn-red:hover{background:#d43c31}
+.config-btn-outline{background:#fff;color:#e8483c;border:1px solid #e8483c}
+.config-btn-outline:hover{background:#fef0ef}
+.config-btn-gray{background:#f5f5f5;color:#666;border:1px solid #ddd}
+.config-stock-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #e8e8e8;border-radius:4px;overflow:hidden}
+.config-stock-wh{background:#f8f8f8;text-align:center;padding:8px 6px;font-size:13px;font-weight:600;color:#333;border-right:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8}
+.config-stock-wh:last-child{border-right:none}
+.config-stock-row{display:contents}
+.config-stock-cell{background:#fff;text-align:center;padding:8px 6px;font-size:12px;color:#555;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;line-height:1.6}
+.config-stock-cell .count{font-weight:600;color:#333}
+.config-stock-cell .zero{color:#ccc}
+.config-note{text-align:center;color:#999;font-size:12px;padding:12px}
+@media(max-width:640px){.config-modal{width:100vw;border-radius:0}.config-card{padding:14px}.config-stock-grid{grid-template-columns:repeat(2,1fr)}}
 
 </style>
 </head>
@@ -1620,7 +1631,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var overlay = document.getElementById('config-overlay');
     var data = configData[modelName];
     if (!data) {
-      alert('No pre-order data available.\n\nWhatsApp: +86 138 2612 6147\nEmail: ljj2022513@gmail.com');
+      alert('No pre-order data.\n\nWhatsApp: +86 138 2612 6147');
       return;
     }
     var h = '<div class="config-modal"><div class="config-body">';
@@ -1634,29 +1645,49 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         }
       }
       h += '<div class="config-card">';
-      h += '<div class="config-card-hd"><span class="config-card-name">' + trim.name + '</span><span class="config-card-price">' + trim.price + '</span></div>';
+      // Title row
+      h += '<div class="config-card-hd"><div class="config-card-title">' + modelName + '<small>' + trim.name + '</small></div>';
+      h += '<div class="config-card-actions"><a href="#">◎ 参数</a><a href="#">图片</a><a href="#">+对比</a></div></div>';
+      // Price row
+      h += '<div class="config-price-row"><div class="config-msrp-box"><div class="label">指导价</div><div class="price">¥' + trim.price.replace(/[^0-9,]/g,'') + '</div></div>';
+      h += '<a class="config-btn config-btn-outline" href="https://wa.me/8613826126147" target="_blank">预购</a></div>';
+      // Stock grid
       if (trim.stock) {
-        h += '<div class="config-grid">';
+        h += '<div class="config-stock-grid">';
         for (var s = 0; s < trim.stock.length; s++) {
-          var st = trim.stock[s];
-          h += '<div class="config-wh-col"><div class="config-wh-name">' + st.wh + '</div>';
-          // 在途 row
-          h += '<div class="config-wh-row"><div class="config-wh-label">在途</div><div class="config-wh-val' + (st.transitW > 0 ? ' has' : ' zero') + '">白 ' + st.transitW + '</div></div>';
-          h += '<div class="config-wh-row"><div class="config-wh-label"></div><div class="config-wh-val' + (st.transitB > 0 ? ' has' : ' zero') + '">黑 ' + st.transitB + '</div></div>';
-          // 已入库 row
-          h += '<div class="config-wh-row"><div class="config-wh-label">已入库</div><div class="config-wh-val' + (st.inboundW > 0 ? ' has' : ' zero') + '">白 ' + st.inboundW + '</div></div>';
-          h += '<div class="config-wh-row"><div class="config-wh-label"></div><div class="config-wh-val' + (st.inboundB > 0 ? ' has' : ' zero') + '">黑 ' + st.inboundB + '</div></div>';
-          h += '</div>';
+          h += '<div class="config-stock-wh">' + trim.stock[s].wh + '</div>';
+        }
+        // 在途 white
+        h += '<div class="config-stock-row">';
+        for (var s = 0; s < trim.stock.length; s++) {
+          var w = trim.stock[s].transitW;
+          h += '<div class="config-stock-cell">在途<span class="' + (w > 0 ? 'count' : 'zero') + '"> 白' + w + '</span></div>';
         }
         h += '</div>';
+        // 在途 black
+        h += '<div class="config-stock-row">';
+        for (var s = 0; s < trim.stock.length; s++) {
+          var b = trim.stock[s].transitB;
+          h += '<div class="config-stock-cell"><span class="' + (b > 0 ? 'count' : 'zero') + '">黑' + b + '</span></div>';
+        }
+        h += '</div>';
+        // 已入库 white
+        h += '<div class="config-stock-row">';
+        for (var s = 0; s < trim.stock.length; s++) {
+          var w = trim.stock[s].inboundW;
+          h += '<div class="config-stock-cell">已入库<span class="' + (w > 0 ? 'count' : 'zero') + '"> 白' + w + '</span></div>';
+        }
+        h += '</div>';
+        // 已入库 black
+        h += '<div class="config-stock-row">';
+        for (var s = 0; s < trim.stock.length; s++) {
+          var b = trim.stock[s].inboundB;
+          h += '<div class="config-stock-cell"><span class="' + (b > 0 ? 'count' : 'zero') + '">黑' + b + '</span></div>';
+        }
+        h += '</div>';
+        h += '</div>';
       }
-      h += '<div class="config-card-ft">';
-      if (hasStock) {
-        h += '<a class="config-order-btn" href="https://wa.me/8613826126147" target="_blank" rel="noopener">Pre-order</a>';
-      } else {
-        h += '<span class="config-order-btn disabled">No stock</span>';
-      }
-      h += '</div></div>';
+      h += '</div>';
     }
     h += '<div class="config-note">WhatsApp: +86 138 2612 6147</div></div></div>';
     overlay.innerHTML = h;
