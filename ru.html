@@ -3,6 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PEL4QMFR44"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PEL4QMFR44');
+window.chemnitzTrack = function(eventName, params){
+  if (typeof gtag === 'function') gtag('event', eventName, params || {});
+};
+document.addEventListener('click', function(e){
+  var wa = e.target.closest('a[href*="wa.me"]');
+  if (wa) chemnitzTrack('whatsapp_click', {link_url: wa.href, link_text: (wa.textContent || '').trim().slice(0, 100)});
+  var card = e.target.closest('.model-card');
+  if (card) chemnitzTrack('model_card_click', {model: card.getAttribute('data-title') || (card.textContent || '').trim().slice(0, 80)});
+  var priceOption = e.target.closest('.config-menu-option, .config-option');
+  if (priceOption) chemnitzTrack('guide_price_select', {model: window.currentConfigModel || '', option_text: (priceOption.textContent || '').trim().slice(0, 120)});
+  var order = e.target.closest('.config-order-btn, .config-btn');
+  if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
+});
+</script>
 <title>Hangzhou Chemnitz — Авто из Китая для России | Поставки дилерам | FOB/CIF</title>
 <meta name="description" content="Hangzhou Chemnitz — лицензированный экспортёр автомобилей из Китая для дилеров и импортёров в России. Актуальный список авто, VIN, фото, комплектации, цена FOB/CIF и полный пакет экспортных документов.">
 <meta name="keywords" content="авто из Китая для России, купить авто из Китая, поставщик авто из Китая, авто из Китая оптом, экспорт авто Китай, дилеры авто Россия, FOB Китай, CIF Россия, VIN авто из Китая">
@@ -1299,53 +1320,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
           {wh: "Nansha", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
         ]}
       ]
-    },
-
     }
-    "Toyota 2026 2.0L Hybrid Luxury": {trims:[{name:"2026 2.0L Hybrid Luxury",price:"Цена: 159,800",stock:[{wh:"Хоргос",transitW:11,transitB:9,inboundW:0,inboundB:0},{wh:"Кашгар",transitW:0,transitB:0,inboundW:0,inboundB:0},{wh:"Шанхай",transitW:0,transitB:0,inboundW:0,inboundB:0},{wh:"Наньша",transitW:0,transitB:0,inboundW:0,inboundB:0}]}]},
-    "Toyota 2026 2.5L Hybrid AWD Premium 7-Seat": {trims:[{name:"2026 2.5L Hybrid AWD Premium 7-Seat",price:"Цена: 325,800",stock:[{wh:"Хоргос",transitW:1,transitB:0,inboundW:0,inboundB:0},{wh:"Кашгар",transitW:0,transitB:0,inboundW:0,inboundB:0},{wh:"Шанхай",transitW:0,transitB:0,inboundW:0,inboundB:0},{wh:"Наньша",transitW:0,transitB:0,inboundW:0,inboundB:0}]}]},
-    "Toyota 2026 Hybrid 2.5HQ Flagship": {trims:[{name:"2026 Hybrid 2.5HQ Flagship",price:"Цена: 259,800",stock:[{wh:"Хоргос",transitW:0,transitB:0,inboundW:0,inboundB:8},{wh:"Кашгар",transitW:0,transitB:0,inboundW:0,inboundB:0},{wh:"Шанхай",transitW:0,transitB:0,inboundW:0,inboundB:0},{wh:"Наньша",transitW:0,transitB:0,inboundW:0,inboundB:0}]}]},
-    "Nissan 2025 Honor 2.0L FWD Leading": {trims:[{name:"2025 Honor 2.0L FWD Leading",price:"Цена: 166,800",stock:[{wh:"Хоргос",transitW:5,transitB:5,inboundW:0,inboundB:0},{wh:"Кашгар",transitW:0,transitB:0,inboundW:0,inboundB:0},{wh:"Шанхай",transitW:0,transitB:0,inboundW:0,inboundB:0},{wh:"Наньша",transitW:0,transitB:0,inboundW:0,inboundB:0}]}]},
-    "Toyota 2026 2.0L Hybrid Luxury": {
-      trims: [
-        {name: "2026 2.0L Hybrid Luxury", price: "Цена: 159,800", stock: [
-          {wh: "Хоргос", transitW: 11, transitB: 9, inboundW: 0, inboundB: 0},
-          {wh: "Кашгар", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Шанхай", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Наньша", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
-        ]}
-      ]
-    },
-    "Toyota 2026 2.5L Hybrid AWD Premium 7-Seat": {
-      trims: [
-        {name: "2026 2.5L Hybrid AWD Premium 7-Seat", price: "Цена: 325,800", stock: [
-          {wh: "Хоргос", transitW: 1, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Кашгар", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Шанхай", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Наньша", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
-        ]}
-      ]
-    },
-    "Toyota 2026 Hybrid 2.5HQ Flagship": {
-      trims: [
-        {name: "2026 Hybrid 2.5HQ Flagship", price: "Цена: 259,800", stock: [
-          {wh: "Хоргос", transitW: 0, transitB: 0, inboundW: 0, inboundB: 8},
-          {wh: "Кашгар", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Шанхай", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Наньша", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
-        ]}
-      ]
-    },
-    "Nissan 2025 Honor 2.0L FWD Leading": {
-      trims: [
-        {name: "2025 Honor 2.0L FWD Leading", price: "Цена: 166,800", stock: [
-          {wh: "Хоргос", transitW: 5, transitB: 5, inboundW: 0, inboundB: 0},
-          {wh: "Кашгар", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Шанхай", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0},
-          {wh: "Наньша", transitW: 0, transitB: 0, inboundW: 0, inboundB: 0}
-        ]}
-      ]
-    },
   };
 
 

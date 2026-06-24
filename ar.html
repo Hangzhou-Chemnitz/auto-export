@@ -3,6 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PEL4QMFR44"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PEL4QMFR44');
+window.chemnitzTrack = function(eventName, params){
+  if (typeof gtag === 'function') gtag('event', eventName, params || {});
+};
+document.addEventListener('click', function(e){
+  var wa = e.target.closest('a[href*="wa.me"]');
+  if (wa) chemnitzTrack('whatsapp_click', {link_url: wa.href, link_text: (wa.textContent || '').trim().slice(0, 100)});
+  var card = e.target.closest('.model-card');
+  if (card) chemnitzTrack('model_card_click', {model: card.getAttribute('data-title') || (card.textContent || '').trim().slice(0, 80)});
+  var priceOption = e.target.closest('.config-menu-option, .config-option');
+  if (priceOption) chemnitzTrack('guide_price_select', {model: window.currentConfigModel || '', option_text: (priceOption.textContent || '').trim().slice(0, 120)});
+  var order = e.target.closest('.config-order-btn, .config-btn');
+  if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
+});
+</script>
 <title>Hangzhou Chemnitz — تصدير السيارات الصينية | استيراد سيارات من الصين | FOB أي ميناء</title>
 <meta name="description" content="Hangzhou Chemnitz — مصدّر سيارات صيني مرخص. 7000+ سيارة تم شحنها. تويوتا، فولكسفاجن، جيلي، نيسان، كيا، هيونداي، مازدا، جيتور، أودي في المخزون. FOB أي ميناء صيني. التوصيل إلى الإمارات، السعودية، الجزائر، نيجيريا، المغرب، العراق، عمان، البحرين، الكويت، قطر وجميع أسواق القيادة اليسرى.">
 <meta name="keywords" content="تصدير السيارات الصينية, استيراد سيارات من الصين, سيارات صينية للتصدير, تويوتا من الصين, فولكسفاجن تصدير, FOB الصين, سيارات للإمارات, سيارات للسعودية, سيارات للجزائر">

@@ -3,6 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PEL4QMFR44"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PEL4QMFR44');
+window.chemnitzTrack = function(eventName, params){
+  if (typeof gtag === 'function') gtag('event', eventName, params || {});
+};
+document.addEventListener('click', function(e){
+  var wa = e.target.closest('a[href*="wa.me"]');
+  if (wa) chemnitzTrack('whatsapp_click', {link_url: wa.href, link_text: (wa.textContent || '').trim().slice(0, 100)});
+  var card = e.target.closest('.model-card');
+  if (card) chemnitzTrack('model_card_click', {model: card.getAttribute('data-title') || (card.textContent || '').trim().slice(0, 80)});
+  var priceOption = e.target.closest('.config-menu-option, .config-option');
+  if (priceOption) chemnitzTrack('guide_price_select', {model: window.currentConfigModel || '', option_text: (priceOption.textContent || '').trim().slice(0, 120)});
+  var order = e.target.closest('.config-order-btn, .config-btn');
+  if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
+});
+</script>
 <title>Автомобили из Китая для России | Оптовый экспорт авто | Hangzhou Chemnitz</title>
 <meta name="description" content="Hangzhou Chemnitz помогает российским дилерам и импортерам закупать автомобили из Китая. VIN, фото, комплектации, цена FOB/CIF, экспортные документы и поставка из китайских портов.">
 <link rel="canonical" href="https://hzchemnitz.cn/russia.html">
@@ -21,7 +42,7 @@
   "name": "Hangzhou Chemnitz",
   "url": "https://hzchemnitz.cn/russia.html",
   "areaServed": "Russia",
-  "telephone": "+86-138-2612-6147",
+  "telephone": "+86-137-5822-9513",
   "description": "Chinese vehicle exporter for Russian dealers and parallel importers."
 }
 </script>
@@ -87,7 +108,7 @@ h2{font-size:34px;line-height:1.15;margin:0 0 14px}
       <h1>Автомобили из Китая для России</h1>
       <p class="lead">Hangzhou Chemnitz помогает российским автодилерам и параллельным импортерам закупать автомобили в Китае: VIN, фото, комплектации, цена FOB/CIF и экспортные документы.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://wa.me/8613826126147?text=Здравствуйте!%20Нужен%20актуальный%20список%20авто%20для%20России.%20Модель,%20количество,%20город%20назначения:" target="_blank" rel="noopener">Получить актуальный список авто в WhatsApp</a>
+        <a class="btn btn-primary" href="https://wa.me/8613758229513?text=Здравствуйте!%20Нужен%20актуальный%20список%20авто%20для%20России.%20Модель,%20количество,%20город%20назначения:" target="_blank" rel="noopener">Получить актуальный список авто в WhatsApp</a>
         <a class="btn btn-secondary" href="#process">Как мы работаем</a>
       </div>
       <p class="note">Модель, количество, город назначения и формат цены FOB или CIF — этого достаточно, чтобы мы подготовили подборку доступных автомобилей.</p>
@@ -139,7 +160,7 @@ h2{font-size:34px;line-height:1.15;margin:0 0 14px}
     <div class="wrap">
       <h2>Запросите список автомобилей для России</h2>
       <p class="sub">Напишите нам первым сообщением в WhatsApp. Мы ответим по конкретному запросу и не отправляем массовые сообщения без согласия клиента.</p>
-      <a class="btn btn-primary" href="https://wa.me/8613826126147?text=Здравствуйте!%20Нужен%20актуальный%20список%20авто%20для%20России.%20Модель,%20количество,%20город%20назначения:" target="_blank" rel="noopener">Получить актуальный список авто в WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.me/8613758229513?text=Здравствуйте!%20Нужен%20актуальный%20список%20авто%20для%20России.%20Модель,%20количество,%20город%20назначения:" target="_blank" rel="noopener">Получить актуальный список авто в WhatsApp</a>
       <div class="formline">
         <span class="pill">Модель</span>
         <span class="pill">Количество</span>
@@ -153,7 +174,7 @@ h2{font-size:34px;line-height:1.15;margin:0 0 14px}
 <footer class="footer">
   <div class="wrap">
     <span>Hangzhou Chemnitz — Chinese Vehicle Export</span>
-    <span>WhatsApp: +86 138 2612 6147</span>
+    <span>WhatsApp: +86 137 58229513</span>
   </div>
 </footer>
 </body>
