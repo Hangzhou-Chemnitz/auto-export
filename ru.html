@@ -20,7 +20,7 @@ document.addEventListener('click', function(e){
   if (card) chemnitzTrack('model_card_click', {model: card.getAttribute('data-title') || (card.textContent || '').trim().slice(0, 80)});
   var priceOption = e.target.closest('.config-menu-option, .config-option');
   if (priceOption) chemnitzTrack('guide_price_select', {model: window.currentConfigModel || '', option_text: (priceOption.textContent || '').trim().slice(0, 120)});
-  var order = e.target.closest('.config-order-btn, .config-btn');
+  var order = e.target.closest('.config-order-btn, a.config-btn, .config-consult-card, .contact-choice-link');
   if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
 });
 </script>
@@ -62,7 +62,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .hero h1 span{color:#ef4444}
 .hero .subtitle{font-size:1.05em;color:#94a3b8;margin-bottom:4px;font-weight:500}
 .hero .subtitle-sm{font-size:0.9em;color:#64748b;margin-bottom:4px}
-.hero .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);margin-top:24px}
+.hero .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);margin-top:24px;border:0;cursor:pointer;font-family:inherit}
 .hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
 .section{padding:56px 24px}
 .section .inner{max-width:960px;margin:0 auto}
@@ -86,7 +86,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .contact-section{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#fff;text-align:center;padding:56px 24px}
 .contact-section h2{font-size:1.5em;font-weight:700;margin-bottom:8px}
 .contact-section .sub{color:#94a3b8;font-size:0.95em;margin-bottom:20px}
-.contact-section .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
+.contact-section .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);border:0;cursor:pointer;font-family:inherit}
 .contact-section .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
 .contact-section .reply{color:#64748b;font-size:0.85em;margin-top:16px}
 footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#f8fafc;border-top:1px solid #e2e8f0}
@@ -111,6 +111,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-close{background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:0 4px}
 .config-card{border-bottom:1px solid #e0e0e0;padding:14px 16px}
 .config-card:last-child{border-bottom:none}
+.config-consult-card{display:block;width:100%;border:0;background:#fff;color:inherit;text-decoration:none;text-align:left;cursor:pointer}
+.config-consult-card:hover{background:#fff7f7}
+.config-intro{padding:12px 16px;color:#64748b;background:#f8fafc;border-bottom:1px solid #e5e7eb}
 .config-row1{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
 .config-row1 .name{font-size:14px;font-weight:600;color:#222}
 .config-row1 .msrp{font-size:13px;color:#e8483c;font-weight:600}
@@ -125,6 +128,12 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-btn-row{text-align:right;margin-top:8px}
 .config-btn{display:inline-block;padding:5px 18px;background:#e8483c;color:#fff;border-radius:3px;font-size:12px;text-decoration:none;font-weight:500}
 .config-btn.disabled{background:#eee;color:#ccc;pointer-events:none}
+.contact-choice-modal{width:min(95vw,560px);max-width:560px}
+.contact-choice-modal .config-bar{padding:8px 14px;font-size:13px}
+.contact-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:16px}
+.contact-choice-link{display:block;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;padding:12px 14px;font-weight:800;line-height:1.3;box-shadow:0 8px 22px rgba(37,211,102,.18);transition:all .18s}
+.contact-choice-link:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(37,211,102,.25)}
+.contact-choice-link span{display:block;font-size:.82em;font-weight:600;opacity:.88;margin-top:2px}
 
 
 </style>
@@ -146,7 +155,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="subtitle">Поставки для дилеров и импортёров в России · Hangzhou Chemnitz International Trade Co., Ltd.</div>
     <div class="subtitle-sm">Актуальный список авто · VIN и фото · FOB или CIF · Полный пакет экспортных документов</div>
     <div style="margin-top:24px;">
-      <a class="cta-btn" href="https://wa.me/8613758229513?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%B0%D0%B2%D1%82%D0%BE.%20%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C,%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE,%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%20%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F:" target="_blank" rel="noopener">Получить актуальный список авто в WhatsApp</a>
+      <button type="button" class="cta-btn" onclick="openRuContactChoice('Общий запрос')">Консультация в WhatsApp</button>
     </div>
     <div class="subtitle-sm" style="margin-top:12px;color:#94a3b8;">Модель, количество, город назначения — отправьте эти данные, и мы подготовим наличие, VIN и цену.</div>
   </div>
@@ -208,14 +217,14 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 <section class="section">
   <div class="inner">
-    <h2>Автомобили в наличии</h2>
-    <p class="lead">Полный сток-лист и цены по запросу в WhatsApp или email</p>
+    <h2>Модели и комплектации</h2>
+    <p class="lead">Выберите модель и комплектацию, затем отправьте запрос в WhatsApp</p>
 
     <!-- Toyota -->
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">T</div>
-        <div><h3>Toyota</h3><div class="info">В наличии</div></div>
+        <div><h3>Toyota</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/toyota/rav4/" data-prefix="" data-count="8" data-title="Toyota RAV4">
@@ -281,7 +290,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">V</div>
-        <div><h3>Volkswagen</h3><div class="info">В наличии</div></div>
+        <div><h3>Volkswagen</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/volkswagen/teramont/" data-prefix="" data-count="8" data-title="Volkswagen Teramont">
@@ -327,7 +336,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">G</div>
-        <div><h3>Geely</h3><div class="info">В наличии</div></div>
+        <div><h3>Geely</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/geely/coolray/" data-prefix="" data-count="8" data-title="Geely Coolray">
@@ -357,7 +366,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">N</div>
-        <div><h3>Nissan</h3><div class="info">В наличии</div></div>
+        <div><h3>Nissan</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/nissan/qashqai/" data-prefix="" data-count="8" data-title="Nissan Qashqai">
@@ -383,7 +392,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">K</div>
-        <div><h3>Kia</h3><div class="info">В наличии</div></div>
+        <div><h3>Kia</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/kia/seltos/" data-prefix="" data-count="8" data-title="Kia Seltos">
@@ -417,7 +426,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">H</div>
-        <div><h3>Hyundai</h3><div class="info">В наличии</div></div>
+        <div><h3>Hyundai</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/hyundai/elantra/" data-prefix="" data-count="8" data-title="Hyundai Elantra">
@@ -439,7 +448,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">J</div>
-        <div><h3>Jetour</h3><div class="info">В наличии</div></div>
+        <div><h3>Jetour</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/jetour/dashing/" data-prefix="" data-count="8" data-title="Jetour Dashing">
@@ -465,7 +474,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">M</div>
-        <div><h3>Mazda</h3><div class="info">В наличии</div></div>
+        <div><h3>Mazda</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/mazda/cx-5/" data-prefix="" data-count="8" data-title="Mazda CX-5">
@@ -479,7 +488,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">A</div>
-        <div><h3>Audi</h3><div class="info">В наличии</div></div>
+        <div><h3>Audi</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/audi/q5/" data-prefix="" data-count="8" data-title="Audi Q5">
@@ -501,7 +510,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">B</div>
-        <div><h3>BMW</h3><div class="info">В наличии</div></div>
+        <div><h3>BMW</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/bmw/3-series/" data-prefix="" data-count="8" data-title="BMW 3 Series">
@@ -531,7 +540,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">D</div>
-        <div><h3>Honda</h3><div class="info">В наличии</div></div>
+        <div><h3>Honda</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/honda/crv/" data-prefix="" data-count="8" data-title="Honda CR-V">
@@ -545,7 +554,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">F</div>
-        <div><h3>Fangchengbao</h3><div class="info">В наличии</div></div>
+        <div><h3>Fangchengbao</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/fangchengbao/bao-8/" data-prefix="" data-count="8" data-title="Fangchengbao Bao 8">
@@ -559,7 +568,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">C</div>
-        <div><h3>Chery</h3><div class="info">В наличии</div></div>
+        <div><h3>Chery</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/chery/tiggo-3x/" data-prefix="" data-count="8" data-title="Chery Tiggo 3X">
@@ -577,7 +586,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">R</div>
-        <div><h3>Roewe</h3><div class="info">В наличии</div></div>
+        <div><h3>Roewe</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/roewe/i5/" data-prefix="" data-count="8" data-title="Roewe i5">
@@ -591,7 +600,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">G</div>
-        <div><h3>MG</h3><div class="info">В наличии</div></div>
+        <div><h3>MG</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/mg/mg5/" data-prefix="" data-count="8" data-title="MG MG5">
@@ -605,7 +614,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">A</div>
-        <div><h3>Changan</h3><div class="info">В наличии</div></div>
+        <div><h3>Changan</h3><div class="info">Комплектации</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/changan/cs55/" data-prefix="" data-count="8" data-title="Changan CS55">
@@ -629,7 +638,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   <h2>Запросить прайс-лист</h2>
   <p class="sub">Напишите в WhatsApp — модель, количество, город назначения, FOB или CIF<br>Говорим на русском, английском, китайском</p>
   <div style="margin-top:20px;">
-    <a class="cta-btn" href="https://wa.me/8613758229513?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%B0%D0%B2%D1%82%D0%BE.%20%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C,%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE,%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%20%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F:" target="_blank" rel="noopener">Получить актуальный список авто в WhatsApp</a>
+    <button type="button" class="cta-btn" onclick="openRuContactChoice('Общий запрос')">Консультация в WhatsApp</button>
   </div>
   <p class="reply">ljj2022513@gmail.com · Ханчжоу, Чжэцзян, Китай</p>
 </section>
@@ -1322,58 +1331,83 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       ]
     }
   };
-
-
-
-
+  function escHtml(value) {
+    return String(value || '').replace(/[&<>"']/g, function(ch) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    });
+  }
+  function ruCleanPrice(price) {
+    return (price || 'TBD')
+      .replace('Guide Price: ', '')
+      .replace('Цена：', '')
+      .replace('Цена: ', '')
+      .trim();
+  }
+  var ruWhatsappContacts = [
+    { label: 'Sia', display: '+86 137 58229513', wa: '8613758229513' },
+    { label: 'Darwin', display: '+86 136 40033268', wa: '8613640033268' }
+  ];
+  function ruConsultText(modelName, trim) {
+    var lines = ['Здравствуйте! Нужна консультация по автомобилю: ' + modelName + '.'];
+    if (trim) {
+      lines.push('Комплектация: ' + trim.name);
+      lines.push('Ориентир цены: ' + ruCleanPrice(trim.msrp || trim.price));
+    }
+    lines.push('Пожалуйста, отправьте актуальную экспортную цену, наличие, варианты порта и документы.');
+    return lines.join('\n');
+  }
+  function ruConsultUrl(contact, modelName, trim) {
+    return 'https://wa.me/' + contact.wa + '?text=' + encodeURIComponent(ruConsultText(modelName, trim));
+  }
+  function renderRuContactChoice(modelName, trim) {
+    var h = '<div class="config-modal contact-choice-modal">';
+    h += '<div class="config-bar">WhatsApp<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div>';
+    h += '<div class="contact-choice-grid">';
+    for (var i = 0; i < ruWhatsappContacts.length; i++) {
+      var contact = ruWhatsappContacts[i];
+      h += '<a class="contact-choice-link" href="' + ruConsultUrl(contact, modelName, trim) + '" target="_blank" rel="noopener">' + escHtml(contact.display) + '<span>' + escHtml(contact.label) + '</span></a>';
+    }
+    h += '</div></div>';
+    return h;
+  }
+  window.openRuContactChoice = function(modelName, trim) {
+    var overlay = document.getElementById('config-overlay');
+    overlay.innerHTML = renderRuContactChoice(modelName || 'Общий запрос', trim);
+    overlay.classList.add('open');
+  };
 
   window.showConfigModal = function(modelName) {
     var overlay = document.getElementById('config-overlay');
     var data = configData[modelName];
-    if (!data) { alert('Нет данных'); return; }
+    window.currentConfigModel = modelName;
+    if (!data) {
+      overlay.innerHTML = renderRuContactChoice(modelName);
+      overlay.classList.add('open');
+      return;
+    }
     var h = '<div class="config-modal">';
     h += '<div class="config-bar">' + modelName + ' • Список моделей<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div>';
+    h += '<div class="config-intro">Выберите комплектацию, и мы сразу откроем WhatsApp для консультации по актуальной цене, наличию и документам.</div>';
     for (var i = 0; i < data.trims.length; i++) {
       var t = data.trims[i];
-      var hs = false;
-      h += '<div class="config-card">';
-      h += '<div class="config-row1"><span class="name">' + t.name + '</span><span class="msrp"><em>Цена</em>' + (t.msrp||t.price||'').replace('Guide Price: ','').replace('Цена：','') + '</span></div>';
-      if (t.stock) {
-        h += '<div class="config-grid4">';
-
-        // Header row
-        h += '<div class="wh-name"></div>';
-        for (var s = 0; s < t.stock.length; s++) {
-          h += '<div class="wh-name">' + (t.stock[s].wh||t.stock[s].warehouse) + '</div>';
-        }
-        // В пути section (spans 2 rows)
-        h += '<div class="sec-label span2">В пути</div>';
-        for (var s = 0; s < t.stock.length; s++) {
-          var v = t.stock[s].transitW || 0; if (v > 0) hs = true;
-          h += '<div class="color-name">Бел</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
-        }
-        for (var s = 0; s < t.stock.length; s++) {
-          var v = t.stock[s].transitB || 0; if (v > 0) hs = true;
-          h += '<div class="color-name">Черн</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
-        }
-        // На складе section (spans 2 rows)
-        h += '<div class="sec-label span2">На складе</div>';
-        for (var s = 0; s < t.stock.length; s++) {
-          var v = t.stock[s].inboundW || 0; if (v > 0) hs = true;
-          h += '<div class="color-name">Бел</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
-        }
-        for (var s = 0; s < t.stock.length; s++) {
-          var v = t.stock[s].inboundB || 0; if (v > 0) hs = true;
-          h += '<div class="color-name">Черн</div><div class="count-cell ' + (v>0?'n':'z') + '">' + v + '</div>';
-        }
-        h += '</div>';
-      }
+      var price = ruCleanPrice(t.msrp || t.price);
+      h += '<button type="button" class="config-card config-consult-card" onclick="showRuContactChoice(' + i + ')">';
+      h += '<div class="config-row1"><span class="name">' + escHtml(t.name) + '</span><span class="msrp"><em>Цена</em>' + escHtml(price) + '</span></div>';
       h += '<div class="config-btn-row">';
-      h += hs ? '<a class="config-btn" href="https://wa.me/8613758229513" target="_blank">Заказать</a>' : '<span class="config-btn disabled">Нет в наличии</span>';
-      h += '</div></div>';
+      h += '<span class="config-btn">Запросить в WhatsApp</span>';
+      h += '</div></button>';
     }
     h += '</div>';
     overlay.innerHTML = h;
+    overlay.classList.add('open');
+  };
+
+  window.showRuContactChoice = function(trimIndex) {
+    var overlay = document.getElementById('config-overlay');
+    var modelName = window.currentConfigModel;
+    var data = configData[modelName];
+    var trim = data && data.trims ? data.trims[trimIndex] : null;
+    overlay.innerHTML = renderRuContactChoice(modelName, trim);
     overlay.classList.add('open');
   };
 

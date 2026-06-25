@@ -20,7 +20,7 @@ document.addEventListener('click', function(e){
   if (card) chemnitzTrack('model_card_click', {model: card.getAttribute('data-title') || (card.textContent || '').trim().slice(0, 80)});
   var priceOption = e.target.closest('.config-menu-option, .config-option');
   if (priceOption) chemnitzTrack('guide_price_select', {model: window.currentConfigModel || '', option_text: (priceOption.textContent || '').trim().slice(0, 120)});
-  var order = e.target.closest('.config-order-btn, .config-btn');
+  var order = e.target.closest('.config-order-btn, a.config-btn, .config-consult-card, .contact-choice-link');
   if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
 });
 </script>
@@ -183,7 +183,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .hero h1 span{color:#ef4444}
 .hero .subtitle{font-size:1.05em;color:#94a3b8;margin-bottom:4px;font-weight:500}
 .hero .subtitle-sm{font-size:0.9em;color:#64748b;margin-bottom:4px}
-.hero .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);margin-top:24px}
+.hero .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);margin-top:24px;border:0;cursor:pointer;font-family:inherit}
 .hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
 .wa-row{display:flex;justify-content:center;gap:10px;flex-wrap:nowrap;margin-top:24px}
 
@@ -227,7 +227,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .contact-section{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#fff;text-align:center;padding:56px 24px}
 .contact-section h2{font-size:1.5em;font-weight:700;margin-bottom:8px}
 .contact-section .sub{color:#94a3b8;font-size:0.95em;margin-bottom:20px}
-.contact-section .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
+.contact-section .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);border:0;cursor:pointer;font-family:inherit}
 .contact-section .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
 .contact-section .reply{color:#64748b;font-size:0.85em;margin-top:16px}
 
@@ -251,7 +251,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-menu-title{font-size:0.9em;font-weight:800;color:#111827;line-height:1.3}
 .config-menu-sub{font-size:0.76em;color:#64748b;margin-top:2px}
 .config-menu-group{font-size:0.72em;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;padding:9px 10px 5px}
-.config-menu-option{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;background:#fff;border:0;border-radius:6px;padding:9px 10px;text-align:left;cursor:pointer;color:#111827}
+.config-menu-option{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;background:#fff;border:0;border-radius:6px;padding:9px 10px;text-align:left;cursor:pointer;color:#111827;text-decoration:none}
 .config-menu-option:hover{background:#f8fafc}
 .config-menu-option .price{font-size:0.95em;font-weight:800;color:#b91c1c}
 .config-menu-option .name{font-size:0.74em;color:#64748b;line-height:1.35;margin-top:2px}
@@ -293,6 +293,13 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-order-btn{display:inline-block;background:#ef4444;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.82em;transition:all .2s;white-space:nowrap}
 .config-order-btn:hover{background:#dc2626}
 .config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none}
+.contact-choice-modal{width:min(95vw,620px);max-width:620px}
+.contact-choice-modal .config-bar{padding:10px 14px}
+.contact-choice-modal .config-bar-title{font-size:0.9em}
+.contact-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:16px}
+.contact-choice-link{display:block;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;padding:12px 14px;font-weight:800;line-height:1.3;box-shadow:0 8px 22px rgba(37,211,102,0.18);transition:all .18s}
+.contact-choice-link:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(37,211,102,0.25)}
+.contact-choice-link span{display:block;font-size:0.78em;font-weight:600;opacity:.86;margin-top:2px}
 @media(max-width:640px){.config-overlay{padding:8px}.config-card-head,.config-action{flex-direction:column;align-items:stretch}.config-card-price{text-align:center}.config-body{padding:12px}.config-intro{font-size:0.82em}}
 
 </style>
@@ -316,7 +323,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="subtitle">Hangzhou Chemnitz International Trade Co., Ltd. — Licensed Auto Exporter</div>
     <div class="subtitle-sm">MOFCOM Registered · FOB Any Chinese Port · Full Export Documentation</div>
     <div class="wa-row">
-      <a class="cta-btn" href="https://wa.me/8613758229513" target="_blank" rel="noopener">WhatsApp: +86 137 58229513</a>
+      <button type="button" class="cta-btn" onclick="openConsultation('General inquiry')">WhatsApp Consultation</button>
     </div>
   </div>
 </section>
@@ -405,20 +412,20 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   </div>
 </section>
 
-<!-- Inventory -->
+<!-- Models -->
 <section class="section">
   <div class="inner">
-    <h2>Vehicles in Stock — Ready for Export</h2>
+    <h2>Vehicle Models — Configurations for Export</h2>
     <p class="lead">
-      Detailed VIN list and pricing available on WhatsApp &amp; email
-      <span class="lang">В наличии · في المخزون · En stock</span>
+      Choose a model and configuration, then message us for current export pricing
+      <span class="lang">Configurations · Export inquiry</span>
     </p>
 
     <!-- Toyota -->
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">T</div>
-        <div><h3>Toyota</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Toyota</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/toyota/rav4/" data-prefix="" data-count="8" data-title="Toyota RAV4">
@@ -459,7 +466,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">V</div>
-        <div><h3>Volkswagen</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Volkswagen</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/volkswagen/teramont/" data-prefix="" data-count="8" data-title="Volkswagen Teramont">
@@ -505,7 +512,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">G</div>
-        <div><h3>Geely</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Geely</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/geely/coolray/" data-prefix="" data-count="8" data-title="Geely Coolray">
@@ -535,7 +542,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">N</div>
-        <div><h3>Nissan</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Nissan</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/nissan/qashqai/" data-prefix="" data-count="8" data-title="Nissan Qashqai">
@@ -561,7 +568,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">K</div>
-        <div><h3>Kia</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Kia</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/kia/seltos/" data-prefix="" data-count="8" data-title="Kia Seltos">
@@ -595,7 +602,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">H</div>
-        <div><h3>Hyundai</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Hyundai</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/hyundai/elantra/" data-prefix="" data-count="8" data-title="Hyundai Elantra">
@@ -617,7 +624,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">J</div>
-        <div><h3>Jetour</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Jetour</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/jetour/dashing/" data-prefix="" data-count="8" data-title="Jetour Dashing">
@@ -643,7 +650,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">M</div>
-        <div><h3>Mazda</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Mazda</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/mazda/cx-5/" data-prefix="" data-count="8" data-title="Mazda CX-5">
@@ -657,7 +664,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">A</div>
-        <div><h3>Audi</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Audi</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/audi/q5/" data-prefix="" data-count="8" data-title="Audi Q5">
@@ -679,7 +686,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">B</div>
-        <div><h3>BMW</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>BMW</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/bmw/3-series/" data-prefix="" data-count="8" data-title="BMW 3 Series">
@@ -709,7 +716,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">D</div>
-        <div><h3>Honda</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Honda</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/honda/crv/" data-prefix="" data-count="8" data-title="Honda CR-V">
@@ -723,7 +730,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">F</div>
-        <div><h3>Fangchengbao</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Fangchengbao</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/fangchengbao/bao-8/" data-prefix="" data-count="8" data-title="Fangchengbao Bao 8">
@@ -737,7 +744,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">C</div>
-        <div><h3>Chery</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Chery</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/chery/tiggo-3x/" data-prefix="" data-count="8" data-title="Chery Tiggo 3X">
@@ -755,7 +762,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">R</div>
-        <div><h3>Roewe</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Roewe</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/roewe/i5/" data-prefix="" data-count="8" data-title="Roewe i5">
@@ -769,7 +776,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">G</div>
-        <div><h3>MG</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>MG</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/mg/mg5/" data-prefix="" data-count="8" data-title="MG MG5">
@@ -783,7 +790,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <div class="brand-group">
       <div class="brand-header">
         <div class="brand-icon">A</div>
-        <div><h3>Changan</h3><div class="info">In Stock · В наличии · في المخزون</div></div>
+        <div><h3>Changan</h3><div class="info">Configurations · Export inquiry</div></div>
       </div>
       <div class="model-grid">
         <div class="model-card" data-base="images/changan/cs55/" data-prefix="" data-count="8" data-title="Changan CS55">
@@ -839,7 +846,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   <h2>Ready to Source Vehicles from China?</h2>
   <p class="sub">Message us now — we reply within hours in English, Русский, العربية, Français</p>
   <div class="wa-row">
-    <a class="cta-btn" href="https://wa.me/8613758229513" target="_blank" rel="noopener">WhatsApp: +86 137 58229513</a>
+    <button type="button" class="cta-btn" onclick="openConsultation('General inquiry')">WhatsApp Consultation</button>
   </div>
   <p class="reply">ljj2022513@gmail.com &nbsp;·&nbsp; Hangzhou, Zhejiang, China</p>
 </section>
@@ -1015,8 +1022,55 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     if (displacement) return displacement + ' Gasoline';
     return 'Other trims';
   }
+  var whatsappContacts = [
+    { label: 'Sia', display: '+86 137 58229513', wa: '8613758229513' },
+    { label: 'Darwin', display: '+86 136 40033268', wa: '8613640033268' }
+  ];
+  function escHtml(value) {
+    return String(value || '').replace(/[&<>"']/g, function(ch) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    });
+  }
+  function consultationText(modelName, trim) {
+    var lines = ['Hello, I want to consult about ' + modelName + '.'];
+    if (trim) {
+      lines.push('Configuration: ' + trim.name);
+      lines.push('Guide price: ' + cleanPrice(trim.price || trim.msrp));
+    }
+    lines.push('Please send current export price, availability, port options, and documents.');
+    return lines.join('\n');
+  }
+  function consultationUrl(contact, modelName, trim) {
+    return 'https://wa.me/' + contact.wa + '?text=' + encodeURIComponent(consultationText(modelName, trim));
+  }
+  function openConsultation(modelName, trim) {
+    var overlay = document.getElementById('config-overlay');
+    var text = consultationText(modelName, trim);
+    if (window.chemnitzTrack) {
+      window.chemnitzTrack('preorder_contact_choice', {
+        model: modelName || '',
+        trim: trim ? trim.name : '',
+        guide_price: trim ? cleanPrice(trim.price || trim.msrp) : ''
+      });
+    }
+    var h = '';
+    h += '<div class="config-modal contact-choice-modal">';
+    h += '<div class="config-bar">';
+    h += '<span class="config-bar-title">WhatsApp</span>';
+    h += '<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span>';
+    h += '</div>';
+    h += '<div class="contact-choice-grid">';
+    for (var i = 0; i < whatsappContacts.length; i++) {
+      var contact = whatsappContacts[i];
+      var url = 'https://wa.me/' + contact.wa + '?text=' + encodeURIComponent(text);
+      h += '<a class="contact-choice-link" href="' + url + '" target="_blank" rel="noopener">' + escHtml(contact.display) + '<span>' + escHtml(contact.label) + '</span></a>';
+    }
+    h += '</div></div>';
+    overlay.innerHTML = h;
+    overlay.classList.add('open');
+  }
   function renderEmptyModal(modelName) {
-    return '<div class="config-modal"><div class="config-bar"><span class="config-bar-title">' + modelName + '</span><span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div><div class="config-body"><div class="config-intro">Stock data is being updated. Please contact us on WhatsApp for the latest VIN-level list.</div></div></div>';
+    return '<div class="config-modal"><div class="config-bar"><span class="config-bar-title">' + modelName + '</span><span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div><div class="config-body"><div class="config-intro">Configuration data is being updated. Please contact us on WhatsApp for the latest export price.</div></div></div>';
   }
   function closeConfigPicker() {
     var old = document.getElementById('config-menu');
@@ -1040,9 +1094,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var data = configData[modelName];
     window.currentConfigModel = modelName;
     if (!data) {
-      var overlay = document.getElementById('config-overlay');
-      overlay.innerHTML = renderEmptyModal(modelName);
-      overlay.classList.add('open');
+      openConsultation(modelName);
       return;
     }
 
@@ -1052,7 +1104,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var h = '';
     h += '<div class="config-menu-head">';
     h += '<div class="config-menu-title">' + modelName + '</div>';
-    h += '<div class="config-menu-sub">Select guide price to view port stock</div>';
+    h += '<div class="config-menu-sub">Select guide price to contact us</div>';
     h += '</div>';
     var grouped = {};
     var groupOrder = [];
@@ -1066,10 +1118,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       for (var gi = 0; gi < grouped[groupOrder[g]].length; gi++) {
         var item = grouped[groupOrder[g]][gi];
         var t = item.trim;
-        var totals = trimTotals(t.stock || []);
-        h += '<button type="button" class="config-menu-option" onclick="closeConfigPicker();showConfigDetail(' + item.index + ')">';
+        h += '<button type="button" class="config-menu-option" onclick="contactForTrim(' + item.index + ')">';
         h += '<span><span class="price">' + cleanPrice(t.price || t.msrp) + '</span><span class="name">' + t.name + '</span></span>';
-        h += '<span class="meta">' + totals.total + ' purchased</span>';
+        h += '<span class="meta">Consult</span>';
         h += '</button>';
       }
     }
@@ -1083,8 +1134,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var data = configData[modelName];
     window.currentConfigModel = modelName;
     if (!data) {
-      overlay.innerHTML = renderEmptyModal(modelName);
-      overlay.classList.add('open');
+      openConsultation(modelName);
       return;
     }
 
@@ -1095,7 +1145,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     h += '<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span>';
     h += '</div>';
     h += '<div class="config-body">';
-    h += '<div class="config-intro">First choose the guide price / powertrain version. The next screen shows purchased vehicle quantity by port.</div>';
+    h += '<div class="config-intro">Choose a guide price / powertrain version, then contact us for current export price and availability.</div>';
 
     var grouped = {};
     var groupOrder = [];
@@ -1109,10 +1159,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       for (var gi = 0; gi < grouped[groupOrder[g]].length; gi++) {
         var item = grouped[groupOrder[g]][gi];
         var t = item.trim;
-        var totals = trimTotals(t.stock || []);
-        h += '<button type="button" class="config-option" onclick="showConfigDetail(' + item.index + ')">';
+        h += '<button type="button" class="config-option" onclick="contactForTrim(' + item.index + ')">';
         h += '<div class="price">' + cleanPrice(t.price || t.msrp) + '</div>';
-        h += '<div class="name">Purchased ' + totals.total + ' · Stock ' + totals.ready + ' · Transit ' + totals.transit + '</div>';
+        h += '<div class="name">' + t.name + '</div>';
         h += '</button>';
       }
       h += '</div>';
@@ -1123,70 +1172,21 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     overlay.classList.add('open');
   };
 
-  window.showConfigDetail = function(trimIndex) {
+  window.contactForTrim = function(trimIndex) {
     var overlay = document.getElementById('config-overlay');
     var modelName = window.currentConfigModel;
     var data = configData[modelName];
     if (!data || !data.trims[trimIndex]) {
-      overlay.innerHTML = renderEmptyModal(modelName || 'Model');
-      overlay.classList.add('open');
+      openConsultation(modelName || 'Model');
       return;
     }
 
     var t = data.trims[trimIndex];
-    var stock = t.stock || [];
-    var totals = trimTotals(stock);
-    var waText = encodeURIComponent('Hello, I want to check stock and export price for ' + modelName + ' / ' + t.name + ' / Guide price ' + cleanPrice(t.price || t.msrp));
-    var h = '';
-    h += '<div class="config-modal">';
-    h += '<div class="config-bar">';
-    h += '<button type="button" class="config-back" onclick="showConfigModal(window.currentConfigModel)">Back to prices</button>';
-    h += '<span class="config-bar-title">' + modelName + ' · Port Stock</span>';
-    h += '<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span>';
-    h += '</div>';
-    h += '<div class="config-body">';
-    h += '<div class="config-card">';
-    h += '<div class="config-card-head">';
-    h += '<div class="config-card-model">' + t.name + '</div>';
-    h += '<div class="config-card-price"><span>Guide price</span>' + cleanPrice(t.price || t.msrp) + '</div>';
-    h += '</div>';
-    h += '<div class="config-stock-summary">';
-    h += '<span class="config-chip">Purchased total: <strong>' + totals.total + '</strong></span>';
-    h += '<span class="config-chip">In stock: <strong>' + totals.ready + '</strong></span>';
-    h += '<span class="config-chip">In transit: <strong>' + totals.transit + '</strong></span>';
-    h += '</div>';
-
-    if (stock.length) {
-      h += '<div class="config-table-wrap">';
-      h += '<table class="config-table">';
-      h += '<thead><tr><th rowspan="2">Port</th><th colspan="3">In Transit</th><th colspan="3">In Stock</th><th rowspan="2">Total</th></tr>';
-      h += '<tr><th>White</th><th>Black</th><th>Grey</th><th>White</th><th>Black</th><th>Grey</th></tr></thead><tbody>';
-      for (var s = 0; s < stock.length; s++) {
-        var port = stock[s];
-        var transitW = stockVal(port, 'transitW');
-        var transitB = stockVal(port, 'transitB');
-        var transitG = stockVal(port, 'transitG');
-        var inboundW = stockVal(port, 'inboundW');
-        var inboundB = stockVal(port, 'inboundB');
-        var inboundG = stockVal(port, 'inboundG');
-        var portTotal = transitW + transitB + transitG + inboundW + inboundB + inboundG;
-        h += '<tr>';
-        h += '<td>' + (port.wh || port.warehouse || '') + '</td>';
-        h += cell(transitW) + cell(transitB) + cell(transitG) + cell(inboundW) + cell(inboundB) + cell(inboundG);
-        h += '<td class="' + (portTotal > 0 ? 'n' : 'z') + '">' + portTotal + '</td>';
-        h += '</tr>';
-      }
-      h += '</tbody></table></div>';
-    }
-
-    h += '<div class="config-action">';
-    h += '<span class="config-note">Final export price depends on VIN, port, freight, and document requirements.</span>';
-    h += '<a href="https://wa.me/8613758229513?text=' + waText + '" target="_blank" rel="noopener" class="config-order-btn">Ask about this trim</a>';
-    h += '</div>';
-    h += '</div></div></div>';
-    overlay.innerHTML = h;
-    overlay.classList.add('open');
+    if (overlay) overlay.classList.remove('open');
+    closeConfigPicker();
+    openConsultation(modelName, t);
   };
+  window.showConfigDetail = window.contactForTrim;
 
     document.getElementById('config-overlay').addEventListener('click', function(e) {
     if (e.target === this) this.classList.remove('open');
