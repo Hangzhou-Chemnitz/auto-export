@@ -24,19 +24,19 @@ document.addEventListener('click', function(e){
   if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
 });
 </script>
-<title>Hangzhou Chemnitz — Авто из Китая для России | Поставки дилерам | FOB/CIF</title>
+<title>Все модели и комплектации — Hangzhou Chemnitz</title>
 <meta name="description" content="Hangzhou Chemnitz — лицензированный экспортёр автомобилей из Китая для дилеров и импортёров в России. Актуальный список авто, VIN, фото, комплектации, цена FOB/CIF и полный пакет экспортных документов.">
 <meta name="keywords" content="авто из Китая для России, купить авто из Китая, поставщик авто из Китая, авто из Китая оптом, экспорт авто Китай, дилеры авто Россия, FOB Китай, CIF Россия, VIN авто из Китая">
-<link rel="canonical" href="https://hzchemnitz.cn/ru.html">
-<link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/">
-<link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html">
+<link rel="canonical" href="https://hzchemnitz.cn/models-ru.html">
+<link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/models.html">
+<link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/models-ru.html">
 <link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html">
 <link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html">
 <link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/">
 <meta property="og:title" content="Hangzhou Chemnitz — Автоэкспорт из Китая | 7000+ авто отправлено">
 <meta property="og:description" content="Лицензированный экспортёр авто из Китая для дилеров и импортёров в России. VIN, фото, цена FOB/CIF и экспортные документы.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://hzchemnitz.cn/ru.html">
+<meta property="og:url" content="https://hzchemnitz.cn/models-ru.html">
 <meta property="og:image" content="https://hzchemnitz.cn/images/chemnitz-logo.png">
 <script type="application/ld+json">
 {
@@ -74,31 +74,15 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .brand-group .brand-header h3{font-size:1.3em;font-weight:700}
 .brand-group .brand-header .info{font-size:0.85em;color:#64748b}
 .brand-group .model-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
-.model-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:all .25s;cursor:pointer}
-.model-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.08);border-color:#ef4444}
-.model-card .card-img{height:172px;background-color:#f8fafc;background-position:center;background-size:contain;background-repeat:no-repeat;position:relative}
+.model-card{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;transition:all .25s;cursor:pointer;box-shadow:0 14px 34px rgba(100,116,139,0.1)}
+.model-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(100,116,139,0.16);border-color:#cbd5e1}
+.model-card .card-img{height:auto;aspect-ratio:4/3;background-color:#eef2f7;background-position:center;background-size:cover;background-repeat:no-repeat;position:relative}
 .model-card .card-img .badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.7em;font-weight:600;padding:3px 8px;border-radius:50px}
-.model-card .card-body{padding:14px 12px;text-align:center}
-.model-card h4{font-size:0.95em;font-weight:700;margin-bottom:2px}
-.model-card .info{font-size:0.75em;color:#94a3b8}
-.brochure-link{display:inline-block;margin-top:8px;font-size:0.72em;color:#0a66c2;text-decoration:none;font-weight:600;padding:4px 12px;border:1.5px solid #0a66c2;border-radius:6px;transition:all .2s}
-.brochure-link:hover{background:#0a66c2;color:#fff}
-.featured-models .inner{max-width:1120px}
-.featured-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:0 auto}
-.featured-grid .model-card{border:1px solid #e2e8f0;border-radius:14px;background:#f1f5f9;box-shadow:0 14px 34px rgba(100,116,139,0.1)}
-.featured-grid .model-card:hover{box-shadow:0 18px 42px rgba(100,116,139,0.16);border-color:#cbd5e1}
-.featured-grid .card-img{height:auto;aspect-ratio:4/3;background-size:cover;background-color:#eef2f7}
-.featured-grid .card-body{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 12px;text-align:left;background:#f1f5f9;border-top:1px solid #e2e8f0}
-.featured-grid h4{font-size:0.9em;color:#1a1a2e;margin:0;line-height:1.15}
-.featured-grid .info{display:none}
-.featured-grid .brochure-link{flex:0 0 auto;font-size:0.72em;padding:4px 11px;margin:0;border:1px solid #cbd5e1;background:#fff;color:#334155}
-.featured-grid .brochure-link:hover{background:#e8483c;color:#fff}
-.catalog-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin-top:28px;text-align:center}
-.catalog-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;background:#0d192e;color:#fff;text-decoration:none;border:1px solid #0d192e;border-radius:8px;padding:10px 22px;font-weight:800;font-size:0.9em;transition:all .2s}
-.catalog-link:hover{background:#14213a;border-color:#14213a;transform:translateY(-1px);box-shadow:0 10px 24px rgba(13,25,46,0.2)}
-.catalog-note{font-size:0.85em;color:#64748b;line-height:1.4}
-@media(max-width:900px){.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px}}
-@media(max-width:640px){.featured-grid{grid-template-columns:1fr;max-width:390px}}
+.model-card .card-body{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 12px;text-align:left;background:#f1f5f9;border-top:1px solid #e2e8f0}
+.model-card h4{font-size:0.9em;font-weight:700;color:#1a1a2e;margin:0;line-height:1.15}
+.model-card .info{display:none}
+.brochure-link{flex:0 0 auto;display:inline-block;font-size:0.72em;color:#334155;background:#fff;text-decoration:none;font-weight:600;padding:4px 11px;border:1px solid #cbd5e1;border-radius:6px;transition:all .2s;margin:0}
+.brochure-link:hover{background:#e8483c;color:#fff;border-color:#e8483c}
 .contact-section{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#fff;text-align:center;padding:56px 24px}
 .contact-section h2{font-size:1.5em;font-weight:700;margin-bottom:8px}
 .contact-section .sub{color:#94a3b8;font-size:0.95em;margin-bottom:20px}
@@ -157,7 +141,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <body>
 
 <div style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
-  <a href="index.html" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> &nbsp;|&nbsp;
+  <a href="models.html" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> &nbsp;|&nbsp;
   <strong>Русский</strong> &nbsp;|&nbsp;
   <a href="ar.html" style="color:#0a66c2;text-decoration:none;font-weight:600">العربية</a> &nbsp;|&nbsp;
   <a href="fr.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Français</a>
@@ -231,47 +215,421 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   </div>
 </section>
 
-<section class="section featured-models" id="featured-models">
+<section class="section" id="models">
   <div class="inner">
-    <h2>Основные модели Nissan и Toyota</h2>
-    <p class="lead">Nissan как основной фокус, Toyota как дополнение для популярных экспортных запросов</p>
-    <div class="model-grid featured-grid">
-      <div class="model-card" data-base="images/nissan/sylphy/" data-prefix="" data-count="8" data-title="Nissan Sylphy">
-        <div class="card-img" style="background-image:url('images/nissan/sylphy/1.jpg')"><span class="badge">Седан</span></div>
-        <div class="card-body"><h4>Nissan Sylphy</h4><div class="info">8 Фото</div></div>
+    <h2>Все модели и комплектации</h2>
+    <p class="lead">Полный каталог по брендам: выберите модель и комплектацию, затем отправьте запрос в WhatsApp</p>
+
+    <!-- Toyota -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">T</div>
+        <div><h3>Toyota</h3><div class="info">Комплектации</div></div>
       </div>
-      <div class="model-card" data-base="images/nissan/qashqai/" data-prefix="" data-count="8" data-title="Nissan Qashqai">
-        <div class="card-img" style="background-image:url('images/nissan/qashqai/1.jpg')"><span class="badge">Внедорожник</span></div>
-        <div class="card-body"><h4>Nissan Qashqai</h4><div class="info">8 Фото</div></div>
-      </div>
-      <div class="model-card" data-base="images/nissan/x-trail/" data-prefix="" data-count="8" data-title="Nissan X-Trail">
-        <div class="card-img" style="background-image:url('images/nissan/x-trail/1.jpg')"><span class="badge">Внедорожник</span></div>
-        <div class="card-body"><h4>Nissan X-Trail</h4><div class="info">8 Фото</div></div>
-      </div>
-      <div class="model-card" data-base="images/nissan/nx8/" data-prefix="" data-count="8" data-title="Nissan NX8">
-        <div class="card-img" style="background-image:url('images/nissan/nx8/1.jpg')"><span class="badge">New Energy</span></div>
-        <div class="card-body"><h4>Nissan NX8</h4><div class="info">8 Фото</div></div>
-      </div>
-      <div class="model-card" data-base="images/toyota/rav4/" data-prefix="" data-count="8" data-title="Toyota RAV4">
-        <div class="card-img" style="background-image:url('images/toyota/rav4/1.jpg')"><span class="badge">Внедорожник</span></div>
-        <div class="card-body"><h4>Toyota RAV4</h4><div class="info">8 Фото</div></div>
-      </div>
-      <div class="model-card" data-base="images/toyota/camry/" data-prefix="" data-count="8" data-title="Toyota Camry">
-        <div class="card-img" style="background-image:url('images/toyota/camry/1.jpg')"><span class="badge">Седан</span></div>
-        <div class="card-body"><h4>Toyota Camry</h4><div class="info">8 Фото</div></div>
-      </div>
-      <div class="model-card" data-base="images/toyota/highlander/" data-prefix="" data-count="8" data-title="Toyota Highlander">
-        <div class="card-img" style="background-image:url('images/toyota/highlander/1.jpg')"><span class="badge">Внедорожник</span></div>
-        <div class="card-body"><h4>Toyota Highlander</h4><div class="info">8 Фото</div></div>
-      </div>
-      <div class="model-card" data-base="images/toyota/corolla-cross/" data-prefix="" data-count="8" data-title="Toyota Corolla Cross">
-        <div class="card-img" style="background-image:url('images/toyota/corolla-cross/1.jpg')"><span class="badge">Внедорожник</span></div>
-        <div class="card-body"><h4>Toyota Corolla Cross</h4><div class="info">8 Фото</div></div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/toyota/rav4/" data-prefix="" data-count="8" data-title="Toyota RAV4">
+          <div class="card-img" style="background-image:url('images/toyota/rav4/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>RAV4</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/corolla/" data-prefix="" data-count="8" data-title="Toyota Corolla">
+          <div class="card-img" style="background-image:url('images/toyota/corolla/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>Corolla</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/corolla-cross/" data-prefix="" data-count="8" data-title="Toyota Corolla Cross">
+          <div class="card-img" style="background-image:url('images/toyota/corolla-cross/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Corolla Cross</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/camry/" data-prefix="" data-count="8" data-title="Toyota Camry">
+          <div class="card-img" style="background-image:url('images/toyota/camry/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>Camry</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/highlander/" data-prefix="" data-count="8" data-title="Toyota Highlander">
+          <div class="card-img" style="background-image:url('images/toyota/highlander/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Highlander</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/frontlander/" data-prefix="" data-count="8" data-title="Toyota Frontlander">
+          <div class="card-img" style="background-image:url('images/toyota/frontlander/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Frontlander</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/granvia/" data-prefix="" data-count="8" data-title="Toyota Granvia">
+          <div class="card-img" style="background-image:url('images/toyota/granvia/1.jpg')"><span class="badge">Минивэн</span></div>
+          <div class="card-body"><h4>Granvia</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/bz3/" data-prefix="" data-count="8" data-title="Toyota bZ3">
+          <div class="card-img" style="background-image:url('images/toyota/bz3/1.jpg')"><span class="badge">Электро Седан</span></div>
+          <div class="card-body"><h4>bZ3</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/bozhi-3x/" data-prefix="" data-count="8" data-title="Toyota Bozhi 3X">
+          <div class="card-img" style="background-image:url('images/toyota/bozhi-3x/1.jpg')"><span class="badge">Электро SUV</span></div>
+          <div class="card-body"><h4>Bozhi 3X</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/levin/" data-prefix="" data-count="8" data-title="Toyota Levin">
+          <div class="card-img" style="background-image:url('images/toyota/levin/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>Levin</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/prado/" data-prefix="" data-count="8" data-title="Toyota Prado">
+          <div class="card-img" style="background-image:url('images/toyota/prado/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Prado</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/sienna/" data-prefix="" data-count="8" data-title="Toyota Sienna">
+          <div class="card-img" style="background-image:url('images/toyota/sienna/1.jpg')"><span class="badge">Минивэн</span></div>
+          <div class="card-body"><h4>Sienna</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/wildlander/" data-prefix="" data-count="8" data-title="Toyota Wildlander">
+          <div class="card-img" style="background-image:url('images/toyota/wildlander/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Wildlander</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/toyota/avalon/" data-prefix="" data-count="8" data-title="Toyota Avalon">
+          <div class="card-img" style="background-image:url('images/toyota/avalon/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>Avalon</h4><div class="info">8 Фото</div></div>
+        </div>
       </div>
     </div>
-    <div class="catalog-actions">
-      <a class="catalog-link" href="models-ru.html#models">Больше моделей</a>
-      <span class="catalog-note">Полный каталог по брендам и комплектациям</span>
+
+    <!-- Volkswagen -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">V</div>
+        <div><h3>Volkswagen</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/volkswagen/teramont/" data-prefix="" data-count="8" data-title="Volkswagen Teramont">
+          <div class="card-img" style="background-image:url('images/volkswagen/teramont/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Teramont</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/volkswagen/tharu/" data-prefix="" data-count="8" data-title="Volkswagen Tharu">
+          <div class="card-img" style="background-image:url('images/volkswagen/tharu/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Tharu</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/volkswagen/tiguan-allspace/" data-prefix="" data-count="8" data-title="Volkswagen Tiguan Allspace">
+          <div class="card-img" style="background-image:url('images/volkswagen/tiguan-allspace/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Tiguan Allspace</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/volkswagen/tayron/" data-prefix="" data-count="8" data-title="Volkswagen Tayron">
+          <div class="card-img" style="background-image:url('images/volkswagen/tayron/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Tayron</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/volkswagen/t-roc/" data-prefix="" data-count="8" data-title="Volkswagen T-Roc">
+          <div class="card-img" style="background-image:url('images/volkswagen/t-roc/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>T-Roc</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/volkswagen/golf/" data-prefix="" data-count="8" data-title="Volkswagen Golf">
+          <div class="card-img" style="background-image:url('images/volkswagen/golf/1.jpg')"><span class="badge">Хэтчбек</span></div>
+          <div class="card-body"><h4>Golf</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/volkswagen/jetta-vs5/" data-prefix="" data-count="8" data-title="Volkswagen Jetta VS5">
+          <div class="card-img" style="background-image:url('images/volkswagen/jetta-vs5/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Jetta VS5</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/volkswagen/jetta-vs7/" data-prefix="" data-count="8" data-title="Volkswagen Jetta VS7">
+          <div class="card-img" style="background-image:url('images/volkswagen/jetta-vs7/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Jetta VS7</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/volkswagen/jetta-vs8/" data-prefix="" data-count="8" data-title="Volkswagen Jetta VS8">
+          <div class="card-img" style="background-image:url('images/volkswagen/jetta-vs8/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Jetta VS8</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Geely -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">G</div>
+        <div><h3>Geely</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/geely/coolray/" data-prefix="" data-count="8" data-title="Geely Coolray">
+          <div class="card-img" style="background-image:url('images/geely/coolray/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Coolray</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/geely/boyue-l/" data-prefix="" data-count="8" data-title="Geely Boyue L">
+          <div class="card-img" style="background-image:url('images/geely/boyue-l/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Boyue L</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/geely/xingyue-l/" data-prefix="" data-count="8" data-title="Geely Xingyue L">
+          <div class="card-img" style="background-image:url('images/geely/xingyue-l/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Xingyue L</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/geely/niuzai/" data-prefix="" data-count="8" data-title="Geely Niuzai">
+          <div class="card-img" style="background-image:url('images/geely/niuzai/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Niuzai</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/geely/galaxy-m9/" data-prefix="" data-count="8" data-title="Geely Galaxy M9">
+          <div class="card-img" style="background-image:url('images/geely/galaxy-m9/1.jpg')"><span class="badge">Электро SUV</span></div>
+          <div class="card-body"><h4>Galaxy M9</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nissan -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">N</div>
+        <div><h3>Nissan</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/nissan/qashqai/" data-prefix="" data-count="8" data-title="Nissan Qashqai">
+          <div class="card-img" style="background-image:url('images/nissan/qashqai/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Qashqai</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/nissan/x-trail/" data-prefix="" data-count="8" data-title="Nissan X-Trail">
+          <div class="card-img" style="background-image:url('images/nissan/x-trail/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>X-Trail</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/nissan/nx8/" data-prefix="" data-count="8" data-title="Nissan NX8">
+          <div class="card-img" style="background-image:url('images/nissan/nx8/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>NX8</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/nissan/sylphy/" data-prefix="" data-count="8" data-title="Nissan Sylphy">
+          <div class="card-img" style="background-image:url('images/nissan/sylphy/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>Sylphy</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kia -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">K</div>
+        <div><h3>Kia</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/kia/seltos/" data-prefix="" data-count="8" data-title="Kia Seltos">
+          <div class="card-img" style="background-image:url('images/kia/seltos/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Seltos</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/kia/kx1/" data-prefix="" data-count="8" data-title="Kia KX1">
+          <div class="card-img" style="background-image:url('images/kia/kx1/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>KX1</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/kia/k3/" data-prefix="" data-count="7" data-title="Kia K3">
+          <div class="card-img" style="background-image:url('images/kia/k3/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>K3</h4><div class="info">7 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/kia/k5/" data-prefix="" data-count="7" data-title="Kia K5">
+          <div class="card-img" style="background-image:url('images/kia/k5/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>K5</h4><div class="info">7 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/kia/sportage/" data-prefix="" data-count="8" data-title="Kia Sportage">
+          <div class="card-img" style="background-image:url('images/kia/sportage/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Sportage</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/kia/sonet/" data-prefix="" data-count="8" data-title="Kia Sonet">
+          <div class="card-img" style="background-image:url('images/kia/sonet/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Sonet</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hyundai -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">H</div>
+        <div><h3>Hyundai</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/hyundai/elantra/" data-prefix="" data-count="8" data-title="Hyundai Elantra">
+          <div class="card-img" style="background-image:url('images/hyundai/elantra/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>Elantra</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/hyundai/sonata/" data-prefix="" data-count="7" data-title="Hyundai Sonata">
+          <div class="card-img" style="background-image:url('images/hyundai/sonata/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>Sonata</h4><div class="info">7 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/hyundai/tucson/" data-prefix="" data-count="8" data-title="Hyundai Tucson">
+          <div class="card-img" style="background-image:url('images/hyundai/tucson/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Tucson</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jetour -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">J</div>
+        <div><h3>Jetour</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/jetour/dashing/" data-prefix="" data-count="8" data-title="Jetour Dashing">
+          <div class="card-img" style="background-image:url('images/jetour/dashing/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Dashing</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/jetour/x70/" data-prefix="" data-count="8" data-title="Jetour X70">
+          <div class="card-img" style="background-image:url('images/jetour/x70/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>X70</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/jetour/traveler/" data-prefix="" data-count="8" data-title="Jetour Traveler">
+          <div class="card-img" style="background-image:url('images/jetour/traveler/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Traveler</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/jetour/free-rider/" data-prefix="" data-count="8" data-title="Jetour Free Rider">
+          <div class="card-img" style="background-image:url('images/jetour/free-rider/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Free Rider</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mazda -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">M</div>
+        <div><h3>Mazda</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/mazda/cx-5/" data-prefix="" data-count="8" data-title="Mazda CX-5">
+          <div class="card-img" style="background-image:url('images/mazda/cx-5/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>CX-5</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audi -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">A</div>
+        <div><h3>Audi</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/audi/q5/" data-prefix="" data-count="8" data-title="Audi Q5">
+          <div class="card-img" style="background-image:url('images/audi/q5/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Q5</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/audi/q3/" data-prefix="" data-count="8" data-title="Audi Q3">
+          <div class="card-img" style="background-image:url('images/audi/q3/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Q3</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/audi/a5/" data-prefix="" data-count="8" data-title="Audi A5">
+          <div class="card-img" style="background-image:url('images/audi/a5/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>A5</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BMW -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">B</div>
+        <div><h3>BMW</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/bmw/3-series/" data-prefix="" data-count="8" data-title="BMW 3 Series">
+          <div class="card-img" style="background-image:url('images/bmw/3-series/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>3 Series</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/bmw/5-series/" data-prefix="" data-count="8" data-title="BMW 5 Series">
+          <div class="card-img" style="background-image:url('images/bmw/5-series/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>5 Series</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/bmw/x1/" data-prefix="" data-count="8" data-title="BMW X1">
+          <div class="card-img" style="background-image:url('images/bmw/x1/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>X1</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/bmw/x3/" data-prefix="" data-count="8" data-title="BMW X3">
+          <div class="card-img" style="background-image:url('images/bmw/x3/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>X3</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/bmw/x5/" data-prefix="" data-count="8" data-title="BMW X5">
+          <div class="card-img" style="background-image:url('images/bmw/x5/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>X5</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Honda -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">D</div>
+        <div><h3>Honda</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/honda/crv/" data-prefix="" data-count="8" data-title="Honda CR-V">
+          <div class="card-img" style="background-image:url('images/honda/crv/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>CR-V</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fangchengbao -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">F</div>
+        <div><h3>Fangchengbao</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/fangchengbao/bao-8/" data-prefix="" data-count="8" data-title="Fangchengbao Bao 8">
+          <div class="card-img" style="background-image:url('images/fangchengbao/bao-8/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Bao 8</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chery -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">C</div>
+        <div><h3>Chery</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/chery/tiggo-3x/" data-prefix="" data-count="8" data-title="Chery Tiggo 3X">
+          <div class="card-img" style="background-image:url('images/chery/tiggo-3x/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Tiggo 3X</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/chery/tiggo-5x/" data-prefix="" data-count="7" data-title="Chery Tiggo 5X">
+          <div class="card-img" style="background-image:url('images/chery/tiggo-5x/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>Tiggo 5X</h4><div class="info">7 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roewe -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">R</div>
+        <div><h3>Roewe</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/roewe/i5/" data-prefix="" data-count="8" data-title="Roewe i5">
+          <div class="card-img" style="background-image:url('images/roewe/i5/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>i5</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MG -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">G</div>
+        <div><h3>MG</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/mg/mg5/" data-prefix="" data-count="8" data-title="MG MG5">
+          <div class="card-img" style="background-image:url('images/mg/mg5/1.jpg')"><span class="badge">Седан</span></div>
+          <div class="card-body"><h4>MG5</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Changan -->
+    <div class="brand-group">
+      <div class="brand-header">
+        <div class="brand-icon">A</div>
+        <div><h3>Changan</h3><div class="info">Комплектации</div></div>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-base="images/changan/cs55/" data-prefix="" data-count="8" data-title="Changan CS55">
+          <div class="card-img" style="background-image:url('images/changan/cs55/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>CS55</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/changan/cs75/" data-prefix="" data-count="8" data-title="Changan CS75">
+          <div class="card-img" style="background-image:url('images/changan/cs75/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>CS75</h4><div class="info">8 Фото</div></div>
+        </div>
+        <div class="model-card" data-base="images/changan/x5/" data-prefix="" data-count="8" data-title="Changan X5">
+          <div class="card-img" style="background-image:url('images/changan/x5/1.jpg')"><span class="badge">Внедорожник</span></div>
+          <div class="card-body"><h4>X5</h4><div class="info">8 Фото</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
