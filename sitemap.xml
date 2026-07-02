@@ -1,29 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hzchemnitz.cn/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://hzchemnitz.cn/models.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://hzchemnitz.cn/ru.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://hzchemnitz.cn/models-ru.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hzchemnitz.cn/ar.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hzchemnitz.cn/models-ar.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hzchemnitz.cn/fr.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hzchemnitz.cn/models-fr.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_toyota_corolla.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_toyota_camry.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_toyota_rav4.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_toyota_corolla_cross.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_toyota_frontlander.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_toyota_highlander.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_vw_teramont.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_vw_tharu.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_vw_tiguan_allspace.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_geely_coolray.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_nissan_xtrail.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_nissan_qashqai.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_mazda_cx5.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_hyundai_elantra.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_kia_kx1.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_kia_seltos.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_jetour_dashing.html</loc><priority>0.7</priority></url>
-  <url><loc>https://hzchemnitz.cn/model_audi_q5.html</loc><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://hzchemnitz.cn/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/ru.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/ar.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/fr.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/models.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/models.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/models-ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/models-ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/models-fr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/models.html" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/models-ru.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/models.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/models-ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/models-ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/models-fr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/models.html" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/models-ar.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/models.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/models-ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/models-ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/models-fr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/models.html" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/models-fr.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/models.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/models-ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/models-ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/models-fr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/models.html" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/russia.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
