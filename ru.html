@@ -26,7 +26,7 @@ document.addEventListener('click', function(e){
 </script>
 <title>Hangzhou Chemnitz — Авто из Китая для России | Поставки дилерам | FOB/CIF</title>
 <meta name="description" content="Hangzhou Chemnitz — лицензированный экспортёр автомобилей из Китая для дилеров и импортёров в России. Актуальный список авто, VIN, фото, комплектации, цена FOB/CIF и полный пакет экспортных документов.">
-<meta name="keywords" content="авто из Китая для России, купить авто из Китая, поставщик авто из Китая, авто из Китая оптом, экспорт авто Китай, дилеры авто Россия, FOB Китай, CIF Россия, VIN авто из Китая">
+<meta name="keywords" content="авто из Китая для России, купить авто из Китая, поставщик авто из Китая, авто из Китая оптом, экспорт авто Китай, экспорт автомобилей из Китая, китайский автоэкспортер, автомобили для дилеров, автомобили для импортёров, новые автомобили из Китая, VIN авто из Китая, FOB Китай, CIF Россия, экспортные документы, доставка авто из Китая, Toyota из Китая, Nissan из Китая, Toyota RAV4 экспорт, Toyota Camry экспорт, Toyota Highlander экспорт, Nissan Sylphy экспорт, Nissan Qashqai экспорт, Nissan X-Trail экспорт, Nissan NX8 экспорт, спецтехника из Китая, спецтехника категории II, автовышка из Китая, автогидроподъемник из Китая, truck-mounted aerial work platform, articulating boom lift truck, HYL5057JGKQ60, HYL5066JGKJ60, HYL5068JGKQ60, HYL5076JGKQ60, автомобили из Китая Казахстан, авто из Китая ОАЭ, авто из Китая Саудовская Аравия, авто из Китая Африка, авто из Китая Ближний Восток">
 <link rel="canonical" href="https://hzchemnitz.cn/ru.html">
 <link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/">
 <link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html">
@@ -97,14 +97,32 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .catalog-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;background:#0d192e;color:#fff;text-decoration:none;border:1px solid #0d192e;border-radius:8px;padding:10px 22px;font-weight:800;font-size:0.9em;transition:all .2s}
 .catalog-link:hover{background:#14213a;border-color:#14213a;transform:translateY(-1px);box-shadow:0 10px 24px rgba(13,25,46,0.2)}
 .catalog-note{font-size:0.85em;color:#64748b;line-height:1.4}
+.special-vehicles{background:#fff}
+.special-vehicles .inner{max-width:1120px}
+.special-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.special-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(100,116,139,0.1);display:flex;flex-direction:column;height:100%}
+.special-visual{height:340px;background-color:#eef2f7;background-position:center bottom;background-size:auto 94%;background-repeat:no-repeat;position:relative;overflow:hidden}
+.special-visual span{position:absolute;top:14px;right:14px;background:rgba(13,25,46,0.82);color:#fff;font-size:0.68em;font-weight:800;letter-spacing:.04em;border-radius:999px;padding:5px 9px}
+.special-body{padding:13px 14px 14px;background:#fff;display:flex;flex-direction:column;flex:1}
+.special-body h3{font-size:0.84em;line-height:1.22;min-height:2.44em;margin-bottom:6px;color:#1a1a2e}
+.special-body p{font-size:0.82em;line-height:1.55;color:#64748b;margin-bottom:12px}
+.special-consult{display:inline-flex;align-items:center;justify-content:center;align-self:flex-end;margin-top:auto;min-height:32px;background:#0d192e;color:#fff;border:1px solid #0d192e;border-radius:7px;padding:6px 14px;font:inherit;font-size:0.78em;font-weight:800;cursor:pointer;transition:all .2s}
+.special-consult:hover{background:#14213a;border-color:#14213a;transform:translateY(-1px)}
 @media(max-width:900px){.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px}}
-@media(max-width:640px){.featured-grid{grid-template-columns:1fr;max-width:390px}}
+@media(max-width:900px){.special-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.featured-grid{grid-template-columns:1fr;max-width:390px}.special-grid{grid-template-columns:1fr}}
 .contact-section{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#fff;text-align:center;padding:56px 24px}
 .contact-section h2{font-size:1.5em;font-weight:700;margin-bottom:8px}
 .contact-section .sub{color:#94a3b8;font-size:0.95em;margin-bottom:20px}
 .contact-section .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);border:0;cursor:pointer;font-family:inherit}
 .contact-section .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
 .contact-section .reply{color:#64748b;font-size:0.85em;margin-top:16px}
+.faq-section{background:#f8fafc;padding:56px 24px}
+.faq-section .inner{max-width:800px;margin:0 auto}
+.faq-section h2{text-align:center;font-size:1.6em;font-weight:700;margin-bottom:32px}
+.faq-item{border-bottom:1px solid #e2e8f0;padding:20px 0}
+.faq-item h3{font-size:1.05em;font-weight:600;color:#1a1a2e;margin-bottom:8px}
+.faq-item p{color:#64748b;font-size:0.9em;line-height:1.7}
 footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#f8fafc;border-top:1px solid #e2e8f0}
 .lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
 .lb-overlay.open{display:flex}
@@ -144,12 +162,13 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-btn-row{text-align:right;margin-top:8px}
 .config-btn{display:inline-block;padding:5px 18px;background:#e8483c;color:#fff;border-radius:3px;font-size:12px;text-decoration:none;font-weight:500}
 .config-btn.disabled{background:#eee;color:#ccc;pointer-events:none}
-.contact-choice-modal{width:min(95vw,560px);max-width:560px}
-.contact-choice-modal .config-bar{padding:8px 14px;font-size:13px}
+.contact-choice-modal{width:min(95vw,620px);max-width:620px;border-radius:10px;overflow:hidden;box-shadow:0 24px 70px rgba(15,23,42,.32)}
+.contact-choice-modal .config-bar{background:#111827;padding:10px 14px;font-size:13px}
+.contact-choice-modal .config-bar-title{font-size:.9em}
 .contact-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:16px}
 .contact-choice-link{display:block;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;padding:12px 14px;font-weight:800;line-height:1.3;box-shadow:0 8px 22px rgba(37,211,102,.18);transition:all .18s}
 .contact-choice-link:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(37,211,102,.25)}
-.contact-choice-link span{display:block;font-size:.82em;font-weight:600;opacity:.88;margin-top:2px}
+.contact-choice-link span{display:block;font-size:.78em;font-weight:600;opacity:.86;margin-top:2px}
 
 
 </style>
@@ -179,19 +198,21 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 <section style="background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;text-align:center;padding:32px 24px">
   <div style="max-width:960px;margin:0 auto">
-    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">Поставляем во все леворульные рынки</h2>
-    <p style="font-size:0.85em;color:#94a3b8;margin-bottom:16px">FOB любой порт Китая · Контейнерные и RoRo отправки · Полный пакет документов</p>
+    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">Работаем с 30+ леворульными рынками по всему миру</h2>
+    <p style="font-size:0.85em;color:#94a3b8;margin-bottom:16px">FOB любой порт Китая · Контейнерные и RoRo перевозки · Полный пакет экспортных документов</p>
     <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;font-size:0.85em">
       <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Казахстан</span>
       <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Россия</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">ОАЭ и страны Залива</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Саудовская Аравия</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Нигерия</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Алжир</span>
       <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Узбекистан</span>
       <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Кыргызстан</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Азербайджан</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Сербия</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Грузия</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Таджикистан</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#38bdf8;">Монголия</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#22c55e;">Беларусь</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Кения и Восточная Африка</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Сербия и Балканы</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#38bdf8;">Латинская Америка</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#22c55e;">Юго-Восточная Азия</span>
     </div>
   </div>
 </section>
@@ -199,32 +220,50 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <section class="section" style="background:#fff;">
   <div class="inner" style="max-width:800px;">
     <div style="text-align:center;margin-bottom:48px;">
-      <h2 style="font-size:1.8em;margin-bottom:8px;">Лицензированный автоэкспортёр</h2>
-      <p style="color:#64748b;font-size:1em;">Все разрешения можно проверить на государственных платформах Китая</p>
+      <h2 style="font-size:1.8em;margin-bottom:8px;">Лицензированный китайский автоэкспортёр</h2>
+      <p style="color:#64748b;font-size:1em;">Государственная регистрация и проверяемые документы. Надёжный партнёр для закупки автомобилей из Китая.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px;">
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #16a34a;border-radius:8px;padding:20px 24px;">
-        <span style="font-size:1.6em;">🏛️</span>
-        <div><strong style="font-size:1.05em;">Регистрация MOFCOM — Официальный экспортёр</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;">Внесены в официальный реестр Министерства коммерции КНР. <a href="https://wms.mofcom.gov.cn/zcfb/wmgl/art/2025/art_b16ab53156984c09afcc9cb098add097.html" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Проверить на MOFCOM →</a></p>
+        <span style="font-size:1.6em;flex-shrink:0;">🏛️</span>
+        <div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Регистрация MOFCOM — официальное предприятие по экспорту автомобилей с пробегом</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Внесены в официальный реестр экспортных предприятий Министерства коммерции КНР. Мы относимся к ограниченному числу автоэкспортёров, одобренных на национальном уровне. <a href="https://wms.mofcom.gov.cn/zcfb/wmgl/art/2025/art_b16ab53156984c09afcc9cb098add097.html" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Проверить на MOFCOM →</a></p>
+          <div style="cursor:pointer;margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;">
+            <span onclick="var i=this.nextElementSibling;i.style.display=i.style.display==='none'?'block':'none'" style="color:#ef4444;font-size:0.78em;cursor:pointer;">📋 Посмотреть свидетельство о регистрации</span>
+            <img src="images/auth-usedcar-export.png" alt="MOFCOM Filing Certificate" style="max-width:45%;max-height:180px;border-radius:6px;display:none;border:1px solid #e2e8f0;" loading="lazy">
+            <span onclick="var i=this.nextElementSibling;i.style.display=i.style.display==='none'?'block':'none'" style="color:#ef4444;font-size:0.78em;cursor:pointer;">🌍 Статус экспортной базы</span>
+            <img src="images/plaque-export-base.jpg" alt="Auto Export Base Plaque" style="max-width:45%;max-height:180px;border-radius:6px;display:none;border:1px solid #e2e8f0;" loading="lazy">
+          </div>
         </div>
       </div>
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #0a66c2;border-radius:8px;padding:20px 24px;">
-        <span style="font-size:1.6em;">🔖</span>
-        <div><strong style="font-size:1.05em;">Официальное разрешение Dongfeng Nissan</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;">Прямое разрешение от Dongfeng Nissan Passenger Vehicle Company. Все модели сертифицированы MIIT.</p>
+        <span style="font-size:1.6em;flex-shrink:0;">🔖</span>
+        <div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Dongfeng Nissan — официальное разрешение на доработку и экспорт</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Прямое разрешение от Dongfeng Nissan Passenger Vehicle Company через нашего партнёра по доработке автомобилей. Все модели сертифицированы MIIT для легального экспорта. <strong style="color:#b91c1c;">Документ заверен официальной печатью компании.</strong></p>
+          <div style="cursor:pointer;margin-top:8px;" onclick="this.querySelector('img').style.display=this.querySelector('img').style.display==='none'?'block':'none'">
+            <span style="color:#ef4444;font-size:0.78em;">🔖 Посмотреть письмо-разрешение</span>
+            <img src="images/auth-zhongrui.jpg" alt="Nissan Dongfeng Authorization Letter" style="max-width:100%;max-height:300px;border-radius:6px;display:none;margin-top:8px;border:1px solid #e2e8f0;" loading="lazy">
+          </div>
         </div>
       </div>
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #d97706;border-radius:8px;padding:20px 24px;">
-        <span style="font-size:1.6em;">🏆</span>
-        <div><strong style="font-size:1.05em;">Две правительственные награды Ханчжоу</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;">«Выдающееся предприятие» + «Лучшее растущее предприятие» за успехи в международной торговле.</p>
+        <span style="font-size:1.6em;flex-shrink:0;">🏆</span>
+        <div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Обладатель двух наград правительства Ханчжоу</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Награда «Выдающееся предприятие» + награда «Лучшее растущее предприятие». Одна из быстрорастущих международных торговых компаний Ханчжоу.</p>
+          <div style="margin-top:8px;">
+            <span onclick="var i=document.getElementById('img-growth-ru');i.style.display=i.style.display==='none'?'block':'none'" style="color:#ef4444;font-size:0.78em;cursor:pointer;">🚀 Посмотреть награду за рост</span>
+            <img id="img-growth-ru" src="images/plaque-growth-enterprise.jpg" alt="Best Growth Enterprise Award" style="max-width:60%;max-height:200px;border-radius:6px;display:none;border:1px solid #e2e8f0;margin-top:8px;" loading="lazy">
+          </div>
         </div>
       </div>
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #7c3aed;border-radius:8px;padding:20px 24px;">
-        <span style="font-size:1.6em;">📊</span>
-        <div><strong style="font-size:1.05em;">7000+ авто отправлено · 20 сотрудников · С 2023 г.</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;">Работаем с дилерами и дистрибьюторами в 30+ странах. Каждый автомобиль с полным пакетом документов.</p>
+        <span style="font-size:1.6em;flex-shrink:0;">📊</span>
+        <div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">7 000+ автомобилей экспортировано · команда 20 человек · с 2023 года</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Обслуживаем независимых дилеров и национальных операторов автопарков в 30+ странах. Каждый автомобиль поставляется с полным пакетом экспортных документов и поддержкой FOB-логистики.</p>
         </div>
       </div>
     </div>
@@ -270,22 +309,93 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       </div>
     </div>
     <div class="catalog-actions">
-      <a class="catalog-link" href="models-ru.html#models">Больше моделей</a>
+      <a class="catalog-link" href="models-ru.html?v=20260702#models">Больше моделей</a>
       <span class="catalog-note">Полный каталог по брендам и комплектациям</span>
+    </div>
+  </div>
+</section>
+
+<section class="section special-vehicles" id="special-vehicles">
+  <div class="inner">
+    <h2>Спецтехника категории II</h2>
+    <p class="lead">Максимальная рабочая высота подбирается по модели и требованиям проекта: от 14,2 м до 35 м<br><span>Подбор кузова · Экспортные документы · Доставка до порта</span></p>
+    <div class="special-grid">
+      <div class="special-card">
+        <div class="special-visual" style="background-image:url('images/special/hyl5057jgkq60-platform.png')"><span>TYPE II</span></div>
+        <div class="special-body">
+          <h3>HYL5057JGKQ60 Truck-Mounted Aerial Work Platform</h3>
+          <p>Max. working height: 14.2 m<br>Max. working outreach: 7.1 m<br>Platform rated load: 200 kg<br>Max. lifting height: 8 m<br>Max. hook lifting capacity: 990 kg<br>Independently adjustable outriggers</p>
+          <button type="button" class="special-consult" onclick="openRuContactChoice('Спецтехника категории II · Рефрижератор')">Консультация</button>
+        </div>
+      </div>
+      <div class="special-card">
+        <div class="special-visual" style="background-image:url('images/special/hyl5066jgkj60-platform.png')"><span>TYPE II</span></div>
+        <div class="special-body">
+          <h3>HYL5066JGKJ60 Truck-Mounted Aerial Work Platform</h3>
+          <p>Max. working height: 14.5 m<br>Max. working outreach: 10.9 m<br>Platform rated load: 200 kg<br>Platform swing angle: 90° left/right<br>Independently adjustable outriggers</p>
+          <button type="button" class="special-consult" onclick="openRuContactChoice('Спецтехника категории II · Медицинские и аварийные автомобили')">Консультация</button>
+        </div>
+      </div>
+      <div class="special-card">
+        <div class="special-visual" style="background-image:url('images/special/hyl5068jgkq60-platform.png')"><span>TYPE II</span></div>
+        <div class="special-body">
+          <h3>HYL5068JGKQ60 Truck-Mounted Articulating Boom Lift</h3>
+          <p>Max. working height: 18.2 m<br>Max. working outreach: 9.5 m<br>Platform rated load: 200 kg<br>Max. lifting capacity: 2,000 kg<br>Max. lifting height: 9.2 m<br>Independently adjustable outriggers</p>
+          <button type="button" class="special-consult" onclick="openRuContactChoice('Спецтехника категории II · Коммунальная техника')">Консультация</button>
+        </div>
+      </div>
+      <div class="special-card">
+        <div class="special-visual" style="background-image:url('images/special/hyl5076jgkq60-platform.png?v=2')"><span>TYPE II</span></div>
+        <div class="special-body">
+          <h3>HYL5076JGKQ60 Truck-Mounted Aerial Work Platform</h3>
+          <p>Max. working height: 18.2 m<br>Max. working outreach: 11.7 m<br>Platform rated load: 200 kg<br>Swing angle: 95° left / 100° right<br>Independently adjustable outriggers</p>
+          <button type="button" class="special-consult" onclick="openRuContactChoice('Спецтехника категории II · Патрульные и полевые автомобили')">Консультация</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="inner">
+    <h2>Частые вопросы</h2>
+    <div class="faq-item">
+      <h3>Как купить автомобили из Китая?</h3>
+      <p>Напишите нам в WhatsApp или на email и укажите нужные бренды, модели и количество. Мы подбираем автомобили напрямую у заводов и дилеров 4S в Китае, готовим экспортные документы, таможенное оформление и доставку FOB до выбранного порта.</p>
+    </div>
+    <div class="faq-item">
+      <h3>В какие страны вы отправляете автомобили?</h3>
+      <p>Мы работаем со всеми леворульными рынками: Казахстан, Россия, ОАЭ, Нигерия, Саудовская Аравия, Алжир, Узбекистан, Кыргызстан, Кения, Пакистан, Сербия, Грузия, Азербайджан, страны Персидского залива, Африка и другие направления.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Что означает FOB и как работает доставка?</h3>
+      <p>FOB означает, что мы доставляем автомобиль до выбранного китайского порта, например Шанхай, Тяньцзинь, Нинбо или Урумчи. Далее возможна контейнерная отправка, RoRo или железнодорожная/автомобильная доставка по согласованному маршруту.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Какие документы предоставляются?</h3>
+      <p>Полный комплект экспортных документов: сертификат происхождения, коммерческий инвойс, упаковочный лист, коносамент или транспортный документ, а также доступные документы соответствия по автомобилю.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Автомобили новые или бывшие в употреблении?</h3>
+      <p>Мы поставляем новые автомобили с заводской гарантией и полным пакетом экспортных документов. По отдельным проектам также можем обсуждать специальные коммерческие и переоборудованные автомобили.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Как получить цены и актуальный список?</h3>
+      <p>Напишите в WhatsApp или на email. Мы отправим актуальные цены, комплектации, варианты портов, сроки и список доступных автомобилей.</p>
     </div>
   </div>
 </section>
 
 <section class="contact-section">
   <h2>Запросить прайс-лист</h2>
-  <p class="sub">Напишите в WhatsApp — модель, количество, город назначения, FOB или CIF<br>Говорим на русском, английском, китайском</p>
+  <p class="sub">Напишите нам сейчас — отвечаем в течение нескольких часов на русском, английском, арабском и французском</p>
   <div style="margin-top:20px;">
     <button type="button" class="cta-btn" onclick="openRuContactChoice('Общий запрос')">Консультация в WhatsApp</button>
   </div>
   <p class="reply">ljj2022513@gmail.com · Ханчжоу, Чжэцзян, Китай</p>
 </section>
 
-<footer>&copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. · 杭州开姆尼茨国际贸易有限公司</footer>
+<footer>&copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. · 杭州开姆尼茨国际贸易有限公司 · Зарегистрированный автоэкспортер MOFCOM</footer>
 
 <div class="lb-overlay" id="lb"><span class="lb-close" id="lb-close">&times;</span><span class="lb-nav lb-prev" id="lb-prev">&#8249;</span><span class="lb-nav lb-next" id="lb-next">&#8250;</span><img class="lb-img" id="lb-img" src="" alt=""><div class="lb-title" id="lb-title"></div><div class="lb-counter" id="lb-counter"></div></div>
 
@@ -1003,7 +1113,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   }
   function renderRuContactChoice(modelName, trim) {
     var h = '<div class="config-modal contact-choice-modal">';
-    h += '<div class="config-bar">WhatsApp<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div>';
+    h += '<div class="config-bar"><span class="config-bar-title">WhatsApp</span><span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div>';
     h += '<div class="contact-choice-grid">';
     for (var i = 0; i < ruWhatsappContacts.length; i++) {
       var contact = ruWhatsappContacts[i];
