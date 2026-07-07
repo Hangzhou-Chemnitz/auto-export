@@ -88,10 +88,4 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/models-fr.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/models.html" />
   </url>
-  <url>
-    <loc>https://hzchemnitz.cn/russia.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
 </urlset>

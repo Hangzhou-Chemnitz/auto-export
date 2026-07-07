@@ -48,7 +48,22 @@ document.addEventListener('click', function(e){
   "url": "https://hzchemnitz.cn",
   "description": "Exportateur chinois agréé de véhicules neufs. 7000+ véhicules livrés. Toyota, VW, Geely et plus.",
   "email": "ljj2022513@gmail.com",
-  "telephone": "+86-137-5822-9513"
+  "telephone": "+86-137-5822-9513",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "浙江省杭州市钱塘区杭州东部湾总部大楼1号楼909室",
+    "addressLocality": "Hangzhou",
+    "addressRegion": "Zhejiang",
+    "addressCountry": "CN"
+  },
+  "location": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.269367,
+      "longitude": 120.349242
+    }
+  }
 }
 </script>
 <style>
@@ -118,12 +133,29 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .faq-item{border-bottom:1px solid #e2e8f0;padding:20px 0}
 .faq-item h3{font-size:1.05em;font-weight:600;color:#1a1a2e;margin-bottom:8px}
 .faq-item p{color:#64748b;font-size:0.9em;line-height:1.7}
-.contact-section{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#fff;text-align:center;padding:56px 24px}
-.contact-section h2{font-size:1.5em;font-weight:700;margin-bottom:8px}
-.contact-section .sub{color:#94a3b8;font-size:0.95em;margin-bottom:20px}
-.contact-section .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
+.contact-section{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#fff;text-align:center;padding:42px 24px}
+.contact-section h2{font-size:1.36em;font-weight:700;margin-bottom:6px}
+.contact-section .sub{color:#94a3b8;font-size:0.86em;margin-bottom:16px}
+.contact-section .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:13px 30px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.96em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
 .contact-section .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
-.contact-section .reply{color:#64748b;font-size:0.85em;margin-top:16px}
+.contact-section .reply{color:#64748b;font-size:0.78em;margin-top:12px}
+.company-info{max-width:1120px;margin:22px auto 0;padding:18px;border:1px solid rgba(148,163,184,0.18);border-radius:10px;background:#fff;color:#111827;text-align:left;box-shadow:0 16px 42px rgba(0,0,0,0.16)}
+.company-info-layout{display:grid;grid-template-columns:minmax(0,470px) minmax(0,1fr);gap:28px;align-items:stretch}
+.company-info h3{font-size:1.04em;font-weight:800;margin-bottom:5px;color:#111827}
+.company-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.company-badge{display:inline-flex;align-items:center;border-radius:999px;background:#edf2f7;color:#64748b;padding:3px 8px;font-size:.68em;font-weight:600}
+.company-info-list{display:grid;grid-template-columns:1fr;gap:8px}
+.company-info-row{display:grid;grid-template-columns:26px 1fr;gap:9px;align-items:start;color:#111827}
+.company-info-icon{width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#eef2f7;color:#94a3b8;font-size:.82em;font-weight:600}
+.company-info-row div span{display:block;color:#64748b;font-size:.7em;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:1px}
+.company-info-row strong{display:block;color:#64748b;font-size:.84em;font-weight:500;line-height:1.35}
+.company-map{position:relative;min-height:142px;height:100%;width:100%;justify-self:stretch;align-self:stretch;border-radius:8px;overflow:hidden;background:#111 url('images/company/map-satellite.png') center/cover no-repeat;border:1px solid #1f2937;cursor:pointer}
+.company-map:before,.company-map:after{content:none}
+.company-map-pin{display:none}
+.company-map-label{position:absolute;inset:0;width:auto;background:transparent;border-radius:0;padding:0;box-shadow:none;color:transparent;font-size:0;z-index:4}
+.company-map-label a{position:absolute;inset:0;display:block;color:transparent;text-decoration:none;font-size:0;margin:0}
+@media(max-width:820px){.company-info-layout{grid-template-columns:1fr}.company-info-list{grid-template-columns:1fr}.company-map{width:100%;height:142px;min-height:142px;justify-self:stretch}}
+@media(max-width:640px){.company-info{padding:14px}.company-info-row{grid-template-columns:24px 1fr}.company-info-icon{width:24px;height:24px}}
 .hero .cta-btn,.contact-section .cta-btn{border:0;cursor:pointer;font-family:inherit}
 .contact-choice-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,0.55);z-index:9998;align-items:center;justify-content:center;padding:18px}
 .contact-choice-overlay.open{display:flex}
@@ -368,7 +400,47 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   <div style="margin-top:20px;">
     <button type="button" class="cta-btn" onclick="openContactChoice('General inquiry')">Consultation WhatsApp</button>
   </div>
-  <p class="reply">ljj2022513@gmail.com · Hangzhou, Zhejiang, Chine</p>
+  <div class="company-info">
+    <div class="company-info-layout">
+      <div>
+        <h3>Hangzhou Chemnitz International Trade Co., Ltd.</h3>
+        <div class="company-badges">
+          <span class="company-badge">Exportateur automobile agréé</span>
+          <span class="company-badge">Enregistré MOFCOM</span>
+          <span class="company-badge">Depuis 2023</span>
+        </div>
+        <div class="company-info-list">
+          <div class="company-info-row">
+            <span class="company-info-icon">⌖</span>
+            <div><span>Adresse</span><strong>Bureau 909, Bâtiment 1, Hangzhou East Bay Headquarters Building, district de Qiantang, Hangzhou, Zhejiang, Chine</strong></div>
+          </div>
+          <div class="company-info-row">
+            <span class="company-info-icon">◷</span>
+            <div><span>Horaires</span><strong>Lun-Ven 10:00-20:00 (heure de Chine, UTC+8)</strong></div>
+          </div>
+          <div class="company-info-row">
+            <span class="company-info-icon">☎</span>
+            <div><span>WhatsApp</span><strong>Sia: +86 137 58229513 · Darwin: +86 136 40033268<br>Jacky: +86 138 26126147</strong></div>
+          </div>
+          <div class="company-info-row">
+            <span class="company-info-icon">✉</span>
+            <div><span>Email</span><strong>ljj2022513@gmail.com</strong></div>
+          </div>
+          <div class="company-info-row">
+            <span class="company-info-icon">◎</span>
+            <div><span>Site web</span><strong>https://hzchemnitz.cn</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-map" aria-label="Bureau 909, Bâtiment 1, Hangzhou East Bay Headquarters Building, district de Qiantang, Hangzhou, Zhejiang, Chine">
+        <span class="company-map-pin"></span>
+        <div class="company-map-label">
+          Bureau 909, Bâtiment 1, Hangzhou East Bay Headquarters Building
+          <a href="https://www.google.com/maps/search/?api=1&query=30.269367%2C120.349242" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>&copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. · 杭州开姆尼茨国际贸易有限公司 · Exportateur automobile enregistré auprès du MOFCOM</footer>
@@ -383,7 +455,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 (function(){
   var contacts=[
     {label:'Sia',display:'+86 137 58229513',wa:'8613758229513'},
-    {label:'Darwin',display:'+86 136 40033268',wa:'8613640033268'}
+    {label:'Darwin',display:'+86 136 40033268',wa:'8613640033268'},
+    {label:'Jacky',display:'+86 138 26126147',wa:'8613826126147'}
   ];
   function esc(value){return String(value||'').replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});}
   function consultText(topic){return 'Hello, I want to consult about '+(topic||'vehicles')+'.\nPlease send current export price, availability, port options, and documents.';}
