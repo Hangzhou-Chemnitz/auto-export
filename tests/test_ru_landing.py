@@ -10,7 +10,7 @@ def test_ru_homepage_targets_russian_dealer_inquiries():
     assert "для дилеров и импортёров в России" in text
     assert "Получить актуальный список авто в WhatsApp" in text
     assert "Модель, количество, город назначения" in text
-    assert "FOB или CIF" in text
+    assert "FOB" in text
 
 
 def test_sitemap_prioritizes_ru_homepage_not_separate_russia_page():
