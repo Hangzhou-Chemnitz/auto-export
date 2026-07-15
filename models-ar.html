@@ -1092,6 +1092,23 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     if (!digits) return value;
     return Number(digits).toLocaleString('en-US');
   }
+  function configSheetUrl(modelName, trim) {
+    var price = cleanPrice(trim && (trim.price || trim.msrp));
+    var name = (trim && trim.name) || '';
+    if (modelName === 'Nissan Sylphy' && price === '79,900' && name.indexOf('1.6L CVT') > -1) {
+      return 'vehicle-config-sylphy.html';
+    }
+    var configPages = {
+      '73625': 'vehicle-config-qashqai.html',
+      '73627': 'vehicle-config-xtrail.html',
+      '76642': 'vehicle-config-nx8.html',
+      '74683': 'vehicle-config-rav4.html',
+      '74001': 'vehicle-config-camry.html',
+      '74933': 'vehicle-config-highlander.html',
+      '68723': 'vehicle-config-corolla-cross.html'
+    };
+    return configPages[String(trim && trim.specid)] || '';
+  }
   function stockVal(item, key) {
     return item && item[key] ? item[key] : 0;
   }
@@ -1118,7 +1135,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     return 'Other trims';
   }
   var whatsappContacts = [
-    { label: 'Sia', display: '+86 137 58229513', wa: '8613758229513' },
+    { label: 'Natalie', display: '+86 15913687692', wa: '8615913687692' },
     { label: 'Darwin', display: '+86 136 40033268', wa: '8613640033268' },
     { label: 'Jacky', display: '+86 138 26126147', wa: '8613826126147' }
   ];
@@ -1159,7 +1176,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     for (var i = 0; i < whatsappContacts.length; i++) {
       var contact = whatsappContacts[i];
       var url = 'https://wa.me/' + contact.wa + '?text=' + encodeURIComponent(text);
-      h += '<a class="contact-choice-link" href="' + url + '" target="_blank" rel="noopener">' + escHtml(contact.display) + '<span>' + escHtml(contact.label) + '</span></a>';
+      h += '<a class="contact-choice-link" href="' + url + '" target="_self" rel="noopener">' + escHtml(contact.display) + '<span>' + escHtml(contact.label) + '</span></a>';
     }
     h += '</div></div>';
     overlay.innerHTML = h;
@@ -1214,9 +1231,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       for (var gi = 0; gi < grouped[groupOrder[g]].length; gi++) {
         var item = grouped[groupOrder[g]][gi];
         var t = item.trim;
+        var sheetUrl = configSheetUrl(modelName, t);
         h += '<button type="button" class="config-menu-option" onclick="contactForTrim(' + item.index + ')">';
         h += '<span><span class="price">' + cleanPrice(t.price || t.msrp) + '</span><span class="name">' + t.name + '</span></span>';
-        h += '<span class="meta">Consult</span>';
+        h += '<span class="meta">' + (sheetUrl ? 'Config' : 'Consult') + '</span>';
         h += '</button>';
       }
     }
@@ -1278,8 +1296,13 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     }
 
     var t = data.trims[trimIndex];
+    var sheetUrl = configSheetUrl(modelName, t);
     if (overlay) overlay.classList.remove('open');
     closeConfigPicker();
+    if (sheetUrl) {
+      window.location.href = sheetUrl;
+      return;
+    }
     openConsultation(modelName, t);
   };
   window.showConfigDetail = window.contactForTrim;

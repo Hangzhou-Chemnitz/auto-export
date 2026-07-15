@@ -493,7 +493,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
             <span class="company-info-icon">◷</span>
           </div>
           <div class="company-info-row">
-            <div><span>WhatsApp</span><strong>Sia: +86 137 58229513 · Darwin: +86 136 40033268<br>Jacky: +86 138 26126147</strong></div>
+            <div><span>WhatsApp</span><strong>Natalie: +86 15913687692 · Darwin: +86 136 40033268<br>Jacky: +86 138 26126147</strong></div>
             <span class="company-info-icon">☎</span>
           </div>
           <div class="company-info-row">
@@ -521,7 +521,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <script>
 (function(){
   var contacts=[
-    {label:'Sia',display:'+86 137 58229513',wa:'8613758229513'},
+    {label:'Natalie',display:'+86 15913687692',wa:'8615913687692'},
     {label:'Darwin',display:'+86 136 40033268',wa:'8613640033268'},
     {label:'Jacky',display:'+86 138 26126147',wa:'8613826126147'}
   ];
@@ -535,7 +535,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var h='<div class="contact-choice-modal"><div class="contact-choice-bar"><span>WhatsApp</span><button type="button" class="contact-choice-close" onclick="closeContactChoice()">&times;</button></div><div class="contact-choice-grid">';
     for(var i=0;i<contacts.length;i++){
       var c=contacts[i];
-      h+='<a class="contact-choice-link" href="https://wa.me/'+c.wa+'?text='+encodeURIComponent(text)+'" target="_blank" rel="noopener">'+esc(c.display)+'<span>'+esc(c.label)+'</span></a>';
+      h+='<a class="contact-choice-link" href="https://wa.me/'+c.wa+'?text='+encodeURIComponent(text)+'" target="_self" rel="noopener">'+esc(c.display)+'<span>'+esc(c.label)+'</span></a>';
     }
     h+='</div></div>';
     overlay.innerHTML=h;

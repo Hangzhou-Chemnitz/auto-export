@@ -514,7 +514,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
           </div>
           <div class="company-info-row">
             <span class="company-info-icon">☎</span>
-            <div><span>WhatsApp</span><strong>Sia: +86 137 58229513 · Darwin: +86 136 40033268<br>Jacky: +86 138 26126147</strong></div>
+            <div><span>WhatsApp</span><strong>Natalie: +86 15913687692 · Darwin: +86 136 40033268<br>Jacky: +86 138 26126147</strong></div>
           </div>
           <div class="company-info-row">
             <span class="company-info-icon">✉</span>
@@ -1238,7 +1238,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       .trim();
   }
   var ruWhatsappContacts = [
-    { label: 'Sia', display: '+86 137 58229513', wa: '8613758229513' },
+    { label: 'Natalie', display: '+86 15913687692', wa: '8615913687692' },
     { label: 'Darwin', display: '+86 136 40033268', wa: '8613640033268' },
     { label: 'Jacky', display: '+86 138 26126147', wa: '8613826126147' }
   ];
@@ -1260,7 +1260,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     h += '<div class="contact-choice-grid">';
     for (var i = 0; i < ruWhatsappContacts.length; i++) {
       var contact = ruWhatsappContacts[i];
-      h += '<a class="contact-choice-link" href="' + ruConsultUrl(contact, modelName, trim) + '" target="_blank" rel="noopener">' + escHtml(contact.display) + '<span>' + escHtml(contact.label) + '</span></a>';
+      h += '<a class="contact-choice-link" href="' + ruConsultUrl(contact, modelName, trim) + '" target="_self" rel="noopener">' + escHtml(contact.display) + '<span>' + escHtml(contact.label) + '</span></a>';
     }
     h += '</div></div>';
     return h;
