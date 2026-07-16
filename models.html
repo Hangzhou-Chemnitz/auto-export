@@ -1085,6 +1085,30 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 
 
+  configData["Toyota RAV4"].trims = configData["Toyota RAV4"].trims.filter(function(trim) {
+    return ["Price: 189,800", "Price: 187,800", "Price: 228,800"].indexOf(trim.price) !== -1;
+  });
+
+  configData["Toyota Corolla Cross"] = { source: "Autohome", seriesId: 6428, trims: [
+    { name: "锐放 2026款 2.0L 精英", price: "Price: 136,800", source: "Autohome", specid: 75436 },
+    { name: "锐放 2026款 2.0L", price: "Price: 149,800", source: "Autohome", specid: 75437 },
+    { name: "锐放 2026款 2.0L 智能电混双擎 先锋", price: "Price: 139,800", source: "Autohome", specid: 75353 },
+    { name: "锐放 2026款 2.0L 智能电混双擎 精英", price: "Price: 149,800", source: "Autohome", specid: 75354 },
+    { name: "锐放 2026款 2.0L 智能电混双擎", price: "Price: 159,800", source: "Autohome", specid: 73837 }
+  ]};
+
+  configData["Toyota Highlander"] = { source: "Autohome", seriesId: 771, trims: [
+    { name: "2026款 380T 四驱豪华版 7座", price: "Price: 284,800", source: "Autohome", specid: 74933 },
+    { name: "2026款 380T 四驱尊贵版 7座", price: "Price: 295,800", source: "Autohome", specid: 74934 },
+    { name: "2026款 2.5L智能电混双擎两驱精英版 5座", price: "Price: 249,800", source: "Autohome", specid: 74935 },
+    { name: "2026款 2.5L智能电混双擎两驱精英版 7座", price: "Price: 257,800", source: "Autohome", specid: 74936 },
+    { name: "2026款 2.5L智能电混双擎两驱豪华版 7座", price: "Price: 288,800", source: "Autohome", specid: 74937 },
+    { name: "2026款 2.5L智能电混双擎四驱精英版 7座", price: "Price: 268,800", source: "Autohome", specid: 74938 },
+    { name: "2026款 2.5L智能电混双擎四驱豪华版 7座", price: "Price: 299,800", source: "Autohome", specid: 74939 },
+    { name: "2026款 2.5L智能电混双擎四驱尊贵版 7座", price: "Price: 309,800", source: "Autohome", specid: 74940 },
+    { name: "2026款 2.5L智能电混双擎四驱至尊版 7座", price: "Price: 325,800", source: "Autohome", specid: 74941 }
+  ] };
+
   configData["Toyota Camry"] = { source: "Autohome", seriesId: 110, trims: [
     { name: "2026款 2.0E 精英版", price: "Price: 171,800", source: "Autohome", specid: 73997 },
     { name: "2026款 2.0GVP 豪华版", price: "Price: 181,800", source: "Autohome", specid: 73998 },
@@ -1123,13 +1147,26 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     }[specid]) {
       return 'vehicle-config-camry.html?specid=' + specid;
     }
+    if (modelName === 'Toyota RAV4' && {
+      '74683': 1, '75765': 1, '74690': 1
+    }[specid]) {
+      return 'vehicle-config-rav4.html?specid=' + specid;
+    }
+    if (modelName === 'Toyota Corolla Cross' && {
+      '75436': 1, '75437': 1, '75353': 1, '75354': 1, '73837': 1
+    }[specid]) {
+      return 'vehicle-config-corolla-cross.html?specid=' + specid;
+    }
+    if (modelName === 'Toyota Highlander' && {
+      '74933': 1, '74934': 1, '74935': 1, '74936': 1, '74937': 1,
+      '74938': 1, '74939': 1, '74940': 1, '74941': 1
+    }[specid]) {
+      return 'vehicle-config-highlander.html?specid=' + specid;
+    }
     var configPages = {
       '73625': 'vehicle-config-qashqai.html',
       '73627': 'vehicle-config-xtrail.html',
-      '76642': 'vehicle-config-nx8.html',
-      '74683': 'vehicle-config-rav4.html',
-      '74933': 'vehicle-config-highlander.html',
-      '68723': 'vehicle-config-corolla-cross.html'
+      '76642': 'vehicle-config-nx8.html'
     };
     return configPages[specid] || '';
   }
@@ -1150,6 +1187,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   function trimGroupName(trim) {
     if (trim.name.indexOf(' · ') > -1) return trim.name.split(' · ')[0];
     var name = trim.name || '';
+    if (/380T/.test(name)) return '2.0T Gasoline';
     if (/纯电|EV|km|续航|增程/.test(name)) return 'New Energy';
     var displacement = '';
     var m = name.match(/([0-9]\.[0-9])\s*(L|T|TD|TSI|HE|HG|HQ|E|G|S)?/);
