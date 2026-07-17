@@ -553,6 +553,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 @media(max-width:640px){.config-overlay{padding:8px}.config-card-head,.config-action{flex-direction:column;align-items:stretch}.config-card-price{text-align:center}.config-body{padding:12px}.config-intro{font-size:0.82em}}
 
 </style>
+<script src="trim-localization.js?v=20260716"></script>
 </head>
 <body>
 
@@ -1187,8 +1188,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   function trimGroupName(trim) {
     if (trim.name.indexOf(' · ') > -1) return trim.name.split(' · ')[0];
     var name = trim.name || '';
-    if (/380T/.test(name)) return '2.0T Бензин';
-    if (/纯电|EV|km|续航|增程/.test(name)) return 'Новая энергия';
+    if (/380T/.test(name)) return '2.0T Gasoline';
+    if (/纯电|EV|km|续航|增程/.test(name)) return 'New Energy';
     var displacement = '';
     var m = name.match(/([0-9]\.[0-9])\s*(L|T|TD|TSI|HE|HG|HQ|E|G|S)?/);
     if (m) displacement = m[1] + (m[2] === 'T' || m[2] === 'TD' || m[2] === 'TSI' ? 'T' : 'L');
@@ -1206,13 +1207,33 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
     });
   }
-  function consultationText(modelName, trim) {
-    var lines = ['Hello, I want to consult about ' + modelName + '.'];
-    if (trim) {
-      lines.push('Configuration: ' + trim.name);
-      lines.push('Guide price: ' + cleanPrice(trim.price || trim.msrp));
+  function currentConfigLocale() {
+    return (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+  }
+  function displayTrimName(trim) {
+    if (!trim) return '';
+    if (window.ChemnitzTrimI18n) {
+      return window.ChemnitzTrimI18n.trim(trim.name || '', trim.specid, currentConfigLocale());
     }
-    lines.push('Please send current export price, availability, port options, and documents.');
+    return trim.name || '';
+  }
+  function displayGroupName(groupName) {
+    return window.ChemnitzTrimI18n
+      ? window.ChemnitzTrimI18n.group(groupName, currentConfigLocale())
+      : groupName;
+  }
+  function configUi(key, values) {
+    return window.ChemnitzTrimI18n
+      ? window.ChemnitzTrimI18n.ui(key, currentConfigLocale(), values)
+      : '';
+  }
+  function consultationText(modelName, trim) {
+    var lines = [configUi('greeting', { model: modelName })];
+    if (trim) {
+      lines.push(configUi('configuration', { trim: displayTrimName(trim) }));
+      lines.push(configUi('guidePrice', { price: cleanPrice(trim.price || trim.msrp) }));
+    }
+    lines.push(configUi('request'));
     return lines.join('\n');
   }
   function consultationUrl(contact, modelName, trim) {
@@ -1245,7 +1266,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     overlay.classList.add('open');
   }
   function renderEmptyModal(modelName) {
-    return '<div class="config-modal"><div class="config-bar"><span class="config-bar-title">' + modelName + '</span><span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div><div class="config-body"><div class="config-intro">Данные комплектации обновляются. Свяжитесь с нами в WhatsApp для актуальной экспортной цены.</div></div></div>';
+    return '<div class="config-modal"><div class="config-bar"><span class="config-bar-title">' + modelName + '</span><span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div><div class="config-body"><div class="config-intro">' + configUi('pending') + '</div></div></div>';
   }
   function closeConfigPicker() {
     var old = document.getElementById('config-menu');
@@ -1279,12 +1300,12 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var h = '';
     h += '<div class="config-menu-head">';
     h += '<div class="config-menu-title">' + modelName + '</div>';
-    h += '<div class="config-menu-sub">Выберите рекомендованную цену для консультации</div>';
+    h += '<div class="config-menu-sub">' + configUi('menuSub') + '</div>';
     h += '</div>';
     var grouped = {};
     var groupOrder = [];
     for (var i = 0; i < data.trims.length; i++) {
-      var groupName = trimGroupName(data.trims[i]);
+      var groupName = displayGroupName(trimGroupName(data.trims[i]));
       if (!grouped[groupName]) { grouped[groupName] = []; groupOrder.push(groupName); }
       grouped[groupName].push({ trim: data.trims[i], index: i });
     }
@@ -1295,12 +1316,12 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         var t = item.trim;
         var sheetUrl = configSheetUrl(modelName, t);
         h += '<button type="button" class="config-menu-option" onclick="contactForTrim(' + item.index + ')">';
-        h += '<span><span class="price">' + cleanPrice(t.price || t.msrp) + '</span><span class="name">' + t.name + '</span></span>';
-        h += '<span class="meta">' + (sheetUrl ? 'Config' : 'Consult') + '</span>';
+        h += '<span><span class="price">' + cleanPrice(t.price || t.msrp) + '</span><span class="name">' + escHtml(displayTrimName(t)) + '</span></span>';
+        h += '<span class="meta">' + (sheetUrl ? configUi('config') : configUi('consult')) + '</span>';
         h += '</button>';
       }
     }
-    if (!data.trims.length) h += '<div class="config-menu-empty">No guide price data yet.</div>';
+    if (!data.trims.length) h += '<div class="config-menu-empty">' + configUi('empty') + '</div>';
     menu.innerHTML = h;
     placeConfigPicker(menu, anchor);
   };
@@ -1317,16 +1338,16 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var h = '';
     h += '<div class="config-modal">';
     h += '<div class="config-bar">';
-    h += '<span class="config-bar-title">' + modelName + ' · Select Guide Price</span>';
+    h += '<span class="config-bar-title">' + modelName + ' · ' + configUi('modalTitle') + '</span>';
     h += '<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span>';
     h += '</div>';
     h += '<div class="config-body">';
-    h += '<div class="config-intro">Выберите цену или версию, затем свяжитесь с нами для актуальной экспортной цены и наличия.</div>';
+    h += '<div class="config-intro">' + configUi('modalIntro') + '</div>';
 
     var grouped = {};
     var groupOrder = [];
     for (var i = 0; i < data.trims.length; i++) {
-      var groupName = trimGroupName(data.trims[i]);
+      var groupName = displayGroupName(trimGroupName(data.trims[i]));
       if (!grouped[groupName]) { grouped[groupName] = []; groupOrder.push(groupName); }
       grouped[groupName].push({ trim: data.trims[i], index: i });
     }
@@ -1337,7 +1358,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         var t = item.trim;
         h += '<button type="button" class="config-option" onclick="contactForTrim(' + item.index + ')">';
         h += '<div class="price">' + cleanPrice(t.price || t.msrp) + '</div>';
-        h += '<div class="name">' + t.name + '</div>';
+        h += '<div class="name">' + escHtml(displayTrimName(t)) + '</div>';
         h += '</button>';
       }
       h += '</div>';

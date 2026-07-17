@@ -270,6 +270,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 
 </style>
+<script src="trim-localization.js?v=20260716"></script>
 </head>
 <body>
 
@@ -1242,10 +1243,16 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     { label: 'Darwin', display: '+86 136 40033268', wa: '8613640033268' },
     { label: 'Jacky', display: '+86 138 26126147', wa: '8613826126147' }
   ];
+  function ruDisplayTrimName(trim) {
+    if (!trim) return '';
+    return window.ChemnitzTrimI18n
+      ? window.ChemnitzTrimI18n.trim(trim.name || '', trim.specid, 'ru')
+      : (trim.name || '');
+  }
   function ruConsultText(modelName, trim) {
     var lines = ['Здравствуйте! Нужна консультация по автомобилю: ' + modelName + '.'];
     if (trim) {
-      lines.push('Комплектация: ' + trim.name);
+      lines.push('Комплектация: ' + ruDisplayTrimName(trim));
       lines.push('Ориентир цены: ' + ruCleanPrice(trim.msrp || trim.price));
     }
     lines.push('Пожалуйста, отправьте актуальную экспортную цену, наличие, варианты порта и документы.');
@@ -1287,7 +1294,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       var t = data.trims[i];
       var price = ruCleanPrice(t.msrp || t.price);
       h += '<button type="button" class="config-card config-consult-card" onclick="showRuContactChoice(' + i + ')">';
-      h += '<div class="config-row1"><span class="name">' + escHtml(t.name) + '</span><span class="msrp"><em>Цена</em>' + escHtml(price) + '</span></div>';
+      h += '<div class="config-row1"><span class="name">' + escHtml(ruDisplayTrimName(t)) + '</span><span class="msrp"><em>Цена</em>' + escHtml(price) + '</span></div>';
       h += '<div class="config-btn-row">';
       h += '<span class="config-btn">Запросить в WhatsApp</span>';
       h += '</div></button>';
