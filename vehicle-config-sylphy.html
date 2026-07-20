@@ -45,6 +45,7 @@ h1{margin:0;font-size:28px;line-height:1.18;color:#111827}
 .contact-choice span{display:block;margin-top:3px;font-size:12px;font-weight:600;opacity:.88}
 @media(max-width:720px){.contact-overlay{padding:8px}.contact-choice-grid{grid-template-columns:1fr}}
 </style>
+<script defer src="analytics-events.js"></script>
 </head>
 <body>
 <header class="viewer-header">
@@ -90,7 +91,21 @@ h1{margin:0;font-size:28px;line-height:1.18;color:#111827}
   </div>
 </div>
 <script>
+var sylphyParams = new URLSearchParams(location.search);
+window.chemnitzConsultationContext = {
+  model_name: 'Nissan Sylphy',
+  trim_name: 'Nissan Sylphy 2026 Classic 1.6L CVT',
+  guide_price: '79,900',
+  page_language: sylphyParams.get('lang') || document.documentElement.lang || 'en',
+  source_page: sylphyParams.get('from') || location.pathname
+};
 function openWhatsAppChooser(){
+  if (window.chemnitzSetConsultationContext) {
+    window.chemnitzSetConsultationContext(window.chemnitzConsultationContext);
+  }
+  if (window.chemnitzTrack) {
+    window.chemnitzTrack('preorder_contact_choice', window.chemnitzConsultationContext);
+  }
   document.getElementById('contact-overlay').classList.add('open');
 }
 function closeWhatsAppChooser(){

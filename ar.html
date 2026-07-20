@@ -10,20 +10,9 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-PEL4QMFR44');
-window.chemnitzTrack = function(eventName, params){
-  if (typeof gtag === 'function') gtag('event', eventName, params || {});
-};
-document.addEventListener('click', function(e){
-  var wa = e.target.closest('a[href*="wa.me"]');
-  if (wa) chemnitzTrack('whatsapp_click', {link_url: wa.href, link_text: (wa.textContent || '').trim().slice(0, 100)});
-  var card = e.target.closest('.model-card');
-  if (card) chemnitzTrack('model_card_click', {model: card.getAttribute('data-title') || (card.textContent || '').trim().slice(0, 80)});
-  var priceOption = e.target.closest('.config-menu-option, .config-option');
-  if (priceOption) chemnitzTrack('guide_price_select', {model: window.currentConfigModel || '', option_text: (priceOption.textContent || '').trim().slice(0, 120)});
-  var order = e.target.closest('.config-order-btn, .config-btn');
-  if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
-});
+
 </script>
+<script defer src="analytics-events.js"></script>
 <title>استيراد سيارات من الصين | Toyota وNissan | Hangzhou Chemnitz</title>
 <meta name="twitter:description" content="Hangzhou Chemnitz مصدر سيارات صيني مرخص يوفر سيارات جديدة ومركبات خاصة مع وثائق تصدير وتسليم FOB في الموانئ الصينية.">
 <meta name="twitter:title" content="استيراد سيارات من الصين — Toyota وNissan وFOB">
@@ -532,7 +521,16 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   window.openContactChoice=function(topic){
     var overlay=document.getElementById('contact-choice-overlay');
     var text=consultText(topic);
-    if(window.chemnitzTrack) window.chemnitzTrack('preorder_contact_choice',{model:topic||''});
+    var trackingContext={
+      model_name:topic||'',
+      trim_name:'',
+      guide_price:'',
+      page_language:'ar',
+      source_page:location.pathname
+    };
+    window.chemnitzConsultationContext=trackingContext;
+    if(window.chemnitzSetConsultationContext) window.chemnitzSetConsultationContext(trackingContext);
+    if(window.chemnitzTrack) window.chemnitzTrack('preorder_contact_choice',trackingContext);
     var h='<div class="contact-choice-modal"><div class="contact-choice-bar"><span>WhatsApp</span><button type="button" class="contact-choice-close" onclick="closeContactChoice()">&times;</button></div><div class="contact-choice-grid">';
     for(var i=0;i<contacts.length;i++){
       var c=contacts[i];

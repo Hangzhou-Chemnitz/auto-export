@@ -10,20 +10,9 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-PEL4QMFR44');
-window.chemnitzTrack = function(eventName, params){
-  if (typeof gtag === 'function') gtag('event', eventName, params || {});
-};
-document.addEventListener('click', function(e){
-  var wa = e.target.closest('a[href*="wa.me"]');
-  if (wa) chemnitzTrack('whatsapp_click', {link_url: wa.href, link_text: (wa.textContent || '').trim().slice(0, 100)});
-  var card = e.target.closest('.model-card');
-  if (card) chemnitzTrack('model_card_click', {model: card.getAttribute('data-title') || (card.textContent || '').trim().slice(0, 80)});
-  var priceOption = e.target.closest('.config-menu-option, .config-option');
-  if (priceOption) chemnitzTrack('guide_price_select', {model: window.currentConfigModel || '', option_text: (priceOption.textContent || '').trim().slice(0, 120)});
-  var order = e.target.closest('.config-order-btn, a.config-btn, .config-consult-card, .contact-choice-link');
-  if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
-});
+
 </script>
+<script defer src="analytics-events.js"></script>
 <title>Каталог авто из Китая | Toyota Nissan Volkswagen | Hangzhou Chemnitz</title>
 <meta name="description" content="Каталог экспортных моделей из Китая: Toyota RAV4, Camry, Highlander, Corolla, Nissan Sylphy, Qashqai, X-Trail, Volkswagen, Geely, Kia, Hyundai, BMW и Audi. Запросите цены FOB и экспортные документы.">
 <meta name="keywords" content="каталог авто из Китая, Toyota из Китая, Nissan из Китая, Volkswagen из Китая, Toyota RAV4 экспорт, Toyota Camry экспорт, Nissan Sylphy экспорт, Nissan Qashqai экспорт, FOB Китай, экспортные документы, авто из Китая оптом">
@@ -1288,12 +1277,19 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   function openConsultation(modelName, trim) {
     var overlay = document.getElementById('config-overlay');
     var text = consultationText(modelName, trim);
+    var trackingContext = {
+      model_name: modelName || '',
+      trim_name: trim ? displayTrimName(trim) : '',
+      guide_price: trim ? cleanPrice(trim.price || trim.msrp) : '',
+      page_language: document.documentElement.lang || 'ru',
+      source_page: location.pathname
+    };
+    window.chemnitzConsultationContext = trackingContext;
+    if (window.chemnitzSetConsultationContext) {
+      window.chemnitzSetConsultationContext(trackingContext);
+    }
     if (window.chemnitzTrack) {
-      window.chemnitzTrack('preorder_contact_choice', {
-        model: modelName || '',
-        trim: trim ? trim.name : '',
-        guide_price: trim ? cleanPrice(trim.price || trim.msrp) : ''
-      });
+      window.chemnitzTrack('preorder_contact_choice', trackingContext);
     }
     var h = '';
     h += '<div class="config-modal contact-choice-modal">';

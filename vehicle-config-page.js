@@ -413,10 +413,39 @@
     });
   }
   var message='Hello, I want to consult '+(page.title||'this vehicle')+'.';
+  var queryParams=new URLSearchParams(location.search);
+  var configModelNames={
+    'vehicle-config-bz3.html':'Toyota bZ3',
+    'vehicle-config-camry.html':'Toyota Camry',
+    'vehicle-config-corolla-cross.html':'Toyota Corolla Cross',
+    'vehicle-config-corolla.html':'Toyota Corolla',
+    'vehicle-config-granvia.html':'Toyota Granvia',
+    'vehicle-config-highlander.html':'Toyota Highlander',
+    'vehicle-config-nx8.html':'Nissan NX8',
+    'vehicle-config-qashqai.html':'Nissan Qashqai',
+    'vehicle-config-rav4.html':'Toyota RAV4',
+    'vehicle-config-wildlander.html':'Toyota Wildlander',
+    'vehicle-config-xtrail.html':'Nissan X-Trail'
+  };
+  window.chemnitzConsultationContext={
+    model_name:configModelNames[filename]||'',
+    trim_name:page.title||'',
+    guide_price:page.price||'',
+    page_language:queryParams.get('lang')||document.documentElement.lang||'en',
+    source_page:queryParams.get('from')||location.pathname
+  };
+  if(window.chemnitzSetConsultationContext){
+    window.chemnitzSetConsultationContext(window.chemnitzConsultationContext);
+  }
   document.querySelectorAll('[data-wa-number]').forEach(function(link){
     link.href='https://wa.me/'+link.getAttribute('data-wa-number')+'?text='+encodeURIComponent(message);
   });
-  window.openWhatsAppChooser=function(){if(modal) modal.classList.add('open')};
+  window.openWhatsAppChooser=function(){
+    if(window.chemnitzTrack){
+      window.chemnitzTrack('preorder_contact_choice',window.chemnitzConsultationContext);
+    }
+    if(modal) modal.classList.add('open');
+  };
   window.closeWhatsAppChooser=function(){if(modal) modal.classList.remove('open')};
   if(modal) modal.addEventListener('click',function(event){if(event.target===modal) window.closeWhatsAppChooser()});
 })();
