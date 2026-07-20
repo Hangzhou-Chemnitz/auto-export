@@ -6,10 +6,18 @@
     '73625': '2025 Honor 2.0L CVT XV+ Leading',
     '73627': '2025 Honor 2.0L FWD Leading',
     '76642': '2026 Range-Extended 310 Max',
+    '66470': 'bZ3 2024 517km Elite PRO',
 
     '74683': 'RAV4 2026 2.0L Gasoline AWD',
     '75765': 'RAV4 2026 2.0L Hybrid FWD',
     '74690': 'RAV4 2026 2.5L Hybrid AWD Flagship',
+
+    '76042': 'Corolla 2026 1.2T Pioneer',
+    '76043': 'Corolla 2026 1.2T Elite',
+    '76041': 'Corolla 2026 1.8L Hybrid Pioneer',
+    '76028': 'Corolla 2026 1.8L Hybrid Elite',
+    '75827': 'Corolla 2026 1.8L Hybrid Flagship',
+    '74685': 'Corolla 2026 2.0L Gasoline Elite',
 
     '75436': 'Corolla Cross 2026 2.0L Gasoline Elite',
     '75437': 'Corolla Cross 2026 2.0L Gasoline',
@@ -42,7 +50,15 @@
     '77199': '2026 Hybrid 2.0HXS Radiance (Matte Gold)',
     '74008': '2026 Hybrid 2.0HXS Radiance (Matte Gray)',
     '74010': '2026 Hybrid 2.5HXS Sport Plus',
-    '74011': '2026 Hybrid 2.5HQ Flagship'
+    '74011': '2026 Hybrid 2.5HQ Flagship',
+
+    '78248': 'Granvia 2027 2.5L Hybrid Comfort PLUS',
+    '78249': 'Granvia 2027 2.5L Hybrid Premium PLUS',
+    '78251': 'Granvia 2027 2.5L Hybrid Prestige ULTRA',
+    '78253': 'Granvia 2027 2.5L Hybrid Premium MAX AWD',
+    '78254': 'Granvia 2027 2.5L Hybrid Prestige ULTRA AWD',
+    '78250': 'Granvia 2027 2.5L Hybrid Premium Welcab PLUS',
+    '78252': 'Granvia 2027 2.5L Hybrid Flagship ULTRA'
   };
 
   var MODEL_NAMES = [
@@ -56,6 +72,7 @@
     ['奇骏', 'X-Trail'],
     ['铂智3X', 'bZ3X'],
     ['锋兰达', 'Frontlander'],
+    ['威兰达', 'Wildlander'],
     ['格瑞维亚', 'Granvia'],
     ['缤越', 'Coolray'],
     ['狮铂拓界', 'Sportage'],
@@ -212,6 +229,7 @@
       ['Gasoline', 'Бензин'],
       ['Diesel', 'Дизель'],
       ['Flagship', 'Флагман'],
+      ['Prestige', 'Престиж'],
       ['Premium', 'Премиум'],
       ['Luxury', 'Люкс'],
       ['Elite', 'Элитная'],
@@ -260,6 +278,7 @@
       ['Gasoline', 'بنزين'],
       ['Diesel', 'ديزل'],
       ['Flagship', 'الفئة الرائدة'],
+      ['Prestige', 'بريستيج'],
       ['Premium', 'بريميوم'],
       ['Luxury', 'فاخرة'],
       ['Elite', 'فئة النخبة'],

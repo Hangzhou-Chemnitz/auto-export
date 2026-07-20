@@ -270,7 +270,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 
 </style>
-<script src="trim-localization.js?v=20260716"></script>
+<script src="trim-localization.js?v=20260720b"></script>
 </head>
 <body>
 
@@ -408,7 +408,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       </div>
     </div>
     <div class="catalog-actions">
-      <a class="catalog-link" href="models-ru.html?v=20260702#models">Больше моделей</a>
+      <a class="catalog-link" href="models-ru.html?v=20260702#models" target="_blank" rel="noopener noreferrer">Больше моделей</a>
       <span class="catalog-note">Полный каталог по брендам и комплектациям</span>
     </div>
   </div>
@@ -1226,6 +1226,17 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       ]
     }
   };
+
+  configData["Toyota Granvia"] = { source: "Autohome", seriesId: 6672, trims: [
+    { name: "格瑞维亚 2027款 2.5L混动 舒适PLUS版", price: "Цена: 299,800", source: "Autohome", specid: 78248 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊贵PLUS版", price: "Цена: 349,800", source: "Autohome", specid: 78249 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊爵ULTRA版", price: "Цена: 365,800", source: "Autohome", specid: 78251 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊贵MAX四驱版", price: "Цена: 365,800", source: "Autohome", specid: 78253 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊爵ULTRA四驱版", price: "Цена: 379,800", source: "Autohome", specid: 78254 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊贵福祉PLUS版", price: "Цена: 385,800", source: "Autohome", specid: 78250 },
+    { name: "格瑞维亚 2027款 2.5L混动 旗舰ULTRA版", price: "Цена: 399,800", source: "Autohome", specid: 78252 }
+  ] };
+
   function escHtml(value) {
     return String(value || '').replace(/[&<>"']/g, function(ch) {
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];

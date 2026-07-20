@@ -5,8 +5,12 @@
     'vehicle-config-xtrail.html':{pdf:'documents/nissan-xtrail-2025-leading-config.pdf',dir:'documents/xtrail-config-pages',pages:8},
     'vehicle-config-nx8.html':{pdf:'documents/nissan-nx8-2026-310-max-config.pdf',dir:'documents/nx8-config-pages',pages:8},
     'vehicle-config-rav4.html':{pdf:'documents/toyota-rav4-2026-2l-awd-config.pdf',dir:'documents/rav4-config-pages',pages:8},
+    'vehicle-config-corolla.html':{pdf:'documents/toyota-corolla-2026-1-2t-118800-config.pdf',dir:'documents/corolla-1-2t-118800-config-pages',pages:7},
+    'vehicle-config-wildlander.html':{pdf:'documents/toyota-wildlander-2026-2l-gasoline-169800-config.pdf',dir:'documents/wildlander-gasoline-169800-config-pages',pages:8},
+    'vehicle-config-bz3.html':{pdf:'documents/toyota-bz3-2024-517km-elite-pro-169800-config.pdf',dir:'documents/bz3-169800-config-pages',pages:8},
     'vehicle-config-camry.html':{pdf:'documents/toyota-camry-2026-hybrid-2l-elite-config.pdf',dir:'documents/camry-config-pages'},
     'vehicle-config-highlander.html':{pdf:'documents/toyota-highlander-2026-380t-awd-7seat-config.pdf',dir:'documents/highlander-config-pages',pages:7},
+    'vehicle-config-granvia.html':{pdf:'documents/toyota-granvia-2027-hybrid-2-5l-comfort-plus-299800-config.pdf',dir:'documents/granvia-299800-config-pages',pages:8},
     'vehicle-config-corolla-cross.html':{pdf:'documents/toyota-corolla-cross-2026-2l-gasoline-136800-config.pdf',dir:'documents/corolla-cross-gasoline-136800-config-pages',pages:7}
   };
   var camryVariants={
@@ -45,6 +49,82 @@
       price:'228,800',
       pdf:'documents/toyota-rav4-2026-hybrid-2-5l-awd-228800-config.pdf',
       dir:'documents/rav4-hybrid-228800-config-pages'
+    }
+  };
+  var corollaVariants={
+    '76042':{
+      title:'Toyota Corolla 2026 1.2T Pioneer',
+      price:'118,800',
+      pdf:'documents/toyota-corolla-2026-1-2t-118800-config.pdf',
+      dir:'documents/corolla-1-2t-118800-config-pages'
+    },
+    '76043':{
+      title:'Toyota Corolla 2026 1.2T Elite',
+      price:'124,800',
+      pdf:'documents/toyota-corolla-2026-1-2t-124800-config.pdf',
+      dir:'documents/corolla-1-2t-124800-config-pages'
+    },
+    '76041':{
+      title:'Toyota Corolla 2026 1.8L Hybrid Pioneer',
+      price:'126,800',
+      pdf:'documents/toyota-corolla-2026-hybrid-1-8l-126800-config.pdf',
+      dir:'documents/corolla-hybrid-1-8l-126800-config-pages'
+    },
+    '76028':{
+      title:'Toyota Corolla 2026 1.8L Hybrid Elite',
+      price:'136,800',
+      pdf:'documents/toyota-corolla-2026-hybrid-1-8l-136800-config.pdf',
+      dir:'documents/corolla-hybrid-1-8l-136800-config-pages'
+    },
+    '75827':{
+      title:'Toyota Corolla 2026 1.8L Hybrid Flagship',
+      price:'146,800',
+      pdf:'documents/toyota-corolla-2026-hybrid-1-8l-146800-config.pdf',
+      dir:'documents/corolla-hybrid-1-8l-146800-config-pages'
+    },
+    '74685':{
+      title:'Toyota Corolla 2026 2.0L Gasoline Elite',
+      price:'149,800',
+      pdf:'documents/toyota-corolla-2026-2l-gasoline-149800-config.pdf',
+      dir:'documents/corolla-2l-gasoline-149800-config-pages'
+    }
+  };
+  var wildlanderVariants={
+    '75768':{
+      title:'Toyota Wildlander 2026 2.0L Gasoline AIR',
+      price:'169,800',
+      pdf:'documents/toyota-wildlander-2026-2l-gasoline-169800-config.pdf',
+      dir:'documents/wildlander-gasoline-169800-config-pages'
+    },
+    '75769':{
+      title:'Toyota Wildlander 2026 2.0L Gasoline PRO',
+      price:'181,800',
+      pdf:'documents/toyota-wildlander-2026-2l-gasoline-181800-config.pdf',
+      dir:'documents/wildlander-gasoline-181800-config-pages'
+    },
+    '75770':{
+      title:'Toyota Wildlander 2026 2.0L Gasoline PRO+',
+      price:'191,800',
+      pdf:'documents/toyota-wildlander-2026-2l-gasoline-191800-config.pdf',
+      dir:'documents/wildlander-gasoline-191800-config-pages'
+    },
+    '75771':{
+      title:'Toyota Wildlander 2026 Hybrid 2.0L AIR',
+      price:'179,800',
+      pdf:'documents/toyota-wildlander-2026-hybrid-2l-179800-config.pdf',
+      dir:'documents/wildlander-hybrid-179800-config-pages'
+    },
+    '75772':{
+      title:'Toyota Wildlander 2026 Hybrid 2.0L PRO',
+      price:'189,800',
+      pdf:'documents/toyota-wildlander-2026-hybrid-2l-189800-config.pdf',
+      dir:'documents/wildlander-hybrid-189800-config-pages'
+    },
+    '74158':{
+      title:'Toyota Wildlander 2026 Hybrid 2.0L PRO+',
+      price:'199,800',
+      pdf:'documents/toyota-wildlander-2026-hybrid-2l-199800-config.pdf',
+      dir:'documents/wildlander-hybrid-199800-config-pages'
     }
   };
   var corollaCrossVariants={
@@ -135,8 +215,88 @@
       dir:'documents/highlander-325800-config-pages'
     }
   };
+  var granviaVariants={
+    '78248':{
+      title:'Toyota Granvia 2027 Hybrid 2.5L Comfort PLUS',
+      price:'299,800',
+      pdf:'documents/toyota-granvia-2027-hybrid-2-5l-comfort-plus-299800-config.pdf',
+      dir:'documents/granvia-299800-config-pages'
+    },
+    '78249':{
+      title:'Toyota Granvia 2027 Hybrid 2.5L Premium PLUS',
+      price:'349,800',
+      pdf:'documents/toyota-granvia-2027-hybrid-2-5l-premium-plus-349800-config.pdf',
+      dir:'documents/granvia-349800-config-pages'
+    },
+    '78251':{
+      title:'Toyota Granvia 2027 Hybrid 2.5L Prestige ULTRA',
+      price:'365,800',
+      pdf:'documents/toyota-granvia-2027-hybrid-2-5l-prestige-ultra-365800-config.pdf',
+      dir:'documents/granvia-prestige-ultra-365800-config-pages'
+    },
+    '78253':{
+      title:'Toyota Granvia 2027 Hybrid 2.5L Premium MAX AWD',
+      price:'365,800',
+      pdf:'documents/toyota-granvia-2027-hybrid-2-5l-premium-max-awd-365800-config.pdf',
+      dir:'documents/granvia-premium-max-awd-365800-config-pages'
+    },
+    '78254':{
+      title:'Toyota Granvia 2027 Hybrid 2.5L Prestige ULTRA AWD',
+      price:'379,800',
+      pdf:'documents/toyota-granvia-2027-hybrid-2-5l-prestige-ultra-awd-379800-config.pdf',
+      dir:'documents/granvia-prestige-ultra-awd-379800-config-pages'
+    },
+    '78250':{
+      title:'Toyota Granvia 2027 Hybrid 2.5L Premium Welcab PLUS',
+      price:'385,800',
+      pdf:'documents/toyota-granvia-2027-hybrid-2-5l-premium-welcab-plus-385800-config.pdf',
+      dir:'documents/granvia-premium-welcab-plus-385800-config-pages'
+    },
+    '78252':{
+      title:'Toyota Granvia 2027 Hybrid 2.5L Flagship ULTRA',
+      price:'399,800',
+      pdf:'documents/toyota-granvia-2027-hybrid-2-5l-flagship-ultra-399800-config.pdf',
+      dir:'documents/granvia-flagship-ultra-399800-config-pages'
+    }
+  };
   var filename=location.pathname.split('/').pop();
   var route=routes[filename];
+  function resolveBackLink(){
+    var params=new URLSearchParams(location.search);
+    var source=params.get('from');
+    var language=params.get('lang')||'en';
+    var targets={
+      en:{home:'index.html#models',models:'models.html#models'},
+      fr:{home:'fr.html#models',models:'models-fr.html#models'},
+      ru:{home:'ru.html#models',models:'models-ru.html#models'},
+      ar:{home:'ar.html#models',models:'models-ar.html#models'}
+    };
+    if(targets[language]&&(source==='home'||source==='models')){
+      return targets[language][source];
+    }
+
+    if(document.referrer){
+      try{
+        var referrerFile=new URL(document.referrer).pathname.split('/').pop();
+        var referrerTargets={
+          '':'index.html#models',
+          'index.html':'index.html#models',
+          'fr.html':'fr.html#models',
+          'ru.html':'ru.html#models',
+          'ar.html':'ar.html#models',
+          'models.html':'models.html#models',
+          'models-fr.html':'models-fr.html#models',
+          'models-ru.html':'models-ru.html#models',
+          'models-ar.html':'models-ar.html#models'
+        };
+        if(Object.prototype.hasOwnProperty.call(referrerTargets,referrerFile)){
+          return referrerTargets[referrerFile];
+        }
+      }catch(error){}
+    }
+
+    return 'index.html#models';
+  }
   if(filename==='vehicle-config-rav4.html'){
     var rav4Specid=new URLSearchParams(location.search).get('specid')||'74683';
     var rav4Variant=rav4Variants[rav4Specid]||rav4Variants['74683'];
@@ -144,6 +304,22 @@
     page.title=rav4Variant.title;
     page.price=rav4Variant.price;
     page.summary='Selected guide-price configuration for Toyota RAV4 FOB export consultation.';
+  }
+  if(filename==='vehicle-config-corolla.html'){
+    var corollaSpecid=new URLSearchParams(location.search).get('specid')||'76042';
+    var corollaVariant=corollaVariants[corollaSpecid]||corollaVariants['76042'];
+    route={pdf:corollaVariant.pdf,dir:corollaVariant.dir,pages:7};
+    page.title=corollaVariant.title;
+    page.price=corollaVariant.price;
+    page.summary='Selected guide-price configuration for Toyota Corolla FOB export consultation.';
+  }
+  if(filename==='vehicle-config-wildlander.html'){
+    var wildlanderSpecid=new URLSearchParams(location.search).get('specid')||'75768';
+    var wildlanderVariant=wildlanderVariants[wildlanderSpecid]||wildlanderVariants['75768'];
+    route={pdf:wildlanderVariant.pdf,dir:wildlanderVariant.dir,pages:8};
+    page.title=wildlanderVariant.title;
+    page.price=wildlanderVariant.price;
+    page.summary='Selected guide-price configuration for Toyota Wildlander FOB export consultation.';
   }
   if(filename==='vehicle-config-camry.html'){
     var specid=new URLSearchParams(location.search).get('specid')||'74001';
@@ -169,6 +345,14 @@
     page.price=highlanderVariant.price;
     page.summary='Selected guide-price configuration for Toyota Highlander FOB export consultation.';
   }
+  if(filename==='vehicle-config-granvia.html'){
+    var granviaSpecid=new URLSearchParams(location.search).get('specid')||'78248';
+    var granviaVariant=granviaVariants[granviaSpecid]||granviaVariants['78248'];
+    route={pdf:granviaVariant.pdf,dir:granviaVariant.dir,pages:8};
+    page.title=granviaVariant.title;
+    page.price=granviaVariant.price;
+    page.summary='Selected guide-price configuration for Toyota Granvia FOB export consultation.';
+  }
   var title=document.getElementById('vehicle-title');
   var price=document.getElementById('vehicle-price');
   var summary=document.getElementById('vehicle-summary');
@@ -179,7 +363,7 @@
   if(title) title.textContent=page.title||'';
   if(price) price.textContent='Guide price: RMB '+(page.price||'TBD')+' · FOB export consultation';
   if(summary) summary.textContent=page.summary||'Configuration summary for export consultation.';
-  if(backLink) backLink.href=page.backLink||'index.html#models';
+  if(backLink) backLink.href=resolveBackLink();
   if(route){
     var nav=document.querySelector('.viewer-actions');
     var consultButton=nav&&nav.querySelector('.primary');

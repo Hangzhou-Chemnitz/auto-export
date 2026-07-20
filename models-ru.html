@@ -553,7 +553,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 @media(max-width:640px){.config-overlay{padding:8px}.config-card-head,.config-action{flex-direction:column;align-items:stretch}.config-card-price{text-align:center}.config-body{padding:12px}.config-intro{font-size:0.82em}}
 
 </style>
-<script src="trim-localization.js?v=20260716"></script>
+<script src="trim-localization.js?v=20260720b"></script>
 </head>
 <body>
 
@@ -1090,6 +1090,14 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     return ["Price: 189,800", "Price: 187,800", "Price: 228,800"].indexOf(trim.price) !== -1;
   });
 
+  configData["Toyota Corolla"].trims = configData["Toyota Corolla"].trims.filter(function(trim) {
+    return [76042, 76043, 76041, 76028, 75827, 74685].indexOf(trim.specid) !== -1;
+  });
+
+  configData["Toyota Wildlander"].trims = configData["Toyota Wildlander"].trims.filter(function(trim) {
+    return [75768, 75769, 75770, 75771, 75772, 74158].indexOf(trim.specid) !== -1;
+  });
+
   configData["Toyota Corolla Cross"] = { source: "Autohome", seriesId: 6428, trims: [
     { name: "锐放 2026款 2.0L 精英", price: "Price: 136,800", source: "Autohome", specid: 75436 },
     { name: "锐放 2026款 2.0L", price: "Price: 149,800", source: "Autohome", specid: 75437 },
@@ -1110,6 +1118,15 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     { name: "2026款 2.5L智能电混双擎四驱至尊版 7座", price: "Price: 325,800", source: "Autohome", specid: 74941 }
   ] };
 
+  configData["Toyota Frontlander"] = { source: "Autohome", seriesId: 6414, trims: [
+    { name: "锋兰达 2026款 2.0L 汽油 AIR", price: "Price: 169,800", source: "Autohome", specid: 75768 },
+    { name: "锋兰达 2026款 2.0L 汽油 PRO", price: "Price: 181,800", source: "Autohome", specid: 75769 },
+    { name: "锋兰达 2026款 2.0L 汽油 PRO+", price: "Price: 191,800", source: "Autohome", specid: 75770 },
+    { name: "锋兰达 2026款 2.0L 智能电混双擎 AIR", price: "Price: 179,800", source: "Autohome", specid: 75771 },
+    { name: "锋兰达 2026款 2.0L 智能电混双擎 PRO", price: "Price: 189,800", source: "Autohome", specid: 75772 },
+    { name: "锋兰达 2026款 2.0L 智能电混双擎 PRO+", price: "Price: 199,800", source: "Autohome", specid: 74158 }
+  ] };
+
   configData["Toyota Camry"] = { source: "Autohome", seriesId: 110, trims: [
     { name: "2026款 2.0E 精英版", price: "Price: 171,800", source: "Autohome", specid: 73997 },
     { name: "2026款 2.0GVP 豪华版", price: "Price: 181,800", source: "Autohome", specid: 73998 },
@@ -1127,6 +1144,16 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     { name: "2026款 双擎 2.0HXS 光辉版（磨砂灰）", price: "Price: 211,800", source: "Autohome", specid: 74008 },
     { name: "2026款 双擎 2.5HXS 运动Plus版", price: "Price: 226,800", source: "Autohome", specid: 74010 },
     { name: "2026款 双擎 2.5HQ 旗舰版", price: "Price: 259,800", source: "Autohome", specid: 74011 }
+  ] };
+
+  configData["Toyota Granvia"] = { source: "Autohome", seriesId: 6672, trims: [
+    { name: "格瑞维亚 2027款 2.5L混动 舒适PLUS版", price: "Price: 299,800", source: "Autohome", specid: 78248 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊贵PLUS版", price: "Price: 349,800", source: "Autohome", specid: 78249 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊爵ULTRA版", price: "Price: 365,800", source: "Autohome", specid: 78251 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊贵MAX四驱版", price: "Price: 365,800", source: "Autohome", specid: 78253 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊爵ULTRA四驱版", price: "Price: 379,800", source: "Autohome", specid: 78254 },
+    { name: "格瑞维亚 2027款 2.5L混动 尊贵福祉PLUS版", price: "Price: 385,800", source: "Autohome", specid: 78250 },
+    { name: "格瑞维亚 2027款 2.5L混动 旗舰ULTRA版", price: "Price: 399,800", source: "Autohome", specid: 78252 }
   ] };
 
   function cleanPrice(price) {
@@ -1153,6 +1180,16 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     }[specid]) {
       return 'vehicle-config-rav4.html?specid=' + specid;
     }
+    if (modelName === 'Toyota Corolla' && {
+      '76042': 1, '76043': 1, '76041': 1, '76028': 1, '75827': 1, '74685': 1
+    }[specid]) {
+      return 'vehicle-config-corolla.html?specid=' + specid;
+    }
+    if ((modelName === 'Toyota Wildlander' || modelName === 'Toyota Frontlander') && {
+      '75768': 1, '75769': 1, '75770': 1, '75771': 1, '75772': 1, '74158': 1
+    }[specid]) {
+      return 'vehicle-config-wildlander.html?specid=' + specid;
+    }
     if (modelName === 'Toyota Corolla Cross' && {
       '75436': 1, '75437': 1, '75353': 1, '75354': 1, '73837': 1
     }[specid]) {
@@ -1163,6 +1200,15 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       '74938': 1, '74939': 1, '74940': 1, '74941': 1
     }[specid]) {
       return 'vehicle-config-highlander.html?specid=' + specid;
+    }
+    if (modelName === 'Toyota Granvia' && {
+      '78248': 1, '78249': 1, '78250': 1, '78251': 1,
+      '78252': 1, '78253': 1, '78254': 1
+    }[specid]) {
+      return 'vehicle-config-granvia.html?specid=' + specid;
+    }
+    if (modelName === 'Toyota bZ3' && specid === '66470') {
+      return 'vehicle-config-bz3.html?specid=' + specid;
     }
     var configPages = {
       '73625': 'vehicle-config-qashqai.html',
@@ -1383,7 +1429,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     if (overlay) overlay.classList.remove('open');
     closeConfigPicker();
     if (sheetUrl) {
-      window.location.href = sheetUrl;
+      var separator = sheetUrl.indexOf('?') === -1 ? '?' : '&';
+      window.location.href = sheetUrl + separator + 'from=models&lang=ru';
       return;
     }
     openConsultation(modelName, t);
