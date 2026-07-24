@@ -60,6 +60,12 @@
     };
   }
 
+  function configurationContext(context) {
+    var normalized = normalizedContext(context);
+    if (!normalized.contact_name) normalized.contact_name = 'not_selected';
+    return normalized;
+  }
+
   window.chemnitzConsultationContext = normalizedContext(window.chemnitzConsultationContext);
 
   window.chemnitzSetConsultationContext = function (context) {
@@ -129,7 +135,7 @@
     var pdfLink = event.target.closest('a[href$=".pdf"], a[href*=".pdf?"]');
     if (pdfLink) {
       window.chemnitzTrack('config_pdf_open', Object.assign(
-        normalizedContext(window.chemnitzConsultationContext),
+        configurationContext(window.chemnitzConsultationContext),
         { link_url: clean(pdfLink.href, 200) }
       ));
       return;
@@ -195,7 +201,7 @@
       page_language: params.get('lang') || pageLanguage(),
       source_page: params.get('from') || window.location.pathname
     });
-    window.chemnitzTrack('config_sheet_view', context);
+    window.chemnitzTrack('config_sheet_open', configurationContext(context));
   }
 
   if (document.readyState === 'loading') {

@@ -219,6 +219,11 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .contact-choice-link{display:block;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;padding:12px 14px;font-weight:800;line-height:1.3;box-shadow:0 8px 22px rgba(37,211,102,0.18);transition:all .18s}
 .contact-choice-link:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(37,211,102,0.25)}
 .contact-choice-link span{display:block;font-size:0.78em;font-weight:600;opacity:.86;margin-top:2px}
+.nissan-guide-list{display:grid;gap:8px;padding:14px;max-height:min(66vh,520px);overflow:auto;direction:rtl}
+.nissan-guide-option{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:11px 12px;text-align:right;cursor:pointer;color:#111827;direction:rtl}
+.nissan-guide-option:hover{border-color:#ef4444;background:#fff7f7}
+.nissan-guide-option span{font-size:.82em;line-height:1.35;color:#475569}
+.nissan-guide-option strong{flex:0 0 auto;color:#b91c1c;font-size:.88em;direction:ltr}
 footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#f8fafc;border-top:1px solid #e2e8f0}
 .lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
 .lb-overlay.open{display:flex}
@@ -233,12 +238,13 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .lb-next{left:20px}
 @media(max-width:640px){.lb-nav{font-size:28px;padding:8px 12px}.lb-prev{right:8px}.lb-next{left:8px}}
 </style>
-<script src="trim-localization.js?v=20260720b"></script>
+<script src="trim-localization.js?v=20260723g"></script>
+<script src="nissan-2026-data.js?v=20260723c"></script>
 </head>
 <body>
 
 <div style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
-  <a href="index.html" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> &nbsp;|&nbsp;
+  <a href="/" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> &nbsp;|&nbsp;
   <a href="ru.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Русский</a> &nbsp;|&nbsp;
   <strong>العربية</strong> &nbsp;|&nbsp;
   <a href="fr.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Français</a>
@@ -336,6 +342,18 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <h2>نماذج التصدير الرئيسية</h2>
     <p class="lead">تركيز على Nissan، مع نماذج Toyota عالية الطلب لأسواق التصدير<br><span>Nissan · Toyota · استشارة في المواصفات</span></p>
     <div class="model-grid featured-grid">
+      <div class="model-card" data-base="images/nissan/teana/" data-prefix="" data-count="8" data-title="Nissan Teana">
+        <div class="card-img" style="background-image:url('images/nissan/teana/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-body"><h4>Nissan Teana</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan Teana');return false;">استشارة</a><div class="info">٨ صور</div></div>
+      </div>
+      <div class="model-card" data-base="images/nissan/n7/" data-prefix="" data-count="8" data-title="Nissan N7">
+        <div class="card-img" style="background-image:url('images/nissan/n7/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-body"><h4>Nissan N7</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan N7');return false;">استشارة</a><div class="info">٨ صور</div></div>
+      </div>
+      <div class="model-card" data-base="images/nissan/n6/" data-prefix="" data-count="8" data-title="Nissan N6">
+        <div class="card-img" style="background-image:url('images/nissan/n6/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-body"><h4>Nissan N6</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan N6');return false;">استشارة</a><div class="info">٨ صور</div></div>
+      </div>
       <div class="model-card" data-base="images/nissan/sylphy/" data-prefix="" data-count="8" data-title="Nissan Sylphy">
         <div class="card-img" style="background-image:url('images/nissan/sylphy/1.jpg')"><span class="badge">سيدان</span></div>
         <div class="card-body"><h4>Nissan Sylphy</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan Sylphy');return false;">استشارة</a><div class="info">٨ صور</div></div>
@@ -516,15 +534,33 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     {label:'Jacky',display:'+86 138 26126147',wa:'8613826126147'}
   ];
   function esc(value){return String(value||'').replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});}
-  function consultText(topic){return 'Hello, I want to consult about '+(topic||'vehicles')+'.\nPlease send current export price, availability, port options, and documents.';}
+  function trimName(trim){return window.ChemnitzTrimI18n?window.ChemnitzTrimI18n.trim(trim.name||'',trim.specid,'ar'):(trim.name||'');}
+  function consultText(topic,trim){
+    var lines=['مرحبا، أود الاستفسار عن '+(topic||'السيارات')+'.'];
+    if(trim){lines.push('الفئة: '+trimName(trim));lines.push('السعر الإرشادي: RMB '+trim.price);}
+    lines.push('يرجى إرسال سعر التصدير الحالي والتوفر وخيارات الميناء والمستندات.');
+    return lines.join('\n');
+  }
   window.closeContactChoice=function(){document.getElementById('contact-choice-overlay').classList.remove('open');};
-  window.openContactChoice=function(topic){
+  window.openContactChoice=function(topic,trimIndex){
     var overlay=document.getElementById('contact-choice-overlay');
-    var text=consultText(topic);
+    var data=window.ChemnitzNissan2026&&window.ChemnitzNissan2026[topic];
+    if(data&&typeof trimIndex!=='number'){
+      var picker='<div class="contact-choice-modal"><div class="contact-choice-bar"><span>اختر السعر الإرشادي</span><button type="button" class="contact-choice-close" onclick="closeContactChoice()">&times;</button></div><div class="nissan-guide-list">';
+      for(var p=0;p<data.trims.length;p++){
+        picker+='<button type="button" class="nissan-guide-option" onclick="openContactChoice(\''+esc(topic)+'\','+p+')"><span>'+esc(trimName(data.trims[p]))+'</span><strong>RMB '+esc(data.trims[p].price)+'</strong></button>';
+      }
+      picker+='</div></div>';
+      overlay.innerHTML=picker;
+      overlay.classList.add('open');
+      return;
+    }
+    var trim=data&&typeof trimIndex==='number'?data.trims[trimIndex]:null;
+    var text=consultText(topic,trim);
     var trackingContext={
       model_name:topic||'',
-      trim_name:'',
-      guide_price:'',
+      trim_name:trim?trimName(trim):'',
+      guide_price:trim?trim.price:'',
       page_language:'ar',
       source_page:location.pathname
     };

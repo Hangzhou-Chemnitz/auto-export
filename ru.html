@@ -259,12 +259,13 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 
 </style>
-<script src="trim-localization.js?v=20260720b"></script>
+<script src="trim-localization.js?v=20260723g"></script>
+<script src="nissan-2026-data.js?v=20260723c"></script>
 </head>
 <body>
 
 <div style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
-  <a href="index.html" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> &nbsp;|&nbsp;
+  <a href="/" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> &nbsp;|&nbsp;
   <strong>Русский</strong> &nbsp;|&nbsp;
   <a href="ar.html" style="color:#0a66c2;text-decoration:none;font-weight:600">العربية</a> &nbsp;|&nbsp;
   <a href="fr.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Français</a>
@@ -363,6 +364,18 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <h2>Основные модели Nissan и Toyota</h2>
     <p class="lead">Nissan как основной фокус, Toyota как дополнение для популярных экспортных запросов</p>
     <div class="model-grid featured-grid">
+      <div class="model-card" data-base="images/nissan/teana/" data-prefix="" data-count="8" data-title="Nissan Teana">
+        <div class="card-img" style="background-image:url('images/nissan/teana/1.jpg')"><span class="badge">Седан</span></div>
+        <div class="card-body"><h4>Nissan Teana</h4><div class="info">8 Фото</div></div>
+      </div>
+      <div class="model-card" data-base="images/nissan/n7/" data-prefix="" data-count="8" data-title="Nissan N7">
+        <div class="card-img" style="background-image:url('images/nissan/n7/1.jpg')"><span class="badge">Седан</span></div>
+        <div class="card-body"><h4>Nissan N7</h4><div class="info">8 Фото</div></div>
+      </div>
+      <div class="model-card" data-base="images/nissan/n6/" data-prefix="" data-count="8" data-title="Nissan N6">
+        <div class="card-img" style="background-image:url('images/nissan/n6/1.jpg')"><span class="badge">Седан</span></div>
+        <div class="card-body"><h4>Nissan N6</h4><div class="info">8 Фото</div></div>
+      </div>
       <div class="model-card" data-base="images/nissan/sylphy/" data-prefix="" data-count="8" data-title="Nissan Sylphy">
         <div class="card-img" style="background-image:url('images/nissan/sylphy/1.jpg')"><span class="badge">Седан</span></div>
         <div class="card-body"><h4>Nissan Sylphy</h4><div class="info">8 Фото</div></div>
@@ -1225,6 +1238,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     { name: "格瑞维亚 2027款 2.5L混动 尊贵福祉PLUS版", price: "Цена: 385,800", source: "Autohome", specid: 78250 },
     { name: "格瑞维亚 2027款 2.5L混动 旗舰ULTRA版", price: "Цена: 399,800", source: "Autohome", specid: 78252 }
   ] };
+
+  Object.assign(configData, window.ChemnitzNissan2026 || {});
 
   function escHtml(value) {
     return String(value || '').replace(/[&<>"']/g, function(ch) {
