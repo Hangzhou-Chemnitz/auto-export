@@ -5,6 +5,27 @@
   window.__chemnitzAnalyticsEventsLoaded = true;
 
   var measurementId = 'G-PEL4QMFR44';
+  var hostname = String(window.location.hostname || '').toLowerCase();
+  var productionHosts = {
+    'hzchemnitz.cn': true,
+    'www.hzchemnitz.cn': true
+  };
+  var analyticsEnabled = typeof window.__chemnitzAnalyticsEnabled === 'boolean'
+    ? window.__chemnitzAnalyticsEnabled
+    : window.location.protocol === 'https:' && Boolean(productionHosts[hostname]);
+
+  window.__chemnitzAnalyticsEnabled = analyticsEnabled;
+  window.__chemnitzAnalyticsDisabled = !analyticsEnabled;
+
+  if (!analyticsEnabled) {
+    window.chemnitzTrack = function () {};
+    window.chemnitzSetConsultationContext = function (context) {
+      window.chemnitzConsultationContext = Object.assign({}, context || {});
+      return window.chemnitzConsultationContext;
+    };
+    return;
+  }
+
   var whatsappContacts = {
     '8615913687692': 'Natalie',
     '8613640033268': 'Darwin',

@@ -5,26 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PEL4QMFR44"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-PEL4QMFR44');
-window.chemnitzTrack = function(eventName, params){
-  if (typeof gtag === 'function') gtag('event', eventName, params || {});
-};
-document.addEventListener('click', function(e){
-  var wa = e.target.closest('a[href*="wa.me"]');
-  if (wa) chemnitzTrack('whatsapp_click', {link_url: wa.href, link_text: (wa.textContent || '').trim().slice(0, 100)});
-  var card = e.target.closest('.model-card');
-  if (card) chemnitzTrack('model_card_click', {model: card.getAttribute('data-title') || (card.textContent || '').trim().slice(0, 80)});
-  var priceOption = e.target.closest('.config-menu-option, .config-option');
-  if (priceOption) chemnitzTrack('guide_price_select', {model: window.currentConfigModel || '', option_text: (priceOption.textContent || '').trim().slice(0, 120)});
-  var order = e.target.closest('.config-order-btn, .config-btn');
-  if (order) chemnitzTrack('preorder_click', {model: window.currentConfigModel || '', link_url: order.href || ''});
-});
-</script>
+<script src="analytics-loader.js?v=20260727a"></script>
+<script defer src="analytics-events.js?v=20260727a"></script>
 <title>Автомобили из Китая для России | Оптовый экспорт авто | Hangzhou Chemnitz</title>
 <meta name="description" content="Hangzhou Chemnitz помогает российским дилерам и импортерам закупать автомобили из Китая. VIN, фото, комплектации, цена FOB, экспортные документы и поставка из китайских портов.">
 <link rel="canonical" href="https://hzchemnitz.cn/russia.html">
