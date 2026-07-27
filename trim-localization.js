@@ -141,6 +141,25 @@
     '74263': 'Galaxy M9 2025 230km FWD Tansuo',
     '73548': 'Galaxy M9 2025 210km AWD Linghang',
 
+    '73680': 'Seltos 2026 1.5L IVT Style',
+    '73681': 'Seltos 2026 1.5L IVT Comfort',
+    '73659': 'Seltos 2026 1.5L IVT Luxury',
+    '73682': 'Seltos 2026 1.5L IVT Luxury Comfort',
+    '73683': 'Seltos 2026 1.5L IVT Premium',
+
+    '75520': 'KX1 2026 1.4L IVT Enjoy Automatic',
+    '75521': 'KX1 2026 1.4L IVT Sunroof',
+
+    '66683': 'K3 2024 1.5L CVT Comfort Plus',
+    '66684': 'K3 2024 1.5L CVT Luxury Smart',
+
+    '69773': 'K5 2025 1.5T Luxury',
+    '69774': 'K5 2025 1.5T Premium',
+
+    '76700': '2026 1.5T FWD Comfort',
+    '76701': '2026 1.5T FWD Luxury',
+    '76531': '2026 1.5T FWD Premium',
+
     '74432': 'Zeekr 9X 2025 Ultra 55kWh',
     '75103': 'Zeekr 9X 2025 Ultra 70kWh'
   };
@@ -289,6 +308,7 @@
       ['Elite', 'Élite'],
       ['Pioneer', 'Pionnière'],
       ['Leading', 'Avancée'],
+      ['Style', 'Style'],
       ['Comfort', 'Confort'],
       ['Radiance', 'Éclat'],
       ['Facelift', 'Restylée'],
@@ -307,6 +327,8 @@
       ['Expedition', 'Expédition'],
       ['Touring', 'Touring'],
       ['Enjoy', 'Confort'],
+      ['Automatic', 'Automatique'],
+      ['Sunroof', 'Toit ouvrant'],
       ['Smart', 'Intelligente'],
       ['Extended', 'Longue'],
       ['FWD', 'Traction avant'],
@@ -354,6 +376,7 @@
       ['Elite', 'Элитная'],
       ['Pioneer', 'Начальная'],
       ['Leading', 'Передовая'],
+      ['Style', 'Стиль'],
       ['Comfort', 'Комфорт'],
       ['Radiance', 'Сияние'],
       ['Facelift', 'Рестайлинг'],
@@ -372,6 +395,8 @@
       ['Expedition', 'Экспедиция'],
       ['Touring', 'Туринг'],
       ['Enjoy', 'Комфорт'],
+      ['Automatic', 'Автомат'],
+      ['Sunroof', 'Люк'],
       ['Smart', 'Интеллект'],
       ['Extended', 'Удлиненная'],
       ['FWD', 'Передний привод'],
@@ -419,6 +444,7 @@
       ['Elite', 'فئة النخبة'],
       ['Pioneer', 'فئة البداية'],
       ['Leading', 'متقدمة'],
+      ['Style', 'الأناقة'],
       ['Comfort', 'مريحة'],
       ['Radiance', 'إشراقة'],
       ['Facelift', 'محسنة'],
@@ -437,6 +463,8 @@
       ['Expedition', 'رحلات'],
       ['Touring', 'سياحية'],
       ['Enjoy', 'مريحة'],
+      ['Automatic', 'أوتوماتيكي'],
+      ['Sunroof', 'فتحة سقف'],
       ['Smart', 'ذكية'],
       ['Extended', 'ممتدة'],
       ['FWD', 'دفع أمامي'],

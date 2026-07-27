@@ -4,3 +4,13 @@ __pycache__/
 .pytest_cache/
 *.log
 .gstack/
+
+# Local macOS metadata
+.DS_Store
+
+# Generated vehicle-data working files
+/autohome-configData.generated.js
+/autohome-configData.summary.json
+/documents/config-data/
+/images/geely/boyue/
+/tmp/

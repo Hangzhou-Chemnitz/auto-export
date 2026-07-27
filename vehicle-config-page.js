@@ -26,7 +26,12 @@
     'vehicle-config-xingyue-l.html':{pdf:'documents/geely-xingyue-l-2026-dongfangyao-2-0td-at-xiaohan-158700-config.pdf',dir:'documents/xingyue-l-dongfangyao-2-0td-at-xiaohan-158700-config-pages',pages:8},
     'vehicle-config-niuzai.html':{pdf:'documents/geely-niuzai-2026-1-5td-xunchuan-81900-config.pdf',dir:'documents/niuzai-1-5td-xunchuan-81900-config-pages',pages:6},
     'vehicle-config-zeekr-9x.html':{pdf:'documents/zeekr-9x-2025-ultra-55kwh-485900-config.pdf',dir:'documents/zeekr-9x-ultra-55kwh-485900-config-pages',pages:9},
-    'vehicle-config-galaxy-m9.html':{pdf:'documents/geely-galaxy-m9-2025-100km-fwd-qihang-183800-config.pdf',dir:'documents/galaxy-m9-100km-fwd-qihang-183800-config-pages',pages:9}
+    'vehicle-config-galaxy-m9.html':{pdf:'documents/geely-galaxy-m9-2025-100km-fwd-qihang-183800-config.pdf',dir:'documents/galaxy-m9-100km-fwd-qihang-183800-config-pages',pages:9},
+    'vehicle-config-seltos.html':{pdf:'documents/kia-seltos-2026-1-5l-ivt-style-109900-config.pdf',dir:'documents/seltos-1-5l-ivt-style-109900-config-pages',pages:6},
+    'vehicle-config-kx1.html':{pdf:'documents/kia-kx1-2026-1-4l-ivt-enjoy-79800-config.pdf',dir:'documents/kx1-1-4l-ivt-enjoy-79800-config-pages',pages:6},
+    'vehicle-config-k3.html':{pdf:'documents/kia-k3-2024-1-5l-cvt-comfort-plus-114400-config.pdf',dir:'documents/k3-1-5l-cvt-comfort-plus-114400-config-pages',pages:6},
+    'vehicle-config-k5.html':{pdf:'documents/kia-k5-2025-1-5t-luxury-139800-config.pdf',dir:'documents/k5-1-5t-luxury-139800-config-pages',pages:6},
+    'vehicle-config-sportage.html':{pdf:'documents/kia-sportage-2026-1-5t-fwd-comfort-154900-config.pdf',dir:'documents/sportage-1-5t-fwd-comfort-154900-config-pages',pages:7}
   };
   var coolrayVariants={
     '68972':{
@@ -194,6 +199,100 @@
       price:'248,800',
       pdf:'documents/geely-galaxy-m9-2025-210km-awd-linghang-248800-config.pdf',
       dir:'documents/galaxy-m9-210km-awd-linghang-248800-config-pages'
+    }
+  };
+  var seltosVariants={
+    '73680':{
+      title:'Kia Seltos 2026 1.5L IVT Style',
+      price:'109,900',
+      pdf:'documents/kia-seltos-2026-1-5l-ivt-style-109900-config.pdf',
+      dir:'documents/seltos-1-5l-ivt-style-109900-config-pages'
+    },
+    '73681':{
+      title:'Kia Seltos 2026 1.5L IVT Comfort',
+      price:'119,900',
+      pdf:'documents/kia-seltos-2026-1-5l-ivt-comfort-119900-config.pdf',
+      dir:'documents/seltos-1-5l-ivt-comfort-119900-config-pages'
+    },
+    '73659':{
+      title:'Kia Seltos 2026 1.5L IVT Luxury',
+      price:'129,900',
+      pdf:'documents/kia-seltos-2026-1-5l-ivt-luxury-129900-config.pdf',
+      dir:'documents/seltos-1-5l-ivt-luxury-129900-config-pages'
+    },
+    '73682':{
+      title:'Kia Seltos 2026 1.5L IVT Luxury Comfort',
+      price:'129,900',
+      pdf:'documents/kia-seltos-2026-1-5l-ivt-luxury-comfort-129900-config.pdf',
+      dir:'documents/seltos-1-5l-ivt-luxury-comfort-129900-config-pages'
+    },
+    '73683':{
+      title:'Kia Seltos 2026 1.5L IVT Premium',
+      price:'139,900',
+      pdf:'documents/kia-seltos-2026-1-5l-ivt-premium-139900-config.pdf',
+      dir:'documents/seltos-1-5l-ivt-premium-139900-config-pages'
+    }
+  };
+  var kx1Variants={
+    '75520':{
+      title:'Kia KX1 2026 1.4L IVT Enjoy Automatic',
+      price:'79,800',
+      pdf:'documents/kia-kx1-2026-1-4l-ivt-enjoy-79800-config.pdf',
+      dir:'documents/kx1-1-4l-ivt-enjoy-79800-config-pages'
+    },
+    '75521':{
+      title:'Kia KX1 2026 1.4L IVT Sunroof',
+      price:'83,800',
+      pdf:'documents/kia-kx1-2026-1-4l-ivt-sunroof-83800-config.pdf',
+      dir:'documents/kx1-1-4l-ivt-sunroof-83800-config-pages'
+    }
+  };
+  var k3Variants={
+    '66683':{
+      title:'Kia K3 2024 1.5L CVT Comfort Plus',
+      price:'114,400',
+      pdf:'documents/kia-k3-2024-1-5l-cvt-comfort-plus-114400-config.pdf',
+      dir:'documents/k3-1-5l-cvt-comfort-plus-114400-config-pages'
+    },
+    '66684':{
+      title:'Kia K3 2024 1.5L CVT Luxury Smart',
+      price:'124,900',
+      pdf:'documents/kia-k3-2024-1-5l-cvt-luxury-smart-124900-config.pdf',
+      dir:'documents/k3-1-5l-cvt-luxury-smart-124900-config-pages'
+    }
+  };
+  var k5Variants={
+    '69773':{
+      title:'Kia K5 2025 1.5T Luxury',
+      price:'139,800',
+      pdf:'documents/kia-k5-2025-1-5t-luxury-139800-config.pdf',
+      dir:'documents/k5-1-5t-luxury-139800-config-pages'
+    },
+    '69774':{
+      title:'Kia K5 2025 1.5T Premium',
+      price:'159,800',
+      pdf:'documents/kia-k5-2025-1-5t-premium-159800-config.pdf',
+      dir:'documents/k5-1-5t-premium-159800-config-pages'
+    }
+  };
+  var sportageVariants={
+    '76700':{
+      title:'Kia Sportage 2026 1.5T FWD Comfort',
+      price:'154,900',
+      pdf:'documents/kia-sportage-2026-1-5t-fwd-comfort-154900-config.pdf',
+      dir:'documents/sportage-1-5t-fwd-comfort-154900-config-pages'
+    },
+    '76701':{
+      title:'Kia Sportage 2026 1.5T FWD Luxury',
+      price:'159,900',
+      pdf:'documents/kia-sportage-2026-1-5t-fwd-luxury-159900-config.pdf',
+      dir:'documents/sportage-1-5t-fwd-luxury-159900-config-pages'
+    },
+    '76531':{
+      title:'Kia Sportage 2026 1.5T FWD Premium',
+      price:'169,900',
+      pdf:'documents/kia-sportage-2026-1-5t-fwd-premium-169900-config.pdf',
+      dir:'documents/sportage-1-5t-fwd-premium-169900-config-pages'
     }
   };
   var qashqaiVariants={
@@ -894,6 +993,46 @@
     page.price=galaxyM9Variant.price;
     page.summary='Selected guide-price configuration for Geely Galaxy M9 FOB export consultation.';
   }
+  if(filename==='vehicle-config-seltos.html'){
+    var seltosSpecid=new URLSearchParams(location.search).get('specid')||'73680';
+    var seltosVariant=seltosVariants[seltosSpecid]||seltosVariants['73680'];
+    route={pdf:seltosVariant.pdf,dir:seltosVariant.dir,pages:6};
+    page.title=seltosVariant.title;
+    page.price=seltosVariant.price;
+    page.summary='Selected guide-price configuration for Kia Seltos FOB export consultation.';
+  }
+  if(filename==='vehicle-config-kx1.html'){
+    var kx1Specid=new URLSearchParams(location.search).get('specid')||'75520';
+    var kx1Variant=kx1Variants[kx1Specid]||kx1Variants['75520'];
+    route={pdf:kx1Variant.pdf,dir:kx1Variant.dir,pages:6};
+    page.title=kx1Variant.title;
+    page.price=kx1Variant.price;
+    page.summary='Selected guide-price configuration for Kia KX1 FOB export consultation.';
+  }
+  if(filename==='vehicle-config-k3.html'){
+    var k3Specid=new URLSearchParams(location.search).get('specid')||'66683';
+    var k3Variant=k3Variants[k3Specid]||k3Variants['66683'];
+    route={pdf:k3Variant.pdf,dir:k3Variant.dir,pages:6};
+    page.title=k3Variant.title;
+    page.price=k3Variant.price;
+    page.summary='Selected guide-price configuration for Kia K3 FOB export consultation.';
+  }
+  if(filename==='vehicle-config-k5.html'){
+    var k5Specid=new URLSearchParams(location.search).get('specid')||'69773';
+    var k5Variant=k5Variants[k5Specid]||k5Variants['69773'];
+    route={pdf:k5Variant.pdf,dir:k5Variant.dir,pages:6};
+    page.title=k5Variant.title;
+    page.price=k5Variant.price;
+    page.summary='Selected guide-price configuration for Kia K5 FOB export consultation.';
+  }
+  if(filename==='vehicle-config-sportage.html'){
+    var sportageSpecid=new URLSearchParams(location.search).get('specid')||'76700';
+    var sportageVariant=sportageVariants[sportageSpecid]||sportageVariants['76700'];
+    route={pdf:sportageVariant.pdf,dir:sportageVariant.dir,pages:7};
+    page.title=sportageVariant.title;
+    page.price=sportageVariant.price;
+    page.summary='Selected guide-price configuration for Kia Sportage FOB export consultation.';
+  }
   if(filename==='vehicle-config-rav4.html'){
     var rav4Specid=new URLSearchParams(location.search).get('specid')||'74683';
     var rav4Variant=rav4Variants[rav4Specid]||rav4Variants['74683'];
@@ -1120,6 +1259,11 @@
     'vehicle-config-niuzai.html':'Geely Niuzai',
     'vehicle-config-zeekr-9x.html':'Zeekr 9X',
     'vehicle-config-galaxy-m9.html':'Geely Galaxy M9',
+    'vehicle-config-seltos.html':'Kia Seltos',
+    'vehicle-config-kx1.html':'Kia KX1',
+    'vehicle-config-k3.html':'Kia K3',
+    'vehicle-config-k5.html':'Kia K5',
+    'vehicle-config-sportage.html':'Kia Sportage',
     'vehicle-config-nx8.html':'Nissan NX8',
     'vehicle-config-n7.html':'Nissan N7',
     'vehicle-config-n6.html':'Nissan N6',
