@@ -20,7 +20,181 @@
     'vehicle-config-golf.html':{pdf:'documents/volkswagen-golf-2026-300tsi-129900-config.pdf',dir:'documents/golf-300tsi-129900-config-pages',pages:7},
     'vehicle-config-troc.html':{pdf:'documents/volkswagen-t-roc-2026-280tsi-dsg-fwd-shiguang-138900-config.pdf',dir:'documents/t-roc-280tsi-shiguang-138900-config-pages',pages:6},
     'vehicle-config-teramont.html':{pdf:'documents/volkswagen-teramont-2026-pro-380tsi-fwd-cross-border-299900-config.pdf',dir:'documents/teramont-pro-380tsi-fwd-cross-border-299900-config-pages',pages:7},
-    'vehicle-config-jetta-vs5.html':{pdf:'documents/volkswagen-jetta-vs5-2026-280tsi-at-pioneer-98900-config.pdf',dir:'documents/jetta-vs5-280tsi-at-pioneer-98900-config-pages',pages:6}
+    'vehicle-config-jetta-vs5.html':{pdf:'documents/volkswagen-jetta-vs5-2026-280tsi-at-pioneer-98900-config.pdf',dir:'documents/jetta-vs5-280tsi-at-pioneer-98900-config-pages',pages:6},
+    'vehicle-config-coolray.html':{pdf:'documents/geely-coolray-2025-1-5l-mt-chaoneng-66800-config.pdf',dir:'documents/coolray-1-5l-mt-chaoneng-66800-config-pages',pages:6},
+    'vehicle-config-boyue.html':{pdf:'documents/geely-boyue-2026-1-5td-dct-huanle-85900-config.pdf',dir:'documents/boyue-1-5td-dct-huanle-85900-config-pages',pages:6},
+    'vehicle-config-xingyue-l.html':{pdf:'documents/geely-xingyue-l-2026-dongfangyao-2-0td-at-xiaohan-158700-config.pdf',dir:'documents/xingyue-l-dongfangyao-2-0td-at-xiaohan-158700-config-pages',pages:8},
+    'vehicle-config-niuzai.html':{pdf:'documents/geely-niuzai-2026-1-5td-xunchuan-81900-config.pdf',dir:'documents/niuzai-1-5td-xunchuan-81900-config-pages',pages:6},
+    'vehicle-config-zeekr-9x.html':{pdf:'documents/zeekr-9x-2025-ultra-55kwh-485900-config.pdf',dir:'documents/zeekr-9x-ultra-55kwh-485900-config-pages',pages:9},
+    'vehicle-config-galaxy-m9.html':{pdf:'documents/geely-galaxy-m9-2025-100km-fwd-qihang-183800-config.pdf',dir:'documents/galaxy-m9-100km-fwd-qihang-183800-config-pages',pages:9}
+  };
+  var coolrayVariants={
+    '68972':{
+      title:'Geely Coolray 2025 1.5L MT Chaoneng',
+      price:'66,800',
+      pdf:'documents/geely-coolray-2025-1-5l-mt-chaoneng-66800-config.pdf',
+      dir:'documents/coolray-1-5l-mt-chaoneng-66800-config-pages'
+    },
+    '67792':{
+      title:'Geely Coolray 2025 1.5L CVT Chaoneng',
+      price:'73,800',
+      pdf:'documents/geely-coolray-2025-1-5l-cvt-chaoneng-73800-config.pdf',
+      dir:'documents/coolray-1-5l-cvt-chaoneng-73800-config-pages'
+    },
+    '73598':{
+      title:'Geely Coolray 2025 1.5L CVT Chaoneng MAX',
+      price:'78,800',
+      pdf:'documents/geely-coolray-2025-1-5l-cvt-chaoneng-max-78800-config.pdf',
+      dir:'documents/coolray-1-5l-cvt-chaoneng-max-78800-config-pages'
+    },
+    '72132':{
+      title:'Geely Coolray L 2025 1.5TD DCT Chaoyue',
+      price:'84,800',
+      pdf:'documents/geely-coolray-l-2025-1-5td-dct-chaoyue-84800-config.pdf',
+      dir:'documents/coolray-l-1-5td-dct-chaoyue-84800-config-pages'
+    },
+    '70452':{
+      title:'Geely Coolray L 2025 1.5TD DCT Xingzuan',
+      price:'89,800',
+      pdf:'documents/geely-coolray-l-2025-1-5td-dct-xingzuan-89800-config.pdf',
+      dir:'documents/coolray-l-1-5td-dct-xingzuan-89800-config-pages'
+    },
+    '69434':{
+      title:'Geely Coolray L 2025 1.5TD DCT Xingyao',
+      price:'96,800',
+      pdf:'documents/geely-coolray-l-2025-1-5td-dct-xingyao-96800-config.pdf',
+      dir:'documents/coolray-l-1-5td-dct-xingyao-96800-config-pages'
+    },
+    '75683':{
+      title:'Geely Coolray L 2025 1.5TD DCT Battle',
+      price:'97,800',
+      pdf:'documents/geely-coolray-l-2025-1-5td-dct-battle-97800-config.pdf',
+      dir:'documents/coolray-l-1-5td-dct-battle-97800-config-pages'
+    }
+  };
+  var boyueVariants={
+    '74083':{
+      title:'Geely Boyue 2026 1.5TD DCT Huanle',
+      price:'85,900',
+      pdf:'documents/geely-boyue-2026-1-5td-dct-huanle-85900-config.pdf',
+      dir:'documents/boyue-1-5td-dct-huanle-85900-config-pages'
+    },
+    '74082':{
+      title:'Geely Boyue 2026 1.5TD DCT Xiangwang',
+      price:'91,900',
+      pdf:'documents/geely-boyue-2026-1-5td-dct-xiangwang-91900-config.pdf',
+      dir:'documents/boyue-1-5td-dct-xiangwang-91900-config-pages'
+    },
+    '77692':{
+      title:'Geely Boyue 2026 1.5TD DCT 10th Anniversary Champion',
+      price:'96,900',
+      pdf:'documents/geely-boyue-2026-1-5td-dct-10th-anniversary-champion-96900-config.pdf',
+      dir:'documents/boyue-1-5td-dct-10th-anniversary-champion-96900-config-pages'
+    },
+    '73942':{
+      title:'Geely Boyue 2026 1.5TD DCT Meihao',
+      price:'99,900',
+      pdf:'documents/geely-boyue-2026-1-5td-dct-meihao-99900-config.pdf',
+      dir:'documents/boyue-1-5td-dct-meihao-99900-config-pages'
+    },
+    '73941':{
+      title:'Geely Boyue 2026 1.5TD DCT Zhiai',
+      price:'106,900',
+      pdf:'documents/geely-boyue-2026-1-5td-dct-zhiai-106900-config.pdf',
+      dir:'documents/boyue-1-5td-dct-zhiai-106900-config-pages'
+    }
+  };
+  var xingyueLVariants={
+    '74638':{
+      title:'Geely Xingyue L 2026 Dongfangyao 2.0TD AT Xiaohan',
+      price:'158,700',
+      pdf:'documents/geely-xingyue-l-2026-dongfangyao-2-0td-at-xiaohan-158700-config.pdf',
+      dir:'documents/xingyue-l-dongfangyao-2-0td-at-xiaohan-158700-config-pages'
+    },
+    '74637':{
+      title:'Geely Xingyue L 2026 Dongfangyao 2.0TD AT Lanxing',
+      price:'168,700',
+      pdf:'documents/geely-xingyue-l-2026-dongfangyao-2-0td-at-lanxing-168700-config.pdf',
+      dir:'documents/xingyue-l-dongfangyao-2-0td-at-lanxing-168700-config-pages'
+    },
+    '74636':{
+      title:'Geely Xingyue L 2026 Dongfangyao 2.0TD AT Wangyue',
+      price:'179,700',
+      pdf:'documents/geely-xingyue-l-2026-dongfangyao-2-0td-at-wangyue-179700-config.pdf',
+      dir:'documents/xingyue-l-dongfangyao-2-0td-at-wangyue-179700-config-pages'
+    }
+  };
+  var niuzaiVariants={
+    '77979':{
+      title:'Geely Niuzai 2026 1.5TD Xunchuan',
+      price:'81,900',
+      pdf:'documents/geely-niuzai-2026-1-5td-xunchuan-81900-config.pdf',
+      dir:'documents/niuzai-1-5td-xunchuan-81900-config-pages'
+    },
+    '77980':{
+      title:'Geely Niuzai 2026 1.5TD Zhuyue',
+      price:'85,900',
+      pdf:'documents/geely-niuzai-2026-1-5td-zhuyue-85900-config.pdf',
+      dir:'documents/niuzai-1-5td-zhuyue-85900-config-pages'
+    },
+    '77944':{
+      title:'Geely Niuzai 2026 1.5TD Guanye',
+      price:'90,900',
+      pdf:'documents/geely-niuzai-2026-1-5td-guanye-90900-config.pdf',
+      dir:'documents/niuzai-1-5td-guanye-90900-config-pages'
+    }
+  };
+  var zeekr9xVariants={
+    '74432':{
+      title:'Zeekr 9X 2025 Ultra 55kWh',
+      price:'485,900',
+      pdf:'documents/zeekr-9x-2025-ultra-55kwh-485900-config.pdf',
+      dir:'documents/zeekr-9x-ultra-55kwh-485900-config-pages'
+    },
+    '75103':{
+      title:'Zeekr 9X 2025 Ultra 70kWh',
+      price:'500,900',
+      pdf:'documents/zeekr-9x-2025-ultra-70kwh-500900-config.pdf',
+      dir:'documents/zeekr-9x-ultra-70kwh-500900-config-pages'
+    }
+  };
+  var galaxyM9Variants={
+    '74359':{
+      title:'Geely Galaxy M9 2025 100km FWD Qihang',
+      price:'183,800',
+      pdf:'documents/geely-galaxy-m9-2025-100km-fwd-qihang-183800-config.pdf',
+      dir:'documents/galaxy-m9-100km-fwd-qihang-183800-config-pages'
+    },
+    '74361':{
+      title:'Geely Galaxy M9 2025 100km FWD Zhihang',
+      price:'192,800',
+      pdf:'documents/geely-galaxy-m9-2025-100km-fwd-zhihang-192800-config.pdf',
+      dir:'documents/galaxy-m9-100km-fwd-zhihang-192800-config-pages'
+    },
+    '74360':{
+      title:'Geely Galaxy M9 2025 230km FWD Yuanhang',
+      price:'198,800',
+      pdf:'documents/geely-galaxy-m9-2025-230km-fwd-yuanhang-198800-config.pdf',
+      dir:'documents/galaxy-m9-230km-fwd-yuanhang-198800-config-pages'
+    },
+    '74362':{
+      title:'Geely Galaxy M9 2025 230km FWD Zhihang',
+      price:'207,800',
+      pdf:'documents/geely-galaxy-m9-2025-230km-fwd-zhihang-207800-config.pdf',
+      dir:'documents/galaxy-m9-230km-fwd-zhihang-207800-config-pages'
+    },
+    '74263':{
+      title:'Geely Galaxy M9 2025 230km FWD Tansuo',
+      price:'226,800',
+      pdf:'documents/geely-galaxy-m9-2025-230km-fwd-tansuo-226800-config.pdf',
+      dir:'documents/galaxy-m9-230km-fwd-tansuo-226800-config-pages'
+    },
+    '73548':{
+      title:'Geely Galaxy M9 2025 210km AWD Linghang',
+      price:'248,800',
+      pdf:'documents/geely-galaxy-m9-2025-210km-awd-linghang-248800-config.pdf',
+      dir:'documents/galaxy-m9-210km-awd-linghang-248800-config-pages'
+    }
   };
   var qashqaiVariants={
     '73478':{
@@ -672,6 +846,54 @@
 
     return '/#models';
   }
+  if(filename==='vehicle-config-coolray.html'){
+    var coolraySpecid=new URLSearchParams(location.search).get('specid')||'68972';
+    var coolrayVariant=coolrayVariants[coolraySpecid]||coolrayVariants['68972'];
+    route={pdf:coolrayVariant.pdf,dir:coolrayVariant.dir,pages:6};
+    page.title=coolrayVariant.title;
+    page.price=coolrayVariant.price;
+    page.summary='Selected guide-price configuration for Geely Coolray FOB export consultation.';
+  }
+  if(filename==='vehicle-config-boyue.html'){
+    var boyueSpecid=new URLSearchParams(location.search).get('specid')||'74083';
+    var boyueVariant=boyueVariants[boyueSpecid]||boyueVariants['74083'];
+    route={pdf:boyueVariant.pdf,dir:boyueVariant.dir,pages:6};
+    page.title=boyueVariant.title;
+    page.price=boyueVariant.price;
+    page.summary='Selected guide-price configuration for Geely Boyue FOB export consultation.';
+  }
+  if(filename==='vehicle-config-xingyue-l.html'){
+    var xingyueLSpecid=new URLSearchParams(location.search).get('specid')||'74638';
+    var xingyueLVariant=xingyueLVariants[xingyueLSpecid]||xingyueLVariants['74638'];
+    route={pdf:xingyueLVariant.pdf,dir:xingyueLVariant.dir,pages:8};
+    page.title=xingyueLVariant.title;
+    page.price=xingyueLVariant.price;
+    page.summary='Selected guide-price configuration for Geely Xingyue L FOB export consultation.';
+  }
+  if(filename==='vehicle-config-niuzai.html'){
+    var niuzaiSpecid=new URLSearchParams(location.search).get('specid')||'77979';
+    var niuzaiVariant=niuzaiVariants[niuzaiSpecid]||niuzaiVariants['77979'];
+    route={pdf:niuzaiVariant.pdf,dir:niuzaiVariant.dir,pages:6};
+    page.title=niuzaiVariant.title;
+    page.price=niuzaiVariant.price;
+    page.summary='Selected guide-price configuration for Geely Niuzai FOB export consultation.';
+  }
+  if(filename==='vehicle-config-zeekr-9x.html'){
+    var zeekr9xSpecid=new URLSearchParams(location.search).get('specid')||'74432';
+    var zeekr9xVariant=zeekr9xVariants[zeekr9xSpecid]||zeekr9xVariants['74432'];
+    route={pdf:zeekr9xVariant.pdf,dir:zeekr9xVariant.dir,pages:9};
+    page.title=zeekr9xVariant.title;
+    page.price=zeekr9xVariant.price;
+    page.summary='Selected guide-price configuration for Zeekr 9X FOB export consultation.';
+  }
+  if(filename==='vehicle-config-galaxy-m9.html'){
+    var galaxyM9Specid=new URLSearchParams(location.search).get('specid')||'74359';
+    var galaxyM9Variant=galaxyM9Variants[galaxyM9Specid]||galaxyM9Variants['74359'];
+    route={pdf:galaxyM9Variant.pdf,dir:galaxyM9Variant.dir,pages:9};
+    page.title=galaxyM9Variant.title;
+    page.price=galaxyM9Variant.price;
+    page.summary='Selected guide-price configuration for Geely Galaxy M9 FOB export consultation.';
+  }
   if(filename==='vehicle-config-rav4.html'){
     var rav4Specid=new URLSearchParams(location.search).get('specid')||'74683';
     var rav4Variant=rav4Variants[rav4Specid]||rav4Variants['74683'];
@@ -892,6 +1114,12 @@
     'vehicle-config-corolla.html':'Toyota Corolla',
     'vehicle-config-granvia.html':'Toyota Granvia',
     'vehicle-config-highlander.html':'Toyota Highlander',
+    'vehicle-config-coolray.html':'Geely Coolray',
+    'vehicle-config-boyue.html':'Geely Boyue',
+    'vehicle-config-xingyue-l.html':'Geely Xingyue L',
+    'vehicle-config-niuzai.html':'Geely Niuzai',
+    'vehicle-config-zeekr-9x.html':'Zeekr 9X',
+    'vehicle-config-galaxy-m9.html':'Geely Galaxy M9',
     'vehicle-config-nx8.html':'Nissan NX8',
     'vehicle-config-n7.html':'Nissan N7',
     'vehicle-config-n6.html':'Nissan N6',

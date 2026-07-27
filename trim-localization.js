@@ -109,7 +109,40 @@
     '78253': 'Granvia 2027 2.5L Hybrid Premium MAX AWD',
     '78254': 'Granvia 2027 2.5L Hybrid Prestige ULTRA AWD',
     '78250': 'Granvia 2027 2.5L Hybrid Premium Welcab PLUS',
-    '78252': 'Granvia 2027 2.5L Hybrid Flagship ULTRA'
+    '78252': 'Granvia 2027 2.5L Hybrid Flagship ULTRA',
+
+    '68972': 'Coolray 2025 1.5L MT Chaoneng',
+    '67792': 'Coolray 2025 1.5L CVT Chaoneng',
+    '73598': 'Coolray 2025 1.5L CVT Chaoneng MAX',
+    '72132': 'Coolray L 2025 1.5TD DCT Chaoyue',
+    '70452': 'Coolray L 2025 1.5TD DCT Xingzuan',
+    '69434': 'Coolray L 2025 1.5TD DCT Xingyao',
+    '75683': 'Coolray L 2025 1.5TD DCT Battle',
+
+    '76920': 'Boyue L 2026 Fourth Generation 1.5TD DCT Xiaolandeng',
+    '74083': 'Boyue 2026 1.5TD DCT Huanle',
+    '74082': 'Boyue 2026 1.5TD DCT Xiangwang',
+    '77692': 'Boyue 2026 1.5TD DCT 10th Anniversary Champion',
+    '73942': 'Boyue 2026 1.5TD DCT Meihao',
+    '73941': 'Boyue 2026 1.5TD DCT Zhiai',
+
+    '74638': 'Xingyue L 2026 Dongfangyao 2.0TD AT Xiaohan',
+    '74637': 'Xingyue L 2026 Dongfangyao 2.0TD AT Lanxing',
+    '74636': 'Xingyue L 2026 Dongfangyao 2.0TD AT Wangyue',
+
+    '77979': 'Niuzai 2026 1.5TD Xunchuan',
+    '77980': 'Niuzai 2026 1.5TD Zhuyue',
+    '77944': 'Niuzai 2026 1.5TD Guanye',
+
+    '74359': 'Galaxy M9 2025 100km FWD Qihang',
+    '74361': 'Galaxy M9 2025 100km FWD Zhihang',
+    '74360': 'Galaxy M9 2025 230km FWD Yuanhang',
+    '74362': 'Galaxy M9 2025 230km FWD Zhihang',
+    '74263': 'Galaxy M9 2025 230km FWD Tansuo',
+    '73548': 'Galaxy M9 2025 210km AWD Linghang',
+
+    '74432': 'Zeekr 9X 2025 Ultra 55kWh',
+    '75103': 'Zeekr 9X 2025 Ultra 70kWh'
   };
 
   var MODEL_NAMES = [
@@ -121,11 +154,14 @@
     ['轩逸', 'Sylphy'],
     ['逍客', 'Qashqai'],
     ['奇骏', 'X-Trail'],
+    ['极氪9X', 'Zeekr 9X'],
     ['铂智3X', 'bZ3X'],
     ['锋兰达', 'Frontlander'],
     ['威兰达', 'Wildlander'],
     ['格瑞维亚', 'Granvia'],
     ['缤越', 'Coolray'],
+    ['博越L', 'Boyue L'],
+    ['博越', 'Boyue'],
     ['狮铂拓界', 'Sportage'],
     ['捷途大圣', 'Dashing'],
     ['捷途旅行者', 'Traveller'],
@@ -215,6 +251,12 @@
 
   var LOCALIZED_TERMS = {
     fr: [
+      ['10th Anniversary Champion', 'Champion du 10e anniversaire'],
+      ['Huanle', 'Joie'],
+      ['Xiangwang', 'Aspiration'],
+      ['Meihao', 'Harmonie'],
+      ['Zhiai', 'Bien-aimée'],
+      ['Fourth Generation', 'Quatrième génération'],
       ['Range-Extended', 'Autonomie prolongée'],
       ['New Energy', 'Énergie nouvelle'],
       ['High Energy', 'Haute performance'],
@@ -273,6 +315,12 @@
       ['Other trims', 'Autres versions']
     ],
     ru: [
+      ['10th Anniversary Champion', 'Чемпион 10-летия'],
+      ['Huanle', 'Радость'],
+      ['Xiangwang', 'Стремление'],
+      ['Meihao', 'Прекрасная'],
+      ['Zhiai', 'Любимая'],
+      ['Fourth Generation', 'Четвертое поколение'],
       ['Range-Extended', 'С увеличенным запасом хода'],
       ['New Energy', 'Новая энергия'],
       ['High Energy', 'Высокая мощность'],
@@ -332,6 +380,12 @@
       ['Other trims', 'Другие комплектации']
     ],
     ar: [
+      ['10th Anniversary Champion', 'بطل الذكرى العاشرة'],
+      ['Huanle', 'الفرح'],
+      ['Xiangwang', 'التطلع'],
+      ['Meihao', 'الجميلة'],
+      ['Zhiai', 'المحبوبة'],
+      ['Fourth Generation', 'الجيل الرابع'],
       ['Range-Extended', 'مدى ممتد'],
       ['New Energy', 'طاقة جديدة'],
       ['High Energy', 'أداء عالٍ'],
