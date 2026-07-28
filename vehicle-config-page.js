@@ -39,7 +39,14 @@
     'vehicle-config-free-rider.html':{pdf:'documents/jetour-free-rider-2026-1-5td-dct-qicheng-114900-config.pdf',dir:'documents/free-rider-1-5td-dct-qicheng-114900-config-pages',pages:7},
     'vehicle-config-q3.html':{pdf:'documents/audi-q3-2026-45th-35tfsi-progressive-76044-251800-config.pdf',dir:'documents/q3-45th-35tfsi-progressive-76044-251800-config-pages',pages:6},
     'vehicle-config-q5.html':{pdf:'documents/audi-q5l-2026-2-0t-smart-hybrid-72704-309800-config.pdf',dir:'documents/q5l-2-0t-smart-hybrid-72704-309800-config-pages',pages:8},
-    'vehicle-config-a5.html':{pdf:'documents/audi-a5l-2026-2-0t-sport-quattro-73537-309800-config.pdf',dir:'documents/a5l-2-0t-sport-quattro-73537-309800-config-pages',pages:8}
+    'vehicle-config-a5.html':{pdf:'documents/audi-a5l-2026-2-0t-sport-quattro-73537-309800-config.pdf',dir:'documents/a5l-2-0t-sport-quattro-73537-309800-config-pages',pages:8},
+    'vehicle-config-crv.html':{pdf:'documents/honda-cr-v-2026-30th-1-5t-fwd-huoli-5-seat-185900-config.pdf',dir:'documents/cr-v-30th-1-5t-fwd-huoli-5-seat-185900-config-pages',pages:7},
+    'vehicle-config-tiggo-5x.html':{pdf:'documents/chery-tiggo-5x-2025-1-5l-mt-excellence-62900-config.pdf',dir:'documents/tiggo-5x-1-5l-mt-excellence-62900-config-pages',pages:5},
+    'vehicle-config-tiggo-3x.html':{pdf:'documents/chery-tiggo-3x-2024-1-5l-cvt-excellence-57900-config.pdf',dir:'documents/tiggo-3x-1-5l-cvt-excellence-57900-config-pages',pages:5},
+    'vehicle-config-mg5.html':{pdf:'documents/mg5-2026-180dvvt-global-first-edition-81900-config.pdf',dir:'documents/mg5-2026-180dvvt-global-first-edition-81900-config-pages',pages:5},
+    'vehicle-config-changan-x5.html':{pdf:'documents/changan-x5-plus-2026-second-generation-1-5t-high-energy-pro-91900-config.pdf',dir:'documents/changan-x5-plus-2026-second-generation-1-5t-high-energy-pro-91900-config-pages',pages:5},
+    'vehicle-config-changan-cs55.html':{pdf:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-elite-92900-config.pdf',dir:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-elite-92900-config-pages',pages:5},
+    'vehicle-config-changan-cs75.html':{pdf:'documents/changan-cs75-plus-2026-smart-champion-1-5t-zhiling-108900-config.pdf',dir:'documents/changan-cs75-plus-2026-smart-champion-1-5t-zhiling-108900-config-pages',pages:6}
   };
   var coolrayVariants={
     '68972':{
@@ -527,6 +534,175 @@
       price:'309,800',
       pdf:'documents/audi-a5l-2026-2-0t-sport-quattro-73537-309800-config.pdf',
       dir:'documents/a5l-2-0t-sport-quattro-73537-309800-config-pages'
+    }
+  };
+  var crvVariants={
+    '78059':{
+      title:'Honda CR-V 2026 30th Anniversary 1.5T FWD Vitality 5-Seat',
+      price:'185,900',
+      driveAndSeating:'Front-wheel drive, 5 seats',
+      pdf:'documents/honda-cr-v-2026-30th-1-5t-fwd-huoli-5-seat-185900-config.pdf',
+      dir:'documents/cr-v-30th-1-5t-fwd-huoli-5-seat-185900-config-pages'
+    },
+    '78060':{
+      title:'Honda CR-V 2026 30th Anniversary 1.5T FWD Fengshang 5-Seat',
+      price:'201,900',
+      driveAndSeating:'Front-wheel drive, 5 seats',
+      pdf:'documents/honda-cr-v-2026-30th-1-5t-fwd-fengshang-5-seat-201900-config.pdf',
+      dir:'documents/cr-v-30th-1-5t-fwd-fengshang-5-seat-201900-config-pages'
+    },
+    '78061':{
+      title:'Honda CR-V 2026 30th Anniversary 1.5T FWD Fengshang 7-Seat',
+      price:'208,900',
+      driveAndSeating:'Front-wheel drive, 7 seats',
+      pdf:'documents/honda-cr-v-2026-30th-1-5t-fwd-fengshang-7-seat-208900-config.pdf',
+      dir:'documents/cr-v-30th-1-5t-fwd-fengshang-7-seat-208900-config-pages'
+    },
+    '78062':{
+      title:'Honda CR-V 2026 30th Anniversary 1.5T FWD Zhiling 5-Seat',
+      price:'211,900',
+      driveAndSeating:'Front-wheel drive, 5 seats',
+      pdf:'documents/honda-cr-v-2026-30th-1-5t-fwd-zhiling-5-seat-211900-config.pdf',
+      dir:'documents/cr-v-30th-1-5t-fwd-zhiling-5-seat-211900-config-pages'
+    },
+    '78063':{
+      title:'Honda CR-V 2026 30th Anniversary 1.5T AWD Zhenxiang 5-Seat',
+      price:'231,900',
+      driveAndSeating:'All-wheel drive, 5 seats',
+      pdf:'documents/honda-cr-v-2026-30th-1-5t-awd-zhenxiang-5-seat-231900-config.pdf',
+      dir:'documents/cr-v-30th-1-5t-awd-zhenxiang-5-seat-231900-config-pages'
+    }
+  };
+  var tiggo5xVariants={
+    '72714':{
+      title:'Chery Tiggo 5X 2025 1.5L MT Excellence',
+      price:'62,900',
+      pdf:'documents/chery-tiggo-5x-2025-1-5l-mt-excellence-62900-config.pdf',
+      dir:'documents/tiggo-5x-1-5l-mt-excellence-62900-config-pages'
+    },
+    '71624':{
+      title:'Chery Tiggo 5X 2025 1.5L CVT Excellence',
+      price:'67,900',
+      pdf:'documents/chery-tiggo-5x-2025-1-5l-cvt-excellence-67900-config.pdf',
+      dir:'documents/tiggo-5x-1-5l-cvt-excellence-67900-config-pages'
+    }
+  };
+  var tiggo3xVariants={
+    '69331':{
+      title:'Chery Tiggo 3X 2024 1.5L CVT Excellence',
+      price:'57,900',
+      pdf:'documents/chery-tiggo-3x-2024-1-5l-cvt-excellence-57900-config.pdf',
+      dir:'documents/tiggo-3x-1-5l-cvt-excellence-57900-config-pages'
+    },
+    '68127':{
+      title:'Chery Tiggo 3X 2024 Huimin Edition 1.5L MT Fashion',
+      price:'59,900',
+      pdf:'documents/chery-tiggo-3x-2024-huimin-1-5l-mt-fashion-59900-config.pdf',
+      dir:'documents/tiggo-3x-huimin-1-5l-mt-fashion-59900-config-pages'
+    },
+    '68128':{
+      title:'Chery Tiggo 3X 2024 Huimin Edition 1.5L CVT Fashion',
+      price:'69,900',
+      pdf:'documents/chery-tiggo-3x-2024-huimin-1-5l-cvt-fashion-69900-config.pdf',
+      dir:'documents/tiggo-3x-huimin-1-5l-cvt-fashion-69900-config-pages'
+    }
+  };
+  var mg5Variants={
+    '73650':{
+      title:'MG MG5 2026 180DVVT Global First Edition',
+      price:'81,900',
+      pdf:'documents/mg5-2026-180dvvt-global-first-edition-81900-config.pdf',
+      dir:'documents/mg5-2026-180dvvt-global-first-edition-81900-config-pages'
+    },
+    '73575':{
+      title:'MG MG5 2026 180DVVT Global Luxury',
+      price:'85,900',
+      pdf:'documents/mg5-2026-180dvvt-global-luxury-85900-config.pdf',
+      dir:'documents/mg5-2026-180dvvt-global-luxury-85900-config-pages'
+    },
+    '75932':{
+      title:'MG MG5 2026 180DVVT Yixiang Custom Edition',
+      price:'92,000',
+      pdf:'documents/mg5-2026-180dvvt-yixiang-custom-edition-92000-config.pdf',
+      dir:'documents/mg5-2026-180dvvt-yixiang-custom-edition-92000-config-pages'
+    }
+  };
+  var changanX5Variants={
+    '74278':{
+      title:'Changan X5 PLUS 2026 Second Generation 1.5T High Energy PRO',
+      price:'91,900',
+      pdf:'documents/changan-x5-plus-2026-second-generation-1-5t-high-energy-pro-91900-config.pdf',
+      dir:'documents/changan-x5-plus-2026-second-generation-1-5t-high-energy-pro-91900-config-pages'
+    },
+    '74279':{
+      title:'Changan X5 PLUS 2026 Second Generation 1.5T Pioneer PRO',
+      price:'95,900',
+      pdf:'documents/changan-x5-plus-2026-second-generation-1-5t-pioneer-pro-95900-config.pdf',
+      dir:'documents/changan-x5-plus-2026-second-generation-1-5t-pioneer-pro-95900-config-pages'
+    },
+    '74137':{
+      title:'Changan X5 PLUS 2026 Second Generation 1.5T Beyond PRO',
+      price:'98,900',
+      pdf:'documents/changan-x5-plus-2026-second-generation-1-5t-beyond-pro-98900-config.pdf',
+      dir:'documents/changan-x5-plus-2026-second-generation-1-5t-beyond-pro-98900-config-pages'
+    },
+    '74280':{
+      title:'Changan X5 PLUS 2026 Second Generation 1.5T Excellence PRO',
+      price:'103,900',
+      pdf:'documents/changan-x5-plus-2026-second-generation-1-5t-excellence-pro-103900-config.pdf',
+      dir:'documents/changan-x5-plus-2026-second-generation-1-5t-excellence-pro-103900-config-pages'
+    }
+  };
+  var changanCS55Variants={
+    '74992':{
+      title:'Changan CS55 PLUS 2026 Fourth Generation New Blue Whale 1.5T Elite',
+      price:'92,900',
+      pdf:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-elite-92900-config.pdf',
+      dir:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-elite-92900-config-pages'
+    },
+    '74514':{
+      title:'Changan CS55 PLUS 2026 Fourth Generation New Blue Whale 1.5T Leading',
+      price:'98,900',
+      pdf:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-leading-98900-config.pdf',
+      dir:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-leading-98900-config-pages'
+    },
+    '72642':{
+      title:'Changan CS55 PLUS 2026 Fourth Generation New Blue Whale 1.5T Tianshu',
+      price:'106,900',
+      pdf:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-tianshu-106900-config.pdf',
+      dir:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-tianshu-106900-config-pages'
+    },
+    '74993':{
+      title:'Changan CS55 PLUS 2026 Fourth Generation New Blue Whale 1.5T Tianshu Premium',
+      price:'109,900',
+      pdf:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-tianshu-premium-109900-config.pdf',
+      dir:'documents/changan-cs55-plus-2026-fourth-generation-1-5t-tianshu-premium-109900-config-pages'
+    }
+  };
+  var changanCS75Variants={
+    '75346':{
+      title:'Changan CS75 PLUS 2026 Smart Champion Edition 1.5T New Blue Whale Zhiling',
+      price:'108,900',
+      pdf:'documents/changan-cs75-plus-2026-smart-champion-1-5t-zhiling-108900-config.pdf',
+      dir:'documents/changan-cs75-plus-2026-smart-champion-1-5t-zhiling-108900-config-pages'
+    },
+    '75339':{
+      title:'Changan CS75 PLUS 2026 Smart Champion Edition 1.5T New Blue Whale Zhihang',
+      price:'116,900',
+      pdf:'documents/changan-cs75-plus-2026-smart-champion-1-5t-zhihang-116900-config.pdf',
+      dir:'documents/changan-cs75-plus-2026-smart-champion-1-5t-zhihang-116900-config-pages'
+    },
+    '77936':{
+      title:'Changan CS75 PLUS 2026 Fourth Generation 1.5T New Blue Whale Premium',
+      price:'121,900',
+      pdf:'documents/changan-cs75-plus-2026-fourth-generation-1-5t-premium-121900-config.pdf',
+      dir:'documents/changan-cs75-plus-2026-fourth-generation-1-5t-premium-121900-config-pages'
+    },
+    '77937':{
+      title:'Changan CS75 PLUS 2026 Fourth Generation 1.5T New Blue Whale Tianshu Flagship',
+      price:'129,900',
+      pdf:'documents/changan-cs75-plus-2026-fourth-generation-1-5t-tianshu-flagship-129900-config.pdf',
+      dir:'documents/changan-cs75-plus-2026-fourth-generation-1-5t-tianshu-flagship-129900-config-pages'
     }
   };
   var qashqaiVariants={
@@ -1331,6 +1507,73 @@
     page.price=a5Variant.price;
     page.summary='Selected guide-price configuration for Audi A5L FOB export consultation.';
   }
+  if(filename==='vehicle-config-crv.html'){
+    var crvSpecid=new URLSearchParams(location.search).get('specid')||'78059';
+    var crvVariant=crvVariants[crvSpecid]||crvVariants['78059'];
+    route={pdf:crvVariant.pdf,dir:crvVariant.dir,pages:7};
+    page.title=crvVariant.title;
+    page.price=crvVariant.price;
+    page.summary='Selected guide-price configuration for Honda CR-V FOB export consultation.';
+    page.sections=[{
+      title:'Basic Information',
+      rows:[
+        ['Model',crvVariant.title],
+        ['Manufacturer\'s suggested retail price','RMB '+crvVariant.price],
+        ['Body style','Compact SUV'],
+        ['Powertrain','1.5T gasoline with CVT'],
+        ['Drive and seating',crvVariant.driveAndSeating],
+        ['Export terms','FOB delivery at a designated Chinese port']
+      ]
+    }];
+  }
+  if(filename==='vehicle-config-tiggo-5x.html'){
+    var tiggo5xSpecid=new URLSearchParams(location.search).get('specid')||'72714';
+    var tiggo5xVariant=tiggo5xVariants[tiggo5xSpecid]||tiggo5xVariants['72714'];
+    route={pdf:tiggo5xVariant.pdf,dir:tiggo5xVariant.dir,pages:5};
+    page.title=tiggo5xVariant.title;
+    page.price=tiggo5xVariant.price;
+    page.summary='Selected guide-price configuration for Chery Tiggo 5X FOB export consultation.';
+  }
+  if(filename==='vehicle-config-tiggo-3x.html'){
+    var tiggo3xSpecid=new URLSearchParams(location.search).get('specid')||'69331';
+    var tiggo3xVariant=tiggo3xVariants[tiggo3xSpecid]||tiggo3xVariants['69331'];
+    route={pdf:tiggo3xVariant.pdf,dir:tiggo3xVariant.dir,pages:5};
+    page.title=tiggo3xVariant.title;
+    page.price=tiggo3xVariant.price;
+    page.summary='Selected guide-price configuration for Chery Tiggo 3X FOB export consultation.';
+  }
+  if(filename==='vehicle-config-mg5.html'){
+    var mg5Specid=new URLSearchParams(location.search).get('specid')||'73650';
+    var mg5Variant=mg5Variants[mg5Specid]||mg5Variants['73650'];
+    route={pdf:mg5Variant.pdf,dir:mg5Variant.dir,pages:5};
+    page.title=mg5Variant.title;
+    page.price=mg5Variant.price;
+    page.summary='Selected guide-price configuration for MG MG5 FOB export consultation.';
+  }
+  if(filename==='vehicle-config-changan-x5.html'){
+    var changanX5Specid=new URLSearchParams(location.search).get('specid')||'74278';
+    var changanX5Variant=changanX5Variants[changanX5Specid]||changanX5Variants['74278'];
+    route={pdf:changanX5Variant.pdf,dir:changanX5Variant.dir,pages:5};
+    page.title=changanX5Variant.title;
+    page.price=changanX5Variant.price;
+    page.summary='Selected guide-price configuration for Changan X5 PLUS FOB export consultation.';
+  }
+  if(filename==='vehicle-config-changan-cs55.html'){
+    var changanCS55Specid=new URLSearchParams(location.search).get('specid')||'74992';
+    var changanCS55Variant=changanCS55Variants[changanCS55Specid]||changanCS55Variants['74992'];
+    route={pdf:changanCS55Variant.pdf,dir:changanCS55Variant.dir,pages:5};
+    page.title=changanCS55Variant.title;
+    page.price=changanCS55Variant.price;
+    page.summary='Selected guide-price configuration for Changan CS55 PLUS FOB export consultation.';
+  }
+  if(filename==='vehicle-config-changan-cs75.html'){
+    var changanCS75Specid=new URLSearchParams(location.search).get('specid')||'75346';
+    var changanCS75Variant=changanCS75Variants[changanCS75Specid]||changanCS75Variants['75346'];
+    route={pdf:changanCS75Variant.pdf,dir:changanCS75Variant.dir,pages:6};
+    page.title=changanCS75Variant.title;
+    page.price=changanCS75Variant.price;
+    page.summary='Selected guide-price configuration for Changan CS75 PLUS FOB export consultation.';
+  }
   if(filename==='vehicle-config-rav4.html'){
     var rav4Specid=new URLSearchParams(location.search).get('specid')||'74683';
     var rav4Variant=rav4Variants[rav4Specid]||rav4Variants['74683'];
@@ -1570,6 +1813,13 @@
     'vehicle-config-q3.html':'Audi Q3',
     'vehicle-config-q5.html':'Audi Q5',
     'vehicle-config-a5.html':'Audi A5',
+    'vehicle-config-crv.html':'Honda CR-V',
+    'vehicle-config-tiggo-5x.html':'Chery Tiggo 5X',
+    'vehicle-config-tiggo-3x.html':'Chery Tiggo 3X',
+    'vehicle-config-mg5.html':'MG MG5',
+    'vehicle-config-changan-x5.html':'Changan X5',
+    'vehicle-config-changan-cs55.html':'Changan CS55',
+    'vehicle-config-changan-cs75.html':'Changan CS75',
     'vehicle-config-nx8.html':'Nissan NX8',
     'vehicle-config-n7.html':'Nissan N7',
     'vehicle-config-n6.html':'Nissan N6',

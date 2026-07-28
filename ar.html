@@ -66,7 +66,7 @@
       "name": "ما العلامات التجارية وأنواع المركبات التي يمكنكم تصديرها؟",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "نركز بشكل أساسي على مركبات السوق الصيني من Toyota وNissan وVolkswagen وGeely وHyundai وKia وBMW وAudi وغيرها، حسب التوفر وسياسة التصدير. كما يمكننا توريد المركبات المستعملة المؤهلة والمركبات الخاصة من الفئة الثانية حسب المشروع."
+        "text": "نركز بشكل أساسي على مركبات السوق الصيني من Toyota وNissan وVolkswagen وGeely وHyundai وKia وAudi وغيرها، حسب التوفر وسياسة التصدير. كما يمكننا توريد المركبات المستعملة المؤهلة والمركبات الخاصة من الفئة الثانية حسب المشروع."
       }
     },
     {
@@ -231,8 +231,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .lb-next{left:20px}
 @media(max-width:640px){.lb-nav{font-size:28px;padding:8px 12px}.lb-prev{right:8px}.lb-next{left:8px}}
 </style>
-  <script src="trim-localization.js?v=20260727j"></script>
+  <script src="trim-localization.js?v=20260728g"></script>
 <script src="nissan-2026-data.js?v=20260723c"></script>
+<script src="featured-models-data.js?v=20260728a"></script>
 </head>
 <body>
 
@@ -379,6 +380,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         <div class="card-img" style="background-image:url('images/toyota/corolla-cross/1.jpg')"><span class="badge">SUV</span></div>
         <div class="card-body"><h4>Toyota Corolla Cross</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Toyota Corolla Cross');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
+      <div class="model-card" data-base="images/toyota/corolla/" data-prefix="" data-count="8" data-title="Toyota Corolla">
+        <div class="card-img" style="background-image:url('images/toyota/corolla/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-body"><h4>Toyota Corolla</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Toyota Corolla');return false;">استشارة</a><div class="info">٨ صور</div></div>
+      </div>
     </div>
     <div class="catalog-actions">
       <a class="catalog-link" href="models-ar.html?v=20260702#models" target="_blank" rel="noopener noreferrer">عرض المزيد من الموديلات</a>
@@ -437,7 +442,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     </div>
     <div class="faq-item">
       <h3>ما العلامات التجارية وأنواع المركبات التي يمكنكم تصديرها؟</h3>
-      <p>نركز بشكل أساسي على مركبات السوق الصيني من Toyota وNissan وVolkswagen وGeely وHyundai وKia وBMW وAudi وغيرها، حسب التوفر وسياسة التصدير. كما يمكننا توريد المركبات المستعملة المؤهلة والمركبات الخاصة من الفئة الثانية حسب المشروع.</p>
+      <p>نركز بشكل أساسي على مركبات السوق الصيني من Toyota وNissan وVolkswagen وGeely وHyundai وKia وAudi وغيرها، حسب التوفر وسياسة التصدير. كما يمكننا توريد المركبات المستعملة المؤهلة والمركبات الخاصة من الفئة الثانية حسب المشروع.</p>
     </div>
     <div class="faq-item">
       <h3>ما المستندات المطلوبة لتصدير المركبات من الصين؟</h3>
@@ -537,7 +542,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   window.closeContactChoice=function(){document.getElementById('contact-choice-overlay').classList.remove('open');};
   window.openContactChoice=function(topic,trimIndex){
     var overlay=document.getElementById('contact-choice-overlay');
-    var data=window.ChemnitzNissan2026&&window.ChemnitzNissan2026[topic];
+    var data=(window.ChemnitzNissan2026&&window.ChemnitzNissan2026[topic])||
+      (window.ChemnitzFeaturedModels&&window.ChemnitzFeaturedModels[topic]);
     if(data&&typeof trimIndex!=='number'){
       var picker='<div class="contact-choice-modal"><div class="contact-choice-bar"><span>اختر السعر الإرشادي</span><button type="button" class="contact-choice-close" onclick="closeContactChoice()">&times;</button></div><div class="nissan-guide-list">';
       for(var p=0;p<data.trims.length;p++){
@@ -549,6 +555,12 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       return;
     }
     var trim=data&&typeof trimIndex==='number'?data.trims[trimIndex]:null;
+    var sheetUrl=window.ChemnitzFeaturedConfigUrl?window.ChemnitzFeaturedConfigUrl(topic,trim):'';
+    if(sheetUrl){
+      closeContactChoice();
+      window.location.href=sheetUrl+'&from=home&lang=ar';
+      return;
+    }
     var text=consultText(topic,trim);
     var trackingContext={
       model_name:topic||'',

@@ -203,6 +203,8 @@
     var models = {
       'bz3': 'Toyota bZ3',
       'camry': 'Toyota Camry',
+      'changan-cs55': 'Changan CS55',
+      'changan-x5': 'Changan X5',
       'corolla-cross': 'Toyota Corolla Cross',
       'corolla': 'Toyota Corolla',
       'dashing': 'Jetour Dashing',

@@ -116,6 +116,38 @@
     '72704': 'Audi Q5L 2026 2.0T Smart Hybrid',
     '73537': 'Audi A5L 2026 2.0T Sport quattro',
 
+    '78059': 'Honda CR-V 2026 30th Anniversary 1.5T FWD Vitality 5-Seat',
+    '78060': 'Honda CR-V 2026 30th Anniversary 1.5T FWD Fengshang 5-Seat',
+    '78061': 'Honda CR-V 2026 30th Anniversary 1.5T FWD Fengshang 7-Seat',
+    '78062': 'Honda CR-V 2026 30th Anniversary 1.5T FWD Zhiling 5-Seat',
+    '78063': 'Honda CR-V 2026 30th Anniversary 1.5T AWD Zhenxiang 5-Seat',
+
+    '72714': 'Tiggo 5X 2025 1.5L MT Excellence',
+    '71624': 'Tiggo 5X 2025 1.5L CVT Excellence',
+
+    '69331': 'Tiggo 3X 2024 1.5L CVT Excellence',
+    '68127': 'Tiggo 3X 2024 Huimin Edition 1.5L MT Fashion',
+    '68128': 'Tiggo 3X 2024 Huimin Edition 1.5L CVT Fashion',
+
+    '73650': 'MG5 2026 180DVVT Global First Edition',
+    '73575': 'MG5 2026 180DVVT Global Luxury',
+    '75932': 'MG5 2026 180DVVT Yixiang Custom Edition',
+
+    '74278': 'Changan X5 PLUS 2026 Second Generation 1.5T High Energy PRO',
+    '74279': 'Changan X5 PLUS 2026 Second Generation 1.5T Pioneer PRO',
+    '74137': 'Changan X5 PLUS 2026 Second Generation 1.5T Beyond PRO',
+    '74280': 'Changan X5 PLUS 2026 Second Generation 1.5T Excellence PRO',
+
+    '74992': 'Changan CS55 PLUS 2026 Fourth Generation New Blue Whale 1.5T Elite',
+    '74514': 'Changan CS55 PLUS 2026 Fourth Generation New Blue Whale 1.5T Leading',
+    '72642': 'Changan CS55 PLUS 2026 Fourth Generation New Blue Whale 1.5T Tianshu',
+    '74993': 'Changan CS55 PLUS 2026 Fourth Generation New Blue Whale 1.5T Tianshu Premium',
+
+    '75346': 'Changan CS75 PLUS 2026 Smart Champion Edition 1.5T New Blue Whale Zhiling',
+    '75339': 'Changan CS75 PLUS 2026 Smart Champion Edition 1.5T New Blue Whale Zhihang',
+    '77936': 'Changan CS75 PLUS 2026 Fourth Generation 1.5T New Blue Whale Premium',
+    '77937': 'Changan CS75 PLUS 2026 Fourth Generation 1.5T New Blue Whale Tianshu Flagship',
+
     '68972': 'Coolray 2025 1.5L MT Chaoneng',
     '67792': 'Coolray 2025 1.5L CVT Chaoneng',
     '73598': 'Coolray 2025 1.5L CVT Chaoneng MAX',
@@ -297,7 +329,14 @@
 
   var LOCALIZED_TERMS = {
     fr: [
+      ['Second Generation', 'Deuxième génération'],
+      ['Beyond', 'Dépassement'],
+      ['Global First Edition', 'Première édition mondiale'],
+      ['Global Luxury', 'Luxe mondial'],
+      ['Yixiang Custom Edition', 'Édition personnalisée Yixiang'],
+      ['30th Anniversary', '30e anniversaire'],
       ['10th Anniversary Champion', 'Champion du 10e anniversaire'],
+      ['Huimin Edition', 'Édition accessible'],
       ['Huanle', 'Joie'],
       ['Xiangwang', 'Aspiration'],
       ['Meihao', 'Harmonie'],
@@ -310,6 +349,7 @@
       ['Matte Gray', 'Gris mat'],
       ['Cross-Border', 'Tout-terrain'],
       ['Black Edition', 'Édition noire'],
+      ['Fashion', 'Élégance'],
       ['Dynamic', 'Dynamique'],
       ['Qicheng', 'Départ'],
       ['Discovery', 'Découverte'],
@@ -367,7 +407,14 @@
       ['Other trims', 'Autres versions']
     ],
     ru: [
+      ['Second Generation', 'Второе поколение'],
+      ['Beyond', 'Превосходство'],
+      ['Global First Edition', 'Первая глобальная версия'],
+      ['Global Luxury', 'Глобальная люкс-версия'],
+      ['Yixiang Custom Edition', 'Индивидуальная версия Yixiang'],
+      ['30th Anniversary', '30-летие'],
       ['10th Anniversary Champion', 'Чемпион 10-летия'],
+      ['Huimin Edition', 'Доступная версия'],
       ['Huanle', 'Радость'],
       ['Xiangwang', 'Стремление'],
       ['Meihao', 'Прекрасная'],
@@ -440,7 +487,14 @@
       ['Other trims', 'Другие комплектации']
     ],
     ar: [
+      ['Second Generation', 'الجيل الثاني'],
+      ['Beyond', 'التفوق'],
+      ['Global First Edition', 'الإصدار العالمي الأول'],
+      ['Global Luxury', 'الإصدار العالمي الفاخر'],
+      ['Yixiang Custom Edition', 'إصدار Yixiang المخصص'],
+      ['30th Anniversary', 'الذكرى الثلاثون'],
       ['10th Anniversary Champion', 'بطل الذكرى العاشرة'],
+      ['Huimin Edition', 'الإصدار الاقتصادي'],
       ['Huanle', 'الفرح'],
       ['Xiangwang', 'التطلع'],
       ['Meihao', 'الجميلة'],

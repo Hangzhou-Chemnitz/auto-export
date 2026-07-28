@@ -67,7 +67,7 @@
       "name": "Какие бренды и типы автомобилей вы экспортируете?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Мы в основном работаем с автомобилями китайского рынка брендов Toyota, Nissan, Volkswagen, Geely, Hyundai, Kia, BMW, Audi и других марок, с учетом наличия и экспортной политики. Также можем обсуждать подходящие автомобили с пробегом и спецтехнику категории II по проекту."
+        "text": "Мы в основном работаем с автомобилями китайского рынка брендов Toyota, Nissan, Volkswagen, Geely, Hyundai, Kia, Audi и других марок, с учетом наличия и экспортной политики. Также можем обсуждать подходящие автомобили с пробегом и спецтехнику категории II по проекту."
       }
     },
     {
@@ -252,8 +252,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 
 </style>
-  <script src="trim-localization.js?v=20260727k"></script>
+  <script src="trim-localization.js?v=20260728g"></script>
 <script src="nissan-2026-data.js?v=20260723c"></script>
+<script src="featured-models-data.js?v=20260728a"></script>
 </head>
 <body>
 
@@ -401,6 +402,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         <div class="card-img" style="background-image:url('images/toyota/corolla-cross/1.jpg')"><span class="badge">Внедорожник</span></div>
         <div class="card-body"><h4>Toyota Corolla Cross</h4><div class="info">8 Фото</div></div>
       </div>
+      <div class="model-card" data-base="images/toyota/corolla/" data-prefix="" data-count="8" data-title="Toyota Corolla">
+        <div class="card-img" style="background-image:url('images/toyota/corolla/1.jpg')"><span class="badge">Седан</span></div>
+        <div class="card-body"><h4>Toyota Corolla</h4><div class="info">8 Фото</div></div>
+      </div>
     </div>
     <div class="catalog-actions">
       <a class="catalog-link" href="models-ru.html?v=20260702#models" target="_blank" rel="noopener noreferrer">Больше моделей</a>
@@ -459,7 +464,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     </div>
     <div class="faq-item">
       <h3>Какие бренды и типы автомобилей вы экспортируете?</h3>
-      <p>Мы в основном работаем с автомобилями китайского рынка брендов Toyota, Nissan, Volkswagen, Geely, Hyundai, Kia, BMW, Audi и других марок, с учетом наличия и экспортной политики. Также можем обсуждать подходящие автомобили с пробегом и спецтехнику категории II по проекту.</p>
+      <p>Мы в основном работаем с автомобилями китайского рынка брендов Toyota, Nissan, Volkswagen, Geely, Hyundai, Kia, Audi и других марок, с учетом наличия и экспортной политики. Также можем обсуждать подходящие автомобили с пробегом и спецтехнику категории II по проекту.</p>
     </div>
     <div class="faq-item">
       <h3>Какие документы нужны для экспорта автомобиля из Китая?</h3>
@@ -1256,6 +1261,59 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   ] };
 
   delete configData["Mazda CX-5"];
+  delete configData["BMW 3 Series"];
+  delete configData["BMW 5 Series"];
+  delete configData["BMW X1"];
+  delete configData["BMW X3"];
+  delete configData["BMW X5"];
+  delete configData["Fangchengbao Bao 8"];
+  delete configData["Roewe i5"];
+
+  configData["Honda CR-V"] = { source: "Autohome", seriesId: 314, trims: [
+    { name: "CR-V 2026款 全球30年荣耀款 1.5T 两驱活力5座版", price: "Цена: 185,900", source: "Autohome", specid: 78059 },
+    { name: "CR-V 2026款 全球30年荣耀款 1.5T 两驱锋尚5座版", price: "Цена: 201,900", source: "Autohome", specid: 78060 },
+    { name: "CR-V 2026款 全球30年荣耀款 1.5T 两驱锋尚7座版", price: "Цена: 208,900", source: "Autohome", specid: 78061 },
+    { name: "CR-V 2026款 全球30年荣耀款 1.5T 两驱智领5座版", price: "Цена: 211,900", source: "Autohome", specid: 78062 },
+    { name: "CR-V 2026款 全球30年荣耀款 1.5T 四驱臻享5座版", price: "Цена: 231,900", source: "Autohome", specid: 78063 }
+  ] };
+
+  configData["Chery Tiggo 3X"] = { source: "Autohome", seriesId: 4099, trims: [
+    { name: "瑞虎3X 2024款 1.5L CVT卓越版", price: "Цена: 57,900", source: "Autohome", specid: 69331 },
+    { name: "瑞虎3X 2024款 惠民版 1.5L 手动时尚型", price: "Цена: 59,900", source: "Autohome", specid: 68127 },
+    { name: "瑞虎3X 2024款 惠民版 1.5L CVT时尚型", price: "Цена: 69,900", source: "Autohome", specid: 68128 }
+  ] };
+
+  configData["Chery Tiggo 5X"] = { source: "Autohome", seriesId: 4531, trims: [
+    { name: "瑞虎5X 2025款 1.5L 手动卓越版", price: "Цена: 62,900", source: "Autohome", specid: 72714 },
+    { name: "瑞虎5X 2025款 1.5L CVT卓越版", price: "Цена: 67,900", source: "Autohome", specid: 71624 }
+  ] };
+
+  configData["MG MG5"] = { source: "Autohome", seriesId: 532, trims: [
+    { name: "MG5 2026款 180DVVT 全球抢先版", price: "Цена: 81,900", source: "Autohome", specid: 73650 },
+    { name: "MG5 2026款 180DVVT 全球豪华版", price: "Цена: 85,900", source: "Autohome", specid: 73575 },
+    { name: "MG5 2026款 180DVVT 怡享定制版", price: "Цена: 92,000", source: "Autohome", specid: 75932 }
+  ] };
+
+  configData["Changan X5"] = { source: "Autohome", seriesId: 7552, trims: [
+    { name: "长安X5 PLUS 2026款 第二代 1.5T 高能PRO", price: "Цена: 91,900", source: "Autohome", specid: 74278 },
+    { name: "长安X5 PLUS 2026款 第二代 1.5T 先锋PRO", price: "Цена: 95,900", source: "Autohome", specid: 74279 },
+    { name: "长安X5 PLUS 2026款 第二代 1.5T 超越PRO", price: "Цена: 98,900", source: "Autohome", specid: 74137 },
+    { name: "长安X5 PLUS 2026款 第二代 1.5T 卓越PRO", price: "Цена: 103,900", source: "Autohome", specid: 74280 }
+  ] };
+
+  configData["Changan CS55"] = { source: "Autohome", seriesId: 5498, trims: [
+    { name: "CS55PLUS 2026款 第四代 新蓝鲸 1.5T 精英型", price: "Цена: 92,900", source: "Autohome", specid: 74992 },
+    { name: "CS55PLUS 2026款 第四代 新蓝鲸 1.5T 领先型", price: "Цена: 98,900", source: "Autohome", specid: 74514 },
+    { name: "CS55PLUS 2026款 第四代 新蓝鲸 1.5T 天枢型", price: "Цена: 106,900", source: "Autohome", specid: 72642 },
+    { name: "CS55PLUS 2026款 第四代 新蓝鲸 1.5T 天枢尊贵型", price: "Цена: 109,900", source: "Autohome", specid: 74993 }
+  ] };
+
+  configData["Changan CS75"] = { source: "Autohome", seriesId: 5179, trims: [
+    { name: "长安CS75PLUS 2026款 智慧冠军版 1.5T 新蓝鲸 智领型", price: "Цена: 108,900", source: "Autohome", specid: 75346 },
+    { name: "长安CS75PLUS 2026款 智慧冠军版 1.5T 新蓝鲸 智航型", price: "Цена: 116,900", source: "Autohome", specid: 75339 },
+    { name: "长安CS75PLUS 2026款 第四代 1.5T 新蓝鲸 尊享型", price: "Цена: 121,900", source: "Autohome", specid: 77936 },
+    { name: "长安CS75PLUS 2026款 第四代 1.5T 新蓝鲸 天枢旗舰型", price: "Цена: 129,900", source: "Autohome", specid: 77937 }
+  ] };
 
   configData["Hyundai Elantra"] = { source: "Autohome", seriesId: 51, trims: [
     { name: "伊兰特 2026款 1.5L CVT GLS领先版", price: "Цена: 99,800", source: "Autohome", specid: 78117 },
@@ -1264,6 +1322,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   ] };
 
   Object.assign(configData, window.ChemnitzNissan2026 || {});
+  Object.assign(configData, window.ChemnitzFeaturedModels || {});
 
   function escHtml(value) {
     return String(value || '').replace(/[&<>"']/g, function(ch) {
@@ -1341,15 +1400,24 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       return;
     }
     var h = '<div class="config-modal">';
+    var hasConfigSheet = data.trims.some(function(trim) {
+      return window.ChemnitzFeaturedConfigUrl &&
+        window.ChemnitzFeaturedConfigUrl(modelName, trim);
+    });
     h += '<div class="config-bar">' + modelName + ' • Список моделей<span class="config-close" onclick="document.getElementById(\'config-overlay\').classList.remove(\'open\')">&times;</span></div>';
-    h += '<div class="config-intro">Выберите комплектацию, и мы сразу откроем WhatsApp для консультации по актуальной цене, наличию и документам.</div>';
+    h += '<div class="config-intro">' + (hasConfigSheet
+      ? 'Выберите комплектацию, чтобы открыть соответствующий лист конфигурации.'
+      : 'Выберите комплектацию, и мы сразу откроем WhatsApp для консультации по актуальной цене, наличию и документам.') + '</div>';
     for (var i = 0; i < data.trims.length; i++) {
       var t = data.trims[i];
       var price = ruCleanPrice(t.msrp || t.price);
+      var sheetUrl = window.ChemnitzFeaturedConfigUrl
+        ? window.ChemnitzFeaturedConfigUrl(modelName, t)
+        : '';
       h += '<button type="button" class="config-card config-consult-card" onclick="showRuContactChoice(' + i + ')">';
       h += '<div class="config-row1"><span class="name">' + escHtml(ruDisplayTrimName(t)) + '</span><span class="msrp"><em>Цена</em>' + escHtml(price) + '</span></div>';
       h += '<div class="config-btn-row">';
-      h += '<span class="config-btn">Запросить в WhatsApp</span>';
+      h += '<span class="config-btn">' + (sheetUrl ? 'Открыть комплектацию' : 'Запросить в WhatsApp') + '</span>';
       h += '</div></button>';
     }
     h += '</div>';
@@ -1362,6 +1430,14 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var modelName = window.currentConfigModel;
     var data = configData[modelName];
     var trim = data && data.trims ? data.trims[trimIndex] : null;
+    var sheetUrl = window.ChemnitzFeaturedConfigUrl
+      ? window.ChemnitzFeaturedConfigUrl(modelName, trim)
+      : '';
+    if (sheetUrl) {
+      overlay.classList.remove('open');
+      window.location.href = sheetUrl + '&from=home&lang=ru';
+      return;
+    }
     overlay.innerHTML = renderRuContactChoice(modelName, trim);
     overlay.classList.add('open');
   };
