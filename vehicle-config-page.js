@@ -31,7 +31,15 @@
     'vehicle-config-kx1.html':{pdf:'documents/kia-kx1-2026-1-4l-ivt-enjoy-79800-config.pdf',dir:'documents/kx1-1-4l-ivt-enjoy-79800-config-pages',pages:6},
     'vehicle-config-k3.html':{pdf:'documents/kia-k3-2024-1-5l-cvt-comfort-plus-114400-config.pdf',dir:'documents/k3-1-5l-cvt-comfort-plus-114400-config-pages',pages:6},
     'vehicle-config-k5.html':{pdf:'documents/kia-k5-2025-1-5t-luxury-139800-config.pdf',dir:'documents/k5-1-5t-luxury-139800-config-pages',pages:6},
-    'vehicle-config-sportage.html':{pdf:'documents/kia-sportage-2026-1-5t-fwd-comfort-154900-config.pdf',dir:'documents/sportage-1-5t-fwd-comfort-154900-config-pages',pages:7}
+    'vehicle-config-sportage.html':{pdf:'documents/kia-sportage-2026-1-5t-fwd-comfort-154900-config.pdf',dir:'documents/sportage-1-5t-fwd-comfort-154900-config-pages',pages:7},
+    'vehicle-config-elantra.html':{pdf:'documents/hyundai-elantra-2026-1-5l-cvt-gls-leading-99800-config.pdf',dir:'documents/elantra-1-5l-cvt-gls-leading-99800-config-pages',pages:6},
+    'vehicle-config-dashing.html':{pdf:'documents/jetour-dashing-2026-youth-1-5t-6mt-comfort-69900-config.pdf',dir:'documents/dashing-youth-1-5t-6mt-comfort-69900-config-pages',pages:6},
+    'vehicle-config-x70.html':{pdf:'documents/jetour-x70-2026-1-5t-mt-beyond-5-seat-99900-config.pdf',dir:'documents/x70-1-5t-mt-beyond-5-seat-99900-config-pages',pages:6},
+    'vehicle-config-traveler.html':{pdf:'documents/jetour-traveler-2026-1-5td-explore-139900-config.pdf',dir:'documents/traveler-1-5td-explore-139900-config-pages',pages:7},
+    'vehicle-config-free-rider.html':{pdf:'documents/jetour-free-rider-2026-1-5td-dct-qicheng-114900-config.pdf',dir:'documents/free-rider-1-5td-dct-qicheng-114900-config-pages',pages:7},
+    'vehicle-config-q3.html':{pdf:'documents/audi-q3-2026-45th-35tfsi-progressive-76044-251800-config.pdf',dir:'documents/q3-45th-35tfsi-progressive-76044-251800-config-pages',pages:6},
+    'vehicle-config-q5.html':{pdf:'documents/audi-q5l-2026-2-0t-smart-hybrid-72704-309800-config.pdf',dir:'documents/q5l-2-0t-smart-hybrid-72704-309800-config-pages',pages:8},
+    'vehicle-config-a5.html':{pdf:'documents/audi-a5l-2026-2-0t-sport-quattro-73537-309800-config.pdf',dir:'documents/a5l-2-0t-sport-quattro-73537-309800-config-pages',pages:8}
   };
   var coolrayVariants={
     '68972':{
@@ -293,6 +301,232 @@
       price:'169,900',
       pdf:'documents/kia-sportage-2026-1-5t-fwd-premium-169900-config.pdf',
       dir:'documents/sportage-1-5t-fwd-premium-169900-config-pages'
+    }
+  };
+  var elantraVariants={
+    '78117':{
+      title:'Hyundai Elantra 2026 1.5L CVT GLS Leading',
+      price:'99,800',
+      pdf:'documents/hyundai-elantra-2026-1-5l-cvt-gls-leading-99800-config.pdf',
+      dir:'documents/elantra-1-5l-cvt-gls-leading-99800-config-pages'
+    },
+    '78118':{
+      title:'Hyundai Elantra 2026 1.5L CVT GLX Elite',
+      price:'112,800',
+      pdf:'documents/hyundai-elantra-2026-1-5l-cvt-glx-elite-112800-config.pdf',
+      dir:'documents/elantra-1-5l-cvt-glx-elite-112800-config-pages'
+    },
+    '78119':{
+      title:'Hyundai Elantra 2026 1.5L CVT LUX Premium',
+      price:'123,800',
+      pdf:'documents/hyundai-elantra-2026-1-5l-cvt-lux-premium-123800-config.pdf',
+      dir:'documents/elantra-1-5l-cvt-lux-premium-123800-config-pages'
+    }
+  };
+  var dashingVariants={
+    '74899':{
+      title:'Jetour Dashing 2026 Youth 1.5T 6MT Comfort',
+      price:'69,900',
+      pdf:'documents/jetour-dashing-2026-youth-1-5t-6mt-comfort-69900-config.pdf',
+      dir:'documents/dashing-youth-1-5t-6mt-comfort-69900-config-pages'
+    },
+    '74900':{
+      title:'Jetour Dashing 2026 Youth 1.5T 6DCT Elite',
+      price:'79,900',
+      pdf:'documents/jetour-dashing-2026-youth-1-5t-6dct-elite-79900-config.pdf',
+      dir:'documents/dashing-youth-1-5t-6dct-elite-79900-config-pages'
+    },
+    '74901':{
+      title:'Jetour Dashing 2026 Youth 1.5T 6DCT Luxury',
+      price:'83,900',
+      pdf:'documents/jetour-dashing-2026-youth-1-5t-6dct-luxury-83900-config.pdf',
+      dir:'documents/dashing-youth-1-5t-6dct-luxury-83900-config-pages'
+    },
+    '77298':{
+      title:'Jetour Dashing 2026 Youth 1.5T 6DCT Luxury Plus',
+      price:'87,900',
+      pdf:'documents/jetour-dashing-2026-youth-1-5t-6dct-luxury-plus-87900-config.pdf',
+      dir:'documents/dashing-youth-1-5t-6dct-luxury-plus-87900-config-pages'
+    },
+    '73906':{
+      title:'Jetour Dashing 2026 1.5T DCT Elite',
+      price:'109,900',
+      pdf:'documents/jetour-dashing-2026-1-5t-dct-elite-109900-config.pdf',
+      dir:'documents/dashing-1-5t-dct-elite-109900-config-pages'
+    },
+    '73826':{
+      title:'Jetour Dashing 2026 1.5T DCT Luxury',
+      price:'116,900',
+      pdf:'documents/jetour-dashing-2026-1-5t-dct-luxury-116900-config.pdf',
+      dir:'documents/dashing-1-5t-dct-luxury-116900-config-pages'
+    },
+    '74027':{
+      title:'Jetour Dashing 2026 1.5T DCT Black Edition',
+      price:'125,900',
+      pdf:'documents/jetour-dashing-2026-1-5t-dct-black-knight-125900-config.pdf',
+      dir:'documents/dashing-1-5t-dct-black-knight-125900-config-pages'
+    },
+    '78072':{
+      title:'Jetour Dashing 2026 1.5T DCT Starlight Huasheng',
+      price:'136,800',
+      pdf:'documents/jetour-dashing-2026-1-5t-dct-xingyao-huasheng-136800-config.pdf',
+      dir:'documents/dashing-1-5t-dct-xingyao-huasheng-136800-config-pages'
+    }
+  };
+  var x70Variants={
+    '76874':{
+      title:'Jetour X70 2026 1.5T MT Beyond 5-Seat',
+      price:'99,900',
+      pdf:'documents/jetour-x70-2026-1-5t-mt-beyond-5-seat-99900-config.pdf',
+      dir:'documents/x70-1-5t-mt-beyond-5-seat-99900-config-pages'
+    },
+    '76875':{
+      title:'Jetour X70 2026 1.5T MT Beyond 7-Seat',
+      price:'102,900',
+      pdf:'documents/jetour-x70-2026-1-5t-mt-beyond-7-seat-102900-config.pdf',
+      dir:'documents/x70-1-5t-mt-beyond-7-seat-102900-config-pages'
+    },
+    '76876':{
+      title:'Jetour X70 2026 1.5T DCT Beyond PRO 5-Seat',
+      price:'103,900',
+      pdf:'documents/jetour-x70-2026-1-5t-dct-beyond-pro-5-seat-103900-config.pdf',
+      dir:'documents/x70-1-5t-dct-beyond-pro-5-seat-103900-config-pages'
+    },
+    '76877':{
+      title:'Jetour X70 2026 1.5T DCT Beyond PRO 7-Seat',
+      price:'106,900',
+      pdf:'documents/jetour-x70-2026-1-5t-dct-beyond-pro-7-seat-106900-config.pdf',
+      dir:'documents/x70-1-5t-dct-beyond-pro-7-seat-106900-config-pages'
+    }
+  };
+  var travelerVariants={
+    '75368':{
+      title:'Jetour Traveler 2026 1.5TD Explore',
+      price:'139,900',
+      pdf:'documents/jetour-traveler-2026-1-5td-explore-139900-config.pdf',
+      dir:'documents/traveler-1-5td-explore-139900-config-pages'
+    },
+    '75336':{
+      title:'Jetour Traveler 2026 1.5TD Explore Plus',
+      price:'149,900',
+      pdf:'documents/jetour-traveler-2026-1-5td-explore-plus-149900-config.pdf',
+      dir:'documents/traveler-1-5td-explore-plus-149900-config-pages'
+    },
+    '75320':{
+      title:'Jetour Traveler 2026 2.0TD XWD Discovery',
+      price:'159,900',
+      pdf:'documents/jetour-traveler-2026-2-0td-xwd-discovery-159900-config.pdf',
+      dir:'documents/traveler-2-0td-xwd-discovery-159900-config-pages'
+    },
+    '76336':{
+      title:'Jetour Traveler 2026 Junma 2.0TD DCT XWD Discovery',
+      price:'162,900',
+      pdf:'documents/jetour-traveler-2026-2-0td-dct-junma-xwd-discovery-162900-config.pdf',
+      dir:'documents/traveler-2-0td-dct-junma-xwd-discovery-162900-config-pages'
+    },
+    '75231':{
+      title:'Jetour Traveler 2026 2.0TD XWD Traverse',
+      price:'169,900',
+      pdf:'documents/jetour-traveler-2026-2-0td-xwd-traverse-169900-config.pdf',
+      dir:'documents/traveler-2-0td-xwd-traverse-169900-config-pages'
+    },
+    '76337':{
+      title:'Jetour Traveler 2026 Junma 2.0TD DCT XWD Traverse',
+      price:'172,900',
+      pdf:'documents/jetour-traveler-2026-2-0td-dct-junma-xwd-traverse-172900-config.pdf',
+      dir:'documents/traveler-2-0td-dct-junma-xwd-traverse-172900-config-pages'
+    },
+    '77227':{
+      title:'Jetour Traveler PLUS 2026 2.0TD XWD Conquer 5-Seat',
+      price:'177,900',
+      pdf:'documents/jetour-traveler-plus-2026-2-0td-xwd-conquer-5-seat-177900-config.pdf',
+      dir:'documents/traveler-plus-2-0td-xwd-conquer-5-seat-177900-config-pages'
+    },
+    '75297':{
+      title:'Jetour Traveler 2026 2.0TD XWD Conquer',
+      price:'179,900',
+      pdf:'documents/jetour-traveler-2026-2-0td-xwd-conquer-179900-config.pdf',
+      dir:'documents/traveler-2-0td-xwd-conquer-179900-config-pages'
+    },
+    '77229':{
+      title:'Jetour Traveler PLUS 2026 2.0TD XWD Conquer 7-Seat',
+      price:'179,900',
+      pdf:'documents/jetour-traveler-plus-2026-2-0td-xwd-conquer-7-seat-179900-config.pdf',
+      dir:'documents/traveler-plus-2-0td-xwd-conquer-7-seat-179900-config-pages'
+    },
+    '77228':{
+      title:'Jetour Traveler PLUS 2026 2.0TD XWD Conquer Plus 5-Seat',
+      price:'187,900',
+      pdf:'documents/jetour-traveler-plus-2026-2-0td-xwd-conquer-plus-5-seat-187900-config.pdf',
+      dir:'documents/traveler-plus-2-0td-xwd-conquer-plus-5-seat-187900-config-pages'
+    },
+    '77230':{
+      title:'Jetour Traveler PLUS 2026 2.0TD XWD Conquer Plus 7-Seat',
+      price:'189,900',
+      pdf:'documents/jetour-traveler-plus-2026-2-0td-xwd-conquer-plus-7-seat-189900-config.pdf',
+      dir:'documents/traveler-plus-2-0td-xwd-conquer-plus-7-seat-189900-config-pages'
+    },
+    '75846':{
+      title:'Jetour Traveler 2026 2.0TD XWD Adventure',
+      price:'191,900',
+      pdf:'documents/jetour-traveler-2026-2-0td-xwd-adventure-191900-config.pdf',
+      dir:'documents/traveler-2-0td-xwd-adventure-191900-config-pages'
+    },
+    '77673':{
+      title:'Jetour Traveler 2026 2.0TD XWD Expedition',
+      price:'199,900',
+      pdf:'documents/jetour-traveler-2026-2-0td-xwd-expedition-199900-config.pdf',
+      dir:'documents/traveler-2-0td-xwd-expedition-199900-config-pages'
+    }
+  };
+  var freeRiderVariants={
+    '78309':{
+      title:'Jetour Free Rider 2026 1.5TD DCT Qicheng',
+      price:'114,900',
+      pdf:'documents/jetour-free-rider-2026-1-5td-dct-qicheng-114900-config.pdf',
+      dir:'documents/free-rider-1-5td-dct-qicheng-114900-config-pages'
+    },
+    '76338':{
+      title:'Jetour Free Rider 2026 Junma 1.5TD DCT Explore',
+      price:'127,900',
+      pdf:'documents/jetour-free-rider-2026-junma-1-5td-dct-explore-127900-config.pdf',
+      dir:'documents/free-rider-junma-1-5td-dct-explore-127900-config-pages'
+    },
+    '76339':{
+      title:'Jetour Free Rider 2026 Junma 1.5TD DCT Discovery',
+      price:'137,900',
+      pdf:'documents/jetour-free-rider-2026-junma-1-5td-dct-discovery-137900-config.pdf',
+      dir:'documents/free-rider-junma-1-5td-dct-discovery-137900-config-pages'
+    }
+  };
+  var q3Variants={
+    '76044':{
+      title:'Audi Q3 2026 quattro 45th Anniversary 35 TFSI Progressive Dynamic',
+      price:'251,800',
+      pdf:'documents/audi-q3-2026-45th-35tfsi-progressive-76044-251800-config.pdf',
+      dir:'documents/q3-45th-35tfsi-progressive-76044-251800-config-pages'
+    },
+    '75193':{
+      title:'Audi Q3 2026 quattro 45th Anniversary 35 TFSI Fashion Dynamic',
+      price:'266,800',
+      pdf:'documents/audi-q3-2026-45th-35tfsi-dynamic-75193-266800-config.pdf',
+      dir:'documents/q3-45th-35tfsi-dynamic-75193-266800-config-pages'
+    }
+  };
+  var q5Variants={
+    '72704':{
+      title:'Audi Q5L 2026 2.0T Smart Hybrid',
+      price:'309,800',
+      pdf:'documents/audi-q5l-2026-2-0t-smart-hybrid-72704-309800-config.pdf',
+      dir:'documents/q5l-2-0t-smart-hybrid-72704-309800-config-pages'
+    }
+  };
+  var a5Variants={
+    '73537':{
+      title:'Audi A5L 2026 2.0T Sport quattro',
+      price:'309,800',
+      pdf:'documents/audi-a5l-2026-2-0t-sport-quattro-73537-309800-config.pdf',
+      dir:'documents/a5l-2-0t-sport-quattro-73537-309800-config-pages'
     }
   };
   var qashqaiVariants={
@@ -1033,6 +1267,70 @@
     page.price=sportageVariant.price;
     page.summary='Selected guide-price configuration for Kia Sportage FOB export consultation.';
   }
+  if(filename==='vehicle-config-elantra.html'){
+    var elantraSpecid=new URLSearchParams(location.search).get('specid')||'78117';
+    var elantraVariant=elantraVariants[elantraSpecid]||elantraVariants['78117'];
+    route={pdf:elantraVariant.pdf,dir:elantraVariant.dir,pages:6};
+    page.title=elantraVariant.title;
+    page.price=elantraVariant.price;
+    page.summary='Selected guide-price configuration for Hyundai Elantra FOB export consultation.';
+  }
+  if(filename==='vehicle-config-dashing.html'){
+    var dashingSpecid=new URLSearchParams(location.search).get('specid')||'74899';
+    var dashingVariant=dashingVariants[dashingSpecid]||dashingVariants['74899'];
+    route={pdf:dashingVariant.pdf,dir:dashingVariant.dir,pages:6};
+    page.title=dashingVariant.title;
+    page.price=dashingVariant.price;
+    page.summary='Selected guide-price configuration for Jetour Dashing FOB export consultation.';
+  }
+  if(filename==='vehicle-config-x70.html'){
+    var x70Specid=new URLSearchParams(location.search).get('specid')||'76874';
+    var x70Variant=x70Variants[x70Specid]||x70Variants['76874'];
+    route={pdf:x70Variant.pdf,dir:x70Variant.dir,pages:6};
+    page.title=x70Variant.title;
+    page.price=x70Variant.price;
+    page.summary='Selected guide-price configuration for Jetour X70 FOB export consultation.';
+  }
+  if(filename==='vehicle-config-traveler.html'){
+    var travelerSpecid=new URLSearchParams(location.search).get('specid')||'75368';
+    var travelerVariant=travelerVariants[travelerSpecid]||travelerVariants['75368'];
+    route={pdf:travelerVariant.pdf,dir:travelerVariant.dir,pages:7};
+    page.title=travelerVariant.title;
+    page.price=travelerVariant.price;
+    page.summary='Selected guide-price configuration for Jetour Traveler FOB export consultation.';
+  }
+  if(filename==='vehicle-config-free-rider.html'){
+    var freeRiderSpecid=new URLSearchParams(location.search).get('specid')||'78309';
+    var freeRiderVariant=freeRiderVariants[freeRiderSpecid]||freeRiderVariants['78309'];
+    route={pdf:freeRiderVariant.pdf,dir:freeRiderVariant.dir,pages:7};
+    page.title=freeRiderVariant.title;
+    page.price=freeRiderVariant.price;
+    page.summary='Selected guide-price configuration for Jetour Free Rider FOB export consultation.';
+  }
+  if(filename==='vehicle-config-q3.html'){
+    var q3Specid=new URLSearchParams(location.search).get('specid')||'76044';
+    var q3Variant=q3Variants[q3Specid]||q3Variants['76044'];
+    route={pdf:q3Variant.pdf,dir:q3Variant.dir,pages:6};
+    page.title=q3Variant.title;
+    page.price=q3Variant.price;
+    page.summary='Selected guide-price configuration for Audi Q3 FOB export consultation.';
+  }
+  if(filename==='vehicle-config-q5.html'){
+    var q5Specid=new URLSearchParams(location.search).get('specid')||'72704';
+    var q5Variant=q5Variants[q5Specid]||q5Variants['72704'];
+    route={pdf:q5Variant.pdf,dir:q5Variant.dir,pages:8};
+    page.title=q5Variant.title;
+    page.price=q5Variant.price;
+    page.summary='Selected guide-price configuration for Audi Q5L FOB export consultation.';
+  }
+  if(filename==='vehicle-config-a5.html'){
+    var a5Specid=new URLSearchParams(location.search).get('specid')||'73537';
+    var a5Variant=a5Variants[a5Specid]||a5Variants['73537'];
+    route={pdf:a5Variant.pdf,dir:a5Variant.dir,pages:8};
+    page.title=a5Variant.title;
+    page.price=a5Variant.price;
+    page.summary='Selected guide-price configuration for Audi A5L FOB export consultation.';
+  }
   if(filename==='vehicle-config-rav4.html'){
     var rav4Specid=new URLSearchParams(location.search).get('specid')||'74683';
     var rav4Variant=rav4Variants[rav4Specid]||rav4Variants['74683'];
@@ -1264,6 +1562,14 @@
     'vehicle-config-k3.html':'Kia K3',
     'vehicle-config-k5.html':'Kia K5',
     'vehicle-config-sportage.html':'Kia Sportage',
+    'vehicle-config-elantra.html':'Hyundai Elantra',
+    'vehicle-config-dashing.html':'Jetour Dashing',
+    'vehicle-config-x70.html':'Jetour X70',
+    'vehicle-config-traveler.html':'Jetour Traveler',
+    'vehicle-config-free-rider.html':'Jetour Free Rider',
+    'vehicle-config-q3.html':'Audi Q3',
+    'vehicle-config-q5.html':'Audi Q5',
+    'vehicle-config-a5.html':'Audi A5',
     'vehicle-config-nx8.html':'Nissan NX8',
     'vehicle-config-n7.html':'Nissan N7',
     'vehicle-config-n6.html':'Nissan N6',

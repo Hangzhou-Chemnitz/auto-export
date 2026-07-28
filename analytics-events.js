@@ -205,13 +205,20 @@
       'camry': 'Toyota Camry',
       'corolla-cross': 'Toyota Corolla Cross',
       'corolla': 'Toyota Corolla',
+      'dashing': 'Jetour Dashing',
+      'free-rider': 'Jetour Free Rider',
       'granvia': 'Toyota Granvia',
       'highlander': 'Toyota Highlander',
       'nx8': 'Nissan NX8',
+      'q3': 'Audi Q3',
+      'q5': 'Audi Q5',
+      'a5': 'Audi A5',
       'qashqai': 'Nissan Qashqai',
       'rav4': 'Toyota RAV4',
       'sylphy': 'Nissan Sylphy',
       'wildlander': 'Toyota Wildlander',
+      'x70': 'Jetour X70',
+      'traveler': 'Jetour Traveler',
       'xtrail': 'Nissan X-Trail'
     };
     var model = slugMatch ? (models[slugMatch[1]] || slugMatch[1]) : '';
