@@ -1845,6 +1845,16 @@
   if(window.chemnitzSetConsultationContext){
     window.chemnitzSetConsultationContext(window.chemnitzConsultationContext);
   }
+  var contactGrid=modal&&modal.querySelector('.contact-choice-grid');
+  if(contactGrid&&!contactGrid.querySelector('[data-wa-number="8618511445792"]')){
+    var zeeshanLink=document.createElement('a');
+    zeeshanLink.className='contact-choice';
+    zeeshanLink.setAttribute('data-wa-number','8618511445792');
+    zeeshanLink.setAttribute('target','_self');
+    zeeshanLink.setAttribute('rel','noopener');
+    zeeshanLink.innerHTML='Zeeshan<span>+86 185 1144 5792</span>';
+    contactGrid.appendChild(zeeshanLink);
+  }
   document.querySelectorAll('[data-wa-number]').forEach(function(link){
     link.href='https://wa.me/'+link.getAttribute('data-wa-number')+'?text='+encodeURIComponent(message);
   });
