@@ -467,13 +467,19 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .config-order-btn{display:inline-block;background:#ef4444;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.82em;transition:all .2s;white-space:nowrap}
 .config-order-btn:hover{background:#dc2626}
 .config-order-btn.disabled{background:#e2e8f0;color:#94a3b8;pointer-events:none}
-.contact-choice-modal{width:min(95vw,620px);max-width:620px}
-.contact-choice-modal .config-bar{padding:10px 14px}
-.contact-choice-modal .config-bar-title{font-size:0.9em}
-.contact-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:16px}
-.contact-choice-link{display:block;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;padding:12px 14px;font-weight:800;line-height:1.3;box-shadow:0 8px 22px rgba(37,211,102,0.18);transition:all .18s}
+.contact-choice-modal{width:min(96vw,1100px);max-width:1100px;max-height:calc(100vh - 16px);overflow:auto}
+.contact-choice-modal .config-bar{padding:16px 20px}
+.contact-choice-modal .config-bar-title{font-size:1.15em}
+.contact-choice-modal .config-close{font-size:32px}
+.contact-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:24px}
+.contact-choice-link{display:flex;align-items:center;gap:16px;background:#25d366;color:#fff;text-decoration:none;border-radius:10px;padding:16px 20px;font-weight:800;line-height:1.3;box-shadow:0 10px 28px rgba(37,211,102,0.2);transition:all .18s;direction:ltr;text-align:left}
 .contact-choice-link:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(37,211,102,0.25)}
-.contact-choice-link span{display:block;font-size:0.78em;font-weight:600;opacity:.86;margin-top:2px}
+.contact-avatar{display:grid;place-items:center;width:72px;height:72px;flex:0 0 72px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.22);border:3px solid rgba(255,255,255,.82);color:#fff;font-size:1.4em;font-weight:900;box-shadow:0 6px 18px rgba(15,23,42,.18)}
+.contact-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.contact-choice-copy{display:block;min-width:0}
+.contact-choice-number{display:block;font-size:1.25em;font-weight:800;line-height:1.2;white-space:nowrap}
+.contact-choice-name{display:block;font-size:.95em;font-weight:600;opacity:.9;margin-top:4px}
+@media(max-width:720px){.contact-choice-grid{grid-template-columns:1fr;padding:16px}}
 @media(max-width:640px){.config-overlay{padding:8px}.config-card-head,.config-action{flex-direction:column;align-items:stretch}.config-card-price{text-align:center}.config-body{padding:12px}.config-intro{font-size:0.82em}}
 
 </style>
@@ -1499,10 +1505,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     return 'Other trims';
   }
   var whatsappContacts = [
-    { label: 'Natalie', display: '+86 15913687692', wa: '8615913687692' },
-    { label: 'Darwin', display: '+86 136 40033268', wa: '8613640033268' },
-    { label: 'Jacky', display: '+86 138 26126147', wa: '8613826126147' },
-    { label: 'Zeeshan', display: '+86 185 1144 5792', wa: '8618511445792' }
+    { label: 'Natalie', display: '+86 15913687692', wa: '8615913687692', avatar: 'images/contacts/natalie.jpg' },
+    { label: 'Darwin', display: '+86 136 40033268', wa: '8613640033268', avatar: 'images/contacts/darwin.jpg' },
+    { label: 'Zeeshan', display: '+86 185 1144 5792', wa: '8618511445792', avatar: 'images/contacts/zeeshan-v3.jpg' },
+    { label: 'Jacky', display: '+86 138 26126147', wa: '8613826126147', avatar: 'images/contacts/jacky-v2.jpg' }
   ];
   function escHtml(value) {
     return String(value || '').replace(/[&<>"']/g, function(ch) {
@@ -1568,7 +1574,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     for (var i = 0; i < whatsappContacts.length; i++) {
       var contact = whatsappContacts[i];
       var url = 'https://wa.me/' + contact.wa + '?text=' + encodeURIComponent(text);
-      h += '<a class="contact-choice-link" href="' + url + '" target="_self" rel="noopener">' + escHtml(contact.display) + '<span>' + escHtml(contact.label) + '</span></a>';
+      var avatar = contact.avatar ? '<img src="' + escHtml(contact.avatar) + '" alt="" width="72" height="72" loading="lazy" decoding="async">' : escHtml(contact.label.charAt(0).toUpperCase());
+      h += '<a class="contact-choice-link" href="' + url + '" target="_self" rel="noopener"><span class="contact-avatar" data-contact-avatar="' + escHtml(contact.wa) + '" aria-hidden="true">' + avatar + '</span><span class="contact-choice-copy"><strong class="contact-choice-number">' + escHtml(contact.display) + '</strong><span class="contact-choice-name">' + escHtml(contact.label) + '</span></span></a>';
     }
     h += '</div></div>';
     overlay.innerHTML = h;

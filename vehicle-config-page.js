@@ -1855,8 +1855,53 @@
     zeeshanLink.innerHTML='Zeeshan<span>+86 185 1144 5792</span>';
     contactGrid.appendChild(zeeshanLink);
   }
+  if(contactGrid){
+    ['8615913687692','8613640033268','8618511445792','8613826126147'].forEach(function(waNumber){
+      var contactLink=contactGrid.querySelector('[data-wa-number="'+waNumber+'"]');
+      if(contactLink) contactGrid.appendChild(contactLink);
+    });
+  }
+  var contactDetails={
+    '8615913687692':{name:'Natalie',display:'+86 15913687692',avatar:'images/contacts/natalie.jpg'},
+    '8613640033268':{name:'Darwin',display:'+86 136 40033268',avatar:'images/contacts/darwin.jpg'},
+    '8618511445792':{name:'Zeeshan',display:'+86 185 1144 5792',avatar:'images/contacts/zeeshan-v3.jpg'},
+    '8613826126147':{name:'Jacky',display:'+86 138 26126147',avatar:'images/contacts/jacky-v2.jpg'}
+  };
   document.querySelectorAll('[data-wa-number]').forEach(function(link){
-    link.href='https://wa.me/'+link.getAttribute('data-wa-number')+'?text='+encodeURIComponent(message);
+    var waNumber=link.getAttribute('data-wa-number');
+    var contact=contactDetails[waNumber];
+    if(contact&&!link.querySelector('.contact-avatar')){
+      link.textContent='';
+      var avatar=document.createElement('span');
+      avatar.className='contact-avatar';
+      avatar.setAttribute('data-contact-avatar',waNumber);
+      avatar.setAttribute('aria-hidden','true');
+      if(contact.avatar){
+        var photo=document.createElement('img');
+        photo.src=contact.avatar;
+        photo.alt='';
+        photo.width=72;
+        photo.height=72;
+        photo.loading='lazy';
+        photo.decoding='async';
+        avatar.appendChild(photo);
+      }else{
+        avatar.textContent=contact.name.charAt(0).toUpperCase();
+      }
+      var copy=document.createElement('span');
+      copy.className='contact-choice-copy';
+      var numberText=document.createElement('strong');
+      numberText.className='contact-choice-number';
+      numberText.textContent=contact.display;
+      var nameText=document.createElement('span');
+      nameText.className='contact-choice-name';
+      nameText.textContent=contact.name;
+      copy.appendChild(numberText);
+      copy.appendChild(nameText);
+      link.appendChild(avatar);
+      link.appendChild(copy);
+    }
+    link.href='https://wa.me/'+waNumber+'?text='+encodeURIComponent(message);
   });
   window.openWhatsAppChooser=function(){
     if(window.chemnitzTrack){

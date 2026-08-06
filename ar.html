@@ -204,14 +204,19 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .hero .cta-btn,.contact-section .cta-btn{border:0;cursor:pointer;font-family:inherit}
 .contact-choice-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,0.55);z-index:9998;align-items:center;justify-content:center;padding:18px}
 .contact-choice-overlay.open{display:flex}
-.contact-choice-modal{background:#fff;border-radius:10px;overflow:hidden;width:min(95vw,620px);max-width:620px;box-shadow:0 24px 70px rgba(15,23,42,0.32);direction:ltr}
-.contact-choice-bar{background:#111827;color:#fff;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;font-weight:800}
-.contact-choice-bar span{font-size:.9em}
-.contact-choice-close{background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer;padding:0 4px}
-.contact-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:16px}
-.contact-choice-link{display:block;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;padding:12px 14px;font-weight:800;line-height:1.3;box-shadow:0 8px 22px rgba(37,211,102,0.18);transition:all .18s}
+.contact-choice-modal{background:#f8fafc;border-radius:16px;overflow:auto;width:min(96vw,1100px);max-width:1100px;max-height:calc(100vh - 16px);box-shadow:0 30px 90px rgba(15,23,42,0.34);direction:ltr}
+.contact-choice-bar{background:#111827;color:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;font-weight:800}
+.contact-choice-bar span{font-size:1.15em}
+.contact-choice-close{background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer;padding:0 4px}
+.contact-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:24px}
+.contact-choice-link{display:flex;align-items:center;gap:16px;background:#25d366;color:#fff;text-decoration:none;border-radius:10px;padding:16px 20px;font-weight:800;line-height:1.3;box-shadow:0 10px 28px rgba(37,211,102,0.2);transition:all .18s;direction:ltr;text-align:left}
 .contact-choice-link:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(37,211,102,0.25)}
-.contact-choice-link span{display:block;font-size:0.78em;font-weight:600;opacity:.86;margin-top:2px}
+.contact-avatar{display:grid;place-items:center;width:72px;height:72px;flex:0 0 72px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.22);border:3px solid rgba(255,255,255,.82);color:#fff;font-size:1.4em;font-weight:900;box-shadow:0 6px 18px rgba(15,23,42,.18)}
+.contact-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.contact-choice-copy{display:block;min-width:0}
+.contact-choice-number{display:block;font-size:1.25em;font-weight:800;line-height:1.2;white-space:nowrap}
+.contact-choice-name{display:block;font-size:.95em;font-weight:600;opacity:.9;margin-top:4px}
+@media(max-width:720px){.contact-choice-grid{grid-template-columns:1fr;padding:16px}}
 .nissan-guide-list{display:grid;gap:8px;padding:14px;max-height:min(66vh,520px);overflow:auto;direction:rtl}
 .nissan-guide-option{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:11px 12px;text-align:right;cursor:pointer;color:#111827;direction:rtl}
 .nissan-guide-option:hover{border-color:#ef4444;background:#fff7f7}
@@ -527,10 +532,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <script>
 (function(){
   var contacts=[
-    {label:'Natalie',display:'+86 15913687692',wa:'8615913687692'},
-    {label:'Darwin',display:'+86 136 40033268',wa:'8613640033268'},
-    {label:'Jacky',display:'+86 138 26126147',wa:'8613826126147'},
-    {label:'Zeeshan',display:'+86 185 1144 5792',wa:'8618511445792'}
+    {label:'Natalie',display:'+86 15913687692',wa:'8615913687692',avatar:'images/contacts/natalie.jpg'},
+    {label:'Darwin',display:'+86 136 40033268',wa:'8613640033268',avatar:'images/contacts/darwin.jpg'},
+    {label:'Zeeshan',display:'+86 185 1144 5792',wa:'8618511445792',avatar:'images/contacts/zeeshan-v3.jpg'},
+    {label:'Jacky',display:'+86 138 26126147',wa:'8613826126147',avatar:'images/contacts/jacky-v2.jpg'}
   ];
   function esc(value){return String(value||'').replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});}
   function trimName(trim){return window.ChemnitzTrimI18n?window.ChemnitzTrimI18n.trim(trim.name||'',trim.specid,'ar'):(trim.name||'');}
@@ -576,7 +581,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     var h='<div class="contact-choice-modal"><div class="contact-choice-bar"><span>WhatsApp</span><button type="button" class="contact-choice-close" onclick="closeContactChoice()">&times;</button></div><div class="contact-choice-grid">';
     for(var i=0;i<contacts.length;i++){
       var c=contacts[i];
-      h+='<a class="contact-choice-link" href="https://wa.me/'+c.wa+'?text='+encodeURIComponent(text)+'" target="_self" rel="noopener">'+esc(c.display)+'<span>'+esc(c.label)+'</span></a>';
+      var avatar=c.avatar?'<img src="'+esc(c.avatar)+'" alt="" width="72" height="72" loading="lazy" decoding="async">':esc(c.label.charAt(0).toUpperCase());
+      h+='<a class="contact-choice-link" href="https://wa.me/'+c.wa+'?text='+encodeURIComponent(text)+'" target="_self" rel="noopener"><span class="contact-avatar" data-contact-avatar="'+esc(c.wa)+'" aria-hidden="true">'+avatar+'</span><span class="contact-choice-copy"><strong class="contact-choice-number">'+esc(c.display)+'</strong><span class="contact-choice-name">'+esc(c.label)+'</span></span></a>';
     }
     h+='</div></div>';
     overlay.innerHTML=h;
