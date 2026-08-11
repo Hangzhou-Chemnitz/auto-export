@@ -27,6 +27,7 @@
   }
 
   var whatsappContacts = {
+    '8615625033581': 'Chloe',
     '8615913687692': 'Natalie',
     '8613640033268': 'Darwin',
     '8613826126147': 'Jacky',

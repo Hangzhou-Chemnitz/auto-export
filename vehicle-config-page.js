@@ -1846,6 +1846,15 @@
     window.chemnitzSetConsultationContext(window.chemnitzConsultationContext);
   }
   var contactGrid=modal&&modal.querySelector('.contact-choice-grid');
+  if(contactGrid&&!contactGrid.querySelector('[data-wa-number="8615625033581"]')){
+    var chloeLink=document.createElement('a');
+    chloeLink.className='contact-choice';
+    chloeLink.setAttribute('data-wa-number','8615625033581');
+    chloeLink.setAttribute('target','_self');
+    chloeLink.setAttribute('rel','noopener');
+    chloeLink.innerHTML='Chloe<span>+86 15625033581</span>';
+    contactGrid.insertBefore(chloeLink,contactGrid.firstChild);
+  }
   if(contactGrid&&!contactGrid.querySelector('[data-wa-number="8618511445792"]')){
     var zeeshanLink=document.createElement('a');
     zeeshanLink.className='contact-choice';
@@ -1856,12 +1865,13 @@
     contactGrid.appendChild(zeeshanLink);
   }
   if(contactGrid){
-    ['8615913687692','8613640033268','8618511445792','8613826126147'].forEach(function(waNumber){
+    ['8615625033581','8615913687692','8613640033268','8618511445792','8613826126147'].forEach(function(waNumber){
       var contactLink=contactGrid.querySelector('[data-wa-number="'+waNumber+'"]');
       if(contactLink) contactGrid.appendChild(contactLink);
     });
   }
   var contactDetails={
+    '8615625033581':{name:'Chloe',display:'+86 15625033581',avatar:'images/contacts/chloe.jpg'},
     '8615913687692':{name:'Natalie',display:'+86 15913687692',avatar:'images/contacts/natalie.jpg'},
     '8613640033268':{name:'Darwin',display:'+86 136 40033268',avatar:'images/contacts/darwin.jpg'},
     '8618511445792':{name:'Zeeshan',display:'+86 185 1144 5792',avatar:'images/contacts/zeeshan-v3.jpg'},
