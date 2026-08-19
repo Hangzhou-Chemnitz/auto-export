@@ -1326,6 +1326,7 @@
     var targets={
       en:{home:'/#models',models:'models.html#models'},
       fr:{home:'fr.html#models',models:'models-fr.html#models'},
+      es:{home:'es.html#featured-models',models:'models.html#models'},
       ru:{home:'ru.html#models',models:'models-ru.html#models'},
       ar:{home:'ar.html#models',models:'models-ar.html#models'}
     };
@@ -1340,6 +1341,7 @@
           '':'/#models',
           'index.html':'/#models',
           'fr.html':'fr.html#models',
+          'es.html':'es.html#featured-models',
           'ru.html':'ru.html#models',
           'ar.html':'ar.html#models',
           'models.html':'models.html#models',

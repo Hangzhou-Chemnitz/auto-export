@@ -2,46 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://hzchemnitz.cn/</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hzchemnitz.cn/es.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
   </url>
   <url>
     <loc>https://hzchemnitz.cn/ru.html</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hzchemnitz.cn/es.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
   </url>
   <url>
     <loc>https://hzchemnitz.cn/ar.html</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hzchemnitz.cn/es.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
   </url>
   <url>
     <loc>https://hzchemnitz.cn/fr.html</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hzchemnitz.cn/es.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
+  </url>
+  <url>
+    <loc>https://hzchemnitz.cn/es.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/ru.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/ar.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/fr.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://hzchemnitz.cn/es.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
   </url>
   <url>
