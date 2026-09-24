@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics -->
 <script src="analytics-loader.js?v=20260727a"></script>
-<script defer src="analytics-events.js?v=20260811a"></script>
+<script defer src="analytics-events.js?v=20260924b"></script>
 <title>Каталог авто из Китая | Toyota Nissan Volkswagen | Hangzhou Chemnitz</title>
 <meta name="description" content="Каталог 48 экспортных моделей из Китая: Toyota RAV4, Camry, Highlander, Corolla, Nissan Teana, N7, N6, Sylphy, Qashqai, X-Trail, Volkswagen, Geely, Zeekr 9X, Kia, Hyundai и Audi. Запросите цены FOB и экспортные документы.">
 <meta name="keywords" content="каталог авто из Китая, Toyota из Китая, Nissan из Китая, Volkswagen из Китая, Zeekr 9X экспорт, Toyota RAV4 экспорт, Toyota Camry экспорт, Nissan Sylphy экспорт, Nissan Qashqai экспорт, FOB Китай, экспортные документы, авто из Китая оптом">
@@ -14,6 +14,7 @@
 <link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/models-ru.html">
 <link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/models-ar.html">
 <link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/models-fr.html">
+<link rel="alternate" hreflang="es" href="https://hzchemnitz.cn/models-es.html">
 <link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/models.html">
 <meta property="og:title" content="Каталог авто из Китая — Toyota, Nissan, Volkswagen">
 <meta property="og:description" content="Экспортный каталог Toyota, Nissan, Volkswagen, Geely, Zeekr, Kia, Hyundai и Audi из Китая с консультацией по ценам FOB.">
@@ -834,9 +835,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     if (title) {
       var body = cards[i].querySelector('.card-body');
       if (body) {
-        var lnk = document.createElement('a');
-        lnk.href = 'https://autocatalogarchive.com/?s=' + encodeURIComponent(title);
-        lnk.target = '_blank'; lnk.rel = 'noopener';
+        var lnk = document.createElement('button');
+        lnk.type = 'button';
         lnk.className = 'brochure-link'; lnk.textContent = 'Консультация';
         lnk.setAttribute('onclick', 'event.stopPropagation(); showConfigPicker(\'' + title + '\', this); return false;');
         body.appendChild(lnk);

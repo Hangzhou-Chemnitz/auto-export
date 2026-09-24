@@ -1,4 +1,5 @@
 (function(){
+  document.documentElement.setAttribute('data-page-type','vehicle_config');
   var page=window.vehicleConfigPage||{};
   var routes={
     'vehicle-config-qashqai.html':{pdf:'documents/nissan-qashqai-2025-2l-cvt-config.pdf',dir:'documents/qashqai-config-pages',pages:6},
@@ -1319,19 +1320,60 @@
   };
   var filename=location.pathname.split('/').pop();
   var route=routes[filename];
+  var queryParams=new URLSearchParams(location.search);
+  var pageLanguage=queryParams.get('lang')||'en';
+  var interfaceText=pageLanguage==='es'?{
+    documentSuffix:'Ficha de configuración | Chemnitz',
+    eyebrow:'Ficha de configuración del vehículo',
+    pricePrefix:'Precio guía: RMB ',
+    priceSuffix:' · Consulta de exportación FOB/EXW',
+    summary:'Resumen de configuración para consulta de exportación.',
+    back:'Volver a modelos',
+    pdf:'Abrir PDF',
+    consult:'Consultar',
+    sheet:'ficha de configuración',
+    page:'página',
+    summaryHeading:'Resumen de configuración',
+    note:'La lista completa de equipamiento y los documentos de exportación se confirman para el pedido seleccionado. Contáctenos para la correspondencia final y la cotización FOB o EXW.',
+    close:'Cerrar',
+    messagePrefix:'Hola, deseo consultar '
+  }:{
+    documentSuffix:'Configuration Sheet | Chemnitz',
+    eyebrow:'Vehicle Configuration Sheet',
+    pricePrefix:'Guide price: RMB ',
+    priceSuffix:' · FOB/EXW export consultation',
+    summary:'Configuration summary for export consultation.',
+    back:'Back to Models',
+    pdf:'Open PDF',
+    consult:'Consult',
+    sheet:'configuration sheet',
+    page:'page',
+    summaryHeading:'Configuration Summary',
+    note:'The complete equipment list and export documents can be confirmed against the selected vehicle order. Contact us for final matching and an FOB or EXW quotation.',
+    close:'Close',
+    messagePrefix:'Hello, I want to consult '
+  };
+  if(pageLanguage==='es') document.documentElement.lang='es';
   function resolveBackLink(){
     var params=new URLSearchParams(location.search);
     var source=params.get('from');
     var language=params.get('lang')||'en';
+    var market=(params.get('market')||'').toUpperCase();
+    function preserveMarket(target){
+      if(language!=='es'||! /^(PE|CO|CL)$/.test(market)) return target;
+      var parts=target.split('#');
+      return parts[0]+'?market='+encodeURIComponent(market)+(parts[1]?'#'+parts[1]:'');
+    }
+    if(source==='models-es') source='models';
     var targets={
       en:{home:'/#models',models:'models.html#models'},
       fr:{home:'fr.html#models',models:'models-fr.html#models'},
-      es:{home:'es.html#featured-models',models:'models.html#models'},
+      es:{home:'es.html#featured-models',models:'models-es.html#models'},
       ru:{home:'ru.html#models',models:'models-ru.html#models'},
       ar:{home:'ar.html#models',models:'models-ar.html#models'}
     };
     if(targets[language]&&(source==='home'||source==='models')){
-      return targets[language][source];
+      return preserveMarket(targets[language][source]);
     }
 
     if(document.referrer){
@@ -1346,11 +1388,12 @@
           'ar.html':'ar.html#models',
           'models.html':'models.html#models',
           'models-fr.html':'models-fr.html#models',
+          'models-es.html':'models-es.html#models',
           'models-ru.html':'models-ru.html#models',
           'models-ar.html':'models-ar.html#models'
         };
         if(Object.prototype.hasOwnProperty.call(referrerTargets,referrerFile)){
-          return referrerTargets[referrerFile];
+          return preserveMarket(referrerTargets[referrerFile]);
         }
       }catch(error){}
     }
@@ -1363,7 +1406,7 @@
     route={pdf:coolrayVariant.pdf,dir:coolrayVariant.dir,pages:6};
     page.title=coolrayVariant.title;
     page.price=coolrayVariant.price;
-    page.summary='Selected guide-price configuration for Geely Coolray FOB export consultation.';
+    page.summary='Selected guide-price configuration for Geely Coolray FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-boyue.html'){
     var boyueSpecid=new URLSearchParams(location.search).get('specid')||'74083';
@@ -1371,7 +1414,7 @@
     route={pdf:boyueVariant.pdf,dir:boyueVariant.dir,pages:6};
     page.title=boyueVariant.title;
     page.price=boyueVariant.price;
-    page.summary='Selected guide-price configuration for Geely Boyue FOB export consultation.';
+    page.summary='Selected guide-price configuration for Geely Boyue FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-xingyue-l.html'){
     var xingyueLSpecid=new URLSearchParams(location.search).get('specid')||'74638';
@@ -1379,7 +1422,7 @@
     route={pdf:xingyueLVariant.pdf,dir:xingyueLVariant.dir,pages:8};
     page.title=xingyueLVariant.title;
     page.price=xingyueLVariant.price;
-    page.summary='Selected guide-price configuration for Geely Xingyue L FOB export consultation.';
+    page.summary='Selected guide-price configuration for Geely Xingyue L FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-niuzai.html'){
     var niuzaiSpecid=new URLSearchParams(location.search).get('specid')||'77979';
@@ -1387,7 +1430,7 @@
     route={pdf:niuzaiVariant.pdf,dir:niuzaiVariant.dir,pages:6};
     page.title=niuzaiVariant.title;
     page.price=niuzaiVariant.price;
-    page.summary='Selected guide-price configuration for Geely Niuzai FOB export consultation.';
+    page.summary='Selected guide-price configuration for Geely Niuzai FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-zeekr-9x.html'){
     var zeekr9xSpecid=new URLSearchParams(location.search).get('specid')||'74432';
@@ -1395,7 +1438,7 @@
     route={pdf:zeekr9xVariant.pdf,dir:zeekr9xVariant.dir,pages:9};
     page.title=zeekr9xVariant.title;
     page.price=zeekr9xVariant.price;
-    page.summary='Selected guide-price configuration for Zeekr 9X FOB export consultation.';
+    page.summary='Selected guide-price configuration for Zeekr 9X FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-galaxy-m9.html'){
     var galaxyM9Specid=new URLSearchParams(location.search).get('specid')||'74359';
@@ -1403,7 +1446,7 @@
     route={pdf:galaxyM9Variant.pdf,dir:galaxyM9Variant.dir,pages:9};
     page.title=galaxyM9Variant.title;
     page.price=galaxyM9Variant.price;
-    page.summary='Selected guide-price configuration for Geely Galaxy M9 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Geely Galaxy M9 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-seltos.html'){
     var seltosSpecid=new URLSearchParams(location.search).get('specid')||'73680';
@@ -1411,7 +1454,7 @@
     route={pdf:seltosVariant.pdf,dir:seltosVariant.dir,pages:6};
     page.title=seltosVariant.title;
     page.price=seltosVariant.price;
-    page.summary='Selected guide-price configuration for Kia Seltos FOB export consultation.';
+    page.summary='Selected guide-price configuration for Kia Seltos FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-kx1.html'){
     var kx1Specid=new URLSearchParams(location.search).get('specid')||'75520';
@@ -1419,7 +1462,7 @@
     route={pdf:kx1Variant.pdf,dir:kx1Variant.dir,pages:6};
     page.title=kx1Variant.title;
     page.price=kx1Variant.price;
-    page.summary='Selected guide-price configuration for Kia KX1 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Kia KX1 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-k3.html'){
     var k3Specid=new URLSearchParams(location.search).get('specid')||'66683';
@@ -1427,7 +1470,7 @@
     route={pdf:k3Variant.pdf,dir:k3Variant.dir,pages:6};
     page.title=k3Variant.title;
     page.price=k3Variant.price;
-    page.summary='Selected guide-price configuration for Kia K3 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Kia K3 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-k5.html'){
     var k5Specid=new URLSearchParams(location.search).get('specid')||'69773';
@@ -1435,7 +1478,7 @@
     route={pdf:k5Variant.pdf,dir:k5Variant.dir,pages:6};
     page.title=k5Variant.title;
     page.price=k5Variant.price;
-    page.summary='Selected guide-price configuration for Kia K5 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Kia K5 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-sportage.html'){
     var sportageSpecid=new URLSearchParams(location.search).get('specid')||'76700';
@@ -1443,7 +1486,7 @@
     route={pdf:sportageVariant.pdf,dir:sportageVariant.dir,pages:7};
     page.title=sportageVariant.title;
     page.price=sportageVariant.price;
-    page.summary='Selected guide-price configuration for Kia Sportage FOB export consultation.';
+    page.summary='Selected guide-price configuration for Kia Sportage FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-elantra.html'){
     var elantraSpecid=new URLSearchParams(location.search).get('specid')||'78117';
@@ -1451,7 +1494,7 @@
     route={pdf:elantraVariant.pdf,dir:elantraVariant.dir,pages:6};
     page.title=elantraVariant.title;
     page.price=elantraVariant.price;
-    page.summary='Selected guide-price configuration for Hyundai Elantra FOB export consultation.';
+    page.summary='Selected guide-price configuration for Hyundai Elantra FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-dashing.html'){
     var dashingSpecid=new URLSearchParams(location.search).get('specid')||'74899';
@@ -1459,7 +1502,7 @@
     route={pdf:dashingVariant.pdf,dir:dashingVariant.dir,pages:6};
     page.title=dashingVariant.title;
     page.price=dashingVariant.price;
-    page.summary='Selected guide-price configuration for Jetour Dashing FOB export consultation.';
+    page.summary='Selected guide-price configuration for Jetour Dashing FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-x70.html'){
     var x70Specid=new URLSearchParams(location.search).get('specid')||'76874';
@@ -1467,7 +1510,7 @@
     route={pdf:x70Variant.pdf,dir:x70Variant.dir,pages:6};
     page.title=x70Variant.title;
     page.price=x70Variant.price;
-    page.summary='Selected guide-price configuration for Jetour X70 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Jetour X70 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-traveler.html'){
     var travelerSpecid=new URLSearchParams(location.search).get('specid')||'75368';
@@ -1475,7 +1518,7 @@
     route={pdf:travelerVariant.pdf,dir:travelerVariant.dir,pages:7};
     page.title=travelerVariant.title;
     page.price=travelerVariant.price;
-    page.summary='Selected guide-price configuration for Jetour Traveler FOB export consultation.';
+    page.summary='Selected guide-price configuration for Jetour Traveler FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-free-rider.html'){
     var freeRiderSpecid=new URLSearchParams(location.search).get('specid')||'78309';
@@ -1483,7 +1526,7 @@
     route={pdf:freeRiderVariant.pdf,dir:freeRiderVariant.dir,pages:7};
     page.title=freeRiderVariant.title;
     page.price=freeRiderVariant.price;
-    page.summary='Selected guide-price configuration for Jetour Free Rider FOB export consultation.';
+    page.summary='Selected guide-price configuration for Jetour Free Rider FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-q3.html'){
     var q3Specid=new URLSearchParams(location.search).get('specid')||'76044';
@@ -1491,7 +1534,7 @@
     route={pdf:q3Variant.pdf,dir:q3Variant.dir,pages:6};
     page.title=q3Variant.title;
     page.price=q3Variant.price;
-    page.summary='Selected guide-price configuration for Audi Q3 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Audi Q3 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-q5.html'){
     var q5Specid=new URLSearchParams(location.search).get('specid')||'72704';
@@ -1499,7 +1542,7 @@
     route={pdf:q5Variant.pdf,dir:q5Variant.dir,pages:8};
     page.title=q5Variant.title;
     page.price=q5Variant.price;
-    page.summary='Selected guide-price configuration for Audi Q5L FOB export consultation.';
+    page.summary='Selected guide-price configuration for Audi Q5L FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-a5.html'){
     var a5Specid=new URLSearchParams(location.search).get('specid')||'73537';
@@ -1507,7 +1550,7 @@
     route={pdf:a5Variant.pdf,dir:a5Variant.dir,pages:8};
     page.title=a5Variant.title;
     page.price=a5Variant.price;
-    page.summary='Selected guide-price configuration for Audi A5L FOB export consultation.';
+    page.summary='Selected guide-price configuration for Audi A5L FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-crv.html'){
     var crvSpecid=new URLSearchParams(location.search).get('specid')||'78059';
@@ -1515,7 +1558,7 @@
     route={pdf:crvVariant.pdf,dir:crvVariant.dir,pages:7};
     page.title=crvVariant.title;
     page.price=crvVariant.price;
-    page.summary='Selected guide-price configuration for Honda CR-V FOB export consultation.';
+    page.summary='Selected guide-price configuration for Honda CR-V FOB or EXW export consultation.';
     page.sections=[{
       title:'Basic Information',
       rows:[
@@ -1524,7 +1567,7 @@
         ['Body style','Compact SUV'],
         ['Powertrain','1.5T gasoline with CVT'],
         ['Drive and seating',crvVariant.driveAndSeating],
-        ['Export terms','FOB delivery at a designated Chinese port']
+        ['Export terms','FOB or EXW as agreed in the quotation']
       ]
     }];
   }
@@ -1534,7 +1577,7 @@
     route={pdf:tiggo5xVariant.pdf,dir:tiggo5xVariant.dir,pages:5};
     page.title=tiggo5xVariant.title;
     page.price=tiggo5xVariant.price;
-    page.summary='Selected guide-price configuration for Chery Tiggo 5X FOB export consultation.';
+    page.summary='Selected guide-price configuration for Chery Tiggo 5X FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-tiggo-3x.html'){
     var tiggo3xSpecid=new URLSearchParams(location.search).get('specid')||'69331';
@@ -1542,7 +1585,7 @@
     route={pdf:tiggo3xVariant.pdf,dir:tiggo3xVariant.dir,pages:5};
     page.title=tiggo3xVariant.title;
     page.price=tiggo3xVariant.price;
-    page.summary='Selected guide-price configuration for Chery Tiggo 3X FOB export consultation.';
+    page.summary='Selected guide-price configuration for Chery Tiggo 3X FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-mg5.html'){
     var mg5Specid=new URLSearchParams(location.search).get('specid')||'73650';
@@ -1550,7 +1593,7 @@
     route={pdf:mg5Variant.pdf,dir:mg5Variant.dir,pages:5};
     page.title=mg5Variant.title;
     page.price=mg5Variant.price;
-    page.summary='Selected guide-price configuration for MG MG5 FOB export consultation.';
+    page.summary='Selected guide-price configuration for MG MG5 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-changan-x5.html'){
     var changanX5Specid=new URLSearchParams(location.search).get('specid')||'74278';
@@ -1558,7 +1601,7 @@
     route={pdf:changanX5Variant.pdf,dir:changanX5Variant.dir,pages:5};
     page.title=changanX5Variant.title;
     page.price=changanX5Variant.price;
-    page.summary='Selected guide-price configuration for Changan X5 PLUS FOB export consultation.';
+    page.summary='Selected guide-price configuration for Changan X5 PLUS FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-changan-cs55.html'){
     var changanCS55Specid=new URLSearchParams(location.search).get('specid')||'74992';
@@ -1566,7 +1609,7 @@
     route={pdf:changanCS55Variant.pdf,dir:changanCS55Variant.dir,pages:5};
     page.title=changanCS55Variant.title;
     page.price=changanCS55Variant.price;
-    page.summary='Selected guide-price configuration for Changan CS55 PLUS FOB export consultation.';
+    page.summary='Selected guide-price configuration for Changan CS55 PLUS FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-changan-cs75.html'){
     var changanCS75Specid=new URLSearchParams(location.search).get('specid')||'75346';
@@ -1574,7 +1617,7 @@
     route={pdf:changanCS75Variant.pdf,dir:changanCS75Variant.dir,pages:6};
     page.title=changanCS75Variant.title;
     page.price=changanCS75Variant.price;
-    page.summary='Selected guide-price configuration for Changan CS75 PLUS FOB export consultation.';
+    page.summary='Selected guide-price configuration for Changan CS75 PLUS FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-rav4.html'){
     var rav4Specid=new URLSearchParams(location.search).get('specid')||'74683';
@@ -1582,7 +1625,7 @@
     route={pdf:rav4Variant.pdf,dir:rav4Variant.dir,pages:8};
     page.title=rav4Variant.title;
     page.price=rav4Variant.price;
-    page.summary='Selected guide-price configuration for Toyota RAV4 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Toyota RAV4 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-qashqai.html'){
     var qashqaiSpecid=new URLSearchParams(location.search).get('specid')||'73625';
@@ -1590,7 +1633,7 @@
     route={pdf:qashqaiVariant.pdf,dir:qashqaiVariant.dir,pages:6};
     page.title=qashqaiVariant.title;
     page.price=qashqaiVariant.price;
-    page.summary='Selected guide-price configuration for Nissan Qashqai FOB export consultation.';
+    page.summary='Selected guide-price configuration for Nissan Qashqai FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-xtrail.html'){
     var xtrailSpecid=new URLSearchParams(location.search).get('specid')||'73627';
@@ -1614,7 +1657,7 @@
     route={pdf:teanaVariant.pdf,dir:teanaVariant.dir,pages:7};
     page.title=teanaVariant.title;
     page.price=teanaVariant.price;
-    page.summary='Selected guide-price configuration for Nissan Teana FOB export consultation.';
+    page.summary='Selected guide-price configuration for Nissan Teana FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-n7.html'){
     var n7Specid=new URLSearchParams(location.search).get('specid')||'77628';
@@ -1622,7 +1665,7 @@
     route={pdf:n7Variant.pdf,dir:n7Variant.dir,pages:7};
     page.title=n7Variant.title;
     page.price=n7Variant.price;
-    page.summary='Selected guide-price configuration for Nissan N7 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Nissan N7 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-n6.html'){
     var n6Specid=new URLSearchParams(location.search).get('specid')||'77650';
@@ -1630,7 +1673,7 @@
     route={pdf:n6Variant.pdf,dir:n6Variant.dir,pages:8};
     page.title=n6Variant.title;
     page.price=n6Variant.price;
-    page.summary='Selected guide-price configuration for Nissan N6 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Nissan N6 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-sylphy-2026.html'){
     var sylphySpecid=new URLSearchParams(location.search).get('specid')||'76613';
@@ -1638,7 +1681,7 @@
     route={pdf:sylphyVariant.pdf,dir:sylphyVariant.dir,pages:8};
     page.title=sylphyVariant.title;
     page.price=sylphyVariant.price;
-    page.summary='Selected guide-price configuration for Nissan Sylphy FOB export consultation.';
+    page.summary='Selected guide-price configuration for Nissan Sylphy FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-tharu.html'){
     var tharuSpecid=new URLSearchParams(location.search).get('specid')||'74072';
@@ -1646,7 +1689,7 @@
     route={pdf:tharuVariant.pdf,dir:tharuVariant.dir,pages:6};
     page.title=tharuVariant.title;
     page.price=tharuVariant.price;
-    page.summary='Selected guide-price configuration for Volkswagen Tharu XR FOB export consultation.';
+    page.summary='Selected guide-price configuration for Volkswagen Tharu XR FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-golf.html'){
     var golfSpecid=new URLSearchParams(location.search).get('specid')||'75016';
@@ -1654,7 +1697,7 @@
     route={pdf:golfVariant.pdf,dir:golfVariant.dir,pages:7};
     page.title=golfVariant.title;
     page.price=golfVariant.price;
-    page.summary='Selected guide-price configuration for Volkswagen Golf FOB export consultation.';
+    page.summary='Selected guide-price configuration for Volkswagen Golf FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-troc.html'){
     var trocSpecid=new URLSearchParams(location.search).get('specid')||'74967';
@@ -1662,7 +1705,7 @@
     route={pdf:trocVariant.pdf,dir:trocVariant.dir,pages:6};
     page.title=trocVariant.title;
     page.price=trocVariant.price;
-    page.summary='Selected guide-price configuration for Volkswagen T-Roc FOB export consultation.';
+    page.summary='Selected guide-price configuration for Volkswagen T-Roc FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-teramont.html'){
     var teramontSpecid=new URLSearchParams(location.search).get('specid')||'74970';
@@ -1670,7 +1713,7 @@
     route={pdf:teramontVariant.pdf,dir:teramontVariant.dir,pages:7};
     page.title=teramontVariant.title;
     page.price=teramontVariant.price;
-    page.summary='Selected guide-price configuration for Volkswagen Teramont FOB export consultation.';
+    page.summary='Selected guide-price configuration for Volkswagen Teramont FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-jetta-vs5.html'){
     var jettaVs5Specid=new URLSearchParams(location.search).get('specid')||'75249';
@@ -1678,7 +1721,7 @@
     route={pdf:jettaVs5Variant.pdf,dir:jettaVs5Variant.dir,pages:6};
     page.title=jettaVs5Variant.title;
     page.price=jettaVs5Variant.price;
-    page.summary='Selected guide-price configuration for Volkswagen Jetta VS5 FOB export consultation.';
+    page.summary='Selected guide-price configuration for Volkswagen Jetta VS5 FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-corolla.html'){
     var corollaSpecid=new URLSearchParams(location.search).get('specid')||'76042';
@@ -1686,7 +1729,7 @@
     route={pdf:corollaVariant.pdf,dir:corollaVariant.dir,pages:7};
     page.title=corollaVariant.title;
     page.price=corollaVariant.price;
-    page.summary='Selected guide-price configuration for Toyota Corolla FOB export consultation.';
+    page.summary='Selected guide-price configuration for Toyota Corolla FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-wildlander.html'){
     var wildlanderSpecid=new URLSearchParams(location.search).get('specid')||'75768';
@@ -1694,7 +1737,7 @@
     route={pdf:wildlanderVariant.pdf,dir:wildlanderVariant.dir,pages:8};
     page.title=wildlanderVariant.title;
     page.price=wildlanderVariant.price;
-    page.summary='Selected guide-price configuration for Toyota Wildlander FOB export consultation.';
+    page.summary='Selected guide-price configuration for Toyota Wildlander FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-camry.html'){
     var specid=new URLSearchParams(location.search).get('specid')||'74001';
@@ -1702,7 +1745,7 @@
     route={pdf:camryVariant.pdf,dir:camryVariant.dir,pages:8};
     page.title=camryVariant.title;
     page.price=camryVariant.price;
-    page.summary='Selected guide-price configuration for Toyota Camry FOB export consultation.';
+    page.summary='Selected guide-price configuration for Toyota Camry FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-corolla-cross.html'){
     var corollaCrossSpecid=new URLSearchParams(location.search).get('specid')||'75436';
@@ -1710,7 +1753,7 @@
     route={pdf:corollaCrossVariant.pdf,dir:corollaCrossVariant.dir,pages:7};
     page.title=corollaCrossVariant.title;
     page.price=corollaCrossVariant.price;
-    page.summary='Selected guide-price configuration for Toyota Corolla Cross FOB export consultation.';
+    page.summary='Selected guide-price configuration for Toyota Corolla Cross FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-highlander.html'){
     var highlanderSpecid=new URLSearchParams(location.search).get('specid')||'74933';
@@ -1718,7 +1761,7 @@
     route={pdf:highlanderVariant.pdf,dir:highlanderVariant.dir,pages:7};
     page.title=highlanderVariant.title;
     page.price=highlanderVariant.price;
-    page.summary='Selected guide-price configuration for Toyota Highlander FOB export consultation.';
+    page.summary='Selected guide-price configuration for Toyota Highlander FOB or EXW export consultation.';
   }
   if(filename==='vehicle-config-granvia.html'){
     var granviaSpecid=new URLSearchParams(location.search).get('specid')||'78248';
@@ -1726,7 +1769,7 @@
     route={pdf:granviaVariant.pdf,dir:granviaVariant.dir,pages:8};
     page.title=granviaVariant.title;
     page.price=granviaVariant.price;
-    page.summary='Selected guide-price configuration for Toyota Granvia FOB export consultation.';
+    page.summary='Selected guide-price configuration for Toyota Granvia FOB or EXW export consultation.';
   }
   var title=document.getElementById('vehicle-title');
   var price=document.getElementById('vehicle-price');
@@ -1734,11 +1777,23 @@
   var sections=document.getElementById('config-sections');
   var modal=document.getElementById('contact-overlay');
   var backLink=document.getElementById('back-link');
-  if(page.title) document.title=page.title+' Configuration Sheet | Chemnitz';
+  if(page.title) document.title=page.title+' | '+interfaceText.documentSuffix;
   if(title) title.textContent=page.title||'';
-  if(price) price.textContent='Guide price: RMB '+(page.price||'TBD')+' · FOB export consultation';
-  if(summary) summary.textContent=page.summary||'Configuration summary for export consultation.';
-  if(backLink) backLink.href=resolveBackLink();
+  if(price) price.textContent=interfaceText.pricePrefix+(page.price||'TBD')+interfaceText.priceSuffix;
+  if(summary) summary.textContent=page.summary||interfaceText.summary;
+  if(backLink){backLink.href=resolveBackLink();backLink.textContent=interfaceText.back;}
+  var eyebrow=document.querySelector('.eyebrow');
+  if(eyebrow) eyebrow.textContent=interfaceText.eyebrow;
+  var brandLink=document.querySelector('.viewer-header .brand');
+  if(brandLink&&pageLanguage==='es') brandLink.href='es.html#featured-models';
+  var primaryButton=document.querySelector('.viewer-actions .primary');
+  if(primaryButton) primaryButton.textContent=interfaceText.consult;
+  var summaryHeading=document.querySelector('.sheet-card-head h2');
+  if(summaryHeading) summaryHeading.textContent=interfaceText.summaryHeading;
+  var sheetNote=document.querySelector('.sheet-note');
+  if(sheetNote) sheetNote.textContent=interfaceText.note;
+  var closeButton=modal&&modal.querySelector('.contact-modal-close');
+  if(closeButton) closeButton.setAttribute('aria-label',interfaceText.close);
   if(route){
     var nav=document.querySelector('.viewer-actions');
     var consultButton=nav&&nav.querySelector('.primary');
@@ -1746,20 +1801,20 @@
     pdfLink.href=route.pdf;
     pdfLink.target='_blank';
     pdfLink.rel='noopener';
-    pdfLink.textContent='Open PDF';
+    pdfLink.textContent=interfaceText.pdf;
     if(nav) nav.insertBefore(pdfLink,consultButton||null);
 
     var oldShell=document.querySelector('.sheet-shell');
     var pdfShell=document.createElement('section');
     pdfShell.className='pdf-shell';
-    pdfShell.setAttribute('aria-label',(page.title||'Vehicle')+' configuration sheet');
+    pdfShell.setAttribute('aria-label',(page.title||'Vehicle')+' '+interfaceText.sheet);
     var pages=document.createElement('div');
     pages.className='config-pages';
     for(var pageNumber=1;pageNumber<=(route.pages||2);pageNumber+=1){
       var image=document.createElement('img');
       image.className='config-page';
       image.src=route.dir+'/page-'+pageNumber+'.png';
-      image.alt=(page.title||'Vehicle')+' configuration sheet page '+pageNumber;
+      image.alt=(page.title||'Vehicle')+' '+interfaceText.sheet+' '+interfaceText.page+' '+pageNumber;
       if(pageNumber>1) image.loading='lazy';
       pages.appendChild(image);
     }
@@ -1767,6 +1822,7 @@
     if(oldShell) oldShell.replaceWith(pdfShell);
   }
   if(sections&&!route){
+    sections.textContent='';
     (page.sections||[]).forEach(function(section){
       var block=document.createElement('section');
       block.className='config-section';
@@ -1787,8 +1843,7 @@
       table.appendChild(body); block.appendChild(table); sections.appendChild(block);
     });
   }
-  var message='Hello, I want to consult '+(page.title||'this vehicle')+'.';
-  var queryParams=new URLSearchParams(location.search);
+  var message=interfaceText.messagePrefix+(page.title||'this vehicle')+'.';
   var configModelNames={
     'vehicle-config-bz3.html':'Toyota bZ3',
     'vehicle-config-camry.html':'Toyota Camry',
@@ -1867,7 +1922,11 @@
     contactGrid.appendChild(zeeshanLink);
   }
   if(contactGrid){
-    ['8615625033581','8615913687692','8613640033268','8618511445792','8613826126147'].forEach(function(waNumber){
+    var defaultContactOrder=['8615625033581','8615913687692','8613640033268','8618511445792','8613826126147'];
+    var latamContactOrder=['8613826126147','8615625033581','8615913687692','8613640033268','8618511445792'];
+    var targetMarket=(queryParams.get('market')||'').toUpperCase();
+    var contactOrder=/^(PE|CO|CL)$/.test(targetMarket)?latamContactOrder:defaultContactOrder;
+    contactOrder.forEach(function(waNumber){
       var contactLink=contactGrid.querySelector('[data-wa-number="'+waNumber+'"]');
       if(contactLink) contactGrid.appendChild(contactLink);
     });

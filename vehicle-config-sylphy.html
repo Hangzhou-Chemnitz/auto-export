@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-type="vehicle_config">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nissan Sylphy 2026 Classic 1.6L CVT Configuration Sheet | Chemnitz</title>
 <meta name="description" content="View the Nissan Sylphy 2026 Classic 1.6L CVT configuration sheet for China vehicle export consultation.">
+<link rel="canonical" href="https://hzchemnitz.cn/vehicle-config-sylphy.html">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter,Arial,sans-serif;background:#f4f7fb;color:#111827}
@@ -49,7 +51,7 @@ h1{margin:0;font-size:28px;line-height:1.18;color:#111827}
 .contact-choice-name{display:block;margin-top:4px;font-size:.95em;font-weight:600;opacity:.9}
 @media(max-width:720px){.contact-overlay{padding:8px}.contact-choice-grid{grid-template-columns:1fr}}
 </style>
-<script defer src="analytics-events.js?v=20260811a"></script>
+<script defer src="analytics-events.js?v=20260924b"></script>
 </head>
 <body>
 <header class="viewer-header">
@@ -66,7 +68,7 @@ h1{margin:0;font-size:28px;line-height:1.18;color:#111827}
   <section class="sheet-hero">
     <p class="eyebrow">Vehicle Configuration Sheet</p>
     <h1>Nissan Sylphy 2026 Classic 1.6L CVT</h1>
-    <p>Guide price: RMB 79,900 · FOB export consultation</p>
+    <p>Guide price: RMB 79,900 · FOB or EXW export consultation</p>
   </section>
   <section class="pdf-shell" aria-label="Nissan Sylphy configuration sheet">
     <div class="config-pages">
@@ -98,6 +100,13 @@ h1{margin:0;font-size:28px;line-height:1.18;color:#111827}
 </div>
 <script>
 var sylphyParams = new URLSearchParams(location.search);
+if (sylphyParams.get('lang') === 'es') document.documentElement.lang = 'es';
+var sylphyMarket = (sylphyParams.get('market') || '').toUpperCase();
+if (/^(PE|CO|CL)$/.test(sylphyMarket)) {
+  var sylphyContactGrid = document.querySelector('.contact-choice-grid');
+  var sylphyJacky = sylphyContactGrid && sylphyContactGrid.querySelector('[data-contact="Jacky"]');
+  if (sylphyJacky) sylphyContactGrid.insertBefore(sylphyJacky, sylphyContactGrid.firstChild);
+}
 window.chemnitzConsultationContext = {
   model_name: 'Nissan Sylphy',
   trim_name: 'Nissan Sylphy 2026 Classic 1.6L CVT',

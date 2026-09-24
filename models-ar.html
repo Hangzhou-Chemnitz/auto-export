@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics -->
 <script src="analytics-loader.js?v=20260727a"></script>
-<script defer src="analytics-events.js?v=20260811a"></script>
+<script defer src="analytics-events.js?v=20260924b"></script>
 <title>كتالوج سيارات من الصين | Toyota وNissan وVolkswagen | Chemnitz</title>
 <meta name="description" content="تصفح 48 موديلا جاهزا للتصدير من الصين: Toyota RAV4 وCamry وHighlander وNissan Teana وN7 وN6 وSylphy وQashqai وX-Trail وVolkswagen وGeely وZeekr 9X وKia وHyundai وAudi. تواصل لمعرفة الأسعار والشحن FOB.">
 <meta name="keywords" content="كتالوج سيارات من الصين, Toyota من الصين, Nissan من الصين, Volkswagen من الصين, Zeekr 9X تصدير, Toyota RAV4 تصدير, Toyota Camry تصدير, Nissan Sylphy تصدير, Nissan Qashqai تصدير, FOB الصين, وثائق تصدير السيارات, سيارات بالجملة من الصين">
@@ -14,6 +14,7 @@
 <link rel="alternate" hreflang="ru" href="https://hzchemnitz.cn/models-ru.html">
 <link rel="alternate" hreflang="ar" href="https://hzchemnitz.cn/models-ar.html">
 <link rel="alternate" hreflang="fr" href="https://hzchemnitz.cn/models-fr.html">
+<link rel="alternate" hreflang="es" href="https://hzchemnitz.cn/models-es.html">
 <link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/models.html">
 <meta property="og:title" content="كتالوج سيارات من الصين — Toyota وNissan وVolkswagen">
 <meta property="og:description" content="كتالوج موديلات Toyota وNissan وVolkswagen وGeely وZeekr وKia وHyundai وAudi للتصدير من الصين مع استشارة الأسعار وFOB.">
@@ -834,9 +835,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     if (title) {
       var body = cards[i].querySelector('.card-body');
       if (body) {
-        var lnk = document.createElement('a');
-        lnk.href = 'https://autocatalogarchive.com/?s=' + encodeURIComponent(title);
-        lnk.target = '_blank'; lnk.rel = 'noopener';
+        var lnk = document.createElement('button');
+        lnk.type = 'button';
         lnk.className = 'brochure-link'; lnk.textContent = 'استشارة';
         lnk.setAttribute('onclick', 'event.stopPropagation(); showConfigPicker(\'' + title + '\', this); return false;');
         body.appendChild(lnk);

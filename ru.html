@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics -->
 <script src="analytics-loader.js?v=20260727a"></script>
-<script defer src="analytics-events.js?v=20260811a"></script>
+<script defer src="analytics-events.js?v=20260924b"></script>
 <title>Авто из Китая оптом | Toyota и Nissan FOB | Hangzhou Chemnitz</title>
 <meta name="twitter:description" content="Hangzhou Chemnitz экспортирует новые автомобили и спецтехнику из Китая с полным пакетом документов для леворульных рынков.">
 <meta name="twitter:title" content="Авто из Китая оптом — Toyota, Nissan, FOB">
@@ -60,7 +60,7 @@
       "name": "Как купить автомобили напрямую из Китая?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Отправьте в WhatsApp или на email бренд, модель, комплектацию, количество и данные по направлению. На основе требований заказа Hangzhou Chemnitz подберет соответствующие версии автомобилей на китайском рынке и подготовит котировку. После подтверждения заказа мы доставим автомобили в указанный порт передачи на условиях FOB и предоставим поддержку по экспортному таможенному декларированию."
+        "text": "Отправьте в WhatsApp или на email бренд, модель, комплектацию, количество и пункт назначения. Hangzhou Chemnitz сопоставит версию китайского рынка и подготовит предложение с согласованным местом передачи FOB или EXW, экспортной поддержкой и перечнем включённых услуг."
       }
     },
     {
@@ -81,10 +81,10 @@
     },
     {
       "@type": "Question",
-      "name": "Вы поддерживаете доставку FOB из Китая?",
+      "name": "Вы работаете на условиях FOB и EXW?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Да. Мы работаем только на условиях FOB. Мы можем организовать передачу автомобиля, экспортные документы и таможенную поддержку в основных портах Китая, включая Шанхай, Нинбо, Тяньцзинь, Гуанчжоу и пограничные порты Синьцзяна. Дальнейший фрахт после порта FOB организует покупатель или его экспедитор."
+        "text": "Да. При FOB в котировке указываются китайский порт и включенные услуги. При EXW или передаче в месте отправления мы указываем точку получения и согласованные обязательства."
       }
     },
     {
@@ -468,7 +468,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <h2>FAQ по экспорту</h2>
     <div class="faq-item">
       <h3>Как купить автомобили напрямую из Китая?</h3>
-      <p>Отправьте в WhatsApp или на email бренд, модель, комплектацию, количество и данные по направлению. На основе требований заказа мы подберем соответствующие версии автомобилей на китайском рынке и подготовим котировку. После подтверждения заказа мы доставим автомобили в указанный порт передачи на условиях FOB и предоставим поддержку по экспортному таможенному декларированию.</p>
+      <p>Отправьте в WhatsApp или на email бренд, модель, комплектацию, количество и пункт назначения. Мы сопоставим версию китайского рынка и подготовим предложение с согласованным местом передачи FOB или EXW, экспортной поддержкой и перечнем включённых услуг.</p>
     </div>
     <div class="faq-item">
       <h3>Какие бренды и типы автомобилей вы экспортируете?</h3>
@@ -479,8 +479,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       <p>Обычно экспортный пакет включает коммерческий инвойс, упаковочный лист, сертификат происхождения, поддержку таможенной декларации, коносамент или транспортный документ, а также доступные документы соответствия автомобиля. Документы готовятся под рынок назначения и маршрут доставки.</p>
     </div>
     <div class="faq-item">
-      <h3>Вы поддерживаете доставку FOB из Китая?</h3>
-      <p>Да. Мы работаем только на условиях FOB. Мы можем организовать передачу автомобиля, экспортные документы и таможенную поддержку в основных портах Китая, включая Шанхай, Нинбо, Тяньцзинь, Гуанчжоу и пограничные порты Синьцзяна. Дальнейший фрахт после порта FOB организует покупатель или его экспедитор.</p>
+      <h3>Вы работаете на условиях FOB и EXW?</h3>
+      <p>Да. При FOB в котировке указываются китайский порт и включенные услуги. При EXW или передаче в месте отправления мы указываем точку получения и согласованные обязательства.</p>
     </div>
     <div class="faq-item">
       <h3>С какими леворульными рынками вы работаете?</h3>
@@ -552,7 +552,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 <div class="config-overlay" id="config-overlay"></div>
 <script>
-(function(){var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbTitle=document.getElementById('lb-title'),lbCounter=document.getElementById('lb-counter'),lbIdx=0,lbCount=0,lbUrls=[];var cards=document.querySelectorAll('.model-card');for(var i=0;i<cards.length;i++){var title=cards[i].getAttribute('data-title');if(title){var body=cards[i].querySelector('.card-body');if(body){var lnk=document.createElement('a');lnk.href='https://autocatalogarchive.com/?s='+encodeURIComponent(title);lnk.target='_blank';lnk.rel='noopener';lnk.className='brochure-link';lnk.textContent='Консультация';lnk.setAttribute('onclick','event.stopPropagation();showConfigModal(\''+title+'\');return false;');body.appendChild(lnk);}}cards[i].addEventListener('click',function(){var base=this.getAttribute('data-base'),prefix=this.getAttribute('data-prefix')||'',count=parseInt(this.getAttribute('data-count'));lbUrls=[];for(var j=1;j<=count;j++)lbUrls.push(base+prefix+j+'.jpg');lbIdx=0;lbCount=count;lbTitle.textContent=this.getAttribute('data-title');show();lb.classList.add('open');document.body.style.overflow='hidden';});}function show(){lbImg.src=lbUrls[lbIdx];lbCounter.textContent=(lbIdx+1)+' / '+lbCount;}document.getElementById('lb-prev').addEventListener('click',function(e){e.stopPropagation();lbIdx=(lbIdx-1+lbUrls.length)%lbUrls.length;show();});document.getElementById('lb-next').addEventListener('click',function(e){e.stopPropagation();lbIdx=(lbIdx+1)%lbUrls.length;show();});document.getElementById('lb-close').addEventListener('click',function(){lb.classList.remove('open');document.body.style.overflow='';});lb.addEventListener('click',function(e){if(e.target===lb){lb.classList.remove('open');document.body.style.overflow='';}});document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape'){lb.classList.remove('open');document.body.style.overflow='';}if(e.key==='ArrowLeft'){e.preventDefault();lbIdx=(lbIdx-1+lbUrls.length)%lbUrls.length;show();}if(e.key==='ArrowRight'){e.preventDefault();lbIdx=(lbIdx+1)%lbUrls.length;show();}});})();
+(function(){var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbTitle=document.getElementById('lb-title'),lbCounter=document.getElementById('lb-counter'),lbIdx=0,lbCount=0,lbUrls=[];var cards=document.querySelectorAll('.model-card');for(var i=0;i<cards.length;i++){var title=cards[i].getAttribute('data-title');if(title){var body=cards[i].querySelector('.card-body');if(body){var lnk=document.createElement('button');lnk.type='button';lnk.className='brochure-link';lnk.textContent='Консультация';lnk.setAttribute('onclick','event.stopPropagation();showConfigModal(\''+title+'\');return false;');body.appendChild(lnk);}}cards[i].addEventListener('click',function(){var base=this.getAttribute('data-base'),prefix=this.getAttribute('data-prefix')||'',count=parseInt(this.getAttribute('data-count'));lbUrls=[];for(var j=1;j<=count;j++)lbUrls.push(base+prefix+j+'.jpg');lbIdx=0;lbCount=count;lbTitle.textContent=this.getAttribute('data-title');show();lb.classList.add('open');document.body.style.overflow='hidden';});}function show(){lbImg.src=lbUrls[lbIdx];lbCounter.textContent=(lbIdx+1)+' / '+lbCount;}document.getElementById('lb-prev').addEventListener('click',function(e){e.stopPropagation();lbIdx=(lbIdx-1+lbUrls.length)%lbUrls.length;show();});document.getElementById('lb-next').addEventListener('click',function(e){e.stopPropagation();lbIdx=(lbIdx+1)%lbUrls.length;show();});document.getElementById('lb-close').addEventListener('click',function(){lb.classList.remove('open');document.body.style.overflow='';});lb.addEventListener('click',function(e){if(e.target===lb){lb.classList.remove('open');document.body.style.overflow='';}});document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape'){lb.classList.remove('open');document.body.style.overflow='';}if(e.key==='ArrowLeft'){e.preventDefault();lbIdx=(lbIdx-1+lbUrls.length)%lbUrls.length;show();}if(e.key==='ArrowRight'){e.preventDefault();lbIdx=(lbIdx+1)%lbUrls.length;show();}});})();
 
   // ========== Config Modal Data ==========
   var configData = {

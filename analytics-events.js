@@ -55,9 +55,133 @@
     return String(value == null ? '' : value).trim().slice(0, maxLength || 100);
   }
 
+  var marketSessionKey = 'chemnitz_target_market';
+  var marketSessionTtl = 30 * 60 * 1000;
+  var inheritableMarkets = {
+    'PE': true,
+    'CO': true,
+    'CL': true,
+    'LATAM': true
+  };
+
+  function pageLocale() {
+    return clean(document.documentElement.lang || 'en', 20);
+  }
+
   function pageLanguage() {
-    var language = (document.documentElement.lang || 'en').toLowerCase();
+    var language = pageLocale().toLowerCase();
     return clean(language.split('-')[0], 12);
+  }
+
+  function pageType() {
+    var body = document.body;
+    return clean(
+      document.documentElement.getAttribute('data-page-type') ||
+      (body && body.getAttribute('data-page-type')) ||
+      '',
+      40
+    );
+  }
+
+  function normalizeMarket(value) {
+    var market = clean(value, 20).toUpperCase().replace(/[^A-Z0-9_-]/g, '');
+    return market;
+  }
+
+  function explicitMarket() {
+    var body = document.body;
+    return normalizeMarket(
+      document.documentElement.getAttribute('data-market') ||
+      (body && body.getAttribute('data-market')) ||
+      ''
+    );
+  }
+
+  function queryMarket() {
+    try {
+      var market = normalizeMarket(new URLSearchParams(window.location.search).get('market'));
+      return market === 'PE' || market === 'CO' || market === 'CL' ? market : '';
+    } catch (error) {
+      return '';
+    }
+  }
+
+  function isSpanishJourney() {
+    var params = new URLSearchParams(window.location.search);
+    return pageLanguage() === 'es' ||
+      clean(params.get('lang'), 12).toLowerCase() === 'es' ||
+      /(?:^|\/)models-es\.html$/i.test(window.location.pathname || '');
+  }
+
+  function sameOriginReferrerPath() {
+    if (!document.referrer) return '';
+    try {
+      var referrer = new URL(document.referrer);
+      if (referrer.origin !== window.location.origin) return '';
+      return referrer.pathname || '/';
+    } catch (error) {
+      return '';
+    }
+  }
+
+  function readInheritedMarket() {
+    if (!isSpanishJourney()) return '';
+    var referrerPath = sameOriginReferrerPath();
+    if (!referrerPath) return '';
+
+    try {
+      var stored = JSON.parse(window.sessionStorage.getItem(marketSessionKey) || 'null');
+      var market = normalizeMarket(stored && stored.market);
+      var updatedAt = Number(stored && stored.updated_at) || 0;
+      var sourcePath = clean(stored && stored.source_page, 100);
+      if (!inheritableMarkets[market]) return '';
+      if (!updatedAt || Date.now() - updatedAt > marketSessionTtl) return '';
+      if (!sourcePath || sourcePath !== referrerPath) return '';
+      return market;
+    } catch (error) {
+      return '';
+    }
+  }
+
+  function rememberMarket(market) {
+    var normalized = normalizeMarket(market);
+    if (!inheritableMarkets[normalized]) return;
+    try {
+      window.sessionStorage.setItem(marketSessionKey, JSON.stringify({
+        market: normalized,
+        updated_at: Date.now(),
+        source_page: clean(window.location.pathname || '/', 100)
+      }));
+    } catch (error) {
+      // Analytics must never block navigation when storage is unavailable.
+    }
+  }
+
+  function resolveTargetMarket() {
+    var market = queryMarket();
+    if (market) return market;
+
+    market = explicitMarket();
+    if (market) return market;
+
+    var localeParts = pageLocale().split('-');
+    if (localeParts.length > 1 && localeParts[0].toLowerCase() === 'es') {
+      market = normalizeMarket(localeParts[1]);
+      if (market) return market;
+    }
+
+    market = readInheritedMarket();
+    if (market) return market;
+    return isSpanishJourney() ? 'LATAM' : '';
+  }
+
+  var resolvedTargetMarket = resolveTargetMarket();
+  if (explicitMarket() || (resolvedTargetMarket && resolvedTargetMarket !== 'LATAM' && isSpanishJourney())) {
+    rememberMarket(resolvedTargetMarket);
+  }
+
+  function targetMarket() {
+    return resolvedTargetMarket;
   }
 
   function defaultContext() {
@@ -67,6 +191,9 @@
       guide_price: '',
       contact_name: '',
       page_language: pageLanguage(),
+      page_locale: pageLocale(),
+      target_market: targetMarket(),
+      page_type: pageType(),
       source_page: clean(window.location.pathname || '/', 100)
     };
   }
@@ -79,6 +206,9 @@
       guide_price: clean(source.guide_price, 40),
       contact_name: clean(source.contact_name, 40),
       page_language: clean(source.page_language || pageLanguage(), 12),
+      page_locale: clean(source.page_locale || pageLocale(), 20),
+      target_market: normalizeMarket(source.target_market || targetMarket()),
+      page_type: clean(source.page_type || pageType(), 40),
       source_page: clean(source.source_page || window.location.pathname || '/', 100)
     };
   }
@@ -100,10 +230,13 @@
 
   window.chemnitzTrack = function (eventName, params) {
     if (!eventName || typeof window.gtag !== 'function') return;
-    window.gtag('event', eventName, Object.assign({
-      page_language: pageLanguage(),
-      source_page: clean(window.location.pathname || '/', 100)
-    }, params || {}));
+    var eventParams = Object.assign({}, params || {});
+    var context = normalizedContext(Object.assign(
+      {},
+      window.chemnitzConsultationContext || {},
+      eventParams
+    ));
+    window.gtag('event', eventName, Object.assign({}, eventParams, context));
   };
 
   function modelNameFromCard(card) {
@@ -146,7 +279,52 @@
     return context;
   }
 
+  function marketFromLink(link) {
+    var market = normalizeMarket(
+      link.getAttribute('data-market-link') ||
+      link.getAttribute('data-market') ||
+      ''
+    );
+    if (market) return market;
+
+    var href = clean(link.getAttribute('href'), 200).toLowerCase();
+    if (/\/peru\.html(?:[?#]|$)/.test(href)) return 'PE';
+    if (/\/colombia\.html(?:[?#]|$)/.test(href)) return 'CO';
+    if (/\/chile\.html(?:[?#]|$)/.test(href)) return 'CL';
+    return '';
+  }
+
   document.addEventListener('click', function (event) {
+    var marketLink = event.target.closest('[data-market-link]');
+    if (marketLink) {
+      var selectedMarket = marketFromLink(marketLink) || targetMarket();
+      rememberMarket(selectedMarket);
+      window.chemnitzTrack('market_select', {
+        target_market: selectedMarket,
+        selected_market: selectedMarket,
+        link_url: clean(marketLink.href || marketLink.getAttribute('href') || '', 200),
+        link_text: clean(marketLink.textContent, 100)
+      });
+    }
+
+    var catalogLink = event.target.closest('[data-catalog-link]');
+    if (catalogLink) {
+      rememberMarket(targetMarket() || 'LATAM');
+      window.chemnitzTrack('catalog_open', {
+        link_url: clean(catalogLink.href || catalogLink.getAttribute('href') || '', 200),
+        link_text: clean(catalogLink.textContent, 100)
+      });
+    }
+
+    var countryCta = event.target.closest('[data-country-cta]');
+    if (countryCta) {
+      window.chemnitzTrack('country_cta_click', {
+        cta_name: clean(countryCta.getAttribute('data-country-cta') || countryCta.textContent, 100),
+        link_url: clean(countryCta.href || countryCta.getAttribute('href') || '', 200),
+        link_text: clean(countryCta.textContent, 100)
+      });
+    }
+
     var whatsappLink = event.target.closest(
       'a[href*="wa.me"], a[href*="api.whatsapp.com"], a[data-wa-number]'
     );
