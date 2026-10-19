@@ -1322,38 +1322,106 @@
   var route=routes[filename];
   var queryParams=new URLSearchParams(location.search);
   var pageLanguage=queryParams.get('lang')||'en';
-  var interfaceText=pageLanguage==='es'?{
-    documentSuffix:'Ficha de configuración | Chemnitz',
-    eyebrow:'Ficha de configuración del vehículo',
-    pricePrefix:'Precio guía: RMB ',
-    priceSuffix:' · Consulta de exportación FOB/EXW',
-    summary:'Resumen de configuración para consulta de exportación.',
-    back:'Volver a modelos',
-    pdf:'Abrir PDF',
-    consult:'Consultar',
-    sheet:'ficha de configuración',
-    page:'página',
-    summaryHeading:'Resumen de configuración',
-    note:'La lista completa de equipamiento y los documentos de exportación se confirman para el pedido seleccionado. Contáctenos para la correspondencia final y la cotización FOB o EXW.',
-    close:'Cerrar',
-    messagePrefix:'Hola, deseo consultar '
-  }:{
-    documentSuffix:'Configuration Sheet | Chemnitz',
-    eyebrow:'Vehicle Configuration Sheet',
-    pricePrefix:'Guide price: RMB ',
-    priceSuffix:' · FOB/EXW export consultation',
-    summary:'Configuration summary for export consultation.',
-    back:'Back to Models',
-    pdf:'Open PDF',
-    consult:'Consult',
-    sheet:'configuration sheet',
-    page:'page',
-    summaryHeading:'Configuration Summary',
-    note:'The complete equipment list and export documents can be confirmed against the selected vehicle order. Contact us for final matching and an FOB or EXW quotation.',
-    close:'Close',
-    messagePrefix:'Hello, I want to consult '
+  var interfaceCopy={
+    en:{
+      documentSuffix:'Configuration Sheet | Chemnitz',
+      eyebrow:'Vehicle Configuration Sheet',
+      pricePrefix:'Manufacturer guide price: RMB ',
+      priceSuffix:' · FOB/EXW export consultation',
+      summary:'Configuration summary for export consultation.',
+      back:'Back to Models',
+      pdf:'Open PDF',
+      consult:'Consult',
+      sheet:'configuration sheet',
+      page:'page',
+      summaryHeading:'Configuration Summary',
+      note:'The complete equipment list and export documents can be confirmed against the selected vehicle order. Contact us for final matching and an FOB or EXW quotation.',
+      quoteDisclaimer:'The manufacturer guide price is for reference only. The final export quotation depends on order quantity, destination, selected configuration and agreed EXW or FOB terms.',
+      detailsHeading:'Detailed configuration sheet',
+      detailsIntro:'Review the complete equipment list below or open the PDF in a new tab.',
+      close:'Close',
+      messagePrefix:'Hello, I want to consult '
+    },
+    es:{
+      documentSuffix:'Ficha de configuración | Chemnitz',
+      eyebrow:'Ficha de configuración del vehículo',
+      pricePrefix:'Precio de referencia del fabricante: RMB ',
+      priceSuffix:' · Consulta de exportación FOB/EXW',
+      summary:'Resumen de configuración para consulta de exportación.',
+      back:'Volver a modelos',
+      pdf:'Abrir PDF',
+      consult:'Consultar',
+      sheet:'ficha de configuración',
+      page:'página',
+      summaryHeading:'Resumen de configuración',
+      note:'La lista completa de equipamiento y los documentos de exportación se confirman para el pedido seleccionado. Contáctenos para la correspondencia final y la cotización FOB o EXW.',
+      quoteDisclaimer:'El precio de referencia del fabricante es solo informativo. La cotización final de exportación depende de la cantidad, el destino, la configuración elegida y los términos EXW o FOB acordados.',
+      detailsHeading:'Ficha de configuración detallada',
+      detailsIntro:'Consulte la lista completa de equipamiento a continuación o abra el PDF en una pestaña nueva.',
+      close:'Cerrar',
+      messagePrefix:'Hola, deseo consultar '
+    },
+    fr:{
+      documentSuffix:'Fiche de configuration | Chemnitz',
+      eyebrow:'Fiche de configuration du véhicule',
+      pricePrefix:'Prix indicatif constructeur : RMB ',
+      priceSuffix:' · Consultation export FOB/EXW',
+      summary:'Résumé de configuration pour la consultation export.',
+      back:'Retour aux modèles',
+      pdf:'Ouvrir le PDF',
+      consult:'Nous contacter',
+      sheet:'fiche de configuration',
+      page:'page',
+      summaryHeading:'Résumé de la configuration',
+      note:'La liste complète des équipements et les documents d’exportation sont confirmés selon le véhicule sélectionné. Contactez-nous pour la validation finale et un devis FOB ou EXW.',
+      quoteDisclaimer:'Le prix indicatif constructeur est fourni à titre de référence. Le devis export final dépend de la quantité, de la destination, de la configuration choisie et des conditions EXW ou FOB convenues.',
+      detailsHeading:'Fiche de configuration détaillée',
+      detailsIntro:'Consultez la liste complète des équipements ci-dessous ou ouvrez le PDF dans un nouvel onglet.',
+      close:'Fermer',
+      messagePrefix:'Bonjour, je souhaite me renseigner sur '
+    },
+    ru:{
+      documentSuffix:'Комплектация автомобиля | Chemnitz',
+      eyebrow:'Комплектация автомобиля',
+      pricePrefix:'Рекомендованная цена производителя: RMB ',
+      priceSuffix:' · Консультация по экспорту FOB/EXW',
+      summary:'Краткая комплектация для экспортной консультации.',
+      back:'Назад к моделям',
+      pdf:'Открыть PDF',
+      consult:'Связаться',
+      sheet:'лист комплектации',
+      page:'страница',
+      summaryHeading:'Краткая комплектация',
+      note:'Полный список оснащения и экспортные документы подтверждаются для выбранного автомобиля. Свяжитесь с нами для окончательной проверки и расчёта на условиях FOB или EXW.',
+      quoteDisclaimer:'Рекомендованная цена производителя указана справочно. Итоговая экспортная цена зависит от количества, пункта назначения, выбранной комплектации и согласованных условий EXW или FOB.',
+      detailsHeading:'Подробная комплектация',
+      detailsIntro:'Ознакомьтесь с полным списком оснащения ниже или откройте PDF в новой вкладке.',
+      close:'Закрыть',
+      messagePrefix:'Здравствуйте, я хочу уточнить информацию о '
+    },
+    ar:{
+      documentSuffix:'ورقة مواصفات السيارة | Chemnitz',
+      eyebrow:'ورقة مواصفات السيارة',
+      pricePrefix:'السعر الاسترشادي من الشركة المصنعة: RMB ',
+      priceSuffix:' · استشارة تصدير FOB/EXW',
+      summary:'ملخص المواصفات لاستشارة التصدير.',
+      back:'العودة إلى الطرازات',
+      pdf:'فتح ملف PDF',
+      consult:'استشارة',
+      sheet:'ورقة المواصفات',
+      page:'الصفحة',
+      summaryHeading:'ملخص المواصفات',
+      note:'يتم تأكيد قائمة التجهيزات الكاملة ووثائق التصدير وفق السيارة المختارة. تواصل معنا للمطابقة النهائية وعرض سعر FOB أو EXW.',
+      quoteDisclaimer:'السعر الاسترشادي من الشركة المصنعة هو للمرجعية فقط. يعتمد عرض سعر التصدير النهائي على الكمية والوجهة والمواصفات المختارة وشروط EXW أو FOB المتفق عليها.',
+      detailsHeading:'ورقة المواصفات التفصيلية',
+      detailsIntro:'راجع قائمة التجهيزات الكاملة أدناه أو افتح ملف PDF في علامة تبويب جديدة.',
+      close:'إغلاق',
+      messagePrefix:'مرحباً، أود الاستفسار عن '
+    }
   };
-  if(pageLanguage==='es') document.documentElement.lang='es';
+  var interfaceText=interfaceCopy[pageLanguage]||interfaceCopy.en;
+  if(interfaceCopy[pageLanguage]) document.documentElement.lang=pageLanguage;
+  if(pageLanguage==='ar') document.documentElement.dir='rtl';
   function resolveBackLink(){
     var params=new URLSearchParams(location.search);
     var source=params.get('from');
@@ -1366,11 +1434,11 @@
     }
     if(source==='models-es') source='models';
     var targets={
-      en:{home:'/#models',models:'models.html#models'},
-      fr:{home:'fr.html#models',models:'models-fr.html#models'},
+      en:{home:'/#featured-models',models:'models.html#models'},
+      fr:{home:'fr.html#featured-models',models:'models-fr.html#models'},
       es:{home:'es.html#featured-models',models:'models-es.html#models'},
-      ru:{home:'ru.html#models',models:'models-ru.html#models'},
-      ar:{home:'ar.html#models',models:'models-ar.html#models'}
+      ru:{home:'ru.html#featured-models',models:'models-ru.html#models'},
+      ar:{home:'ar.html#featured-models',models:'models-ar.html#models'}
     };
     if(targets[language]&&(source==='home'||source==='models')){
       return preserveMarket(targets[language][source]);
@@ -1380,12 +1448,12 @@
       try{
         var referrerFile=new URL(document.referrer).pathname.split('/').pop();
         var referrerTargets={
-          '':'/#models',
-          'index.html':'/#models',
-          'fr.html':'fr.html#models',
+          '':'/#featured-models',
+          'index.html':'/#featured-models',
+          'fr.html':'fr.html#featured-models',
           'es.html':'es.html#featured-models',
-          'ru.html':'ru.html#models',
-          'ar.html':'ar.html#models',
+          'ru.html':'ru.html#featured-models',
+          'ar.html':'ar.html#featured-models',
           'models.html':'models.html#models',
           'models-fr.html':'models-fr.html#models',
           'models-es.html':'models-es.html#models',
@@ -1398,7 +1466,7 @@
       }catch(error){}
     }
 
-    return '/#models';
+    return 'models.html#models';
   }
   if(filename==='vehicle-config-coolray.html'){
     var coolraySpecid=new URLSearchParams(location.search).get('specid')||'68972';
@@ -1785,13 +1853,19 @@
   var eyebrow=document.querySelector('.eyebrow');
   if(eyebrow) eyebrow.textContent=interfaceText.eyebrow;
   var brandLink=document.querySelector('.viewer-header .brand');
-  if(brandLink&&pageLanguage==='es') brandLink.href='es.html#featured-models';
+  var localizedHomeLinks={es:'es.html#featured-models',fr:'fr.html#models',ru:'ru.html#models',ar:'ar.html#models'};
+  if(brandLink&&localizedHomeLinks[pageLanguage]) brandLink.href=localizedHomeLinks[pageLanguage];
   var primaryButton=document.querySelector('.viewer-actions .primary');
-  if(primaryButton) primaryButton.textContent=interfaceText.consult;
+  if(primaryButton){
+    primaryButton.textContent=interfaceText.consult;
+    primaryButton.setAttribute('data-cta-location','vehicle_config_header');
+  }
   var summaryHeading=document.querySelector('.sheet-card-head h2');
   if(summaryHeading) summaryHeading.textContent=interfaceText.summaryHeading;
   var sheetNote=document.querySelector('.sheet-note');
   if(sheetNote) sheetNote.textContent=interfaceText.note;
+  var quoteDisclaimer=document.getElementById('quote-disclaimer');
+  if(quoteDisclaimer) quoteDisclaimer.textContent=interfaceText.quoteDisclaimer;
   var closeButton=modal&&modal.querySelector('.contact-modal-close');
   if(closeButton) closeButton.setAttribute('aria-label',interfaceText.close);
   if(route){
@@ -1802,12 +1876,23 @@
     pdfLink.target='_blank';
     pdfLink.rel='noopener';
     pdfLink.textContent=interfaceText.pdf;
+    pdfLink.setAttribute('data-cta-location','vehicle_config_header');
     if(nav) nav.insertBefore(pdfLink,consultButton||null);
 
     var oldShell=document.querySelector('.sheet-shell');
     var pdfShell=document.createElement('section');
     pdfShell.className='pdf-shell';
-    pdfShell.setAttribute('aria-label',(page.title||'Vehicle')+' '+interfaceText.sheet);
+    var detailsHeading=document.createElement('div');
+    detailsHeading.className='pdf-section-head';
+    var detailsTitle=document.createElement('h2');
+    detailsTitle.id='detailed-configuration-heading';
+    detailsTitle.textContent=interfaceText.detailsHeading;
+    var detailsIntro=document.createElement('p');
+    detailsIntro.textContent=interfaceText.detailsIntro;
+    detailsHeading.appendChild(detailsTitle);
+    detailsHeading.appendChild(detailsIntro);
+    pdfShell.setAttribute('aria-labelledby',detailsTitle.id);
+    pdfShell.appendChild(detailsHeading);
     var pages=document.createElement('div');
     pages.className='config-pages';
     for(var pageNumber=1;pageNumber<=(route.pages||2);pageNumber+=1){
@@ -1819,7 +1904,13 @@
       pages.appendChild(image);
     }
     pdfShell.appendChild(pages);
-    if(oldShell) oldShell.replaceWith(pdfShell);
+    if(oldShell) oldShell.insertAdjacentElement('afterend',pdfShell);
+    else document.querySelector('main').appendChild(pdfShell);
+    if(sections){
+      var summaryRows=sections.querySelectorAll('.config-table tr');
+      if(summaryRows[0]&&summaryRows[0].querySelector('td')) summaryRows[0].querySelector('td').textContent=page.title||'';
+      if(summaryRows[1]&&summaryRows[1].querySelector('td')) summaryRows[1].querySelector('td').textContent='RMB '+(page.price||'TBD');
+    }
   }
   if(sections&&!route){
     sections.textContent='';
@@ -1892,12 +1983,64 @@
     'vehicle-config-wildlander.html':'Toyota Wildlander',
     'vehicle-config-xtrail.html':'Nissan X-Trail'
   };
+  var configDefaultSpecIds={
+    'vehicle-config-coolray.html':'68972',
+    'vehicle-config-boyue.html':'74083',
+    'vehicle-config-xingyue-l.html':'74638',
+    'vehicle-config-niuzai.html':'77979',
+    'vehicle-config-zeekr-9x.html':'74432',
+    'vehicle-config-galaxy-m9.html':'74359',
+    'vehicle-config-seltos.html':'73680',
+    'vehicle-config-kx1.html':'75520',
+    'vehicle-config-k3.html':'66683',
+    'vehicle-config-k5.html':'69773',
+    'vehicle-config-sportage.html':'76700',
+    'vehicle-config-elantra.html':'78117',
+    'vehicle-config-dashing.html':'74899',
+    'vehicle-config-x70.html':'76874',
+    'vehicle-config-traveler.html':'75368',
+    'vehicle-config-free-rider.html':'78309',
+    'vehicle-config-q3.html':'76044',
+    'vehicle-config-q5.html':'72704',
+    'vehicle-config-a5.html':'73537',
+    'vehicle-config-crv.html':'78059',
+    'vehicle-config-tiggo-5x.html':'72714',
+    'vehicle-config-tiggo-3x.html':'69331',
+    'vehicle-config-mg5.html':'73650',
+    'vehicle-config-changan-x5.html':'74278',
+    'vehicle-config-changan-cs55.html':'74992',
+    'vehicle-config-changan-cs75.html':'75346',
+    'vehicle-config-rav4.html':'74683',
+    'vehicle-config-qashqai.html':'73625',
+    'vehicle-config-xtrail.html':'73627',
+    'vehicle-config-nx8.html':'76642',
+    'vehicle-config-teana.html':'75719',
+    'vehicle-config-n7.html':'77628',
+    'vehicle-config-n6.html':'77650',
+    'vehicle-config-sylphy-2026.html':'76613',
+    'vehicle-config-tharu.html':'74072',
+    'vehicle-config-golf.html':'75016',
+    'vehicle-config-troc.html':'74967',
+    'vehicle-config-teramont.html':'74970',
+    'vehicle-config-jetta-vs5.html':'75249',
+    'vehicle-config-corolla.html':'76042',
+    'vehicle-config-wildlander.html':'75768',
+    'vehicle-config-camry.html':'74001',
+    'vehicle-config-corolla-cross.html':'75436',
+    'vehicle-config-highlander.html':'74933',
+    'vehicle-config-granvia.html':'78248',
+    'vehicle-config-bz3.html':'',
+    'vehicle-config-sylphy.html':''
+  };
   window.chemnitzConsultationContext={
     model_name:configModelNames[filename]||'',
     trim_name:page.title||'',
+    vehicle_spec_id:queryParams.get('specid')||configDefaultSpecIds[filename]||'',
     guide_price:page.price||'',
+    entry_surface:queryParams.get('from')||'',
+    cta_location:'vehicle_config_page',
     page_language:queryParams.get('lang')||document.documentElement.lang||'en',
-    source_page:queryParams.get('from')||location.pathname
+    source_page:location.pathname
   };
   if(window.chemnitzSetConsultationContext){
     window.chemnitzSetConsultationContext(window.chemnitzConsultationContext);
@@ -1925,6 +2068,17 @@
     var defaultContactOrder=['8615625033581','8615913687692','8613640033268','8618511445792','8613826126147'];
     var latamContactOrder=['8613826126147','8615625033581','8615913687692','8613640033268','8618511445792'];
     var targetMarket=(queryParams.get('market')||'').toUpperCase();
+    if(!targetMarket&&window.chemnitzConsultationContext){
+      targetMarket=String(window.chemnitzConsultationContext.target_market||'').toUpperCase();
+    }
+    if(!targetMarket){
+      try{
+        var rememberedMarket=JSON.parse(sessionStorage.getItem('chemnitz_target_market')||'null');
+        targetMarket=String(rememberedMarket&&rememberedMarket.market||'').toUpperCase();
+      }catch(error){
+        targetMarket='';
+      }
+    }
     var contactOrder=/^(PE|CO|CL)$/.test(targetMarket)?latamContactOrder:defaultContactOrder;
     contactOrder.forEach(function(waNumber){
       var contactLink=contactGrid.querySelector('[data-wa-number="'+waNumber+'"]');
@@ -1941,6 +2095,8 @@
   document.querySelectorAll('[data-wa-number]').forEach(function(link){
     var waNumber=link.getAttribute('data-wa-number');
     var contact=contactDetails[waNumber];
+    link.setAttribute('data-cta-location','vehicle_config_contact_selector');
+    if(contact) link.setAttribute('data-contact-name',contact.name);
     if(contact&&!link.querySelector('.contact-avatar')){
       link.textContent='';
       var avatar=document.createElement('span');
@@ -1975,6 +2131,7 @@
     link.href='https://wa.me/'+waNumber+'?text='+encodeURIComponent(message);
   });
   window.openWhatsAppChooser=function(){
+    window.chemnitzConsultationContext.cta_location='vehicle_config_header';
     if(window.chemnitzTrack){
       window.chemnitzTrack('preorder_contact_choice',window.chemnitzConsultationContext);
     }

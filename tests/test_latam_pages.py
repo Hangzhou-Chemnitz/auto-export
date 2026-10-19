@@ -24,6 +24,21 @@ COUNTRY_PAGES = {
     "es/chile.html": ("es-CL", "https://hzchemnitz.cn/es/chile.html"),
 }
 
+LOCALIZED_MODEL_PAGES = {
+    "es/modelos/toyota-camry-2026.html": (
+        "https://hzchemnitz.cn/es/modelos/toyota-camry-2026.html",
+        "https://hzchemnitz.cn/vehicle-config-camry.html",
+    ),
+    "es/modelos/toyota-rav4-2026.html": (
+        "https://hzchemnitz.cn/es/modelos/toyota-rav4-2026.html",
+        "https://hzchemnitz.cn/vehicle-config-rav4.html",
+    ),
+    "es/modelos/toyota-corolla-cross-2026.html": (
+        "https://hzchemnitz.cn/es/modelos/toyota-corolla-cross-2026.html",
+        "https://hzchemnitz.cn/vehicle-config-corolla-cross.html",
+    ),
+}
+
 HOME_ALTERNATES = {
     "en": "https://hzchemnitz.cn/",
     "ru": "https://hzchemnitz.cn/ru.html",
@@ -116,13 +131,42 @@ class LatamPagesTest(unittest.TestCase):
         for relative_path in HOME_PAGES:
             with self.subTest(page=relative_path):
                 _, parser = parse_page(relative_path)
-                self.assertEqual(alternates(parser), HOME_ALTERNATES)
+                page_alternates = alternates(parser)
+                for language, target in HOME_ALTERNATES.items():
+                    self.assertEqual(page_alternates.get(language), target)
 
-    def test_country_guides_do_not_claim_translation_equivalence(self):
+    def test_country_pages_are_independent_market_landing_pages(self):
         for relative_path in COUNTRY_PAGES:
             with self.subTest(page=relative_path):
                 _, parser = parse_page(relative_path)
+                # These pages contain different country-specific import rules,
+                # so they must not be declared as equivalent hreflang variants.
                 self.assertEqual(alternates(parser), {})
+
+    def test_priority_spanish_model_pages_are_independent_and_reciprocal(self):
+        for relative_path, (spanish_url, english_url) in LOCALIZED_MODEL_PAGES.items():
+            with self.subTest(page=relative_path):
+                text, parser = parse_page(relative_path)
+                self.assertEqual(parser.html_attrs.get("lang"), "es")
+                self.assertEqual(canonical(parser), spanish_url)
+                self.assertEqual(
+                    alternates(parser),
+                    {"en": english_url, "es": spanish_url, "x-default": english_url},
+                )
+                self.assertIn('data-page-type="localized_vehicle"', text)
+                self.assertIn("no es una oferta final", text)
+                schemas = [json.loads(raw) for raw in parser.scripts]
+                serialized = json.dumps(schemas)
+                self.assertIn('"Product"', serialized)
+                self.assertIn('"Vehicle"', serialized)
+                self.assertNotIn('"offers"', serialized)
+
+                english_page = english_url.rsplit("/", 1)[-1]
+                _, english_parser = parse_page(english_page)
+                self.assertEqual(
+                    alternates(english_parser),
+                    {"en": english_url, "es": spanish_url, "x-default": english_url},
+                )
 
     def test_model_hreflang_cluster_includes_spanish(self):
         for relative_path, expected_canonical in MODEL_PAGES.items():
@@ -141,6 +185,19 @@ class LatamPagesTest(unittest.TestCase):
         self.assertIn("from=models-es&lang=es", catalog)
         self.assertIn('"numberOfItems": 46', catalog)
 
+        for relative_path in LOCALIZED_MODEL_PAGES:
+            public_path = relative_path.removeprefix("es/modelos/")
+            self.assertIn(f"es/modelos/{public_path}", spanish)
+            self.assertIn(f"es/modelos/{public_path}", catalog)
+
+    def test_country_pages_link_to_priority_spanish_models(self):
+        for country_page in COUNTRY_PAGES:
+            text = (ROOT / country_page).read_text(encoding="utf-8")
+            for relative_path in LOCALIZED_MODEL_PAGES:
+                model_filename = relative_path.rsplit("/", 1)[-1]
+                with self.subTest(country=country_page, model=model_filename):
+                    self.assertIn(f'modelos/{model_filename}', text)
+
     def test_country_faq_schema_questions_are_visible(self):
         for relative_path in ("es/peru.html", "es/colombia.html", "es/chile.html"):
             with self.subTest(page=relative_path):
@@ -155,7 +212,7 @@ class LatamPagesTest(unittest.TestCase):
 
     def test_country_local_resources_exist(self):
         pattern = re.compile(r'(?:href|src)="([^"]+)"')
-        for relative_path in ("es/peru.html", "es/colombia.html", "es/chile.html"):
+        for relative_path in (*COUNTRY_PAGES, *LOCALIZED_MODEL_PAGES):
             text = (ROOT / relative_path).read_text(encoding="utf-8")
             base = (ROOT / relative_path).parent
             for reference in pattern.findall(text):
@@ -183,12 +240,18 @@ class LatamPagesTest(unittest.TestCase):
         for url in list(HOME_ALTERNATES.values()) + list(MODEL_ALTERNATES.values()):
             self.assertIn(url, entries)
         for url in set(HOME_ALTERNATES.values()):
-            self.assertEqual(entries[url], HOME_ALTERNATES)
+            for language, target in HOME_ALTERNATES.items():
+                self.assertEqual(entries[url].get(language), target)
         for url in set(MODEL_ALTERNATES.values()):
             self.assertEqual(entries[url], MODEL_ALTERNATES)
         for _, country_url in COUNTRY_PAGES.values():
             self.assertIn(country_url, entries)
             self.assertEqual(entries[country_url], {})
+
+        for _, (spanish_url, english_url) in LOCALIZED_MODEL_PAGES.items():
+            expected = {"en": english_url, "es": spanish_url, "x-default": english_url}
+            self.assertEqual(entries.get(spanish_url), expected)
+            self.assertEqual(entries.get(english_url), expected)
 
         for config_page in ROOT.glob("vehicle-config-*.html"):
             config_url = f"https://hzchemnitz.cn/{config_page.name}"

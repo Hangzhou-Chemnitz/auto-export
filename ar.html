@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-page-type="localized_home">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics -->
 <script src="analytics-loader.js?v=20260727a"></script>
-<script defer src="analytics-events.js?v=20260924b"></script>
+<script defer src="analytics-events.js?v=20261009a"></script>
 <title>استيراد سيارات من الصين | Toyota وNissan | Hangzhou Chemnitz</title>
 <meta name="twitter:description" content="Hangzhou Chemnitz مصدر سيارات صيني مرخص يوفر سيارات جديدة ومركبات خاصة مع وثائق تصدير وتسليم FOB في الموانئ الصينية.">
 <meta name="twitter:title" content="استيراد سيارات من الصين — Toyota وNissan وFOB">
@@ -26,12 +26,19 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://hzchemnitz.cn/#organization",
   "name": "Hangzhou Chemnitz International Trade Co., Ltd.",
   "alternateName": "杭州开姆尼茨国际贸易有限公司",
-  "url": "https://hzchemnitz.cn",
+  "url": "https://hzchemnitz.cn/",
+  "logo": "https://hzchemnitz.cn/images/chemnitz-logo.png",
   "description": "مصدّر سيارات صيني مرخص. 7000+ سيارة تم شحنها. تويوتا، فولكسفاجن، جيلي وغيرها.",
-  "email": "ljj2022513@gmail.com",
-  "telephone": "+86-137-5822-9513",
+  "contactPoint": [
+    {"@type":"ContactPoint","name":"Chloe","telephone":"+86-15625033581","url":"https://wa.me/8615625033581","contactType":"sales"},
+    {"@type":"ContactPoint","name":"Natalie","telephone":"+86-15913687692","url":"https://wa.me/8615913687692","contactType":"sales"},
+    {"@type":"ContactPoint","name":"Darwin","telephone":"+86-13640033268","url":"https://wa.me/8613640033268","contactType":"sales"},
+    {"@type":"ContactPoint","name":"Zeeshan","telephone":"+86-18511445792","url":"https://wa.me/8618511445792","contactType":"sales"},
+    {"@type":"ContactPoint","name":"Jacky","telephone":"+86-13826126147","url":"https://wa.me/8613826126147","contactType":"sales"}
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "浙江省杭州市钱塘区杭州东部湾总部大楼1号楼909室",
@@ -46,7 +53,19 @@
       "latitude": 30.269367,
       "longitude": 120.349242
     }
-  }
+  },
+  "areaServed": [
+    {"@type":"Country","name":"Kazakhstan"},
+    {"@type":"Country","name":"Russia"},
+    {"@type":"Country","name":"United Arab Emirates"},
+    {"@type":"Country","name":"Saudi Arabia"},
+    {"@type":"Country","name":"Nigeria"},
+    {"@type":"Country","name":"Algeria"},
+    {"@type":"Country","name":"Kenya"},
+    {"@type":"Country","name":"Peru"},
+    {"@type":"Country","name":"Colombia"},
+    {"@type":"Country","name":"Chile"}
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -126,6 +145,10 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .hero .subtitle-sm{font-size:0.9em;color:#64748b;margin-bottom:4px}
 .hero .cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.05em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3);margin-top:24px}
 .hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero-actions .cta-btn{margin-top:0;border:0;cursor:pointer;font-family:inherit}
+.hero .catalog-cta{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:14px 30px;border:1px solid rgba(255,255,255,.5);border-radius:8px;background:rgba(15,23,42,.42);color:#fff;text-decoration:none;font-weight:800;font-size:1.02em;transition:all .2s;backdrop-filter:blur(5px)}
+.hero .catalog-cta:hover{transform:translateY(-2px);background:rgba(255,255,255,.14);border-color:#fff}
 .section{padding:56px 24px}
 .section .inner{max-width:960px;margin:0 auto}
 .section h2{text-align:center;font-size:1.6em;font-weight:700;margin-bottom:6px}
@@ -258,8 +281,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <h1><span>مصدر مباشر</span><br>للسيارات الصينية</h1>
     <div class="subtitle">Hangzhou Chemnitz International Trade Co., Ltd. · تأسست 2023</div>
     <div class="subtitle-sm">مصدّر مرخص · 7000+ سيارة تم شحنها · FOB أي ميناء صيني · وثائق تصدير كاملة</div>
-    <div style="margin-top:24px;">
-      <button type="button" class="cta-btn" onclick="openContactChoice('General inquiry')">استشارة عبر WhatsApp</button>
+    <div class="hero-actions">
+      <button type="button" class="cta-btn" data-cta-location="hero" onclick="openContactChoice('General inquiry')">استشارة عبر WhatsApp</button>
+      <a class="catalog-cta" href="models-ar.html#models" data-catalog-link data-cta-location="hero">تصفح كتالوج السيارات</a>
     </div>
   </div>
 </section>
@@ -344,56 +368,56 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <p class="lead">تركيز على Nissan، مع نماذج Toyota عالية الطلب لأسواق التصدير<br><span>Nissan · Toyota · استشارة في المواصفات</span></p>
     <div class="model-grid featured-grid">
       <div class="model-card" data-base="images/nissan/teana/" data-prefix="" data-count="8" data-title="Nissan Teana">
-        <div class="card-img" style="background-image:url('images/nissan/teana/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/nissan/teana/1.webp')"><span class="badge">سيدان</span></div>
         <div class="card-body"><h4>Nissan Teana</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan Teana');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/nissan/n7/" data-prefix="" data-count="8" data-title="Nissan N7">
-        <div class="card-img" style="background-image:url('images/nissan/n7/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/nissan/n7/1.webp')"><span class="badge">سيدان</span></div>
         <div class="card-body"><h4>Nissan N7</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan N7');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/nissan/n6/" data-prefix="" data-count="8" data-title="Nissan N6">
-        <div class="card-img" style="background-image:url('images/nissan/n6/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/nissan/n6/1.webp')"><span class="badge">سيدان</span></div>
         <div class="card-body"><h4>Nissan N6</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan N6');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/nissan/sylphy/" data-prefix="" data-count="8" data-title="Nissan Sylphy">
-        <div class="card-img" style="background-image:url('images/nissan/sylphy/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/nissan/sylphy/1.webp')"><span class="badge">سيدان</span></div>
         <div class="card-body"><h4>Nissan Sylphy</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan Sylphy');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/nissan/qashqai/" data-prefix="" data-count="8" data-title="Nissan Qashqai">
-        <div class="card-img" style="background-image:url('images/nissan/qashqai/1.jpg')"><span class="badge">SUV</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/nissan/qashqai/1.webp')"><span class="badge">SUV</span></div>
         <div class="card-body"><h4>Nissan Qashqai</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan Qashqai');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/nissan/x-trail/" data-prefix="" data-count="8" data-title="Nissan X-Trail">
-        <div class="card-img" style="background-image:url('images/nissan/x-trail/1.jpg')"><span class="badge">SUV</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/nissan/x-trail/1.webp')"><span class="badge">SUV</span></div>
         <div class="card-body"><h4>Nissan X-Trail</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan X-Trail');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/nissan/nx8/" data-prefix="" data-count="8" data-title="Nissan NX8">
-        <div class="card-img" style="background-image:url('images/nissan/nx8/1.jpg')"><span class="badge">طاقة جديدة</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/nissan/nx8/1.webp')"><span class="badge">طاقة جديدة</span></div>
         <div class="card-body"><h4>Nissan NX8</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Nissan NX8');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/toyota/rav4/" data-prefix="" data-count="8" data-title="Toyota RAV4">
-        <div class="card-img" style="background-image:url('images/toyota/rav4/1.jpg')"><span class="badge">SUV</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/toyota/rav4/1.webp')"><span class="badge">SUV</span></div>
         <div class="card-body"><h4>Toyota RAV4</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Toyota RAV4');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/toyota/camry/" data-prefix="" data-count="8" data-title="Toyota Camry">
-        <div class="card-img" style="background-image:url('images/toyota/camry/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/toyota/camry/1.webp')"><span class="badge">سيدان</span></div>
         <div class="card-body"><h4>Toyota Camry</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Toyota Camry');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/toyota/highlander/" data-prefix="" data-count="8" data-title="Toyota Highlander">
-        <div class="card-img" style="background-image:url('images/toyota/highlander/1.jpg')"><span class="badge">SUV</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/toyota/highlander/1.webp')"><span class="badge">SUV</span></div>
         <div class="card-body"><h4>Toyota Highlander</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Toyota Highlander');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/toyota/corolla-cross/" data-prefix="" data-count="8" data-title="Toyota Corolla Cross">
-        <div class="card-img" style="background-image:url('images/toyota/corolla-cross/1.jpg')"><span class="badge">SUV</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/toyota/corolla-cross/1.webp')"><span class="badge">SUV</span></div>
         <div class="card-body"><h4>Toyota Corolla Cross</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Toyota Corolla Cross');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
       <div class="model-card" data-base="images/toyota/corolla/" data-prefix="" data-count="8" data-title="Toyota Corolla">
-        <div class="card-img" style="background-image:url('images/toyota/corolla/1.jpg')"><span class="badge">سيدان</span></div>
+        <div class="card-img" style="background-image:url('images/thumbs/toyota/corolla/1.webp')"><span class="badge">سيدان</span></div>
         <div class="card-body"><h4>Toyota Corolla</h4><a class="brochure-link" href="#" onclick="event.stopPropagation();openContactChoice('Toyota Corolla');return false;">استشارة</a><div class="info">٨ صور</div></div>
       </div>
     </div>
     <div class="catalog-actions">
-      <a class="catalog-link" href="models-ar.html?v=20260702#models" target="_blank" rel="noopener noreferrer">عرض المزيد من الموديلات</a>
+      <a class="catalog-link" href="models-ar.html?v=20261009a#models" target="_blank" rel="noopener noreferrer">عرض المزيد من الموديلات</a>
       <span class="catalog-note">كتالوج كامل للعلامات والمواصفات</span>
     </div>
   </div>
@@ -405,7 +429,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <p class="lead">يمكن تخصيص أقصى ارتفاع عمل حسب الطراز ومتطلباتكم، من 14.2 م إلى 35 م<br><span>مطابقة الهيكل · وثائق التصدير · التسليم إلى الميناء</span></p>
     <div class="special-grid">
       <div class="special-card">
-        <div class="special-visual" style="background-image:url('images/special/hyl5057jgkq60-platform.png')"><span>TYPE II</span></div>
+        <div class="special-visual" style="background-image:url('images/thumbs/special/hyl5057jgkq60-platform.webp')"><span>TYPE II</span></div>
         <div class="special-body">
           <h3>HYL5057JGKQ60 منصة عمل جوية مثبتة على شاحنة</h3>
           <p>أقصى ارتفاع عمل: 14.2 م<br>أقصى مدى عمل: 7.1 م<br>حمولة منصة العمل: 200 كجم<br>أقصى ارتفاع رفع: 8 م<br>أقصى قدرة رفع بالخطاف: 990 كجم<br>دعامات قابلة للتعديل بشكل مستقل</p>
@@ -413,7 +437,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="special-card">
-        <div class="special-visual" style="background-image:url('images/special/hyl5066jgkj60-platform.png')"><span>TYPE II</span></div>
+        <div class="special-visual" style="background-image:url('images/thumbs/special/hyl5066jgkj60-platform.webp')"><span>TYPE II</span></div>
         <div class="special-body">
           <h3>HYL5066JGKJ60 منصة عمل جوية مثبتة على شاحنة</h3>
           <p>أقصى ارتفاع عمل: 14.5 م<br>أقصى مدى عمل: 10.9 م<br>حمولة منصة العمل: 200 كجم<br>زاوية تأرجح المنصة: 90° يسار/يمين<br>دعامات قابلة للتعديل بشكل مستقل</p>
@@ -421,7 +445,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="special-card">
-        <div class="special-visual" style="background-image:url('images/special/hyl5068jgkq60-platform.png?v=3')"><span>TYPE II</span></div>
+        <div class="special-visual" style="background-image:url('images/thumbs/special/hyl5068jgkq60-platform.webp')"><span>TYPE II</span></div>
         <div class="special-body">
           <h3>HYL5068JGKQ60 منصة عمل جوية مفصلية مثبتة على شاحنة</h3>
           <p>أقصى ارتفاع عمل: 18.2 م<br>أقصى مدى عمل: 9.5 م<br>حمولة منصة العمل: 200 كجم<br>أقصى قدرة رفع: 2,000 كجم<br>أقصى ارتفاع رفع: 9.2 م<br>دعامات قابلة للتعديل بشكل مستقل</p>
@@ -429,7 +453,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
         </div>
       </div>
       <div class="special-card">
-        <div class="special-visual" style="background-image:url('images/special/hyl5076jgkq60-platform.png?v=2')"><span>TYPE II</span></div>
+        <div class="special-visual" style="background-image:url('images/thumbs/special/hyl5076jgkq60-platform.webp')"><span>TYPE II</span></div>
         <div class="special-body">
           <h3>HYL5076JGKQ60 منصة عمل جوية مثبتة على شاحنة</h3>
           <p>أقصى ارتفاع عمل: 18.2 م<br>أقصى مدى عمل: 11.7 م<br>حمولة منصة العمل: 200 كجم<br>زاوية التأرجح: 95° يسار / 100° يمين<br>دعامات قابلة للتعديل بشكل مستقل</p>
@@ -556,7 +580,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     if(data&&typeof trimIndex!=='number'){
       var picker='<div class="contact-choice-modal"><div class="contact-choice-bar"><span>اختر السعر الإرشادي</span><button type="button" class="contact-choice-close" onclick="closeContactChoice()">&times;</button></div><div class="nissan-guide-list">';
       for(var p=0;p<data.trims.length;p++){
-        picker+='<button type="button" class="nissan-guide-option" onclick="openContactChoice(\''+esc(topic)+'\','+p+')"><span>'+esc(trimName(data.trims[p]))+'</span><strong>RMB '+esc(data.trims[p].price)+'</strong></button>';
+        picker+='<button type="button" class="nissan-guide-option" data-vehicle-spec-id="'+esc(data.trims[p].specid||'')+'" onclick="openContactChoice(\''+esc(topic)+'\','+p+')"><span>'+esc(trimName(data.trims[p]))+'</span><strong>RMB '+esc(data.trims[p].price)+'</strong></button>';
       }
       picker+='</div></div>';
       overlay.innerHTML=picker;
@@ -575,6 +599,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       model_name:topic||'',
       trim_name:trim?trimName(trim):'',
       guide_price:trim?trim.price:'',
+      vehicle_spec_id:trim&&trim.specid?String(trim.specid):'',
+      entry_surface:'home_featured_models',
+      cta_location:'config_picker',
       page_language:'ar',
       source_page:location.pathname
     };
