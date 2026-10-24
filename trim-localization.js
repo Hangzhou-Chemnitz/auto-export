@@ -673,7 +673,7 @@
       greeting: 'Bonjour, je souhaite obtenir des informations sur {model}.',
       configuration: 'Configuration : {trim}',
       guidePrice: 'Prix catalogue : {price}',
-      request: 'Merci de nous envoyer le prix export actuel, la disponibilité, les options de port et les documents.'
+      request: 'Pour préparer une cotation adaptée au projet, merci d’indiquer : société/site web [ ], modèle ou catégorie de véhicule [ ], configuration souhaitée [ ], quantité [ ], ville/pays de destination finale [ ], terme commercial souhaité [EXW/FCA/FOB]. La disponibilité, le périmètre export et les conditions commerciales sont confirmés au cas par cas.'
     },
     es: {
       menuSub: 'Seleccione el precio de lista para consultarnos',
@@ -686,7 +686,7 @@
       greeting: 'Hola, deseo consultar sobre {model}.',
       configuration: 'Configuración: {trim}',
       guidePrice: 'Precio de lista: {price}',
-      request: 'Envíeme el precio de exportación actual, la disponibilidad, las opciones de puerto y los documentos, por favor.'
+      request: 'Para preparar una cotización específica para el proyecto, indique: empresa/sitio web [ ], modelo o categoría de vehículo [ ], configuración requerida [ ], cantidad [ ], ciudad/país de destino final [ ], término comercial preferido [EXW/FCA/FOB]. La disponibilidad, el alcance de exportación y las condiciones comerciales se confirman caso por caso.'
     },
     ru: {
       menuSub: 'Выберите рекомендованную цену для консультации',
@@ -699,7 +699,7 @@
       greeting: 'Здравствуйте! Нужна консультация по автомобилю {model}.',
       configuration: 'Комплектация: {trim}',
       guidePrice: 'Ориентир цены: {price}',
-      request: 'Пожалуйста, отправьте актуальную экспортную цену, наличие, варианты порта и документы.'
+      request: 'Для подготовки коммерческого предложения по проекту укажите: компания/сайт [ ], модель или категория автомобиля [ ], требуемая комплектация [ ], количество [ ], конечный город/страна назначения [ ], предпочитаемый торговый термин [EXW/FCA/FOB]. Наличие, экспортные условия и коммерческие условия подтверждаются по каждому проекту отдельно.'
     },
     ar: {
       menuSub: 'اختر السعر الإرشادي للتواصل معنا',
@@ -712,7 +712,7 @@
       greeting: 'مرحبا، أود الاستفسار عن {model}.',
       configuration: 'الفئة: {trim}',
       guidePrice: 'السعر الإرشادي: {price}',
-      request: 'يرجى إرسال سعر التصدير الحالي والتوفر وخيارات الميناء والمستندات.'
+      request: 'لإعداد عرض خاص بالمشروع، يرجى تزويدنا بما يلي: اسم الشركة/الموقع الإلكتروني [ ]، الطراز أو فئة المركبة [ ]، التجهيز المطلوب [ ]، الكمية [ ]، مدينة/دولة الوجهة النهائية [ ]، شرط التجارة المفضل [EXW/FCA/FOB]. يتم تأكيد التوفر ونطاق التصدير والشروط التجارية لكل مشروع على حدة.'
     }
   };
 

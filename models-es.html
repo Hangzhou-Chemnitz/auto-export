@@ -48,7 +48,7 @@
   "alternateName": "杭州开姆尼茨国际贸易有限公司",
   "url": "https://hzchemnitz.cn/",
   "logo": "https://hzchemnitz.cn/images/chemnitz-logo.png",
-  "description": "Licensed Chinese vehicle export company supplying new passenger cars and special-purpose vehicles to left-hand-drive markets worldwide. More than 7,000 vehicles shipped.",
+  "description": "Empresa china de comercio internacional de vehículos. Las configuraciones, disponibilidad por proyecto, precio final de exportación y requisitos del mercado de destino se confirman antes de cotizar.",
   "contactPoint": [
     {
       "@type": "ContactPoint",
@@ -91,86 +91,6 @@
     "addressLocality": "Hangzhou",
     "addressRegion": "Zhejiang",
     "addressCountry": "CN"
-  },
-  "areaServed": [
-    {
-      "@type": "Country",
-      "name": "Kazakhstan"
-    },
-    {
-      "@type": "Country",
-      "name": "Russia"
-    },
-    {
-      "@type": "Country",
-      "name": "United Arab Emirates"
-    },
-    {
-      "@type": "Country",
-      "name": "Nigeria"
-    },
-    {
-      "@type": "Country",
-      "name": "Algeria"
-    },
-    {
-      "@type": "Country",
-      "name": "Uzbekistan"
-    },
-    {
-      "@type": "Country",
-      "name": "Kyrgyzstan"
-    },
-    {
-      "@type": "Country",
-      "name": "Saudi Arabia"
-    },
-    {
-      "@type": "Country",
-      "name": "Kenya"
-    },
-    {
-      "@type": "Country",
-      "name": "Peru"
-    },
-    {
-      "@type": "Country",
-      "name": "Colombia"
-    },
-    {
-      "@type": "Country",
-      "name": "Chile"
-    }
-  ],
-  "makesOffer": {
-    "@type": "Offer",
-    "itemOffered": [
-      {
-        "@type": "Product",
-        "name": "Toyota vehicles",
-        "description": "RAV4, Corolla, Corolla Cross, Camry, Highlander, Frontlander, Granvia and bZ3"
-      },
-      {
-        "@type": "Product",
-        "name": "Volkswagen vehicles",
-        "description": "Teramont, Tharu, T-Roc, Golf and Jetta VS5"
-      },
-      {
-        "@type": "Product",
-        "name": "Geely and Zeekr vehicles",
-        "description": "Coolray, Boyue, Xingyue L, Niuzai, Galaxy M9 and Zeekr 9X"
-      },
-      {
-        "@type": "Product",
-        "name": "Nissan vehicles",
-        "description": "Teana, N7, N6, Qashqai, X-Trail, NX8 and Sylphy"
-      },
-      {
-        "@type": "Product",
-        "name": "Other export vehicles",
-        "description": "Kia, Hyundai, Jetour, Audi, Honda, Chery, MG and Changan models"
-      }
-    ]
   }
 }
 </script>
@@ -181,7 +101,7 @@
   "@type": "ItemList",
   "@id": "https://hzchemnitz.cn/models-es.html#catalog",
   "name": "Catálogo de autos de China para exportación",
-  "description": "Modelos de vehículos disponibles para exportación desde China, suministrados por Hangzhou Chemnitz.",
+  "description": "Modelos de catálogo para evaluación de exportación por proyecto desde China.",
   "numberOfItems": 46,
   "itemListElement": [
     {
@@ -487,6 +407,12 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .config-index-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:8px;color:#334155;background:#f8fafc;text-decoration:none;font-size:.8em;font-weight:700}
 .config-index-grid a::after{content:'→';color:#ef4444}
 .config-index-grid a:hover{border-color:#ef4444;background:#fff}
+.catalog-business-note{padding:0 24px 12px;background:#fff}
+.catalog-business-note-card{max-width:960px;margin:0 auto;padding:20px 22px;border:1px solid #dbe4ef;border-radius:8px;background:#f8fafc;color:#334155}
+.catalog-business-note h2{margin:0 0 8px;color:#111827;font-size:1.2em}
+.catalog-business-note p{margin:0;color:#475569;line-height:1.65;font-size:.92em}
+.catalog-business-note ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 18px;margin:14px 0;padding-left:20px;color:#334155;font-size:.88em}
+@media(max-width:640px){.catalog-business-note{padding:0 16px 12px}.catalog-business-note-card{padding:18px}.catalog-business-note ul{grid-template-columns:1fr}}
 
 /* Lightbox */
 .lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
@@ -608,6 +534,20 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <a href="es/chile.html" data-market-link="CL" style="color:#0f172a;background:#fff;border:1px solid #dbe4ef;border-radius:999px;padding:7px 12px;text-decoration:none;font-size:.78rem;font-weight:700">🇨🇱 Guía Chile</a>
   </nav>
 </header>
+
+<section class="catalog-business-note" aria-labelledby="catalog-business-title">
+  <div class="catalog-business-note-card">
+    <h2 id="catalog-business-title">Consulta de exportación para importadores y distribuidores</h2>
+    <p>Este catálogo está dirigido a importadores, distribuidores y compradores mayoristas que necesitan revisar una configuración del mercado chino antes de solicitar una cotización.</p>
+    <ul>
+      <li>Empresa o sitio web del comprador</li>
+      <li>Modelo, versión y especificación solicitada</li>
+      <li>Cantidad y país o ciudad de destino final</li>
+      <li>Término comercial previsto: EXW, FCA o FOB</li>
+    </ul>
+    <p>Los modelos y precios de lista son referencias para evaluar un proyecto. No representan inventario disponible, una oferta final, autorización de marca ni homologación o admisión confirmada en el país de destino.</p>
+  </div>
+</section>
 
 <!-- Models -->
 <section class="section" id="models" style="padding-top:24px">
