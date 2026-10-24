@@ -660,7 +660,7 @@
       greeting: 'Hello, I want to consult about {model}.',
       configuration: 'Configuration: {trim}',
       guidePrice: 'Guide price: {price}',
-      request: 'Please send the current export price, availability, port options and documents.'
+      request: 'To prepare a project-specific quotation, please share: company name/website [ ], model or vehicle category [ ], required configuration [ ], quantity [ ], final destination city/country [ ], preferred trade term [EXW/FCA/FOB]. Availability, export scope and commercial terms are confirmed case by case.'
     },
     fr: {
       menuSub: 'Sélectionnez le prix catalogue pour nous contacter',
