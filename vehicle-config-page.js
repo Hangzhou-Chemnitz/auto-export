@@ -7,7 +7,6 @@
     'vehicle-config-nx8.html':{pdf:'documents/nissan-nx8-2026-310-max-config.pdf',dir:'documents/nx8-config-pages',pages:8},
     'vehicle-config-teana.html':{pdf:'documents/nissan-teana-2026-harmonyos-2l-comfort-139900-config.pdf',dir:'documents/teana-2l-comfort-139900-config-pages',pages:7},
     'vehicle-config-n7.html':{pdf:'documents/nissan-n7-2026-625-pro-black-knight-148900-config.pdf',dir:'documents/n7-625-pro-black-knight-148900-config-pages',pages:7},
-    'vehicle-config-n6.html':{pdf:'documents/nissan-n6-2026-180-pro-youth-103900-config.pdf',dir:'documents/n6-180-pro-youth-103900-config-pages',pages:8},
     'vehicle-config-sylphy-2026.html':{pdf:'documents/nissan-sylphy-2026-16l-cvt-comfort-84900-config.pdf',dir:'documents/sylphy-16l-cvt-comfort-84900-config-pages',pages:8},
     'vehicle-config-rav4.html':{pdf:'documents/toyota-rav4-2026-2l-awd-config.pdf',dir:'documents/rav4-config-pages',pages:8},
     'vehicle-config-corolla.html':{pdf:'documents/toyota-corolla-2026-1-2t-118800-config.pdf',dir:'documents/corolla-1-2t-118800-config-pages',pages:7},
@@ -860,56 +859,6 @@
       dir:'documents/n7-625-max-rhine-knight-158900-config-pages'
     }
   };
-  var n6Variants={
-    '77650':{
-      title:'Nissan N6 2026 PHEV 180 Pro Youth',
-      price:'103,900',
-      pdf:'documents/nissan-n6-2026-180-pro-youth-103900-config.pdf',
-      dir:'documents/n6-180-pro-youth-103900-config-pages'
-    },
-    '74150':{
-      title:'Nissan N6 2026 PHEV 180 Pro',
-      price:'109,900',
-      pdf:'documents/nissan-n6-2026-180-pro-109900-config.pdf',
-      dir:'documents/n6-180-pro-109900-config-pages'
-    },
-    '74151':{
-      title:'Nissan N6 2026 PHEV 180 Max',
-      price:'114,900',
-      pdf:'documents/nissan-n6-2026-180-max-114900-config.pdf',
-      dir:'documents/n6-180-max-114900-config-pages'
-    },
-    '76611':{
-      title:'Nissan N6 2026 PHEV 180 Pro+',
-      price:'116,900',
-      pdf:'documents/nissan-n6-2026-180-pro-plus-116900-config.pdf',
-      dir:'documents/n6-180-pro-plus-116900-config-pages'
-    },
-    '74152':{
-      title:'Nissan N6 2026 PHEV 180 Max+',
-      price:'121,900',
-      pdf:'documents/nissan-n6-2026-180-max-plus-121900-config.pdf',
-      dir:'documents/n6-180-max-plus-121900-config-pages'
-    },
-    '77651':{
-      title:'Nissan N6 2026 PHEV 180 Pro+ Black Knight',
-      price:'122,900',
-      pdf:'documents/nissan-n6-2026-180-pro-plus-black-knight-122900-config.pdf',
-      dir:'documents/n6-180-pro-plus-black-knight-122900-config-pages'
-    },
-    '77652':{
-      title:'Nissan N6 2026 PHEV 180 Max+ Black Knight',
-      price:'127,900',
-      pdf:'documents/nissan-n6-2026-180-max-plus-black-knight-127900-config.pdf',
-      dir:'documents/n6-180-max-plus-black-knight-127900-config-pages'
-    },
-    '75878':{
-      title:'Nissan N6 2026 PHEV 170 Max+ Flagship',
-      price:'129,900',
-      pdf:'documents/nissan-n6-2026-170-max-plus-flagship-129900-config.pdf',
-      dir:'documents/n6-170-max-plus-flagship-129900-config-pages'
-    }
-  };
   var sylphyVariants={
     '76613':{
       title:'Nissan Sylphy 2026 1.6L CVT Comfort',
@@ -1735,14 +1684,6 @@
     page.price=n7Variant.price;
     page.summary='Selected guide-price configuration for Nissan N7 FOB or EXW export consultation.';
   }
-  if(filename==='vehicle-config-n6.html'){
-    var n6Specid=new URLSearchParams(location.search).get('specid')||'77650';
-    var n6Variant=n6Variants[n6Specid]||n6Variants['77650'];
-    route={pdf:n6Variant.pdf,dir:n6Variant.dir,pages:8};
-    page.title=n6Variant.title;
-    page.price=n6Variant.price;
-    page.summary='Selected guide-price configuration for Nissan N6 FOB or EXW export consultation.';
-  }
   if(filename==='vehicle-config-sylphy-2026.html'){
     var sylphySpecid=new URLSearchParams(location.search).get('specid')||'76613';
     var sylphyVariant=sylphyVariants[sylphySpecid]||sylphyVariants['76613'];
@@ -1847,11 +1788,11 @@
   var backLink=document.getElementById('back-link');
   if(page.title) document.title=page.title+' | '+interfaceText.documentSuffix;
   if(title) title.textContent=page.title||'';
-  if(price) price.textContent=interfaceText.pricePrefix+(page.price||'TBD')+interfaceText.priceSuffix;
+  if(price) price.textContent=page.priceText||interfaceText.pricePrefix+(page.price||'TBD')+interfaceText.priceSuffix;
   if(summary) summary.textContent=page.summary||interfaceText.summary;
   if(backLink){backLink.href=resolveBackLink();backLink.textContent=interfaceText.back;}
   var eyebrow=document.querySelector('.eyebrow');
-  if(eyebrow) eyebrow.textContent=interfaceText.eyebrow;
+  if(eyebrow) eyebrow.textContent=page.eyebrowText||interfaceText.eyebrow;
   var brandLink=document.querySelector('.viewer-header .brand');
   var localizedHomeLinks={es:'es.html#featured-models',fr:'fr.html#models',ru:'ru.html#models',ar:'ar.html#models'};
   if(brandLink&&localizedHomeLinks[pageLanguage]) brandLink.href=localizedHomeLinks[pageLanguage];
@@ -1861,11 +1802,11 @@
     primaryButton.setAttribute('data-cta-location','vehicle_config_header');
   }
   var summaryHeading=document.querySelector('.sheet-card-head h2');
-  if(summaryHeading) summaryHeading.textContent=interfaceText.summaryHeading;
+  if(summaryHeading) summaryHeading.textContent=page.summaryHeadingText||interfaceText.summaryHeading;
   var sheetNote=document.querySelector('.sheet-note');
-  if(sheetNote) sheetNote.textContent=interfaceText.note;
+  if(sheetNote) sheetNote.textContent=page.sheetNoteText||interfaceText.note;
   var quoteDisclaimer=document.getElementById('quote-disclaimer');
-  if(quoteDisclaimer) quoteDisclaimer.textContent=interfaceText.quoteDisclaimer;
+  if(quoteDisclaimer) quoteDisclaimer.textContent=page.quoteDisclaimerText||interfaceText.quoteDisclaimer;
   var closeButton=modal&&modal.querySelector('.contact-modal-close');
   if(closeButton) closeButton.setAttribute('aria-label',interfaceText.close);
   if(route){
@@ -2016,7 +1957,6 @@
     'vehicle-config-nx8.html':'76642',
     'vehicle-config-teana.html':'75719',
     'vehicle-config-n7.html':'77628',
-    'vehicle-config-n6.html':'77650',
     'vehicle-config-sylphy-2026.html':'76613',
     'vehicle-config-tharu.html':'74072',
     'vehicle-config-golf.html':'75016',
