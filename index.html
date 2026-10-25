@@ -118,7 +118,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#fff;line-height:1.6}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#fff;line-height:1.6;overflow-x:hidden}
 
 .hero{
   position:relative;
@@ -132,7 +132,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 }
 .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
 .hero .tag{display:inline-block;background:rgba(220,38,38,0.25);border:1px solid rgba(220,38,38,0.4);color:#f87171;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:3px;padding:6px 18px;border-radius:50px;margin-bottom:20px}
-.hero h1{font-size:clamp(1.8em,5vw,3em);font-weight:800;line-height:1.15;margin-bottom:12px;letter-spacing:-0.02em}
+.hero h1{font-size:3em;font-weight:800;line-height:1.15;margin:0 auto 12px;max-width:100%;letter-spacing:-0.02em;overflow-wrap:anywhere}
 .hero h1 span{color:#ef4444}
 .hero .subtitle{font-size:1.05em;color:#94a3b8;margin-bottom:4px;font-weight:500}
 .hero .subtitle-sm{font-size:0.9em;color:#64748b;margin-bottom:4px}
@@ -310,6 +310,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .contact-choice-name{display:block;font-size:.95em;font-weight:600;opacity:.9;margin-top:4px}
 @media(max-width:720px){.contact-choice-grid{grid-template-columns:1fr;padding:16px}}
 @media(max-width:640px){.config-overlay{padding:8px}.config-card-head,.config-action{flex-direction:column;align-items:stretch}.config-card-price{text-align:center}.config-body{padding:12px}.config-intro{font-size:0.82em}}
+@media(max-width:640px){.company-record-stats{grid-template-columns:1fr!important}}
+@media(max-width:960px){.hero h1{font-size:2.35em}}
+@media(max-width:640px){.hero h1{font-size:1.9em}}
 
 </style>
   <script src="trim-localization.js?v=20260728g"></script>
@@ -362,6 +365,39 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       <a href="ar/uae.html?from=en_home_uae" style="color:#fff;text-decoration:underline;font-weight:600">UAE commercial buyer guide</a>
       <a href="es/peru.html?from=en_home_pe" style="color:#fff;text-decoration:underline;font-weight:600">Peru importer guide</a>
     </div>
+  </div>
+</section>
+
+<!-- Credentials and record -->
+<section class="section" style="background:#f8fafc;">
+  <div class="inner" style="max-width:960px;">
+    <div style="text-align:center;margin-bottom:34px;">
+      <h2 style="font-size:1.8em;margin-bottom:8px;">Credentials and Export Record</h2>
+      <p class="lead" style="margin-bottom:0;">Company credentials and authorization documents are available for qualified commercial buyer due diligence.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <article style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;">
+        <strong style="font-size:1.05em;color:#1a1a2e;">China Automobile Export Eligibility</strong>
+        <p style="color:#64748b;font-size:.9em;margin:8px 0 14px;">Automobile export and used-vehicle export qualification records are maintained for commercial due diligence.</p>
+        <a href="images/auth-usedcar-export.png" target="_blank" rel="noopener" style="color:#0a66c2;font-weight:700;text-decoration:none;">View qualification record</a>
+      </article>
+      <article style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;">
+        <strong style="font-size:1.05em;color:#1a1a2e;">Nissan Authorization Documentation</strong>
+        <p style="color:#64748b;font-size:.9em;margin:8px 0 14px;">Authorization documentation supports Nissan vehicle export cooperation; exact model, configuration and destination scope are confirmed for each order.</p>
+        <a href="images/auth-zhongrui.jpg" target="_blank" rel="noopener" style="color:#0a66c2;font-weight:700;text-decoration:none;">View authorization document</a>
+      </article>
+      <article style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;">
+        <strong style="font-size:1.05em;color:#1a1a2e;">Export Base Record</strong>
+        <p style="color:#64748b;font-size:.9em;margin:8px 0 14px;">The company maintains its official export-base documentation as part of its compliance record.</p>
+        <a href="images/plaque-export-base.jpg" target="_blank" rel="noopener" style="color:#0a66c2;font-weight:700;text-decoration:none;">View export-base record</a>
+      </article>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px;text-align:center;" class="company-record-stats">
+      <div style="background:#1e293b;color:#fff;border-radius:10px;padding:18px 12px;"><strong style="display:block;font-size:1.55em;">7,000+</strong><span style="font-size:.82em;color:#cbd5e1;">vehicles exported</span></div>
+      <div style="background:#1e293b;color:#fff;border-radius:10px;padding:18px 12px;"><strong style="display:block;font-size:1.55em;">30+</strong><span style="font-size:.82em;color:#cbd5e1;">markets served</span></div>
+      <div style="background:#1e293b;color:#fff;border-radius:10px;padding:18px 12px;"><strong style="display:block;font-size:1.55em;">18</strong><span style="font-size:.82em;color:#cbd5e1;">team members</span></div>
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:.8em;margin:14px 0 0;">Credentials, authorization scope and shipment history are reviewed for the specific commercial request and destination.</p>
   </div>
 </section>
 
