@@ -26,12 +26,17 @@
 
   function message(topic) {
     var context = pageContext();
-    var subject = topic || 'vehículos disponibles';
+    var subject = topic || 'un proyecto de importación empresarial';
     var mentionsCountry = subject.toLocaleLowerCase('es').indexOf(context.country.toLocaleLowerCase('es')) !== -1;
     var destination = mentionsCountry ? '' : ' para ' + context.country;
     return [
       'Hola, deseo consultar sobre ' + subject + destination + '.',
-      'Por favor, indíqueme las configuraciones disponibles, el precio de exportación, las opciones FOB/EXW y los documentos aplicables.',
+      'Empresa o sitio web:',
+      'Marca y modelo:',
+      'Configuración requerida:',
+      'Cantidad:',
+      'Ciudad o puerto de destino final:',
+      'Término comercial preferido (FCA/FOB/EXW):',
       'Página de referencia: ' + window.location.href.split('#')[0]
     ].join('\n');
   }
