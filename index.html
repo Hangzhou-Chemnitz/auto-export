@@ -138,7 +138,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 }
 .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
 .hero .tag{display:inline-block;background:rgba(220,38,38,0.25);border:1px solid rgba(220,38,38,0.4);color:#f87171;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:3px;padding:6px 18px;border-radius:50px;margin-bottom:20px}
-.hero h1{font-size:3em;font-weight:800;line-height:1.15;margin:0 auto 12px;max-width:100%;letter-spacing:-0.02em;overflow-wrap:anywhere}
+.hero h1{font-size:clamp(1.8em,5vw,3em);font-weight:800;line-height:1.15;margin-bottom:12px;letter-spacing:-0.02em}
 .hero h1 span{color:#ef4444}
 .hero .subtitle{font-size:1.05em;color:#94a3b8;margin-bottom:4px;font-weight:500}
 .hero .subtitle-sm{font-size:0.9em;color:#64748b;margin-bottom:4px}
@@ -248,6 +248,9 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .faq-item p{color:#64748b;font-size:0.9em;line-height:1.7}
 
 footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#f8fafc;border-top:1px solid #e2e8f0}
+.market-guide-links{max-width:960px;margin:0 auto 12px;display:flex;justify-content:center;flex-wrap:wrap;gap:4px 14px;line-height:1.6}
+.market-guide-links a{color:#475569;text-decoration:none}
+.market-guide-links a:hover,.market-guide-links a:focus-visible{text-decoration:underline}
 
 .wa-row .cta-btn{padding:14px 22px;font-size:0.95em;white-space:nowrap;margin-top:0}
 @media(max-width:768px){.wa-row{flex-wrap:wrap}.wa-row .cta-btn{padding:12px 16px;font-size:0.85em}}
@@ -316,10 +319,6 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .contact-choice-name{display:block;font-size:.95em;font-weight:600;opacity:.9;margin-top:4px}
 @media(max-width:720px){.contact-choice-grid{grid-template-columns:1fr;padding:16px}}
 @media(max-width:640px){.config-overlay{padding:8px}.config-card-head,.config-action{flex-direction:column;align-items:stretch}.config-card-price{text-align:center}.config-body{padding:12px}.config-intro{font-size:0.82em}}
-@media(max-width:640px){.company-record-stats{grid-template-columns:1fr!important}}
-@media(max-width:960px){.hero h1{font-size:2.35em}}
-@media(max-width:640px){.hero h1{font-size:1.9em}}
-
 </style>
   <script src="trim-localization.js?v=20260728g"></script>
 <script src="nissan-2026-data.js?v=20260723c"></script>
@@ -341,9 +340,9 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   <div class="bg-img"></div>
   <div class="hero-inner">
     <img src="images/chemnitz-logo.png" alt="Hangzhou Chemnitz Chinese Auto Export" style="max-width:180px;margin-bottom:24px;filter:brightness(10);">
-    <h1>China-Market LHD Vehicle Sourcing<br><span>For Importers &amp; Commercial Buyers</span></h1>
-    <div class="subtitle">Share your company, vehicle requirement, quantity and destination for a case-by-case sourcing review.</div>
-    <div class="subtitle-sm">Made-to-order review · FCA, FOB and EXW · Export-document coordination</div>
+    <h1>China Car Exporter<br><span>For Dealers &amp; Importers</span></h1>
+    <div class="subtitle">Source China-market vehicles with configuration matching, export support and a quotation for your order.</div>
+    <div class="subtitle-sm">Vehicle sourcing · FOB and EXW inquiries · Export-document coordination</div>
     <div class="wa-row hero-actions">
       <button type="button" class="cta-btn" data-cta-location="hero" onclick="openConsultation('General inquiry')">WhatsApp Consultation</button>
       <a class="catalog-cta" href="models.html#models" data-catalog-link data-cta-location="hero">Browse Vehicle Catalog</a>
@@ -355,60 +354,25 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <section style="background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;text-align:center;padding:32px 24px">
   <div style="max-width:960px;margin:0 auto">
     <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">
-      Commercial Buyer Review for Left-Hand-Drive Destinations
+      Left-Hand-Drive Markets Worldwide
     </h2>
     <p style="font-size:0.85em;color:#94a3b8;margin-bottom:16px">
-      Case-by-case vehicle scope &nbsp;·&nbsp; FCA, FOB or EXW &nbsp;·&nbsp; Export-document coordination
+      Vehicle sourcing &nbsp;·&nbsp; Container and RoRo shipping options &nbsp;·&nbsp; Export-document coordination
     </p>
     <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;font-size:0.85em">
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Company identity</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Vehicle and quantity</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Final destination</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Preferred trade term</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kazakhstan</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Russia</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">UAE &amp; Gulf</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Saudi Arabia</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Nigeria</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Algeria</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Uzbekistan</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kyrgyzstan</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kenya &amp; East Africa</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Serbia &amp; Balkans</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#38bdf8;">Latin America</span>
+      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#22c55e;">SE Asia</span>
     </div>
-    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:18px;font-size:0.88em">
-      <a href="az.html?from=en_home_az" style="color:#fff;text-decoration:underline;font-weight:600">Azerbaijan importer guide</a>
-      <a href="ar/uae.html?from=en_home_uae" style="color:#fff;text-decoration:underline;font-weight:600">UAE commercial buyer guide</a>
-      <a href="es/peru.html?from=en_home_pe" style="color:#fff;text-decoration:underline;font-weight:600">Peru importer guide</a>
-      <a href="tj.html?from=en_home_tj" style="color:#fff;text-decoration:underline;font-weight:600">Tajikistan importer guide</a>
-      <a href="es/chile.html?from=en_home_cl" style="color:#fff;text-decoration:underline;font-weight:600">Chile importer guide</a>
-      <a href="es/colombia.html?from=en_home_co" style="color:#fff;text-decoration:underline;font-weight:600">Colombia importer guide</a>
-      <a href="es/panama.html?from=en_home_pa" style="color:#fff;text-decoration:underline;font-weight:600">Panama importer guide</a>
-      <a href="es/republica-dominicana.html?from=en_home_do" style="color:#fff;text-decoration:underline;font-weight:600">Dominican Republic importer guide</a>
-    </div>
-  </div>
-</section>
-
-<!-- Credentials and record -->
-<section class="section" style="background:#f8fafc;">
-  <div class="inner" style="max-width:960px;">
-    <div style="text-align:center;margin-bottom:34px;">
-      <h2 style="font-size:1.8em;margin-bottom:8px;">Credentials and Export Record</h2>
-      <p class="lead" style="margin-bottom:0;">Company credentials and authorization documents are available for qualified commercial buyer due diligence.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-      <article style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;">
-        <strong style="font-size:1.05em;color:#1a1a2e;">China Automobile Export Eligibility</strong>
-        <p style="color:#64748b;font-size:.9em;margin:8px 0 14px;">Automobile export and used-vehicle export qualification records are maintained for commercial due diligence.</p>
-        <a href="images/auth-usedcar-export.png" target="_blank" rel="noopener" style="color:#0a66c2;font-weight:700;text-decoration:none;">View qualification record</a>
-      </article>
-      <article style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;">
-        <strong style="font-size:1.05em;color:#1a1a2e;">Nissan Authorization Documentation</strong>
-        <p style="color:#64748b;font-size:.9em;margin:8px 0 14px;">Authorization documentation supports Nissan vehicle export cooperation; exact model, configuration and destination scope are confirmed for each order.</p>
-        <a href="images/auth-zhongrui.jpg" target="_blank" rel="noopener" style="color:#0a66c2;font-weight:700;text-decoration:none;">View authorization document</a>
-      </article>
-      <article style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;">
-        <strong style="font-size:1.05em;color:#1a1a2e;">Export Base Record</strong>
-        <p style="color:#64748b;font-size:.9em;margin:8px 0 14px;">The company maintains its official export-base documentation as part of its compliance record.</p>
-        <a href="images/plaque-export-base.jpg" target="_blank" rel="noopener" style="color:#0a66c2;font-weight:700;text-decoration:none;">View export-base record</a>
-      </article>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px;text-align:center;" class="company-record-stats">
-      <div style="background:#1e293b;color:#fff;border-radius:10px;padding:18px 12px;"><strong style="display:block;font-size:1.55em;">7,000+</strong><span style="font-size:.82em;color:#cbd5e1;">vehicles exported</span></div>
-      <div style="background:#1e293b;color:#fff;border-radius:10px;padding:18px 12px;"><strong style="display:block;font-size:1.55em;">30+</strong><span style="font-size:.82em;color:#cbd5e1;">markets served</span></div>
-      <div style="background:#1e293b;color:#fff;border-radius:10px;padding:18px 12px;"><strong style="display:block;font-size:1.55em;">18</strong><span style="font-size:.82em;color:#cbd5e1;">team members</span></div>
-    </div>
-    <p style="text-align:center;color:#64748b;font-size:.8em;margin:14px 0 0;">Credentials, authorization scope and shipment history are reviewed for the specific commercial request and destination.</p>
   </div>
 </section>
 
@@ -416,40 +380,40 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <section class="section" style="background:#fff;">
   <div class="inner" style="max-width:800px;">
     <div style="text-align:center;margin-bottom:48px;">
-      <h2 style="font-size:1.8em;margin-bottom:8px;">Commercial Vehicle Sourcing Review</h2>
-      <p style="color:#64748b;font-size:1em;">A B2B inquiry process for overseas importers, dealers and commercial vehicle buyers.</p>
+      <h2 style="font-size:1.8em;margin-bottom:8px;">China Vehicle Export Credentials</h2>
+      <p style="color:#64748b;font-size:1em;">Company qualifications and supporting documents for commercial buyer review.</p>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:16px;">
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #16a34a;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">🏛️</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">Request-Based Scope Review</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Vehicle selection, configuration, quantity, final destination, proposed FCA/FOB/EXW handover and document coordination are reviewed for each commercial request.</p>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Automobile Export Qualification Records</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Export qualification and used-vehicle filing documents are available for due diligence. <a href="images/auth-usedcar-export.png" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">View qualification record</a> · <a href="images/plaque-export-base.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">View export-base record</a></p>
         </div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #0a66c2;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">🔖</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">China-Market Model Interests</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Catalogue models are reference interests for commercial buyers. They do not represent stock, brand authorisation, a fixed price or destination-market admission.</p>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Nissan Cooperation Documentation</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Authorization documentation supports Nissan vehicle export cooperation; exact model and destination scope are confirmed for each order. <a href="images/auth-zhongrui.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">View authorization document</a></p>
         </div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #d97706;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">🏆</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">Destination Requirements</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">The buyer or importer confirms homologation, registration, import licensing and tax requirements for the exact vehicle and destination.</p>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Company Recognition Records</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Company recognition materials are available to review alongside the specific export arrangement. <a href="images/plaque-growth-enterprise.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">View growth-enterprise award</a></p>
         </div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #7c3aed;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">📊</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">Information Needed for a Review</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Share your company name or website, model/category and configuration, quantity, final destination city/country, and preferred FCA, FOB or EXW term.</p>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Export Experience &amp; Service Team</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">The team reviews vehicle configuration, destination requirements, export documents and agreed handover terms for each commercial order.</p>
         </div>
       </div>
     </div>
@@ -459,10 +423,10 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <!-- Models -->
 <section class="section featured-models" id="featured-models">
   <div class="inner">
-    <h2>Catalogue Model Interests</h2>
+    <h2>Featured Export Models</h2>
     <p class="lead">
-      China-market passenger vehicles for commercial buyer review
-      <span class="lang">Select a model reference, then confirm configuration, quantity, destination and trade term</span>
+      Nissan focus, supported by Toyota high-demand models
+      <span class="lang">Nissan · Toyota · Configuration consultation</span>
     </p>
     <div class="model-grid featured-grid">
       <div class="model-card" data-base="images/nissan/teana/" data-prefix="" data-count="8" data-title="Nissan Teana">
@@ -515,8 +479,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       </div>
     </div>
     <div class="catalog-actions">
-      <a class="catalog-link" href="models.html?v=20261009a#models" target="_blank" rel="noopener noreferrer">Explore Vehicle Catalogue</a>
-      <span class="catalog-note">Model references for case-by-case commercial review</span>
+      <a class="catalog-link" href="models.html?v=20261009a#models" target="_blank" rel="noopener noreferrer">View More Models</a>
+      <span class="catalog-note">Full brand catalog and configuration selection</span>
     </div>
   </div>
 </section>
@@ -648,6 +612,16 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 </section>
 
 <footer>
+  <nav class="market-guide-links" aria-label="Regional vehicle import guides">
+    <a href="az.html?from=en_home_az">Azerbaijan</a>
+    <a href="ar/uae.html?from=en_home_uae">UAE</a>
+    <a href="es/peru.html?from=en_home_pe">Peru</a>
+    <a href="tj.html?from=en_home_tj">Tajikistan</a>
+    <a href="es/chile.html?from=en_home_cl">Chile</a>
+    <a href="es/colombia.html?from=en_home_co">Colombia</a>
+    <a href="es/panama.html?from=en_home_pa">Panama</a>
+    <a href="es/republica-dominicana.html?from=en_home_do">Dominican Republic</a>
+  </nav>
   &copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. &nbsp;·&nbsp; 杭州开姆尼茨国际贸易有限公司
 </footer>
 

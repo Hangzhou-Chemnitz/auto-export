@@ -310,6 +310,27 @@ class SiteIntegrityTest(unittest.TestCase):
                 text = (ROOT / page_path).read_text(encoding="utf-8")
                 self.assertNotIn("?v=20260702#models", text)
 
+    def test_english_home_preserves_original_section_flow(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        sections = ("<!-- Hero -->", "<!-- Markets -->", "<!-- Authority -->", "<!-- Models -->")
+        self.assertEqual(list(sections), sorted(sections, key=text.index))
+        self.assertNotIn("Credentials and Export Record", text)
+        self.assertIn("Left-Hand-Drive Markets Worldwide", text)
+        self.assertIn("Featured Export Models", text)
+        self.assertIn('data-cta-location="hero"', text)
+        self.assertIn('data-catalog-link', text)
+        self.assertIn('analytics-events.js?v=20261009a', text)
+
+        parser = parse("index.html")
+        for market_path in (
+            "az.html", "ar/uae.html", "es/peru.html", "tj.html",
+            "es/chile.html", "es/colombia.html", "es/panama.html",
+            "es/republica-dominicana.html",
+        ):
+            with self.subTest(market=market_path):
+                self.assertTrue((ROOT / market_path).is_file())
+                self.assertTrue(any(urlsplit(href).path == market_path for href in parser.anchors))
+
     def test_custom_not_found_page_keeps_visitors_in_the_funnel(self):
         text = (ROOT / "404.html").read_text(encoding="utf-8")
         parser = parse("404.html")
