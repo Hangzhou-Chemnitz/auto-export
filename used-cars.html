@@ -30,3 +30,36 @@ document.querySelector('#form').addEventListener('submit',function(event){event.
 </script>
 </body>
 </html>
+
+<script>
+(function(){
+  const photos={
+    'TOYOTA|RAV4':'https://hzchemnitz.cn/images/toyota/rav4/1.jpg',
+    'TOYOTA|COROLLA':'https://hzchemnitz.cn/images/toyota/corolla/1.jpg',
+    'TOYOTA|CAMRY':'https://hzchemnitz.cn/images/toyota/camry/1.jpg',
+    'NISSAN|X-TRAIL':'https://hzchemnitz.cn/images/nissan/xtrail/1.jpg',
+    'HYUNDAI|ELANTRA':'https://hzchemnitz.cn/images/hyundai/elantra/1.jpg',
+    'KIA|SPORTAGE':'https://hzchemnitz.cn/images/kia/sportage/1.jpg',
+    'HONDA|CR-V':'https://hzchemnitz.cn/images/honda/crv/1.jpg',
+    'VOLKSWAGEN|TERAMONT':'https://hzchemnitz.cn/images/volkswagen/teramont/1.jpg'
+  };
+  const style=document.createElement('style');
+  style.textContent='.model-photo{height:174px;margin:-22px -22px 18px;overflow:hidden;background:#e7edf0}.model-photo img{display:block;width:100%;height:100%;object-fit:cover}';
+  document.head.appendChild(style);
+  function decorate(){
+    document.querySelectorAll('#grid .model').forEach(function(card){
+      if(card.querySelector('.model-photo'))return;
+      const key=card.querySelector('.badge').textContent+'|'+card.querySelector('h3').textContent;
+      const src=photos[key];
+      if(!src)return;
+      const photo=document.createElement('div');
+      photo.className='model-photo';
+      photo.innerHTML='<img loading="lazy" alt="'+key.replace('|',' ')+' sourcing direction">';
+      photo.querySelector('img').src=src;
+      card.insertBefore(photo,card.firstChild);
+    });
+  }
+  decorate();
+  document.querySelectorAll('.filter').forEach(function(button){button.addEventListener('click',function(){setTimeout(decorate,0)})});
+})();
+</script>
