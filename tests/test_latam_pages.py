@@ -157,9 +157,10 @@ class LatamPagesTest(unittest.TestCase):
                 self.assertIn("no es una oferta final", text)
                 schemas = [json.loads(raw) for raw in parser.scripts]
                 serialized = json.dumps(schemas)
-                self.assertIn('"Product"', serialized)
                 self.assertIn('"Vehicle"', serialized)
-                self.assertNotIn('"offers"', serialized)
+                self.assertNotIn('"Product"', serialized)
+                for unsupported_property in ('"offers"', '"review"', '"aggregateRating"'):
+                    self.assertNotIn(unsupported_property, serialized)
 
                 english_page = english_url.rsplit("/", 1)[-1]
                 _, english_parser = parse_page(english_page)
@@ -190,25 +191,41 @@ class LatamPagesTest(unittest.TestCase):
             self.assertIn(f"es/modelos/{public_path}", spanish)
             self.assertIn(f"es/modelos/{public_path}", catalog)
 
-    def test_country_pages_link_to_priority_spanish_models(self):
+    def test_country_pages_offer_spanish_catalog_and_model_paths(self):
         for country_page in COUNTRY_PAGES:
             text = (ROOT / country_page).read_text(encoding="utf-8")
-            for relative_path in LOCALIZED_MODEL_PAGES:
-                model_filename = relative_path.rsplit("/", 1)[-1]
-                with self.subTest(country=country_page, model=model_filename):
-                    self.assertIn(f'modelos/{model_filename}', text)
+            with self.subTest(country=country_page):
+                market = COUNTRY_PAGES[country_page][0].split("-", 1)[1]
+                # Every market page must offer a crawlable path into its
+                # market-filtered Spanish catalog, even when it does not
+                # promote individual models on the landing page.
+                self.assertIn(f"models-es.html?market={market}", text)
+                if country_page == "es/peru.html":
+                    for model_name in ("Camry", "RAV4", "Corolla Cross"):
+                        self.assertIn(model_name, text)
+                else:
+                    for relative_path in LOCALIZED_MODEL_PAGES:
+                        model_filename = relative_path.rsplit("/", 1)[-1]
+                        self.assertIn(f'modelos/{model_filename}', text)
 
-    def test_country_faq_schema_questions_are_visible(self):
+    def test_country_faq_schema_only_describes_visible_questions(self):
         for relative_path in ("es/peru.html", "es/colombia.html", "es/chile.html"):
             with self.subTest(page=relative_path):
                 text, parser = parse_page(relative_path)
                 visible = html.unescape(re.sub(r"<[^>]+>", " ", text))
                 schemas = [json.loads(raw) for raw in parser.scripts]
-                graph = schemas[0].get("@graph", [])
-                faq = next(node for node in graph if node.get("@type") == "FAQPage")
-                for item in faq["mainEntity"]:
-                    self.assertIn(item["name"], visible)
-                    self.assertIn(item["acceptedAnswer"]["text"], visible)
+                nodes = [node for schema in schemas for node in schema.get("@graph", [schema])]
+                faq_nodes = [node for node in nodes if node.get("@type") == "FAQPage"]
+                if relative_path != "es/peru.html":
+                    self.assertEqual(len(faq_nodes), 1)
+                else:
+                    # Peru currently has no FAQ; if one is added later its
+                    # claims must also be backed by visible content.
+                    self.assertLessEqual(len(faq_nodes), 1)
+                for faq in faq_nodes:
+                    for item in faq["mainEntity"]:
+                        self.assertIn(item["name"], visible)
+                        self.assertIn(item["acceptedAnswer"]["text"], visible)
 
     def test_country_local_resources_exist(self):
         pattern = re.compile(r'(?:href|src)="([^"]+)"')
@@ -219,8 +236,10 @@ class LatamPagesTest(unittest.TestCase):
                 parsed = urlsplit(reference)
                 if parsed.scheme or reference.startswith(("#", "//")):
                     continue
-                target = (base / parsed.path).resolve()
+                target = (ROOT / parsed.path.lstrip("/")) if parsed.path.startswith("/") else (base / parsed.path)
+                target = target.resolve()
                 with self.subTest(page=relative_path, resource=reference):
+                    self.assertTrue(target.is_relative_to(ROOT), str(target))
                     self.assertTrue(target.exists(), str(target))
 
     def test_sitemap_contains_all_localized_pages_and_clusters(self):

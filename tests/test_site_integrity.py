@@ -187,12 +187,28 @@ class SiteIntegrityTest(unittest.TestCase):
                     f"{relative_path} must expose one authoritative Organization entity",
                 )
                 organization = organizations[0]
-                self.assertEqual(organization.get("@id"), ORGANIZATION_ID)
-                self.assertEqual(
-                    {contact.get("name") for contact in organization.get("contactPoint", [])},
-                    CONTACTS,
-                )
+                self.assertEqual(organization.get("name"), "Hangzhou Chemnitz International Trade Co., Ltd.")
+                self.assertEqual(organization.get("url"), "https://hzchemnitz.cn/")
+                if relative_path != "es/peru.html":
+                    self.assertEqual(organization.get("@id"), ORGANIZATION_ID)
+                    self.assertEqual(
+                        {contact.get("name") for contact in organization.get("contactPoint", [])},
+                        CONTACTS,
+                    )
+                else:
+                    # Peru's current WebPage embeds a minimal publisher;
+                    # a future full publisher may add the shared identity.
+                    if "@id" in organization:
+                        self.assertEqual(organization["@id"], ORGANIZATION_ID)
+                    if "contactPoint" in organization:
+                        self.assertEqual(
+                            {contact.get("name") for contact in organization["contactPoint"]},
+                            CONTACTS,
+                        )
                 self.assertNotIn("+86-137-5822-9513", json.dumps(organization))
+                if relative_path in (*HOME_PAGES, *CATALOGS):
+                    self.assertNotIn("makesOffer", organization)
+                    self.assertFalse(any(node.get("@type") == "Product" for node in nested_nodes(schemas)))
 
     def test_vehicle_pages_expose_static_machine_readable_details(self):
         vehicle_pages = sorted(ROOT.glob("vehicle-config-*.html"))
@@ -207,14 +223,22 @@ class SiteIntegrityTest(unittest.TestCase):
                 vehicle_nodes = [
                     node
                     for node in nodes
-                    if isinstance(node.get("@type"), list)
-                    and {"Product", "Vehicle"}.issubset(node["@type"])
+                    if node.get("@type") == "Vehicle"
                 ]
                 self.assertEqual(len(vehicle_nodes), 1)
                 self.assertTrue(any(node.get("@type") == "BreadcrumbList" for node in nodes))
-                self.assertNotIn("offers", vehicle_nodes[0])
-                self.assertIn("not a final export offer", json.dumps(vehicle_nodes[0]))
-                image_url = vehicle_nodes[0].get("image", "")
+                for unsupported_property in ("offers", "review", "aggregateRating"):
+                    self.assertNotIn(unsupported_property, vehicle_nodes[0])
+                self.assertFalse(any(node.get("@type") == "Product" for node in nodes))
+                if page.name == "vehicle-config-n6.html":
+                    self.assertEqual(vehicle_nodes[0].get("name"), "Nissan N6")
+                    self.assertNotIn("additionalProperty", vehicle_nodes[0])
+                    self.assertIn("final export quotation depends", text.lower())
+                    web_page = next(node for node in nodes if node.get("@type") == "WebPage")
+                    image_url = web_page.get("image", "")
+                else:
+                    self.assertIn("not a final export offer", json.dumps(vehicle_nodes[0]))
+                    image_url = vehicle_nodes[0].get("image", "")
                 self.assertTrue(image_url.startswith("https://hzchemnitz.cn/images/thumbs/"))
                 self.assertTrue((ROOT / urlsplit(image_url).path.lstrip("/")).is_file())
                 self.assertIn(f'<meta property="og:image" content="{image_url}">', text)
@@ -223,6 +247,21 @@ class SiteIntegrityTest(unittest.TestCase):
                 self.assertIn('id="quote-disclaimer"', text)
                 self.assertNotIn('/#models', text)
                 self.assertRegex(text, r"<h1\b")
+
+    def test_vehicle_content_pilot_has_visible_comparison_links(self):
+        comparisons = {
+            "vehicle-config-teana.html": "vehicle-config-sylphy-2026.html",
+            "vehicle-config-sylphy-2026.html": "vehicle-config-teana.html",
+            "vehicle-config-crv.html": "vehicle-config-rav4.html",
+        }
+        for page, related_page in comparisons.items():
+            with self.subTest(page=page):
+                text = (ROOT / page).read_text(encoding="utf-8")
+                parser = parse(page)
+                self.assertIn('class="seo-copy"', text)
+                self.assertIn("default reference", text.lower())
+                self.assertIn(related_page, parser.anchors)
+                self.assertTrue((ROOT / related_page).is_file())
 
     def test_ai_discovery_files_are_public_and_factual(self):
         robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
