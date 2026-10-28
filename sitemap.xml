@@ -205,5 +205,8 @@
     <xhtml:link rel="alternate" hreflang="fa" href="https://hzchemnitz.cn/fa/iran.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
   </url>
+  <url>
+    <loc>https://hzchemnitz.cn/used-cars.html</loc><lastmod>2026-10-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+  </url>
 </urlset>
 
