@@ -17,21 +17,38 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "استيراد سيارات من الصين إلى الإمارات بالجملة | توريد LHD للشركات | Chemnitz",
-    "url": "https://hzchemnitz.cn/ar/uae.html",
-    "inLanguage": "ar-AE",
-    "description": "توريد سيارات بمقود يسار من السوق الصيني حسب الطلب لمستوردي السيارات والتجار والشركات في الإمارات. يتم تأكيد الطراز والسعر ونطاق التصدير لكل مشروع.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Hangzhou Chemnitz International Trade Co., Ltd.",
-      "url": "https://hzchemnitz.cn/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Hangzhou Chemnitz International Trade Co., Ltd.",
-      "url": "https://hzchemnitz.cn/"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hzchemnitz.cn/#organization",
+        "name": "Hangzhou Chemnitz International Trade Co., Ltd.",
+        "url": "https://hzchemnitz.cn/",
+        "logo": "https://hzchemnitz.cn/images/chemnitz-logo.png"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hzchemnitz.cn/ar/uae.html#webpage",
+        "name": "استيراد سيارات من الصين إلى الإمارات بالجملة | توريد LHD للشركات | Chemnitz",
+        "url": "https://hzchemnitz.cn/ar/uae.html",
+        "inLanguage": "ar-AE",
+        "description": "توريد سيارات بمقود يسار من السوق الصيني حسب الطلب لمستوردي السيارات والتجار والشركات في الإمارات. يتم تأكيد الطراز والسعر ونطاق التصدير لكل مشروع.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Hangzhou Chemnitz International Trade Co., Ltd.",
+          "url": "https://hzchemnitz.cn/"
+        },
+        "publisher": {"@id": "https://hzchemnitz.cn/#organization"},
+        "about": {"@id": "https://hzchemnitz.cn/ar/uae.html#service"}
+      },
+      {
+        "@type": "Service",
+        "@id": "https://hzchemnitz.cn/ar/uae.html#service",
+        "name": "توريد سيارات بمقود يسار من الصين حسب المشروع",
+        "serviceType": "توريد سيارات بمقود يسار وتنسيق التصدير من الصين حسب الطلب",
+        "provider": {"@id": "https://hzchemnitz.cn/#organization"},
+        "areaServed": {"@type": "Country", "name": "United Arab Emirates"}
+      }
+    ]
   }
   </script>
   <style>
