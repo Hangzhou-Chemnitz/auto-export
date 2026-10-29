@@ -333,7 +333,10 @@ class SiteIntegrityTest(unittest.TestCase):
 
     def test_english_home_hero_is_first_section(self):
         text = (ROOT / "index.html").read_text(encoding="utf-8")
-        language_switcher_end = text.index("</div>", text.index("<!-- Language Switcher -->"))
+        language_switcher_start = text.index("<!-- Language Switcher -->")
+        language_switcher_end = text.index("</div>", language_switcher_start)
+        language_switcher = text[language_switcher_start:language_switcher_end]
+        self.assertNotIn("used-cars.html", language_switcher)
         first_section = re.search(r"<section\b[^>]*>", text[language_switcher_end:])
         self.assertIsNotNone(first_section)
         self.assertIn('class="hero"', first_section.group())
