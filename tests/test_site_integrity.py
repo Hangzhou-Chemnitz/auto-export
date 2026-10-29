@@ -331,6 +331,14 @@ class SiteIntegrityTest(unittest.TestCase):
                 self.assertTrue((ROOT / market_path).is_file())
                 self.assertTrue(any(urlsplit(href).path == market_path for href in parser.anchors))
 
+    def test_english_home_hero_is_first_section(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        language_switcher_end = text.index("</div>", text.index("<!-- Language Switcher -->"))
+        first_section = re.search(r"<section\b[^>]*>", text[language_switcher_end:])
+        self.assertIsNotNone(first_section)
+        self.assertIn('class="hero"', first_section.group())
+        self.assertNotIn("business-lines-title", text)
+
     def test_custom_not_found_page_keeps_visitors_in_the_funnel(self):
         text = (ROOT / "404.html").read_text(encoding="utf-8")
         parser = parse("404.html")
