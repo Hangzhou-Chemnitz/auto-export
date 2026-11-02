@@ -296,6 +296,117 @@ class SiteIntegrityTest(unittest.TestCase):
             for thumbnail in thumbnails:
                 self.assertTrue((ROOT / thumbnail).is_file(), thumbnail)
 
+    def test_machinery_project_review_collects_only_qualification_fields(self):
+        text = (ROOT / "machinery.html").read_text(encoding="utf-8")
+
+        self.assertIn('data-page-type="engineering_machinery"', text)
+        self.assertIn('analytics-loader.js?v=20260727a', text)
+        self.assertIn('analytics-events.js?v=20261009a', text)
+        for field in (
+            'name="companyName"',
+            'name="machineryType"',
+            'name="configuration"',
+            'name="quantity"',
+            'name="destinationCountry"',
+            'name="tradeTerm"',
+        ):
+            self.assertIn(field, text)
+        self.assertIn('name="destinationPort"', text)
+        self.assertIn('name="timeline"', text)
+        self.assertIn('name="projectNotes"', text)
+        self.assertIn('value="EXW"', text)
+        self.assertIn('value="FCA"', text)
+        self.assertIn('value="FOB"', text)
+        self.assertIn('name="tradeTerm" required', text)
+        self.assertIn("machineryInquiryForm.reportValidity()", text)
+        self.assertIn("https://wa.me/8615625033581?text=", text)
+        self.assertIn("encodeURIComponent(lines.join('\\n'))", text)
+        self.assertIn('The buyer or local importer confirms destination import', text)
+
+    def test_machinery_project_review_analytics_never_reads_form_values(self):
+        text = (ROOT / "machinery.html").read_text(encoding="utf-8")
+        event_start = text.index("window.chemnitzTrack('machinery_request_submit'")
+        event_end = text.index("});", event_start) + 3
+        event = text[event_start:event_end]
+
+        self.assertIn("cta_location: 'machinery_project_review_form'", event)
+        self.assertIn("vehicle_category: 'engineering_machinery'", event)
+        for field_name in (
+            "companyName", "machineryType", "configuration", "quantity",
+            "destinationCountry", "destinationPort", "tradeTerm", "timeline",
+            "projectNotes",
+        ):
+            self.assertNotIn(field_name, event)
+
+    def test_used_cars_page_tracks_visits_and_whatsapp_submissions(self):
+        text = (ROOT / "used-cars.html").read_text(encoding="utf-8")
+        self.assertIn('data-page-type="used_cars"', text)
+        self.assertIn('src="analytics-loader.js?v=20260727a"', text)
+        self.assertIn('defer src="analytics-events.js?v=20261009a"', text)
+        self.assertIn('href="machinery.html">Machinery</a>', text)
+        self.assertIn('Photos illustrate model directions only.', text)
+        self.assertIn('Representative model photo for ', text)
+        self.assertIn('@media(max-width:980px){.topbar-inner{min-height:auto;', text)
+        self.assertIn(
+            '<link rel="preload" as="image" href="images/used-cars/representative-suv.jpg" fetchpriority="high">',
+            text,
+        )
+        self.assertNotIn("https://hzchemnitz.cn/images/thumbs/", text)
+        for image_path in (
+            "images/used-cars/representative-suv.jpg",
+            "images/used-cars/representative-sedan.jpg",
+            "images/used-cars/representative-mpv.jpg",
+        ):
+            self.assertIn(image_path, text)
+            self.assertTrue((ROOT / image_path).is_file(), image_path)
+        self.assertIn("window.chemnitzTrack('used_car_request_submit'", text)
+        tracking_match = re.search(
+            r"window\.chemnitzTrack\('used_car_request_submit', \{(?P<context>.*?)\}\);",
+            text,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(tracking_match)
+        tracking_context = tracking_match.group("context")
+        self.assertIn("cta_location: 'used_cars_request_form'", tracking_context)
+        self.assertIn("vehicle_category: 'used_car'", tracking_context)
+        self.assertEqual(
+            re.findall(r"^\s*([a-z_]+):", tracking_context, re.MULTILINE),
+            ["cta_location", "vehicle_category"],
+        )
+        for private_selector in ("#company", "#country", "#port", "#quantity", "#vehicle", "#budget", "#notes"):
+            self.assertNotIn(private_selector, tracking_context)
+
+    def test_english_home_links_to_engineering_machinery(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        special_vehicles_start = text.index("<!-- Special Vehicles -->")
+        special_vehicles_end = text.index("<!-- FAQ -->")
+        machinery_link_start = text.index('href="machinery.html?from=en_home_special_vehicles"')
+
+        self.assertIn('href="machinery.html?from=en_home_special_vehicles"', text)
+        self.assertIn("Explore Engineering Machinery", text)
+        self.assertGreater(machinery_link_start, special_vehicles_start)
+        self.assertLess(machinery_link_start, special_vehicles_end)
+
+    def test_home_has_three_explicit_sourcing_paths(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        hero_start = text.index("<!-- Hero -->")
+        hero_end = text.index("</section>", hero_start)
+        markets_start = text.index("<!-- Markets -->")
+        path_start = text.index('<nav class="sourcing-paths"')
+        path_end = text.index("</nav>", path_start)
+        paths = text[path_start:path_end]
+
+        self.assertGreater(path_start, hero_start)
+        self.assertLess(path_end, hero_end)
+        self.assertLess(path_end, markets_start)
+        self.assertIn('aria-label="Vehicle sourcing paths"', paths)
+        self.assertIn('href="models.html?from=en_home_sourcing_path#models"', paths)
+        self.assertIn('href="used-cars.html?from=en_home_sourcing_path"', paths)
+        self.assertIn('href="machinery.html?from=en_home_sourcing_path"', paths)
+        self.assertIn(">New Vehicles<", paths)
+        self.assertIn(">Used Cars<", paths)
+        self.assertIn(">Engineering Machinery<", paths)
+
     def test_catalog_configuration_tracking_keeps_the_selected_spec(self):
         for catalog_path in CATALOGS:
             with self.subTest(catalog=catalog_path):
