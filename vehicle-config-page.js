@@ -1786,7 +1786,10 @@
   var sections=document.getElementById('config-sections');
   var modal=document.getElementById('contact-overlay');
   var backLink=document.getElementById('back-link');
-  if(page.title) document.title=page.title+' | '+interfaceText.documentSuffix;
+  // Keep the curated model landing title; explicit trims and other languages
+  // retain their configuration-specific document titles.
+  if(page.seoTitle && pageLanguage==='en' && !new URLSearchParams(location.search).has('specid')) document.title=page.seoTitle;
+  else if(page.title) document.title=page.title+' | '+interfaceText.documentSuffix;
   if(title) title.textContent=page.title||'';
   if(price) price.textContent=page.priceText||interfaceText.pricePrefix+(page.price||'TBD')+interfaceText.priceSuffix;
   if(summary) summary.textContent=page.summary||interfaceText.summary;
