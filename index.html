@@ -328,11 +328,12 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   <script src="trim-localization.js?v=20260728g"></script>
 <script src="nissan-2026-data.js?v=20260723c"></script>
 <script src="featured-models-data.js?v=20260728a"></script>
+<link rel="stylesheet" href="home-layout.css?v=20261102a">
 </head>
 <body>
 
 <!-- Language Switcher -->
-<div style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
+<div class="home-language-nav" dir="ltr" style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
   <strong>English</strong> &nbsp;|&nbsp;
   <a href="ru.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Русский</a> &nbsp;|&nbsp;
   <a href="ar.html" style="color:#0a66c2;text-decoration:none;font-weight:600">العربية</a> &nbsp;|&nbsp;
@@ -358,26 +359,11 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <!-- Markets -->
 <section style="background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;text-align:center;padding:32px 24px">
   <div style="max-width:960px;margin:0 auto">
-    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">
-      Markets Worldwide
-    </h2>
+    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">Markets Worldwide</h2>
     <p style="font-size:0.85em;color:#94a3b8;margin-bottom:16px">
       Vehicle sourcing &nbsp;·&nbsp; Container and RoRo shipping options &nbsp;·&nbsp; Export-document coordination
     </p>
-    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;font-size:0.85em">
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kazakhstan</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Russia</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">UAE &amp; Gulf</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Saudi Arabia</span>
-      <a href="ng.html?from=en_markets_ng" style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#fff;text-decoration:none;">Nigeria</a>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Algeria</span>
-      <a href="uz.html?from=en_markets_uz" style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#fff;text-decoration:none;">Uzbekistan</a>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kyrgyzstan</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kenya &amp; East Africa</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Serbia &amp; Balkans</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#38bdf8;">Latin America</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#22c55e;">SE Asia</span>
-    </div>
+    <div class="home-market-chips"><span>Kazakhstan</span><span>Russia</span><span>UAE &amp; Gulf</span><span>Saudi Arabia</span><span>Nigeria</span><span>Algeria</span><span>Uzbekistan</span><span>Kyrgyzstan</span><span>Kenya &amp; East Africa</span><span>Serbia &amp; Balkans</span><span>Latin America</span><span>SE Asia</span></div><details class="home-market-guides"><summary>Destination guides</summary><nav class="home-guide-links"><a href="az.html" data-market-guide>Azerbaijan</a><a href="ar/uae.html" data-market-guide>UAE</a><a href="ar/saudi-arabia.html" data-market-guide>Saudi Arabia</a><a href="es/peru.html" data-market-guide>Peru</a><a href="tj.html" data-market-guide>Tajikistan</a><a href="uz.html" data-market-guide>Uzbekistan</a><a href="ng.html" data-market-guide>Nigeria</a><a href="es/chile.html" data-market-guide>Chile</a><a href="es/colombia.html" data-market-guide>Colombia</a><a href="es/ecuador.html" data-market-guide>Ecuador</a><a href="es/bolivia.html" data-market-guide>Bolivia</a><a href="es/panama.html" data-market-guide>Panama</a><a href="es/republica-dominicana.html" data-market-guide>Dominican Republic</a></nav></details>
   </div>
 </section>
 
@@ -618,21 +604,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   </div>
 </section>
 
-<footer>
-  <nav class="market-guide-links" aria-label="Regional vehicle import guides">
-    <a href="az.html?from=en_home_az">Azerbaijan</a>
-    <a href="ar/uae.html?from=en_home_uae">UAE</a>
-    <a href="es/peru.html?from=en_home_pe">Peru</a>
-    <a href="tj.html?from=en_home_tj">Tajikistan</a>
-    <a href="uz.html?from=en_home_uz">Uzbekistan</a>
-    <a href="ng.html?from=en_home_ng">Nigeria</a>
-    <a href="es/chile.html?from=en_home_cl">Chile</a>
-    <a href="es/colombia.html?from=en_home_co">Colombia</a>
-    <a href="es/panama.html?from=en_home_pa">Panama</a>
-    <a href="es/republica-dominicana.html?from=en_home_do">Dominican Republic</a>
-  </nav>
-  &copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. &nbsp;·&nbsp; 杭州开姆尼茨国际贸易有限公司
-</footer>
+<footer>&copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. · 杭州开姆尼茨国际贸易有限公司</footer>
 
 <!-- Lightbox -->
 <div class="lb-overlay" id="lb">

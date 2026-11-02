@@ -362,11 +362,12 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   <script src="trim-localization.js?v=20260819a"></script>
 <script src="nissan-2026-data.js?v=20260723c"></script>
 <script src="featured-models-data.js?v=20260728a"></script>
+<link rel="stylesheet" href="home-layout.css?v=20261102a">
 </head>
 <body>
 
 <!-- Language Switcher -->
-<div style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
+<div class="home-language-nav" dir="ltr" style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
   <a href="index.html" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> &nbsp;|&nbsp;
   <a href="ru.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Русский</a> &nbsp;|&nbsp;
   <a href="ar.html" style="color:#0a66c2;text-decoration:none;font-weight:600">العربية</a> &nbsp;|&nbsp;
@@ -392,31 +393,11 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <!-- Markets -->
 <section style="background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;text-align:center;padding:32px 24px">
   <div style="max-width:960px;margin:0 auto">
-    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">
-      Atendemos proyectos de abastecimiento en más de 30 mercados
-    </h2>
+    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">Mercados internacionales</h2>
     <p style="font-size:0.85em;color:#94a3b8;margin-bottom:16px">
       Operaciones FOB y EXW &nbsp;·&nbsp; Envío en contenedor y RoRo &nbsp;·&nbsp; Documentación de exportación
     </p>
-    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;font-size:0.85em">
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kazajistán</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Rusia</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">EAU y el Golfo</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Arabia Saudita</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Nigeria</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Argelia</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Uzbekistán</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kirguistán</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Kenia y África Oriental</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Serbia y los Balcanes</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#38bdf8;">Perú · Colombia · Chile · Ecuador · Panamá · República Dominicana</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;color:#22c55e;">Sudeste Asiático</span>
-    </div>
-  </div>
-</section>
-
-<!-- Latin America country guides -->
-<section class="latam-hub" aria-labelledby="latam-hub-title">
+    <div class="home-market-chips"><span>Kazajistán</span><span>Rusia</span><span>Emiratos y Golfo</span><span>Arabia Saudita</span><span>Nigeria</span><span>Argelia</span><span>Uzbekistán</span><span>Kirguistán</span><span>Kenia y África Oriental</span><span>Serbia y Balcanes</span><span>América Latina</span><span>Sudeste Asiático</span></div><details class="home-market-guides"><summary>Guías por destino</summary><nav class="home-guide-links"><a href="az.html" data-market-guide>Azerbaiyán</a><a href="ar/uae.html" data-market-guide>Emiratos Árabes Unidos</a><a href="ar/saudi-arabia.html" data-market-guide>Arabia Saudita</a><a href="es/peru.html" data-market-guide>Perú</a><a href="tj.html" data-market-guide>Tayikistán</a><a href="uz.html" data-market-guide>Uzbekistán</a><a href="ng.html" data-market-guide>Nigeria</a><a href="es/chile.html" data-market-guide>Chile</a><a href="es/colombia.html" data-market-guide>Colombia</a><a href="es/ecuador.html" data-market-guide>Ecuador</a><a href="es/bolivia.html" data-market-guide>Bolivia</a><a href="es/panama.html" data-market-guide>Panamá</a><a href="es/republica-dominicana.html" data-market-guide>República Dominicana</a></nav><div class="home-regional-detail">
   <div class="latam-hub-inner">
     <div class="latam-hub-head">
       <h2 id="latam-hub-title">Exportación de vehículos a América Latina</h2>
@@ -446,60 +427,51 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
       </a>
     </div>
   </div>
+</div></details>
+  </div>
 </section>
 
+<!-- Latin America country guides -->
+
+
 <!-- Authority -->
-<section class="section" style="background:#fff;">
+<section id="china-vehicle-export-credentials" class="section" style="background:#fff;">
   <div class="inner" style="max-width:800px;">
     <div style="text-align:center;margin-bottom:48px;">
-      <h2 style="font-size:1.8em;margin-bottom:8px;">Exportador de vehículos de China autorizado</h2>
-      <p style="color:#64748b;font-size:1em;">Empresa registrada ante el gobierno, con credenciales verificables. Su socio de confianza para comprar vehículos en China.</p>
+      <h2 style="font-size:1.8em;margin-bottom:8px;">Credenciales para exportar vehículos desde China</h2>
+      <p style="color:#64748b;font-size:1em;">Cualificaciones de la empresa y documentos justificativos para la revisión de compradores profesionales.</p>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:16px;">
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #16a34a;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">🏛️</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">Registrado ante MOFCOM — Empresa oficial de exportación de vehículos usados</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Inscrita en el registro oficial de empresas exportadoras del Ministerio de Comercio de China. Somos uno de los exportadores de vehículos autorizados a nivel nacional. <a href="https://wms.mofcom.gov.cn/zcfb/wmgl/art/2025/art_b16ab53156984c09afcc9cb098add097.html" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Verificar en MOFCOM →</a></p>
-          <div style="cursor:pointer;margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;">
-            <span onclick="var i=this.nextElementSibling;i.style.display=i.style.display==='none'?'block':'none'" style="color:#ef4444;font-size:0.78em;cursor:pointer;">📋 Ver certificado de registro</span>
-            <img src="images/auth-usedcar-export.png" alt="Certificado de registro de MOFCOM" style="max-width:45%;max-height:180px;border-radius:6px;display:none;border:1px solid #e2e8f0;" loading="lazy">
-            <span onclick="var i=this.nextElementSibling;i.style.display=i.style.display==='none'?'block':'none'" style="color:#ef4444;font-size:0.78em;cursor:pointer;">🌍 Designación de base exportadora</span>
-            <img src="images/plaque-export-base.jpg" alt="Placa de base exportadora de vehículos" style="max-width:45%;max-height:180px;border-radius:6px;display:none;border:1px solid #e2e8f0;" loading="lazy">
-          </div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Documentación de cualificación para exportación de automóviles</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Hangzhou Chemnitz figura en la lista de empresas con licencia de exportación de automóviles de 2026 del Ministerio de Comercio de China, dentro de las relaciones de exportador autorizado aplicables. La documentación de cualificación y registro para vehículos usados está disponible para su revisión. El vehículo, la relación con el fabricante y el alcance de la licencia se confirman para cada pedido. <a href="images/auth-usedcar-export.png" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Ver documento de cualificación</a> · <a href="images/plaque-export-base.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Ver documento de la base de exportación</a></p>
         </div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #0a66c2;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">🔖</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">Dongfeng Nissan — Autorización oficial de modificación y exportación</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Autorización directa de Dongfeng Nissan Passenger Vehicle Company a través de nuestro socio de modificación. Todos los modelos cuentan con certificación MIIT para su exportación legal. <strong style="color:#b91c1c;">Documento con sello corporativo oficial.</strong></p>
-          <div style="cursor:pointer;margin-top:8px;" onclick="this.querySelector('img').style.display=this.querySelector('img').style.display==='none'?'block':'none'">
-            <span style="color:#ef4444;font-size:0.78em;">🔖 Ver carta de autorización</span>
-            <img src="images/auth-zhongrui.jpg" alt="Carta de autorización de Dongfeng Nissan" style="max-width:100%;max-height:300px;border-radius:6px;display:none;margin-top:8px;border:1px solid #e2e8f0;" loading="lazy">
-          </div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Documentación de cooperación con Nissan</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">La documentación de autorización respalda la cooperación en exportación de vehículos Nissan; los modelos y destinos incluidos se confirman para cada pedido. <a href="images/auth-zhongrui.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Ver autorización</a></p>
         </div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #d97706;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">🏆</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">Ganadora de dos premios del gobierno de Hangzhou</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Premio a la Empresa Destacada y Premio a la Empresa de Mayor Crecimiento. Una de las empresas de comercio internacional de más rápido crecimiento en Hangzhou.</p>
-          <div style="margin-top:8px;">
-            <span onclick="var i=document.getElementById('img-growth');i.style.display=i.style.display==='none'?'block':'none'" style="color:#ef4444;font-size:0.78em;cursor:pointer;">🚀 Ver premio a la empresa de mayor crecimiento</span>
-            <img id="img-growth" src="images/plaque-growth-enterprise.jpg" alt="Premio a la empresa de mayor crecimiento" style="max-width:60%;max-height:200px;border-radius:6px;display:none;border:1px solid #e2e8f0;margin-top:8px;" loading="lazy">
-          </div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Reconocimientos de la empresa</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Los documentos de reconocimiento de la empresa están disponibles para su revisión junto con las condiciones de la operación de exportación. <a href="images/plaque-growth-enterprise.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Ver reconocimiento</a></p>
         </div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #7c3aed;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">📊</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">Más de 7.000 vehículos exportados · Equipo de 18 personas · Desde 2023</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Atendemos concesionarios independientes y operadores nacionales de flotas en más de 30 países. Cada operación detalla la documentación de exportación y el alcance logístico FOB o EXW acordado.</p>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Experiencia exportadora y equipo de servicio</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">El equipo revisa la configuración, los requisitos del destino, los documentos de exportación y las condiciones de entrega acordadas para cada pedido comercial.</p>
         </div>
       </div>
     </div>
@@ -701,9 +673,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   </div>
 </section>
 
-<footer>
-  &copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. &nbsp;·&nbsp; 杭州开姆尼茨国际贸易有限公司 &nbsp;·&nbsp; Exportador de vehículos registrado ante MOFCOM
-</footer>
+<footer>&copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. · 杭州开姆尼茨国际贸易有限公司</footer>
 
 <!-- Lightbox -->
 <div class="lb-overlay" id="lb">

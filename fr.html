@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="images/toyota/rav4/1.jpg" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <!-- Google Analytics -->
 <script src="analytics-loader.js?v=20260727a"></script>
 <script defer src="analytics-events.js?v=20261009a"></script>
@@ -133,14 +137,13 @@
 }
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#fff;line-height:1.6}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;background:#fff;line-height:1.6;overflow-x:hidden}
 .hero{position:relative;background:linear-gradient(135deg,rgba(10,22,40,0.88) 0%,rgba(26,39,68,0.82) 100%);color:#fff;padding:60px 24px 48px;overflow:hidden;text-align:center}
 .hero .bg-img{position:absolute;inset:0;background:url('images/toyota/rav4/1.jpg') center/cover;z-index:-1;filter:brightness(0.3) saturate(0.4)}
 .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
 .hero .tag{display:inline-block;background:rgba(220,38,38,0.25);border:1px solid rgba(220,38,38,0.4);color:#f87171;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:3px;padding:6px 18px;border-radius:50px;margin-bottom:20px}
-.hero h1{font-size:clamp(1.8em,5vw,3em);font-weight:800;line-height:1.15;margin-bottom:12px}
+.hero h1{font-size:clamp(1.8em,5vw,3em);font-weight:800;line-height:1.15;margin-bottom:12px;letter-spacing:-0.02em}
 .hero h1 span{color:#ef4444}
 .hero .subtitle{font-size:1.05em;color:#94a3b8;margin-bottom:4px;font-weight:500}
 .hero .subtitle-sm{font-size:0.9em;color:#64748b;margin-bottom:4px}
@@ -148,21 +151,23 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
 .hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
 .hero-actions .cta-btn{margin-top:0;border:0;cursor:pointer;font-family:inherit}
+.wa-row{display:flex;justify-content:center;gap:10px;flex-wrap:nowrap;margin-top:24px}
 .hero .catalog-cta{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:14px 30px;border:1px solid rgba(255,255,255,.5);border-radius:8px;background:rgba(15,23,42,.42);color:#fff;text-decoration:none;font-weight:800;font-size:1.02em;transition:all .2s;backdrop-filter:blur(5px)}
 .hero .catalog-cta:hover{transform:translateY(-2px);background:rgba(255,255,255,.14);border-color:#fff}
 .section{padding:56px 24px}
 .section .inner{max-width:960px;margin:0 auto}
-.section h2{text-align:center;font-size:1.6em;font-weight:700;margin-bottom:6px}
+.section h2{text-align:center;font-size:1.6em;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
 .section .lead{text-align:center;color:#64748b;font-size:0.95em;margin-bottom:40px}
+.section .lead .lang{display:block;font-size:0.9em;color:#94a3b8;margin-top:2px}
 .brand-group{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin-bottom:32px}
 .brand-group .brand-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #e2e8f0}
 .brand-group .brand-header .brand-icon{width:44px;height:44px;border-radius:10px;background:#1a1a2e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85em}
-.brand-group .brand-header h3{font-size:1.3em;font-weight:700}
+.brand-group .brand-header h3{font-size:1.3em;font-weight:700;color:#1a1a2e}
 .brand-group .brand-header .info{font-size:0.85em;color:#64748b}
 .brand-group .model-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
 .model-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:all .25s;cursor:pointer}
 .model-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.08);border-color:#ef4444}
-.model-card .card-img{height:140px;background:#e2e8f0 center/cover;position:relative}
+.model-card .card-img{height:172px;background-color:#f8fafc;background-position:center;background-size:contain;background-repeat:no-repeat;position:relative}
 .model-card .card-img .badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.7em;font-weight:600;padding:3px 8px;border-radius:50px}
 .model-card .card-body{padding:14px 12px;text-align:center}
 .model-card h4{font-size:0.95em;font-weight:700;margin-bottom:2px}
@@ -178,7 +183,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .featured-grid h4{font-size:0.9em;color:#1a1a2e;margin:0;line-height:1.15}
 .featured-grid .info{display:none}
 .featured-grid .brochure-link{flex:0 0 auto;font-size:0.72em;padding:4px 11px;margin:0;border:1px solid #cbd5e1;background:#fff;color:#334155}
-.featured-grid .brochure-link:hover{background:#e8483c;color:#fff}
+.featured-grid .brochure-link:hover{background:#ef4444;color:#fff}
 .catalog-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin-top:28px;text-align:center}
 .catalog-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;background:#0d192e;color:#fff;text-decoration:none;border:1px solid #0d192e;border-radius:8px;padding:10px 22px;font-weight:800;font-size:0.9em;transition:all .2s}
 .catalog-link:hover{background:#14213a;border-color:#14213a;transform:translateY(-1px);box-shadow:0 10px 24px rgba(13,25,46,0.2)}
@@ -209,6 +214,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1a1a2e;backgr
 .contact-section .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:13px 30px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.96em;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
 .contact-section .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
 .contact-section .reply{color:#64748b;font-size:0.78em;margin-top:12px}
+.wa-row .cta-btn{padding:14px 22px;font-size:0.95em;white-space:nowrap;margin-top:0}
+@media(max-width:768px){.wa-row{flex-wrap:wrap}.wa-row .cta-btn{padding:12px 16px;font-size:0.85em}}
 .company-info{max-width:1120px;margin:22px auto 0;padding:18px;border:1px solid rgba(148,163,184,0.18);border-radius:10px;background:#fff;color:#111827;text-align:left;box-shadow:0 16px 42px rgba(0,0,0,0.16)}
 .company-info-layout{display:grid;grid-template-columns:minmax(0,470px) minmax(0,1fr);gap:28px;align-items:stretch}
 .company-info h3{font-size:1.04em;font-weight:800;margin-bottom:5px;color:#111827}
@@ -261,17 +268,21 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 .lb-next{right:20px}
 @media(max-width:640px){.lb-nav{font-size:28px;padding:8px 12px}.lb-prev{left:8px}.lb-next{right:8px}}
 </style>
+  <link rel="stylesheet" href="localized-home-config-picker.css?v=20261029a">
   <script src="trim-localization.js?v=20260728g"></script>
 <script src="nissan-2026-data.js?v=20260723c"></script>
 <script src="featured-models-data.js?v=20260728a"></script>
+<script src="home-featured-data.js?v=20261102a"></script>
+<script src="localized-home-config-picker.js?v=20261029a"></script>
+<link rel="stylesheet" href="home-layout.css?v=20261102a">
 </head>
 <body>
 
-<div style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
-  <a href="/" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> &nbsp;|&nbsp;
-  <a href="ru.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Русский</a> &nbsp;|&nbsp;
-  <a href="ar.html" style="color:#0a66c2;text-decoration:none;font-weight:600">العربية</a> &nbsp;|&nbsp;
-  <strong>Français</strong> &nbsp;|&nbsp;
+<div class="home-language-nav" dir="ltr" style="text-align:center;padding:10px;background:#f8fafc;font-size:0.85em;border-bottom:1px solid #e2e8f0">
+  <a href="/" style="color:#0a66c2;text-decoration:none;font-weight:600">English</a> |
+  <a href="ru.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Русский</a> |
+  <a href="ar.html" style="color:#0a66c2;text-decoration:none;font-weight:600">العربية</a> |
+  <strong>Français</strong> |
   <a href="es.html" style="color:#0a66c2;text-decoration:none;font-weight:600">Español</a>
 </div>
 
@@ -282,8 +293,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     <h1>Approvisionnement B2B<br><span>de véhicules depuis la Chine</span></h1>
     <div class="subtitle">Hangzhou Chemnitz International Trade Co., Ltd. · Fondée en 2023</div>
     <div class="subtitle-sm">Pour importateurs, concessionnaires et acheteurs professionnels · Conditions EXW, FCA ou FOB à vérifier par projet</div>
-    <div class="hero-actions">
-      <button type="button" class="cta-btn" data-cta-location="hero" onclick="openContactChoice('General inquiry')">Consultation WhatsApp</button>
+    <div class="wa-row hero-actions">
+      <button type="button" class="cta-btn" data-cta-location="hero" onclick="openContactChoice('Demande générale')">Consultation WhatsApp</button>
       <a class="catalog-cta" href="models-fr.html#models" data-catalog-link data-cta-location="hero">Voir le catalogue</a>
     </div>
   </div>
@@ -291,29 +302,49 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 
 <section style="background:linear-gradient(135deg,#1e293b 0%,#334155 100%);color:#fff;text-align:center;padding:32px 24px">
   <div style="max-width:960px;margin:0 auto">
-    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">Étude de projets pour marchés à conduite à gauche</h2>
-    <p style="font-size:0.85em;color:#94a3b8;margin-bottom:16px">Modèle, configuration, quantité, destination finale et conditions commerciales sont vérifiés avant toute offre.</p>
-    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;font-size:0.85em">
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Importateurs</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Concessionnaires</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Acheteurs en gros</span>
-      <span style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:50px;">Projets de flotte</span>
-    </div>
+    <h2 style="font-size:1.3em;font-weight:700;margin-bottom:6px;color:#fff;">Marchés internationaux</h2>
+    <p style="font-size:0.85em;color:#94a3b8;margin-bottom:16px">Recherche de véhicules · Options de transport en conteneur et RoRo · Coordination des documents d'exportation</p>
+    <div class="home-market-chips"><span>Kazakhstan</span><span>Russie</span><span>Émirats et Golfe</span><span>Arabie saoudite</span><span>Nigeria</span><span>Algérie</span><span>Ouzbékistan</span><span>Kirghizistan</span><span>Kenya et Afrique de l’Est</span><span>Serbie et Balkans</span><span>Amérique latine</span><span>Asie du Sud-Est</span></div><details class="home-market-guides"><summary>Guides par destination</summary><nav class="home-guide-links"><a href="az.html" data-market-guide>Azerbaïdjan</a><a href="ar/uae.html" data-market-guide>Émirats arabes unis</a><a href="ar/saudi-arabia.html" data-market-guide>Arabie saoudite</a><a href="es/peru.html" data-market-guide>Pérou</a><a href="tj.html" data-market-guide>Tadjikistan</a><a href="uz.html" data-market-guide>Ouzbékistan</a><a href="ng.html" data-market-guide>Nigeria</a><a href="es/chile.html" data-market-guide>Chili</a><a href="es/colombia.html" data-market-guide>Colombie</a><a href="es/ecuador.html" data-market-guide>Équateur</a><a href="es/bolivia.html" data-market-guide>Bolivie</a><a href="es/panama.html" data-market-guide>Panama</a><a href="es/republica-dominicana.html" data-market-guide>République dominicaine</a></nav></details>
   </div>
 </section>
 
-<section class="section" style="background:#fff;">
+<section id="china-vehicle-export-credentials" class="section" style="background:#fff;">
   <div class="inner" style="max-width:800px;">
     <div style="text-align:center;margin-bottom:48px;">
-      <h2 style="font-size:1.8em;margin-bottom:8px;">Une revue commerciale avant toute offre</h2>
-      <p style="color:#64748b;font-size:1em;">Chaque projet est évalué selon l'acheteur, le véhicule demandé, la destination finale et les exigences commerciales applicables.</p>
+      <h2 style="font-size:1.8em;margin-bottom:8px;">Qualifications pour l’exportation de véhicules depuis la Chine</h2>
+      <p style="color:#64748b;font-size:1em;">Qualifications et documents justificatifs à examiner par les acheteurs professionnels.</p>
     </div>
+
     <div style="display:flex;flex-direction:column;gap:16px;">
       <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #16a34a;border-radius:8px;padding:20px 24px;">
         <span style="font-size:1.6em;flex-shrink:0;">🏛️</span>
         <div>
-          <strong style="font-size:1.05em;color:#1a1a2e;">Informations nécessaires pour examiner votre projet</strong>
-          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Indiquez votre société, le modèle, la configuration, la quantité, la destination finale et le terme commercial souhaité. Nous confirmerons uniquement les éléments applicables à votre projet avant de préparer une offre.</p>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Documents de qualification à l’exportation automobile</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Hangzhou Chemnitz figure sur la liste 2026 des entreprises titulaires de licences d’exportation automobile du ministère chinois du Commerce, dans le cadre des relations d’exportateur autorisé applicables. Les justificatifs de qualification et d’enregistrement pour les véhicules d’occasion sont disponibles pour vérification. Le véhicule, la relation avec le constructeur et le périmètre de la licence sont confirmés pour chaque commande. <a href="images/auth-usedcar-export.png" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Voir le document de qualification</a> · <a href="images/plaque-export-base.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Voir le document de la base d’exportation</a></p>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #0a66c2;border-radius:8px;padding:20px 24px;">
+        <span style="font-size:1.6em;flex-shrink:0;">🔖</span>
+        <div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Documents de coopération Nissan</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Les documents d’autorisation encadrent la coopération pour l’exportation de véhicules Nissan ; les modèles et destinations concernés sont confirmés pour chaque commande. <a href="images/auth-zhongrui.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Voir l’autorisation</a></p>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #d97706;border-radius:8px;padding:20px 24px;">
+        <span style="font-size:1.6em;flex-shrink:0;">🏆</span>
+        <div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Distinctions de l’entreprise</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">Les documents relatifs aux distinctions de l’entreprise peuvent être consultés avec les modalités de l’opération d’exportation. <a href="images/plaque-growth-enterprise.jpg" target="_blank" rel="noopener" style="color:#0a66c2;text-decoration:underline;">Voir la distinction</a></p>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:16px;background:#f8fafc;border-left:4px solid #7c3aed;border-radius:8px;padding:20px 24px;">
+        <span style="font-size:1.6em;flex-shrink:0;">📊</span>
+        <div>
+          <strong style="font-size:1.05em;color:#1a1a2e;">Expérience export et équipe de service</strong>
+          <p style="color:#64748b;font-size:0.88em;margin-top:4px;line-height:1.6;">L’équipe examine la configuration, les exigences du pays de destination, les documents d’exportation et les conditions de remise convenues pour chaque commande professionnelle.</p>
         </div>
       </div>
     </div>
@@ -323,7 +354,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <section class="section featured-models" id="featured-models">
   <div class="inner">
     <h2>Modèles d'exportation prioritaires</h2>
-    <p class="lead">Priorité Nissan, complétée par les modèles Toyota à forte demande<br><span>Nissan · Toyota · Consultation configuration</span></p>
+    <p class="lead">Priorité Nissan, complétée par les modèles Toyota à forte demande<span class="lang">Nissan · Toyota · Conseil en configuration</span></p>
     <div class="model-grid featured-grid">
       <div class="model-card" data-base="images/nissan/teana/" data-prefix="" data-count="8" data-title="Nissan Teana">
         <div class="card-img" style="background-image:url('images/thumbs/nissan/teana/1.webp')"><span class="badge">Berline</span></div>
@@ -384,7 +415,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <section class="section special-vehicles" id="special-vehicles">
   <div class="inner">
     <h2>Véhicules Spéciaux de Catégorie II</h2>
-    <p class="lead">La hauteur de travail maximale peut être personnalisée selon le modèle et vos besoins, de 14,2 m à 35 m<br><span>Adaptation carrosserie · Documents d'export · Livraison au port</span></p>
+    <p class="lead">La hauteur de travail maximale peut être personnalisée selon le modèle et vos besoins, de 14,2 m à 35 m<span class="lang">Adaptation carrosserie · Documents d'export · Livraison au port</span></p>
     <div class="special-grid">
       <div class="special-card">
         <div class="special-visual" style="background-image:url('images/thumbs/special/hyl5057jgkq60-platform.webp')"><span>TYPE II</span></div>
@@ -459,8 +490,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
 <section class="contact-section">
   <h2>Examiner un projet d'approvisionnement</h2>
   <p class="sub">Envoyez votre société, le modèle, la configuration, la quantité, la destination finale et le terme commercial souhaité.</p>
-  <div style="margin-top:20px;">
-    <button type="button" class="cta-btn" onclick="openContactChoice('General inquiry')">Consultation WhatsApp</button>
+  <div class="wa-row">
+    <button type="button" class="cta-btn" onclick="openContactChoice('Demande générale')">Consultation WhatsApp</button>
   </div>
   <div class="company-info">
     <div class="company-info-layout">
@@ -505,7 +536,7 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   </div>
 </section>
 
-<footer>&copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. · 杭州开姆尼茨国际贸易有限公司 · Approvisionnement B2B de véhicules</footer>
+<footer>&copy; 2026 Hangzhou Chemnitz International Trade Co., Ltd. · 杭州开姆尼茨国际贸易有限公司</footer>
 
 <div class="lb-overlay" id="lb"><span class="lb-close" id="lb-close">&times;</span><span class="lb-nav lb-prev" id="lb-prev">&#8249;</span><span class="lb-nav lb-next" id="lb-next">&#8250;</span><img class="lb-img" id="lb-img" src="" alt=""><div class="lb-title" id="lb-title"></div><div class="lb-counter" id="lb-counter"></div></div>
 <div class="contact-choice-overlay" id="contact-choice-overlay"></div>
@@ -525,7 +556,8 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
   function esc(value){return String(value||'').replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});}
   function trimName(trim){return window.ChemnitzTrimI18n?window.ChemnitzTrimI18n.trim(trim.name||'',trim.specid,'fr'):(trim.name||'');}
   function consultText(topic,trim){
-    var lines=['Bonjour, je souhaite obtenir des informations sur '+(topic||'les véhicules')+'.'];
+    var subject=topic==='Demande générale'?'les véhicules':(topic||'les véhicules');
+    var lines=['Bonjour, je souhaite obtenir des informations sur '+subject+'.'];
     if(trim){lines.push('Configuration : '+trimName(trim));lines.push('Prix catalogue : RMB '+trim.price);}
     lines.push('Notre société : . Quantité : . Destination finale : . Terme commercial souhaité : EXW, FCA ou FOB. Merci de vérifier les conditions applicables à ce projet.');
     return lines.join('\n');
@@ -577,6 +609,12 @@ footer{text-align:center;padding:20px;color:#94a3b8;font-size:0.8em;background:#
     overlay.classList.add('open');
   };
   document.getElementById('contact-choice-overlay').addEventListener('click',function(e){if(e.target===this) closeContactChoice();});
+  window.ChemnitzHomeConfigPicker.init({
+    locale:'fr',
+    getData:function(modelName){return (window.ChemnitzNissan2026&&window.ChemnitzNissan2026[modelName])||
+      (window.ChemnitzFeaturedModels&&window.ChemnitzFeaturedModels[modelName]);},
+    onSelect:function(modelName,trimIndex){openContactChoice(modelName,trimIndex);}
+  });
 })();
 </script>
 </body>
