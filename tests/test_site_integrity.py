@@ -248,6 +248,98 @@ class SiteIntegrityTest(unittest.TestCase):
                 self.assertNotIn('/#models', text)
                 self.assertRegex(text, r"<h1\b")
 
+    def test_n6_page_has_a_commercial_search_snippet(self):
+        text = (ROOT / "vehicle-config-n6.html").read_text(encoding="utf-8")
+
+        self.assertIn(
+            '<title>Nissan N6 China-Market Specs &amp; Export Inquiry | Chemnitz</title>',
+            text,
+        )
+        self.assertIn(
+            'Send the trim, quantity and destination for an EXW, FCA or FOB export quotation.',
+            text,
+        )
+        self.assertIn('1.5L PHEV engine: 75 kW / 135 N m; e-motor: 155 kW / 320 N m', text)
+        self.assertIn('20.3 or 21.1 kWh LFP battery; 170 or 180 km CLTC electric range', text)
+        self.assertIn('https://www.dongfeng-nissan.com.cn/car/N6/detail', text)
+
+    def test_teramont_page_has_a_commercial_search_snippet(self):
+        text = (ROOT / "vehicle-config-teramont.html").read_text(encoding="utf-8")
+
+        self.assertIn(
+            '<title>Volkswagen Teramont Pro China-Market Specs & Export Inquiry | Chemnitz</title>',
+            text,
+        )
+        self.assertIn(
+            'Send the trim, quantity and destination for an EXW or FOB export quotation.',
+            text,
+        )
+        self.assertIn('Manufacturer guide price for reference only; this is not a final export offer.', text)
+
+    def test_corolla_cross_page_has_a_commercial_search_snippet(self):
+        text = (ROOT / "vehicle-config-corolla-cross.html").read_text(encoding="utf-8")
+
+        self.assertIn(
+            '<title>Toyota Corolla Cross China-Market Specs &amp; Export Inquiry | Chemnitz</title>',
+            text,
+        )
+        self.assertIn(
+            'Send the trim, quantity and destination for an EXW or FOB export quotation.',
+            text,
+        )
+        self.assertIn('Manufacturer guide price for reference only; this is not a final export offer.', text)
+
+    def test_spanish_corolla_cross_page_targets_importers_without_promising_a_final_price(self):
+        text = (ROOT / "es/modelos/toyota-corolla-cross-2026.html").read_text(encoding="utf-8")
+
+        self.assertIn(
+            '<title>Toyota Corolla Cross 2026 desde China | Consulta para Importadores | Chemnitz</title>',
+            text,
+        )
+        self.assertIn('Envíe versión, cantidad y destino para una cotización FOB o EXW.', text)
+        self.assertIn('precio guía en China · no es una oferta final', text)
+
+    def test_priority_market_search_snippets_focus_on_passenger_cars(self):
+        expected_snippets = {
+            "az.html": "yeni və işlənmiş minik avtomobillərinin layihə əsaslı təchizatı",
+            "ar/uae.html": "سيارات ركاب جديدة ومستعملة",
+            "es/peru.html": "autos nuevos y usados del mercado chino",
+        }
+
+        for page_path, expected_snippet in expected_snippets.items():
+            with self.subTest(page=page_path):
+                text = (ROOT / page_path).read_text(encoding="utf-8")
+                self.assertIn(expected_snippet, text)
+                self.assertIn('data-page-type="country_landing"', text)
+                self.assertIn('data-cta-location="hero"', text)
+
+    def test_priority_market_heroes_keep_mobile_inquiry_ctas_close_to_the_copy(self):
+        for page_path in ("az.html", "ar/uae.html", "es/peru.html"):
+            with self.subTest(page=page_path):
+                text = (ROOT / page_path).read_text(encoding="utf-8")
+                self.assertRegex(text, r'min-height:\s*0')
+                self.assertRegex(text, r'padding:\s*72px 0 36px')
+                self.assertRegex(text, r'font-size:\s*16px')
+                self.assertRegex(text, r'\.actions\s*\{\s*order:\s*3')
+                self.assertIn('data-cta-location="hero"', text)
+
+    def test_priority_market_model_sections_link_to_a_passenger_catalog(self):
+        expected_catalog_links = {
+            "az.html": "https://hzchemnitz.cn/models.html?from=az_models",
+            "ar/uae.html": "https://hzchemnitz.cn/models-ar.html?from=uae_models",
+            "es/peru.html": "https://hzchemnitz.cn/models-es.html?from=peru_models",
+        }
+
+        for page_path, catalog_link in expected_catalog_links.items():
+            with self.subTest(page=page_path):
+                text = (ROOT / page_path).read_text(encoding="utf-8")
+                self.assertIn('class="catalog-cta"', text)
+                self.assertIn(catalog_link, text)
+                self.assertIn('data-catalog-link data-cta-location="model_section"', text)
+
+        uae = (ROOT / "ar/uae.html").read_text(encoding="utf-8")
+        self.assertIn('href="https://hzchemnitz.cn/models-ar.html"', uae)
+
     def test_vehicle_content_pilot_has_visible_comparison_links(self):
         comparisons = {
             "vehicle-config-teana.html": "vehicle-config-sylphy-2026.html",
@@ -406,6 +498,95 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn(">New Vehicles<", paths)
         self.assertIn(">Used Cars<", paths)
         self.assertIn(">Engineering Machinery<", paths)
+
+    def test_vehicle_catalog_targets_passenger_car_inquiries_without_stock_claims(self):
+        text = (ROOT / "models.html").read_text(encoding="utf-8")
+
+        self.assertIn(
+            "China-Market Passenger Cars for Export: Models, Prices &amp; Specifications",
+            text,
+        )
+        self.assertIn("Send the model, trim, quantity and destination", text)
+        self.assertIn(
+            "Ministry of Commerce 2026 automobile export license enterprise list",
+            text,
+        )
+        self.assertIn("license scope are confirmed case by case", text)
+        self.assertNotIn("China government-authorized vehicle exporter", text)
+        self.assertNotIn("Browse 46 available models", text)
+        self.assertNotIn("Export-ready vehicle models supplied", text)
+
+    def test_updated_passenger_pages_have_current_sitemap_dates(self):
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        for path in (
+            "es/peru.html",
+            "az.html",
+            "ar/uae.html",
+            "es/panama.html",
+            "es/republica-dominicana.html",
+            "es/modelos/toyota-corolla-cross-2026.html",
+            "models.html",
+            "models-es.html",
+            "vehicle-config-corolla-cross.html",
+            "vehicle-config-n6.html",
+            "vehicle-config-teramont.html",
+            "guides/azerbaijan-vehicle-quotation-checklist.html",
+        ):
+            with self.subTest(path=path):
+                self.assertIn(
+                    f"https://hzchemnitz.cn/{path}</loc><lastmod>2026-11-03</lastmod>",
+                    sitemap,
+                )
+
+    def test_azerbaijan_quotation_guide_targets_passenger_cars_without_lhd_emphasis(self):
+        text = (ROOT / "guides/azerbaijan-vehicle-quotation-checklist.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Çindən minik avtomobilləri üçün topdan qiymət sorğusu", text)
+        self.assertIn('"dateModified": "2026-11-03"', text)
+        self.assertNotIn("LHD avtomobil", text)
+        self.assertNotIn("sol sükanlı avtomobil", text)
+
+    def test_priority_passenger_pages_link_their_page_and_vehicle_entities(self):
+        catalog = next(
+            schema
+            for schema in (json.loads(raw) for raw in parse("models.html").json_ld)
+            if schema.get("@type") == "CollectionPage"
+        )
+        self.assertEqual(catalog.get("inLanguage"), "en")
+        self.assertEqual(catalog.get("dateModified"), "2026-11-03")
+        self.assertEqual(
+            catalog.get("mainEntity", {}).get("@id"),
+            "https://hzchemnitz.cn/models.html#catalog",
+        )
+
+        for path in (
+            "vehicle-config-n6.html",
+            "vehicle-config-teramont.html",
+            "vehicle-config-corolla-cross.html",
+        ):
+            with self.subTest(path=path):
+                schemas = [json.loads(raw) for raw in parse(path).json_ld]
+                nodes = [node for schema in schemas for node in nested_nodes(schema)]
+                web_page = next(node for node in nodes if node.get("@type") == "WebPage")
+                vehicle = next(node for node in nodes if node.get("@type") == "Vehicle")
+                self.assertEqual(web_page.get("inLanguage"), "en")
+                self.assertEqual(web_page.get("dateModified"), "2026-11-03")
+                self.assertEqual(web_page.get("mainEntity", {}).get("@id"), vehicle.get("@id"))
+
+    def test_spanish_catalog_targets_a_commercial_passenger_car_inquiry(self):
+        text = (ROOT / "models-es.html").read_text(encoding="utf-8")
+
+        self.assertIn(
+            "Autos de pasajeros de China para exportación",
+            text,
+        )
+        self.assertIn("envíe modelo, versión, cantidad y destino", text)
+        self.assertIn(
+            "No representan inventario disponible, una oferta final",
+            text,
+        )
+        self.assertNotIn("Explore las versiones disponibles y seleccione un precio de lista", text)
 
     def test_catalog_configuration_tracking_keeps_the_selected_spec(self):
         for catalog_path in CATALOGS:
