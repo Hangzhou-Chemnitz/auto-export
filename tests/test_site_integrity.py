@@ -531,6 +531,8 @@ class SiteIntegrityTest(unittest.TestCase):
             "vehicle-config-n6.html",
             "vehicle-config-teramont.html",
             "guides/azerbaijan-vehicle-quotation-checklist.html",
+            "es/colombia.html",
+            "vehicle-config-dashing.html",
         ):
             with self.subTest(path=path):
                 self.assertIn(
@@ -646,6 +648,32 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertEqual(robots, ["noindex,follow"])
         self.assertIn('href="/models.html"', text)
         self.assertIn('href="/"', text)
+
+    def test_colombia_search_snippet_keeps_local_homologation_with_the_importer(self):
+        text = (ROOT / "es/colombia.html").read_text(encoding="utf-8")
+
+        self.assertIn(
+            'homologación confirmada por el importador local',
+            text,
+        )
+        self.assertIn(
+            'El importador confirma la homologación local.',
+            text,
+        )
+        self.assertIn('"dateModified":"2026-11-03"', text)
+
+    def test_dashing_search_snippet_targets_commercial_export_inquiries(self):
+        text = (ROOT / "vehicle-config-dashing.html").read_text(encoding="utf-8")
+
+        self.assertIn(
+            '<title>Jetour Dashing 2026 China-Market Specs &amp; Export Inquiry | Chemnitz</title>',
+            text,
+        )
+        self.assertIn(
+            'Send trim, quantity and destination for an EXW, FCA or FOB export quotation.',
+            text,
+        )
+        self.assertNotIn('Dashing Configuration Sheet | Chemnitz', text)
 
 
 if __name__ == "__main__":
