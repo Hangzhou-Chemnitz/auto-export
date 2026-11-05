@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "claude-mem": {
-      "command": "npx",
-      "args": ["claude-mem@latest"]
-    }
-  }
-}
