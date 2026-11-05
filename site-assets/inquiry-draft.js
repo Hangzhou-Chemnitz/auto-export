@@ -11,6 +11,12 @@
  });
  const SCOPES = new Set(['quote','home','vehicle']);
  const bound = new WeakSet();
+ function localeOptions() {
+  try {
+   const data=JSON.parse(document.getElementById('inquiry-locale')?.textContent||'null');
+   return data&&data.lang===document.documentElement.lang?data:{};
+  } catch { return {}; }
+ }
  function key(scope) { return PREFIX + (SCOPES.has(scope) ? scope : 'quote'); }
  function read(scope) {
   try {
@@ -39,8 +45,9 @@
   const data = new FormData(form), number = String(data.get('contact') || '');
   if (!Object.prototype.hasOwnProperty.call(CONTACTS, number)) return;
   save(form, options.scope);
-  const labels = {model:options.modelLabel || 'Model',customer:'Name',company:'Company',destination:'Destination',quantity:'Quantity',email:'Email',phone:'WhatsApp / Phone',message:'Additional requirements'};
-  const lines = ['Hello Chemnitz, I would like an export quotation.'];
+  const labels = {model:'Model',customer:'Name',company:'Company',destination:'Destination',quantity:'Quantity',email:'Email',phone:'WhatsApp / Phone',message:'Additional requirements',...options.labels};
+  if(options.modelLabel)labels.model=options.modelLabel;
+  const lines = [options.greeting||'Hello Chemnitz, I would like an export quotation.'];
   for (const [name,label] of Object.entries(labels)) {
    const value = String(data.get(name) || '').trim(); if (value) lines.push(label + ': ' + value);
   }
@@ -55,7 +62,7 @@
  function bind(form, options = {}) {
   if (!form || bound.has(form)) return;
   bound.add(form);
-  options = Object.assign({scope:'quote',surface:'quote',zh:document.documentElement.lang.startsWith('zh')}, options);
+  options = Object.assign({scope:'quote',surface:'quote',zh:document.documentElement.lang.startsWith('zh')}, localeOptions(), options);
   const draft = read(options.scope);
   for (const name of FIELDS) {
    const control = form.elements.namedItem(name);
@@ -70,9 +77,9 @@
   const clearConsent = () => { form.querySelectorAll('input[type="checkbox"]').forEach(control => { control.checked = false; }); delete form.dataset.inquiryNavigating; };
   clearConsent(); window.addEventListener('pageshow', clearConsent);
   const notice = document.createElement('small'); notice.className = 'inquiry-draft-note';
-  notice.textContent = options.zh
+  notice.textContent = options.draftNotice || (options.zh
    ? '填写内容仅在当前标签页暂存 30 分钟，便于切换语言；同意选项不会保存。浏览器禁用存储时将无法恢复草稿。'
-   : 'Your draft stays in this tab for 30 minutes to support language switching. Consent is not saved. Draft recovery is unavailable when browser storage is blocked.';
+   : 'Your draft stays in this tab for 30 minutes to support language switching. Consent is not saved. Draft recovery is unavailable when browser storage is blocked.');
   form.append(notice);
   const persist = () => save(form, options.scope);
   form.addEventListener('input', persist); form.addEventListener('change', persist);

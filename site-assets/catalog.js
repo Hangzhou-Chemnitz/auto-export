@@ -21,7 +21,7 @@ function syncFilterURL(){
   if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
  }
  if(url.href!==location.href)history.replaceState(null,'',url);
- const languageLink=document.querySelector('.preview a');
+ const languageLink=document.querySelector('[data-language-peer]')||document.querySelector('.preview > a');
  if(languageLink){const target=new URL(languageLink.href,location.href);target.search=url.search;languageLink.href=target.href;}
 }
 function renderRegion(reference){
