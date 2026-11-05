@@ -1,3 +1,4 @@
+if(document.documentElement.dataset.analyticsReviewed === "true" && document.documentElement.dataset.stage !== "true") {
 (function () {
   'use strict';
 
@@ -30,3 +31,5 @@
   window.gtag('js', new Date());
   window.gtag('config', measurementId);
 })();
+
+}

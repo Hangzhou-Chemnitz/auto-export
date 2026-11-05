@@ -1,0 +1,4 @@
+/* Original logo artwork, with transparent padding clipped for display. */
+.wordmark.logo-mark{display:block;position:relative;width:98.67px;height:50px;overflow:hidden;flex-shrink:0}
+.wordmark.logo-mark img{position:absolute;max-width:none;width:123.33px;height:123.33px;left:-12.2px;top:-36.87px;filter:brightness(0) saturate(100%) invert(12%) sepia(17%) saturate(1250%) hue-rotate(156deg)}
+@media(max-width:650px){.wordmark.logo-mark{width:78.67px;height:40px}.wordmark.logo-mark img{width:98.67px;height:98.67px;left:-9.73px;top:-29.47px}}
