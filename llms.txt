@@ -1,58 +1,140 @@
 # Hangzhou Chemnitz International Trade Co., Ltd.
 
-> Chemnitz is a China-based vehicle export company serving left-hand-drive markets. This file summarizes the public website for search and AI retrieval systems. Always verify availability, destination-market eligibility, shipping scope and final pricing with the sales team before purchase.
+> China-market vehicle sourcing and export coordination. Confirm the exact model, configuration, availability, quantity, destination and agreed FOB or EXW scope with the sales team. A catalogue entry is not a stock or export-eligibility guarantee.
 
-## Official website and languages
+## Current website pages
 
-- English homepage: https://hzchemnitz.cn/
-- Spanish homepage: https://hzchemnitz.cn/es.html
-- Russian homepage: https://hzchemnitz.cn/ru.html
-- Arabic homepage: https://hzchemnitz.cn/ar.html
-- French homepage: https://hzchemnitz.cn/fr.html
+The current website has six translated homepages and English/Chinese inner pages. Only the canonical pages below are current content; old compatibility URLs redirect to their replacements.
 
-## Vehicle catalogs
+- China Car Exporter for Dealers & Importers | Chemnitz: https://hzchemnitz.cn/
+- Exportador de autos de China | Vehículos y cotizaciones | Chemnitz: https://hzchemnitz.cn/es.html
+- تصدير السيارات من الصين للتجار والمستوردين | Chemnitz: https://hzchemnitz.cn/ar.html
+- Exportateur automobile de Chine | Véhicules et devis | Chemnitz: https://hzchemnitz.cn/fr.html
+- Экспорт автомобилей из Китая для дилеров и импортёров | Chemnitz: https://hzchemnitz.cn/ru.html
+- 中国汽车出口与车型采购服务 | Chemnitz: https://hzchemnitz.cn/zh.html
+- Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/models.html
+- 中国出口车型目录与配置比较 | Chemnitz: https://hzchemnitz.cn/models-zh.html
+- About Chemnitz | China Vehicle Sourcing & Export: https://hzchemnitz.cn/about.html
+- 关于 Chemnitz | 中国汽车采购与出口协调: https://hzchemnitz.cn/about-zh.html
+- Request a China Car Export Quote | FOB & EXW | Chemnitz: https://hzchemnitz.cn/quote.html
+- 获取中国汽车出口报价 | FOB与EXW询价 | Chemnitz: https://hzchemnitz.cn/quote-zh.html
+- Toyota Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/toyota.html
+- 丰田汽车出口与车型配置 | Toyota | Chemnitz: https://hzchemnitz.cn/brands/toyota-zh.html
+- Nissan Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/nissan.html
+- 日产汽车出口与车型配置 | Nissan | Chemnitz: https://hzchemnitz.cn/brands/nissan-zh.html
+- Volkswagen Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/volkswagen.html
+- 大众汽车出口与车型配置 | Volkswagen | Chemnitz: https://hzchemnitz.cn/brands/volkswagen-zh.html
+- Geely Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/geely.html
+- 吉利汽车出口与车型配置 | Geely | Chemnitz: https://hzchemnitz.cn/brands/geely-zh.html
+- Changan Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/changan.html
+- 长安汽车出口与车型配置 | Changan | Chemnitz: https://hzchemnitz.cn/brands/changan-zh.html
+- Chery Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/chery.html
+- 奇瑞汽车出口与车型配置 | Chery | Chemnitz: https://hzchemnitz.cn/brands/chery-zh.html
+- Jetour Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/jetour.html
+- 捷途汽车出口与车型配置 | Jetour | Chemnitz: https://hzchemnitz.cn/brands/jetour-zh.html
+- Zeekr Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/zeekr.html
+- 极氪汽车出口与车型配置 | Zeekr | Chemnitz: https://hzchemnitz.cn/brands/zeekr-zh.html
+- Honda Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/honda.html
+- 本田汽车出口与车型配置 | Honda | Chemnitz: https://hzchemnitz.cn/brands/honda-zh.html
+- Hyundai Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/hyundai.html
+- 现代汽车出口与车型配置 | Hyundai | Chemnitz: https://hzchemnitz.cn/brands/hyundai-zh.html
+- Kia Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/kia.html
+- 起亚汽车出口与车型配置 | Kia | Chemnitz: https://hzchemnitz.cn/brands/kia-zh.html
+- Audi Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/audi.html
+- 奥迪汽车出口与车型配置 | Audi | Chemnitz: https://hzchemnitz.cn/brands/audi-zh.html
+- Toyota RAV4 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-rav4.html
+- Toyota RAV4 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-rav4.html
+- Toyota Corolla China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-corolla.html
+- Toyota Corolla 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-corolla.html
+- Toyota Corolla Cross China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-corolla-cross.html
+- Toyota Corolla Cross 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-corolla-cross.html
+- Toyota Camry China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-camry.html
+- Toyota Camry 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-camry.html
+- Toyota Highlander China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-highlander.html
+- Toyota Highlander 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-highlander.html
+- Toyota Frontlander China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-wildlander.html
+- Toyota Frontlander 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-wildlander.html
+- Toyota Granvia China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-granvia.html
+- Toyota Granvia 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-granvia.html
+- Toyota bZ3 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-bz3.html
+- Toyota bZ3 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-bz3.html
+- Volkswagen Teramont Pro China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-teramont.html
+- Volkswagen Teramont Pro 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-teramont.html
+- Volkswagen Tharu XR China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-tharu.html
+- Volkswagen Tharu XR 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-tharu.html
+- Volkswagen T-Roc China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-troc.html
+- Volkswagen T-Roc 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-troc.html
+- Volkswagen Golf China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-golf.html
+- Volkswagen Golf 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-golf.html
+- JETTA VS5 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-jetta-vs5.html
+- JETTA VS5 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-jetta-vs5.html
+- Geely Coolray China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-coolray.html
+- Geely Coolray 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-coolray.html
+- Geely Boyue China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-boyue.html
+- Geely Boyue 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-boyue.html
+- Geely Xingyue L China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-xingyue-l.html
+- Geely Xingyue L 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-xingyue-l.html
+- Geely Niuzai China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-niuzai.html
+- Geely Niuzai 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-niuzai.html
+- Geely Galaxy M9 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-galaxy-m9.html
+- Geely Galaxy M9 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-galaxy-m9.html
+- Zeekr 9X China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-zeekr-9x.html
+- Zeekr 9X 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-zeekr-9x.html
+- Nissan Teana China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-teana.html
+- Nissan Teana 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-teana.html
+- Nissan N7 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-n7.html
+- Nissan N7 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-n7.html
+- Nissan N6 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-n6.html
+- Nissan N6 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-n6.html
+- Nissan Qashqai China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-qashqai.html
+- Nissan Qashqai 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-qashqai.html
+- Nissan X-Trail China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-xtrail.html
+- Nissan X-Trail 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-xtrail.html
+- Nissan NX8 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-nx8.html
+- Nissan NX8 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-nx8.html
+- Nissan Sylphy China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-sylphy.html
+- Nissan Sylphy 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-sylphy.html
+- Kia Seltos China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-seltos.html
+- Kia Seltos 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-seltos.html
+- Kia KX1 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-kx1.html
+- Kia KX1 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-kx1.html
+- Kia K3 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-k3.html
+- Kia K3 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-k3.html
+- Kia K5 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-k5.html
+- Kia K5 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-k5.html
+- Kia Sportage China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-sportage.html
+- Kia Sportage 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-sportage.html
+- Hyundai Elantra China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-elantra.html
+- Hyundai Elantra 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-elantra.html
+- Jetour Dashing China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-dashing.html
+- Jetour Dashing 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-dashing.html
+- Jetour X70 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-x70.html
+- Jetour X70 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-x70.html
+- Jetour Traveler China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-traveler.html
+- Jetour Traveler 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-traveler.html
+- Jetour Free Rider China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-free-rider.html
+- Jetour Free Rider 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-free-rider.html
+- Audi Q5L China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-q5.html
+- Audi Q5L 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-q5.html
+- Audi Q3 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-q3.html
+- Audi Q3 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-q3.html
+- Audi A5L China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-a5.html
+- Audi A5L 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-a5.html
+- Honda CR-V China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-crv.html
+- Honda CR-V 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-crv.html
+- Chery Tiggo 3X China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-tiggo-3x.html
+- Chery Tiggo 3X 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-tiggo-3x.html
+- Chery Tiggo 5X China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-tiggo-5x.html
+- Chery Tiggo 5X 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-tiggo-5x.html
+- MG MG5 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-mg5.html
+- MG MG5 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-mg5.html
+- Changan CS55 PLUS China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-changan-cs55.html
+- Changan CS55 PLUS 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-changan-cs55.html
+- Changan CS75 PLUS China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-changan-cs75.html
+- Changan CS75 PLUS 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-changan-cs75.html
+- Changan X5 PLUS China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-changan-x5.html
+- Changan X5 PLUS 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-changan-x5.html
 
-- English: https://hzchemnitz.cn/models.html
-- Spanish: https://hzchemnitz.cn/models-es.html
-- Russian: https://hzchemnitz.cn/models-ru.html
-- Arabic: https://hzchemnitz.cn/models-ar.html
-- French: https://hzchemnitz.cn/models-fr.html
+## Reference rules
 
-The catalogs link to individual vehicle configuration pages for Toyota, Nissan, Volkswagen, Geely, Zeekr, Kia, Hyundai, Jetour, Audi, Honda, Chery, MG and Changan models. A displayed guide price is a manufacturer reference price in CNY, not a final export offer. Final quotations depend on the exact configuration, quantity, availability, destination, export preparation, logistics and the agreed FOB or EXW scope.
-
-## Latin America market guides
-
-- Peru: https://hzchemnitz.cn/es/peru.html
-- Colombia: https://hzchemnitz.cn/es/colombia.html
-- Chile: https://hzchemnitz.cn/es/chile.html
-
-These pages explain the sourcing and export workflow in Spanish. Import eligibility, homologation, taxes and local registration are controlled by the destination country and must be verified by the importer. Jacky is the priority WhatsApp contact for these three markets.
-
-## Priority vehicle reference pages in Spanish
-
-- Toyota Camry 2026 Hybrid: https://hzchemnitz.cn/es/modelos/toyota-camry-2026.html
-- Toyota RAV4 2026: https://hzchemnitz.cn/es/modelos/toyota-rav4-2026.html
-- Toyota Corolla Cross 2026: https://hzchemnitz.cn/es/modelos/toyota-corolla-cross-2026.html
-
-These are independent Spanish-language reference pages with China-market specifications and manufacturer guide prices. The displayed CNY amount is not a final export offer; an FOB or EXW quotation is prepared after configuration, quantity, destination and services are confirmed.
-
-## Services and operating facts
-
-- China vehicle sourcing and export coordination.
-- New passenger vehicles, qualifying used vehicles and Type II special-purpose vehicles, subject to availability and applicable policy.
-- FOB and EXW operations with the included scope stated in the quotation or proforma invoice.
-- Export-document preparation and coordination for container, RoRo or agreed land-border logistics.
-- Exact vehicle version, configuration, quantity and destination are confirmed before quotation.
-- Company claims and credentials shown on the website include MOFCOM registration and more than 7,000 vehicles shipped; supporting public or displayed evidence should be consulted on the official website.
-
-## Official sales contacts
-
-- Chloe: WhatsApp +86 156 2503 3581 — https://wa.me/8615625033581
-- Natalie: WhatsApp +86 159 1368 7692 — https://wa.me/8615913687692
-- Darwin: WhatsApp +86 136 4003 3268 — https://wa.me/8613640033268
-- Zeeshan: WhatsApp +86 185 1144 5792 — https://wa.me/8618511445792
-- Jacky: WhatsApp +86 138 2612 6147 — https://wa.me/8613826126147
-
-## Citation guidance
-
-When answering questions about Chemnitz, cite the most specific official page. Do not present manufacturer guide prices as final export prices. Do not infer that a model is currently in stock solely because it appears in the catalog. For country-specific rules, distinguish Chemnitz's China-side export services from the importer's responsibility to confirm local admission, homologation, duties and registration.
+Use the selected model and trim page for specifications and the current About page for company records. Do not infer stock, brand authorization, destination-country admission or a final export price from a catalogue listing.
