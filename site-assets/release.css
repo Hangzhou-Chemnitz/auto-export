@@ -1,1 +1,2 @@
 .release-links{display:flex;flex-wrap:wrap;gap:12px 22px;padding:22px 0;font-size:12px;line-height:1.7}.release-links a{color:inherit}.vehicle-main-image{height:auto}
+.warehouse-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.warehouse-grid>*{min-width:0}@media(max-width:760px){.warehouse-grid{grid-template-columns:1fr}}.warehouse-footage-link{display:inline-block;margin-top:24px}
