@@ -32,7 +32,8 @@ if(document.documentElement.dataset.analyticsReviewed === "true" && document.doc
     '8615913687692': 'Natalie',
     '8613640033268': 'Darwin',
     '8613826126147': 'Jacky',
-    '8618511445792': 'Zeeshan'
+    '8618511445792': 'Zeeshan',
+    '8619325504833': 'Even'
   };
 
   window.dataLayer = window.dataLayer || [];

@@ -7,7 +7,7 @@
  const FIELDS = ['model','customer','company','destination','quantity','email','phone','message','contact'];
  const CONTACTS = Object.freeze({
   '8615625033581':'Chloe','8615913687692':'Natalie','8613640033268':'Darwin',
-  '8618511445792':'Zeeshan','8613826126147':'Jacky'
+  '8618511445792':'Zeeshan','8613826126147':'Jacky','8619325504833':'Even'
  });
  const SCOPES = new Set(['quote','home','vehicle']);
  const bound = new WeakSet();
@@ -63,6 +63,10 @@
   if (!form || bound.has(form)) return;
   bound.add(form);
   options = Object.assign({scope:'quote',surface:'quote',zh:document.documentElement.lang.startsWith('zh')}, localeOptions(), options);
+  const contact = form.elements.namedItem('contact');
+  if (contact && contact.tagName === 'SELECT' && !Array.from(contact.options).some(option => option.value === '8619325504833')) {
+   contact.add(new Option('Even · +86 19325504833', '8619325504833'));
+  }
   const draft = read(options.scope);
   for (const name of FIELDS) {
    const control = form.elements.namedItem(name);

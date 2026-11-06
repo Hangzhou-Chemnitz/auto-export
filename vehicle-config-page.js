@@ -2007,9 +2007,18 @@
     zeeshanLink.innerHTML='Zeeshan<span>+86 185 1144 5792</span>';
     contactGrid.appendChild(zeeshanLink);
   }
+  if(contactGrid&&!contactGrid.querySelector('[data-wa-number="8619325504833"]')){
+    var evenLink=document.createElement('a');
+    evenLink.className='contact-choice';
+    evenLink.setAttribute('data-wa-number','8619325504833');
+    evenLink.setAttribute('target','_self');
+    evenLink.setAttribute('rel','noopener');
+    evenLink.innerHTML='Even<span>+86 19325504833</span>';
+    contactGrid.appendChild(evenLink);
+  }
   if(contactGrid){
-    var defaultContactOrder=['8615625033581','8615913687692','8613640033268','8618511445792','8613826126147'];
-    var latamContactOrder=['8613826126147','8615625033581','8615913687692','8613640033268','8618511445792'];
+    var defaultContactOrder=['8615625033581','8615913687692','8613640033268','8618511445792','8613826126147','8619325504833'];
+    var latamContactOrder=['8613826126147','8615625033581','8615913687692','8613640033268','8618511445792','8619325504833'];
     var targetMarket=(queryParams.get('market')||'').toUpperCase();
     if(!targetMarket&&window.chemnitzConsultationContext){
       targetMarket=String(window.chemnitzConsultationContext.target_market||'').toUpperCase();
@@ -2033,7 +2042,8 @@
     '8615913687692':{name:'Natalie',display:'+86 15913687692',avatar:'images/contacts/natalie.jpg'},
     '8613640033268':{name:'Darwin',display:'+86 136 40033268',avatar:'images/contacts/darwin.jpg'},
     '8618511445792':{name:'Zeeshan',display:'+86 185 1144 5792',avatar:'images/contacts/zeeshan-v3.jpg'},
-    '8613826126147':{name:'Jacky',display:'+86 138 26126147',avatar:'images/contacts/jacky-v2.jpg'}
+    '8613826126147':{name:'Jacky',display:'+86 138 26126147',avatar:'images/contacts/jacky-v2.jpg'},
+    '8619325504833':{name:'Even',display:'+86 19325504833'}
   };
   document.querySelectorAll('[data-wa-number]').forEach(function(link){
     var waNumber=link.getAttribute('data-wa-number');
