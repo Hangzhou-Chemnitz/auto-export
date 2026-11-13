@@ -1,1 +1,787 @@
-{"modelId":"vehicle-config-traveler","status":"verified","officialModelName":{"zh":"2026款捷途旅行者","en":"Jetour Traveler"},"edition":{"zh":"2026款（官方标注）","en":"2026 model year (officially stated)"},"source":{"title":{"zh":"2026款捷途旅行者官方配置表","en":"Jetour Traveler official configuration table"},"url":"https://manager.jetour.com.cn/cmsapi/business/carModelConfig/carModelInfo/2026traveler","checkedAt":"2026-11-04","scope":{"zh":"中国大陆官网配置。仅展示官网明确列出的参数和部分装备；未列项目留空，不推定年款或驾驶位置。以实车及厂家最新配置为准。","en":"Mainland China official specifications. Only explicitly listed parameters and selected equipment are shown; missing fields stay blank, with no assumed model year or steering position. Actual vehicle and latest manufacturer specifications prevail."},"pageUrl":"https://www.jetour.com.cn/vehicles/2026traveler/"},"defaultVariant":"official-1","variants":[{"id":"official-1","year":2026,"label":{"zh":"1.5TD 探索","en":"1.5T D Explore"},"officialName":"1.5TD 探索","manufacturerGuidePriceCny":139900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":"135 kW","torque":"290 N·m","acceleration":null,"topSpeed":"180 km/h","transmission":{"zh":"7挡 湿式双离合器（DCT）","en":"7-speed wet dual-clutch"},"drive":{"zh":"前置前驱","en":"Front-engine, front-wheel drive"},"dimensions":"4795×2006×1870 mm","wheelbase":"2800 mm","weight":null,"tires":{"zh":"235/65 R18 HT胎","en":"235/65 R18 HT tyres"},"seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"64英寸全景大天窗","en":"Panoramic sunroof"},"status":"absent","officialValue":"-"},{"label":{"zh":"车顶行李架","en":"Roof rails"},"status":"standard","officialValue":"●"}],"comfort":[{"label":{"zh":"方向盘加热","en":"Heated steering wheel"},"status":"absent","officialValue":"-"}],"safety":[{"label":{"zh":"防抱死制动(ABS)","en":"ABS"},"status":"standard","officialValue":"●"},{"label":{"zh":"360°全景影像","en":"360° panoramic camera"},"status":"standard","officialValue":"●高清"}]}},{"id":"official-2","year":2026,"label":{"zh":"1.5TD 探索+","en":"1.5T D Explore+"},"officialName":"1.5TD 探索+","manufacturerGuidePriceCny":149900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":"135 kW","torque":"290 N·m","acceleration":null,"topSpeed":"180 km/h","transmission":{"zh":"7挡 湿式双离合器（DCT）","en":"7-speed wet dual-clutch"},"drive":{"zh":"前置前驱","en":"Front-engine, front-wheel drive"},"dimensions":"4795×2006×1870 mm","wheelbase":"2800 mm","weight":null,"tires":{"zh":"235/65 R18 HT胎","en":"235/65 R18 HT tyres"},"seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"64英寸全景大天窗","en":"Panoramic sunroof"},"status":"standard","officialValue":"●"},{"label":{"zh":"车顶行李架","en":"Roof rails"},"status":"standard","officialValue":"●"}],"comfort":[{"label":{"zh":"方向盘加热","en":"Heated steering wheel"},"status":"absent","officialValue":"-"}],"safety":[{"label":{"zh":"防抱死制动(ABS)","en":"ABS"},"status":"standard","officialValue":"●"},{"label":{"zh":"360°全景影像","en":"360° panoramic camera"},"status":"standard","officialValue":"●高清"}]}},{"id":"official-3","year":2026,"label":{"zh":"2.0TD XWD发现","en":"2.0TD XWD Discover"},"officialName":"2.0TD XWD发现","manufacturerGuidePriceCny":159900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":"187 kW","torque":"390 N·m","acceleration":null,"topSpeed":"180 km/h","transmission":{"zh":"7挡 湿式双离合器（DCT）","en":"7-speed wet dual-clutch"},"drive":{"zh":"前置四驱","en":"All-wheel drive"},"dimensions":"4795×2006×1880 mm","wheelbase":"2800 mm","weight":null,"tires":{"zh":"255/60 R19 HT胎\n○255/55 R20 HT胎","en":"255/60 R19 HT tyres\nOptional: 255/55 R20 HT tyres"},"seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"64英寸全景大天窗","en":"Panoramic sunroof"},"status":"standard","officialValue":"●"},{"label":{"zh":"车顶行李架","en":"Roof rails"},"status":"standard","officialValue":"●"}],"comfort":[{"label":{"zh":"方向盘加热","en":"Heated steering wheel"},"status":"absent","officialValue":"-"}],"safety":[{"label":{"zh":"防抱死制动(ABS)","en":"ABS"},"status":"standard","officialValue":"●"},{"label":{"zh":"360°全景影像","en":"360° panoramic camera"},"status":"standard","officialValue":"●高清"}]}},{"id":"official-4","year":2026,"label":{"zh":"2.0TD XWD穿越","en":"2.0TD XWD Traverse"},"officialName":"2.0TD XWD穿越","manufacturerGuidePriceCny":169900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":"187 kW","torque":"390 N·m","acceleration":null,"topSpeed":"180 km/h","transmission":{"zh":"7挡 湿式双离合器（DCT）","en":"7-speed wet dual-clutch"},"drive":{"zh":"前置四驱","en":"All-wheel drive"},"dimensions":"4795×2006×1880 mm","wheelbase":"2800 mm","weight":null,"tires":{"zh":"255/60 R19 HT胎\n○255/55 R20 HT胎","en":"255/60 R19 HT tyres\nOptional: 255/55 R20 HT tyres"},"seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"64英寸全景大天窗","en":"Panoramic sunroof"},"status":"standard","officialValue":"●"},{"label":{"zh":"车顶行李架","en":"Roof rails"},"status":"standard","officialValue":"●"}],"comfort":[{"label":{"zh":"方向盘加热","en":"Heated steering wheel"},"status":"standard","officialValue":"●"}],"safety":[{"label":{"zh":"防抱死制动(ABS)","en":"ABS"},"status":"standard","officialValue":"●"},{"label":{"zh":"360°全景影像","en":"360° panoramic camera"},"status":"standard","officialValue":"●高清"}]}},{"id":"official-5","year":2026,"label":{"zh":"2.0TD XWD征服","en":"2.0TD XWD Conquer"},"officialName":"2.0TD XWD征服","manufacturerGuidePriceCny":179900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":"187 kW","torque":"390 N·m","acceleration":null,"topSpeed":"180 km/h","transmission":{"zh":"8挡 自动变速箱（AT）","en":"8-speed automatic"},"drive":{"zh":"前置四驱","en":"All-wheel drive"},"dimensions":"4795×2006×1880 mm","wheelbase":"2800 mm","weight":null,"tires":{"zh":"255/60 R19 AT胎","en":"255/60 R19 AT tyres"},"seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"64英寸全景大天窗","en":"Panoramic sunroof"},"status":"standard","officialValue":"●"},{"label":{"zh":"车顶行李架","en":"Roof rails"},"status":"standard","officialValue":"●"}],"comfort":[{"label":{"zh":"方向盘加热","en":"Heated steering wheel"},"status":"standard","officialValue":"●"}],"safety":[{"label":{"zh":"防抱死制动(ABS)","en":"ABS"},"status":"standard","officialValue":"●"},{"label":{"zh":"360°全景影像","en":"360° panoramic camera"},"status":"standard","officialValue":"●高清"}]}}]}
+{
+  "modelId": "traveler",
+  "status": "verified",
+  "officialModelName": {
+    "zh": "全新捷途旅行者7",
+    "en": "JETOUR Traveler 7"
+  },
+  "edition": {
+    "zh": "2027款（中国市场）",
+    "en": "2027 model year (China market)"
+  },
+  "source": {
+    "title": {
+      "zh": "全新捷途旅行者7官方配置表",
+      "en": "JETOUR Traveler 7 official configuration table"
+    },
+    "url": "https://manager.jetour.com.cn/cmsapi/business/carModelConfig/carModelInfo/xintraveler7-1",
+    "pageUrl": "https://www.jetour.com.cn/vehicles/xintraveler7/",
+    "checkedAt": "2026-11-13",
+    "contentCheckedAt": "2026-11-13",
+    "sha256": "b9e64f7b844b93f1f7003f1e1fbbe3c48e7203fa30bef490df0ce8791eaa98b5",
+    "scope": {
+      "zh": "中国大陆新版燃油全新捷途旅行者7配置，年款由汽车之家2027款记录交叉核实；不是旧款换年，也不是C-DM插混或PLUS。参数、指导价和装备取自配套官方表；未公布字段留空，选装条件以官方完整表及实车为准。国内指导价不等于出口报价，联网及辅助驾驶功能应按目的地核实。",
+      "en": "China-market petrol Traveler 7 with model year cross-checked against Autohome MY2027 records, not a relabelled previous car, C-DM plug-in hybrid or PLUS. Specifications, guide prices and equipment follow the matching official sheet; unlisted fields remain blank. Confirm option conditions against the official full sheet and actual vehicle. China guide prices are not export quotes; connected and driver-assistance features require destination-specific verification."
+    },
+    "modelYearVerification": {
+      "year": 2027,
+      "market": "China",
+      "checkedAt": "2026-11-13",
+      "url": "https://car.autohome.com.cn/config/spec/78684.html",
+      "note": "Current official Traveler 7 model names, guide prices and key parameters match the China MY2027 Autohome listing."
+    }
+  },
+  "defaultVariant": "official-2027-1",
+  "variants": [
+    {
+      "id": "official-2027-1",
+      "year": 2027,
+      "label": {
+        "zh": "1.5TD 两驱 探索",
+        "en": "1.5TD 2WD Explore"
+      },
+      "officialName": "1.5TD 两驱 探索",
+      "manufacturerGuidePriceCny": 139900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "135 kW",
+        "torque": "290 N·m",
+        "acceleration": null,
+        "topSpeed": "170 km/h",
+        "transmission": {
+          "zh": "7挡 湿式双离合器（DCT）",
+          "en": "7-speed wet dual-clutch"
+        },
+        "drive": {
+          "zh": "前置前驱",
+          "en": "Front-engine, front-wheel drive"
+        },
+        "dimensions": "4827×2006×1870 mm",
+        "wheelbase": "2800 mm",
+        "weight": null,
+        "tires": {
+          "zh": "235/65 R18 HT胎",
+          "en": "235/65 R18 HT tyres"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          },
+          {
+            "label": {
+              "zh": "远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "方向盘加热",
+              "en": "Heated steering wheel"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESP)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●高清"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航系统（ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "电子儿童安全门锁",
+              "en": "Electronic child safety locks"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4827",
+        "宽度(mm)": "2006",
+        "高度(mm)": "1870",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "170",
+        "最大功率(kW)": "135",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "290",
+        "最大扭矩转速(rpm)": "2000-3500",
+        "燃料形式": "汽油",
+        "档位个数": "7",
+        "变速箱类型": "湿式双离合器（DCT）",
+        "驱动形式": "前置前驱",
+        "前/后轮胎规格": "●235/65 R18 HT胎"
+      }
+    },
+    {
+      "id": "official-2027-2",
+      "year": 2027,
+      "label": {
+        "zh": "1.5TD 两驱 探索+",
+        "en": "1.5TD 2WD Explore+"
+      },
+      "officialName": "1.5TD 两驱 探索+",
+      "manufacturerGuidePriceCny": 149900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "135 kW",
+        "torque": "290 N·m",
+        "acceleration": null,
+        "topSpeed": "170 km/h",
+        "transmission": {
+          "zh": "7挡 湿式双离合器（DCT）",
+          "en": "7-speed wet dual-clutch"
+        },
+        "drive": {
+          "zh": "前置前驱",
+          "en": "Front-engine, front-wheel drive"
+        },
+        "dimensions": "4827×2006×1870 mm",
+        "wheelbase": "2800 mm",
+        "weight": null,
+        "tires": {
+          "zh": "235/65 R18 HT胎",
+          "en": "235/65 R18 HT tyres"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          },
+          {
+            "label": {
+              "zh": "远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "方向盘加热",
+              "en": "Heated steering wheel"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESP)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●高清"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航系统（ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "电子儿童安全门锁",
+              "en": "Electronic child safety locks"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4827",
+        "宽度(mm)": "2006",
+        "高度(mm)": "1870",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "170",
+        "最大功率(kW)": "135",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "290",
+        "最大扭矩转速(rpm)": "2000-3500",
+        "燃料形式": "汽油",
+        "档位个数": "7",
+        "变速箱类型": "湿式双离合器（DCT）",
+        "驱动形式": "前置前驱",
+        "前/后轮胎规格": "●235/65 R18 HT胎"
+      }
+    },
+    {
+      "id": "official-2027-3",
+      "year": 2027,
+      "label": {
+        "zh": "2.0TD XWD四驱 发现",
+        "en": "2.0TD XWD 4WD Discovery"
+      },
+      "officialName": "2.0TD XWD四驱 发现",
+      "manufacturerGuidePriceCny": 159900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "187 kW",
+        "torque": "390 N·m",
+        "acceleration": null,
+        "topSpeed": "180 km/h",
+        "transmission": {
+          "zh": "7挡 湿式双离合器（DCT）",
+          "en": "7-speed wet dual-clutch"
+        },
+        "drive": {
+          "zh": "前置四驱",
+          "en": "All-wheel drive"
+        },
+        "dimensions": "4827×2006×1875 mm",
+        "wheelbase": "2800 mm",
+        "weight": null,
+        "tires": {
+          "zh": "255/60 R19 HT胎\n选装：255/60 R19 AT胎",
+          "en": "255/60 R19 HT tyres\nOptional: 255/60 R19 AT tyres"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          },
+          {
+            "label": {
+              "zh": "远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "方向盘加热",
+              "en": "Heated steering wheel"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESP)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●高清"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航系统（ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "电子儿童安全门锁",
+              "en": "Electronic child safety locks"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4827",
+        "宽度(mm)": "2006",
+        "高度(mm)": "1875",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "180",
+        "最大功率(kW)": "187",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "390",
+        "最大扭矩转速(rpm)": "1750-4000",
+        "燃料形式": "汽油",
+        "档位个数": "7",
+        "变速箱类型": "湿式双离合器（DCT）",
+        "驱动形式": "前置四驱",
+        "前/后轮胎规格": "●255/60 R19 HT胎\n○255/60 R19 AT胎"
+      }
+    },
+    {
+      "id": "official-2027-4",
+      "year": 2027,
+      "label": {
+        "zh": "2.0TD XWD四驱 穿越",
+        "en": "2.0TD XWD 4WD Traverse"
+      },
+      "officialName": "2.0TD XWD四驱 穿越",
+      "manufacturerGuidePriceCny": 169900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "187 kW",
+        "torque": "390 N·m",
+        "acceleration": null,
+        "topSpeed": "180 km/h",
+        "transmission": {
+          "zh": "7挡 湿式双离合器（DCT）",
+          "en": "7-speed wet dual-clutch"
+        },
+        "drive": {
+          "zh": "前置四驱",
+          "en": "All-wheel drive"
+        },
+        "dimensions": "4827×2006×1875 mm",
+        "wheelbase": "2800 mm",
+        "weight": null,
+        "tires": {
+          "zh": "255/60 R19 HT胎\n选装：255/60 R19 AT胎",
+          "en": "255/60 R19 HT tyres\nOptional: 255/60 R19 AT tyres"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          },
+          {
+            "label": {
+              "zh": "远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "方向盘加热",
+              "en": "Heated steering wheel"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESP)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●高清"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航系统（ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "电子儿童安全门锁",
+              "en": "Electronic child safety locks"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4827",
+        "宽度(mm)": "2006",
+        "高度(mm)": "1875",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "180",
+        "最大功率(kW)": "187",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "390",
+        "最大扭矩转速(rpm)": "1750-4000",
+        "燃料形式": "汽油",
+        "档位个数": "7",
+        "变速箱类型": "湿式双离合器（DCT）",
+        "驱动形式": "前置四驱",
+        "前/后轮胎规格": "●255/60 R19 HT胎\n○255/60 R19 AT胎"
+      }
+    },
+    {
+      "id": "official-2027-5",
+      "year": 2027,
+      "label": {
+        "zh": "2.0TD XWD四驱 征服",
+        "en": "2.0TD XWD 4WD Conquer"
+      },
+      "officialName": "2.0TD XWD四驱 征服",
+      "manufacturerGuidePriceCny": 179900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "187 kW",
+        "torque": "390 N·m",
+        "acceleration": null,
+        "topSpeed": "180 km/h",
+        "transmission": {
+          "zh": "8挡 自动变速箱（AT）",
+          "en": "8-speed automatic"
+        },
+        "drive": {
+          "zh": "前置四驱",
+          "en": "All-wheel drive"
+        },
+        "dimensions": "4827×2006×1875 mm",
+        "wheelbase": "2800 mm",
+        "weight": null,
+        "tires": {
+          "zh": "255/60 R19 HT胎\n选装：255/60 R19 AT胎",
+          "en": "255/60 R19 HT tyres\nOptional: 255/60 R19 AT tyres"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          },
+          {
+            "label": {
+              "zh": "远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●LED"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "方向盘加热",
+              "en": "Heated steering wheel"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESP)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●高清"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航系统（ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "电子儿童安全门锁",
+              "en": "Electronic child safety locks"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4827",
+        "宽度(mm)": "2006",
+        "高度(mm)": "1875",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "180",
+        "最大功率(kW)": "187",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "390",
+        "最大扭矩转速(rpm)": "1750-4000",
+        "燃料形式": "汽油",
+        "档位个数": "8",
+        "变速箱类型": "自动变速箱（AT）",
+        "驱动形式": "前置四驱",
+        "前/后轮胎规格": "●255/60 R19 HT胎\n○255/60 R19 AT胎"
+      }
+    }
+  ]
+}

@@ -19,6 +19,16 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
   </url>
+  <url><loc>https://hzchemnitz.cn/brands/aion-zh.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/brands/aion.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/brands/aion-zh.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/brands/aion.html" />
+  </url>
+  <url><loc>https://hzchemnitz.cn/brands/aion.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/brands/aion.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/brands/aion-zh.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/brands/aion.html" />
+  </url>
   <url><loc>https://hzchemnitz.cn/brands/audi-zh.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/brands/audi.html" />
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/brands/audi-zh.html" />
@@ -148,6 +158,10 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
   </url>
+  <url><loc>https://hzchemnitz.cn/footage.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/footage.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/footage.html" />
+  </url>
   <url><loc>https://hzchemnitz.cn/fr.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://hzchemnitz.cn/es.html" />
@@ -166,7 +180,6 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/" />
   </url>
-  <url><loc>https://hzchemnitz.cn/footage.html</loc></url>
   <url><loc>https://hzchemnitz.cn/models-zh.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/models.html" />
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/models-zh.html" />
@@ -200,6 +213,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-a5.html" />
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-a5.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-a5.html" />
+  </url>
+  <url><loc>https://hzchemnitz.cn/vehicle-config-aion-i60.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-aion-i60.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-aion-i60.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-aion-i60.html" />
+  </url>
+  <url><loc>https://hzchemnitz.cn/vehicle-config-aion-y.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-aion-y.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-aion-y.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-aion-y.html" />
   </url>
   <url><loc>https://hzchemnitz.cn/vehicle-config-boyue.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-boyue.html" />
@@ -411,6 +434,11 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-x70.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-x70.html" />
   </url>
+  <url><loc>https://hzchemnitz.cn/vehicle-config-xingyue-l-plus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-xingyue-l-plus.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-xingyue-l-plus.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-xingyue-l-plus.html" />
+  </url>
   <url><loc>https://hzchemnitz.cn/vehicle-config-xingyue-l.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-xingyue-l.html" />
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-xingyue-l.html" />
@@ -439,6 +467,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-a5.html" />
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-a5.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-a5.html" />
+  </url>
+  <url><loc>https://hzchemnitz.cn/zh/vehicle-config-aion-i60.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-aion-i60.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-aion-i60.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-aion-i60.html" />
+  </url>
+  <url><loc>https://hzchemnitz.cn/zh/vehicle-config-aion-y.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-aion-y.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-aion-y.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-aion-y.html" />
   </url>
   <url><loc>https://hzchemnitz.cn/zh/vehicle-config-boyue.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-boyue.html" />
@@ -649,6 +687,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-x70.html" />
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-x70.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-x70.html" />
+  </url>
+  <url><loc>https://hzchemnitz.cn/zh/vehicle-config-xingyue-l-plus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-xingyue-l-plus.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hzchemnitz.cn/zh/vehicle-config-xingyue-l-plus.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hzchemnitz.cn/vehicle-config-xingyue-l-plus.html" />
   </url>
   <url><loc>https://hzchemnitz.cn/zh/vehicle-config-xingyue-l.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://hzchemnitz.cn/vehicle-config-xingyue-l.html" />

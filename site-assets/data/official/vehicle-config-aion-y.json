@@ -1,0 +1,565 @@
+{
+  "modelId": "vehicle-config-aion-y",
+  "status": "verified",
+  "officialModelName": {
+    "zh": "埃安 AION Y Plus",
+    "en": "AION Y Plus"
+  },
+  "edition": {
+    "zh": "2026款（中国市场，仅Plus 510智享版）",
+    "en": "MY2026 (China market; Plus 510 Zhixiang trim only)"
+  },
+  "source": {
+    "title": {
+      "zh": "广汽埃安AION Y Plus官方2026款510智享版参数配置表",
+      "en": "GAC AION Y Plus official MY2026 510 Zhixiang specification table"
+    },
+    "url": "https://www.aion.com.cn/vehicle/config/table?cid=NDc%3D",
+    "apiUrl": "https://www.aion.com.cn/Home/Api/getCarinfos",
+    "apiMethod": "POST",
+    "apiRequest": {
+      "cid": "47",
+      "version": ""
+    },
+    "checkedAt": "2026-11-13",
+    "sha256": "ff3b0312c8abb547a78a97734b30155fb588abceb89eac370ad45d2556a28b43",
+    "scope": {
+      "zh": "仅收录2026款Plus 510智享版。官方车型名为AION Y Plus、配置名为「2026款510智享版」，与汽车之家78766「2026款 Plus 510 智享版」精确对应，国内指导价亦经交叉核对。指导价仅用于识别配置，不是出口报价或现货承诺。参数与装备按官方唯一配置列核对，不混用AION i60、AION Y其他续航或配置。官方仅注明17寸规格标注，完整轮胎规格未列出；零百加速、最高车速、变速箱、驱动形式、整备质量、座位数和方向盘位置未列明，保持空值。电池58.9/58.4 kWh两种版本随机供应、不支持指定，需核对实车资料。510km为CLTC测试续航；24分钟为30%至80%快充测试值，非实际使用保证；12.9 kWh/100km未注明测试循环。侧气囊、ETC和非全尺寸备胎为选装，选装备胎后取消补胎瓶；定速巡航不是自适应巡航，倒车影像不是360度影像。中国市场车机互联、ETC及联网服务在出口目的地的可用性须核实；国内三电保修有车主身份、非营运及年行驶里程限制，不自动适用于出口。",
+      "en": "Only the MY2026 Plus 510 Zhixiang trim is listed. The manufacturer's model name AION Y Plus, and its sole '2026 510 Zhixiang' column match Autohome specification 78766, '2026 Plus 510 Zhixiang'. The domestic guide price was also cross-checked to identify the trim; it is not an export quotation or confirmation of stock. Specifications and equipment come from this official column, with no carryover from AION i60 or other AION Y versions. Only a 17-inch size designation is published, not the full tyre size. Unlisted acceleration, top speed, transmission, driven wheels, curb weight, seating capacity and steering-wheel position remain blank. The 58.9/58.4 kWh battery versions are supplied at random; the battery version cannot be selected; verify the actual vehicle's documentation. The 510 km range is measured on CLTC; 24 minutes is the tested 30–80% fast-charge time, not a real-world guarantee. No test cycle is stated for 12.9 kWh/100 km consumption. Side airbags, ETC and the space-saver spare wheel are optional; selecting the spare removes the tyre-repair bottle. Conventional cruise control is not adaptive cruise, and the reversing camera is not a 360-degree camera system. Export-market compatibility of phone connectivity, ETC and connected services must be verified. Domestic battery/motor/control-system warranty conditions restrict owner status, commercial use and annual mileage and do not automatically apply overseas."
+    },
+    "modelYearVerification": {
+      "year": 2026,
+      "market": "China",
+      "checkedAt": "2026-11-13",
+      "manufacturerTitle": "AION Y Plus — 2026款 510智享版",
+      "manufacturerUrl": "https://www.aion.com.cn/vehicle/config/table?cid=NDc%3D",
+      "crossCheckUrl": "https://www.autohome.com.cn/spec/78766",
+      "crossCheckTitle": "【图】AION Y 2026款 Plus 510 智享版报价_图片_埃安_汽车之家"
+    },
+    "verification": {
+      "officialColumnIndex": 0,
+      "officialColumnName": "2026款 510智享版",
+      "domesticGuidePriceCny": 136800,
+      "priceLabel": "国内指导价（仅核对配置）",
+      "specFields": 13,
+      "populatedSpecFields": 6,
+      "selectedEquipmentCount": 45,
+      "officialSourceRowCount": 88,
+      "colspanRule": "Expand each data cell by its explicit colspan after skipping the row-label cell; select the sole zero-based column 0."
+    }
+  },
+  "defaultVariant": "plus-510-zhixiang",
+  "variants": [
+    {
+      "id": "plus-510-zhixiang",
+      "year": 2026,
+      "label": {
+        "zh": "Plus 510智享版",
+        "en": "Plus 510 Zhixiang"
+      },
+      "officialName": "2026款 510智享版",
+      "manufacturerGuidePriceCny": 136800,
+      "specs": {
+        "fuel": {
+          "zh": "纯电动",
+          "en": "Battery electric"
+        },
+        "power": {
+          "zh": "电机 100 kW",
+          "en": "Motor 100 kW"
+        },
+        "torque": {
+          "zh": "电机 145 N·m",
+          "en": "Motor 145 N·m"
+        },
+        "acceleration": null,
+        "topSpeed": null,
+        "transmission": null,
+        "drive": null,
+        "dimensions": "4535×1870×1650 mm",
+        "wheelbase": "2750 mm",
+        "weight": null,
+        "tires": {
+          "zh": "17寸（官方未列完整轮胎规格）",
+          "en": "17-inch (full tyre size not published)"
+        },
+        "seats": null,
+        "steering": null
+      },
+      "performanceDetail": {
+        "cltcRangeKm": "510",
+        "batteryCapacityKwh": "58.9 / 58.4",
+        "energyConsumptionKwh100km": "12.9",
+        "dcFastCharge30to80Minutes": "24",
+        "batteryChemistry": {
+          "zh": "磷酸铁锂",
+          "en": "Lithium iron phosphate (LFP)"
+        },
+        "batteryCapacityNote": {
+          "zh": "官方列明58.9/58.4 kWh两种电池版本随机供应，不支持指定任一版本；订车前核对具体车辆电池资料。",
+          "en": "The official table lists 58.9/58.4 kWh battery versions supplied at random; the battery version cannot be selected. Verify the battery documentation of the actual vehicle before ordering."
+        },
+        "energyConsumptionNote": {
+          "zh": "官方表列出12.9 kWh/100 km，未注明该项测试循环，不能据此标为CLTC耗电量。",
+          "en": "The official table lists 12.9 kWh/100 km without naming its test cycle; this figure is not labelled as CLTC consumption."
+        }
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "LED前大灯",
+              "en": "LED headlights"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "LED前大灯"
+          },
+          {
+            "label": {
+              "zh": "前大灯自动开启",
+              "en": "Automatic headlights"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "前大灯自动开启"
+          },
+          {
+            "label": {
+              "zh": "LED日间行车灯",
+              "en": "LED daytime running lights"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "LED日间行车灯"
+          },
+          {
+            "label": {
+              "zh": "后雾灯",
+              "en": "Rear fog lamp"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后雾灯"
+          },
+          {
+            "label": {
+              "zh": "外后视镜电动调节",
+              "en": "Power-adjustable exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "电动调节",
+            "sourceRow": "外后视镜功能"
+          },
+          {
+            "label": {
+              "zh": "四门窗一触式升降带防夹",
+              "en": "One-touch power windows with anti-pinch protection"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "四门窗一触式升降带防夹"
+          },
+          {
+            "label": {
+              "zh": "无钥匙进入",
+              "en": "Keyless entry"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "无钥匙进入"
+          },
+          {
+            "label": {
+              "zh": "智能钥匙（2把）",
+              "en": "Two smart keys"
+            },
+            "status": "standard",
+            "officialValue": "智能钥匙（2把）",
+            "sourceRow": "钥匙类型"
+          },
+          {
+            "label": {
+              "zh": "钢轮辋",
+              "en": "Steel wheels"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "钢轮辋"
+          },
+          {
+            "label": {
+              "zh": "非全尺寸备胎（选装后取消补胎瓶）",
+              "en": "Space-saver spare wheel (optional; replaces tyre-repair bottle)"
+            },
+            "status": "optional",
+            "officialValue": "○",
+            "sourceRow": "非全尺寸备胎⁴"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "PVC材质座椅",
+              "en": "PVC seat upholstery"
+            },
+            "status": "standard",
+            "officialValue": "PVC材质",
+            "sourceRow": "座椅材质"
+          },
+          {
+            "label": {
+              "zh": "主驾座椅手动6向调节",
+              "en": "Six-way manually adjustable driver seat"
+            },
+            "status": "standard",
+            "officialValue": "手动6向",
+            "sourceRow": "主驾座椅调节方式"
+          },
+          {
+            "label": {
+              "zh": "副驾座椅手动4向调节",
+              "en": "Four-way manually adjustable front-passenger seat"
+            },
+            "status": "standard",
+            "officialValue": "手动4向",
+            "sourceRow": "副驾座椅调节方式"
+          },
+          {
+            "label": {
+              "zh": "后排座椅4/6分放倒",
+              "en": "60:40 split-folding rear seats"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后排座椅4/6分放倒"
+          },
+          {
+            "label": {
+              "zh": "智能怀挡",
+              "en": "Column-mounted gear selector"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "智能怀挡"
+          },
+          {
+            "label": {
+              "zh": "自动空调",
+              "en": "Automatic air conditioning"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "自动空调"
+          },
+          {
+            "label": {
+              "zh": "热泵空调",
+              "en": "Heat-pump air conditioning"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "热泵空调"
+          },
+          {
+            "label": {
+              "zh": "空调后排出风口",
+              "en": "Rear air-conditioning vents"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "空调后排出风口"
+          },
+          {
+            "label": {
+              "zh": "内后视镜手动防眩目",
+              "en": "Manually dimming interior mirror"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "内后视镜手动防眩目"
+          },
+          {
+            "label": {
+              "zh": "前排USB数据接口",
+              "en": "Front USB data port"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "前排USB数据接口"
+          },
+          {
+            "label": {
+              "zh": "前排USB充电接口",
+              "en": "Front USB charging port"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "前排USB充电接口"
+          },
+          {
+            "label": {
+              "zh": "后排USB充电接口",
+              "en": "Rear USB charging port"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后排USB充电接口"
+          },
+          {
+            "label": {
+              "zh": "4扬声器音响系统",
+              "en": "Four-speaker audio system"
+            },
+            "status": "standard",
+            "officialValue": "4个扬声器",
+            "sourceRow": "音响系统"
+          },
+          {
+            "label": {
+              "zh": "8.8吋数字组合仪表",
+              "en": "8.8-inch digital instrument cluster"
+            },
+            "status": "standard",
+            "officialValue": "8.8吋",
+            "sourceRow": "数字组合仪表"
+          },
+          {
+            "label": {
+              "zh": "14.6吋中控大屏",
+              "en": "14.6-inch central display"
+            },
+            "status": "standard",
+            "officialValue": "14.6吋",
+            "sourceRow": "中控大屏"
+          },
+          {
+            "label": {
+              "zh": "手机蓝牙互联",
+              "en": "Bluetooth phone connectivity"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "手机蓝牙互联"
+          },
+          {
+            "label": {
+              "zh": "电池低温加热功能",
+              "en": "Low-temperature battery heating"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "电池低温加热功能"
+          },
+          {
+            "label": {
+              "zh": "ETC（选装；目的地兼容性须核实）",
+              "en": "Electronic toll collection (optional; destination compatibility must be checked)"
+            },
+            "status": "optional",
+            "officialValue": "○",
+            "sourceRow": "ETC"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "定速巡航系统（非自适应巡航）",
+              "en": "Cruise control (not adaptive cruise)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "定速巡航系统"
+          },
+          {
+            "label": {
+              "zh": "后驻车雷达",
+              "en": "Rear parking sensors"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后驻车雷达"
+          },
+          {
+            "label": {
+              "zh": "高清倒车影像",
+              "en": "HD reversing camera"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "高清倒车影像"
+          },
+          {
+            "label": {
+              "zh": "ABS制动防抱死系统",
+              "en": "Anti-lock braking system (ABS)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "ABS制动防抱死系统"
+          },
+          {
+            "label": {
+              "zh": "EBD电子制动力分配系统",
+              "en": "Electronic brake-force distribution (EBD)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "EBD电子制动力分配系统"
+          },
+          {
+            "label": {
+              "zh": "ESP车辆电子稳定控制系统",
+              "en": "Electronic stability control (ESP)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "ESP车辆电子稳定控制系统"
+          },
+          {
+            "label": {
+              "zh": "TCS牵引力控制系统",
+              "en": "Traction control system (TCS)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "TCS牵引力控制系统"
+          },
+          {
+            "label": {
+              "zh": "HHC上坡辅助控制系统",
+              "en": "Hill-start assist (HHC)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "HHC上坡辅助控制系统"
+          },
+          {
+            "label": {
+              "zh": "HDC下坡辅助控制系统",
+              "en": "Hill-descent control (HDC)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "HDC下坡辅助控制系统"
+          },
+          {
+            "label": {
+              "zh": "电子驻车制动系统",
+              "en": "Electronic parking brake"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "电子驻车制动系统"
+          },
+          {
+            "label": {
+              "zh": "Auto Hold自动驻车",
+              "en": "Auto Hold"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "Auto Hold自动驻车"
+          },
+          {
+            "label": {
+              "zh": "胎压监测系统",
+              "en": "Tyre-pressure monitoring"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "胎压监测系统"
+          },
+          {
+            "label": {
+              "zh": "前排双安全气囊",
+              "en": "Dual front airbags"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "前排双安全气囊"
+          },
+          {
+            "label": {
+              "zh": "侧气囊（选装）",
+              "en": "Side airbags (optional)"
+            },
+            "status": "optional",
+            "officialValue": "○",
+            "sourceRow": "侧气囊"
+          },
+          {
+            "label": {
+              "zh": "ISOFIX儿童安全座椅接口",
+              "en": "ISOFIX child-seat anchors"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "ISOFIX儿童安全座椅接口"
+          },
+          {
+            "label": {
+              "zh": "碰撞断高压电功能(前碰/侧碰/后碰)",
+              "en": "High-voltage cutoff after front, side or rear impact"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "碰撞断高压电功能(前碰/侧碰/后碰)"
+          },
+          {
+            "label": {
+              "zh": "补胎瓶（选装非全尺寸备胎时取消）",
+              "en": "Tyre-repair bottle (removed when optional spare wheel is selected)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "补胎瓶"
+          }
+        ]
+      },
+      "specEvidence": {
+        "power": {
+          "label": "电机最大功率(kW)",
+          "value": "100"
+        },
+        "torque": {
+          "label": "电机最大扭矩(N·m)",
+          "value": "145"
+        },
+        "dimensions": {
+          "label": "长 X 宽 X 高（mm）",
+          "value": "4535 X 1870 X 1650"
+        },
+        "wheelbase": {
+          "label": "轴距（mm）",
+          "value": "2750"
+        },
+        "tires": {
+          "label": "轮胎规格",
+          "value": "17寸"
+        },
+        "cltcRangeKm": {
+          "label": "CLTC续航里程（km）",
+          "value": "510"
+        },
+        "batteryCapacityKwh": {
+          "label": "电池能量(kWh）²",
+          "value": "58.9/58.4"
+        },
+        "energyConsumptionKwh100km": {
+          "label": "百公里耗电量（kwh/100km）",
+          "value": "12.9"
+        },
+        "dcFastCharge30to80Minutes": {
+          "label": "30%-80%快充时间（min）³",
+          "value": "24"
+        },
+        "fuel": {
+          "label": "Autohome specinfo.funeldetail",
+          "value": "纯电动",
+          "url": "https://www.autohome.com.cn/spec/78766"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+.warehouse-footage .section-top > div { min-width: 0; }
+.warehouse-footage .section-top h2 { max-width: 850px; text-wrap: balance; }
+.warehouse-footage .section-top > p { flex: 0 1 350px; }
+.warehouse-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.warehouse-card { min-width: 0; overflow: hidden; border: 1px solid #d8dbe0; border-radius: 16px; background: #fff; }
+.warehouse-card video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #e5e7eb; }
+.warehouse-card-copy { padding: 20px; }
+.warehouse-card-copy h3 { margin: 0 0 8px; font-size: 1.24rem; line-height: 1.3; overflow-wrap: anywhere; }
+.warehouse-card-copy > p:last-child { margin: 0; color: #55606f; }
+.warehouse-footage-link { display: inline-block; margin-top: 24px; }
+[dir="rtl"] .warehouse-footage .eyebrow { letter-spacing: 0; }
+[dir="rtl"] .warehouse-footage h2 { letter-spacing: 0; }
+@media (max-width: 1000px) { .warehouse-footage .section-top { display: block; } }
+@media (max-width: 760px) { .warehouse-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .warehouse-footage * { scroll-behavior: auto; } }

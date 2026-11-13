@@ -18,6 +18,7 @@ The current website has six translated homepages and English/Chinese inner pages
 - 关于 Chemnitz | 中国汽车采购与出口协调: https://hzchemnitz.cn/about-zh.html
 - Request a China Car Export Quote | FOB & EXW | Chemnitz: https://hzchemnitz.cn/quote.html
 - 获取中国汽车出口报价 | FOB与EXW询价 | Chemnitz: https://hzchemnitz.cn/quote-zh.html
+- Real China Vehicle Yard Footage | Chemnitz: https://hzchemnitz.cn/footage.html
 - Toyota Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/toyota.html
 - 丰田汽车出口与车型配置 | Toyota | Chemnitz: https://hzchemnitz.cn/brands/toyota-zh.html
 - Nissan Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/nissan.html
@@ -42,6 +43,8 @@ The current website has six translated homepages and English/Chinese inner pages
 - 起亚汽车出口与车型配置 | Kia | Chemnitz: https://hzchemnitz.cn/brands/kia-zh.html
 - Audi Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/audi.html
 - 奥迪汽车出口与车型配置 | Audi | Chemnitz: https://hzchemnitz.cn/brands/audi-zh.html
+- AION Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/aion.html
+- 广汽埃安汽车出口与车型配置 | AION | Chemnitz: https://hzchemnitz.cn/brands/aion-zh.html
 - Toyota RAV4 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-rav4.html
 - Toyota RAV4 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-rav4.html
 - Toyota Corolla China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-corolla.html
@@ -74,6 +77,8 @@ The current website has six translated homepages and English/Chinese inner pages
 - Geely Boyue 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-boyue.html
 - Geely Xingyue L China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-xingyue-l.html
 - Geely Xingyue L 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-xingyue-l.html
+- Geely Xingyue L PLUS Master Collection | Specs & Export Inquiry | Chemnitz: https://hzchemnitz.cn/vehicle-config-xingyue-l-plus.html
+- 吉利星越 L PLUS 大师典藏版 | 配置与出口询价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-xingyue-l-plus.html
 - Geely Niuzai China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-niuzai.html
 - Geely Niuzai 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-niuzai.html
 - Geely Galaxy M9 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-galaxy-m9.html
@@ -110,10 +115,10 @@ The current website has six translated homepages and English/Chinese inner pages
 - Jetour Dashing 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-dashing.html
 - Jetour X70 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-x70.html
 - Jetour X70 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-x70.html
-- Jetour Traveler China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-traveler.html
-- Jetour Traveler 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-traveler.html
-- Jetour Free Rider China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-free-rider.html
-- Jetour Free Rider 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-free-rider.html
+- Jetour Traveler 7 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-traveler.html
+- Jetour Traveler 7 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-traveler.html
+- Jetour Free Rider 7 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-free-rider.html
+- Jetour Free Rider 7 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-free-rider.html
 - Audi Q5L China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-q5.html
 - Audi Q5L 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-q5.html
 - Audi Q3 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-q3.html
@@ -134,6 +139,10 @@ The current website has six translated homepages and English/Chinese inner pages
 - Changan CS75 PLUS 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-changan-cs75.html
 - Changan X5 PLUS China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-changan-x5.html
 - Changan X5 PLUS 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-changan-x5.html
+- GAC AION i60 700 LiDAR | Specs & Export Inquiry | Chemnitz: https://hzchemnitz.cn/vehicle-config-aion-i60.html
+- 广汽埃安 AION i60 700 激光雷达版 | 配置与出口询价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-aion-i60.html
+- GAC AION Y MY2026 Plus 510 Zhixiang | Specs & Export Inquiry | Chemnitz: https://hzchemnitz.cn/vehicle-config-aion-y.html
+- 广汽埃安 AION Y 2026款 Plus 510 智享版 | 配置与出口询价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-aion-y.html
 
 ## Reference rules
 

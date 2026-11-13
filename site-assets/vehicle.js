@@ -13,12 +13,13 @@
  const el = (tag, value, cls) => {const node = document.createElement(tag); if (value) node.textContent = value; if (cls) node.className = cls; return node;};
  try {
   const {appUrl, vehicleUrl, pageUrl} = await import('./site-paths.js');
-  const response = await fetch(appUrl('data/catalog-models.json'));
+  const response = await fetch(appUrl('data/catalog-models.json?v=20261113-aion-y-gallery'));
   if (!response.ok) throw new Error('Catalogue manifest unavailable');
   const models = await response.json();
   const model = models.find(item => item.id === id);
   if (!model) throw new Error('Unknown model');
-  const name = model.title;
+  const name = zh ? model.titleZh || model.title : model.title;
+  const presale = model.commerceStatus === 'presale';
   // Release pages already carry build-time SEO titles. Do not replace them.
   if (!document.documentElement.hasAttribute('data-release')) document.title = zh ? name + ' 中国汽车出口 · 配置与询价 | Chemnitz' : name + ' China Export | Specs & FOB Quote | Chemnitz';
   document.querySelector('#model-crumb').textContent = name;
@@ -30,6 +31,14 @@
   document.querySelector('#model-name').textContent = name;
   document.querySelector('#body-style').textContent = model.type || '—';
   document.querySelector('#brand-name').textContent = model.brand;
+  if (model.summary) document.querySelector('.vehicle-copy h1 + p').textContent = model.summary[zh?'zh':'en'];
+  if (model.listedTrim) document.querySelector('.vehicle-badge').textContent = t('CHEMNITZ / 中国市场车型 · 仅收录 ','CHEMNITZ / CHINA-MARKET MODEL · ')+model.listedTrim[zh?'zh':'en'];
+  if (presale) {
+   const copy = document.querySelector('.vehicle-copy');
+   copy.querySelector('.vehicle-badge').textContent = t('CHEMNITZ / 中国市场预售车型 · 仅顶配', 'CHEMNITZ / CHINA-MARKET PRESALE · TOP TRIM ONLY');
+   copy.querySelector('h1 + p').textContent = t('仅收录星越 L PLUS 大师典藏版。当前按厂家预售资料展示，实际供货、最终配置及交期须另行确认；不与普通星越 L 混用参数。', 'Only the Xingyue L PLUS Master Collection Edition is listed. These are manufacturer presale specifications; confirm actual supply, final equipment and delivery timing separately. Specifications do not carry over from the standard Xingyue L.');
+   copy.querySelector('.vehicle-facts > div:last-child strong').textContent = t('预售阶段，供货待确认', 'Presale — supply to be confirmed');
+  }
   const photo = document.querySelector('#main-photo');
   const thumbnails = document.querySelector('.vehicle-thumbs');
   const gallery = model.gallery || [];
@@ -74,7 +83,7 @@
   const existingForm = document.querySelector('#model-inquiry-form');
   if (!document.getElementById('shipping') && !document.getElementById('model-faq') && document.querySelector('.vehicle-bottom')) {
    const {addSections} = await import('./vehicle-sections.js');
-   addSections({id, name, zh});
+   addSections({id, name, zh, presale});
   } else if (existingForm && !existingForm._chemnitzRuntimeBound) {
    // Snapshot HTML has no serialized event listeners. Restore its form handlers
    // while preserving autofill or fields entered before hydration finishes.
@@ -90,6 +99,21 @@
   }
   const {mountVariants} = await import('./vehicle-variants.js');
   await mountVariants({id, name, zh});
+  if (model.gallerySource?.url && (model.gallerySource.modelYear || model.gallerySource.referenceLabel)) {
+   const imageSource = model.gallerySource;
+   const seriesReference = imageSource.kind === 'series-reference';
+   const referenceLabel = imageSource.referenceLabel?.[zh ? 'zh' : 'en'];
+   const note = document.querySelector('.vehicle-hero > div > .vehicle-note');
+   if (note) {
+    const caption = seriesReference
+     ? referenceLabel + t('；仅供外观与内饰参考，非订单实车照片。配色、轮毂与装备以所选配置及订单实车为准。图片来源：', '. For exterior and interior reference only, not photos of the order vehicle. Confirm colours, wheels and equipment against the selected trim and actual order vehicle. Images: ')
+     : t(imageSource.modelYear + '款中国市场车型参考图；切换配置不会切换照片，外观与装备以订单实车为准。图片来源：', 'China-market MY' + imageSource.modelYear + ' reference photos. Photos do not change with the selected trim; confirm appearance and equipment for the order vehicle. Photos: ');
+    const source = el('a', imageSource.providerLabel?.[zh ? 'zh' : 'en'] || (imageSource.provider === 'Autohome' ? t('汽车之家', 'Autohome') : imageSource.provider));
+    source.href = imageSource.url; source.target = '_blank'; source.rel = 'noopener noreferrer';
+    note.replaceChildren(document.createTextNode(caption), source);
+   }
+   if (photo) photo.alt = seriesReference ? referenceLabel : name + ' ' + imageSource.modelYear + t('款中国市场车型参考图', ' China-market model reference');
+  }
  } catch (error) {
   if (staticContent) {
    // Temporary network failure must not erase independently readable HTML.

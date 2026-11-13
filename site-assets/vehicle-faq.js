@@ -13,6 +13,8 @@ const SPEC_LABELS = {
 function energyType(variant) {
  const fuel = variant?.specs?.fuel;
  const text = typeof fuel === 'string' ? fuel : `${fuel?.zh || ''} ${fuel?.en || ''}`;
+ // Negative labels contain the same "plug-in" token; resolve them first.
+ if (/非插电|non[-\s]plug[-\s]in/i.test(text)) return 'hev';
  if (/插电|plug-in/i.test(text)) return 'phev';
  if (/增程|range.extended/i.test(text)) return 'erev';
  if (/纯电|battery electric/i.test(text)) return 'bev';
@@ -56,6 +58,10 @@ export function buildModelFaq({id, name, zh, data, variant, fullName}) {
    t('如需混装集装箱，应由物流方根据每款实车的尺寸、重量、箱型及固定防护要求核定方案。不要仅凭车型名称判断装载数量；请在报价中明确分批发运、仓储或额外装卸费用（如适用）。', 'For mixed-model container loading, ask the logistics provider to check actual vehicle dimensions and weights, container type and securing requirements. Do not infer loading capacity from model names; clarify any split-shipment, storage or additional handling costs in the quotation.')
   ])
  ];
+ if (data?.commerceStatus === 'presale') {
+  common.find(q=>q.key==='price').paragraphs.push(t('本车型处于预售阶段。厂家预售指导价和限时预售权益均不等于出口报价，也不代表已确认可供货。', 'This model is in presale. Manufacturer presale guide prices and limited-time incentives are neither export quotations nor confirmation of supply.'));
+  common.find(q=>q.key==='availability').paragraphs.unshift(t('目前为厂家预售资料；最终配置、订单接受条件和交付排期需再次确认。本页面不承诺现货或固定交付时间。', 'These are manufacturer presale specifications. Final equipment, order acceptance and delivery scheduling require reconfirmation. This page does not promise stock or a fixed delivery time.'));
+ }
  if (!data?.variants?.length || !variant) return common;
 
  const profile = MODEL_FAQ_PROFILES[id];
@@ -92,6 +98,15 @@ export function buildModelFaq({id, name, zh, data, variant, fullName}) {
  } else {
   energy.paragraphs.push(t(['bev','phev','erev'].includes(type) ? '当前已核验数据未收录该版本完整的续航和充电数值，不能从版本名称推算；询价时请确认对应电池配置、测试标准及充电条件。' : '当前已核验数据未收录该版本的油耗测试值，不用其他年款的数字替代；比较用车成本时应采用相同测试标准。', ['bev','phev','erev'].includes(type) ? 'The verified data currently held here does not include a full range/charging specification for this trim. Do not infer figures from its name; request the matching battery specification, test cycle and charging conditions.' : 'The verified data currently held here does not include this trim’s consumption test figure. Do not substitute another model year’s value; use the same test cycle when comparing running costs.'));
  }
+ const performance=variant.performanceDetail||{};
+ if(performance.batteryCapacityNote)energy.paragraphs.push(local(performance.batteryCapacityNote));
+ if(performance.energyConsumptionKwh100km)energy.bullets.push(t(`厂家百公里耗电量：${performance.energyConsumptionKwh100km} kWh/100 km；原表未在该项单独注明测试工况。`, `Manufacturer energy consumption: ${performance.energyConsumptionKwh100km} kWh/100 km; the source does not separately identify the test cycle for this entry.`));
+ if(performance.cltcConsumptionKwh100km)energy.bullets.push(t(`厂家 CLTC 综合电耗：${performance.cltcConsumptionKwh100km} kWh/100 km`, `Manufacturer CLTC consumption: ${performance.cltcConsumptionKwh100km} kWh/100 km`));
+ if(performance.dcFastCharge30to80Minutes){
+  energy.bullets.push(t(`厂家30%–80%快充测试时间：${performance.dcFastCharge30to80Minutes} 分钟`, `Manufacturer 30–80% DC charging test time: ${performance.dcFastCharge30to80Minutes} minutes`));
+  energy.paragraphs.push(t('充电时间为特定条件下测试值，实际时间受充电设备功率、温度和车辆状态影响；不是完整0%–100%的充电时间。', 'Charging time is measured under specific test conditions and varies with charger output, temperature and vehicle condition. It is not a full 0–100% charging time.'));
+ }
+ if(performance.externalDischargeKw)energy.bullets.push(t(`厂家对外放电功率：${performance.externalDischargeKw} kW；接口与配套设备另行核对。`, `Manufacturer external discharge output: ${performance.externalDischargeKw} kW; confirm the connector and required equipment separately.`));
 
  const focusKeys = profile?.specKeys || ['drive', 'dimensions', 'wheelbase'];
  const focus = item('focus', local(profile?.question) || t('这个版本的驱动与空间参数是什么？', 'What are the drive and space specifications for this version?'), [

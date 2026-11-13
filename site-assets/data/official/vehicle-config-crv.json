@@ -1,1 +1,841 @@
-{"modelId":"vehicle-config-crv","status":"verified","officialModelName":{"zh":"东风本田CR-V全球30年荣耀款","en":"Dongfeng Honda CR-V 30th Anniversary"},"edition":{"zh":"官网当前配置；年款以版本标注为准","en":"Current official specifications; model year as explicitly stated"},"source":{"title":{"zh":"东风本田CR-V全球30年荣耀款官方配置表","en":"Dongfeng Honda CR-V 30th Anniversary official specifications"},"url":"https://www.dongfeng-honda.com/cr-v/configuration.html","checkedAt":"2026-11-04","scope":{"zh":"东风本田中国市场2026款燃油版5个版本；不混入e:HEV。官方发动机功率/扭矩分别为142 kW/243 N·m。尺寸与轴距按官网页面合并单元格实际显示顺序对应：前四列为两驱、第五列为四驱。不推算加速、极速或方向盘位置；仅列部分装备。","en":"Five China-market 2026 petrol trims, excluding e:HEV. Engine output is 142 kW/243 N·m. Dimensions and wheelbase follow the rendered official grid: the merged first four columns are 2WD, and the fifth is AWD. Acceleration, top speed and steering position are not inferred. Selected equipment only."}},"defaultVariant":"crv-petrol-2026-1","variants":[{"id":"crv-petrol-2026-1","year":"2026","label":{"zh":"2026 活力版","en":"2026 Vitality"},"manufacturerGuidePriceCny":185900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":{"zh":"发动机 142 kW / 6,000 rpm","en":"Engine 142 kW at 6,000 rpm"},"torque":{"zh":"发动机 243 N·m / 1,800–5,000 rpm","en":"Engine 243 N·m at 1,800–5,000 rpm"},"acceleration":null,"topSpeed":null,"transmission":{"zh":"G-Design Shift 无级变速箱","en":"G-Design Shift CVT"},"drive":{"zh":"两驱","en":"Two-wheel drive"},"dimensions":"4,703×1,866×1,680 mm","wheelbase":"2,701 mm","weight":"1589 kg","tires":"235/65R17 104H","seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"LED日间行车灯","en":"LED daytime running lights"},"status":"standard","officialValue":"●"},{"label":{"zh":"LED前大灯","en":"LED headlights"},"status":"standard","officialValue":"●"},{"label":{"zh":"外后视镜加热功能","en":"Heated exterior mirrors"},"status":"absent","officialValue":"-"},{"label":{"zh":"电动全景天窗（带电动遮阳帘）","en":"Power panoramic sunroof with power sunshade"},"status":"standard","officialValue":"●"},{"label":{"zh":"脚部感应式电动尾门（带离车自动关闭和防夹功能）","en":"Hands-free power tailgate with walk-away closing and anti-pinch protection"},"status":"absent","officialValue":"-"}],"comfort":[{"label":{"zh":"手机无线充电","en":"Wireless phone charging"},"status":"absent","officialValue":"-"},{"label":{"zh":"后排出风口","en":"Rear air vents"},"status":"standard","officialValue":"●"},{"label":{"zh":"一键启动","en":"Push-button start"},"status":"standard","officialValue":"●"},{"label":{"zh":"定速巡航","en":"Cruise control"},"status":"standard","officialValue":"●"},{"label":{"zh":"前排座椅加热功能","en":"Heated front seats"},"status":"absent","officialValue":"-"},{"label":{"zh":"前排座椅通风功能","en":"Ventilated front seats"},"status":"absent","officialValue":"-"}],"safety":[{"label":{"zh":"TPMS智能胎压报警系统","en":"Tyre-pressure monitoring"},"status":"standard","officialValue":"●"}]}},{"id":"crv-petrol-2026-2","year":"2026","label":{"zh":"2026 锋尚版","en":"2026 Style"},"manufacturerGuidePriceCny":201900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":{"zh":"发动机 142 kW / 6,000 rpm","en":"Engine 142 kW at 6,000 rpm"},"torque":{"zh":"发动机 243 N·m / 1,800–5,000 rpm","en":"Engine 243 N·m at 1,800–5,000 rpm"},"acceleration":null,"topSpeed":null,"transmission":{"zh":"G-Design Shift 无级变速箱","en":"G-Design Shift CVT"},"drive":{"zh":"两驱","en":"Two-wheel drive"},"dimensions":"4,703×1,866×1,680 mm","wheelbase":"2,701 mm","weight":"1607 kg","tires":"235/60R18 103H","seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"LED日间行车灯","en":"LED daytime running lights"},"status":"standard","officialValue":"●"},{"label":{"zh":"LED前大灯","en":"LED headlights"},"status":"standard","officialValue":"●"},{"label":{"zh":"外后视镜加热功能","en":"Heated exterior mirrors"},"status":"standard","officialValue":"●"},{"label":{"zh":"电动全景天窗（带电动遮阳帘）","en":"Power panoramic sunroof with power sunshade"},"status":"standard","officialValue":"●"},{"label":{"zh":"脚部感应式电动尾门（带离车自动关闭和防夹功能）","en":"Hands-free power tailgate with walk-away closing and anti-pinch protection"},"status":"absent","officialValue":"-"}],"comfort":[{"label":{"zh":"手机无线充电","en":"Wireless phone charging"},"status":"absent","officialValue":"-"},{"label":{"zh":"后排出风口","en":"Rear air vents"},"status":"standard","officialValue":"●"},{"label":{"zh":"一键启动","en":"Push-button start"},"status":"standard","officialValue":"●"},{"label":{"zh":"前排座椅加热功能","en":"Heated front seats"},"status":"absent","officialValue":"-"},{"label":{"zh":"前排座椅通风功能","en":"Ventilated front seats"},"status":"absent","officialValue":"-"}],"safety":[{"label":{"zh":"TPMS智能胎压报警系统","en":"Tyre-pressure monitoring"},"status":"standard","officialValue":"●"}]}},{"id":"crv-petrol-2026-3","year":"2026","label":{"zh":"2026 锋尚7座版","en":"2026 Style 7-seat"},"manufacturerGuidePriceCny":208900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":{"zh":"发动机 142 kW / 6,000 rpm","en":"Engine 142 kW at 6,000 rpm"},"torque":{"zh":"发动机 243 N·m / 1,800–5,000 rpm","en":"Engine 243 N·m at 1,800–5,000 rpm"},"acceleration":null,"topSpeed":null,"transmission":{"zh":"G-Design Shift 无级变速箱","en":"G-Design Shift CVT"},"drive":{"zh":"两驱","en":"Two-wheel drive"},"dimensions":"4,703×1,866×1,680 mm","wheelbase":"2,701 mm","weight":"1662 kg","tires":"235/60R18 103H","seats":"7","steering":null},"equipment":{"exterior":[{"label":{"zh":"LED日间行车灯","en":"LED daytime running lights"},"status":"standard","officialValue":"●"},{"label":{"zh":"LED前大灯","en":"LED headlights"},"status":"standard","officialValue":"●"},{"label":{"zh":"外后视镜加热功能","en":"Heated exterior mirrors"},"status":"standard","officialValue":"●"},{"label":{"zh":"电动全景天窗（带电动遮阳帘）","en":"Power panoramic sunroof with power sunshade"},"status":"standard","officialValue":"●"},{"label":{"zh":"脚部感应式电动尾门（带离车自动关闭和防夹功能）","en":"Hands-free power tailgate with walk-away closing and anti-pinch protection"},"status":"absent","officialValue":"-"}],"comfort":[{"label":{"zh":"手机无线充电","en":"Wireless phone charging"},"status":"absent","officialValue":"-"},{"label":{"zh":"后排出风口","en":"Rear air vents"},"status":"standard","officialValue":"●"},{"label":{"zh":"一键启动","en":"Push-button start"},"status":"standard","officialValue":"●"},{"label":{"zh":"前排座椅加热功能","en":"Heated front seats"},"status":"absent","officialValue":"-"},{"label":{"zh":"前排座椅通风功能","en":"Ventilated front seats"},"status":"absent","officialValue":"-"}],"safety":[{"label":{"zh":"TPMS智能胎压报警系统","en":"Tyre-pressure monitoring"},"status":"standard","officialValue":"●"}]}},{"id":"crv-petrol-2026-4","year":"2026","label":{"zh":"2026 智领版","en":"2026 Intelligent"},"manufacturerGuidePriceCny":211900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":{"zh":"发动机 142 kW / 6,000 rpm","en":"Engine 142 kW at 6,000 rpm"},"torque":{"zh":"发动机 243 N·m / 1,800–5,000 rpm","en":"Engine 243 N·m at 1,800–5,000 rpm"},"acceleration":null,"topSpeed":null,"transmission":{"zh":"G-Design Shift 无级变速箱","en":"G-Design Shift CVT"},"drive":{"zh":"两驱","en":"Two-wheel drive"},"dimensions":"4,703×1,866×1,680 mm","wheelbase":"2,701 mm","weight":"1608 kg","tires":"235/60R18 103H","seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"LED日间行车灯","en":"LED daytime running lights"},"status":"standard","officialValue":"●"},{"label":{"zh":"LED前大灯","en":"LED headlights"},"status":"standard","officialValue":"●"},{"label":{"zh":"外后视镜加热功能","en":"Heated exterior mirrors"},"status":"standard","officialValue":"●"},{"label":{"zh":"电动全景天窗（带电动遮阳帘）","en":"Power panoramic sunroof with power sunshade"},"status":"standard","officialValue":"●"},{"label":{"zh":"脚部感应式电动尾门（带离车自动关闭和防夹功能）","en":"Hands-free power tailgate with walk-away closing and anti-pinch protection"},"status":"absent","officialValue":"-"}],"comfort":[{"label":{"zh":"手机无线充电","en":"Wireless phone charging"},"status":"absent","officialValue":"-"},{"label":{"zh":"后排出风口","en":"Rear air vents"},"status":"standard","officialValue":"●"},{"label":{"zh":"一键启动","en":"Push-button start"},"status":"standard","officialValue":"●"},{"label":{"zh":"前排座椅加热功能","en":"Heated front seats"},"status":"standard","officialValue":"●"},{"label":{"zh":"前排座椅通风功能","en":"Ventilated front seats"},"status":"standard","officialValue":"●"}],"safety":[{"label":{"zh":"TPMS智能胎压报警系统","en":"Tyre-pressure monitoring"},"status":"standard","officialValue":"●"}]}},{"id":"crv-petrol-2026-5","year":"2026","label":{"zh":"2026 臻享四驱版","en":"2026 Premium AWD"},"manufacturerGuidePriceCny":231900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":{"zh":"发动机 142 kW / 6,000 rpm","en":"Engine 142 kW at 6,000 rpm"},"torque":{"zh":"发动机 243 N·m / 1,800–5,000 rpm","en":"Engine 243 N·m at 1,800–5,000 rpm"},"acceleration":null,"topSpeed":null,"transmission":{"zh":"G-Design Shift 无级变速箱","en":"G-Design Shift CVT"},"drive":{"zh":"适时四驱","en":"On-demand AWD"},"dimensions":"4,703×1,866×1,690 mm","wheelbase":"2,700 mm","weight":"1669 kg","tires":"235/60R18 103H","seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"LED日间行车灯","en":"LED daytime running lights"},"status":"standard","officialValue":"●"},{"label":{"zh":"LED前大灯","en":"LED headlights"},"status":"standard","officialValue":"●"},{"label":{"zh":"外后视镜加热功能","en":"Heated exterior mirrors"},"status":"standard","officialValue":"●"},{"label":{"zh":"电动全景天窗（带电动遮阳帘）","en":"Power panoramic sunroof with power sunshade"},"status":"standard","officialValue":"●"},{"label":{"zh":"脚部感应式电动尾门（带离车自动关闭和防夹功能）","en":"Hands-free power tailgate with walk-away closing and anti-pinch protection"},"status":"standard","officialValue":"●"}],"comfort":[{"label":{"zh":"后排出风口","en":"Rear air vents"},"status":"standard","officialValue":"●"},{"label":{"zh":"一键启动","en":"Push-button start"},"status":"standard","officialValue":"●"},{"label":{"zh":"前排座椅加热功能","en":"Heated front seats"},"status":"standard","officialValue":"●"},{"label":{"zh":"前排座椅通风功能","en":"Ventilated front seats"},"status":"standard","officialValue":"●"}],"safety":[{"label":{"zh":"TPMS智能胎压报警系统","en":"Tyre-pressure monitoring"},"status":"standard","officialValue":"●"}]}}]}
+{
+  "modelId": "vehicle-config-crv",
+  "status": "verified",
+  "officialModelName": {
+    "zh": "东风本田CR-V全能荣耀款",
+    "en": "Dongfeng Honda CR-V All-Round Glory Edition"
+  },
+  "edition": {
+    "zh": "2027款 · 中国市场燃油版",
+    "en": "2027 model year · China-market petrol"
+  },
+  "source": {
+    "title": {
+      "zh": "东风本田CR-V全能荣耀款官方配置表",
+      "en": "Dongfeng Honda CR-V All-Round Glory Edition official specifications"
+    },
+    "url": "https://www.dongfeng-honda.com/cr-v/configuration.html",
+    "checkedAt": "2026-11-13",
+    "modelYearEvidence": {
+      "year": 2027,
+      "url": "https://www.autohome.com.cn/spec/79761/",
+      "matchingTrims": [
+        "活力版",
+        "风尚版",
+        "风尚7座版",
+        "风尚四驱版"
+      ]
+    },
+    "priceNote": {
+      "zh": "厂家当前页面标为现时售价，不将其当作厂家指导价或出口报价；指导价字段暂留空。",
+      "en": "The manufacturer labels the displayed amounts as current selling prices, not guide prices or export quotations; guide-price fields remain null."
+    },
+    "scope": {
+      "zh": "中国市场2027款全能荣耀款燃油CR-V共4个版本，逐列提取厂家现行fuelVehicleData；不混入e:HEV。活力、风尚、风尚7座为两驱，风尚四驱为五座。合并单元格按官网实际列顺序展开；发动机142 kW/243 N·m。未明示加速、极速及转向位置，保留空值。不沿用旧2026款装备；仅展示本次厂家表明确列出的部分配置，选装包条件以厂家及实车为准。",
+      "en": "Four China-market 2027 All-Round Glory petrol CR-V trims, extracted column by column from the current official fuelVehicleData; e:HEV is excluded. Vitality, Style and Style 7-seat are 2WD; Style AWD has five seats. Merged cells follow the rendered official column order. Engine output is 142 kW/243 N·m. Acceleration, maximum speed and steering position are unlisted and remain null. No old 2026 equipment is carried over. Selected current official equipment only; option packages are subject to manufacturer and actual-vehicle conditions."
+    }
+  },
+  "defaultVariant": "crv-petrol-2027-1",
+  "variants": [
+    {
+      "id": "crv-petrol-2027-1",
+      "year": 2027,
+      "label": {
+        "zh": "2027 活力版",
+        "en": "2027 Vitality 2WD 5-seat"
+      },
+      "officialName": "活力版",
+      "manufacturerGuidePriceCny": null,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": {
+          "zh": "发动机 142 kW / 6,000 rpm",
+          "en": "Engine 142 kW at 6,000 rpm"
+        },
+        "torque": {
+          "zh": "发动机 243 N·m / 1,800–5,000 rpm",
+          "en": "Engine 243 N·m at 1,800–5,000 rpm"
+        },
+        "acceleration": null,
+        "topSpeed": null,
+        "transmission": {
+          "zh": "G-Design Shift 无级变速箱",
+          "en": "G-Design Shift CVT"
+        },
+        "drive": {
+          "zh": "两驱",
+          "en": "Two-wheel drive"
+        },
+        "dimensions": "4703×1866×1680 mm",
+        "wheelbase": "2701 mm",
+        "weight": "1582 kg",
+        "tires": "235/65R17 104H",
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "LED日间行车灯",
+              "en": "LED daytime running lights"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED前大灯",
+              "en": "LED headlights"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "外后视镜加热功能",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "电动全景天窗（带电动遮阳帘）",
+              "en": "Power panoramic sunroof with power sunshade"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "脚部感应式电动尾门（带离车自动关闭和防夹功能）",
+              "en": "Hands-free power tailgate with walk-away closing and anti-pinch protection"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "10.2英寸彩色TFT多功能液晶仪表",
+              "en": "10.2-inch colour TFT instrument display"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "手机无线充电",
+              "en": "Wireless phone charging"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "后排出风口",
+              "en": "Rear air vents"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "一键启动",
+              "en": "Push-button start"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "定速巡航",
+              "en": "Cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "12.3英寸DA触摸屏互联系统",
+              "en": "12.3-inch DA connected touchscreen"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "HUAWEI HiCar/Apple CarPlay/百度CarLife+",
+              "en": "HUAWEI HiCar / Apple CarPlay / Baidu CarLife+"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "高保真扬声器",
+              "en": "Hi-fi speakers"
+            },
+            "status": "standard",
+            "officialValue": "●4个"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "TPMS智能胎压报警系统",
+              "en": "Tyre-pressure warning system"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "ACC主动巡航控制系统（带LSF低速跟随功能）",
+              "en": "Adaptive cruise control with low-speed follow"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "CMBS碰撞缓解制动系统",
+              "en": "Collision mitigation braking"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "LKAS车道保持辅助系统",
+              "en": "Lane-keeping assist"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "BSI盲点监测系统",
+              "en": "Blind-spot monitoring"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "MVCS全景影像系统",
+              "en": "Multi-view camera system"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          }
+        ]
+      }
+    },
+    {
+      "id": "crv-petrol-2027-2",
+      "year": 2027,
+      "label": {
+        "zh": "2027 风尚版",
+        "en": "2027 Style 2WD 5-seat"
+      },
+      "officialName": "风尚版",
+      "manufacturerGuidePriceCny": null,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": {
+          "zh": "发动机 142 kW / 6,000 rpm",
+          "en": "Engine 142 kW at 6,000 rpm"
+        },
+        "torque": {
+          "zh": "发动机 243 N·m / 1,800–5,000 rpm",
+          "en": "Engine 243 N·m at 1,800–5,000 rpm"
+        },
+        "acceleration": null,
+        "topSpeed": null,
+        "transmission": {
+          "zh": "G-Design Shift 无级变速箱",
+          "en": "G-Design Shift CVT"
+        },
+        "drive": {
+          "zh": "两驱",
+          "en": "Two-wheel drive"
+        },
+        "dimensions": "4703×1866×1680 mm",
+        "wheelbase": "2701 mm",
+        "weight": "1600 kg",
+        "tires": "235/60R18 103H",
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "LED日间行车灯",
+              "en": "LED daytime running lights"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED前大灯",
+              "en": "LED headlights"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "外后视镜加热功能",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "电动全景天窗（带电动遮阳帘）",
+              "en": "Power panoramic sunroof with power sunshade"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "脚部感应式电动尾门（带离车自动关闭和防夹功能）",
+              "en": "Hands-free power tailgate with walk-away closing and anti-pinch protection"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "10.2英寸彩色TFT多功能液晶仪表",
+              "en": "10.2-inch colour TFT instrument display"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "手机无线充电",
+              "en": "Wireless phone charging"
+            },
+            "status": "standard",
+            "officialValue": "●（50W）"
+          },
+          {
+            "label": {
+              "zh": "后排出风口",
+              "en": "Rear air vents"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "一键启动",
+              "en": "Push-button start"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "定速巡航",
+              "en": "Cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●ACC"
+          },
+          {
+            "label": {
+              "zh": "12.3英寸DA触摸屏互联系统",
+              "en": "12.3-inch DA connected touchscreen"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "HUAWEI HiCar/Apple CarPlay/百度CarLife+",
+              "en": "HUAWEI HiCar / Apple CarPlay / Baidu CarLife+"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "高保真扬声器",
+              "en": "Hi-fi speakers"
+            },
+            "status": "standard",
+            "officialValue": "●6个"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "TPMS智能胎压报警系统",
+              "en": "Tyre-pressure warning system"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "ACC主动巡航控制系统（带LSF低速跟随功能）",
+              "en": "Adaptive cruise control with low-speed follow"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "CMBS碰撞缓解制动系统",
+              "en": "Collision mitigation braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LKAS车道保持辅助系统",
+              "en": "Lane-keeping assist"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "BSI盲点监测系统",
+              "en": "Blind-spot monitoring"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "MVCS全景影像系统",
+              "en": "Multi-view camera system"
+            },
+            "status": "standard",
+            "officialValue": "●540°全景影像"
+          }
+        ]
+      }
+    },
+    {
+      "id": "crv-petrol-2027-3",
+      "year": 2027,
+      "label": {
+        "zh": "2027 风尚7座版",
+        "en": "2027 Style 2WD 7-seat"
+      },
+      "officialName": "风尚7座版",
+      "manufacturerGuidePriceCny": null,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": {
+          "zh": "发动机 142 kW / 6,000 rpm",
+          "en": "Engine 142 kW at 6,000 rpm"
+        },
+        "torque": {
+          "zh": "发动机 243 N·m / 1,800–5,000 rpm",
+          "en": "Engine 243 N·m at 1,800–5,000 rpm"
+        },
+        "acceleration": null,
+        "topSpeed": null,
+        "transmission": {
+          "zh": "G-Design Shift 无级变速箱",
+          "en": "G-Design Shift CVT"
+        },
+        "drive": {
+          "zh": "两驱",
+          "en": "Two-wheel drive"
+        },
+        "dimensions": "4703×1866×1680 mm",
+        "wheelbase": "2701 mm",
+        "weight": "1655 kg",
+        "tires": "235/60R18 103H",
+        "seats": "7",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "LED日间行车灯",
+              "en": "LED daytime running lights"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED前大灯",
+              "en": "LED headlights"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "外后视镜加热功能",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "电动全景天窗（带电动遮阳帘）",
+              "en": "Power panoramic sunroof with power sunshade"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "脚部感应式电动尾门（带离车自动关闭和防夹功能）",
+              "en": "Hands-free power tailgate with walk-away closing and anti-pinch protection"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "10.2英寸彩色TFT多功能液晶仪表",
+              "en": "10.2-inch colour TFT instrument display"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "手机无线充电",
+              "en": "Wireless phone charging"
+            },
+            "status": "standard",
+            "officialValue": "●（50W）"
+          },
+          {
+            "label": {
+              "zh": "后排出风口",
+              "en": "Rear air vents"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "一键启动",
+              "en": "Push-button start"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "定速巡航",
+              "en": "Cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●ACC"
+          },
+          {
+            "label": {
+              "zh": "12.3英寸DA触摸屏互联系统",
+              "en": "12.3-inch DA connected touchscreen"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "HUAWEI HiCar/Apple CarPlay/百度CarLife+",
+              "en": "HUAWEI HiCar / Apple CarPlay / Baidu CarLife+"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "高保真扬声器",
+              "en": "Hi-fi speakers"
+            },
+            "status": "standard",
+            "officialValue": "●6个"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "TPMS智能胎压报警系统",
+              "en": "Tyre-pressure warning system"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "ACC主动巡航控制系统（带LSF低速跟随功能）",
+              "en": "Adaptive cruise control with low-speed follow"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "CMBS碰撞缓解制动系统",
+              "en": "Collision mitigation braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LKAS车道保持辅助系统",
+              "en": "Lane-keeping assist"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "BSI盲点监测系统",
+              "en": "Blind-spot monitoring"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "MVCS全景影像系统",
+              "en": "Multi-view camera system"
+            },
+            "status": "standard",
+            "officialValue": "●540°全景影像"
+          }
+        ]
+      }
+    },
+    {
+      "id": "crv-petrol-2027-4",
+      "year": 2027,
+      "label": {
+        "zh": "2027 风尚四驱版",
+        "en": "2027 Style AWD 5-seat"
+      },
+      "officialName": "风尚四驱版",
+      "manufacturerGuidePriceCny": null,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": {
+          "zh": "发动机 142 kW / 6,000 rpm",
+          "en": "Engine 142 kW at 6,000 rpm"
+        },
+        "torque": {
+          "zh": "发动机 243 N·m / 1,800–5,000 rpm",
+          "en": "Engine 243 N·m at 1,800–5,000 rpm"
+        },
+        "acceleration": null,
+        "topSpeed": null,
+        "transmission": {
+          "zh": "G-Design Shift 无级变速箱",
+          "en": "G-Design Shift CVT"
+        },
+        "drive": {
+          "zh": "适时四驱",
+          "en": "Real-Time all-wheel drive"
+        },
+        "dimensions": "4703×1866×1690 mm",
+        "wheelbase": "2700 mm",
+        "weight": "1659 kg",
+        "tires": "235/60R18 103H",
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "LED日间行车灯",
+              "en": "LED daytime running lights"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED前大灯",
+              "en": "LED headlights"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "外后视镜加热功能",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "电动全景天窗（带电动遮阳帘）",
+              "en": "Power panoramic sunroof with power sunshade"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "脚部感应式电动尾门（带离车自动关闭和防夹功能）",
+              "en": "Hands-free power tailgate with walk-away closing and anti-pinch protection"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "10.2英寸彩色TFT多功能液晶仪表",
+              "en": "10.2-inch colour TFT instrument display"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "手机无线充电",
+              "en": "Wireless phone charging"
+            },
+            "status": "standard",
+            "officialValue": "●（50W）"
+          },
+          {
+            "label": {
+              "zh": "后排出风口",
+              "en": "Rear air vents"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "一键启动",
+              "en": "Push-button start"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "定速巡航",
+              "en": "Cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●ACC"
+          },
+          {
+            "label": {
+              "zh": "12.3英寸DA触摸屏互联系统",
+              "en": "12.3-inch DA connected touchscreen"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "HUAWEI HiCar/Apple CarPlay/百度CarLife+",
+              "en": "HUAWEI HiCar / Apple CarPlay / Baidu CarLife+"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "高保真扬声器",
+              "en": "Hi-fi speakers"
+            },
+            "status": "standard",
+            "officialValue": "●6个"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "TPMS智能胎压报警系统",
+              "en": "Tyre-pressure warning system"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "ACC主动巡航控制系统（带LSF低速跟随功能）",
+              "en": "Adaptive cruise control with low-speed follow"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "CMBS碰撞缓解制动系统",
+              "en": "Collision mitigation braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LKAS车道保持辅助系统",
+              "en": "Lane-keeping assist"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "BSI盲点监测系统",
+              "en": "Blind-spot monitoring"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "MVCS全景影像系统",
+              "en": "Multi-view camera system"
+            },
+            "status": "standard",
+            "officialValue": "●360°全景影像"
+          }
+        ]
+      }
+    }
+  ]
+}

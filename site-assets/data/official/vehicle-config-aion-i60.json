@@ -1,0 +1,549 @@
+{
+  "modelId": "vehicle-config-aion-i60",
+  "status": "verified",
+  "officialModelName": {
+    "zh": "埃安 AION i60",
+    "en": "AION i60"
+  },
+  "edition": {
+    "zh": "2027款（中国市场，仅纯电700激光雷达版）",
+    "en": "MY2027 (China market; 700 LiDAR battery-electric trim only)"
+  },
+  "source": {
+    "title": {
+      "zh": "广汽埃安2027款AION i60官方参数配置表",
+      "en": "GAC AION i60 MY2027 official specification table"
+    },
+    "url": "https://www.aion.com.cn/vehicle/config/table?cid=NzI%3D",
+    "apiUrl": "https://www.aion.com.cn/Home/Api/getCarinfos",
+    "apiMethod": "POST",
+    "apiRequest": {
+      "cid": "72",
+      "version": ""
+    },
+    "checkedAt": "2026-11-13",
+    "sha256": "9a65780f361c30799f2c9da4c030ce827818c0ad8563a5cb6b60ed9515fd6886",
+    "scope": {
+      "zh": "本页仅收录官方2027款AION i60配置表第4列「700 激光雷达版」（纯电）。国内指导价仅用于核对版本，不是出口报价或可供现货承诺。所有展示参数和装备均按该列及原表合并单元格核对，不混用旧650版本、520版本或1738增程版；未列明的零百加速、最高车速、变速箱、整备质量及方向盘位置留空。标准轮胎为215/55 R18，225/45 R19为选装；19寸轮毂、11扬声器音响、车外投影仪及车顶行李架均按官方表标为选装，不把经销商促销赠送当作永久标配。700km为CLTC测试续航，22分钟为30%至80%快充测试时间，非实际使用保证。中国市场辅助驾驶、车机互联和联网服务在出口目的地的可用性须单独核实，辅助驾驶不能替代驾驶员；国内保修条件不自动适用于出口。",
+      "en": "Only column 4, the battery-electric 700 LiDAR trim, of the official MY2027 AION i60 table is listed. The domestic guide price is used only to verify trim identity, not as an export quotation or confirmation of stock. All displayed specifications and equipment are checked against this column with the original merged-cell spans expanded. No specifications are inherited from the older 650, 520 or 1738 range-extended versions. Unlisted 0–100 km/h acceleration, top speed, transmission, curb weight and steering-wheel position remain blank. Standard tyres are 215/55 R18; 225/45 R19 tyres are optional. The 19-inch wheels, 11-speaker audio, external projector and roof rails are optional in the official table; dealer promotional gifts are not treated as permanent standard equipment. The 700 km figure is CLTC test range and 22 minutes is the tested 30–80% DC charging time, not real-world guarantees. Export-market availability of China-market driver assistance, phone connectivity and connected services requires separate verification. Driver assistance does not replace the driver, and domestic warranty terms do not automatically apply overseas."
+    },
+    "modelYearVerification": {
+      "year": 2027,
+      "market": "China",
+      "checkedAt": "2026-11-13",
+      "manufacturerTitle": "2027款 AION i60",
+      "manufacturerUrl": "https://www.aion.com.cn/vehicle/config/table?cid=NzI%3D",
+      "crossCheckUrl": "https://www.autohome.com.cn/config/spec/79073.html?from=m&platform-key=pc&pvareaid=3290231",
+      "crossCheckTitle": "【AION i60 2027款 700 激光雷达版参数配置表】_价格单_AION i60_汽车之家"
+    },
+    "verification": {
+      "officialColumnIndex": 3,
+      "officialColumnName": "700 激光雷达版",
+      "domesticGuidePriceCny": 139800,
+      "priceLabel": "统一指导价",
+      "specFields": 13,
+      "populatedSpecFields": 8,
+      "selectedEquipmentCount": 43,
+      "colspanRule": "Expand each data cell by its explicit colspan after skipping the row-label cell; select zero-based column 3."
+    }
+  },
+  "defaultVariant": "700-lidar",
+  "variants": [
+    {
+      "id": "700-lidar",
+      "year": 2027,
+      "label": {
+        "zh": "纯电700激光雷达版",
+        "en": "700 LiDAR BEV"
+      },
+      "officialName": "700 激光雷达版",
+      "manufacturerGuidePriceCny": 139800,
+      "specs": {
+        "fuel": {
+          "zh": "纯电动",
+          "en": "Battery electric"
+        },
+        "power": {
+          "zh": "电机 165 kW",
+          "en": "Motor 165 kW"
+        },
+        "torque": {
+          "zh": "电机 205 N·m",
+          "en": "Motor 205 N·m"
+        },
+        "acceleration": null,
+        "topSpeed": null,
+        "transmission": null,
+        "drive": {
+          "zh": "前驱",
+          "en": "Front-wheel drive"
+        },
+        "dimensions": "4685×1876×1690 mm",
+        "wheelbase": "2775 mm",
+        "weight": null,
+        "tires": {
+          "zh": "标配215/55 R18；选装225/45 R19",
+          "en": "215/55 R18 standard; 225/45 R19 optional"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "performanceDetail": {
+        "cltcRangeKm": "700",
+        "batteryCapacityKwh": "77.65",
+        "cltcConsumptionKwh100km": "12.3",
+        "dcFastCharge30to80Minutes": "22",
+        "externalDischargeKw": "6"
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "LED前大灯",
+              "en": "LED headlights"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "LED前大灯"
+          },
+          {
+            "label": {
+              "zh": "智能远光灯 IHBC",
+              "en": "Intelligent high-beam control (IHBC)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "智能远光灯 IHBC"
+          },
+          {
+            "label": {
+              "zh": "全景天幕带电动遮阳帘",
+              "en": "Panoramic glass roof with power sunshade"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "全景天幕带电动遮阳帘"
+          },
+          {
+            "label": {
+              "zh": "电动尾门+记忆功能",
+              "en": "Power tailgate with height memory"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "电动尾门+记忆功能"
+          },
+          {
+            "label": {
+              "zh": "双层夹胶玻璃",
+              "en": "Double-layer laminated glass"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "双层夹胶玻璃"
+          },
+          {
+            "label": {
+              "zh": "外后视镜电动折叠",
+              "en": "Power-folding exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "外后视镜电动折叠"
+          },
+          {
+            "label": {
+              "zh": "外后视镜加热",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "外后视镜加热"
+          },
+          {
+            "label": {
+              "zh": "18寸铝合金轮毂",
+              "en": "18-inch alloy wheels"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "18寸铝合金轮毂"
+          },
+          {
+            "label": {
+              "zh": "19寸铝合金轮毂（选装）",
+              "en": "19-inch alloy wheels (optional)"
+            },
+            "status": "optional",
+            "officialValue": "○",
+            "sourceRow": "19寸铝合金轮毂"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架（选装）",
+              "en": "Roof rails (optional)"
+            },
+            "status": "optional",
+            "officialValue": "○",
+            "sourceRow": "车顶行李架"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "热泵空调",
+              "en": "Heat-pump air conditioning"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "热泵空调"
+          },
+          {
+            "label": {
+              "zh": "全自动双层流空调",
+              "en": "Fully automatic dual-layer airflow air conditioning"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "全自动双层流空调"
+          },
+          {
+            "label": {
+              "zh": "主驾座椅电动调节",
+              "en": "Power-adjustable driver seat"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "主驾座椅电动调节"
+          },
+          {
+            "label": {
+              "zh": "副驾座椅电动调节",
+              "en": "Power-adjustable front-passenger seat"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "副驾座椅电动调节"
+          },
+          {
+            "label": {
+              "zh": "主副驾座椅加热/通风",
+              "en": "Heated and ventilated front seats"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "主副驾座椅加热/通风"
+          },
+          {
+            "label": {
+              "zh": "主副驾座椅按摩",
+              "en": "Front-seat massage"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "主副驾座椅按摩"
+          },
+          {
+            "label": {
+              "zh": "主副驾座椅记忆",
+              "en": "Front-seat memory"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "主副驾座椅记忆"
+          },
+          {
+            "label": {
+              "zh": "方向盘加热",
+              "en": "Heated steering wheel"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "方向盘加热"
+          },
+          {
+            "label": {
+              "zh": "后排小桌板（副驾侧）",
+              "en": "Rear tray table behind the front-passenger seat"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后排小桌板（副驾侧）"
+          },
+          {
+            "label": {
+              "zh": "15.6英寸中控大屏幕",
+              "en": "15.6-inch central touchscreen"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "15.6英寸中控大屏幕"
+          },
+          {
+            "label": {
+              "zh": "8.88英寸全液晶仪表",
+              "en": "8.88-inch digital instrument display"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "8.88英寸全液晶仪表"
+          },
+          {
+            "label": {
+              "zh": "手机无线充电（50W）",
+              "en": "50 W wireless phone charging"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "手机无线充电（50W）"
+          },
+          {
+            "label": {
+              "zh": "6扬声器（车内）",
+              "en": "6-speaker cabin audio"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "6扬声器（车内）"
+          },
+          {
+            "label": {
+              "zh": "11扬声器（车内，选装升级）",
+              "en": "11-speaker cabin audio (optional upgrade)"
+            },
+            "status": "optional",
+            "officialValue": "○",
+            "sourceRow": "11扬声器（车内）"
+          },
+          {
+            "label": {
+              "zh": "车外投影仪（选装）",
+              "en": "External projector (optional)"
+            },
+            "status": "optional",
+            "officialValue": "○",
+            "sourceRow": "车外投影仪"
+          },
+          {
+            "label": {
+              "zh": "手车互联：CarLink / HUAWEI HiCar / CarPlay（中国市场配置）",
+              "en": "CarLink, HUAWEI HiCar and CarPlay connectivity (China-market specification)"
+            },
+            "status": "standard",
+            "officialValue": "●支持CarLink\n●支持HUAWEl HiCar\n●支持CarPlay",
+            "sourceRow": "手车互联"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "广汽GSD智能驾驶辅助系统",
+              "en": "GAC GSD driver-assistance system"
+            },
+            "status": "standard",
+            "officialValue": "广汽GSD智能驾驶辅助系统",
+            "sourceRow": "智能驾驶辅助系统"
+          },
+          {
+            "label": {
+              "zh": "城市领航辅助 CNDA",
+              "en": "City navigation driving assistance (CNDA)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "城市领航辅助 CNDA"
+          },
+          {
+            "label": {
+              "zh": "高速领航辅助 HNDA",
+              "en": "Highway navigation driving assistance (HNDA)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "高速领航辅助 HNDA"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航系统 ACC",
+              "en": "Adaptive cruise control (ACC)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "自适应巡航系统 ACC"
+          },
+          {
+            "label": {
+              "zh": "自动紧急制动 AEB",
+              "en": "Autonomous emergency braking (AEB)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "自动紧急制动 AEB"
+          },
+          {
+            "label": {
+              "zh": "360°高清全景影像",
+              "en": "360° HD surround-view camera"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "360°高清全景影像"
+          },
+          {
+            "label": {
+              "zh": "透明底盘",
+              "en": "Transparent underbody camera view"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "透明底盘"
+          },
+          {
+            "label": {
+              "zh": "融合泊车辅助 FAPA",
+              "en": "Integrated parking assistance (FAPA)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "融合泊车辅助 FAPA"
+          },
+          {
+            "label": {
+              "zh": "DMS疲劳监测",
+              "en": "Driver fatigue monitoring (DMS)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "DMS疲劳监测"
+          },
+          {
+            "label": {
+              "zh": "盲区监测预警 BSD",
+              "en": "Blind-spot monitoring (BSD)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "盲区监测预警 BSD"
+          },
+          {
+            "label": {
+              "zh": "胎压监测（直接式）",
+              "en": "Direct tyre-pressure monitoring"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "胎压监测（直接式）"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制 ESP",
+              "en": "Electronic stability control (ESP)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "车身稳定控制 ESP"
+          },
+          {
+            "label": {
+              "zh": "防抱死系统 ABS",
+              "en": "Anti-lock braking system (ABS)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "防抱死系统 ABS"
+          },
+          {
+            "label": {
+              "zh": "前排侧气囊",
+              "en": "Front side airbags"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "前排侧气囊"
+          },
+          {
+            "label": {
+              "zh": "前排单级双SRS安全气囊",
+              "en": "Dual single-stage front SRS airbags"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "前排单级双SRS安全气囊"
+          },
+          {
+            "label": {
+              "zh": "一体式侧气帘",
+              "en": "Integrated side curtain airbags"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "一体式侧气帘"
+          },
+          {
+            "label": {
+              "zh": "儿童安全座椅固定装置 ISOFIX",
+              "en": "ISOFIX child-seat anchors"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "儿童安全座椅固定装置 ISOFIX"
+          }
+        ]
+      },
+      "specEvidence": {
+        "fuel": {
+          "label": "能源类型",
+          "value": "纯电"
+        },
+        "power": {
+          "label": "电机最大功率(kW)",
+          "value": "165"
+        },
+        "torque": {
+          "label": "电机最大扭矩(N·m)",
+          "value": "205"
+        },
+        "drive": {
+          "label": "驱动形式",
+          "value": "前驱"
+        },
+        "dimensions": {
+          "label": "长 × 宽 ×高(mm)",
+          "value": "4685 x 1876 x 1690"
+        },
+        "wheelbase": {
+          "label": "轴距(mm)",
+          "value": "2775"
+        },
+        "tires": {
+          "label": "轮胎规格",
+          "value": "● 215/55 R18\n○ 225/45 R19"
+        },
+        "seats": {
+          "label": "座位数(个)",
+          "value": "5"
+        },
+        "cltcRangeKm": {
+          "label": "CLTC纯电续航里程(km)",
+          "value": "700"
+        },
+        "batteryCapacityKwh": {
+          "label": "电池能量 (kWh)*¹",
+          "value": "77.65"
+        },
+        "cltcConsumptionKwh100km": {
+          "label": "CLTC综合工况电耗 (kWh/100km)",
+          "value": "12.3"
+        },
+        "dcFastCharge30to80Minutes": {
+          "label": "30%-80%快充时间 (min)",
+          "value": "22"
+        },
+        "externalDischargeKw": {
+          "label": "对外放电功率 (kW)",
+          "value": "6"
+        }
+      }
+    }
+  ]
+}

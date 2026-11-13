@@ -1,4 +1,5 @@
 if(document.documentElement.dataset.analyticsReviewed === "true" && document.documentElement.dataset.stage !== "true") {
+if(document.documentElement.dataset.analyticsReviewed === "true" && document.documentElement.dataset.stage !== "true") {
 (function () {
   'use strict';
 
@@ -31,5 +32,7 @@ if(document.documentElement.dataset.analyticsReviewed === "true" && document.doc
   window.gtag('js', new Date());
   window.gtag('config', measurementId);
 })();
+
+}
 
 }

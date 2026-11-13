@@ -1,7 +1,7 @@
 import {createModelInquiry} from './vehicle-inquiry.js';
 import {createModelFaq} from './vehicle-faq.js';
 
-export function addSections({id,name,zh}){
+export function addSections({id,name,zh,presale=false}){
  const t=(a,b)=>zh?a:b,el=(tag,value,cls)=>{const e=document.createElement(tag);e.textContent=value;if(cls)e.className=cls;return e};
  document.querySelector('#specifications h2').textContent=t('技术规格与配置','Technical specifications & equipment');
  const block=el('section','','trade-panel');block.id='shipping';
@@ -11,7 +11,7 @@ export function addSections({id,name,zh}){
  ['运输方式','Transport','按目的地、车型及承运方案确认。','Confirm for the destination, vehicle and carrier.'],
  ['装柜方案（40HQ）','Container loading (40HQ)','装载数量、固定方式及可行性由物流方核算，不默认每柜两台。','The logistics provider must validate capacity, securing and feasibility; two vehicles per container is not assumed.'],
  ['装运港口','Loading port','按货源位置与订单运输方案确认。','Confirm according to vehicle location and the agreed route.'],
- ['交付时间','Delivery timing','15天左右，实际按车辆准备情况与承运排期确认。','Around 15 days; actual timing is subject to vehicle readiness and carrier schedules.'],
+ ['交付时间','Delivery timing',presale?'预售车型，供货与交付排期尚需确认，不适用常规备车时效。':'15天左右，实际按车辆准备情况与承运排期确认。',presale?'Presale model: supply and delivery scheduling need confirmation; standard preparation timelines do not apply.':'Around 15 days; actual timing is subject to vehicle readiness and carrier schedules.'],
  ['贸易条款','Trade terms','现有官网涉及 FOB / EXW；具体适用条款和费用范围以报价及合同为准。','The existing site references FOB / EXW; the quotation and contract define applicable terms and costs.'],
  ['提供的文件','Documents provided','商业发票、装箱单、提单、原产地证书、出口许可证、合格证书。','Commercial invoice, packing list, bill of lading, certificate of origin, export licence and certificate of conformity.'],
  ['付款条款','Payment terms','30%定金，70%尾款。','30% deposit, 70% balance.'],

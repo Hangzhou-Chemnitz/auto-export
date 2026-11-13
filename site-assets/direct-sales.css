@@ -1,0 +1,12 @@
+/* Preserve the six-person WhatsApp contact grid already published on the site. */
+.direct-sales{margin-top:30px;max-width:520px}
+.direct-sales h3{font-size:16px;line-height:1.4;margin:0 0 14px;color:#1b292c}
+.direct-sales-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.direct-sales-list a{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:10px;min-width:0;min-height:100px;padding:12px;border:1px solid #c5d2c9;border-radius:4px;background:#fff;color:#20352b;text-decoration:none}
+.direct-sales-list a:hover,.direct-sales-list a:focus-visible{border-color:#177b45;box-shadow:0 0 0 2px #177b4526}
+.direct-sales-list strong{display:block;font-size:15px;line-height:1.4;font-weight:600}
+.direct-sales-list span{display:block;font-size:12px;line-height:1.5;color:#53645a;white-space:nowrap}
+.direct-sales-list b{display:block;padding:9px 8px;border-radius:4px;background:#167b43;color:#fff;text-align:center;font-size:12px;font-weight:600;line-height:1.2}
+.direct-sales-list a:focus-visible{outline:2px solid #167b43;outline-offset:3px}
+@media(max-width:650px){.direct-sales-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:330px){.direct-sales-list{grid-template-columns:1fr}}

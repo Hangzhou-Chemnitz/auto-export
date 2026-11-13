@@ -9,7 +9,7 @@ const brand=document.querySelector('#brand'),type=document.querySelector('#body-
 const region=document.querySelector('#region'),regionPanel=document.querySelector('#region-reference');
 const heading=document.querySelector('.catalog-intro h1'),intro=document.querySelector('.catalog-intro p');
 const defaultHeading=heading.textContent,defaultIntro=intro.textContent;
-const names={Toyota:'丰田',Nissan:'日产',Volkswagen:'大众',Geely:'吉利',Changan:'长安',Chery:'奇瑞',Jetour:'捷途',Zeekr:'极氪',Honda:'本田',Hyundai:'现代',Kia:'起亚',Audi:'奥迪'};
+const names={Toyota:'丰田',Nissan:'日产',Volkswagen:'大众',Geely:'吉利',Changan:'长安',Chery:'奇瑞',Jetour:'捷途',Zeekr:'极氪',Honda:'本田',Hyundai:'现代',Kia:'起亚',Audi:'奥迪',AION:'广汽埃安'};
 const typeNames={Sedan:'轿车',Hatchback:'两厢车',SUV:'SUV',MPV:'MPV'};
 const bodyStyles=Object.keys(typeNames);
 const bodyStyle=label=>bodyStyles.find(style=>new RegExp('\\b'+style+'\\b','i').test(label))||label;
@@ -53,7 +53,7 @@ function render(){
  const reference=REGIONAL_SHORTLISTS[region.value];
  const evidence=new Map((reference?.models||[]).map(item=>[item.id,item]));
  const candidates=reference?reference.models.map(item=>models.find(model=>model.id===item.id)).filter(Boolean):models;
- const items=candidates.filter(m=>(!brand.value||(m.brandGroup||m.brand)===brand.value)&&(!type.value||(bodyStyles.includes(type.value)?m.bodyStyle===type.value:m.type===type.value))&&((m.name+' '+m.brand+' '+(names[m.brand]||'')).toLowerCase().includes(q)));
+ const items=candidates.filter(m=>(!brand.value||(m.brandGroup||m.brand)===brand.value)&&(!type.value||(bodyStyles.includes(type.value)?m.bodyStyle===type.value:m.type===type.value))&&([m.name,m.nameZh,m.brand,names[m.brand],...(m.searchAliases||[])].filter(Boolean).join(' ').toLowerCase().includes(q)));
  syncFilterURL();
  renderRegion(reference);
  count.textContent=reference?t('显示 '+items.length+' / '+candidates.length+' 款区域参考车型',items.length+' of '+candidates.length+' shortlisted models'):t('显示 '+items.length+' / '+models.length+' 款车型',items.length+' of '+models.length+' models');
@@ -65,8 +65,8 @@ function render(){
   const badge=document.createElement('span');badge.textContent=isZh?(typeNames[m.type]||m.type):m.type;photo.append(img,badge);
   const body=document.createElement('div');body.className='catalog-body';
   const small=document.createElement('small');small.textContent=isZh?(names[m.brand]||m.brand)+' / '+m.brand:m.brand.toUpperCase();
-  const title=document.createElement('h2');title.textContent=m.name;
-  const note=document.createElement('p');note.textContent=t('具体版本与供货情况，请询价确认。','Confirm the version and availability on inquiry.');
+  const title=document.createElement('h2');title.textContent=isZh?m.nameZh||m.name:m.name;
+  const note=document.createElement('p');note.textContent=m.catalogNote?local(m.catalogNote):m.commerceStatus==='presale'?t('仅大师典藏版 · 预售资料，供货与交期另行确认。','Master Collection only · Presale specifications; confirm supply and delivery.'):t('具体版本与供货情况，请询价确认。','Confirm the version and availability on inquiry.');
   const cta=document.createElement('span');cta.className='catalog-card-link';cta.textContent=t('查看车型与配置 ↗','View model & specifications ↗');
   body.append(small,title);
   if(evidence.has(m.id)){
@@ -79,7 +79,7 @@ function render(){
 [brand,type,search,region].forEach(e=>e.addEventListener('input',render));
 document.querySelector('#clear-filters').onclick=()=>{brand.value=type.value=search.value=region.value='';render()};
 (async()=>{try{
- const res=await fetch(appUrl('data/catalog-models.json'));if(!res.ok)throw Error();
+ const res=await fetch(appUrl('data/catalog-models.json?v=20261113-aion-y-gallery'));if(!res.ok)throw Error();
  const data=await res.json();
  models=data.map(m=>({...m,image:appUrl(m.image)}));
  for(const control of [brand,type,region]) while(control.options.length>1)control.remove(1);

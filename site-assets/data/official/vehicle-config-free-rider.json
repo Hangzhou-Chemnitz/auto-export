@@ -1,1 +1,705 @@
-{"modelId":"vehicle-config-free-rider","status":"verified","officialModelName":{"zh":"捷途自由者","en":"Jetour Free Rider"},"edition":{"zh":"官网现有配置（未标年款）","en":"Current official configuration (year not stated)"},"source":{"title":{"zh":"捷途自由者官方配置表","en":"Jetour Free Rider official configuration table"},"url":"https://manager.jetour.com.cn/cmsapi/business/carModelConfig/carModelInfo/Freedom","checkedAt":"2026-11-04","scope":{"zh":"中国大陆官网配置。仅展示官网明确列出的参数和部分装备；未列项目留空，不推定年款或驾驶位置。以实车及厂家最新配置为准。 对应燃油版捷途自由者，不是山海插混车型；官网表未标年款。","en":"Mainland China official specifications. Only explicitly listed parameters and selected equipment are shown; missing fields stay blank, with no assumed model year or steering position. Actual vehicle and latest manufacturer specifications prevail. Petrol Jetour Free Rider, not a Shanhai plug-in hybrid; the official table does not state a model year."},"pageUrl":"https://www.jetour.com.cn/vehicles/Freedom/"},"defaultVariant":"official-1","variants":[{"id":"official-1","year":null,"label":{"zh":"1.5TD启程","en":"1.5T D Qicheng"},"officialName":"1.5TD启程","manufacturerGuidePriceCny":114900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":"135 kW","torque":"290 N·m","acceleration":null,"topSpeed":"180 km/h","transmission":{"zh":"7挡 湿式双离合变速箱(DCT)","en":"7-speed wet dual-clutch"},"drive":{"zh":"前置前驱","en":"Front-engine, front-wheel drive"},"dimensions":"4706×1967×1845 mm","wheelbase":"2810 mm","weight":null,"tires":"235/65 R18","seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"64英寸全景大天窗","en":"Panoramic sunroof"},"status":"absent","officialValue":"-"},{"label":{"zh":"车顶行李架","en":"Roof rails"},"status":"standard","officialValue":"●"},{"label":{"zh":"外后视镜电加热","en":"Heated exterior mirrors"},"status":"absent","officialValue":"-"}],"comfort":[{"label":{"zh":"前排座椅通风","en":"Ventilated front seats"},"status":"absent","officialValue":"-"},{"label":{"zh":"前排座椅加热","en":"Heated front seats"},"status":"absent","officialValue":"-"}],"safety":[{"label":{"zh":"防抱死制动(ABS)","en":"ABS"},"status":"standard","officialValue":"●"},{"label":{"zh":"车身稳定控制(ESC/ESP/DSC等)","en":"Electronic stability control"},"status":"standard","officialValue":"●"},{"label":{"zh":"360°全景影像","en":"360° panoramic camera"},"status":"absent","officialValue":"-"},{"label":{"zh":"定速巡航(CCS)","en":"Cruise control"},"status":"standard","officialValue":"●"},{"label":{"zh":"自适应巡航(ACC）","en":"Adaptive cruise control"},"status":"absent","officialValue":"-"}]}},{"id":"official-2","year":null,"label":{"zh":"1.5TD探索","en":"1.5T D Explore"},"officialName":"1.5TD探索","manufacturerGuidePriceCny":124900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":"135 kW","torque":"290 N·m","acceleration":null,"topSpeed":"180 km/h","transmission":{"zh":"7挡 湿式双离合变速箱(DCT)","en":"7-speed wet dual-clutch"},"drive":{"zh":"前置前驱","en":"Front-engine, front-wheel drive"},"dimensions":"4706×1967×1845 mm","wheelbase":"2810 mm","weight":null,"tires":"235/65 R18","seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"64英寸全景大天窗","en":"Panoramic sunroof"},"status":"standard","officialValue":"●"},{"label":{"zh":"车顶行李架","en":"Roof rails"},"status":"standard","officialValue":"●"},{"label":{"zh":"外后视镜电加热","en":"Heated exterior mirrors"},"status":"standard","officialValue":"●"}],"comfort":[{"label":{"zh":"前排座椅通风","en":"Ventilated front seats"},"status":"optional","officialValue":"○"},{"label":{"zh":"前排座椅加热","en":"Heated front seats"},"status":"optional","officialValue":"○"}],"safety":[{"label":{"zh":"防抱死制动(ABS)","en":"ABS"},"status":"standard","officialValue":"●"},{"label":{"zh":"车身稳定控制(ESC/ESP/DSC等)","en":"Electronic stability control"},"status":"standard","officialValue":"●"},{"label":{"zh":"360°全景影像","en":"360° panoramic camera"},"status":"standard","officialValue":"●"},{"label":{"zh":"定速巡航(CCS)","en":"Cruise control"},"status":"standard","officialValue":"●"},{"label":{"zh":"自适应巡航(ACC）","en":"Adaptive cruise control"},"status":"absent","officialValue":"-"}]}},{"id":"official-3","year":null,"label":{"zh":"1.5TD发现","en":"1.5T D Discover"},"officialName":"1.5TD发现","manufacturerGuidePriceCny":134900,"specs":{"fuel":{"zh":"汽油","en":"Petrol"},"power":"135 kW","torque":"290 N·m","acceleration":null,"topSpeed":"180 km/h","transmission":{"zh":"7挡 湿式双离合变速箱(DCT)","en":"7-speed wet dual-clutch"},"drive":{"zh":"前置前驱","en":"Front-engine, front-wheel drive"},"dimensions":"4706×1967×1845 mm","wheelbase":"2810 mm","weight":null,"tires":"235/65 R18","seats":"5","steering":null},"equipment":{"exterior":[{"label":{"zh":"64英寸全景大天窗","en":"Panoramic sunroof"},"status":"standard","officialValue":"●"},{"label":{"zh":"车顶行李架","en":"Roof rails"},"status":"standard","officialValue":"●"},{"label":{"zh":"外后视镜电加热","en":"Heated exterior mirrors"},"status":"standard","officialValue":"●"}],"comfort":[{"label":{"zh":"前排座椅通风","en":"Ventilated front seats"},"status":"standard","officialValue":"●"},{"label":{"zh":"前排座椅加热","en":"Heated front seats"},"status":"standard","officialValue":"●"}],"safety":[{"label":{"zh":"防抱死制动(ABS)","en":"ABS"},"status":"standard","officialValue":"●"},{"label":{"zh":"车身稳定控制(ESC/ESP/DSC等)","en":"Electronic stability control"},"status":"standard","officialValue":"●"},{"label":{"zh":"360°全景影像","en":"360° panoramic camera"},"status":"standard","officialValue":"●"},{"label":{"zh":"定速巡航(CCS)","en":"Cruise control"},"status":"absent","officialValue":"-"},{"label":{"zh":"自适应巡航(ACC）","en":"Adaptive cruise control"},"status":"standard","officialValue":"●"}]}}]}
+{
+  "modelId": "free-rider",
+  "status": "verified",
+  "officialModelName": {
+    "zh": "全新捷途自由者7",
+    "en": "JETOUR Free Rider 7"
+  },
+  "edition": {
+    "zh": "2027款（中国市场）",
+    "en": "2027 model year (China market)"
+  },
+  "source": {
+    "title": {
+      "zh": "全新捷途自由者7官方配置表",
+      "en": "JETOUR Free Rider 7 official configuration table"
+    },
+    "url": "https://manager.jetour.com.cn/cmsapi/business/carModelConfig/carModelInfo/xinFreedom7",
+    "pageUrl": "https://www.jetour.com.cn/vehicles/xinFreedom7/",
+    "checkedAt": "2026-11-13",
+    "contentCheckedAt": "2026-11-13",
+    "sha256": "c44bdc1af4e0b5fb5bbbb57cf2d3ed7d460e6213bf593a4e54e249ebc3848c8e",
+    "scope": {
+      "zh": "中国大陆新版燃油全新捷途自由者7配置，年款由汽车之家2027款记录交叉核实；不是旧款换年，也不是C-DM插混或PLUS。参数、指导价和装备取自配套官方表；未公布字段留空，选装条件以官方完整表及实车为准。国内指导价不等于出口报价，联网及辅助驾驶功能应按目的地核实。",
+      "en": "China-market petrol Free Rider 7 with model year cross-checked against Autohome MY2027 records, not a relabelled previous car, C-DM plug-in hybrid or PLUS. Specifications, guide prices and equipment follow the matching official sheet; unlisted fields remain blank. Confirm option conditions against the official full sheet and actual vehicle. China guide prices are not export quotes; connected and driver-assistance features require destination-specific verification."
+    },
+    "modelYearVerification": {
+      "year": 2027,
+      "market": "China",
+      "checkedAt": "2026-11-13",
+      "url": "https://car.autohome.com.cn/config/spec/79350.html",
+      "note": "Current official Free Rider 7 model names, guide prices and key parameters match the China MY2027 Autohome listing."
+    }
+  },
+  "defaultVariant": "official-2027-1",
+  "variants": [
+    {
+      "id": "official-2027-1",
+      "year": 2027,
+      "label": {
+        "zh": "1.5TD 轻享",
+        "en": "1.5TD Qingxiang"
+      },
+      "officialName": "1.5TD 轻享",
+      "manufacturerGuidePriceCny": 113900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "135 kW",
+        "torque": "290 N·m",
+        "acceleration": null,
+        "topSpeed": "170 km/h",
+        "transmission": {
+          "zh": "7挡 湿式双离合变速箱(DCT)",
+          "en": "7-speed wet dual-clutch"
+        },
+        "drive": {
+          "zh": "前置前驱",
+          "en": "Front-engine, front-wheel drive"
+        },
+        "dimensions": "4651×1967×1840 mm",
+        "wheelbase": "2800 mm",
+        "weight": "1615 kg",
+        "tires": {
+          "zh": "235/65 R18",
+          "en": "235/65 R18"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "外后视镜电加热",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "前排座椅通风",
+              "en": "Ventilated front seats"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "前排座椅加热",
+              "en": "Heated front seats"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESC/ESP/DSC等)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "定速巡航(CCS)",
+              "en": "Cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航(ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4651",
+        "宽度(mm)": "1967",
+        "高度(mm)": "1840",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "170",
+        "整备质量（kg）": "1615",
+        "最大功率(kW)": "135",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "290",
+        "最大扭矩转速(rpm)": "2000-3500",
+        "燃料形式": "汽油",
+        "档位个数": "7",
+        "变速箱类型": "湿式双离合变速箱(DCT)",
+        "驱动形式": "前置前驱",
+        "轮胎规格": "235/65 R18"
+      }
+    },
+    {
+      "id": "official-2027-2",
+      "year": 2027,
+      "label": {
+        "zh": "1.5TD 舒享",
+        "en": "1.5TD Shuxiang"
+      },
+      "officialName": "1.5TD 舒享",
+      "manufacturerGuidePriceCny": 123900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "135 kW",
+        "torque": "290 N·m",
+        "acceleration": null,
+        "topSpeed": "170 km/h",
+        "transmission": {
+          "zh": "7挡 湿式双离合变速箱(DCT)",
+          "en": "7-speed wet dual-clutch"
+        },
+        "drive": {
+          "zh": "前置前驱",
+          "en": "Front-engine, front-wheel drive"
+        },
+        "dimensions": "4651×1967×1840 mm",
+        "wheelbase": "2800 mm",
+        "weight": "1667 kg",
+        "tires": {
+          "zh": "235/60 R19",
+          "en": "235/60 R19"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "外后视镜电加热",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "前排座椅通风",
+              "en": "Ventilated front seats"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "前排座椅加热",
+              "en": "Heated front seats"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESC/ESP/DSC等)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "定速巡航(CCS)",
+              "en": "Cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航(ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4651",
+        "宽度(mm)": "1967",
+        "高度(mm)": "1840",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "170",
+        "整备质量（kg）": "1667",
+        "最大功率(kW)": "135",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "290",
+        "最大扭矩转速(rpm)": "2000-3500",
+        "燃料形式": "汽油",
+        "档位个数": "7",
+        "变速箱类型": "湿式双离合变速箱(DCT)",
+        "驱动形式": "前置前驱",
+        "轮胎规格": "235/60 R19"
+      }
+    },
+    {
+      "id": "official-2027-3",
+      "year": 2027,
+      "label": {
+        "zh": "1.5TD 舒享+",
+        "en": "1.5TD Shuxiang+"
+      },
+      "officialName": "1.5TD 舒享+",
+      "manufacturerGuidePriceCny": 129900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "135 kW",
+        "torque": "290 N·m",
+        "acceleration": null,
+        "topSpeed": "170 km/h",
+        "transmission": {
+          "zh": "7挡 湿式双离合变速箱(DCT)",
+          "en": "7-speed wet dual-clutch"
+        },
+        "drive": {
+          "zh": "前置前驱",
+          "en": "Front-engine, front-wheel drive"
+        },
+        "dimensions": "4651×1967×1840 mm",
+        "wheelbase": "2800 mm",
+        "weight": "1667 kg",
+        "tires": {
+          "zh": "235/60 R19",
+          "en": "235/60 R19"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "外后视镜电加热",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "前排座椅通风",
+              "en": "Ventilated front seats"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "前排座椅加热",
+              "en": "Heated front seats"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESC/ESP/DSC等)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "定速巡航(CCS)",
+              "en": "Cruise control"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航(ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4651",
+        "宽度(mm)": "1967",
+        "高度(mm)": "1840",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "170",
+        "整备质量（kg）": "1667",
+        "最大功率(kW)": "135",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "290",
+        "最大扭矩转速(rpm)": "2000-3500",
+        "燃料形式": "汽油",
+        "档位个数": "7",
+        "变速箱类型": "湿式双离合变速箱(DCT)",
+        "驱动形式": "前置前驱",
+        "轮胎规格": "235/60 R19"
+      }
+    },
+    {
+      "id": "official-2027-4",
+      "year": 2027,
+      "label": {
+        "zh": "1.5TD 尊享",
+        "en": "1.5TD Zunxiang"
+      },
+      "officialName": "1.5TD 尊享",
+      "manufacturerGuidePriceCny": 134900,
+      "specs": {
+        "fuel": {
+          "zh": "汽油",
+          "en": "Petrol"
+        },
+        "power": "135 kW",
+        "torque": "290 N·m",
+        "acceleration": null,
+        "topSpeed": "170 km/h",
+        "transmission": {
+          "zh": "7挡 湿式双离合变速箱(DCT)",
+          "en": "7-speed wet dual-clutch"
+        },
+        "drive": {
+          "zh": "前置前驱",
+          "en": "Front-engine, front-wheel drive"
+        },
+        "dimensions": "4749×1967×1840 mm",
+        "wheelbase": "2800 mm",
+        "weight": "1667 kg",
+        "tires": {
+          "zh": "235/60 R19",
+          "en": "235/60 R19"
+        },
+        "seats": "5",
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "64英寸全景大天窗",
+              "en": "Panoramic sunroof"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED近光灯源",
+              "en": "LED low beams"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "LED远光灯源",
+              "en": "LED high beams"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "外后视镜电加热",
+              "en": "Heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "前排座椅通风",
+              "en": "Ventilated front seats"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "前排座椅加热",
+              "en": "Heated front seats"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "防抱死制动(ABS)",
+              "en": "ABS"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "车身稳定控制(ESC/ESP/DSC等)",
+              "en": "Electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "360°全景影像",
+              "en": "360° panoramic camera"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "定速巡航(CCS)",
+              "en": "Cruise control"
+            },
+            "status": "absent",
+            "officialValue": "-"
+          },
+          {
+            "label": {
+              "zh": "自适应巡航(ACC）",
+              "en": "Adaptive cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          },
+          {
+            "label": {
+              "zh": "主动刹车(AEB)",
+              "en": "Automatic emergency braking"
+            },
+            "status": "standard",
+            "officialValue": "●"
+          }
+        ]
+      },
+      "specEvidence": {
+        "长度(mm)": "4749",
+        "宽度(mm)": "1967",
+        "高度(mm)": "1840",
+        "轴距(mm)": "2800",
+        "座位数(个)": "5",
+        "最高车速(km/h)": "170",
+        "整备质量（kg）": "1667",
+        "最大功率(kW)": "135",
+        "最大功率转速(rpm)": "5500",
+        "最大扭矩(N·m)": "290",
+        "最大扭矩转速(rpm)": "2000-3500",
+        "燃料形式": "汽油",
+        "档位个数": "7",
+        "变速箱类型": "湿式双离合变速箱(DCT)",
+        "驱动形式": "前置前驱",
+        "轮胎规格": "235/60 R19"
+      }
+    }
+  ]
+}

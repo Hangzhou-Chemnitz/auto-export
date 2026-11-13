@@ -23,13 +23,14 @@
   teana:'Nissan Teana',n7:'Nissan N7',n6:'Nissan N6',qashqai:'Nissan Qashqai',xtrail:'Nissan X-Trail',nx8:'Nissan NX8',sylphy:'Nissan Sylphy',
   seltos:'Kia Seltos',kx1:'Kia KX1',k3:'Kia K3',k5:'Kia K5',sportage:'Kia Sportage',elantra:'Hyundai Elantra',
   dashing:'Jetour Dashing',x70:'Jetour X70',traveler:'Jetour Traveler','free-rider':'Jetour Free Rider',q5:'Audi Q5L',q3:'Audi Q3',a5:'Audi A5L',crv:'Honda CR-V',
-  'tiggo-3x':'Chery Tiggo 3X','tiggo-5x':'Chery Tiggo 5X',mg5:'MG MG5','changan-cs55':'Changan CS55 PLUS','changan-cs75':'Changan CS75 PLUS','changan-x5':'Changan X5 PLUS'
+  'tiggo-3x':'Chery Tiggo 3X','tiggo-5x':'Chery Tiggo 5X',mg5:'MG MG5','changan-cs55':'Changan CS55 PLUS','changan-cs75':'Changan CS75 PLUS','changan-x5':'Changan X5 PLUS',
+  'xingyue-l-plus':'Geely Xingyue L PLUS','aion-i60':'GAC AION i60','aion-y':'GAC AION Y'
  });
- const BRANDS = new Set(['toyota','nissan','volkswagen','geely','changan','chery','jetour','zeekr','honda','hyundai','kia','audi','mg']);
+ const BRANDS = new Set(['toyota','nissan','volkswagen','geely','changan','chery','jetour','zeekr','honda','hyundai','kia','audi','mg','aion']);
  const MARKETS = new Set(['latin-america','middle-east','central-asia','africa','other','PE','CO','CL','AE','SA','KZ']);
  const SURFACES = new Set(['home','catalog','brand','vehicle','quote','about','other']);
  const LOCATIONS = new Set(['header','hero','footer','brand_tile','body_tile','region_tile','catalog_card','brand_card','related_card','page_body','home_form','quote_form','vehicle_form','variant_picker']);
- const CONTACTS = new Set(['Chloe','Natalie','Darwin','Zeeshan','Jacky']);
+ const CONTACTS = new Set(['Chloe','Natalie','Darwin','Zeeshan','Jacky','Even']);
  const EVENTS = new Set(['page_view','vehicle_view','vehicle_variant_select','catalog_click','brand_click','inquiry_start','whatsapp_open']);
  let context = {};
  function modelName(id) {

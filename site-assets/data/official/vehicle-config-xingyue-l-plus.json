@@ -1,0 +1,517 @@
+{
+  "modelId": "vehicle-config-xingyue-l-plus",
+  "status": "verified",
+  "commerceStatus": "presale",
+  "officialModelName": {
+    "zh": "吉利星越L PLUS",
+    "en": "Geely Xingyue L PLUS"
+  },
+  "edition": {
+    "zh": "2027款预售资料（中国市场，仅大师典藏版）",
+    "en": "MY2027 presale specifications (China market; Master Collection only)"
+  },
+  "source": {
+    "title": {
+      "zh": "吉利星越L PLUS官方预售配置表",
+      "en": "Geely Xingyue L PLUS official presale configuration table"
+    },
+    "url": "https://xingyue.geely.com/xingyuelplus",
+    "checkedAt": "2026-11-13",
+    "dataLocation": "window.configJson",
+    "scope": {
+      "zh": "仅采用官方预售配置表第5列「大师典藏版」，不与星越L或其他星越L PLUS版本混用。年款2027由汽车之家对应车型78794明确标示，厂家页面本身未单独标注年款。全部参数和装备按2026年11月13日官方预售资料核对，实际产品以最终交付为准。未明确公布的零百加速、最高车速、座位数及方向盘位置留空。发动机与电机参数分别列示，不相加推算系统输出。CCD减振器与23扬音响为厂家限时免费赠送，不能视为永久权益；选装项目单独标识。中国市场车机、联网及辅助驾驶功能在出口目的地的可用性需逐项确认；辅助驾驶不能代替驾驶员。",
+      "en": "Only column 5, Master Collection, of the official presale configuration table is used; no specifications are inherited from Xingyue L or other Xingyue L PLUS trims. Autohome identifies matching specification 78794 as MY2027; the manufacturer page does not separately state a model year. Specifications and equipment were checked against the official presale data on 13 November 2026 and remain subject to the final delivered vehicle. Unpublished 0–100 km/h acceleration, top speed, seat count and steering-wheel position remain blank. Engine and motor outputs are shown separately, never added to infer system output. CCD dampers and 23-speaker audio are limited-time complimentary manufacturer offers, not permanent entitlements; optional items are identified separately. Export-market availability of China-market connected and driver-assistance functions requires individual confirmation; driver assistance does not replace the driver."
+    },
+    "yearEvidence": {
+      "url": "https://www.autohome.com.cn/spec/78794/",
+      "publisher": "Autohome",
+      "title": "【图】星越L PLUS 2027款 2.0T 混动大师典藏版报价_图片_吉利汽车_汽车之家",
+      "year": 2027,
+      "checkedAt": "2026-11-13",
+      "manufacturerPageExplicitYear": false
+    },
+    "presalePrice": {
+      "currency": "CNY",
+      "value": 209700,
+      "officialLabel": "预售指导价（元）",
+      "variant": "大师典藏版",
+      "url": "https://xingyue.geely.com/xingyuelplus",
+      "checkedAt": "2026-11-13",
+      "isFinalManufacturerGuidePrice": false,
+      "isExportQuote": false
+    },
+    "verification": {
+      "officialColumnIndex": 4,
+      "officialColumnName": "大师典藏版",
+      "allOfficialColumns": [
+        "揽晖悦尊版",
+        "揽晖荣尊版",
+        "揽晖曜尊版",
+        "揽晖至尊版",
+        "大师典藏版"
+      ],
+      "blankCellRule": "Carry the preceding non-empty value forward within the same row, matching the manufacturer's colspan renderer.",
+      "configRawSha256": "f6dda48b0968cda51cfa6dbd4f19c6844ff738e4e7d9d840b0473839c38a876c",
+      "specFields": 13,
+      "populatedSpecFields": 9,
+      "selectedEquipmentCount": 45
+    }
+  },
+  "defaultVariant": "master-collection",
+  "variants": [
+    {
+      "id": "master-collection",
+      "year": 2027,
+      "commerceStatus": "presale",
+      "label": {
+        "zh": "2.0T 混动大师典藏版（预售）",
+        "en": "2.0T Hybrid Master Collection (presale)"
+      },
+      "officialName": "大师典藏版",
+      "manufacturerGuidePriceCny": null,
+      "specs": {
+        "fuel": {
+          "zh": "汽油/非插电油电混合动力（2.0TD）",
+          "en": "Petrol / non-plug-in hybrid (2.0TD)"
+        },
+        "power": {
+          "zh": "发动机160 kW；电动机峰值230 kW",
+          "en": "Engine: 160 kW; motor peak: 230 kW"
+        },
+        "torque": {
+          "zh": "发动机360 N·m；电动机峰值350 N·m",
+          "en": "Engine: 360 N·m; motor peak: 350 N·m"
+        },
+        "acceleration": null,
+        "topSpeed": null,
+        "transmission": {
+          "zh": "3DHT（12合1高性能电驱变速箱）",
+          "en": "3-speed DHT (12-in-1 electric-drive transmission)"
+        },
+        "drive": {
+          "zh": "前置前驱",
+          "en": "Front-engine, front-wheel drive"
+        },
+        "dimensions": "4955×1960×1769 mm",
+        "wheelbase": "2900 mm",
+        "weight": "2065 kg",
+        "tires": "245/45 R21",
+        "seats": null,
+        "steering": null
+      },
+      "equipment": {
+        "exterior": [
+          {
+            "label": {
+              "zh": "飞檐凌空LED前大灯",
+              "en": "LED headlights"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "飞檐凌空LED前大灯"
+          },
+          {
+            "label": {
+              "zh": "静谧双层隔音玻璃（前门及前风挡）",
+              "en": "Laminated acoustic front-door glass and windscreen"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "静谧双层隔音玻璃（前门及前风挡）"
+          },
+          {
+            "label": {
+              "zh": "隐私玻璃（后门及后风挡）",
+              "en": "Rear-door and rear-window privacy glass"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "隐私玻璃（后门及后风挡）"
+          },
+          {
+            "label": {
+              "zh": "外后视镜电动调节、电动折叠及加热",
+              "en": "Power-adjustable, power-folding and heated exterior mirrors"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "外后视镜电动调节、电动折叠及加热"
+          },
+          {
+            "label": {
+              "zh": "可开启式全景天窗",
+              "en": "Opening panoramic sunroof"
+            },
+            "status": "absent",
+            "officialValue": "-",
+            "sourceRow": "可开启式全景天窗"
+          },
+          {
+            "label": {
+              "zh": "电动后备箱及位置记忆",
+              "en": "Power tailgate with height memory"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "电动后备箱及位置记忆"
+          },
+          {
+            "label": {
+              "zh": "后备箱脚踢式感应开启",
+              "en": "Hands-free tailgate opening"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后备箱脚踢式感应开启"
+          },
+          {
+            "label": {
+              "zh": "车顶行李架",
+              "en": "Roof rails"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "车顶行李架"
+          },
+          {
+            "label": {
+              "zh": "电动踏板（选装）",
+              "en": "Power running boards (optional)"
+            },
+            "status": "optional",
+            "officialValue": "○",
+            "sourceRow": "电动踏板"
+          }
+        ],
+        "comfort": [
+          {
+            "label": {
+              "zh": "双腔闭式空气悬架",
+              "en": "Dual-chamber closed air suspension"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "双腔闭式空气悬架"
+          },
+          {
+            "label": {
+              "zh": "CCD连续可变阻尼减振器（厂家限时免费赠送）",
+              "en": "CCD continuously variable dampers (limited-time complimentary offer)"
+            },
+            "status": "standard",
+            "officialValue": "●限时免费赠送",
+            "sourceRow": "CCD连续可变阻尼减振器"
+          },
+          {
+            "label": {
+              "zh": "后轮主动转向系统（双向各10°）",
+              "en": "Active rear-wheel steering (up to 10° in either direction)"
+            },
+            "status": "standard",
+            "officialValue": "双向各10度转向角",
+            "sourceRow": "后轮主动转向系统"
+          },
+          {
+            "label": {
+              "zh": "17.3英寸后排吸顶娱乐屏+可开启式天窗",
+              "en": "17.3-inch rear ceiling entertainment display with opening sunroof"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "17.3英寸后排吸顶娱乐屏+可开启式天窗"
+          },
+          {
+            "label": {
+              "zh": "栗烟红真皮内饰",
+              "en": "Chestnut-red genuine-leather interior"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "栗烟红真皮内饰"
+          },
+          {
+            "label": {
+              "zh": "方向盘加热",
+              "en": "Heated steering wheel"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "方向盘加热"
+          },
+          {
+            "label": {
+              "zh": "前排座椅加热、通风及记忆",
+              "en": "Heated and ventilated front seats with memory"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "前排座椅加热、通风及记忆"
+          },
+          {
+            "label": {
+              "zh": "主驾座椅8向电动调节",
+              "en": "8-way power-adjustable driver seat"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "主驾座椅8向电动调节"
+          },
+          {
+            "label": {
+              "zh": "主驾座椅14点按摩",
+              "en": "14-point driver-seat massage"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "主驾座椅14点按摩"
+          },
+          {
+            "label": {
+              "zh": "副驾座椅14点按摩",
+              "en": "14-point front-passenger-seat massage"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "副驾座椅14点按摩"
+          },
+          {
+            "label": {
+              "zh": "副驾电动腿托",
+              "en": "Power front-passenger leg rest"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "副驾电动腿托"
+          },
+          {
+            "label": {
+              "zh": "后排座椅加热、通风",
+              "en": "Heated and ventilated rear seats"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后排座椅加热、通风"
+          },
+          {
+            "label": {
+              "zh": "后排座椅14点按摩",
+              "en": "14-point rear-seat massage"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后排座椅14点按摩"
+          },
+          {
+            "label": {
+              "zh": "后排右侧座椅电动腿托",
+              "en": "Power right-rear-seat leg rest"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后排右侧座椅电动腿托"
+          },
+          {
+            "label": {
+              "zh": "后排多功能触屏中央扶手",
+              "en": "Rear centre armrest with multifunction touchscreen"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "后排多功能触屏中央扶手"
+          },
+          {
+            "label": {
+              "zh": "双区独立控制恒温空调",
+              "en": "Dual-zone automatic climate control"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "双区独立控制恒温空调"
+          },
+          {
+            "label": {
+              "zh": "10L中岛冷暖箱",
+              "en": "10-litre centre-console cooling and warming compartment"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "10L中岛冷暖箱"
+          },
+          {
+            "label": {
+              "zh": "23扬Flyme Sound无界之声（厂家限时免费赠送）",
+              "en": "23-speaker Flyme Sound audio (limited-time complimentary offer)"
+            },
+            "status": "standard",
+            "officialValue": "●限时免费赠送",
+            "sourceRow": "23扬Flyme Sound无界之声"
+          },
+          {
+            "label": {
+              "zh": "高通骁龙8295芯片",
+              "en": "Qualcomm Snapdragon 8295 cockpit chipset"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "高通骁龙8295芯片"
+          },
+          {
+            "label": {
+              "zh": "30英寸6K一体式天际屏",
+              "en": "30-inch 6K integrated display"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "30英寸6K一体式天际屏"
+          },
+          {
+            "label": {
+              "zh": "32英寸AR-HUD抬头显示",
+              "en": "32-inch AR head-up display"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "32英寸AR-HUD抬头显示"
+          }
+        ],
+        "safety": [
+          {
+            "label": {
+              "zh": "千里浩瀚H5辅助驾驶方案（需流量）",
+              "en": "Qianli Haohan H5 driver assistance (data connection required)"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "千里浩瀚H5辅助驾驶方案(#)"
+          },
+          {
+            "label": {
+              "zh": "高精度激光雷达",
+              "en": "High-precision LiDAR"
+            },
+            "status": "standard",
+            "officialValue": "●1个",
+            "sourceRow": "高精度激光雷达"
+          },
+          {
+            "label": {
+              "zh": "AEB紧急制动",
+              "en": "Autonomous emergency braking"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "AEB紧急制动"
+          },
+          {
+            "label": {
+              "zh": "ACC全速自适应巡航",
+              "en": "Full-speed adaptive cruise control"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "ACC全速自适应巡航"
+          },
+          {
+            "label": {
+              "zh": "上帝之眼540°透明底盘",
+              "en": "540° surround-view camera with underbody view"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "上帝之眼540°透明底盘"
+          },
+          {
+            "label": {
+              "zh": "APA智能泊车辅助",
+              "en": "Automatic parking assistance"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "APA智能泊车辅助"
+          },
+          {
+            "label": {
+              "zh": "博世车身电子稳定控制",
+              "en": "Bosch electronic stability control"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "博世车身电子稳定控制"
+          },
+          {
+            "label": {
+              "zh": "ABS防抱死制动系统",
+              "en": "Anti-lock braking system"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "ABS防抱死制动系统"
+          },
+          {
+            "label": {
+              "zh": "前排正面安全气囊",
+              "en": "Front airbags"
+            },
+            "status": "standard",
+            "officialValue": "●2个",
+            "sourceRow": "前排正面安全气囊"
+          },
+          {
+            "label": {
+              "zh": "前排侧面安全气囊",
+              "en": "Front side airbags"
+            },
+            "status": "standard",
+            "officialValue": "●2个",
+            "sourceRow": "前排侧面安全气囊"
+          },
+          {
+            "label": {
+              "zh": "前/后排一体式双侧安全气帘",
+              "en": "Front/rear side curtain airbags"
+            },
+            "status": "standard",
+            "officialValue": "●2个",
+            "sourceRow": "前/后排一体式双侧安全气帘"
+          },
+          {
+            "label": {
+              "zh": "双腔远端安全气囊",
+              "en": "Dual-chamber far-side airbag"
+            },
+            "status": "standard",
+            "officialValue": "●1个",
+            "sourceRow": "双腔远端安全气囊"
+          },
+          {
+            "label": {
+              "zh": "后排侧面安全气囊",
+              "en": "Rear side airbags"
+            },
+            "status": "standard",
+            "officialValue": "●2个",
+            "sourceRow": "后排侧面安全气囊"
+          },
+          {
+            "label": {
+              "zh": "后排坐垫气囊",
+              "en": "Rear seat-cushion airbags"
+            },
+            "status": "standard",
+            "officialValue": "●2个",
+            "sourceRow": "后排坐垫气囊"
+          },
+          {
+            "label": {
+              "zh": "胎压监测系统（胎压显示/警示）",
+              "en": "Tyre-pressure monitoring with pressure display and warning"
+            },
+            "status": "standard",
+            "officialValue": "●",
+            "sourceRow": "胎压监测系统（胎压显示/警示）"
+          }
+        ]
+      }
+    }
+  ]
+}

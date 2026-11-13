@@ -2,6 +2,27 @@
 // Live answers append the selected trim's specifications and equipment states.
 // A legacy route key must not override the model identity in the current sheet.
 export const MODEL_FAQ_PROFILES = {
+  'vehicle-config-aion-y': {
+    question:{zh:'本页 AION Y 是哪一个年款与续航版本？',en:'Which model year and range version of the AION Y is listed here?'},
+    note:{zh:'本页只收录2026款 Plus 510 智享版，不套用其他年款或续航版本的参数。510公里为厂家CLTC测试续航，不是实际道路续航承诺；出口前需核对实车电池配置、目的地充电条件及联网功能适用性。',en:'Only the MY2026 Plus 510 Zhixiang version is listed. Specifications from other model years or range versions are not substituted. The 510 km figure is manufacturer CLTC test range, not a real-world range promise. Verify the actual battery specification, destination charging conditions and connected-feature compatibility before export.'},
+    specKeys:['fuel','power','dimensions','wheelbase','tires'],
+    featureQuestion:{zh:'510智享版的泊车影像、空调和座椅配置如何核对？',en:'How should I check parking-camera, climate-control and seat equipment on the 510 Zhixiang version?'},
+    featureKeywords:['高清倒车影像','热泵空调','主驾座椅']
+  },
+  'vehicle-config-aion-i60': {
+    question:{zh:'本页 AION i60 是700公里纯电版，还是增程版？',en:'Is this AION i60 the 700 km battery-electric version or a range-extended version?'},
+    note:{zh:'本页仅收录2027款纯电700激光雷达版，不与520纯电版、旧年款650版或1738增程版混用参数。700公里是厂家CLTC测试续航，不是海外道路实际续航承诺；请核对目的地充电条件和功能适用性。',en:'This page lists only the MY2027 battery-electric 700 LiDAR version. It does not substitute specifications from the 520 BEV, the earlier 650 version or the 1738 range-extender. The 700 km figure is a manufacturer CLTC test range, not an overseas real-world range promise; confirm destination charging and feature compatibility.'},
+    specKeys:['fuel','power','drive','dimensions','wheelbase'],
+    featureQuestion:{zh:'700激光雷达版的辅助驾驶、热泵和电动尾门如何核对？',en:'How should I check driver assistance, the heat pump and power tailgate on the 700 LiDAR version?'},
+    featureKeywords:['GSD','热泵空调','电动尾门']
+  },
+  'vehicle-config-xingyue-l-plus': {
+    question: {zh:'星越 L PLUS 大师典藏版与普通星越 L 是同一车型吗？',en:'Is the Xingyue L PLUS Master Collection Edition the same model as the standard Xingyue L?'},
+    note: {zh:'不是。本页只收录星越 L PLUS 顶配大师典藏版，采用其独立的车身和混动参数；不套用普通星越 L 的尺寸、动力或装备。当前为预售资料，最终配置和供货需确认。',en:'No. This page lists only the top-trim Xingyue L PLUS Master Collection Edition with its own body and hybrid specifications. Standard Xingyue L dimensions, powertrains and equipment are not substituted. These are presale specifications; confirm final equipment and supply.'},
+    specKeys:['fuel','power','transmission','dimensions','wheelbase'],
+    featureQuestion:{zh:'大师典藏版的空气悬架、后轮转向和辅助驾驶如何核对？',en:'How should I verify air suspension, rear-wheel steering and driver assistance on the Master Collection Edition?'},
+    featureKeywords:['空气悬架','后轮主动转向','辅助驾驶']
+  },
   'vehicle-config-rav4': {
     question: { zh: '这款RAV4是前驱、汽油四驱，还是E-FOUR双擎四驱？', en: 'Is this RAV4 front-wheel drive, petrol AWD or E-FOUR hybrid AWD?' },
     note: { zh: '当前配置表包含前驱、适时四驱和E-FOUR三种驱动标注；双擎名称本身不代表四驱。比较时请同时核对燃料类型与驱动形式。', en: 'The current sheet distinguishes front-wheel drive, on-demand AWD and E-FOUR. A hybrid badge alone does not mean AWD; check both fuel type and drive system.' },
@@ -241,17 +262,17 @@ export const MODEL_FAQ_PROFILES = {
     featureKeywords: ['全景天窗', '定速巡航', '倒车视频影像']
   },
   'vehicle-config-traveler': {
-    question: { zh: '旅行者1.5TD与2.0TD XWD的驱动和变速箱有何区别？', en: 'How do Traveler 1.5TD and 2.0TD XWD drive systems and transmissions differ?' },
-    note: { zh: '当前旅行者同时包含前驱与四驱、7DCT与8AT，轮胎也有不同标注；外观不能代替驱动核对，轮胎配置需结合具体版本及选装说明。', en: 'The current Traveler sheet includes front-wheel drive, AWD, 7DCT and 8AT, plus differing tyre entries. Check the actual drive specification and trim-specific tyre or option notes rather than styling.' },
+    question: { zh: '2027款旅行者7的1.5TD与2.0TD XWD驱动和变速箱有何区别？', en: 'How do the 2027 Traveler 7 1.5TD and 2.0TD XWD drive systems and transmissions differ?' },
+    note: { zh: '本页为2027款燃油旅行者7，不是旧款旅行者或C-DM插混。1.5TD列前驱与7DCT，2.0TD列四驱并区分7DCT和8AT；轮胎配置及越野包选装需按具体版本核对。', en: 'This page covers the 2027 petrol Traveler 7, not the previous Traveler or C-DM plug-in hybrid. The 1.5TD trims list front-wheel drive and 7DCT; the 2.0TD trims list AWD with either 7DCT or 8AT. Confirm tyres and the optional off-road package for the selected trim.' },
     specKeys: ['power', 'drive', 'transmission', 'tires'],
-    featureQuestion: { zh: '旅行者这版的全景影像、方向盘加热与全景天窗分别是什么配置？', en: 'What panoramic-camera, heated-steering-wheel and panoramic-sunroof equipment is listed for this Traveler?' },
+    featureQuestion: { zh: '旅行者7这版的全景影像、方向盘加热与全景天窗分别是什么配置？', en: 'What panoramic-camera, heated-steering-wheel and panoramic-sunroof equipment is listed for this Traveler 7?' },
     featureKeywords: ['360°全景影像', '方向盘加热', '全景大天窗']
   },
   'vehicle-config-free-rider': {
-    question: { zh: '自由者这页的1.5TD版本是四驱吗？', en: 'Are the 1.5TD Free Rider versions on this page AWD?' },
-    note: { zh: '当前自由者仅列1.5TD前驱版本，配七挡湿式双离合；不能把旅行者或其他版本的四驱数据套用于本页。', en: 'The current Free Rider data lists 1.5TD front-wheel-drive versions with a seven-speed wet dual-clutch transmission. Do not substitute AWD figures from Traveler or another version.' },
+    question: { zh: '2027款自由者7的1.5TD版本是四驱吗？', en: 'Are the 2027 Free Rider 7 1.5TD versions on this page AWD?' },
+    note: { zh: '本页为2027款燃油自由者7的四个1.5TD前驱版本，配七挡湿式双离合；不是旧款自由者、PLUS或C-DM。车长与轮胎规格随版本变化，不套用旅行者或其他版本的四驱数据。', en: 'This page lists four 2027 petrol Free Rider 7 1.5TD front-wheel-drive trims with a seven-speed wet dual-clutch transmission, not the previous Free Rider, PLUS or C-DM. Length and tyres vary by trim; AWD data from Traveler or another version does not apply.' },
     specKeys: ['drive', 'transmission', 'dimensions', 'seats'],
-    featureQuestion: { zh: '自由者的前排通风、自适应巡航与360°影像在这版如何配置？', en: 'How are front-seat ventilation, adaptive cruise and 360-degree imaging specified on this Free Rider?' },
+    featureQuestion: { zh: '自由者7的前排通风、自适应巡航与360°影像在这版如何配置？', en: 'How are front-seat ventilation, adaptive cruise and 360-degree imaging specified on this Free Rider 7?' },
     featureKeywords: ['前排座椅通风', '自适应巡航', '360°全景影像']
   },
   'vehicle-config-q5': {
@@ -277,10 +298,10 @@ export const MODEL_FAQ_PROFILES = {
   },
   'vehicle-config-crv': {
     question: { zh: 'CR-V七座与四驱是否为同一个版本？', en: 'Are seven seats and AWD combined in the same CR-V trim here?' },
-    note: { zh: '本表仅覆盖燃油CR-V，七座锋尚版列为两驱，臻享四驱版列为五座；不能把七座、四驱或e:HEV配置合并理解。', en: 'This sheet covers petrol CR-V only. Style 7-seat is listed as two-wheel drive, while Premium AWD has five seats; seven seats, AWD and e:HEV must not be combined into one assumed specification.' },
+    note: { zh: '本表仅覆盖2027款燃油CR-V，风尚7座版列为两驱，风尚四驱版列为五座；不能把七座、四驱或e:HEV配置合并理解。', en: 'This sheet covers the 2027 petrol CR-V only. Style 7-seat is listed as two-wheel drive, while Style AWD has five seats; seven seats, AWD and e:HEV must not be combined into one assumed specification.' },
     specKeys: ['seats', 'drive', 'fuel', 'dimensions'],
-    featureQuestion: { zh: '这版CR-V有感应尾门、前排加热和通风吗？', en: 'Does this CR-V have a hands-free tailgate and heated, ventilated front seats?' },
-    featureKeywords: ['感应式电动尾门', '前排座椅加热', '前排座椅通风']
+    featureQuestion: { zh: '这版CR-V有感应尾门、无线充电和主动巡航吗？', en: 'Does this CR-V have a hands-free tailgate, wireless charging and adaptive cruise control?' },
+    featureKeywords: ['感应式电动尾门', '手机无线充电', 'ACC主动巡航']
   },
   'vehicle-config-tiggo-3x': {
     question: { zh: '瑞虎3x卓越版这份配置包含手动版本吗？', en: 'Does this Tiggo 3x Excellence sheet include a manual version?' },
