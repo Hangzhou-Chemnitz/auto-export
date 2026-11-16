@@ -1,5 +1,5 @@
 import {updateModelFaq} from './vehicle-faq.js';
-import {appUrl, vehicleUrl, pageUrl} from './site-paths.js';
+import {appUrl, vehicleUrl, pageUrl} from './site-paths.js?v=20261116-six';
 
 const FIELDS = [
  ['fuel','燃料类型','Fuel type'],['power','最大功率','Maximum power'],
@@ -96,7 +96,7 @@ export async function mountVariants({id,name,zh}) {
   const url=new URL(location.href);url.searchParams.set('trim',variant.id);history.replaceState(null,'',url);
   const language=document.getElementById('language-link');if(language)language.href=vehicleUrl(id,!zh,variant.id);
   document.querySelector('#model-name').textContent=name;
-  document.dispatchEvent(new CustomEvent(manual?'chemnitz:variant-select':'chemnitz:vehicle-view',{bubbles:true,detail:{id,model_name:name,vehicle_spec_id:variant.id,trim_name:label,page_language:zh?'zh':'en'}}));
+  document.dispatchEvent(new CustomEvent(manual?'chemnitz:variant-select':'chemnitz:vehicle-view',{bubbles:true,detail:{id,model_name:name,vehicle_spec_id:variant.id,trim_name:label,page_language:zh?'zh':document.documentElement.lang}}));
  }
  function populate(wanted,manual=false){select.replaceChildren();data.variants.filter(v=>String(v.year||local(data.edition))===groupSelect.value).forEach(v=>select.add(new Option(local(v.label),v.id)));if([...select.options].some(o=>o.value===wanted))select.value=wanted;update(manual)}
  const wanted=new URLSearchParams(location.search).get('trim')||data.defaultVariant;

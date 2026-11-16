@@ -1,4 +1,4 @@
-import {createModelInquiry} from './vehicle-inquiry.js';
+import {createModelInquiry} from './vehicle-inquiry.js?v=20261116-six';
 import {createModelFaq} from './vehicle-faq.js';
 
 export function addSections({id,name,zh,presale=false}){

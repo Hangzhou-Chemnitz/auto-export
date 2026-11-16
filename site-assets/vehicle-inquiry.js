@@ -37,6 +37,6 @@ export function createModelInquiry({name,zh}) {
  consent.append(checkbox,el('span',t('我同意将上述信息通过 WhatsApp 分享给所选销售顾问，以沟通本次询价。','I agree to share these details with the selected sales contact through WhatsApp for this inquiry.')));form.append(consent);
  const submit=el('button',t('前往 WhatsApp 询价','Continue to WhatsApp'),'button red');submit.type='submit';submit.append(el('span','↗'));form.append(submit);
  const note=el('small',t('点击后直接打开 WhatsApp，自动生成车型、配置和采购需求，由您确认后发送；不会提交到网站后台。','Opens WhatsApp directly with your model, trim and requirements. Review and send the message yourself; nothing is submitted to a website backend.'));form.append(note);
- window.ChemnitzInquiry.bind(form,{scope:'vehicle',surface:'vehicle',modelOverride:name,modelLabel:'Model & trim',zh});
+ window.ChemnitzInquiry.bind(form,{scope:'vehicle',surface:'vehicle',modelOverride:name,modelLabel:zh?'车型与配置':window.ChemnitzI18n?.t('Model & trim')||'Model & trim',zh});
  return form;
 }

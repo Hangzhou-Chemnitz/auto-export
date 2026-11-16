@@ -1,5 +1,5 @@
 import {REGIONAL_SHORTLISTS, REVIEWED_AT} from './regional-models.js';
-import {appUrl, vehicleUrl} from './site-paths.js';
+import {appUrl, vehicleUrl} from './site-paths.js?v=20261116-six';
 import {readSearchOrder,orderModels,orderSummary} from './catalog-search-order.js?v=20261116-search';
 
 const isZh=document.documentElement.lang==='zh-CN';

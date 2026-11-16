@@ -12,7 +12,7 @@
  const id = requestedId === 'vehicle-config-sylphy-2026' ? 'vehicle-config-sylphy' : requestedId;
  const el = (tag, value, cls) => {const node = document.createElement(tag); if (value) node.textContent = value; if (cls) node.className = cls; return node;};
  try {
-  const {appUrl, vehicleUrl, pageUrl} = await import('./site-paths.js');
+  const {appUrl, vehicleUrl, pageUrl} = await import('./site-paths.js?v=20261116-six');
   const response = await fetch(appUrl('data/catalog-models.json?v=20261113-aion-y-gallery'));
   if (!response.ok) throw new Error('Catalogue manifest unavailable');
   const models = await response.json();
@@ -82,7 +82,7 @@
   }
   const existingForm = document.querySelector('#model-inquiry-form');
   if (!document.getElementById('shipping') && !document.getElementById('model-faq') && document.querySelector('.vehicle-bottom')) {
-   const {addSections} = await import('./vehicle-sections.js');
+   const {addSections} = await import('./vehicle-sections.js?v=20261116-six');
    addSections({id, name, zh, presale});
   } else if (existingForm && !existingForm._chemnitzRuntimeBound) {
    // Snapshot HTML has no serialized event listeners. Restore its form handlers
@@ -92,12 +92,12 @@
     const initial = control.tagName === 'SELECT' ? ([...control.options].find(option => option.defaultSelected) || control.options[0])?.value : control.defaultValue;
     return control.value !== initial;
    }).map(control => ({name: control.name, value: control.value}));
-   const {createModelInquiry} = await import('./vehicle-inquiry.js');
+   const {createModelInquiry} = await import('./vehicle-inquiry.js?v=20261116-six');
    const form = createModelInquiry({name, zh}); form._chemnitzRuntimeBound = true;
    for (const value of values) {const control = form.elements.namedItem(value.name); if (control) control.value = value.value;}
    existingForm.replaceWith(form);
   }
-  const {mountVariants} = await import('./vehicle-variants.js');
+  const {mountVariants} = await import('./vehicle-variants.js?v=20261116-six');
   await mountVariants({id, name, zh});
   if (model.gallerySource?.url && (model.gallerySource.modelYear || model.gallerySource.referenceLabel)) {
    const imageSource = model.gallerySource;

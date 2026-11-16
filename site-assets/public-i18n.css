@@ -1,0 +1,8 @@
+.public-localized .technical-row,.public-localized .vehicle-facts>div{min-width:0}
+.public-localized .technical-row dd,.public-localized .technical-row dt,.public-localized .vehicle-note,.public-localized .brand-intro p{overflow-wrap:anywhere}
+.public-localized[dir=rtl] .technical-row dd{unicode-bidi:plaintext}
+.public-localized[dir=rtl] input[type=email],.public-localized[dir=rtl] input[type=tel],.public-localized[dir=rtl] input[type=number]{direction:ltr;text-align:right}
+.public-localized[dir=rtl] .vehicle-thumbs,.public-localized[dir=rtl] .site-language-bar{direction:ltr}
+.public-localized .catalog-card-link,.public-localized .brand-card-link{white-space:normal}
+@media(max-width:650px){.public-localized .vehicle-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.public-localized .inquiry-form-row{grid-template-columns:minmax(0,1fr)}.public-localized .variant-controls>label{min-width:0}}
+[data-ltr-date]{direction:ltr;unicode-bidi:isolate;white-space:nowrap}

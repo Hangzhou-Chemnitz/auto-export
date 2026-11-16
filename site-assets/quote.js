@@ -6,7 +6,8 @@
  const options = {scope:'quote',surface:'quote'};
  // A fresh explicit model (including an empty one) wins over the previous draft.
  if (params.has('model')) {
-  options.modelOverride = params.get('model').slice(0,1000);
+  const rawModel=params.get('model').slice(0,1000);
+  options.modelOverride = window.ChemnitzI18n?.t(rawModel)||rawModel;
   form.elements.namedItem('model').value = options.modelOverride;
  }
  // Consume prefill once; never propagate personal text via URLs or referrers.

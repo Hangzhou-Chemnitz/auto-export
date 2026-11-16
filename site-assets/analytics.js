@@ -29,6 +29,12 @@
  });
  const BRANDS = new Set(['toyota','nissan','volkswagen','geely','changan','chery','jetour','zeekr','honda','hyundai','kia','audi','aion']);
  const PATHS = new Set(['/',...['zh','es','fr','ru','ar','models','models-zh','about','about-zh','quote','quote-zh','footage'].map(slug=>'/'+slug+'.html'),...[...BRANDS].flatMap(brand=>['/brands/'+brand+'.html','/brands/'+brand+'-zh.html']),...Object.keys(MODEL_NAMES).flatMap(model=>['/vehicle-config-'+model+'.html','/zh/vehicle-config-'+model+'.html'])]);
+ for(const lang of ['es','fr','ru','ar']){
+  for(const page of ['models','about','quote','footage'])PATHS.add('/'+lang+'/'+page+'.html');
+  for(const brand of BRANDS)PATHS.add('/'+lang+'/brands/'+brand+'.html');
+  for(const model of Object.keys(MODEL_NAMES))PATHS.add('/'+lang+'/vehicle-config-'+model+'.html');
+ }
+ PATHS.add('/zh/footage.html');
  const MARKETS = new Set(['latin-america','middle-east','central-asia','africa','other','PE','CO','CL','AE','SA','KZ']);
  const SURFACES = new Set(['home','catalog','brand','vehicle','quote','about','footage','other']);
  const LOCATIONS = new Set(['header','hero','footer','brand_tile','body_tile','region_tile','catalog_card','brand_card','related_card','page_body','home_form','quote_form','vehicle_form','variant_picker','contact_dock']);
@@ -47,7 +53,7 @@
   if (/\/(?:cars|models)(?:-zh|-es)?(?:\.html|\/|$)/.test(location.pathname)) return 'catalog';
   if (/\/quote(?:-zh)?(?:\.html|\/|$)/.test(location.pathname)) return 'quote';
   if (/\/about(?:-zh)?(?:\.html|\/|$)/.test(location.pathname)) return 'about';
-  if (location.pathname === '/footage.html') return 'footage';
+  if (/\/footage\.html$/.test(location.pathname)) return 'footage';
   return /^\/(?:zh|es|fr|ru|ar)\.html$/.test(location.pathname) || location.pathname === '/' ? 'home' : 'other';
  }
  function market() {

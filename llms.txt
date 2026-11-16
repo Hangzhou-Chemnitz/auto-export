@@ -1,149 +1,406 @@
 # Hangzhou Chemnitz International Trade Co., Ltd.
 
-> China-market vehicle sourcing and export coordination. Confirm the exact model, configuration, availability, quantity, destination and agreed FOB or EXW scope with the sales team. A catalogue entry is not a stock or export-eligibility guarantee.
+Current redesigned website: equivalent public pages in English, Chinese, Spanish, French, Russian and Arabic. Confirm selected trim, availability, export terms and destination requirements with the team. Listings are not stock or import-eligibility guarantees.
 
-## Current website pages
-
-The current website has six translated homepages and English/Chinese inner pages. Only the canonical pages below are current content; old compatibility URLs redirect to their replacements.
-
-- China Car Exporter for Dealers & Importers | Chemnitz: https://hzchemnitz.cn/
-- Exportador de autos de China | Vehículos y cotizaciones | Chemnitz: https://hzchemnitz.cn/es.html
-- تصدير السيارات من الصين للتجار والمستوردين | Chemnitz: https://hzchemnitz.cn/ar.html
-- Exportateur automobile de Chine | Véhicules et devis | Chemnitz: https://hzchemnitz.cn/fr.html
-- Экспорт автомобилей из Китая для дилеров и импортёров | Chemnitz: https://hzchemnitz.cn/ru.html
-- 中国汽车出口与车型采购服务 | Chemnitz: https://hzchemnitz.cn/zh.html
-- Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/models.html
-- 中国出口车型目录与配置比较 | Chemnitz: https://hzchemnitz.cn/models-zh.html
-- About Chemnitz | China Vehicle Sourcing & Export: https://hzchemnitz.cn/about.html
-- 关于 Chemnitz | 中国汽车采购与出口协调: https://hzchemnitz.cn/about-zh.html
-- Request a China Car Export Quote | FOB & EXW | Chemnitz: https://hzchemnitz.cn/quote.html
-- 获取中国汽车出口报价 | FOB与EXW询价 | Chemnitz: https://hzchemnitz.cn/quote-zh.html
-- Real China Vehicle Yard Footage | Chemnitz: https://hzchemnitz.cn/footage.html
-- Toyota Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/toyota.html
-- 丰田汽车出口与车型配置 | Toyota | Chemnitz: https://hzchemnitz.cn/brands/toyota-zh.html
-- Nissan Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/nissan.html
-- 日产汽车出口与车型配置 | Nissan | Chemnitz: https://hzchemnitz.cn/brands/nissan-zh.html
-- Volkswagen Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/volkswagen.html
-- 大众汽车出口与车型配置 | Volkswagen | Chemnitz: https://hzchemnitz.cn/brands/volkswagen-zh.html
-- Geely Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/geely.html
-- 吉利汽车出口与车型配置 | Geely | Chemnitz: https://hzchemnitz.cn/brands/geely-zh.html
-- Changan Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/changan.html
-- 长安汽车出口与车型配置 | Changan | Chemnitz: https://hzchemnitz.cn/brands/changan-zh.html
-- Chery Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/chery.html
-- 奇瑞汽车出口与车型配置 | Chery | Chemnitz: https://hzchemnitz.cn/brands/chery-zh.html
-- Jetour Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/jetour.html
-- 捷途汽车出口与车型配置 | Jetour | Chemnitz: https://hzchemnitz.cn/brands/jetour-zh.html
-- Zeekr Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/zeekr.html
-- 极氪汽车出口与车型配置 | Zeekr | Chemnitz: https://hzchemnitz.cn/brands/zeekr-zh.html
-- Honda Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/honda.html
-- 本田汽车出口与车型配置 | Honda | Chemnitz: https://hzchemnitz.cn/brands/honda-zh.html
-- Hyundai Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/hyundai.html
-- 现代汽车出口与车型配置 | Hyundai | Chemnitz: https://hzchemnitz.cn/brands/hyundai-zh.html
-- Kia Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/kia.html
-- 起亚汽车出口与车型配置 | Kia | Chemnitz: https://hzchemnitz.cn/brands/kia-zh.html
-- Audi Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/audi.html
-- 奥迪汽车出口与车型配置 | Audi | Chemnitz: https://hzchemnitz.cn/brands/audi-zh.html
-- AION Cars for Export from China | Models & Specifications | Chemnitz: https://hzchemnitz.cn/brands/aion.html
-- 广汽埃安汽车出口与车型配置 | AION | Chemnitz: https://hzchemnitz.cn/brands/aion-zh.html
-- Toyota RAV4 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-rav4.html
-- Toyota RAV4 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-rav4.html
-- Toyota Corolla China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-corolla.html
-- Toyota Corolla 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-corolla.html
-- Toyota Corolla Cross China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-corolla-cross.html
-- Toyota Corolla Cross 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-corolla-cross.html
-- Toyota Camry China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-camry.html
-- Toyota Camry 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-camry.html
-- Toyota Highlander China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-highlander.html
-- Toyota Highlander 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-highlander.html
-- Toyota Frontlander China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-wildlander.html
-- Toyota Frontlander 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-wildlander.html
-- Toyota Granvia China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-granvia.html
-- Toyota Granvia 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-granvia.html
-- Toyota bZ3 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-bz3.html
-- Toyota bZ3 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-bz3.html
-- Volkswagen Teramont Pro China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-teramont.html
-- Volkswagen Teramont Pro 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-teramont.html
-- Volkswagen Tharu XR China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-tharu.html
-- Volkswagen Tharu XR 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-tharu.html
-- Volkswagen T-Roc China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-troc.html
-- Volkswagen T-Roc 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-troc.html
-- Volkswagen Golf China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-golf.html
-- Volkswagen Golf 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-golf.html
-- JETTA VS5 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-jetta-vs5.html
-- JETTA VS5 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-jetta-vs5.html
-- Geely Coolray China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-coolray.html
-- Geely Coolray 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-coolray.html
-- Geely Boyue China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-boyue.html
-- Geely Boyue 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-boyue.html
-- Geely Xingyue L China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-xingyue-l.html
-- Geely Xingyue L 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-xingyue-l.html
-- Geely Xingyue L PLUS Master Collection | Specs & Export Inquiry | Chemnitz: https://hzchemnitz.cn/vehicle-config-xingyue-l-plus.html
-- 吉利星越 L PLUS 大师典藏版 | 配置与出口询价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-xingyue-l-plus.html
-- Geely Niuzai China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-niuzai.html
-- Geely Niuzai 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-niuzai.html
-- Geely Galaxy M9 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-galaxy-m9.html
-- Geely Galaxy M9 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-galaxy-m9.html
-- Zeekr 9X China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-zeekr-9x.html
-- Zeekr 9X 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-zeekr-9x.html
-- Nissan Teana China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-teana.html
-- Nissan Teana 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-teana.html
-- Nissan N7 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-n7.html
-- Nissan N7 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-n7.html
-- Nissan N6 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-n6.html
-- Nissan N6 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-n6.html
-- Nissan Qashqai China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-qashqai.html
-- Nissan Qashqai 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-qashqai.html
-- Nissan X-Trail China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-xtrail.html
-- Nissan X-Trail 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-xtrail.html
-- Nissan NX8 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-nx8.html
-- Nissan NX8 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-nx8.html
-- Nissan Sylphy China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-sylphy.html
-- Nissan Sylphy 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-sylphy.html
-- Kia Seltos China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-seltos.html
-- Kia Seltos 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-seltos.html
-- Kia KX1 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-kx1.html
-- Kia KX1 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-kx1.html
-- Kia K3 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-k3.html
-- Kia K3 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-k3.html
-- Kia K5 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-k5.html
-- Kia K5 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-k5.html
-- Kia Sportage China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-sportage.html
-- Kia Sportage 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-sportage.html
-- Hyundai Elantra China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-elantra.html
-- Hyundai Elantra 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-elantra.html
-- Jetour Dashing China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-dashing.html
-- Jetour Dashing 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-dashing.html
-- Jetour X70 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-x70.html
-- Jetour X70 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-x70.html
-- Jetour Traveler 7 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-traveler.html
-- Jetour Traveler 7 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-traveler.html
-- Jetour Free Rider 7 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-free-rider.html
-- Jetour Free Rider 7 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-free-rider.html
-- Audi Q5L China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-q5.html
-- Audi Q5L 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-q5.html
-- Audi Q3 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-q3.html
-- Audi Q3 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-q3.html
-- Audi A5L China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-a5.html
-- Audi A5L 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-a5.html
-- Honda CR-V China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-crv.html
-- Honda CR-V 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-crv.html
-- Chery Tiggo 3X China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-tiggo-3x.html
-- Chery Tiggo 3X 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-tiggo-3x.html
-- Chery Tiggo 5X China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-tiggo-5x.html
-- Chery Tiggo 5X 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-tiggo-5x.html
-- MG MG5 China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-mg5.html
-- MG MG5 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-mg5.html
-- Changan CS55 PLUS China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-changan-cs55.html
-- Changan CS55 PLUS 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-changan-cs55.html
-- Changan CS75 PLUS China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-changan-cs75.html
-- Changan CS75 PLUS 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-changan-cs75.html
-- Changan X5 PLUS China Export | Specs & FOB Quote | Chemnitz: https://hzchemnitz.cn/vehicle-config-changan-x5.html
-- Changan X5 PLUS 车型配置与出口报价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-changan-x5.html
-- GAC AION i60 700 LiDAR | Specs & Export Inquiry | Chemnitz: https://hzchemnitz.cn/vehicle-config-aion-i60.html
-- 广汽埃安 AION i60 700 激光雷达版 | 配置与出口询价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-aion-i60.html
-- GAC AION Y MY2026 Plus 510 Zhixiang | Specs & Export Inquiry | Chemnitz: https://hzchemnitz.cn/vehicle-config-aion-y.html
-- 广汽埃安 AION Y 2026款 Plus 510 智享版 | 配置与出口询价 | Chemnitz: https://hzchemnitz.cn/zh/vehicle-config-aion-y.html
-
-## Reference rules
-
-Use the selected model and trim page for specifications and the current About page for company records. Do not infer stock, brand authorization, destination-country admission or a final export price from a catalogue listing.
+- https://hzchemnitz.cn/
+- https://hzchemnitz.cn/zh.html
+- https://hzchemnitz.cn/es.html
+- https://hzchemnitz.cn/fr.html
+- https://hzchemnitz.cn/ru.html
+- https://hzchemnitz.cn/ar.html
+- https://hzchemnitz.cn/models.html
+- https://hzchemnitz.cn/models-zh.html
+- https://hzchemnitz.cn/es/models.html
+- https://hzchemnitz.cn/fr/models.html
+- https://hzchemnitz.cn/ru/models.html
+- https://hzchemnitz.cn/ar/models.html
+- https://hzchemnitz.cn/about.html
+- https://hzchemnitz.cn/about-zh.html
+- https://hzchemnitz.cn/es/about.html
+- https://hzchemnitz.cn/fr/about.html
+- https://hzchemnitz.cn/ru/about.html
+- https://hzchemnitz.cn/ar/about.html
+- https://hzchemnitz.cn/quote.html
+- https://hzchemnitz.cn/quote-zh.html
+- https://hzchemnitz.cn/es/quote.html
+- https://hzchemnitz.cn/fr/quote.html
+- https://hzchemnitz.cn/ru/quote.html
+- https://hzchemnitz.cn/ar/quote.html
+- https://hzchemnitz.cn/footage.html
+- https://hzchemnitz.cn/zh/footage.html
+- https://hzchemnitz.cn/es/footage.html
+- https://hzchemnitz.cn/fr/footage.html
+- https://hzchemnitz.cn/ru/footage.html
+- https://hzchemnitz.cn/ar/footage.html
+- https://hzchemnitz.cn/brands/toyota.html
+- https://hzchemnitz.cn/brands/toyota-zh.html
+- https://hzchemnitz.cn/es/brands/toyota.html
+- https://hzchemnitz.cn/fr/brands/toyota.html
+- https://hzchemnitz.cn/ru/brands/toyota.html
+- https://hzchemnitz.cn/ar/brands/toyota.html
+- https://hzchemnitz.cn/brands/nissan.html
+- https://hzchemnitz.cn/brands/nissan-zh.html
+- https://hzchemnitz.cn/es/brands/nissan.html
+- https://hzchemnitz.cn/fr/brands/nissan.html
+- https://hzchemnitz.cn/ru/brands/nissan.html
+- https://hzchemnitz.cn/ar/brands/nissan.html
+- https://hzchemnitz.cn/brands/volkswagen.html
+- https://hzchemnitz.cn/brands/volkswagen-zh.html
+- https://hzchemnitz.cn/es/brands/volkswagen.html
+- https://hzchemnitz.cn/fr/brands/volkswagen.html
+- https://hzchemnitz.cn/ru/brands/volkswagen.html
+- https://hzchemnitz.cn/ar/brands/volkswagen.html
+- https://hzchemnitz.cn/brands/geely.html
+- https://hzchemnitz.cn/brands/geely-zh.html
+- https://hzchemnitz.cn/es/brands/geely.html
+- https://hzchemnitz.cn/fr/brands/geely.html
+- https://hzchemnitz.cn/ru/brands/geely.html
+- https://hzchemnitz.cn/ar/brands/geely.html
+- https://hzchemnitz.cn/brands/changan.html
+- https://hzchemnitz.cn/brands/changan-zh.html
+- https://hzchemnitz.cn/es/brands/changan.html
+- https://hzchemnitz.cn/fr/brands/changan.html
+- https://hzchemnitz.cn/ru/brands/changan.html
+- https://hzchemnitz.cn/ar/brands/changan.html
+- https://hzchemnitz.cn/brands/chery.html
+- https://hzchemnitz.cn/brands/chery-zh.html
+- https://hzchemnitz.cn/es/brands/chery.html
+- https://hzchemnitz.cn/fr/brands/chery.html
+- https://hzchemnitz.cn/ru/brands/chery.html
+- https://hzchemnitz.cn/ar/brands/chery.html
+- https://hzchemnitz.cn/brands/jetour.html
+- https://hzchemnitz.cn/brands/jetour-zh.html
+- https://hzchemnitz.cn/es/brands/jetour.html
+- https://hzchemnitz.cn/fr/brands/jetour.html
+- https://hzchemnitz.cn/ru/brands/jetour.html
+- https://hzchemnitz.cn/ar/brands/jetour.html
+- https://hzchemnitz.cn/brands/zeekr.html
+- https://hzchemnitz.cn/brands/zeekr-zh.html
+- https://hzchemnitz.cn/es/brands/zeekr.html
+- https://hzchemnitz.cn/fr/brands/zeekr.html
+- https://hzchemnitz.cn/ru/brands/zeekr.html
+- https://hzchemnitz.cn/ar/brands/zeekr.html
+- https://hzchemnitz.cn/brands/honda.html
+- https://hzchemnitz.cn/brands/honda-zh.html
+- https://hzchemnitz.cn/es/brands/honda.html
+- https://hzchemnitz.cn/fr/brands/honda.html
+- https://hzchemnitz.cn/ru/brands/honda.html
+- https://hzchemnitz.cn/ar/brands/honda.html
+- https://hzchemnitz.cn/brands/hyundai.html
+- https://hzchemnitz.cn/brands/hyundai-zh.html
+- https://hzchemnitz.cn/es/brands/hyundai.html
+- https://hzchemnitz.cn/fr/brands/hyundai.html
+- https://hzchemnitz.cn/ru/brands/hyundai.html
+- https://hzchemnitz.cn/ar/brands/hyundai.html
+- https://hzchemnitz.cn/brands/kia.html
+- https://hzchemnitz.cn/brands/kia-zh.html
+- https://hzchemnitz.cn/es/brands/kia.html
+- https://hzchemnitz.cn/fr/brands/kia.html
+- https://hzchemnitz.cn/ru/brands/kia.html
+- https://hzchemnitz.cn/ar/brands/kia.html
+- https://hzchemnitz.cn/brands/audi.html
+- https://hzchemnitz.cn/brands/audi-zh.html
+- https://hzchemnitz.cn/es/brands/audi.html
+- https://hzchemnitz.cn/fr/brands/audi.html
+- https://hzchemnitz.cn/ru/brands/audi.html
+- https://hzchemnitz.cn/ar/brands/audi.html
+- https://hzchemnitz.cn/brands/aion.html
+- https://hzchemnitz.cn/brands/aion-zh.html
+- https://hzchemnitz.cn/es/brands/aion.html
+- https://hzchemnitz.cn/fr/brands/aion.html
+- https://hzchemnitz.cn/ru/brands/aion.html
+- https://hzchemnitz.cn/ar/brands/aion.html
+- https://hzchemnitz.cn/vehicle-config-rav4.html
+- https://hzchemnitz.cn/zh/vehicle-config-rav4.html
+- https://hzchemnitz.cn/es/vehicle-config-rav4.html
+- https://hzchemnitz.cn/fr/vehicle-config-rav4.html
+- https://hzchemnitz.cn/ru/vehicle-config-rav4.html
+- https://hzchemnitz.cn/ar/vehicle-config-rav4.html
+- https://hzchemnitz.cn/vehicle-config-corolla.html
+- https://hzchemnitz.cn/zh/vehicle-config-corolla.html
+- https://hzchemnitz.cn/es/vehicle-config-corolla.html
+- https://hzchemnitz.cn/fr/vehicle-config-corolla.html
+- https://hzchemnitz.cn/ru/vehicle-config-corolla.html
+- https://hzchemnitz.cn/ar/vehicle-config-corolla.html
+- https://hzchemnitz.cn/vehicle-config-corolla-cross.html
+- https://hzchemnitz.cn/zh/vehicle-config-corolla-cross.html
+- https://hzchemnitz.cn/es/vehicle-config-corolla-cross.html
+- https://hzchemnitz.cn/fr/vehicle-config-corolla-cross.html
+- https://hzchemnitz.cn/ru/vehicle-config-corolla-cross.html
+- https://hzchemnitz.cn/ar/vehicle-config-corolla-cross.html
+- https://hzchemnitz.cn/vehicle-config-camry.html
+- https://hzchemnitz.cn/zh/vehicle-config-camry.html
+- https://hzchemnitz.cn/es/vehicle-config-camry.html
+- https://hzchemnitz.cn/fr/vehicle-config-camry.html
+- https://hzchemnitz.cn/ru/vehicle-config-camry.html
+- https://hzchemnitz.cn/ar/vehicle-config-camry.html
+- https://hzchemnitz.cn/vehicle-config-highlander.html
+- https://hzchemnitz.cn/zh/vehicle-config-highlander.html
+- https://hzchemnitz.cn/es/vehicle-config-highlander.html
+- https://hzchemnitz.cn/fr/vehicle-config-highlander.html
+- https://hzchemnitz.cn/ru/vehicle-config-highlander.html
+- https://hzchemnitz.cn/ar/vehicle-config-highlander.html
+- https://hzchemnitz.cn/vehicle-config-wildlander.html
+- https://hzchemnitz.cn/zh/vehicle-config-wildlander.html
+- https://hzchemnitz.cn/es/vehicle-config-wildlander.html
+- https://hzchemnitz.cn/fr/vehicle-config-wildlander.html
+- https://hzchemnitz.cn/ru/vehicle-config-wildlander.html
+- https://hzchemnitz.cn/ar/vehicle-config-wildlander.html
+- https://hzchemnitz.cn/vehicle-config-granvia.html
+- https://hzchemnitz.cn/zh/vehicle-config-granvia.html
+- https://hzchemnitz.cn/es/vehicle-config-granvia.html
+- https://hzchemnitz.cn/fr/vehicle-config-granvia.html
+- https://hzchemnitz.cn/ru/vehicle-config-granvia.html
+- https://hzchemnitz.cn/ar/vehicle-config-granvia.html
+- https://hzchemnitz.cn/vehicle-config-bz3.html
+- https://hzchemnitz.cn/zh/vehicle-config-bz3.html
+- https://hzchemnitz.cn/es/vehicle-config-bz3.html
+- https://hzchemnitz.cn/fr/vehicle-config-bz3.html
+- https://hzchemnitz.cn/ru/vehicle-config-bz3.html
+- https://hzchemnitz.cn/ar/vehicle-config-bz3.html
+- https://hzchemnitz.cn/vehicle-config-teramont.html
+- https://hzchemnitz.cn/zh/vehicle-config-teramont.html
+- https://hzchemnitz.cn/es/vehicle-config-teramont.html
+- https://hzchemnitz.cn/fr/vehicle-config-teramont.html
+- https://hzchemnitz.cn/ru/vehicle-config-teramont.html
+- https://hzchemnitz.cn/ar/vehicle-config-teramont.html
+- https://hzchemnitz.cn/vehicle-config-tharu.html
+- https://hzchemnitz.cn/zh/vehicle-config-tharu.html
+- https://hzchemnitz.cn/es/vehicle-config-tharu.html
+- https://hzchemnitz.cn/fr/vehicle-config-tharu.html
+- https://hzchemnitz.cn/ru/vehicle-config-tharu.html
+- https://hzchemnitz.cn/ar/vehicle-config-tharu.html
+- https://hzchemnitz.cn/vehicle-config-troc.html
+- https://hzchemnitz.cn/zh/vehicle-config-troc.html
+- https://hzchemnitz.cn/es/vehicle-config-troc.html
+- https://hzchemnitz.cn/fr/vehicle-config-troc.html
+- https://hzchemnitz.cn/ru/vehicle-config-troc.html
+- https://hzchemnitz.cn/ar/vehicle-config-troc.html
+- https://hzchemnitz.cn/vehicle-config-golf.html
+- https://hzchemnitz.cn/zh/vehicle-config-golf.html
+- https://hzchemnitz.cn/es/vehicle-config-golf.html
+- https://hzchemnitz.cn/fr/vehicle-config-golf.html
+- https://hzchemnitz.cn/ru/vehicle-config-golf.html
+- https://hzchemnitz.cn/ar/vehicle-config-golf.html
+- https://hzchemnitz.cn/vehicle-config-jetta-vs5.html
+- https://hzchemnitz.cn/zh/vehicle-config-jetta-vs5.html
+- https://hzchemnitz.cn/es/vehicle-config-jetta-vs5.html
+- https://hzchemnitz.cn/fr/vehicle-config-jetta-vs5.html
+- https://hzchemnitz.cn/ru/vehicle-config-jetta-vs5.html
+- https://hzchemnitz.cn/ar/vehicle-config-jetta-vs5.html
+- https://hzchemnitz.cn/vehicle-config-coolray.html
+- https://hzchemnitz.cn/zh/vehicle-config-coolray.html
+- https://hzchemnitz.cn/es/vehicle-config-coolray.html
+- https://hzchemnitz.cn/fr/vehicle-config-coolray.html
+- https://hzchemnitz.cn/ru/vehicle-config-coolray.html
+- https://hzchemnitz.cn/ar/vehicle-config-coolray.html
+- https://hzchemnitz.cn/vehicle-config-boyue.html
+- https://hzchemnitz.cn/zh/vehicle-config-boyue.html
+- https://hzchemnitz.cn/es/vehicle-config-boyue.html
+- https://hzchemnitz.cn/fr/vehicle-config-boyue.html
+- https://hzchemnitz.cn/ru/vehicle-config-boyue.html
+- https://hzchemnitz.cn/ar/vehicle-config-boyue.html
+- https://hzchemnitz.cn/vehicle-config-xingyue-l.html
+- https://hzchemnitz.cn/zh/vehicle-config-xingyue-l.html
+- https://hzchemnitz.cn/es/vehicle-config-xingyue-l.html
+- https://hzchemnitz.cn/fr/vehicle-config-xingyue-l.html
+- https://hzchemnitz.cn/ru/vehicle-config-xingyue-l.html
+- https://hzchemnitz.cn/ar/vehicle-config-xingyue-l.html
+- https://hzchemnitz.cn/vehicle-config-xingyue-l-plus.html
+- https://hzchemnitz.cn/zh/vehicle-config-xingyue-l-plus.html
+- https://hzchemnitz.cn/es/vehicle-config-xingyue-l-plus.html
+- https://hzchemnitz.cn/fr/vehicle-config-xingyue-l-plus.html
+- https://hzchemnitz.cn/ru/vehicle-config-xingyue-l-plus.html
+- https://hzchemnitz.cn/ar/vehicle-config-xingyue-l-plus.html
+- https://hzchemnitz.cn/vehicle-config-niuzai.html
+- https://hzchemnitz.cn/zh/vehicle-config-niuzai.html
+- https://hzchemnitz.cn/es/vehicle-config-niuzai.html
+- https://hzchemnitz.cn/fr/vehicle-config-niuzai.html
+- https://hzchemnitz.cn/ru/vehicle-config-niuzai.html
+- https://hzchemnitz.cn/ar/vehicle-config-niuzai.html
+- https://hzchemnitz.cn/vehicle-config-galaxy-m9.html
+- https://hzchemnitz.cn/zh/vehicle-config-galaxy-m9.html
+- https://hzchemnitz.cn/es/vehicle-config-galaxy-m9.html
+- https://hzchemnitz.cn/fr/vehicle-config-galaxy-m9.html
+- https://hzchemnitz.cn/ru/vehicle-config-galaxy-m9.html
+- https://hzchemnitz.cn/ar/vehicle-config-galaxy-m9.html
+- https://hzchemnitz.cn/vehicle-config-zeekr-9x.html
+- https://hzchemnitz.cn/zh/vehicle-config-zeekr-9x.html
+- https://hzchemnitz.cn/es/vehicle-config-zeekr-9x.html
+- https://hzchemnitz.cn/fr/vehicle-config-zeekr-9x.html
+- https://hzchemnitz.cn/ru/vehicle-config-zeekr-9x.html
+- https://hzchemnitz.cn/ar/vehicle-config-zeekr-9x.html
+- https://hzchemnitz.cn/vehicle-config-teana.html
+- https://hzchemnitz.cn/zh/vehicle-config-teana.html
+- https://hzchemnitz.cn/es/vehicle-config-teana.html
+- https://hzchemnitz.cn/fr/vehicle-config-teana.html
+- https://hzchemnitz.cn/ru/vehicle-config-teana.html
+- https://hzchemnitz.cn/ar/vehicle-config-teana.html
+- https://hzchemnitz.cn/vehicle-config-n7.html
+- https://hzchemnitz.cn/zh/vehicle-config-n7.html
+- https://hzchemnitz.cn/es/vehicle-config-n7.html
+- https://hzchemnitz.cn/fr/vehicle-config-n7.html
+- https://hzchemnitz.cn/ru/vehicle-config-n7.html
+- https://hzchemnitz.cn/ar/vehicle-config-n7.html
+- https://hzchemnitz.cn/vehicle-config-n6.html
+- https://hzchemnitz.cn/zh/vehicle-config-n6.html
+- https://hzchemnitz.cn/es/vehicle-config-n6.html
+- https://hzchemnitz.cn/fr/vehicle-config-n6.html
+- https://hzchemnitz.cn/ru/vehicle-config-n6.html
+- https://hzchemnitz.cn/ar/vehicle-config-n6.html
+- https://hzchemnitz.cn/vehicle-config-qashqai.html
+- https://hzchemnitz.cn/zh/vehicle-config-qashqai.html
+- https://hzchemnitz.cn/es/vehicle-config-qashqai.html
+- https://hzchemnitz.cn/fr/vehicle-config-qashqai.html
+- https://hzchemnitz.cn/ru/vehicle-config-qashqai.html
+- https://hzchemnitz.cn/ar/vehicle-config-qashqai.html
+- https://hzchemnitz.cn/vehicle-config-xtrail.html
+- https://hzchemnitz.cn/zh/vehicle-config-xtrail.html
+- https://hzchemnitz.cn/es/vehicle-config-xtrail.html
+- https://hzchemnitz.cn/fr/vehicle-config-xtrail.html
+- https://hzchemnitz.cn/ru/vehicle-config-xtrail.html
+- https://hzchemnitz.cn/ar/vehicle-config-xtrail.html
+- https://hzchemnitz.cn/vehicle-config-nx8.html
+- https://hzchemnitz.cn/zh/vehicle-config-nx8.html
+- https://hzchemnitz.cn/es/vehicle-config-nx8.html
+- https://hzchemnitz.cn/fr/vehicle-config-nx8.html
+- https://hzchemnitz.cn/ru/vehicle-config-nx8.html
+- https://hzchemnitz.cn/ar/vehicle-config-nx8.html
+- https://hzchemnitz.cn/vehicle-config-sylphy.html
+- https://hzchemnitz.cn/zh/vehicle-config-sylphy.html
+- https://hzchemnitz.cn/es/vehicle-config-sylphy.html
+- https://hzchemnitz.cn/fr/vehicle-config-sylphy.html
+- https://hzchemnitz.cn/ru/vehicle-config-sylphy.html
+- https://hzchemnitz.cn/ar/vehicle-config-sylphy.html
+- https://hzchemnitz.cn/vehicle-config-seltos.html
+- https://hzchemnitz.cn/zh/vehicle-config-seltos.html
+- https://hzchemnitz.cn/es/vehicle-config-seltos.html
+- https://hzchemnitz.cn/fr/vehicle-config-seltos.html
+- https://hzchemnitz.cn/ru/vehicle-config-seltos.html
+- https://hzchemnitz.cn/ar/vehicle-config-seltos.html
+- https://hzchemnitz.cn/vehicle-config-kx1.html
+- https://hzchemnitz.cn/zh/vehicle-config-kx1.html
+- https://hzchemnitz.cn/es/vehicle-config-kx1.html
+- https://hzchemnitz.cn/fr/vehicle-config-kx1.html
+- https://hzchemnitz.cn/ru/vehicle-config-kx1.html
+- https://hzchemnitz.cn/ar/vehicle-config-kx1.html
+- https://hzchemnitz.cn/vehicle-config-k3.html
+- https://hzchemnitz.cn/zh/vehicle-config-k3.html
+- https://hzchemnitz.cn/es/vehicle-config-k3.html
+- https://hzchemnitz.cn/fr/vehicle-config-k3.html
+- https://hzchemnitz.cn/ru/vehicle-config-k3.html
+- https://hzchemnitz.cn/ar/vehicle-config-k3.html
+- https://hzchemnitz.cn/vehicle-config-k5.html
+- https://hzchemnitz.cn/zh/vehicle-config-k5.html
+- https://hzchemnitz.cn/es/vehicle-config-k5.html
+- https://hzchemnitz.cn/fr/vehicle-config-k5.html
+- https://hzchemnitz.cn/ru/vehicle-config-k5.html
+- https://hzchemnitz.cn/ar/vehicle-config-k5.html
+- https://hzchemnitz.cn/vehicle-config-sportage.html
+- https://hzchemnitz.cn/zh/vehicle-config-sportage.html
+- https://hzchemnitz.cn/es/vehicle-config-sportage.html
+- https://hzchemnitz.cn/fr/vehicle-config-sportage.html
+- https://hzchemnitz.cn/ru/vehicle-config-sportage.html
+- https://hzchemnitz.cn/ar/vehicle-config-sportage.html
+- https://hzchemnitz.cn/vehicle-config-elantra.html
+- https://hzchemnitz.cn/zh/vehicle-config-elantra.html
+- https://hzchemnitz.cn/es/vehicle-config-elantra.html
+- https://hzchemnitz.cn/fr/vehicle-config-elantra.html
+- https://hzchemnitz.cn/ru/vehicle-config-elantra.html
+- https://hzchemnitz.cn/ar/vehicle-config-elantra.html
+- https://hzchemnitz.cn/vehicle-config-dashing.html
+- https://hzchemnitz.cn/zh/vehicle-config-dashing.html
+- https://hzchemnitz.cn/es/vehicle-config-dashing.html
+- https://hzchemnitz.cn/fr/vehicle-config-dashing.html
+- https://hzchemnitz.cn/ru/vehicle-config-dashing.html
+- https://hzchemnitz.cn/ar/vehicle-config-dashing.html
+- https://hzchemnitz.cn/vehicle-config-x70.html
+- https://hzchemnitz.cn/zh/vehicle-config-x70.html
+- https://hzchemnitz.cn/es/vehicle-config-x70.html
+- https://hzchemnitz.cn/fr/vehicle-config-x70.html
+- https://hzchemnitz.cn/ru/vehicle-config-x70.html
+- https://hzchemnitz.cn/ar/vehicle-config-x70.html
+- https://hzchemnitz.cn/vehicle-config-traveler.html
+- https://hzchemnitz.cn/zh/vehicle-config-traveler.html
+- https://hzchemnitz.cn/es/vehicle-config-traveler.html
+- https://hzchemnitz.cn/fr/vehicle-config-traveler.html
+- https://hzchemnitz.cn/ru/vehicle-config-traveler.html
+- https://hzchemnitz.cn/ar/vehicle-config-traveler.html
+- https://hzchemnitz.cn/vehicle-config-free-rider.html
+- https://hzchemnitz.cn/zh/vehicle-config-free-rider.html
+- https://hzchemnitz.cn/es/vehicle-config-free-rider.html
+- https://hzchemnitz.cn/fr/vehicle-config-free-rider.html
+- https://hzchemnitz.cn/ru/vehicle-config-free-rider.html
+- https://hzchemnitz.cn/ar/vehicle-config-free-rider.html
+- https://hzchemnitz.cn/vehicle-config-q5.html
+- https://hzchemnitz.cn/zh/vehicle-config-q5.html
+- https://hzchemnitz.cn/es/vehicle-config-q5.html
+- https://hzchemnitz.cn/fr/vehicle-config-q5.html
+- https://hzchemnitz.cn/ru/vehicle-config-q5.html
+- https://hzchemnitz.cn/ar/vehicle-config-q5.html
+- https://hzchemnitz.cn/vehicle-config-q3.html
+- https://hzchemnitz.cn/zh/vehicle-config-q3.html
+- https://hzchemnitz.cn/es/vehicle-config-q3.html
+- https://hzchemnitz.cn/fr/vehicle-config-q3.html
+- https://hzchemnitz.cn/ru/vehicle-config-q3.html
+- https://hzchemnitz.cn/ar/vehicle-config-q3.html
+- https://hzchemnitz.cn/vehicle-config-a5.html
+- https://hzchemnitz.cn/zh/vehicle-config-a5.html
+- https://hzchemnitz.cn/es/vehicle-config-a5.html
+- https://hzchemnitz.cn/fr/vehicle-config-a5.html
+- https://hzchemnitz.cn/ru/vehicle-config-a5.html
+- https://hzchemnitz.cn/ar/vehicle-config-a5.html
+- https://hzchemnitz.cn/vehicle-config-crv.html
+- https://hzchemnitz.cn/zh/vehicle-config-crv.html
+- https://hzchemnitz.cn/es/vehicle-config-crv.html
+- https://hzchemnitz.cn/fr/vehicle-config-crv.html
+- https://hzchemnitz.cn/ru/vehicle-config-crv.html
+- https://hzchemnitz.cn/ar/vehicle-config-crv.html
+- https://hzchemnitz.cn/vehicle-config-tiggo-3x.html
+- https://hzchemnitz.cn/zh/vehicle-config-tiggo-3x.html
+- https://hzchemnitz.cn/es/vehicle-config-tiggo-3x.html
+- https://hzchemnitz.cn/fr/vehicle-config-tiggo-3x.html
+- https://hzchemnitz.cn/ru/vehicle-config-tiggo-3x.html
+- https://hzchemnitz.cn/ar/vehicle-config-tiggo-3x.html
+- https://hzchemnitz.cn/vehicle-config-tiggo-5x.html
+- https://hzchemnitz.cn/zh/vehicle-config-tiggo-5x.html
+- https://hzchemnitz.cn/es/vehicle-config-tiggo-5x.html
+- https://hzchemnitz.cn/fr/vehicle-config-tiggo-5x.html
+- https://hzchemnitz.cn/ru/vehicle-config-tiggo-5x.html
+- https://hzchemnitz.cn/ar/vehicle-config-tiggo-5x.html
+- https://hzchemnitz.cn/vehicle-config-mg5.html
+- https://hzchemnitz.cn/zh/vehicle-config-mg5.html
+- https://hzchemnitz.cn/es/vehicle-config-mg5.html
+- https://hzchemnitz.cn/fr/vehicle-config-mg5.html
+- https://hzchemnitz.cn/ru/vehicle-config-mg5.html
+- https://hzchemnitz.cn/ar/vehicle-config-mg5.html
+- https://hzchemnitz.cn/vehicle-config-changan-cs55.html
+- https://hzchemnitz.cn/zh/vehicle-config-changan-cs55.html
+- https://hzchemnitz.cn/es/vehicle-config-changan-cs55.html
+- https://hzchemnitz.cn/fr/vehicle-config-changan-cs55.html
+- https://hzchemnitz.cn/ru/vehicle-config-changan-cs55.html
+- https://hzchemnitz.cn/ar/vehicle-config-changan-cs55.html
+- https://hzchemnitz.cn/vehicle-config-changan-cs75.html
+- https://hzchemnitz.cn/zh/vehicle-config-changan-cs75.html
+- https://hzchemnitz.cn/es/vehicle-config-changan-cs75.html
+- https://hzchemnitz.cn/fr/vehicle-config-changan-cs75.html
+- https://hzchemnitz.cn/ru/vehicle-config-changan-cs75.html
+- https://hzchemnitz.cn/ar/vehicle-config-changan-cs75.html
+- https://hzchemnitz.cn/vehicle-config-changan-x5.html
+- https://hzchemnitz.cn/zh/vehicle-config-changan-x5.html
+- https://hzchemnitz.cn/es/vehicle-config-changan-x5.html
+- https://hzchemnitz.cn/fr/vehicle-config-changan-x5.html
+- https://hzchemnitz.cn/ru/vehicle-config-changan-x5.html
+- https://hzchemnitz.cn/ar/vehicle-config-changan-x5.html
+- https://hzchemnitz.cn/vehicle-config-aion-i60.html
+- https://hzchemnitz.cn/zh/vehicle-config-aion-i60.html
+- https://hzchemnitz.cn/es/vehicle-config-aion-i60.html
+- https://hzchemnitz.cn/fr/vehicle-config-aion-i60.html
+- https://hzchemnitz.cn/ru/vehicle-config-aion-i60.html
+- https://hzchemnitz.cn/ar/vehicle-config-aion-i60.html
+- https://hzchemnitz.cn/vehicle-config-aion-y.html
+- https://hzchemnitz.cn/zh/vehicle-config-aion-y.html
+- https://hzchemnitz.cn/es/vehicle-config-aion-y.html
+- https://hzchemnitz.cn/fr/vehicle-config-aion-y.html
+- https://hzchemnitz.cn/ru/vehicle-config-aion-y.html
+- https://hzchemnitz.cn/ar/vehicle-config-aion-y.html
