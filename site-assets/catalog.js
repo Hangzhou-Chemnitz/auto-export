@@ -1,5 +1,6 @@
 import {REGIONAL_SHORTLISTS, REVIEWED_AT} from './regional-models.js';
 import {appUrl, vehicleUrl} from './site-paths.js';
+import {readSearchOrder,orderModels,orderSummary} from './catalog-search-order.js?v=20261116-search';
 
 const isZh=document.documentElement.lang==='zh-CN';
 const t=(a,b)=>isZh?a:b;
@@ -14,12 +15,22 @@ const typeNames={Sedan:'轿车',Hatchback:'两厢车',SUV:'SUV',MPV:'MPV'};
 const bodyStyles=Object.keys(typeNames);
 const bodyStyle=label=>bodyStyles.find(style=>new RegExp('\\b'+style+'\\b','i').test(label))||label;
 const selectedOption=(select,value)=>[...select.options].find(option=>option.value.toLowerCase()===(value||'').toLowerCase())?.value||'';
-let models=[];
+let models=[],searchOrder={status:'unavailable',rankedModelIds:[]};
+let sort=document.querySelector('#catalog-sort');
+if(!sort){const label=document.createElement('label');label.dataset.catalogSort='';label.textContent=t('排序方式','Sort by');sort=document.createElement('select');sort.id='catalog-sort';sort.add(new Option(t('官网搜索关注度','Website search attention'),'search'));sort.add(new Option(t('目录顺序','Catalogue order'),'catalog'));label.append(sort);document.querySelector('#clear-filters').before(label);}
+let orderNote=document.querySelector('#catalog-order-note');
+if(!orderNote){orderNote=document.createElement('div');orderNote.id='catalog-order-note';orderNote.className='catalog-order-note';document.querySelector('.catalog-toolbar').after(orderNote);}
+function renderOrderNote(){
+ orderNote.replaceChildren();const text=document.createElement('p');text.textContent=orderSummary(searchOrder,isZh,sort.value,!!region.value);orderNote.append(text);
+ const details=document.createElement('details'),title=document.createElement('summary'),method=document.createElement('p');title.textContent=t('排序依据','How this order works');
+ method.textContent=t('采用Google Search Console已完成处理的数据，合并同一车型中英文规范页面的搜索展示次数，展示次数相同再参考点击次数；最多使用近28天、新版上线后的可用记录。至少5次展示且覆盖2天后才参与前排排序；少量或未返回记录不等于零热度，其他车型保留目录顺序。这不是全网搜索量、销量或实时热门榜。','Uses finalized Google Search Console records: EN/ZH canonical-page impressions are combined per model, with clicks breaking ties. Uses up to 28 days of available post-launch data. At least 5 impressions across 2 days are required for priority ordering; limited or unreturned records are not zero interest, and other models retain catalogue order. This is not market-wide search volume, sales or a live popularity chart.');details.append(title,method);orderNote.append(details);
+}
 function syncFilterURL(){
  const url=new URL(location.href);
  for(const [key,value] of [['brand',brand.value],['type',type.value],['q',search.value.trim()],['region',region.value]]){
   if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
  }
+ if(sort.value==='catalog')url.searchParams.set('sort','catalog');else url.searchParams.delete('sort');
  if(url.href!==location.href)history.replaceState(null,'',url);
  const languageLink=document.querySelector('[data-language-peer]')||document.querySelector('.preview > a');
  if(languageLink){const target=new URL(languageLink.href,location.href);target.search=url.search;languageLink.href=target.href;}
@@ -56,9 +67,10 @@ function render(){
  const items=candidates.filter(m=>(!brand.value||(m.brandGroup||m.brand)===brand.value)&&(!type.value||(bodyStyles.includes(type.value)?m.bodyStyle===type.value:m.type===type.value))&&([m.name,m.nameZh,m.brand,names[m.brand],...(m.searchAliases||[])].filter(Boolean).join(' ').toLowerCase().includes(q)));
  syncFilterURL();
  renderRegion(reference);
+ renderOrderNote();
  count.textContent=reference?t('显示 '+items.length+' / '+candidates.length+' 款区域参考车型',items.length+' of '+candidates.length+' shortlisted models'):t('显示 '+items.length+' / '+models.length+' 款车型',items.length+' of '+models.length+' models');
  grid.replaceChildren();
- for(const m of items){
+ for(const m of orderModels(items,searchOrder,sort.value)){
   const a=document.createElement('a');a.className='catalog-card';a.href=vehicleUrl(m.id,isZh);a.dataset.modelId=m.id;
   const photo=document.createElement('div');photo.className='catalog-photo';
   const img=document.createElement('img');img.src=m.image;img.alt=m.title;img.loading='lazy';img.width=640;img.height=480;
@@ -76,12 +88,14 @@ function render(){
  }
  if(!items.length){const e=document.createElement('div');e.className='catalog-empty';e.textContent=t('没有匹配的车型，请调整筛选或清除条件。','No matching models. Adjust or clear your filters.');grid.append(e)}
 }
-[brand,type,search,region].forEach(e=>e.addEventListener('input',render));
-document.querySelector('#clear-filters').onclick=()=>{brand.value=type.value=search.value=region.value='';render()};
+[brand,type,search,region,sort].forEach(e=>e.addEventListener('input',render));
+document.querySelector('#clear-filters').onclick=()=>{brand.value=type.value=search.value=region.value='';sort.value='search';render()};
 (async()=>{try{
- const res=await fetch(appUrl('data/catalog-models.json?v=20261113-aion-y-gallery'));if(!res.ok)throw Error();
+ const signal=typeof AbortSignal.timeout==='function'?AbortSignal.timeout(5000):undefined;
+ const [res,attention]=await Promise.all([fetch(appUrl('data/catalog-models.json?v=20261113-aion-y-gallery')),fetch(appUrl('data/catalog-search-attention.json'),{cache:'no-cache',signal}).then(r=>r.ok?r.json():null).catch(()=>null)]);if(!res.ok)throw Error();
  const data=await res.json();
  models=data.map(m=>({...m,image:appUrl(m.image)}));
+ searchOrder=readSearchOrder(attention,models);
  for(const control of [brand,type,region]) while(control.options.length>1)control.remove(1);
  for(const b of [...new Set(models.map(m=>m.brandGroup||m.brand))])brand.add(new Option(isZh?(names[b]||b)+' · '+b:b,b));
  for(const b of [...new Set(models.map(m=>m.type))])type.add(new Option(isZh?(typeNames[b]||b):b,b));
@@ -90,6 +104,7 @@ document.querySelector('#clear-filters').onclick=()=>{brand.value=type.value=sea
  brand.value=selectedOption(brand,params.get('brand'));
  type.value=selectedOption(type,params.get('type'));
  region.value=selectedOption(region,params.get('region'));
+ sort.value=params.get('sort')==='catalog'?'catalog':'search';
  search.value=params.get('q')||'';render();
  }catch(e){count.textContent=t('目录暂时无法加载','Catalogue unavailable');if(!grid.children.length)grid.textContent=t('请刷新重试，或使用页首的获取报价联系团队。','Please refresh or contact our team for a quote.')}
 })();

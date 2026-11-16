@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "source": "google-search-console",
+  "metric": "model-page-impressions",
+  "secondaryMetric": "clicks",
+  "aggregation": "en-zh-canonical-pages",
+  "updatedAt": "2026-11-16T05:05:09.074Z",
+  "validThrough": "2026-11-27",
+  "window": {
+    "from": "2026-11-05",
+    "to": "2026-11-13",
+    "availableDays": 9,
+    "targetDays": 28
+  },
+  "samplePolicy": {
+    "minImpressions": 5,
+    "minObservedDays": 2
+  },
+  "status": "ready",
+  "rankedModelIds": [
+    "vehicle-config-camry",
+    "vehicle-config-rav4",
+    "vehicle-config-corolla-cross"
+  ]
+}
