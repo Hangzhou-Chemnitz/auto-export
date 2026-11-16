@@ -9,42 +9,46 @@
  const ID = 'G-PEL4QMFR44';
  const root = document.documentElement;
  const disabledPath = /(?:^|\/)(?:design-preview|preview|test|tests|stage|staging)(?:\/|\.|-|$)/i;
- const enabled = location.protocol === 'https:' && ['hzchemnitz.cn','www.hzchemnitz.cn'].includes(location.hostname.toLowerCase()) &&
+ const eligible = location.protocol === 'https:' && ['hzchemnitz.cn','www.hzchemnitz.cn'].includes(location.hostname.toLowerCase()) &&
   root.dataset.release === 'true' && root.dataset.analyticsReviewed === 'true' && root.dataset.stage !== 'true' &&
   !disabledPath.test(location.pathname) && !window.__chemnitzAnalyticsLoaderStarted && !window.__chemnitzAnalyticsEventsLoaded &&
   !document.querySelector('meta[name="robots"][content*="noindex"]');
- window.__chemnitzAnalyticsEnabled = enabled;
- window.__chemnitzAnalyticsDisabled = !enabled;
- window['ga-disable-' + ID] = !enabled;
+ let enabled = false, started = false;
+ window.__chemnitzAnalyticsEnabled = false;
+ window.__chemnitzAnalyticsDisabled = true;
+ window['ga-disable-' + ID] = true;
  const MODEL_NAMES = Object.freeze({
   rav4:'Toyota RAV4',corolla:'Toyota Corolla','corolla-cross':'Toyota Corolla Cross',camry:'Toyota Camry',highlander:'Toyota Highlander',wildlander:'Toyota Frontlander',granvia:'Toyota Granvia',bz3:'Toyota bZ3',
   teramont:'Volkswagen Teramont Pro',tharu:'Volkswagen Tharu XR',troc:'Volkswagen T-Roc',golf:'Volkswagen Golf','jetta-vs5':'JETTA VS5',
   coolray:'Geely Coolray',boyue:'Geely Boyue','xingyue-l':'Geely Xingyue L',niuzai:'Geely Niuzai','galaxy-m9':'Geely Galaxy M9','zeekr-9x':'Zeekr 9X',
   teana:'Nissan Teana',n7:'Nissan N7',n6:'Nissan N6',qashqai:'Nissan Qashqai',xtrail:'Nissan X-Trail',nx8:'Nissan NX8',sylphy:'Nissan Sylphy',
   seltos:'Kia Seltos',kx1:'Kia KX1',k3:'Kia K3',k5:'Kia K5',sportage:'Kia Sportage',elantra:'Hyundai Elantra',
-  dashing:'Jetour Dashing',x70:'Jetour X70',traveler:'Jetour Traveler','free-rider':'Jetour Free Rider',q5:'Audi Q5L',q3:'Audi Q3',a5:'Audi A5L',crv:'Honda CR-V',
+  dashing:'Jetour Dashing',x70:'Jetour X70',traveler:'Jetour Traveler 7','free-rider':'Jetour Free Rider 7',q5:'Audi Q5L',q3:'Audi Q3',a5:'Audi A5L',crv:'Honda CR-V',
   'tiggo-3x':'Chery Tiggo 3X','tiggo-5x':'Chery Tiggo 5X',mg5:'MG MG5','changan-cs55':'Changan CS55 PLUS','changan-cs75':'Changan CS75 PLUS','changan-x5':'Changan X5 PLUS',
   'xingyue-l-plus':'Geely Xingyue L PLUS','aion-i60':'GAC AION i60','aion-y':'GAC AION Y'
  });
- const BRANDS = new Set(['toyota','nissan','volkswagen','geely','changan','chery','jetour','zeekr','honda','hyundai','kia','audi','mg','aion']);
+ const BRANDS = new Set(['toyota','nissan','volkswagen','geely','changan','chery','jetour','zeekr','honda','hyundai','kia','audi','aion']);
+ const PATHS = new Set(['/',...['zh','es','fr','ru','ar','models','models-zh','about','about-zh','quote','quote-zh','footage'].map(slug=>'/'+slug+'.html'),...[...BRANDS].flatMap(brand=>['/brands/'+brand+'.html','/brands/'+brand+'-zh.html']),...Object.keys(MODEL_NAMES).flatMap(model=>['/vehicle-config-'+model+'.html','/zh/vehicle-config-'+model+'.html'])]);
  const MARKETS = new Set(['latin-america','middle-east','central-asia','africa','other','PE','CO','CL','AE','SA','KZ']);
- const SURFACES = new Set(['home','catalog','brand','vehicle','quote','about','other']);
- const LOCATIONS = new Set(['header','hero','footer','brand_tile','body_tile','region_tile','catalog_card','brand_card','related_card','page_body','home_form','quote_form','vehicle_form','variant_picker']);
+ const SURFACES = new Set(['home','catalog','brand','vehicle','quote','about','footage','other']);
+ const LOCATIONS = new Set(['header','hero','footer','brand_tile','body_tile','region_tile','catalog_card','brand_card','related_card','page_body','home_form','quote_form','vehicle_form','variant_picker','contact_dock']);
  const CONTACTS = new Set(['Chloe','Natalie','Darwin','Zeeshan','Jacky','Even']);
+ const CONTACT_NUMBERS = Object.freeze({'8615625033581':'Chloe','8615913687692':'Natalie','8613640033268':'Darwin','8618511445792':'Zeeshan','8613826126147':'Jacky','8619325504833':'Even'});
  const EVENTS = new Set(['page_view','vehicle_view','vehicle_variant_select','catalog_click','brand_click','inquiry_start','whatsapp_open']);
  let context = {};
  function modelName(id) {
   const slug = String(id || '').replace(/^vehicle-config-/,'').replace(/^sylphy-2026$/,'sylphy');
   return Object.prototype.hasOwnProperty.call(MODEL_NAMES,slug) ? MODEL_NAMES[slug] : '';
  }
- function language() { return root.lang.startsWith('zh') ? 'zh' : root.lang.startsWith('es') ? 'es' : 'en'; }
+ function language() { const lang = (root.lang || '').split('-')[0]; return ['en','zh','es','fr','ru','ar'].includes(lang) ? lang : 'en'; }
  function surface() {
   if (/\/brands\//.test(location.pathname)) return 'brand';
   if (/\/(?:vehicles\/|vehicle(?:-zh)?\.html|vehicle-config-[a-z0-9-]+\.html)/.test(location.pathname) || root.dataset.model || root.dataset.modelId) return 'vehicle';
   if (/\/(?:cars|models)(?:-zh|-es)?(?:\.html|\/|$)/.test(location.pathname)) return 'catalog';
   if (/\/quote(?:-zh)?(?:\.html|\/|$)/.test(location.pathname)) return 'quote';
   if (/\/about(?:-zh)?(?:\.html|\/|$)/.test(location.pathname)) return 'about';
-  return /\/(?:index\.html|zh\.html)?$/.test(location.pathname) ? 'home' : 'other';
+  if (location.pathname === '/footage.html') return 'footage';
+  return /^\/(?:zh|es|fr|ru|ar)\.html$/.test(location.pathname) || location.pathname === '/' ? 'home' : 'other';
  }
  function market() {
   const value = root.dataset.market || new URLSearchParams(location.search).get('region');
@@ -84,18 +88,35 @@
   return true;
  }
  window.chemnitzTrack = track;
- if (enabled) {
+ function syncConsent() {
+  enabled = Boolean(eligible && PATHS.has(location.pathname) && window.ChemnitzAnalyticsConsent?.allowed());
+  window.__chemnitzAnalyticsEnabled = enabled;
+  window.__chemnitzAnalyticsDisabled = !enabled;
+  window['ga-disable-' + ID] = !enabled;
+  if (!enabled) {
+   if (started) window.gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+   // Remove only this site's Google Analytics cookies; leave inquiries and other files untouched.
+   for (const item of document.cookie.split(';')) { const name = item.split('=')[0].trim(); if (!/^_ga(?:_|$)/.test(name)) continue; for (const domain of ['',location.hostname,'.hzchemnitz.cn']) document.cookie = name+'=; Max-Age=0; path=/; SameSite=Lax; Secure'+(domain?'; domain='+domain:''); }
+   return;
+  }
+  if (started) { window.gtag('consent','update',{analytics_storage:'granted'}); return; }
+  started = true;
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { window.dataLayer.push(arguments); };
-  window.gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  window.gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+  window.gtag('consent','update',{analytics_storage:'granted'});
   window.gtag('set',{page_location:safeLocation(),page_referrer:safeReferrer(),page_title:'Chemnitz / ' + surface(),send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false});
   window.gtag('js',new Date());
   window.gtag('config',ID,{send_page_view:false,page_location:safeLocation(),page_referrer:safeReferrer(),page_title:'Chemnitz / ' + surface(),allow_google_signals:false,allow_ad_personalization_signals:false});
   const script = document.createElement('script'); script.async = true;
+  script.referrerPolicy = 'no-referrer';
   script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID; document.head.append(script);
   track('page_view');
+  if (context.model_name && track('vehicle_view',Object.assign({},context,{cta_location:'page_body'}))) views.add(context.model_name);
  }
  const views = new Set();
+ window.addEventListener('chemnitz:analytics-consent',syncConsent);
+ syncConsent();
  function listen(type,handler) {
   const seen = new WeakSet();
   const receive = event => { if (seen.has(event)) return; seen.add(event); handler(event); };
@@ -104,8 +125,8 @@
  listen('chemnitz:vehicle-view', event => {
   const detail = event.detail || {}, name = modelName(detail.id); if (!name) return;
   context = {model_name:name,vehicle_spec_id:specId(detail.vehicle_spec_id)};
-  if (views.has(name)) return; views.add(name);
-  track('vehicle_view',Object.assign({},context,{cta_location:'page_body'}));
+  if (views.has(name)) return;
+  if (track('vehicle_view',Object.assign({},context,{cta_location:'page_body'}))) views.add(name);
  });
  listen('chemnitz:variant-select', event => {
   const detail = event.detail || {}, name = modelName(detail.id), trim = specId(detail.vehicle_spec_id);
@@ -128,7 +149,13 @@
  document.addEventListener('click', event => {
   const link = event.target.closest && event.target.closest('a[href]'); if (!link) return;
   let url; try { url = new URL(link.href,location.href); } catch { return; }
-  if (url.origin !== location.origin) return;
+  if (url.origin !== location.origin) {
+   if (url.protocol === 'https:' && url.hostname === 'wa.me' && link.closest('.contact-dock')) {
+    const contact = CONTACT_NUMBERS[url.pathname.replace(/^\//,'')];
+    if (contact) track('whatsapp_open',{entry_surface:surface(),cta_location:'contact_dock',contact_name:contact});
+   }
+   return;
+  }
   const params = {entry_surface:surface(),cta_location:ctaLocation(link)};
   const brand = url.pathname.match(/\/brands\/([a-z]+)(?:-zh)?(?:\.html|\/|$)/)?.[1];
   let eventName;
