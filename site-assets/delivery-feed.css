@@ -1,0 +1,8 @@
+.delivery-frame{position:relative;aspect-ratio:16/9;background:#152a35;overflow:hidden}
+.delivery-frame>img,.delivery-frame>video,.delivery-frame>iframe{width:100%;height:100%;display:block;border:0;object-fit:contain}
+.delivery-play{position:absolute;inset:0;width:100%;height:100%;display:grid;place-items:center;border:0;padding:0;background:#10232d15;color:#fff;cursor:pointer}
+.delivery-play>span{display:grid;place-items:center;width:52px;height:52px;padding-inline-start:3px;border-radius:50%;border:1px solid #ffffffc0;background:#13212ba6;font-size:20px}
+.delivery-play:hover>span{background:#b9362d}
+.delivery-play:focus-visible{outline:3px solid #b9362d;outline-offset:-4px}
+.delivery-date{display:block;font-size:11px;color:#7b877f;margin-top:12px}
+.footage-card-copy h2.delivery-title{font-size:21px;line-height:1.3;letter-spacing:0}
