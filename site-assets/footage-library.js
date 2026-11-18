@@ -30,34 +30,30 @@
   return 'portrait';
  }
  function size(){
-  const width=grid.querySelector('.delivery-library-column')?.getBoundingClientRect().width;
-  if(width){const value=Math.ceil(width*16/9+200)+'px';if(grid.style.getPropertyValue('--delivery-library-height')!==value)grid.style.setProperty('--delivery-library-height',value);}
+  // A landscape spans three tracks, so use a single track, not the first card.
+  const width=parseFloat(getComputedStyle(grid).gridTemplateColumns);
+  if(width){const value=Math.ceil(width*16/9)+'px';if(grid.style.getPropertyValue('--delivery-library-media-height')!==value)grid.style.setProperty('--delivery-library-media-height',value);}
  }
  function schedule(){if(timer)return;timer=setTimeout(()=>{timer=null;render();},100);}
  function render(){
   if(playing()){pending=true;return;}pending=false;
   const entries=ordered.map(node=>({node,orientation:orientation(node)})),signature=entries.map(e=>key(e.node)+':'+e.orientation).join('|');
   if(signature===last){size();return;}last=signature;
-  const used=new Set(),columns=[];
+  const columns=[],focus=grid.contains(document.activeElement)?document.activeElement:null;
   for(const entry of entries){
-   if(used.has(entry.node))continue;used.add(entry.node);const group=[entry];
-   if(entry.orientation==='landscape'){
-    const partner=entries.find(e=>!used.has(e.node)&&e.orientation==='landscape');
-    if(partner){used.add(partner.node);group.push(partner);}
-   }
-   const column=document.createElement('div');column.className='delivery-library-column'+(group.length===2?' delivery-library-pair':'');
-   for(const {node,orientation:aspect}of group){
+   const column=document.createElement('div');column.className='delivery-library-column delivery-library-'+entry.orientation;
+   const {node,orientation:aspect}=entry;
     node.dataset.libraryOrientation=aspect;
     const heading=node.querySelector('h2');if(heading)heading.title=heading.textContent.trim();
     const frame=node.querySelector('.footage-frame');
     if(!node.hasAttribute('data-delivery-id')&&frame&&!frame.querySelector('.delivery-history-badge')){
      const badge=document.createElement('span');badge.className='delivery-history-badge';badge.textContent=earlier;frame.append(badge);
     }
-    column.append(node);
-   }
+   column.append(node);
    columns.push(column);
   }
   grid.classList.add('delivery-library-grid');grid.replaceChildren(...columns);size();
+  if(focus?.isConnected)focus.focus({preventScroll:true});
  }
  document.addEventListener('chemnitz:delivery-feed-updated',()=>{ordered=[...grid.querySelectorAll('.footage-card')];render();});
  grid.addEventListener('load',event=>{if(event.target.tagName==='IMG')schedule();},true);
