@@ -12,12 +12,18 @@
   fr:{labels:{dispatch:'Expédition de véhicules',loading:'Chargement de véhicules',handover:'Livraison de véhicules',yard:'Parc automobile'},tag:'IMAGES RÉELLES',description:'Images réelles de notre équipe de livraison. Disponibilité et conditions à confirmer pour chaque demande.',play:'Lire la vidéo',date:'Filmé le'},
   ru:{labels:{dispatch:'Отправка автомобилей',loading:'Погрузка автомобилей',handover:'Передача автомобилей',yard:'Автомобильная площадка'},tag:'РЕАЛЬНЫЕ КАДРЫ',description:'Реальные кадры команды доставки. Наличие и условия уточняются по каждому запросу.',play:'Смотреть видео',date:'Дата съёмки'},
   ar:{labels:{dispatch:'شحن السيارات',loading:'تحميل السيارات',handover:'تسليم السيارات',yard:'ساحة السيارات'},tag:'لقطات حقيقية',description:'لقطات حقيقية من فريق التسليم. يتم تأكيد التوفر والشروط لكل استفسار.',play:'تشغيل الفيديو',date:'تاريخ التصوير'}
- },locale=text[document.documentElement.lang]||text.en;
+ },language=document.documentElement.lang==='zh-CN'?'zh':document.documentElement.lang,locale=text[document.documentElement.lang]||text.en;
  let config,last='',inflight=false;
  for(const event of ['pointerdown','keydown'])grid.addEventListener(event,e=>{const video=e.target.closest?.('video')||e.target.closest?.('[data-footage-play]')?.parentElement.querySelector('video');if(video)video.dataset.deliveryWatching='true';});
  grid.addEventListener('ended',e=>{if(e.target.tagName==='VIDEO')delete e.target.dataset.deliveryWatching;},true);
  function media(raw){try{const url=new URL(raw),endpoint=new URL(config.endpoint),owned=/^\/media\/[a-f0-9]{32}\/(?:video\.mp4|poster\.jpg)$/.test(url.pathname);if(url.protocol==='https:'&&url.origin===endpoint.origin&&owned&&!url.search&&!url.hash)return url.href;if(['127.0.0.1','localhost'].includes(location.hostname)&&url.hostname==='127.0.0.1'&&url.origin===endpoint.origin&&owned)return url.href;}catch{}return null;}
- function title(item){return (item.model?item.model+' · ':'')+locale.labels[item.category];}
+ function title(item){
+  // Only display a stored translation for this locale. A delayed/failed job must
+  // not make the Spanish, Arabic, etc. page display an untranslated Chinese caption.
+  const source=item.sourceLanguage||(/\p{Script=Han}/u.test(item.model)?'zh':/\p{Script=Arabic}/u.test(item.model)?'ar':/\p{Script=Cyrillic}/u.test(item.model)?'ru':'en');
+  const value=item.titles?.[language],caption=typeof value==='string'&&value.trim()&&value.length<=320?value.trim():source===language?item.model:'';
+  return caption||locale.labels[item.category];
+ }
  function card(item){
   const article=document.createElement('article');article.className=home?'warehouse-card':'footage-card';article.dataset.deliveryId=item.id;article.id='delivery-'+item.id;
   const frame=document.createElement('div');frame.className='delivery-frame';
