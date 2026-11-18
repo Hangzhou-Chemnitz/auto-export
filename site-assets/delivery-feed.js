@@ -21,11 +21,18 @@
  function card(item){
   const article=document.createElement('article');article.className=home?'warehouse-card':'footage-card';article.dataset.deliveryId=item.id;article.id='delivery-'+item.id;
   const frame=document.createElement('div');frame.className='delivery-frame';
-  const poster=document.createElement('img');poster.src=item.poster;poster.alt=title(item);poster.loading='lazy';poster.width=1280;poster.height=720;
+  const setAspect=(width,height)=>{if(width&&height){frame.dataset.orientation=height>width?'portrait':'landscape';frame.style.setProperty('--delivery-aspect',width+'/'+height);}};
+  const poster=document.createElement('img');poster.alt=title(item);poster.loading='lazy';
+  // Posters keep the phone's original proportions. Detect those proportions
+  // from the image, without downloading every video just to lay out the grid.
+  poster.addEventListener('load',()=>setAspect(poster.naturalWidth,poster.naturalHeight));
+  poster.src=item.poster;
   const play=document.createElement('button');play.className='delivery-play';play.type='button';play.setAttribute('aria-label',locale.play+' · '+title(item));const symbol=document.createElement('span');symbol.textContent='▶';symbol.setAttribute('aria-hidden','true');play.append(symbol);frame.append(poster,play);
+  const duration=document.createElement('span');duration.className='delivery-duration';duration.dir='ltr';duration.setAttribute('aria-hidden','true');const seconds=Math.ceil(item.duration);duration.textContent=Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0');frame.append(duration);
   play.addEventListener('click',()=>{
+   frame.dataset.playing='true';
    if(item.kind==='iframe'){const iframe=document.createElement('iframe');iframe.src=item.playback+(item.playback.includes('?')?'&':'?')+'autoplay=true';iframe.title=title(item);iframe.allow='autoplay; fullscreen; picture-in-picture';iframe.allowFullscreen=true;frame.replaceChildren(iframe);iframe.focus();}
-   else{const video=document.createElement('video');video.src=item.playback;video.poster=item.poster;video.controls=true;video.playsInline=true;video.preload='none';video.dataset.deliveryWatching='true';video.setAttribute('aria-label',title(item));frame.replaceChildren(video);video.play().catch(()=>{});video.focus();}
+   else{const video=document.createElement('video');video.src=item.playback;video.poster=item.poster;video.controls=true;video.playsInline=true;video.preload='none';video.dataset.deliveryWatching='true';video.setAttribute('aria-label',title(item));video.addEventListener('loadedmetadata',()=>setAspect(video.videoWidth,video.videoHeight));frame.replaceChildren(video);video.play().catch(()=>{});video.focus();}
   });
   const copy=document.createElement('div');copy.className=home?'warehouse-card-copy':'footage-card-copy';const label=document.createElement('p');label.className='eyebrow';label.textContent=locale.tag;const h=document.createElement(home?'h3':'h2');h.className='delivery-title';h.textContent=title(item);const description=document.createElement('p');description.textContent=locale.description;const date=document.createElement('time');date.className='delivery-date';date.dateTime=item.date;date.textContent=locale.date+' · '+item.date;copy.append(label,h,description,date);article.append(frame,copy);return article;
  }
@@ -46,8 +53,9 @@
    // Remember only the rendered feed, not an update deferred while watching.
    last=signature;
    grid.querySelectorAll('video').forEach(v=>v.pause());
-   const visible=home?items.slice(0,3):items,nodes=visible.map(card);
-   if(home)nodes.push(...baseline.slice(0,3-nodes.length));else nodes.push(...baseline);
+   const visible=home?items.slice(0,3):items,cards=visible.map(card),nodes=[];
+   if(home)nodes.push(...cards,...baseline.slice(0,3-cards.length));
+   else{if(cards.length){const recent=document.createElement('div');recent.className='delivery-recent';recent.append(...cards);nodes.push(recent);}nodes.push(...baseline);}
    grid.replaceChildren(...nodes);
    let schema=document.getElementById('delivery-feed-schema');if(!schema){schema=document.createElement('script');schema.type='application/ld+json';schema.id='delivery-feed-schema';document.head.append(schema);}
    schema.textContent=JSON.stringify({'@context':'https://schema.org','@graph':visible.map(item=>({'@type':'VideoObject',name:title(item),description:locale.description,thumbnailUrl:item.poster,uploadDate:item.uploadedAt,duration:'PT'+Math.ceil(item.duration)+'S',...(item.kind==='iframe'?{embedUrl:item.playback}:{contentUrl:item.playback})}))}).replace(/</g,'\\u003c');
