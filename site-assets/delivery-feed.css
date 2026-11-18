@@ -29,6 +29,22 @@
 .delivery-frame[data-orientation=landscape]{aspect-ratio:16/9}
 .warehouse-card[data-delivery-id] .delivery-frame[data-orientation=landscape]{aspect-ratio:16/9}
 .delivery-frame[data-playing=true],.warehouse-card[data-delivery-id] .delivery-frame[data-playing=true]{aspect-ratio:var(--delivery-aspect,9/16)}
+/* Homepage only: one portrait or two landscapes occupy the same-height column. */
+.warehouse-grid-six .delivery-column{min-width:0;min-height:0;height:var(--delivery-column-height,540px);display:grid;grid-template-rows:minmax(0,1fr);align-self:start}
+.warehouse-grid-six .delivery-column-pair{grid-template-rows:repeat(2,minmax(0,1fr));gap:14px}
+.warehouse-grid-six .delivery-column>.warehouse-card{height:100%;min-height:0;display:flex;flex-direction:column}
+.warehouse-grid-six .delivery-column .delivery-frame,.warehouse-grid-six .delivery-column .delivery-frame[data-playing=true]{flex:0 0 auto;aspect-ratio:9/16}
+.warehouse-grid-six .delivery-column-pair .delivery-frame,.warehouse-grid-six .delivery-column-pair .delivery-frame[data-playing=true]{aspect-ratio:16/9}
+.warehouse-grid-six .delivery-column .delivery-frame>img,.warehouse-grid-six .delivery-column .delivery-frame>video{object-fit:contain}
+.warehouse-grid-six .delivery-column .warehouse-card-copy{flex:1;min-height:0;display:flex;flex-direction:column}
+.warehouse-grid-six .delivery-column .delivery-date{margin-top:auto;padding-top:10px}
+.warehouse-grid-six .delivery-column-pair .warehouse-card-copy{padding:10px 10px 12px}
+.warehouse-grid-six .delivery-column-pair .eyebrow{font-size:8px;margin-bottom:6px}
+.warehouse-grid-six .delivery-column-pair .warehouse-card-copy h3{font-size:14px;line-height:1.3;min-height:2.6em;margin-bottom:4px}
+.warehouse-grid-six .delivery-column-pair .warehouse-card-copy>p.delivery-card-description{display:none}
+.warehouse-grid-six .delivery-column-pair .warehouse-card-copy>.delivery-date{font-size:9px;line-height:1.3;padding-top:6px}
+.delivery-history-badge{position:absolute;inset-block-start:8px;inset-inline-start:8px;max-width:65%;padding:3px 6px;border-radius:4px;background:#10232dc9;color:white;font-size:9px;line-height:1.3;pointer-events:none}
+.warehouse-grid-six .delivery-column-pair .delivery-play>span{width:34px;height:34px;font-size:14px}
 @media(max-width:1100px){.footage-grid>.delivery-recent{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:1100px){.warehouse-grid.warehouse-grid-six{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:900px){.footage-grid>.delivery-recent{grid-template-columns:repeat(3,minmax(0,1fr))}}
