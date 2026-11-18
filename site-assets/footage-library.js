@@ -4,7 +4,7 @@
  const earlier={en:'Earlier footage','zh-CN':'往期实拍',es:'Imágenes anteriores',fr:'Images précédentes',ru:'Архивные кадры',ar:'لقطات سابقة'}[document.documentElement.lang]||'Earlier footage';
  // Keep the actual cards, videos and listeners. Never clone or invent records.
  let ordered=[...grid.querySelectorAll('.footage-card')],last='',pending=false,timer;
- const identities=new WeakMap(),knownAspects=new WeakMap();let nextID=0;
+ const identities=new WeakMap(),knownAspects=new WeakMap(),posterReads=new Set();let nextID=0;
  const key=node=>{if(!identities.has(node))identities.set(node,++nextID);return identities.get(node);};
  function playing(){return grid.querySelector('iframe')||[...grid.querySelectorAll('video')].some(v=>!v.paused&&!v.ended);}
  function orientation(card){
@@ -15,8 +15,19 @@
   if(knownAspects.has(card))return knownAspects.get(card);
   if(frame&&!image&&card.dataset.libraryOrientation)return card.dataset.libraryOrientation;
   if(frame)return frame.dataset.orientation==='landscape'?'landscape':'portrait';
-  // The original branded archive clips have a landscape playback canvas.
-  return 'landscape';
+  // Old clips include native portrait files too. Read dimensions generated from
+  // each exact original poster, not the 16:9 CSS frame used by the old page.
+  const width=Number(card.dataset.footageWidth),height=Number(card.dataset.footageHeight);
+  if(width>0&&height>0){const value=height>width?'portrait':'landscape';knownAspects.set(card,value);return value;}
+  const video=card.querySelector('video'),poster=video?.getAttribute('poster');
+  if(poster&&!posterReads.has(poster)){
+   const url=new URL(poster,location.href);
+   if(url.origin===location.origin&&/^\/site-assets\/media\/branded\/chemnitz-[a-z0-9-]+\.png$/.test(url.pathname)){
+    posterReads.add(poster);const probe=new Image();probe.onload=()=>{card.dataset.footageWidth=probe.naturalWidth;card.dataset.footageHeight=probe.naturalHeight;schedule();};probe.src=url.href;
+   }
+  }
+  // Unknown is a full-height slot until its real dimensions are available.
+  return 'portrait';
  }
  function size(){
   const width=grid.querySelector('.delivery-library-column')?.getBoundingClientRect().width;
