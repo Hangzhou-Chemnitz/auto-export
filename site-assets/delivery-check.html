@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'"><title>实拍读取检查 · Chemnitz</title><style>body{font:16px/1.65 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px;color:#172832;background:#fff}h1{font-size:25px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f3;padding:16px;border:1px solid #cbd7cf;border-radius:8px;font:inherit}button{font:inherit;min-height:44px;padding:8px 18px}#preview{max-width:200px;max-height:200px}small{color:#4c5d55}</style></head><body>
+<h1>实拍读取检查</h1><p>请在刚才的微信里打开本页。检查完成后，截图下方结果发回即可。无需登录，也不用输入口令。</p><small>诊断版本 D20261119-01。结果只显示在当前页面，不保存、不上传设备身份信息，不读取 Cookie、口令或浏览历史。</small>
+<pre id="report">页面已打开，正在检查…</pre><button id="retry" type="button">重新检查</button><p><img id="preview" alt="封面读取检查"></p><video id="video" controls playsinline preload="none" style="max-width:100%;max-height:360px"></video>
+<script>
+(function(){
+ 'use strict';
+ var report=document.getElementById('report'),button=document.getElementById('retry'),image=document.getElementById('preview'),video=document.getElementById('video'),running=false,lines=[];
+ function log(s){lines.push(s);report.textContent=lines.join('\n');}
+ function has(value){return value?'支持':'不支持';}
+ function get(path,label,done){
+  var xhr;try{xhr=new XMLHttpRequest();xhr.open('GET',path,true);xhr.withCredentials=false;xhr.timeout=20000;
+   xhr.onload=function(){var text,type;try{text=xhr.responseText;type=xhr.getResponseHeader('Content-Type')||'未返回';}catch(e){log(label+'：无法读取响应（'+e.name+'）');return done(null);}
+    log(label+'：HTTP '+xhr.status+'；'+type.split(';')[0]);if(xhr.status<200||xhr.status>=300)return done(null);
+    var parsed;try{parsed=JSON.parse(text);}catch(e){log(label+'：不是有效 JSON（'+e.name+'）');return done(null);}done(parsed);
+   };xhr.onerror=function(){log(label+'：网络错误，未返回 HTTP 状态');done(null);};xhr.ontimeout=function(){log(label+'：等待 20 秒后超时');done(null);};xhr.onabort=function(){log(label+'：请求被取消');done(null);};xhr.send();
+  }catch(e){log(label+'：请求无法开始（'+e.name+'）');done(null);}
+ }
+ function finish(){running=false;button.disabled=false;log('检查结束。请截图以上结果，无需重复刷新官网。');}
+ function mediaCheck(item){
+  var prefix='/delivery-public/media/'+item.id+'/';if(!/^[a-f0-9]{32}$/.test(item.id)){log('媒体检查：编号不符合公开视频格式');return finish();}
+  var ended=0,timer;function next(){ended++;if(ended===2){clearTimeout(timer);finish();}}
+  timer=setTimeout(function(){log('媒体检查：仍有资源在等待，尚未全部完成');image.onload=image.onerror=video.onloadedmetadata=video.onerror=null;finish();},20000);
+  image.onload=function(){log('封面：成功，'+image.naturalWidth+'×'+image.naturalHeight);image.onload=image.onerror=null;next();};image.onerror=function(){log('封面：加载失败');image.onload=image.onerror=null;next();};image.src=prefix+'poster.jpg';
+  video.onloadedmetadata=function(){log('视频信息：成功，'+video.videoWidth+'×'+video.videoHeight+'，时长 '+Math.round(video.duration)+' 秒');video.onloadedmetadata=video.onerror=null;next();};video.onerror=function(){log('视频信息：失败，媒体错误码 '+(video.error?video.error.code:'未知'));video.onloadedmetadata=video.onerror=null;next();};video.preload='metadata';video.src=prefix+'video.mp4';video.load();
+ }
+ function start(){
+  if(running)return;running=true;button.disabled=true;lines=[];report.textContent='';log('D20261119-01 · 官网主域名检查');log('页面域名：'+location.protocol+'//'+location.host);
+  var node=document.createElement('div'),urlOK=false;try{var u=new URL('/delivery-public/feed.json',location.href);urlOK=!!u.searchParams&&typeof u.searchParams.set==='function';}catch(e){}
+  log('功能：XHR '+has(typeof XMLHttpRequest!=='undefined')+'；URL 参数 '+has(urlOK));
+  log('页面方法：replaceChildren '+has(typeof node.replaceChildren==='function')+'；append '+has(typeof node.append==='function')+'；数组 flat '+has(typeof Array.prototype.flat==='function'));
+  var stamp=String(new Date().getTime());
+  get('/site-assets/delivery-feed-config.json?v=diagnostic-'+stamp,'官网配置',function(config){
+   if(config&&config.endpoint){log('配置目标：'+(config.endpoint==='https://hzchemnitz.cn/delivery-public/feed.json'?'官网同域新入口':config.endpoint==='https://upload.hzchemnitz.cn/api/feed'?'旧上传子域名入口':'非预期入口'));}else log('官网配置：未读到有效配置');
+   get('/delivery-public/feed.json?_refresh='+stamp,'直接读取同域列表',function(feed){
+    if(!feed||feed.version!==1||!Array.isArray(feed.items)){log('列表结构：未读到有效视频列表');return finish();}
+    log('列表结构：成功，共 '+feed.items.length+' 条公开视频；最新拍摄日期 '+(feed.items[0]?String(feed.items[0].date):'暂无'));
+    if(feed.items.length)mediaCheck(feed.items[0]);else finish();
+   });
+  });
+ }
+ button.onclick=start;start();
+})();
+</script></body></html>
