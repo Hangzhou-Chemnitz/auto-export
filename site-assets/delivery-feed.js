@@ -4,7 +4,7 @@
  if(!home&&!archive)return;
  // Reuse the original cards. Cloning drops their playback listeners and the
  // homepage observer's video references when live uploads are inserted.
- const VERSION='20261119-same-origin',ownScript=document.currentScript,assetBase=new URL('.',ownScript.src),grid=home||archive,baseline=[...grid.children];
+ const VERSION='20261119-trace1',ownScript=document.currentScript,assetBase=new URL('.',ownScript.src),grid=home||archive,baseline=[...grid.children];
  const text={
   en:{labels:{dispatch:'Vehicle dispatch',loading:'Vehicle loading',handover:'Vehicle handover',yard:'Vehicle yard'},tag:'REAL FOOTAGE',description:'Real delivery-team footage. Availability and terms are confirmed for each inquiry.',play:'Play video',date:'Filmed'},
   'zh-CN':{labels:{dispatch:'车辆发运实拍',loading:'车辆装载实拍',handover:'车辆交付实拍',yard:'车辆场地实拍'},tag:'真实现场',description:'来自交付团队的现场实拍。具体供货和交易条件以每次询价确认为准。',play:'播放视频',date:'拍摄日期'},
@@ -24,11 +24,12 @@
  }[document.documentElement.lang]||{loading:'Checking for the latest footage…',failed:'Latest footage could not be loaded. Earlier videos remain available below.',retry:'Retry',waiting:'New footage is available. Refresh when you have finished watching.',refresh:'Show new footage',empty:'No new uploads are available. Earlier footage is shown below.'};
  const status=document.createElement('div'),statusMessage=document.createElement('span'),statusButton=document.createElement('button');
  status.className='delivery-feed-status';status.hidden=true;status.setAttribute('role','status');status.setAttribute('aria-live','polite');statusButton.type='button';statusButton.className='delivery-feed-retry';status.append(statusMessage,statusButton);grid.parentNode.insertBefore(status,grid);
- function showStatus(state){status.hidden=!state;status.dataset.state=state||'';statusMessage.textContent=messages[state]||'';statusButton.hidden=!['failed','waiting'].includes(state);statusButton.textContent=state==='waiting'?messages.refresh:messages.retry;}
+ function showStatus(state,detail=''){status.hidden=!state;status.dataset.state=state||'';statusMessage.textContent=(messages[state]||'')+(state==='failed'&&detail?' ['+detail+']':'');statusButton.hidden=!['failed','waiting'].includes(state);statusButton.textContent=state==='waiting'?messages.refresh:messages.retry;}
+ function problem(code){const error=new Error(code);error.code=code;return error;}
  // XHR works in embedded browsers that lack AbortSignal.timeout/fetch. Do not
  // send credentials or non-safelisted cache headers to the public feed origin.
- function requestText(url,timeout){return new Promise((resolve,reject)=>{const xhr=new XMLHttpRequest();xhr.open('GET',String(url),true);xhr.withCredentials=false;xhr.timeout=timeout;xhr.onload=()=>{if(xhr.status>=200&&xhr.status<300)resolve(xhr.responseText);else reject(new Error('HTTP '+xhr.status));};xhr.onerror=()=>reject(new Error('Network unavailable'));xhr.ontimeout=()=>reject(new Error('Request timed out'));xhr.onabort=()=>reject(new Error('Request cancelled'));xhr.send();});}
- async function requestJSON(url,timeout){return JSON.parse(await requestText(url,timeout));}
+ function requestText(url,timeout){return new Promise((resolve,reject)=>{const xhr=new XMLHttpRequest();xhr.open('GET',String(url),true);xhr.withCredentials=false;xhr.timeout=timeout;xhr.onload=()=>{if(xhr.status<200||xhr.status>=300)return reject(problem('HTTP_'+xhr.status));try{resolve(xhr.responseText);}catch{reject(problem('RESPONSE_READ'));}};xhr.onerror=()=>reject(problem('NETWORK'));xhr.ontimeout=()=>reject(problem('TIMEOUT'));xhr.onabort=()=>reject(problem('CANCELLED'));xhr.send();});}
+ async function requestJSON(url,timeout){const raw=await requestText(url,timeout);try{return JSON.parse(raw);}catch{throw problem('INVALID_JSON');}}
  const aspects=new Map();let legacyLibrary;
  let config,last='',inflight=false,retryDimensions=false,aspectDirty=false,aspectTimer,retryTimer,failures=0;
  statusButton.addEventListener('click',()=>{failures=0;update(true);});
@@ -107,28 +108,29 @@
  }
  async function update(force=false){
   if(inflight||document.hidden)return;inflight=true;if(retryTimer){clearTimeout(retryTimer);retryTimer=null;}statusButton.disabled=true;
-  if(!last||force)showStatus('loading');
+  if(!last||force)showStatus('loading');let stage='CONFIG';
   try{
-   if(!config){const url=new URL('delivery-feed-config.json',assetBase);url.searchParams.set('v',VERSION);const candidate=await requestJSON(url,8000);if(typeof candidate.enabled!=='boolean'||typeof candidate.endpoint!=='string')throw new Error('Invalid feed configuration');config=candidate;}
-   if(!config.enabled){showStatus('');return;}if(!config.endpoint)throw new Error('Missing feed endpoint');
-   const endpoint=new URL(config.endpoint);if(endpoint.protocol!=='https:'&&!(['127.0.0.1','localhost'].includes(location.hostname)&&endpoint.hostname==='127.0.0.1'))throw new Error('Invalid feed endpoint');
+   if(!config){const url=new URL('delivery-feed-config.json',assetBase);url.searchParams.set('v',VERSION);const candidate=await requestJSON(url,8000);if(!candidate||typeof candidate.enabled!=='boolean'||typeof candidate.endpoint!=='string')throw problem('CONFIG_FORMAT');config=candidate;}
+   if(!config.enabled){showStatus('');return;}if(!config.endpoint)throw problem('CONFIG_ENDPOINT');
+   const endpoint=new URL(config.endpoint);if(endpoint.protocol!=='https:'&&!(['127.0.0.1','localhost'].includes(location.hostname)&&endpoint.hostname==='127.0.0.1'))throw problem('CONFIG_ENDPOINT');
+   stage=endpoint.origin===location.origin?'FEED_SAME':'FEED_OTHER';
    // A minute-scoped URL also refreshes embedded-browser caches that ignore
    // ordinary fetch cache options. This remains a public, credential-free GET.
    endpoint.searchParams.set('_refresh',String(Math.floor(Date.now()/60000)));
-   const data=await requestJSON(endpoint,12000);if(data.version!==1||!Array.isArray(data.items))throw new Error('Invalid feed response');
+   const data=await requestJSON(endpoint,12000);stage='DATA';if(!data||data.version!==1||!Array.isArray(data.items))throw problem('FEED_FORMAT');
    const seen=new Set(),items=data.items.slice(0,200).filter(item=>{
     if(!/^[a-f0-9]{32}$/.test(item.id)||seen.has(item.id)||!locale.labels[item.category]||!/^\d{4}-\d{2}-\d{2}$/.test(item.date)||typeof item.model!=='string'||item.model.length>80||!['iframe','file'].includes(item.kind)||!(item.duration>0&&item.duration<=360))return false;
     item.poster=media(item.poster);item.playback=media(item.playback);if(!item.poster||!item.playback||!Number.isFinite(Date.parse(item.uploadedAt)))return false;seen.add(item.id);return true;
    });
-   if(data.items.length&&!items.length)throw new Error('No valid feed records');
+   if(data.items.length&&!items.length)throw problem('FEED_RECORDS');
    failures=0;const signature=JSON.stringify(items);if(signature===last&&!retryDimensions){showStatus('');return;}if(!items.length&&!last){showStatus('empty');return;}
    // Avoid replacing a video while a visitor is watching it. Retry on refresh.
    if(!force&&(grid.querySelector('iframe')||[...grid.querySelectorAll('video')].some(v=>!v.paused&&v.dataset.deliveryWatching==='true'))){showStatus('waiting');return;}
-   const layout=home&&items.length?await homeLayout(items):null;
+   stage='LAYOUT';const layout=home&&items.length?await homeLayout(items):null;
    // A click may occur while poster dimensions/old footage are being read.
    if(!force&&(grid.querySelector('iframe')||[...grid.querySelectorAll('video')].some(v=>!v.paused&&v.dataset.deliveryWatching==='true'))){showStatus('waiting');return;}
    // Unknown poster dimensions are retried later, never treated as permanent.
-   last=signature;retryDimensions=!!layout&&!layout.complete;
+   stage='RENDER';retryDimensions=!!layout&&!layout.complete;
    grid.querySelectorAll('video').forEach(v=>v.pause());
    const selected=layout?layout.columns.flat().map(e=>e.item):items,visible=selected.filter(i=>!i.legacy),cards=home?[]:visible.map(item=>card(item)),nodes=[];
    if(home){if(layout){for(const group of layout.columns){const column=document.createElement('div');column.className='delivery-column'+(group.length===2?' delivery-column-pair':'');for(const entry of group)column.append(card(entry.item,entry.older));nodes.push(column);}}else nodes.push(...baseline);home.classList.toggle('warehouse-grid-six',!!layout);}
@@ -138,10 +140,14 @@
    let schema=document.getElementById('delivery-feed-schema');if(!schema){schema=document.createElement('script');schema.type='application/ld+json';schema.id='delivery-feed-schema';document.head.append(schema);}
    schema.textContent=JSON.stringify({'@context':'https://schema.org','@graph':visible.map(item=>({'@type':'VideoObject',name:title(item),description:locale.description,thumbnailUrl:item.poster,uploadDate:item.uploadedAt,duration:'PT'+Math.ceil(item.duration)+'S',...(item.kind==='iframe'?{embedUrl:item.playback}:{contentUrl:item.playback})}))}).replace(/</g,'\\u003c');
    document.dispatchEvent(new CustomEvent('chemnitz:delivery-feed-updated',{detail:{count:items.length}}));
+   last=signature;
    showStatus(items.length?'':'empty');
-  }catch{
+  }catch(error){
    // Preserve every existing video, but never silently imply the list is fresh.
-   showStatus('failed');const delays=[2000,5000,15000];if(failures<delays.length)retryTimer=setTimeout(()=>{retryTimer=null;update();},delays[failures]);failures++;
+   // Only fixed stage/error labels are displayed locally. No URLs, response
+   // bodies, user identifiers, error messages or telemetry are collected.
+   const code=error&&typeof error.code==='string'&&/^[A-Z0-9_]{1,32}$/.test(error.code)?error.code:error&&error.name==='TypeError'?'TYPE_ERROR':error&&error.name==='SyntaxError'?'SYNTAX_ERROR':'ERROR';
+   showStatus('failed','W3 / '+stage+' / '+code);const delays=[2000,5000,15000];if(failures<delays.length)retryTimer=setTimeout(()=>{retryTimer=null;update();},delays[failures]);failures++;
   }finally{statusButton.disabled=false;inflight=false;if(home&&retryDimensions&&aspectDirty)requestAspectUpdate();}
  }
  update();setInterval(update,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update();});
