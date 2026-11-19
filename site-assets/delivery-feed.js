@@ -1,10 +1,14 @@
 (()=>{
  'use strict';
+ const pageURL=new URL(location.href),website=['hzchemnitz.cn','www.hzchemnitz.cn'].includes(pageURL.hostname),canonicalOrigin='https://hzchemnitz.cn';
+ // HTTP/HTTPS and www/apex are different origins. Upgrade only the public
+ // footage-bearing website pages before starting any feed requests.
+ if(website&&pageURL.origin!==canonicalOrigin){location.replace(canonicalOrigin+pageURL.pathname+pageURL.search+pageURL.hash);return;}
  const HOME_LIMIT=6,home=document.querySelector('#warehouse-footage .warehouse-grid'),archive=document.querySelector('.footage-grid');
  if(!home&&!archive)return;
  // Reuse the original cards. Cloning drops their playback listeners and the
  // homepage observer's video references when live uploads are inserted.
- const VERSION='20261119-trace1',ownScript=document.currentScript,assetBase=new URL('.',ownScript.src),grid=home||archive,baseline=[...grid.children];
+ const VERSION='20261119-origin-lock',ownScript=document.currentScript,assetBase=new URL('.',ownScript.src),grid=home||archive,baseline=[...grid.children];
  const text={
   en:{labels:{dispatch:'Vehicle dispatch',loading:'Vehicle loading',handover:'Vehicle handover',yard:'Vehicle yard'},tag:'REAL FOOTAGE',description:'Real delivery-team footage. Availability and terms are confirmed for each inquiry.',play:'Play video',date:'Filmed'},
   'zh-CN':{labels:{dispatch:'车辆发运实拍',loading:'车辆装载实拍',handover:'车辆交付实拍',yard:'车辆场地实拍'},tag:'真实现场',description:'来自交付团队的现场实拍。具体供货和交易条件以每次询价确认为准。',play:'播放视频',date:'拍摄日期'},
@@ -110,10 +114,12 @@
   if(inflight||document.hidden)return;inflight=true;if(retryTimer){clearTimeout(retryTimer);retryTimer=null;}statusButton.disabled=true;
   if(!last||force)showStatus('loading');let stage='CONFIG';
   try{
-   if(!config){const url=new URL('delivery-feed-config.json',assetBase);url.searchParams.set('v',VERSION);const candidate=await requestJSON(url,8000);if(!candidate||typeof candidate.enabled!=='boolean'||typeof candidate.endpoint!=='string')throw problem('CONFIG_FORMAT');config=candidate;}
+   if(!config){const url=website?new URL('/site-assets/delivery-feed-config.json',pageURL):new URL('delivery-feed-config.json',assetBase);url.searchParams.set('v',VERSION);const candidate=await requestJSON(url,8000);if(!candidate||typeof candidate.enabled!=='boolean'||typeof candidate.endpoint!=='string')throw problem('CONFIG_FORMAT');
+    if(website&&candidate.enabled){const approved=['/delivery-public/feed.json',canonicalOrigin+'/delivery-public/feed.json','https://upload.hzchemnitz.cn/api/feed','https://chemnitz-delivery-portal.chemnitz-delivery-portal.workers.dev/api/feed'];if(!approved.includes(candidate.endpoint))throw problem('CONFIG_ENDPOINT');config={enabled:true,endpoint:new URL('/delivery-public/feed.json',pageURL).href};}else config=candidate;
+   }
    if(!config.enabled){showStatus('');return;}if(!config.endpoint)throw problem('CONFIG_ENDPOINT');
    const endpoint=new URL(config.endpoint);if(endpoint.protocol!=='https:'&&!(['127.0.0.1','localhost'].includes(location.hostname)&&endpoint.hostname==='127.0.0.1'))throw problem('CONFIG_ENDPOINT');
-   stage=endpoint.origin===location.origin?'FEED_SAME':'FEED_OTHER';
+   stage=endpoint.origin===pageURL.origin?'FEED_SAME':'FEED_OTHER';
    // A minute-scoped URL also refreshes embedded-browser caches that ignore
    // ordinary fetch cache options. This remains a public, credential-free GET.
    endpoint.searchParams.set('_refresh',String(Math.floor(Date.now()/60000)));
@@ -147,7 +153,7 @@
    // Only fixed stage/error labels are displayed locally. No URLs, response
    // bodies, user identifiers, error messages or telemetry are collected.
    const code=error&&typeof error.code==='string'&&/^[A-Z0-9_]{1,32}$/.test(error.code)?error.code:error&&error.name==='TypeError'?'TYPE_ERROR':error&&error.name==='SyntaxError'?'SYNTAX_ERROR':'ERROR';
-   showStatus('failed','W3 / '+stage+' / '+code);const delays=[2000,5000,15000];if(failures<delays.length)retryTimer=setTimeout(()=>{retryTimer=null;update();},delays[failures]);failures++;
+   showStatus('failed','W4 / '+stage+' / '+code);const delays=[2000,5000,15000];if(failures<delays.length)retryTimer=setTimeout(()=>{retryTimer=null;update();},delays[failures]);failures++;
   }finally{statusButton.disabled=false;inflight=false;if(home&&retryDimensions&&aspectDirty)requestAspectUpdate();}
  }
  update();setInterval(update,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update();});
