@@ -4,7 +4,7 @@
  if(!home&&!archive)return;
  // Reuse the original cards. Cloning drops their playback listeners and the
  // homepage observer's video references when live uploads are inserted.
- const VERSION='20261119-feed-refresh',ownScript=document.currentScript,assetBase=new URL('.',ownScript.src),grid=home||archive,baseline=[...grid.children];
+ const VERSION='20261119-same-origin',ownScript=document.currentScript,assetBase=new URL('.',ownScript.src),grid=home||archive,baseline=[...grid.children];
  const text={
   en:{labels:{dispatch:'Vehicle dispatch',loading:'Vehicle loading',handover:'Vehicle handover',yard:'Vehicle yard'},tag:'REAL FOOTAGE',description:'Real delivery-team footage. Availability and terms are confirmed for each inquiry.',play:'Play video',date:'Filmed'},
   'zh-CN':{labels:{dispatch:'车辆发运实拍',loading:'车辆装载实拍',handover:'车辆交付实拍',yard:'车辆场地实拍'},tag:'真实现场',description:'来自交付团队的现场实拍。具体供货和交易条件以每次询价确认为准。',play:'播放视频',date:'拍摄日期'},
@@ -37,7 +37,7 @@
  if(home){if('ResizeObserver'in window)new ResizeObserver(sizeColumns).observe(home);window.addEventListener('resize',sizeColumns,{passive:true});}
  for(const event of ['pointerdown','keydown'])grid.addEventListener(event,e=>{const video=e.target.closest?.('video')||e.target.closest?.('[data-footage-play]')?.parentElement.querySelector('video');if(video)video.dataset.deliveryWatching='true';});
  grid.addEventListener('ended',e=>{if(e.target.tagName==='VIDEO')delete e.target.dataset.deliveryWatching;},true);
- function media(raw){try{const url=new URL(raw),endpoint=new URL(config.endpoint),owned=/^\/media\/[a-f0-9]{32}\/(?:video\.mp4|poster\.jpg)$/.test(url.pathname);if(url.protocol==='https:'&&url.origin===endpoint.origin&&owned&&!url.search&&!url.hash)return url.href;if(['127.0.0.1','localhost'].includes(location.hostname)&&url.hostname==='127.0.0.1'&&url.origin===endpoint.origin&&owned)return url.href;}catch{}return null;}
+ function media(raw){try{const url=new URL(raw),endpoint=new URL(config.endpoint),owned=(endpoint.pathname==='/delivery-public/feed.json'?/^\/delivery-public\/media\/[a-f0-9]{32}\/(?:video\.mp4|poster\.jpg)$/:/^\/media\/[a-f0-9]{32}\/(?:video\.mp4|poster\.jpg)$/).test(url.pathname);if(url.protocol==='https:'&&url.origin===endpoint.origin&&owned&&!url.search&&!url.hash)return url.href;if(['127.0.0.1','localhost'].includes(location.hostname)&&url.hostname==='127.0.0.1'&&url.origin===endpoint.origin&&owned&&!url.search&&!url.hash)return url.href;}catch{}return null;}
  function title(item){
   if(item.legacy)return item.legacyTitle;
   // Only display a stored translation for this locale. A delayed/failed job must
