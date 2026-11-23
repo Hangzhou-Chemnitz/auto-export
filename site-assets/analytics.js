@@ -41,6 +41,12 @@
  const CONTACTS = new Set(['Chloe','Natalie','Darwin','Zeeshan','Jacky','Even']);
  const CONTACT_NUMBERS = Object.freeze({'8615625033581':'Chloe','8615913687692':'Natalie','8613640033268':'Darwin','8618511445792':'Zeeshan','8613826126147':'Jacky','8619325504833':'Even'});
  const EVENTS = new Set(['page_view','vehicle_view','vehicle_variant_select','catalog_click','brand_click','inquiry_start','whatsapp_open']);
+ // Public pilot links only. Never forward values supplied by a visitor:
+ // match complete, single-valued tuples, then send the corresponding literals.
+ const CAMPAIGN_LINKS = [
+  {source:'instagram',medium:'social',name:'rav4-footage',paths:['/vehicle-config-rav4.html','/es/vehicle-config-rav4.html']},
+  {source:'wechat',medium:'social',name:'rav4-footage',paths:['/zh/vehicle-config-rav4.html']}
+ ];
  let context = {};
  function modelName(id) {
   const slug = String(id || '').replace(/^vehicle-config-/,'').replace(/^sylphy-2026$/,'sylphy');
@@ -81,6 +87,20 @@
  function safeReferrer() {
   try { const url = new URL(document.referrer); return /^https?:$/.test(url.protocol) ? url.origin : ''; } catch { return ''; }
  }
+ function approvedCampaign() {
+  if (document.referrer) {
+   try {
+    const host = new URL(document.referrer).hostname.toLowerCase().replace(/\.$/,'');
+    if (host === 'hzchemnitz.cn' || host.endsWith('.hzchemnitz.cn')) return {};
+   } catch { return {}; }
+  }
+  const query = new URLSearchParams(location.search);
+  const [sources, mediums, names] = ['utm_source','utm_medium','utm_campaign'].map(key => query.getAll(key));
+  if (sources.length !== 1 || mediums.length !== 1 || names.length !== 1) return {};
+  const campaign = CAMPAIGN_LINKS.find(entry => entry.paths.includes(location.pathname) &&
+   entry.source === sources[0] && entry.medium === mediums[0] && entry.name === names[0]);
+  return campaign ? {campaign_source:campaign.source,campaign_medium:campaign.medium,campaign_name:campaign.name} : {};
+ }
  function track(name, input, callback) {
   let done = false;
   const finish = () => { if (done) return; done = true; if (typeof callback === 'function') callback(); };
@@ -113,7 +133,7 @@
   window.gtag('consent','update',{analytics_storage:'granted'});
   window.gtag('set',{page_location:safeLocation(),page_referrer:safeReferrer(),page_title:'Chemnitz / ' + surface(),send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false});
   window.gtag('js',new Date());
-  window.gtag('config',ID,{send_page_view:false,page_location:safeLocation(),page_referrer:safeReferrer(),page_title:'Chemnitz / ' + surface(),allow_google_signals:false,allow_ad_personalization_signals:false});
+  window.gtag('config',ID,{send_page_view:false,page_location:safeLocation(),page_referrer:safeReferrer(),page_title:'Chemnitz / ' + surface(),allow_google_signals:false,allow_ad_personalization_signals:false,...approvedCampaign()});
   const script = document.createElement('script'); script.async = true;
   script.referrerPolicy = 'no-referrer';
   script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID; document.head.append(script);
