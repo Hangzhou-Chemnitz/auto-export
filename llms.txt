@@ -10,6 +10,10 @@ Current redesigned website with equivalent public pages in English, Chinese, Spa
 - [China NEV Export VAT Rebate Drops 13% to 9% on April 1, 2027 (MOF & STA Announcement 2026 No. 29)](https://hzchemnitz.cn/guides/china-nev-tax-rebate-2027-notice-29.html)
 - [China 180-Day Used-Car Rule & Pre-Payment 17-Digit VIN Forwarder Verification](https://hzchemnitz.cn/guides/china-180-day-used-car-and-vin-verification-guide.html)
 - [Руководство B2B (RU): экспорт авто из Китая 2026–2027 — возврат НДС 13% → 9%, правило 180 дней и проверка VIN](https://hzchemnitz.cn/ru/guides/eksport-avto-iz-kitaya-2027-vozvrat-nds-180-dney-vin.html)
+- [Interactive China Export Port, Container & Carrier Planner (EN/RU/ES/AR)](https://hzchemnitz.cn/tools/export-port-planner.html)
+- [دليل التصدير بالعربية (AR): ضريبة 13% ← 9%، قاعدة 180 يوماً وفحص VIN](https://hzchemnitz.cn/ar/guides/dalil-tasdir-alsayarat-min-alsin-2027-vin.html)
+- [Guía B2B en Español (ES): IVA NEV 13% → 9%, regla de 180 días y verificación VIN](https://hzchemnitz.cn/es/guides/guia-exportacion-autos-china-2027-iva-180-dias-vin.html)
+- [Guide B2B en Français (FR) : TVA NEV 13 % → 9 %, règle des 180 jours et contrôle VIN](https://hzchemnitz.cn/fr/guides/guide-exportation-voitures-chine-2027-tva-180-jours-vin.html)
 - [Complete Citation-Ready B2B Fact Sheet (llms-full.txt)](https://hzchemnitz.cn/llms-full.txt)
 
 ## Official Verified Channels & B2B Desk
