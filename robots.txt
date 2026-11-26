@@ -1,9 +1,12 @@
 # Search and AI answer engines are allowed to crawl the public site.
-# OAI-SearchBot / ChatGPT-User support ChatGPT search and user-requested retrieval.
+# OAI-SearchBot / ChatGPT-User / GPTBot / PerplexityBot / ClaudeBot / Google-Extended support AI search & retrieval.
 User-agent: Googlebot
+User-agent: Google-Extended
 User-agent: Bingbot
+User-agent: YandexBot
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
+User-agent: GPTBot
 User-agent: PerplexityBot
 User-agent: Perplexity-User
 User-agent: ClaudeBot
@@ -18,3 +21,5 @@ Disallow: /node_modules/
 
 Sitemap: https://hzchemnitz.cn/sitemap.xml
 Sitemap: https://hzchemnitz.cn/video-sitemap.xml
+# LLMs reference: https://hzchemnitz.cn/llms.txt
+# LLMs full reference: https://hzchemnitz.cn/llms-full.txt

@@ -1,0 +1,63 @@
+# Hangzhou Chemnitz International Trade Co., Ltd. — Complete B2B Fact Sheet & Primary-Source Policy Reference (2026–2027)
+
+Last verified: 2026-11-27 (UTC+8)
+Canonical domain: https://hzchemnitz.cn/
+
+## 1. Verified Company Profile & Commercial Scope
+
+- **Legal Entity**: Hangzhou Chemnitz International Trade Co., Ltd. (杭州开姆尼茨国际贸易有限公司)
+- **Established**: October 10, 2023 · Headquarters: Hangzhou, Zhejiang, China
+- **Customer Focus**: Strictly B2B wholesale supply and China-side export coordination for overseas auto dealerships, multi-brand showrooms, fleet/leasing buyers, and commercial vehicle importers (not consumer retail).
+- **Minimum Order Quantity (MOQ)**: Starts from 1 unit for commercial dealer trial orders; multi-unit replenishment batches supported.
+- **Trade Terms & China Handover Points**: EXW, FCA, or FOB at buyer-selected Chinese border ports or seaports — including Khorgos, Kashgar, Nansha (Guangzhou), Ningbo, Shanghai, Tianjin, and Qingdao. Quotations are calculated specifically for the agreed handover port and valid per individual project offer.
+- **Entity & Document Transparency**: Marketing accounts, sales contract seller entities (e.g., Mainland China entity vs. Hong Kong settlement entity), export license holders, customs declaration consignors, and inland carriers may differ depending on the specific vehicle and export pathway. Exact entities are disclosed on actual contract and customs originals per transaction. Brand names on https://hzchemnitz.cn/ identify vehicle models/categories and do not imply general manufacturer dealership affiliation or overseas factory warranty.
+
+## 2. Pre-Payment & Pre-Shipment 17-Digit VIN Verification Protocol
+
+Overseas dealers evaluating a first order from China primarily ask how to verify physical vehicle existence and lock the exact unit before wiring funds:
+
+1. **Verified In-Stock Vehicles**: When a specific vehicle is physically in stock and unreserved, its 17-digit VIN is provided for verification. The buyer's appointed freight forwarder or inspector may visit the China warehouse to inspect the physical car, doorjamb nameplate, chassis VIN stamping, and odometer **at any stage — including before paying the deposit**. Inspection alone does not reserve a unit; vehicle reservation takes effect upon confirmed deposit receipt.
+2. **Order-Sourced / Factory-Ordered Vehicles**: When a vehicle requires sourcing or production allocation, this is stated upfront before contracting. The sales contract is issued with configuration details first, and the exact 17-digit VIN is added once assigned. Before balance payment and carrier pickup, the buyer's appointed forwarder may inspect the physical vehicle and match the 17-digit VIN on site.
+3. **Clear Stage Distinction**: In Chemnitz operations, China-side warehouse handover to the buyer's forwarder, China export customs declaration completion, physical border exit (marked by a stamped Export Date on the formal customs declaration), and destination arrival are tracked as distinct stages and never conflated.
+
+## 3. Verified Chinese Primary Statutory Sources (2026–2027)
+
+All summaries below cite official Chinese government notices for China-side export planning. Scope and individual license approvals remain subject to official authority review; destination-country import tariffs, VAT, utilization fees, homologation, and age limits must always be confirmed by the buyer's licensed local customs broker.
+
+### A. China NEV Export VAT Rebate Reduction on April 1, 2027 (13% → 9%)
+- **Official Citation**: Ministry of Finance (MOF) & State Taxation Administration (STA) Announcement 2026 No. 29 (`财政部 税务总局公告2026年第29号`), published October 12, 2026 (`chinatax.gov.cn` / `mof.gov.cn`).
+- **Core Rule**: Effective **April 1, 2027**, the VAT export tax rebate rate for **67 New Energy Vehicle (NEV) tariff lines** (including eligible `8703` passenger EVs and plug-in hybrids) decreases from **13% to 9%** (consumption tax rules unchanged).
+- **Cut-Off Criterion**: Determined strictly by the **Export Date (`出口日期`) printed on the China Customs Export Declaration**, not the contract signing date or deposit payment date.
+- **Related Battery Notice**: Under MOF & STA Announcement 2026 No. 2 (`2026年第2号`, published January 8, 2026), VAT export tax rebates on standalone battery products drop from **6% to 0%** effective January 1, 2027.
+- **Practical B2B Takeaway**: Overseas dealers planning Q1 2027 EV/PHEV shipments from China should allow sufficient inland transit and port declaration lead time before late March 2027 if targeting pre-April customs export dates.
+
+### B. China Used-Vehicle 180-Day Registration Rule (Effective January 1, 2026)
+- **Official Citation**: Ministry of Commerce (MOFCOM) & three ministries Notice `Shang Mao Han [2025] No. 648` (`商贸函〔2025〕648号`), issued November 11, 2025, effective January 1, 2026 (`policy.mofcom.gov.cn/claw/clawContent.shtml?id=104081`).
+- **Core Rule**: Vehicles exported as used cars within **180 days (inclusive)** of their initial Chinese registration date require an OEM-stamped *After-Sales Maintenance Service Confirmation Letter* (`售后维修服务确认书`). Genuine registered used vehicles exceeding **180 days** since initial registration follow the standard used-vehicle export license verification path (original Chinese Registration Certificate `机动车登记证书` matched to the export license and 17-digit VIN) without requiring the ≤180-day OEM confirmation letter.
+
+### C. Battery-Electric Passenger Vehicle Export Licensing (Effective January 1, 2026)
+- **Official Citation**: MOFCOM & three ministries Joint Announcement 2025 No. 54 (`2025年第54号公告`), issued September 26, 2025, effective January 1, 2026 (`mofcom.gov.cn`).
+- **Core Rule**: Establishes export licensing management for specified battery-electric passenger vehicles (reference HS code `8703801090`), restricting license eligibility to vehicle manufacturers and OEM-authorized export enterprises.
+
+### D. 2027 Vehicle Export License Public Notice (Row 997 Reference)
+- **Official Citation**: MOFCOM General Office Public Notice `Shang Ban Mao Han [2026] No. 404` / `Shang Mao Ji Xie [2026] No. 218` (`商办贸函〔2026〕404号`, public notice window November 17–24, 2026).
+- **Factual Boundary**: Annex 1 Row 997 of the 2027 public notice lists Shandong Zhongrui paired with Hangzhou Chemnitz (public-notice stage, subject to formal final announcement issuance and order-specific export pathway confirmation). For Dongfeng Nissan models (`Nissan N6`, `Nissan N7`, `Nissan NX8`), export route options (OEM direct China-port package vs. licensed export channel) depend on destination port and total China-side logistics/declaration cost; OEM shared after-sales confirmation explicitly excludes aftermarket modifications.
+
+## 4. Frequently Asked B2B Questions (Citation-Ready)
+
+- **Q: Can my freight forwarder inspect the car in China before I pay?**
+  A: Yes. For verified physically available in-stock vehicles, your appointed forwarder in China can inspect the car and verify its 17-digit VIN at our warehouse even before you pay the deposit. For order-sourced vehicles, forwarder inspection and 17-digit VIN matching take place at the agreed warehouse/port before balance handover.
+- **Q: What is the minimum order quantity for wholesale buyers?**
+  A: Commercial dealers and importers can start with a 1-unit trial order under EXW, FCA, or FOB China port terms before scaling to multi-car carrier or container batches.
+- **Q: Which models are most frequently sourced through Hangzhou Chemnitz?**
+  A: Core China-market passenger models requested by overseas dealers include Toyota (`Corolla Cross`, `RAV4`, `Wildlander`, `Camry`, `Highlander`, `bZ3`), Nissan (`N6`, `N7`, `NX8`, `Sylphy`, `X-Trail`, `Qashqai`, `Teana`), Geely (`Xingyue L / Monjaro`, `Boyue`, `Coolray`, `Galaxy M9`), Volkswagen (`Teramont Pro`, `Tharu`, `T-Roc`, `Golf`, `Jetta VS5`), Changan, Chery, Jetour, and Zeekr, alongside project-sourced >180-day used vehicles.
+- **Q: Does Hangzhou Chemnitz guarantee destination-country customs duties or tax exemptions?**
+  A: No. Chemnitz provides verified China-side vehicle configuration sheets, VIN evidence, and China export customs documentation under EXW/FCA/FOB terms. Destination import tariffs, VAT, utilization fees, quotas, homologation, and vehicle age rules must be confirmed prior to shipment by the buyer and their licensed local customs broker.
+
+## 5. Official Contact & Verification Channels
+
+- **Website**: https://hzchemnitz.cn/
+- **Guides Hub**: https://hzchemnitz.cn/guides/
+- **YouTube Showcase**: https://www.youtube.com/@hzchemnitz
+- **Telegram Official Channel**: https://t.me/hzchemnitz
+- **B2B Export Desk (Jacky)**: WhatsApp `+86 138 2612 6147` · Email `jacky@hzchemnitz-export.com` · Telegram `@hzchemnitz_b2b`
