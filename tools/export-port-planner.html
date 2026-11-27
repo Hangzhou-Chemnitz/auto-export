@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>China Car Export Port, Container &amp; Carrier Planner (EXW / FCA / FOB) | Chemnitz</title>
-  <meta name="description" content="Interactive B2B shipment planner for overseas auto dealers: compare China handover ports (Khorgos, Kashgar, Nansha, Ningbo, Shanghai), container vs. car-carrier loading checks, 2027 NEV Notice 29 cut-off rules, and send a pre-filled WhatsApp quote request.">
+  <title>China Car Export Port, 40HQ Container &amp; Carrier Calculator (49 Models L×W×H) | Chemnitz</title>
+  <meta name="description" content="Interactive B2B container &amp; port calculator using official manufacturer L×W×H millimeter dimensions across 49 China-market models: check 20GP / 40HQ / 6-bay car-carrier clearance, Khorgos vs. Nansha/Ningbo/Shanghai ports, and 2027 Notice 29 rules.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://hzchemnitz.cn/tools/export-port-planner.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="China Car Export Port, Container &amp; Carrier Planner | Chemnitz">
-  <meta property="og:description" content="Select your corridor, order quantity, vehicle type, and pathway to generate a China port handover &amp; VIN inspection checklist before requesting an EXW/FCA/FOB quote.">
+  <meta property="og:title" content="China Car Export Port &amp; 40HQ Millimeter Loading Calculator | Chemnitz">
+  <meta property="og:description" content="Mix up to any combination of 49 China-market models (Toyota, Nissan, Geely, VW, Kia, Changan, AION, Zeekr) to check exact L×W×H mm container clearance, handover ports, and request a port-specific EXW/FCA/FOB quote.">
   <meta property="og:url" content="https://hzchemnitz.cn/tools/export-port-planner.html">
   <meta property="og:image" content="https://hzchemnitz.cn/site-assets/media/export-fleet-1280.webp">
   <link rel="stylesheet" href="/site-assets/style.css">
@@ -22,32 +22,59 @@
   <script defer src="/site-assets/analytics-consent.js?v=20261116"></script>
   <script defer src="/site-assets/analytics.js?v=20261116-six"></script>
   <style>
-    .planner-hero{background:#152a35;color:#fff;padding:56px 4% 48px}
-    .planner-wrap{max-width:1180px;margin:0 auto}
-    .planner-hero h1{font-size:clamp(30px,3.8vw,50px);letter-spacing:-1.5px;line-height:1.1;margin:0 0 14px}
-    .planner-hero p{color:#c5d1d8;font-size:15px;max-width:780px;margin:0}
-    .lang-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+    .planner-hero{background:#152a35;color:#fff;padding:52px 4% 44px}
+    .planner-wrap{max-width:1200px;margin:0 auto}
+    .planner-hero h1{font-size:clamp(28px,3.6vw,48px);letter-spacing:-1.3px;line-height:1.12;margin:0 0 12px}
+    .planner-hero p{color:#c5d1d8;font-size:15px;max-width:820px;margin:0}
+    .lang-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
     .lang-pills button{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28);padding:7px 13px;font-size:12px;font-weight:700;cursor:pointer}
     .lang-pills button.active{background:#b9362d;border-color:#b9362d}
-    .planner-grid{max-width:1180px;margin:0 auto;padding:44px 4% 64px;display:grid;grid-template-columns:1fr 1.12fr;gap:32px;align-items:start}
-    .panel-card{background:#fff;border:1px solid #d6d9d3;padding:28px}
-    .panel-card h2{font-size:22px;letter-spacing:-.5px;margin:0 0 18px}
-    .field-block{margin-bottom:18px}
-    .field-block label{display:block;font-size:12px;font-weight:700;letter-spacing:.4px;color:#152a35;margin-bottom:7px;text-transform:uppercase}
-    .field-block select,.field-block input{width:100%;border:1px solid #b8c0bc;background:#faf9f6;padding:12px 14px;font-size:14px;color:#13212b}
-    .result-card{background:#fff;border:2px solid #152a35;padding:28px}
-    .result-badge{display:inline-block;background:#eaece6;color:#b9362d;font-size:11px;font-weight:700;letter-spacing:1px;padding:5px 10px;margin-bottom:12px}
-    .result-section{border-top:1px solid #e2e5e0;padding:16px 0}
-    .result-section:first-of-type{border-top:0;padding-top:6px}
+    .planner-grid{max-width:1200px;margin:0 auto;padding:40px 4% 64px;display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:start}
+    .panel-card{background:#fff;border:1px solid #d6d9d3;padding:26px}
+    .panel-card h2{font-size:21px;letter-spacing:-.4px;margin:0 0 14px;color:#152a35}
+    .mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+    .mode-tabs button{padding:10px 12px;font-size:12px;font-weight:700;border:1px solid #c3c8c2;background:#f5f4f0;color:#2c3b44;cursor:pointer}
+    .mode-tabs button.active{background:#152a35;color:#fff;border-color:#152a35}
+    .field-block{margin-bottom:16px}
+    .field-block label{display:block;font-size:12px;font-weight:700;letter-spacing:.35px;color:#152a35;margin-bottom:6px;text-transform:uppercase}
+    .field-block select,.field-block input{width:100%;border:1px solid #b8c0bc;background:#faf9f6;padding:11px 13px;font-size:14px;color:#13212b;box-sizing:border-box}
+    .add-row{display:grid;grid-template-columns:1fr 78px auto;gap:8px;align-items:stretch}
+    .add-btn{background:#b9362d;color:#fff;border:1px solid #b9362d;padding:0 16px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
+    .preset-bar{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+    .preset-bar button{background:#faf9f6;border:1px solid #cfd4ce;color:#25353e;font-size:11px;padding:5px 9px;cursor:pointer}
+    .preset-bar button:hover{border-color:#152a35}
+    .batch-list{border:1px solid #dce0da;background:#faf9f6;margin-bottom:16px}
+    .batch-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-bottom:1px solid #e4e7e2;font-size:13px}
+    .batch-item:last-child{border-bottom:0}
+    .batch-meta{color:#55636b;font-size:12px;margin-top:2px}
+    .batch-ctrls{display:flex;align-items:center;gap:6px}
+    .qty-step{width:26px;height:26px;border:1px solid #b8c0bc;background:#fff;font-weight:700;cursor:pointer;line-height:1}
+    .rm-btn{border:0;background:transparent;color:#9b2c24;font-size:12px;cursor:pointer;padding:2px 6px}
+    .pwr-pill{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;background:#e8ecee;color:#152a35;margin-inline-start:6px}
+    .pwr-pill.nev{background:#fdecea;color:#9b2c24}
+    .result-card{background:#fff;border:2px solid #152a35;padding:26px}
+    .result-badge{display:inline-block;background:#eaece6;color:#b9362d;font-size:11px;font-weight:700;letter-spacing:.9px;padding:5px 10px;margin-bottom:10px}
+    .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0 16px}
+    .kpi-box{background:#f6f7f4;border:1px solid #dde1db;padding:10px 12px}
+    .kpi-box small{display:block;font-size:11px;color:#5a6870;text-transform:uppercase}
+    .kpi-box strong{font-size:16px;color:#152a35}
+    .meter-box{background:#faf9f6;border:1px solid #d6d9d3;padding:13px 14px;margin-bottom:14px}
+    .meter-head{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#152a35;margin-bottom:6px;gap:8px}
+    .meter-track{height:12px;background:#e4e7e2;overflow:hidden;position:relative}
+    .meter-fill{height:100%;background:#1f6f4a;transition:width .2s ease}
+    .meter-fill.warn{background:#b7791f}
+    .meter-fill.over{background:#b9362d}
+    .meter-sub{font-size:12px;color:#4a5860;margin-top:6px;line-height:1.5}
+    .result-section{border-top:1px solid #e2e5e0;padding:14px 0}
     .result-section h3{font-size:15px;font-weight:700;margin:0 0 6px;color:#152a35}
-    .result-section p,.result-section li{font-size:14px;line-height:1.65;color:#2f3e47;margin:0}
-    .result-section ul{margin:6px 0 0;padding-left:18px}
-    .alert-note{background:#fdf6f5;border-left:3px solid #b9362d;padding:12px 14px;margin-top:10px;font-size:13px;color:#3d2320}
-    .wa-actions{margin-top:20px;padding-top:18px;border-top:1px solid #d6d9d3;display:flex;flex-wrap:wrap;gap:12px}
-    .wa-actions button,.wa-actions a{padding:14px 20px;font-size:13px;font-weight:700;cursor:pointer;text-align:center;border:1px solid #152a35}
+    .result-section p,.result-section li{font-size:13.5px;line-height:1.62;color:#2f3e47;margin:0}
+    .result-section ul{margin:6px 0 0;padding-inline-start:18px}
+    .alert-note{background:#fdf6f5;border-inline-start:3px solid #b9362d;padding:11px 13px;margin-top:10px;font-size:13px;color:#3d2320;line-height:1.55}
+    .wa-actions{margin-top:18px;padding-top:16px;border-top:1px solid #d6d9d3;display:flex;flex-wrap:wrap;gap:10px}
+    .wa-actions button,.wa-actions a{padding:13px 18px;font-size:13px;font-weight:700;cursor:pointer;text-align:center;border:1px solid #152a35;text-decoration:none;color:#152a35}
     .wa-actions .primary-wa{background:#b9362d;border-color:#b9362d;color:#fff;flex:1;min-width:220px}
-    .disclaimer-bar{font-size:12px;color:#667079;margin-top:14px;line-height:1.6}
-    @media(max-width:900px){.planner-grid{grid-template-columns:1fr}}
+    .disclaimer-bar{font-size:12px;color:#667079;margin-top:13px;line-height:1.58}
+    @media(max-width:920px){.planner-grid{grid-template-columns:1fr}.kpi-strip{grid-template-columns:1fr 1fr}}
   </style>
   <script type="application/ld+json">
   {
@@ -55,7 +82,7 @@
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "Chemnitz China Vehicle Export Port & Loading Planner",
+        "name": "Chemnitz 49-Model China Export Port & 40HQ Container Millimeter Calculator",
         "url": "https://hzchemnitz.cn/tools/export-port-planner.html",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "All",
@@ -66,25 +93,25 @@
           "name": "Hangzhou Chemnitz International Trade Co., Ltd.",
           "url": "https://hzchemnitz.cn/"
         },
-        "description": "Free B2B planning tool for overseas car dealers to compare China handover ports (Khorgos, Kashgar, Nansha, Ningbo, Shanghai, Tianjin, Qingdao), container vs. carrier transport checks, and China export regulatory milestones."
+        "description": "Interactive B2B vehicle export calculator powered by verified manufacturer L×W×H millimeter dimensions across 49 China-market models to check 20GP / 40HQ container clearance, 6-bay border carriers, Khorgos/Kashgar vs. Nansha/Ningbo/Shanghai handover ports, and 2027 Notice No. 29 milestones."
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How do I choose between Khorgos/Kashgar land ports and Nansha/Ningbo/Shanghai seaports when buying cars from China?",
+            "name": "Can two or three cars from China fit inside one 40HQ container?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Hangzhou Chemnitz quotes whichever China handover port the buyer specifies under EXW, FCA, or FOB terms. Land border ports such as Khorgos and Kashgar are commonly requested for Central Asia, CIS, and overland transit by car-carrier truck, whereas seaports such as Nansha, Ningbo, Shanghai, Tianjin, and Qingdao support 20GP/40HQ container and Ro-Ro ocean shipments to the Middle East, Africa, Caucasus (via Poti), and Latin America."
+              "text": "A standard 40HQ container has approximately 12,032 mm internal length, 2,340 mm door width, 2,585 mm door height, and 2,698 mm internal height. Two compact or midsize sedans/SUVs whose combined length stays within ~11,580 mm (leaving ~450 mm lashing buffer, such as 2× Toyota RAV4 at 9,240 mm) typically fit a 2-car flat load. Three-car angled steel-rack loading generally requires compact sedans/crossovers with roof height under ~1,660 mm and must always be confirmed by the port lashing forwarder."
             }
           },
           {
             "@type": "Question",
-            "name": "How many cars fit inside one 40HQ container from China?",
+            "name": "How do I choose between Khorgos/Kashgar land ports and Nansha/Ningbo/Shanghai seaports?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Loading capacity depends on exact vehicle length, width, height, curb weight, battery rules, and port lashing feasibility. Compact or midsize sedans and crossovers are often evaluated in 2-unit or 3-unit angled-rack configurations per 40HQ, while full-size SUVs or MPVs require dimension-by-dimension validation by the freight forwarder; two or three vehicles per container is never assumed without checking the exact trim sheet."
+              "text": "Hangzhou Chemnitz quotes whichever China handover port the buyer specifies under EXW, FCA, or FOB terms. Khorgos and Kashgar land border warehouses serve Central Asia, CIS, and overland 6-bay car-carrier pickup, while Nansha, Ningbo, Shanghai, Tianjin, and Qingdao seaports serve 20GP/40HQ container and Ro-Ro ocean shipments."
             }
           }
         ]
@@ -95,17 +122,17 @@
 </head>
 <body>
   <div class="preview site-language-bar" dir="ltr">
-    <span class="site-language-tagline">CHEMNITZ · B2B PORT &amp; LOADING PLANNER</span>
-    <a href="/guides/" style="color:#fff;text-decoration:underline">Export Policy Guides →</a>
+    <span class="site-language-tagline">CHEMNITZ · 49-MODEL PORT &amp; 40HQ MILLIMETER CALCULATOR</span>
+    <a href="/guides/" style="color:#fff;text-decoration:underline">2026–2027 Policy Guides →</a>
   </div>
   <header>
     <a class="wordmark logo-mark" href="/" aria-label="Chemnitz"><img src="/images/chemnitz-logo.png" alt="Chemnitz" width="1000" height="1000"></a>
     <nav aria-label="Main navigation">
       <a href="/">Home</a>
-      <a href="/models.html">Vehicles</a>
+      <a href="/models.html">Vehicles (49)</a>
       <a href="/footage.html">Real footage</a>
       <a href="/guides/">Policy guides</a>
-      <a href="/tools/export-port-planner.html" aria-current="page">Port planner</a>
+      <a href="/tools/export-port-planner.html" aria-current="page">Port &amp; 40HQ Calculator</a>
       <a href="/quote.html">Contact</a>
     </nav>
     <a class="nav-quote" href="https://wa.me/8613826126147" target="_blank" rel="noopener noreferrer">WhatsApp Desk ↗</a>
@@ -120,43 +147,73 @@
           <button type="button" data-set-lang="es">Español</button>
           <button type="button" data-set-lang="ar">العربية</button>
         </div>
-        <h1 id="t-hero-title">China Export Port &amp; Loading Planner for Dealers</h1>
-        <p id="t-hero-sub">Configure your route, batch size, and vehicle category to generate candidate China handover ports, container vs. carrier checks, and 2026–2027 China export milestones — then request an exact port-specific EXW / FCA / FOB quotation.</p>
+        <h1 id="t-hero-title">China Export Port &amp; 40HQ Millimeter Loading Calculator</h1>
+        <p id="t-hero-sub">Build a single-model or mixed-model dealer batch from all 49 official China-market specifications (exact L × W × H in mm &amp; curb weight) to check 20GP / 40HQ container clearance, 6-bay border carrier slots, candidate China ports, and 2027 Notice No. 29 rules.</p>
       </div>
     </section>
 
     <div class="planner-grid">
       <section class="panel-card" aria-labelledby="t-step-title">
-        <h2 id="t-step-title">1. Enter Your Shipment Parameters</h2>
+        <h2 id="t-step-title">1. Build Your Vehicle Batch &amp; Route</h2>
+
+        <div class="mode-tabs" role="tablist">
+          <button type="button" id="tab-exact" class="active">Exact 49-Model Mix (mm Check)</button>
+          <button type="button" id="tab-quick">Quick Category Estimate</button>
+        </div>
+
+        <div id="exact-panel">
+          <div class="field-block" style="margin-bottom:8px">
+            <label for="f-filter-brand" id="l-pick-model">Select Catalogue Model (Official Max L×W×H mm)</label>
+            <select id="f-filter-brand" style="margin-bottom:8px" aria-label="Filter by brand">
+              <option value="">All Brands (49 Models)</option>
+            </select>
+            <div class="add-row">
+              <select id="f-model-select" aria-label="Model"></select>
+              <input id="f-add-qty" type="number" min="1" max="30" value="1" aria-label="Quantity">
+              <button type="button" class="add-btn" id="btn-add-model">+ Add</button>
+            </div>
+          </div>
+
+          <div class="preset-bar" aria-label="Sample dealer batches">
+            <button type="button" data-preset="rav4_2">Preset: 2× RAV4 (40HQ Flat)</button>
+            <button type="button" data-preset="mix_3">Preset: 2× RAV4 + 1× Camry</button>
+            <button type="button" data-preset="sedan_3">Preset: 3× Corolla (Rack Check)</button>
+            <button type="button" data-preset="nissan_nev">Preset: 2× Nissan N7 + 2× N6</button>
+            <button type="button" data-preset="cis_6">Preset: 6-Car Khorgos Carrier</button>
+          </div>
+
+          <div class="batch-list" id="batch-list" aria-live="polite"></div>
+        </div>
+
+        <div id="quick-panel" hidden>
+          <div class="field-block">
+            <label for="f-qty" id="l-qty">Order Batch Size</label>
+            <select id="f-qty">
+              <option value="1">1 Unit (Commercial Dealer Trial Order)</option>
+              <option value="2" selected>2 Units (Standard 40HQ Flat Check)</option>
+              <option value="3">3 Units (Rack vs. Split Container Check)</option>
+              <option value="6">6 Units (Full Border Carrier / Multi-40HQ)</option>
+            </select>
+          </div>
+          <div class="field-block">
+            <label for="f-segment" id="l-segment">Vehicle Body &amp; Powertrain</label>
+            <select id="f-segment">
+              <option value="suv_hev" selected>Compact / Midsize SUV — Petrol or Hybrid (~4,620×1,855×1,680 mm)</option>
+              <option value="sedan_hev">Compact / Midsize Sedan — Petrol or Hybrid (~4,710×1,825×1,450 mm)</option>
+              <option value="nev">BEV or PHEV (~4,890×1,895×1,495 mm)</option>
+              <option value="large_suv">Full-Size SUV or MPV (~5,175×1,995×1,785 mm)</option>
+            </select>
+          </div>
+        </div>
 
         <div class="field-block">
           <label for="f-corridor" id="l-corridor">Destination Corridor / Route</label>
           <select id="f-corridor">
+            <option value="mena_sea" selected>Middle East &amp; Gulf Sea Route (UAE Jebel Ali, Jordan Aqaba/Zarqa, Iraq Umm Qasr)</option>
             <option value="cis_land">Central Asia / CIS Overland (Kazakhstan, Uzbekistan, Kyrgyzstan, Russia, Belarus)</option>
-            <option value="mena_sea">Middle East &amp; Gulf Sea Route (UAE Jebel Ali, Jordan Aqaba/Zarqa, Iraq Umm Qasr, Red Sea)</option>
             <option value="caucasus">Caucasus Overland or Sea-Rail (Azerbaijan Baku, Georgia Poti, Armenia)</option>
-            <option value="latam_sea">Latin America &amp; Caribbean Sea Route (Peru Callao, Chile Iquique/San Antonio, Colombia, Panama)</option>
-            <option value="africa_sea">West / East / North Africa Sea Route (Cotonou, Lagos, Tema, Dar es Salaam, Mombasa, Djibouti)</option>
-          </select>
-        </div>
-
-        <div class="field-block">
-          <label for="f-qty" id="l-qty">Order Batch Size</label>
-          <select id="f-qty">
-            <option value="1">1 Unit (Commercial Dealer Trial Order)</option>
-            <option value="2-3" selected>2–3 Units (Container / Partial Carrier Batch)</option>
-            <option value="4-6">4–6 Units (Showroom Replenishment Batch)</option>
-            <option value="8+">8+ Units (Full Car-Carrier / Multi-Container / Fleet)</option>
-          </select>
-        </div>
-
-        <div class="field-block">
-          <label for="f-segment" id="l-segment">Vehicle Body &amp; Powertrain</label>
-          <select id="f-segment">
-            <option value="suv_hev" selected>Compact / Midsize SUV — Petrol or Hybrid (e.g. RAV4, Corolla Cross, Xingyue L)</option>
-            <option value="sedan_hev">Compact / Midsize Sedan — Petrol or Hybrid (e.g. Camry, Sylphy, Corolla)</option>
-            <option value="nev">Battery-Electric (BEV) or Plug-in Hybrid (PHEV) (e.g. Nissan N6, Nissan N7, bZ3, AION, Zeekr)</option>
-            <option value="large_suv">Full-Size SUV or MPV (e.g. Highlander, Teramont Pro, Granvia)</option>
+            <option value="latam_sea">Latin America &amp; Caribbean Sea Route (Peru Callao, Chile Iquique/San Antonio, Colombia)</option>
+            <option value="africa_sea">West / East / North Africa Sea Route (Cotonou, Lagos, Tema, Dar es Salaam, Mombasa)</option>
           </select>
         </div>
 
@@ -170,14 +227,14 @@
         </div>
 
         <div class="field-block">
-          <label for="f-model" id="l-model">Target Model(s) &amp; Destination City/Port (Optional)</label>
-          <input id="f-model" type="text" placeholder="e.g. 3x Toyota Camry Hybrid — Dubai / Jebel Ali">
+          <label for="f-dest-note" id="l-model">Destination Port / Trim or Colour Note (Optional)</label>
+          <input id="f-dest-note" type="text" placeholder="e.g. Jebel Ali / White exterior, confirm FOB Nansha">
         </div>
 
-        <div class="field-block">
+        <div class="field-block" style="margin-bottom:0">
           <label for="f-advisor" id="l-advisor">Select B2B Sales Advisor</label>
           <select id="f-advisor">
-            <option value="8613826126147" selected>Jacky · +86 138 2612 6147 (B2B Export Desk / LatAm / MENA / CIS)</option>
+            <option value="8613826126147" selected>Jacky · +86 138 2612 6147 (B2B Export Desk / MENA / LatAm / CIS)</option>
             <option value="8615625033581">Chloe · +86 156 2503 3581</option>
             <option value="8615913687692">Natalie · +86 159 1368 7692</option>
             <option value="8618511445792">Zeeshan · +86 185 1144 5792</option>
@@ -187,30 +244,46 @@
       </section>
 
       <section class="result-card" aria-live="polite">
-        <span class="result-badge" id="r-badge">LIVE B2B HANDOVER BRIEF</span>
-        <h2 id="r-title" style="margin:0 0 12px;font-size:23px">Recommended China Port &amp; Verification Plan</h2>
+        <span class="result-badge" id="r-badge">MILLIMETER CONTAINER &amp; PORT CHECK</span>
+        <h2 id="r-title" style="margin:0 0 8px;font-size:22px">Calculated Container, Carrier &amp; Port Plan</h2>
+
+        <div class="kpi-strip">
+          <div class="kpi-box"><small id="k-units-lbl">Total Units</small><strong id="k-units-val">2 Cars</strong></div>
+          <div class="kpi-box"><small id="k-len-lbl">Combined Length</small><strong id="k-len-val">9,240 mm</strong></div>
+          <div class="kpi-box"><small id="k-wt-lbl">Est. Curb Weight</small><strong id="k-wt-val">~3,540 kg</strong></div>
+        </div>
+
+        <div class="meter-box">
+          <div class="meter-head">
+            <span id="m-label">40HQ Internal Length Envelope (12,032 mm ISO Reference)</span>
+            <span id="m-stat">9,240 / 12,032 mm (77%)</span>
+          </div>
+          <div class="meter-track"><div class="meter-fill" id="m-bar" style="width:77%"></div></div>
+          <div class="meter-sub" id="m-detail"></div>
+        </div>
 
         <div class="result-section">
-          <h3 id="r-port-head">Candidate China Handover Ports &amp; Incoterms</h3>
+          <h3 id="r-load-head">1. Container (20GP / 40HQ) &amp; 6-Bay Carrier Plan</h3>
+          <p id="r-load-body"></p>
+          <ul id="r-load-bullets"></ul>
+        </div>
+
+        <div class="result-section">
+          <h3 id="r-port-head">2. Candidate China Handover Ports (EXW / FCA / FOB)</h3>
           <p id="r-port-body"></p>
         </div>
 
         <div class="result-section">
-          <h3 id="r-load-head">Physical Loading &amp; Carrier Check</h3>
-          <p id="r-load-body"></p>
-        </div>
-
-        <div class="result-section">
-          <h3 id="r-reg-head">2026–2027 China Policy &amp; VIN Verification Milestones</h3>
+          <h3 id="r-reg-head">3. 2026–2027 China Policy &amp; Pre-Payment VIN Check</h3>
           <ul id="r-reg-list"></ul>
           <div class="alert-note" id="r-alert"></div>
         </div>
 
         <div class="wa-actions">
-          <button type="button" class="primary-wa" id="btn-wa">Send Plan to WhatsApp for Exact Port Quote ↗</button>
+          <button type="button" class="primary-wa" id="btn-wa">Send Exact Batch to WhatsApp for Port Quote ↗</button>
           <a id="btn-mail" href="mailto:jacky@hzchemnitz-export.com">Email Desk</a>
         </div>
-        <p class="disclaimer-bar" id="r-disclaimer">We quote whichever China handover port you select; domestic inland freight differs by port and source city. Loading capacity requires forwarder validation against exact trim dimensions. Destination customs clearance, duties, and homologation are confirmed by the buyer's local broker.</p>
+        <p class="disclaimer-bar" id="r-disclaimer">Engineering reference only: ISO container internal dimensions (20GP: 5,898×2,340×2,280 mm door; 40HQ: 12,032×2,340×2,585 mm door / 2,698 mm ceiling) vary slightly by shipping line. Final container count, angled-rack lashing, dangerous-goods SOC rules, and domestic inland freight are confirmed per order with the appointed forwarder. Destination duties, VAT, and homologation are verified by the buyer's local customs broker.</p>
       </section>
     </div>
   </main>
@@ -218,84 +291,330 @@
   <footer class="wrap">
     <div class="footer-bottom">
       <span>© 2026 Hangzhou Chemnitz International Trade Co., Ltd.</span>
-      <span><a href="/">Home</a> · <a href="/models.html">Vehicle Catalogue</a> · <a href="/guides/">2026–2027 Policy Guides</a> · <a href="/footage.html">Real Yard Footage</a></span>
+      <span><a href="/">Home</a> · <a href="/models.html">49-Model Catalogue</a> · <a href="/guides/">2026–2027 Policy Guides</a> · <a href="/footage.html">Real Yard Footage</a></span>
     </div>
   </footer>
 
   <script>
   (function(){
+    const MODELS = [{"id":"vehicle-config-rav4","slug":"/vehicle-config-rav4.html","brand":"Toyota","name":"RAV4","title":"Toyota RAV4","zh":"丰田 RAV4 荣放","body":"SUV","l":4620,"w":1855,"h":1680,"dim":"4620×1855×1680","wtMin":1625,"wtMax":1770,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-corolla","slug":"/vehicle-config-corolla.html","brand":"Toyota","name":"Corolla","title":"Toyota Corolla","zh":"丰田 卡罗拉","body":"Sedan","l":4710,"w":1780,"h":1455,"dim":"4635–4710×1780×1435–1455","wtMin":1335,"wtMax":1405,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-corolla-cross","slug":"/vehicle-config-corolla-cross.html","brand":"Toyota","name":"Corolla Cross","title":"Toyota Corolla Cross","zh":"丰田 卡罗拉锐放","body":"SUV","l":4460,"w":1825,"h":1625,"dim":"4460×1825×1625","wtMin":1390,"wtMax":1435,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-camry","slug":"/vehicle-config-camry.html","brand":"Toyota","name":"Camry","title":"Toyota Camry","zh":"丰田 凯美瑞","body":"Sedan","l":4950,"w":1850,"h":1450,"dim":"4915–4950×1850×1450","wtMin":1550,"wtMax":1660,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-highlander","slug":"/vehicle-config-highlander.html","brand":"Toyota","name":"Highlander","title":"Toyota Highlander","zh":"丰田 汉兰达","body":"SUV","l":4965,"w":1930,"h":1750,"dim":"4965×1930×1750","wtMin":1930,"wtMax":2105,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-wildlander","slug":"/vehicle-config-wildlander.html","brand":"Toyota","name":"Frontlander","title":"Toyota Frontlander","zh":"丰田 锋兰达","body":"SUV","l":4490,"w":1825,"h":1625,"dim":"4490×1825×1625","wtMin":1380,"wtMax":1470,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-granvia","slug":"/vehicle-config-granvia.html","brand":"Toyota","name":"Granvia","title":"Toyota Granvia","zh":"丰田 格瑞维亚","body":"MPV","l":5175,"w":1995,"h":1785,"dim":"5175×1995×1765–1785","wtMin":2090,"wtMax":2165,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-bz3","slug":"/vehicle-config-bz3.html","brand":"Toyota","name":"bZ3","title":"Toyota bZ3","zh":"丰田 bZ3 纯电","body":"Sedan","l":4725,"w":1835,"h":1480,"dim":"4725×1835×1475–1480","wtMin":null,"wtMax":null,"pwr":"BEV","nev":true},{"id":"vehicle-config-teramont","slug":"/vehicle-config-teramont.html","brand":"Volkswagen","name":"Teramont Pro","title":"Volkswagen Teramont Pro","zh":"大众 途昂 Pro","body":"SUV","l":5158,"w":1991,"h":1788,"dim":"5158×1991×1788","wtMin":2060,"wtMax":2155,"pwr":"ICE","nev":false},{"id":"vehicle-config-tharu","slug":"/vehicle-config-tharu.html","brand":"Volkswagen","name":"Tharu XR","title":"Volkswagen Tharu XR","zh":"大众 途岳新锐","body":"SUV","l":4355,"w":1762,"h":1605,"dim":"4355×1762×1605","wtMin":null,"wtMax":null,"pwr":"ICE","nev":false},{"id":"vehicle-config-troc","slug":"/vehicle-config-troc.html","brand":"Volkswagen","name":"T-Roc","title":"Volkswagen T-Roc","zh":"大众 探歌 T-Roc","body":"SUV","l":4336,"w":1819,"h":1592,"dim":"4319–4336×1819×1592","wtMin":1366,"wtMax":1378,"pwr":"ICE","nev":false},{"id":"vehicle-config-golf","slug":"/vehicle-config-golf.html","brand":"Volkswagen","name":"Golf","title":"Volkswagen Golf","zh":"大众 高尔夫","body":"Hatchback","l":4289,"w":1788,"h":1479,"dim":"4282–4289×1788×1479","wtMin":1327,"wtMax":1368,"pwr":"ICE","nev":false},{"id":"vehicle-config-jetta-vs5","slug":"/vehicle-config-jetta-vs5.html","brand":"JETTA","name":"Jetta VS5","title":"JETTA VS5","zh":"捷达 VS5","body":"SUV","l":4418,"w":1841,"h":1616,"dim":"4418×1841×1616","wtMin":null,"wtMax":null,"pwr":"ICE","nev":false},{"id":"vehicle-config-coolray","slug":"/vehicle-config-coolray.html","brand":"Geely","name":"Coolray","title":"Geely Coolray","zh":"吉利 缤越 Coolray","body":"SUV","l":4345,"w":1800,"h":1609,"dim":"4345×1800×1609","wtMin":1255,"wtMax":1289,"pwr":"ICE","nev":false},{"id":"vehicle-config-boyue","slug":"/vehicle-config-boyue.html","brand":"Geely","name":"Boyue","title":"Geely Boyue","zh":"吉利 博越","body":"SUV","l":4570,"w":1865,"h":1635,"dim":"4570×1865×1635","wtMin":1455,"wtMax":1475,"pwr":"ICE","nev":false},{"id":"vehicle-config-xingyue-l","slug":"/vehicle-config-xingyue-l.html","brand":"Geely","name":"Xingyue L","title":"Geely Xingyue L","zh":"吉利 星越 L","body":"SUV","l":4795,"w":1895,"h":1689,"dim":"4770–4795×1895×1689","wtMin":1655,"wtMax":1775,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-xingyue-l-plus","slug":"/vehicle-config-xingyue-l-plus.html","brand":"Geely","name":"Xingyue L PLUS","title":"Geely Xingyue L PLUS","zh":"吉利 星越 L PLUS","body":"SUV","l":4955,"w":1960,"h":1769,"dim":"4955×1960×1769","wtMin":2065,"wtMax":2065,"pwr":"PHEV","nev":true},{"id":"vehicle-config-niuzai","slug":"/vehicle-config-niuzai.html","brand":"Geely","name":"Niuzai","title":"Geely Niuzai","zh":"吉利 牛仔","body":"SUV","l":4442,"w":1860,"h":1770,"dim":"4442×1860×1770","wtMin":1395,"wtMax":1395,"pwr":"ICE","nev":false},{"id":"vehicle-config-galaxy-m9","slug":"/vehicle-config-galaxy-m9.html","brand":"Geely","name":"Galaxy M9","title":"Geely Galaxy M9","zh":"吉利 银河 M9 插混","body":"SUV","l":5205,"w":1999,"h":1800,"dim":"5205×1999×1800","wtMin":2180,"wtMax":2530,"pwr":"PHEV","nev":true},{"id":"vehicle-config-zeekr-9x","slug":"/vehicle-config-zeekr-9x.html","brand":"Zeekr","name":"9X","title":"Zeekr 9X","zh":"极氪 9X 插混","body":"SUV","l":5239,"w":2029,"h":1819,"dim":"5239×2029×1819","wtMin":null,"wtMax":null,"pwr":"PHEV","nev":true},{"id":"vehicle-config-teana","slug":"/vehicle-config-teana.html","brand":"Nissan","name":"Teana","title":"Nissan Teana","zh":"日产 天籁","body":"Sedan","l":4920,"w":1850,"h":1447,"dim":"4920×1850×1447","wtMin":1518,"wtMax":1590,"pwr":"ICE","nev":false},{"id":"vehicle-config-n7","slug":"/vehicle-config-n7.html","brand":"Nissan","name":"N7","title":"Nissan N7","zh":"日产 N7 纯电","body":"Sedan","l":4967,"w":1895,"h":1492,"dim":"4930–4967×1895×1484–1492","wtMin":1807,"wtMax":1977,"pwr":"BEV","nev":true},{"id":"vehicle-config-n6","slug":"/vehicle-config-n6.html","brand":"Nissan","name":"N6","title":"Nissan N6","zh":"日产 N6 插混","body":"Sedan","l":4893,"w":1901,"h":1494,"dim":"4831–4893×1901×1491–1494","wtMin":null,"wtMax":null,"pwr":"PHEV","nev":true},{"id":"vehicle-config-qashqai","slug":"/vehicle-config-qashqai.html","brand":"Nissan","name":"Qashqai","title":"Nissan Qashqai","zh":"日产 逍客","body":"SUV","l":4407,"w":1837,"h":1610,"dim":"4407×1837×1610","wtMin":1400,"wtMax":1417,"pwr":"ICE","nev":false},{"id":"vehicle-config-xtrail","slug":"/vehicle-config-xtrail.html","brand":"Nissan","name":"X-Trail","title":"Nissan X-Trail","zh":"日产 奇骏","body":"SUV","l":4675,"w":1820,"h":1722,"dim":"4675×1820×1722","wtMin":1494,"wtMax":1494,"pwr":"ICE","nev":false},{"id":"vehicle-config-nx8","slug":"/vehicle-config-nx8.html","brand":"Nissan","name":"NX8","title":"Nissan NX8","zh":"日产 NX8 纯电/增程","body":"SUV","l":4870,"w":1920,"h":1680,"dim":"4870×1920×1680","wtMin":null,"wtMax":null,"pwr":"BEV/EREV","nev":true},{"id":"vehicle-config-sylphy","slug":"/vehicle-config-sylphy.html","brand":"Nissan","name":"Sylphy","title":"Nissan Sylphy","zh":"日产 轩逸","body":"Sedan","l":4656,"w":1825,"h":1448,"dim":"4656×1825×1448","wtMin":1304,"wtMax":1338,"pwr":"ICE","nev":false},{"id":"vehicle-config-seltos","slug":"/vehicle-config-seltos.html","brand":"Kia","name":"Seltos","title":"Kia Seltos","zh":"起亚 赛图斯","body":"SUV","l":4460,"w":1830,"h":1640,"dim":"4460×1830×1640","wtMin":1450,"wtMax":1505,"pwr":"ICE","nev":false},{"id":"vehicle-config-kx1","slug":"/vehicle-config-kx1.html","brand":"Kia","name":"KX1","title":"Kia KX1","zh":"起亚 奕跑 KX1","body":"SUV","l":4100,"w":1735,"h":1533,"dim":"4100×1735×1533","wtMin":1104,"wtMax":1104,"pwr":"ICE","nev":false},{"id":"vehicle-config-k3","slug":"/vehicle-config-k3.html","brand":"Kia","name":"K3","title":"Kia K3","zh":"起亚 K3","body":"Sedan","l":4666,"w":1780,"h":1450,"dim":"4666×1780×1450","wtMin":1230,"wtMax":1262,"pwr":"ICE","nev":false},{"id":"vehicle-config-k5","slug":"/vehicle-config-k5.html","brand":"Kia","name":"K5","title":"Kia K5","zh":"起亚 K5","body":"Sedan","l":4980,"w":1860,"h":1445,"dim":"4980×1860×1445","wtMin":1472,"wtMax":1567,"pwr":"ICE","nev":false},{"id":"vehicle-config-sportage","slug":"/vehicle-config-sportage.html","brand":"Kia","name":"Sportage","title":"Kia Sportage","zh":"起亚 狮铂拓界","body":"SUV","l":4695,"w":1865,"h":1680,"dim":"4695×1865×1678–1680","wtMin":1545,"wtMax":1706,"pwr":"ICE","nev":false},{"id":"vehicle-config-elantra","slug":"/vehicle-config-elantra.html","brand":"Hyundai","name":"Elantra","title":"Hyundai Elantra","zh":"现代 伊兰特","body":"Sedan","l":4720,"w":1810,"h":1415,"dim":"4720×1810×1415","wtMin":1208,"wtMax":1261,"pwr":"ICE","nev":false},{"id":"vehicle-config-dashing","slug":"/vehicle-config-dashing.html","brand":"Jetour","name":"Dashing","title":"Jetour Dashing","zh":"捷途 大圣","body":"SUV","l":4590,"w":1900,"h":1685,"dim":"4590×1900×1685","wtMin":1530,"wtMax":1530,"pwr":"ICE","nev":false},{"id":"vehicle-config-x70","slug":"/vehicle-config-x70.html","brand":"Jetour","name":"X70","title":"Jetour X70","zh":"捷途 X70","body":"SUV","l":4749,"w":1900,"h":1720,"dim":"4749×1900×1720","wtMin":null,"wtMax":null,"pwr":"ICE","nev":false},{"id":"vehicle-config-traveler","slug":"/vehicle-config-traveler.html","brand":"Jetour","name":"Traveler 7","title":"Jetour Traveler 7","zh":"捷途 旅行者","body":"SUV","l":4827,"w":2006,"h":1875,"dim":"4827×2006×1870–1875","wtMin":null,"wtMax":null,"pwr":"ICE","nev":false},{"id":"vehicle-config-free-rider","slug":"/vehicle-config-free-rider.html","brand":"Jetour","name":"Free Rider 7","title":"Jetour Free Rider 7","zh":"捷途 自由者","body":"SUV","l":4749,"w":1967,"h":1840,"dim":"4651–4749×1967×1840","wtMin":1615,"wtMax":1667,"pwr":"ICE","nev":false},{"id":"vehicle-config-q5","slug":"/vehicle-config-q5.html","brand":"Audi","name":"Q5L","title":"Audi Q5L","zh":"奥迪 Q5L","body":"SUV","l":4842,"w":1900,"h":1660,"dim":"4842×1900×1660","wtMin":2043,"wtMax":2067,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-q3","slug":"/vehicle-config-q3.html","brand":"Audi","name":"Q3","title":"Audi Q3","zh":"奥迪 Q3","body":"SUV","l":4498,"w":1848,"h":1614,"dim":"4498×1848×1614","wtMin":1600,"wtMax":1750,"pwr":"ICE","nev":false},{"id":"vehicle-config-a5","slug":"/vehicle-config-a5.html","brand":"Audi","name":"A5L","title":"Audi A5L","zh":"奥迪 A5L","body":"Sedan","l":4908,"w":1860,"h":1462,"dim":"4908×1860×1448–1462","wtMin":1790,"wtMax":1955,"pwr":"ICE/HEV","nev":false},{"id":"vehicle-config-crv","slug":"/vehicle-config-crv.html","brand":"Honda","name":"CR-V","title":"Honda CR-V","zh":"本田 CR-V","body":"SUV","l":4703,"w":1866,"h":1690,"dim":"4703×1866×1680–1690","wtMin":1582,"wtMax":1659,"pwr":"ICE","nev":false},{"id":"vehicle-config-tiggo-3x","slug":"/vehicle-config-tiggo-3x.html","brand":"Chery","name":"Tiggo 3X","title":"Chery Tiggo 3X","zh":"奇瑞 瑞虎 3X","body":"SUV","l":4200,"w":1760,"h":1570,"dim":"4200×1760×1570","wtMin":1268,"wtMax":1268,"pwr":"ICE","nev":false},{"id":"vehicle-config-tiggo-5x","slug":"/vehicle-config-tiggo-5x.html","brand":"Chery","name":"Tiggo 5X","title":"Chery Tiggo 5X","zh":"奇瑞 瑞虎 5X","body":"SUV","l":4358,"w":1830,"h":1670,"dim":"4358×1830×1670","wtMin":1272,"wtMax":1325,"pwr":"ICE","nev":false},{"id":"vehicle-config-mg5","slug":"/vehicle-config-mg5.html","brand":"MG","name":"MG5","title":"MG MG5","zh":"名爵 MG5","body":"Sedan","l":4715,"w":1842,"h":1480,"dim":"4715×1842×1473–1480","wtMin":1260,"wtMax":1315,"pwr":"ICE","nev":false},{"id":"vehicle-config-changan-cs55","slug":"/vehicle-config-changan-cs55.html","brand":"Changan","name":"CS55 PLUS","title":"Changan CS55 PLUS","zh":"长安 CS55 PLUS","body":"SUV","l":4550,"w":1868,"h":1675,"dim":"4550×1868×1675","wtMin":1430,"wtMax":1450,"pwr":"ICE","nev":false},{"id":"vehicle-config-changan-cs75","slug":"/vehicle-config-changan-cs75.html","brand":"Changan","name":"CS75 PLUS","title":"Changan CS75 PLUS","zh":"长安 CS75 PLUS","body":"SUV","l":4710,"w":1865,"h":1710,"dim":"4710×1865×1710","wtMin":1575,"wtMax":1575,"pwr":"ICE","nev":false},{"id":"vehicle-config-changan-x5","slug":"/vehicle-config-changan-x5.html","brand":"Changan","name":"X5 PLUS","title":"Changan X5 PLUS","zh":"长安 X5 PLUS","body":"SUV","l":4540,"w":1860,"h":1620,"dim":"4540×1860×1590–1620","wtMin":null,"wtMax":null,"pwr":"ICE","nev":false},{"id":"vehicle-config-aion-i60","slug":"/vehicle-config-aion-i60.html","brand":"AION","name":"AION i60","title":"GAC AION i60","zh":"埃安 AION i60 纯电","body":"SUV","l":4685,"w":1876,"h":1690,"dim":"4685×1876×1690","wtMin":null,"wtMax":null,"pwr":"BEV","nev":true},{"id":"vehicle-config-aion-y","slug":"/vehicle-config-aion-y.html","brand":"AION","name":"AION Y","title":"GAC AION Y","zh":"埃安 AION Y 纯电","body":"SUV","l":4535,"w":1870,"h":1650,"dim":"4535×1870×1650","wtMin":null,"wtMax":null,"pwr":"BEV","nev":true}];
+    const BY_ID = Object.fromEntries(MODELS.map(m => [m.id, m]));
+
+    const ISO = {
+      c20_len: 5898, c20_safe: 5520, c20_door_w: 2340, c20_door_h: 2280,
+      c40_len: 12032, c40_flat2_safe: 11580, c40_flat2_tight: 11830,
+      c40_door_w: 2340, c40_door_h: 2585, c40_ceil_h: 2698,
+      rack3_max_sum_l: 14180, rack3_max_h: 1660, rack3_max_w: 1885
+    };
+
     const UI = {
       en: {
         dir: 'ltr',
-        heroTitle: 'China Export Port & Loading Planner for Dealers',
-        heroSub: 'Configure your route, batch size, and vehicle category to generate candidate China handover ports, container vs. carrier checks, and 2026–2027 China export milestones.',
-        stepTitle: '1. Enter Your Shipment Parameters',
-        badge: 'LIVE B2B HANDOVER BRIEF',
-        rTitle: 'Recommended China Port & Verification Plan',
-        portHead: 'Candidate China Handover Ports & Incoterms',
-        loadHead: 'Physical Loading & Carrier Check',
-        regHead: '2026–2027 China Policy & VIN Verification Milestones',
-        waBtn: 'Send Plan to WhatsApp for Exact Port Quote ↗',
+        heroTitle: 'China Export Port & 40HQ Millimeter Loading Calculator',
+        heroSub: 'Select exact models from all 49 official China-market specifications (L × W × H in mm & curb weight) to check 20GP / 40HQ container clearance, 6-bay border carriers, candidate China ports, and 2027 Notice No. 29 rules.',
+        stepTitle: '1. Build Your Vehicle Batch & Route',
+        tabExact: 'Exact 49-Model Mix (mm Check)',
+        tabQuick: 'Quick Category Estimate',
+        pickModel: 'Select Catalogue Model (Official Max L×W×H mm)',
+        allBrands: 'All Brands (49 Models)',
+        addBtn: '+ Add',
+        badge: 'MILLIMETER CONTAINER & PORT CHECK',
+        rTitle: 'Calculated Container, Carrier & Port Plan',
+        kUnits: 'Total Units', kLen: 'Combined Length', kWt: 'Est. Curb Weight',
+        loadHead: '1. Container (20GP / 40HQ) & 6-Bay Carrier Plan',
+        portHead: '2. Candidate China Handover Ports (EXW / FCA / FOB)',
+        regHead: '3. 2026–2027 China Policy & Pre-Payment VIN Check',
+        waBtn: 'Send Exact Batch to WhatsApp for Port Quote ↗',
         mailBtn: 'Email Desk'
       },
       ru: {
         dir: 'ltr',
-        heroTitle: 'Планировщик портов передачи КНР и погрузки (EXW / FCA / FOB)',
-        heroSub: 'Выберите направление, объём партии и тип авто: получите варианты пунктов передачи в Китае, схему проверки автовоза/контейнера и чек-лист сверки 17-значного VIN.',
-        stepTitle: '1. Параметры вашей поставки',
-        badge: 'РАСЧЁТ УСЛОВИЙ ПЕРЕДАЧИ B2B',
-        rTitle: 'Рекомендуемые порты КНР и регламент проверки',
-        portHead: 'Пункты передачи в Китае и базисы поставки',
-        loadHead: 'Рекомендации по погрузке (автовоз / контейнер / Ro-Ro)',
-        regHead: 'Экспортные правила КНР 2026–2027 и проверка VIN',
-        waBtn: 'Отправить расчёт в WhatsApp для точной котировки ↗',
+        heroTitle: 'Калькулятор портов КНР и загрузки 40HQ / автовоза (49 моделей в мм)',
+        heroSub: 'Соберите партию из 49 моделей каталога с официальными габаритами Д×Ш×В (мм) и массой: проверьте запас по длине и дверному проёму 20GP / 40HQ, слоты 6-местного автовоза в Хоргосе и правила экспорта КНР 2027.',
+        stepTitle: '1. Состав партии и маршрут',
+        tabExact: 'Точный подбор из 49 авто (мм)',
+        tabQuick: 'Быстрая оценка по классу',
+        pickModel: 'Выберите модель каталога (офиц. Д×Ш×В мм)',
+        allBrands: 'Все марки (49 моделей)',
+        addBtn: '+ Добавить',
+        badge: 'ТОЧНЫЙ РАСЧЁТ ГАБАРИТОВ И ПОРТА B2B',
+        rTitle: 'Расчёт контейнера, автовоза и порта передачи КНР',
+        kUnits: 'Всего авто', kLen: 'Суммарная длина', kWt: 'Масса снаряж.',
+        loadHead: '1. Схема погрузки: 20GP / 40HQ и 6-местный автовоз',
+        portHead: '2. Рекомендуемые пункты передачи в КНР (EXW / FCA / FOB)',
+        regHead: '3. Правила КНР 2026–2027 и проверка VIN до оплаты',
+        waBtn: 'Отправить точный расчёт в WhatsApp ↗',
         mailBtn: 'Написать на Email'
       },
       es: {
         dir: 'ltr',
-        heroTitle: 'Planificador B2B de Puertos de China y Carga (EXW / FCA / FOB)',
-        heroSub: 'Seleccione su ruta, cantidad de unidades y segmento para revisar puertos de entrega en China, opciones de contenedor o Ro-Ro y el protocolo de inspección de VIN.',
-        stepTitle: '1. Parámetros de su Pedido',
-        badge: 'RESUMEN LOGÍSTICO Y NORMATIVO B2B',
-        rTitle: 'Puertos de Entrega en China y Lista de Verificación',
-        portHead: 'Puertos de Entrega Candidatos en China e Incoterms',
-        loadHead: 'Evaluación Física de Carga (Contenedor / Ro-Ro / Nodriza)',
-        regHead: 'Hitos de Exportación de China 2026–2027 y Revisión VIN',
-        waBtn: 'Enviar Plan por WhatsApp para Cotización Exacta ↗',
+        heroTitle: 'Calculadora de Puertos de China y Contenedor 40HQ en Milímetros (49 Modelos)',
+        heroSub: 'Combine cualquiera de los 49 modelos oficiales (L×A×A en mm y peso) para verificar espacio real en contenedor 20GP / 40HQ, puertos FOB en China (Nansha, Ningbo, Shanghái) y normativa 2027.',
+        stepTitle: '1. Arme su Lote de Vehículos y Ruta',
+        tabExact: 'Selección Exacta 49 Modelos (mm)',
+        tabQuick: 'Estimación Rápida por Segmento',
+        pickModel: 'Modelo del Catálogo (Dimensiones Oficiales L×A×A mm)',
+        allBrands: 'Todas las Marcas (49 Modelos)',
+        addBtn: '+ Añadir',
+        badge: 'VERIFICACIÓN MILIMÉTRICA DE CONTENEDOR Y PUERTO',
+        rTitle: 'Plan Calculado de Contenedor, Puerto y Verificación VIN',
+        kUnits: 'Unidades', kLen: 'Longitud Total', kWt: 'Peso Estimado',
+        loadHead: '1. Evaluación Milimétrica de Contenedor (20GP / 40HQ)',
+        portHead: '2. Puertos Candidatos en China (EXW / FCA / FOB)',
+        regHead: '3. Reglas de China 2026–2027 e Inspección VIN',
+        waBtn: 'Enviar Lote Exacto por WhatsApp ↗',
         mailBtn: 'Enviar Correo'
       },
       ar: {
         dir: 'rtl',
-        heroTitle: 'مخطط موانئ التسليم في الصين وخيارات الشحن للتجار (EXW / FCA / FOB)',
-        heroSub: 'اختر المسار والكمية وفئة المركبة لعرض موانئ التسليم المقترحة في الصين، ضوابط التحميل بالحاويات أو سفن Ro-Ro، وقائمة فحص رقم الهيكل VIN قبل الدفع.',
-        stepTitle: '1. حدد بيانات الشحنة المطلوبة',
-        badge: 'ملخص خطة التسليم والتحقق لتجار الجملة',
-        rTitle: 'موانئ التسليم المقترحة في الصين وضوابط التحقق',
-        portHead: 'موانئ التسليم المرشحة في الصين وشروط التسليم',
-        loadHead: 'ضوابط التحميل الفعلي (حاوية 40HQ / سفن دحرجة / ناقلة برية)',
-        regHead: 'لوائح التصدير الصينية 2026–2027 وفحص VIN المكون من 17 خانة',
-        waBtn: 'إرسال الخطة عبر واتساب للحصول على عرض سعر دقيق ↗',
+        heroTitle: 'حاسبة موانئ الصين وسعة حاوية 40HQ بالمليمتر (49 طرازاً رسمياً)',
+        heroSub: 'اختر طرازات محددة من 49 سيارة بأبعاد المصنع الرسمية (الطول×العرض×الارتفاع بالمليمتر) للتحقق من سعة حاوية 20GP / 40HQ، موانئ التسليم في الصين، وضوابط التصدير لعام 2027.',
+        stepTitle: '1. حدد طرازات الشحنة والمسار',
+        tabExact: 'اختيار دقيق من 49 طرازاً (ملم)',
+        tabQuick: 'تقدير سريع حسب الفئة',
+        pickModel: 'اختر الطراز (الأبعاد الرسمية بالمليمتر)',
+        allBrands: 'جميع العلامات (49 طرازاً)',
+        addBtn: '+ إضافة',
+        badge: 'فحص هندسي بالمليمتر للحاوية والميناء',
+        rTitle: 'خطة التحميل وميناء التسليم وفحص رقم الهيكل VIN',
+        kUnits: 'إجمالي السيارات', kLen: 'الطول الإجمالي', kWt: 'الوزن التقديري',
+        loadHead: '1. نتيجة فحص الحاوية (20GP / 40HQ) والناقلة البرية',
+        portHead: '2. موانئ التسليم المرشحة في الصين (EXW / FCA / FOB)',
+        regHead: '3. لوائح الصين 2026–2027 وفحص VIN قبل العربون',
+        waBtn: 'إرسال القائمة الدقيقة عبر واتساب لعرض السعر ↗',
         mailBtn: 'مراسلة عبر البريد'
       }
     };
 
     const PORTS = {
-      cis_land: 'Commonly quoted at Khorgos or Kashgar land border warehouses (FCA / EXW / FOB China border) for onward car-carrier or cage-truck pickup by your appointed forwarder. Sea-rail ports (Tianjin / Qingdao / Lianyungang) can also be quoted if requested.',
-      mena_sea: 'Commonly quoted FOB or FCA at Nansha (Guangzhou), Ningbo, or Shanghai seaports (or Tianjin/Qingdao depending on vehicle source province) for 20GP/40HQ container or Ro-Ro vessel booking.',
-      caucasus: 'Compare two routes by total transit & cost: (1) Land/multimodal handover at Khorgos or Kashgar border yard, or (2) FOB Nansha / Ningbo / Shanghai ocean container to Poti with onward transit to Baku/Tbilisi/Yerevan.',
-      latam_sea: 'Commonly quoted FOB or EXW/FCA for Nansha (Guangzhou), Shanghai, Ningbo, or Tianjin seaports supporting direct West Coast South America (Callao / Iquique / San Antonio / Buenaventura) and Caribbean container or Ro-Ro sailings.',
-      africa_sea: 'Commonly quoted FOB or FCA at Nansha (Guangzhou), Shanghai, Ningbo, or Qingdao seaports for West/East/North Africa container (20GP / 40HQ) or Ro-Ro vessel schedules.'
-    };
-
-    const LOADS = {
-      '1': '1 Trial Unit: Evaluate single-car 20GP container (subject to exact L×W×H clearance and DG battery rules), Ro-Ro deck slot, or single bay on a consolidated border car-carrier truck.',
-      '2-3': '2–3 Units: Ask your forwarder to validate exact vehicle dimensions (L×W×H and wheelbase) for a 40HQ container (2-car flat load for midsize SUVs/sedans, or 3-car angled rack only where height/length and port lashing permit) or 2–3 bays on a border carrier.',
-      '4-6': '4–6 Units: Typically split across two to three 40HQ containers, Ro-Ro batch booking, or one dedicated 6-car border carrier truck at Khorgos/Kashgar.',
-      '8+': '8+ Units: Ideal for full dedicated car-carrier dispatch on land corridors or multi-container / Ro-Ro lot pricing. Confirm split-batch vs. single-lot production readiness per colour.'
+      cis_land: 'Overland border handover at Khorgos or Kashgar bonded/export yards (FCA / EXW / FOB China border) for 6-bay car-carrier pickup by your forwarder; Tianjin / Qingdao / Lianyungang sea-rail also available on request.',
+      mena_sea: 'Ocean FOB or FCA handover at Nansha (Guangzhou), Ningbo, or Shanghai seaports (plus Tianjin/Qingdao depending on vehicle source plant) for 20GP / 40HQ container lashing or Ro-Ro vessel sailings to Jebel Ali, Aqaba, and Umm Qasr.',
+      caucasus: 'Dual-route quote comparison: (1) Khorgos / Kashgar overland carrier corridor to Baku/Tbilisi/Yerevan, or (2) FOB Nansha / Ningbo / Shanghai 40HQ ocean container to Poti with onward transit.',
+      latam_sea: 'Ocean FOB or FCA handover at Nansha, Shanghai, Ningbo, or Tianjin seaports serving West Coast South America (Callao, Iquique, San Antonio, Buenaventura) and Caribbean container or Ro-Ro schedules.',
+      africa_sea: 'Ocean FOB or FCA handover at Nansha, Shanghai, Ningbo, or Qingdao seaports for West, East, and North Africa 20GP / 40HQ container or Ro-Ro sailings.'
     };
 
     let currentLang = new URLSearchParams(location.search).get('lang') || 'en';
     if (!UI[currentLang]) currentLang = 'en';
+    let mode = 'exact';
+    let cart = [
+      { id: 'vehicle-config-rav4', qty: 2 }
+    ];
+
+    const brandSelect = document.getElementById('f-filter-brand');
+    const modelSelect = document.getElementById('f-model-select');
+    const brands = [...new Set(MODELS.map(m => m.brand))];
+
+    function rebuildModelDropdown() {
+      const bFilter = brandSelect.value;
+      const prev = modelSelect.value;
+      const filtered = MODELS.filter(m => !bFilter || m.brand === bFilter);
+      modelSelect.innerHTML = filtered.map(m =>
+        `<option value="${m.id}">${m.title} (${m.dim} mm · ${m.pwr})</option>`
+      ).join('');
+      if (filtered.some(m => m.id === prev)) modelSelect.value = prev;
+    }
+
+    brands.forEach(b => {
+      const cnt = MODELS.filter(m => m.brand === b).length;
+      brandSelect.add(new Option(`${b} (${cnt})`, b));
+    });
+    rebuildModelDropdown();
+
+    function expandUnits() {
+      if (mode === 'quick') {
+        const q = parseInt(document.getElementById('f-qty').value, 10) || 2;
+        const seg = document.getElementById('f-segment').value;
+        const synthMap = {
+          suv_hev: { title: 'Midsize SUV (Category Ref)', l: 4620, w: 1855, h: 1680, wtMax: 1680, nev: false, pwr: 'ICE/HEV', slug: '/models.html' },
+          sedan_hev: { title: 'Midsize Sedan (Category Ref)', l: 4710, w: 1825, h: 1450, wtMax: 1480, nev: false, pwr: 'ICE/HEV', slug: '/models.html' },
+          nev: { title: 'BEV / PHEV (Category Ref)', l: 4890, w: 1895, h: 1495, wtMax: 1850, nev: true, pwr: 'BEV/PHEV', slug: '/models.html' },
+          large_suv: { title: 'Full-Size SUV / MPV (Category Ref)', l: 5175, w: 1995, h: 1785, wtMax: 2155, nev: false, pwr: 'ICE/HEV', slug: '/models.html' }
+        };
+        const item = synthMap[seg];
+        return Array.from({ length: q }, () => item);
+      }
+      const list = [];
+      cart.forEach(row => {
+        const m = BY_ID[row.id];
+        if (m) {
+          for (let i = 0; i < row.qty; i++) list.push(m);
+        }
+      });
+      return list;
+    }
+
+    function analyzeUnits(units, corridor) {
+      const n = units.length;
+      if (n === 0) {
+        return {
+          totalL: 0, wtText: '0 kg', meterLabel: '40HQ Internal Length (12,032 mm)',
+          meterStat: '0 / 12,032 mm', pct: 0, cls: '',
+          meterSub: 'Add at least 1 vehicle on the left to calculate millimeter container & carrier fit.',
+          headline: 'No vehicles in batch yet.', bullets: [], hasNev: false, hasBev: false
+        };
+      }
+      const totalL = units.reduce((s, u) => s + u.l, 0);
+      const maxW = Math.max(...units.map(u => u.w));
+      const maxH = Math.max(...units.map(u => u.h));
+      const maxL = Math.max(...units.map(u => u.l));
+      const allHaveWt = units.every(u => u.wtMax);
+      const sumWt = units.reduce((s, u) => s + (u.wtMax || 0), 0);
+      const wtText = allHaveWt ? `~${sumWt.toLocaleString()} kg` : (sumWt > 0 ? `>${sumWt.toLocaleString()} kg*` : 'Per VIN plate');
+      const hasNev = units.some(u => u.nev);
+      const hasBev = units.some(u => u.pwr.includes('BEV'));
+      const bullets = [];
+
+      const doorWClear = ISO.c40_door_w - maxW;
+      const doorHClear20 = ISO.c20_door_h - maxH;
+      const doorHClear40 = ISO.c40_door_h - maxH;
+
+      if (maxW >= 1980) {
+        bullets.push(`Wide-body mirror note: widest vehicle is ${maxW.toLocaleString()} mm vs. 2,340 mm container door (~${Math.floor(doorWClear / 2)} mm per side with mirrors folded; require experienced port lashing crew).`);
+      } else {
+        bullets.push(`Door width & height check: max width ${maxW.toLocaleString()} mm (leaves ${doorWClear} mm total door width clearance) and max height ${maxH.toLocaleString()} mm (leaves ${doorHClear40} mm under 40HQ 2,585 mm door).`);
+      }
+
+      let meterLabel = '40HQ Internal Length Envelope (12,032 mm ISO Reference)';
+      let meterStat = '';
+      let pct = 0;
+      let cls = '';
+      let meterSub = '';
+      let headline = '';
+
+      if (corridor === 'cis_land') {
+        const carrierCap = (maxL >= 4950 || maxH >= 1750) ? 6 : 6;
+        const trucks = Math.ceil(n / carrierCap);
+        pct = Math.min(100, Math.round(((n % carrierCap || carrierCap) / carrierCap) * 100));
+        meterLabel = `Overland 6-Bay Border Car-Carrier Utilization (Khorgos / Kashgar)`;
+        meterStat = `${n} unit(s) → ${trucks} carrier(s)`;
+        meterSub = n < 6
+          ? `Uses ${n} of 6 standard carrier bays (${6 - n} bay(s) open — ship via consolidated border carrier or add ${6 - n} unit(s) for a dedicated full truck).`
+          : `Fills ${Math.floor(n / 6)} dedicated 6-bay border car-carrier(s)` + (n % 6 ? ` plus ${n % 6} consolidated bay(s).` : ' with zero wasted slots.');
+        headline = `Overland Primary Plan: ${n < 6 ? 'Consolidated 6-Bay Carrier (' + n + '/6 slots)' : trucks + '× 6-Bay Border Car-Carrier'} at Khorgos / Kashgar (Ocean container check also shown below).`;
+      }
+
+      if (n === 1) {
+        const rem20 = ISO.c20_len - totalL;
+        if (corridor !== 'cis_land') {
+          meterLabel = '20GP Container Internal Length (5,898 mm ISO Reference)';
+          pct = Math.min(100, Math.round((totalL / ISO.c20_len) * 100));
+          cls = totalL <= ISO.c20_safe ? '' : 'warn';
+          meterStat = `${totalL.toLocaleString()} / 5,898 mm (${pct}%)`;
+          meterSub = `Leaves ${rem20.toLocaleString()} mm longitudinal buffer for wheel chocks & lashing straps; 20GP door height margin: ${doorHClear20} mm.`;
+          headline = `1-Unit Trial Fit: Fits 1× 20GP container (${totalL.toLocaleString()} mm car in 5,898 mm box), Ro-Ro single slot, or 1 consolidated border carrier bay.`;
+        }
+        bullets.push(`Tip: Shipping 2 units inside 1× 40HQ often lowers ocean freight per car compared with a single 20GP — click "+1" to compare.`);
+      } else if (n === 2) {
+        const rem40 = ISO.c40_len - totalL;
+        if (corridor !== 'cis_land') {
+          pct = Math.min(100, Math.round((totalL / ISO.c40_len) * 100));
+          meterStat = `${totalL.toLocaleString()} / 12,032 mm (${pct}%)`;
+          if (totalL <= ISO.c40_flat2_safe) {
+            cls = '';
+            meterSub = `PASS (Flat 2-Car Load): ${rem40.toLocaleString()} mm total buffer remaining for front/middle/rear lashing inside 1× 40HQ.`;
+            headline = `Recommended Ocean Plan: 1× 40HQ High-Cube Container (2-car flat floor load — ${totalL.toLocaleString()} mm total length).`;
+          } else if (totalL <= ISO.c40_flat2_tight) {
+            cls = 'warn';
+            meterSub = `TIGHT BUFFER: Only ${rem40} mm left inside 12,032 mm — forwarder must confirm exact bumper & lashing clearance before booking 1× 40HQ.`;
+            headline = `Tight 2-Car 40HQ Load (${totalL.toLocaleString()} mm): Require forwarder pre-confirmation or compare Ro-Ro / 6-bay carrier.`;
+          } else {
+            cls = 'over';
+            meterSub = `EXCEEDS SAFE FLAT LIMIT (${totalL.toLocaleString()} mm vs. 12,032 mm) — split across 2× 20GP / Ro-Ro slots.`;
+            headline = `Length Exceeds Safe 2-Car 40HQ Flat Load: Quote Ro-Ro slots or separate containers.`;
+          }
+        } else {
+          bullets.push(`If routed by sea instead: 2 units = ${totalL.toLocaleString()} mm vs. 12,032 mm 40HQ (${totalL <= ISO.c40_flat2_safe ? 'fits 1× 40HQ flat load with ' + rem40 + ' mm buffer' : 'tight/exceeds flat load'}).`);
+        }
+      } else if (n === 3) {
+        const canRack3 = (totalL <= ISO.rack3_max_sum_l) && (maxH <= ISO.rack3_max_h) && (maxW <= ISO.rack3_max_w);
+        const sortedByL = [...units].sort((a, b) => a.l - b.l);
+        const pairL = sortedByL[1].l + sortedByL[2].l;
+        if (corridor !== 'cis_land') {
+          pct = Math.min(100, Math.round((totalL / ISO.rack3_max_sum_l) * 100));
+          cls = canRack3 ? 'warn' : 'over';
+          meterLabel = canRack3
+            ? '40HQ 3-Car Angled-Rack Envelope (~14,180 mm Overlapped Length)'
+            : 'Flat 40HQ Limit Exceeded (3 Units Cannot Load Flat in 1× 40HQ)';
+          meterStat = `${totalL.toLocaleString()} mm combined (3 cars)`;
+          if (canRack3) {
+            meterSub = `Max height ${maxH} mm (<= 1,660 mm ceiling rule) & combined length ${totalL.toLocaleString()} mm allow forwarder evaluation for 1× 40HQ angled steel-rack (斜架) loading!`;
+            headline = `3-Unit Options: (A) Ask port forwarder to verify 1× 40HQ 3-car angled steel-rack, OR (B) Safe flat split: 1× 40HQ (2 cars: ${pairL.toLocaleString()} mm) + 1× 20GP (1 car: ${sortedByL[0].l.toLocaleString()} mm), or add 1 car for 2× 40HQ.`;
+          } else {
+            const reason = maxH > ISO.rack3_max_h
+              ? `max roof height ${maxH} mm exceeds ~1,660 mm angled-rack ceiling clearance inside 40HQ (2,698 mm internal height)`
+              : `combined length ${totalL.toLocaleString()} mm / width ${maxW} mm exceeds 3-car rack geometry`;
+            meterSub = `3-car single-40HQ rack NOT recommended because ${reason}.`;
+            headline = `Recommended Split: 1× 40HQ flat (${pairL.toLocaleString()} mm for 2 units) + 1× 20GP (${sortedByL[0].l.toLocaleString()} mm for 1 unit), Ro-Ro, OR add a 4th vehicle to fill 2× 40HQ flat!`;
+          }
+        } else {
+          bullets.push(`3 units fill exactly 50% of a 6-bay Khorgos/Kashgar carrier; for sea routing, ${canRack3 ? 'candidate for 1× 40HQ angled rack (max H ' + maxH + ' mm)' : 'plan 1× 40HQ + 1× 20GP (SUV height ' + maxH + ' mm precludes 3-car rack)'}.`);
+        }
+      } else {
+        const sorted = [...units].sort((a, b) => b.l - a.l);
+        const bins40 = [];
+        const singles20 = [];
+        let i = 0;
+        while (i < sorted.length) {
+          if (i + 1 < sorted.length && (sorted[i].l + sorted[i + 1].l <= ISO.c40_flat2_safe)) {
+            bins40.push([sorted[i], sorted[i + 1]]);
+            i += 2;
+          } else {
+            singles20.push(sorted[i]);
+            i += 1;
+          }
+        }
+        const planParts = [];
+        if (bins40.length) planParts.push(`${bins40.length}× 40HQ (2-car flat load each)`);
+        if (singles20.length) planParts.push(`${singles20.length}× 20GP (single-car)`);
+        const planStr = planParts.join(' + ');
+        if (corridor !== 'cis_land') {
+          const busiest = bins40.length ? (bins40[0][0].l + bins40[0][1].l) : sorted[0].l;
+          const denom = bins40.length ? ISO.c40_len : ISO.c20_len;
+          pct = Math.min(100, Math.round((busiest / denom) * 100));
+          cls = '';
+          meterLabel = bins40.length ? 'Tightest 40HQ Pair Length Utilization (12,032 mm ISO)' : '20GP Utilization';
+          meterStat = `${busiest.toLocaleString()} / ${denom.toLocaleString()} mm (${pct}%)`;
+          meterSub = `Multi-unit flat allocation: ${planStr}, or compare Ro-Ro batch booking / ${Math.ceil(n / 6)}× 6-bay overland carrier(s).`;
+          headline = `Multi-Unit Batch Plan (${n} Cars): ${planStr} (zero angled-rack risk), or Ro-Ro lot booking.`;
+        } else {
+          bullets.push(`Ocean container equivalent if needed: ${planStr}.`);
+        }
+      }
+
+      if (hasNev && corridor !== 'cis_land') {
+        bullets.push(`Ocean Dangerous-Goods Check: Batch includes EV/PHEV — seaport booking requires UN 3171 / UN 3166 battery declaration & carrier SOC threshold check.`);
+      } else if (!hasNev) {
+        bullets.push(`Powertrain Loading Advantage: Selected batch is pure Petrol / Non-plug-in Hybrid (HEV) — no UN 3171 battery-EV ocean dangerous-goods surcharge.`);
+      }
+
+      return { totalL, wtText, meterLabel, meterStat, pct, cls, meterSub, headline, bullets, hasNev, hasBev };
+    }
+
+    function renderBatchList() {
+      const box = document.getElementById('batch-list');
+      if (!cart.length) {
+        box.innerHTML = '<div class="batch-item"><span style="color:#667079">Batch is empty — pick a model above and click + Add.</span></div>';
+        return;
+      }
+      box.innerHTML = cart.map((row, idx) => {
+        const m = BY_ID[row.id];
+        const wtInfo = m.wtMax ? `~${m.wtMax} kg` : 'wt per trim';
+        return `<div class="batch-item">
+          <div>
+            <strong>${row.qty}× <a href="${m.slug}" target="_blank" rel="noopener" style="color:#152a35;text-decoration:underline">${m.title}</a></strong>
+            <span class="pwr-pill ${m.nev ? 'nev' : ''}">${m.pwr}</span>
+            <div class="batch-meta">Official max: ${m.l.toLocaleString()}×${m.w.toLocaleString()}×${m.h.toLocaleString()} mm · ${wtInfo}</div>
+          </div>
+          <div class="batch-ctrls">
+            <button type="button" class="qty-step" data-act="dec" data-idx="${idx}" aria-label="Decrease">−</button>
+            <span style="min-width:20px;text-align:center;font-weight:700">${row.qty}</span>
+            <button type="button" class="qty-step" data-act="inc" data-idx="${idx}" aria-label="Increase">+</button>
+            <button type="button" class="rm-btn" data-act="rm" data-idx="${idx}" aria-label="Remove">✕</button>
+          </div>
+        </div>`;
+      }).join('');
+    }
 
     function render() {
       const t = UI[currentLang];
@@ -305,85 +624,167 @@
       document.getElementById('t-hero-title').textContent = t.heroTitle;
       document.getElementById('t-hero-sub').textContent = t.heroSub;
       document.getElementById('t-step-title').textContent = t.stepTitle;
+      document.getElementById('tab-exact').textContent = t.tabExact;
+      document.getElementById('tab-quick').textContent = t.tabQuick;
+      document.getElementById('l-pick-model').textContent = t.pickModel;
+      brandSelect.options[0].textContent = t.allBrands;
+      document.getElementById('btn-add-model').textContent = t.addBtn;
       document.getElementById('r-badge').textContent = t.badge;
       document.getElementById('r-title').textContent = t.rTitle;
-      document.getElementById('r-port-head').textContent = t.portHead;
+      document.getElementById('k-units-lbl').textContent = t.kUnits;
+      document.getElementById('k-len-lbl').textContent = t.kLen;
+      document.getElementById('k-wt-lbl').textContent = t.kWt;
       document.getElementById('r-load-head').textContent = t.loadHead;
+      document.getElementById('r-port-head').textContent = t.portHead;
       document.getElementById('r-reg-head').textContent = t.regHead;
       document.getElementById('btn-wa').textContent = t.waBtn;
       document.getElementById('btn-mail').textContent = t.mailBtn;
 
+      document.getElementById('tab-exact').classList.toggle('active', mode === 'exact');
+      document.getElementById('tab-quick').classList.toggle('active', mode === 'quick');
+      document.getElementById('exact-panel').hidden = (mode !== 'exact');
+      document.getElementById('quick-panel').hidden = (mode !== 'quick');
+
+      if (mode === 'exact') renderBatchList();
+
       const corridor = document.getElementById('f-corridor').value;
-      const qty = document.getElementById('f-qty').value;
-      const seg = document.getElementById('f-segment').value;
       const path = document.getElementById('f-pathway').value;
-      const modelNote = document.getElementById('f-model').value.trim();
+      const destNote = document.getElementById('f-dest-note').value.trim();
+      const units = expandUnits();
+      const res = analyzeUnits(units, corridor);
+
+      document.getElementById('k-units-val').textContent = `${units.length} ${units.length === 1 ? 'Car' : 'Cars'}`;
+      document.getElementById('k-len-val').textContent = `${res.totalL.toLocaleString()} mm`;
+      document.getElementById('k-wt-val').textContent = res.wtText;
+
+      document.getElementById('m-label').textContent = res.meterLabel;
+      document.getElementById('m-stat').textContent = res.meterStat;
+      const bar = document.getElementById('m-bar');
+      bar.style.width = `${res.pct}%`;
+      bar.className = 'meter-fill' + (res.cls ? ' ' + res.cls : '');
+      document.getElementById('m-detail').textContent = res.meterSub;
+
+      document.getElementById('r-load-body').textContent = res.headline;
+      const loadUl = document.getElementById('r-load-bullets');
+      loadUl.innerHTML = res.bullets.map(b => `<li>${b}</li>`).join('');
 
       document.getElementById('r-port-body').textContent = PORTS[corridor];
-      let loadTxt = LOADS[qty];
-      if (seg === 'large_suv' && qty === '2-3') {
-        loadTxt += ' Note: Full-size SUVs/MPVs ( ~5.0m+ length) must be checked strictly against 40HQ internal door height and length before assuming 2 units fit.';
-      }
-      if (seg === 'nev') {
-        loadTxt += ' Note: EV & PHEV ocean shipments require carrier dangerous-goods (UN 3171 / UN 3166) SOC/documentation check at the selected seaport.';
-      }
-      document.getElementById('r-load-body').textContent = loadTxt;
 
-      const items = [
-        'Pre-payment physical VIN check: For verified unreserved in-stock units, your appointed forwarder in China can inspect the car and 17-digit VIN even before deposit; for order-sourced units, full forwarder inspection is supported before balance settlement.',
-        'Port-specific pricing: Switching China handover ports changes domestic inland transport and port handling — always compare offers on the exact same handover port.'
+      const regItems = [
+        'Pre-payment physical VIN check: For verified unreserved in-stock cars, your appointed forwarder in China may inspect the vehicle and 17-digit VIN even before deposit; for factory/order-sourced units, full forwarder inspection applies prior to balance settlement.',
+        'Port-specific pricing rule: We quote whichever China port you nominate — always compare supplier offers on the exact same handover port.'
       ];
       if (path === 'used_180' || path === 'compare') {
-        items.push('Notice Shang Mao Han [2025] No. 648: Genuine >180-day registered used cars process via used-vehicle export licensing matched to original Chinese registration records, whereas <=180-day cars require an OEM-stamped after-sales letter.');
+        regItems.push('Notice Shang Mao Han [2025] No. 648: Genuine >180-day registered used cars process via used-vehicle export licensing matched to original Chinese registration records, whereas <=180-day cars require an OEM-stamped after-sales confirmation.');
       }
       if (path === 'new_oem' || path === 'compare') {
-        items.push('OEM / New-vehicle channel: Confirm exact contracting entity, export licence pathway, and factory dispatch lead time per order.');
+        regItems.push('OEM / New-vehicle channel: Confirm exact contracting entity, export licence pathway, and factory colour dispatch lead time per order.');
       }
-      const ul = document.getElementById('r-reg-list');
-      ul.innerHTML = '';
-      items.forEach(txt => {
-        const li = document.createElement('li');
-        li.textContent = txt;
-        ul.appendChild(li);
-      });
+      document.getElementById('r-reg-list').innerHTML = regItems.map(x => `<li>${x}</li>`).join('');
 
       const alertBox = document.getElementById('r-alert');
-      if (seg === 'nev') {
-        alertBox.textContent = '2027 Tax Rebate Alert (MOF/STA Announcement 2026 No. 29): Effective April 1, 2027, China VAT export rebates on 67 NEV tariff codes drop from 13% to 9%, governed strictly by the Customs Export Date (出口日期), plus EV export licensing under Announcement 2025 No. 54. Plan Q1 production & port lead time early.';
+      if (res.hasNev) {
+        alertBox.textContent = '2027 Tax Rebate Alert (MOF/STA Announcement 2026 No. 29): Your batch includes NEV (BEV/PHEV/EREV) units — effective April 1, 2027, China VAT export rebates on 67 NEV tariff codes drop from 13% to 9% strictly by the Customs Export Date (出口日期)' + (res.hasBev ? ', plus EV export licensing under Announcement 2025 No. 54.' : '.') + ' Lock Q1 port & customs schedules early.';
       } else {
-        alertBox.textContent = 'Destination Reminder: Import duties, VAT, utilization fees, vehicle age limits, and local homologation at destination must be verified with your licensed local customs broker prior to ordering.';
+        alertBox.textContent = '2027 Policy Check: Selected Petrol / Non-plug-in Hybrid (HEV) models are outside the 67 NEV tariff lines of Announcement 2026 No. 29. Import duties, VAT, utilization fees, age rules, and homologation at destination must be verified with your licensed local customs broker.';
       }
 
-      const summaryLines = [
-        'B2B Export Port & Loading Inquiry (hzchemnitz.cn)',
+      const batchDesc = mode === 'exact'
+        ? cart.map(r => `${r.qty}x ${BY_ID[r.id].title} (${BY_ID[r.id].l}x${BY_ID[r.id].w}x${BY_ID[r.id].h}mm)`).join('; ')
+        : `${units.length}x ${document.getElementById('f-segment').selectedOptions[0].text}`;
+
+      const mailLines = [
+        'B2B Export Port & Millimeter Container Inquiry (hzchemnitz.cn)',
+        'Selected Batch: ' + (batchDesc || 'Pending selection'),
+        'Combined Length: ' + res.totalL.toLocaleString() + ' mm | Est. Weight: ' + res.wtText,
+        'Calculated Plan: ' + res.headline,
         'Corridor: ' + document.getElementById('f-corridor').selectedOptions[0].text,
-        'Batch size: ' + document.getElementById('f-qty').selectedOptions[0].text,
-        'Segment: ' + document.getElementById('f-segment').selectedOptions[0].text,
-        'Export pathway: ' + document.getElementById('f-pathway').selectedOptions[0].text,
-        modelNote ? ('Target model / port: ' + modelNote) : 'Please advise recommended China handover port & EXW/FCA/FOB quote.'
+        'Export Pathway: ' + document.getElementById('f-pathway').selectedOptions[0].text
       ];
-      const encodedMail = 'mailto:jacky@hzchemnitz-export.com?subject=' + encodeURIComponent('B2B Port & Export Quotation Inquiry') + '&body=' + encodeURIComponent(summaryLines.join('\n'));
-      document.getElementById('btn-mail').setAttribute('href', encodedMail);
+      if (destNote) mailLines.push('Destination / Note: ' + destNote);
+      document.getElementById('btn-mail').setAttribute(
+        'href',
+        'mailto:jacky@hzchemnitz-export.com?subject=' + encodeURIComponent('B2B Port & 40HQ Quotation Inquiry') + '&body=' + encodeURIComponent(mailLines.join('\n'))
+      );
     }
 
+    brandSelect.addEventListener('change', rebuildModelDropdown);
+    document.getElementById('btn-add-model').addEventListener('click', () => {
+      const id = modelSelect.value;
+      const qty = Math.max(1, Math.min(30, parseInt(document.getElementById('f-add-qty').value, 10) || 1));
+      const existing = cart.find(r => r.id === id);
+      if (existing) existing.qty = Math.min(50, existing.qty + qty);
+      else cart.push({ id, qty });
+      render();
+    });
+
+    document.getElementById('batch-list').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-act]');
+      if (!btn) return;
+      const idx = parseInt(btn.dataset.idx, 10);
+      const act = btn.dataset.act;
+      if (!cart[idx]) return;
+      if (act === 'inc') cart[idx].qty = Math.min(50, cart[idx].qty + 1);
+      if (act === 'dec') {
+        cart[idx].qty -= 1;
+        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      }
+      if (act === 'rm') cart.splice(idx, 1);
+      render();
+    });
+
+    document.querySelectorAll('[data-preset]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const p = btn.dataset.preset;
+        mode = 'exact';
+        if (p === 'rav4_2') {
+          cart = [{ id: 'vehicle-config-rav4', qty: 2 }];
+          document.getElementById('f-corridor').value = 'mena_sea';
+        } else if (p === 'mix_3') {
+          cart = [{ id: 'vehicle-config-rav4', qty: 2 }, { id: 'vehicle-config-camry', qty: 1 }];
+          document.getElementById('f-corridor').value = 'latam_sea';
+        } else if (p === 'sedan_3') {
+          cart = [{ id: 'vehicle-config-corolla', qty: 3 }];
+          document.getElementById('f-corridor').value = 'mena_sea';
+        } else if (p === 'nissan_nev') {
+          cart = [{ id: 'vehicle-config-n7', qty: 2 }, { id: 'vehicle-config-n6', qty: 2 }];
+          document.getElementById('f-corridor').value = 'mena_sea';
+        } else if (p === 'cis_6') {
+          cart = [{ id: 'vehicle-config-rav4', qty: 3 }, { id: 'vehicle-config-xingyue-l', qty: 3 }];
+          document.getElementById('f-corridor').value = 'cis_land';
+        }
+        render();
+      });
+    });
+
+    document.getElementById('tab-exact').addEventListener('click', () => { mode = 'exact'; render(); });
+    document.getElementById('tab-quick').addEventListener('click', () => { mode = 'quick'; render(); });
     document.querySelectorAll('[data-set-lang]').forEach(btn => {
       btn.addEventListener('click', () => { currentLang = btn.dataset.setLang; render(); });
     });
-    ['f-corridor','f-qty','f-segment','f-pathway','f-model','f-advisor'].forEach(id => {
+    ['f-corridor','f-qty','f-segment','f-pathway','f-dest-note','f-advisor'].forEach(id => {
       document.getElementById(id).addEventListener('change', render);
       document.getElementById(id).addEventListener('input', render);
     });
+
     document.getElementById('btn-wa').addEventListener('click', () => {
       const phone = document.getElementById('f-advisor').value;
-      const modelNote = document.getElementById('f-model').value.trim();
+      const units = expandUnits();
+      const corridor = document.getElementById('f-corridor').value;
+      const res = analyzeUnits(units, corridor);
+      const destNote = document.getElementById('f-dest-note').value.trim();
+      const batchStr = mode === 'exact'
+        ? cart.map(r => `${r.qty}x ${BY_ID[r.id].title} (${BY_ID[r.id].l}×${BY_ID[r.id].w}×${BY_ID[r.id].h}mm)`).join(', ')
+        : `${units.length}x ${document.getElementById('f-segment').selectedOptions[0].text}`;
       const lines = [
-        'Hello Chemnitz, I used the Export Port & Loading Planner and would like a quotation:',
+        'Hello Chemnitz, I configured a batch on the Port & 40HQ Calculator and would like a quotation:',
+        '- Vehicles: ' + (batchStr || 'Please advise'),
+        '- Total length / weight: ' + res.totalL.toLocaleString() + ' mm / ' + res.wtText,
+        '- Loading plan: ' + res.headline,
         '- Route: ' + document.getElementById('f-corridor').selectedOptions[0].text,
-        '- Quantity: ' + document.getElementById('f-qty').selectedOptions[0].text,
-        '- Vehicle type: ' + document.getElementById('f-segment').selectedOptions[0].text,
         '- Pathway: ' + document.getElementById('f-pathway').selectedOptions[0].text
       ];
-      if (modelNote) lines.push('- Target model / destination: ' + modelNote);
+      if (destNote) lines.push('- Destination / note: ' + destNote);
       window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
     });
 
